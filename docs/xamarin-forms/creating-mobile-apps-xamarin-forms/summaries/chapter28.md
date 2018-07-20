@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: da8ce02a0185364c2b833238ee04ebc29e8d3bb2
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998095"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156610"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Souhrn kapitola 28. Poloha a mapy
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Podporuje Xamarin.Forms [ `Map` ](xref:Xamarin.Forms.Maps.Map) element, který je odvozen od `View`. Vzhledem k požadavkům na platformu speciální účastnící se pomocí mapy, jsou implementovány v samostatném sestavení **xamarin.Forms.Maps není úspěšný kvůli**a zahrnovat jiný obor názvů: `Xamarin.Forms.Maps`.
 
@@ -48,6 +51,9 @@ Mapa služby používat varianta projekci Mercator volá `Web Mercator`. Mapy sl
 
 Xamarin.Forms `Map` třídy neobsahují zařízení, které chcete získat geografické umístění uživatele, ale to je často žádoucí při práci s mapy, takže závislostí služby musí ji zpracovat.
 
+> [!NOTE]
+> Místo toho můžete použít aplikace Xamarin.Forms [ `Geolocation` ](~/essentials/geolocation.md) třída součástí Xamarin.Essentials.
+
 ### <a name="the-location-tracker-api"></a>Sledovací modul umístění rozhraní API
 
 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) řešení obsahuje kód pro sledování umístění rozhraní API. [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) Struktura zapouzdřuje zeměpisné šířky a délky. [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) Rozhraní definuje dvě metody pro spuštění a pozastavení sledovací modul umístění a událost, když je k dispozici nové umístění.
@@ -60,9 +66,9 @@ Implementace iOS `ILocationTracker` je [ `LocationTracker` ](https://github.com/
 
 Android provádění `ILocationTracker` je [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) třídu, která využívá Android [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/) třídy.
 
-#### <a name="the-windows-runtime-geo-locator"></a>Lokátor geograficky modulu Windows Runtime
+#### <a name="the-uwp-geo-locator"></a>Lokátor geograficky UPW
 
-Implementace modulu Windows Runtime `ILocationTracker` je [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) třídu, která využívá UPW [ `Geolocator` ](https://msdn.microsoft.com/library/windows/apps/br225534).
+Univerzální platforma Windows implementace `ILocationTracker` je [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs) třídu, která využívá UPW [ `Geolocator` ](/uwp/api/Windows.Devices.Geolocation.Geolocator).
 
 ### <a name="display-the-phones-location"></a>V telefonu umístění zobrazení
 
@@ -82,9 +88,9 @@ Pro iOS **info.plist** soubor musí obsahovat položky obsahující text dotaz s
 
 Aplikace pro Android, které získávají podle umístění uživatele musí mít oprávnění ACCESS_FILE_LOCATION v souboru AndroidManifest.xml.
 
-#### <a name="location-permissions-for-the-windows-runtime"></a>Umístění oprávnění pro prostředí Windows Runtime
+#### <a name="location-permissions-for-the-uwp"></a>Umístění oprávnění pro UPW
 
-Musí mít aplikace Windows nebo Windows Phone `location` funkce zařízení označená v Package.appxmanifest souboru.
+Aplikace pro univerzální platformu Windows musí mít `location` funkce zařízení označená v Package.appxmanifest souboru.
 
 ## <a name="working-with-xamarinformsmaps"></a>Práce s xamarin.Forms.Maps není úspěšný kvůli
 
@@ -110,9 +116,9 @@ Aplikace iOS s využitím `Map` vyžaduje dva řádky v souboru info.plist.
 
 Autorizační klíč je vyžadován pro použití služby mapy Google. Tento klíč je vložen do **AndroidManifest.xml** souboru. Kromě toho **AndroidManifest.xml** vyžaduje soubor `manifest` značky při získávání umístění uživatele.
 
-#### <a name="enabling-windows-runtime-maps"></a>Povolení prostředí Windows Runtime mapy
+#### <a name="enabling-uwp-maps"></a>Povolení UPW mapy
 
-Aplikace v jazyce prostředí Windows Runtime vyžaduje autorizačního klíče pro použití služby mapy Bing. Tento klíč je předán jako argument `Xamarin.FormsMaps.Init` metody. Aplikace musí být povolena také pro umístění služby.
+Aplikace pro univerzální platformu Windows vyžaduje autorizačního klíče pro použití služby mapy Bing. Tento klíč je předán jako argument `Xamarin.FormsMaps.Init` metody. Aplikace musí být povolena také pro umístění služby.
 
 ### <a name="the-unadorned-map"></a>Prostý mapy
 
@@ -233,4 +239,4 @@ Program také ukazuje, jak dynamicky omezit počet kódů PIN, v závislosti na 
 
 - [Kapitola 28 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [Ukázky kapitola 28](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Mapový ovládací prvek](~/xamarin-forms/user-interface/map.md)
+- [Mapa Xamarin.Forms](~/xamarin-forms/user-interface/map.md)

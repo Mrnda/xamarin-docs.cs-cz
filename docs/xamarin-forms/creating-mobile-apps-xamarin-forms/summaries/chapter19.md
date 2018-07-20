@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 01985cf253c0f33c52128386b36c11af50381ee1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996422"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156681"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Souhrn kapitole 19. Zobrazení kolekcí
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Xamarin.Forms definuje tři zobrazení, které udržují kolekce a zobrazit jejich prvky:
 
@@ -39,6 +42,9 @@ Můžete také použít `SelectedIndex` inicializovat vybrané položky, ale mus
 ### <a name="data-binding-the-picker"></a>Datové vazby při výběru
 
 `SelectedIndex` Vlastnost je založená na vlastnost s vazbou, ale `Items` není, takže použití datových vazeb s `Picker` je obtížné. Jedním řešením je použít `Picker` v kombinaci s [ `ObjectToIndexConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) například podle návodu na [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny. [ **PickerBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) ukazuje, jak to funguje.
+
+> [!NOTE] 
+> Xamarin.Forms `Picker` teď zahrnuje `ItemsSource` a `SelectedItem` vlastnosti, které podporují vytváření datových vazeb. Zobrazit [výběr](~/xamarin-forms/user-interface/picker/index.md).
 
 ## <a name="rendering-data-with-listview"></a>Vykreslování dat pomocí ListView
 
@@ -224,5 +230,6 @@ Další používání `TableView` je nabídka. [ **MenuCommands** ](https://gith
 
 - [Kapitola 19 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)
 - [Ukázky kapitole 19](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
+- [Výběr](~/xamarin-forms/user-interface/picker/index.md)
 - [ListView](~/xamarin-forms/user-interface/listview/index.md)
 - [TableView](~/xamarin-forms/user-interface/tableview.md)

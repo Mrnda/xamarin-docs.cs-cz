@@ -6,51 +6,54 @@ ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 0497770909b33108eaac0fa5044e98febeb61763
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: c8b149cfeb814e2a1e0a0d1b38cca24ea096d112
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996305"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156522"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Souhrn kapitoly 27. Vlastní renderery
 
-Element Xamarin.Forms, jako `Button` je vykreslen pomocí tlačítka pro konkrétní platformu zapouzdřené v třídě s názvem `ButtonRenderer`.  Tady je [verze iOS `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), [verze Androidu `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)a [verze prostředí Windows Runtime `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ButtonRenderer.cs).
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
+
+Element Xamarin.Forms, jako `Button` je vykreslen pomocí tlačítka pro konkrétní platformu zapouzdřené v třídě s názvem `ButtonRenderer`.  Tady je [verze iOS `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs), [verze Androidu `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)a [UPW verzi `ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs).
 
 Tato kapitola popisuje, jak můžete napsat vlastní renderery k vytváření vlastních zobrazení, které se mapují na objekty specifické pro platformu.
 
 ## <a name="the-complete-class-hierarchy"></a>Hierarchie úplnou třídu.
 
-Existuje sedm sestavení, které obsahují kód specifický pro platformu Xamarin.Forms.
+Existují čtyři sestavení, které obsahují kód specifický pro platformu Xamarin.Forms.
 Zdroj lze zobrazit na Githubu pomocí těchto odkazů:
 
 - [**Xamarin.Forms.Platform** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (velmi malý)
 - [**Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
 - [**Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
-- [**Xamarin.Forms.Platform.WinRT** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT) (větší než příštích 3)
 - [**Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
-- [**Xamarin.Forms.Platform.WinRT.Tablet**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Tablet)
-- [**Xamarin.Forms.Platform.WinRT.Phone**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.WinRT.Phone)
+
+> [!NOTE]
+> `WinRT` Sestavení uvedené v seznamu už nejsou součástí tohoto řešení. 
 
 [ **PlatformClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy) ukázka zobrazí hierarchie tříd pro sestavení, které jsou platné pro provádění platformu.
 
 Všimněte si důležité třídu s názvem `ViewRenderer`. Toto je třída, které odvozujete od při vytváření rendereru pro konkrétní platformu. To existuje ve třech různých verzích, protože se váže k zobrazení systému cílové platformy:
 
-IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L26) má obecných argumentů:
+IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25) má obecných argumentů:
 
 - `TView` s omezením [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` s omezením [`UIKit.UIView`](https://developer.xamarin.com/api/type/UIKit.UIView/)
 
-Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L14) má obecných argumentů:
+Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) má obecných argumentů:
 
 - `TView` s omezením [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
 - `TNativeView` s omezením [`Android.Views.View`](https://developer.xamarin.com/api/type/Android.Views.View/)
 
-Modul Windows Runtime [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.WinRT/ViewRenderer.cs#L12) jinak s názvem obecných argumentů:
+Na UPW [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6) jinak s názvem obecných argumentů:
 
 - `TElement` s omezením [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeElement` s omezením [`Windows.UI.Xaml.FrameworkElement`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx)
+- `TNativeElement` s omezením [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
 
 Při zápisu vykreslovací modul, můžete se být odvození třídy z `View`a potom psát více `ViewRenderer` třídy, jeden pro každou podporovanou platformu. Každá implementace specifické pro platformu bude odkazovat na nativních tříd, který je odvozen z typu, který zadáte jako `TNativeView` nebo `TNativeElement` parametru.
 
@@ -87,7 +90,7 @@ Typy těchto vlastností jsou určeny parametry obecného `ViewRenderer`. V tomt
 
 - iOS: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseViewRenderer.cs), který používá [ `EllipseUIView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseUIView.cs) třídy elipsy.
 - Android: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseViewRenderer.cs), který používá [ `EllipseDrawableView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseDrawableView.cs) třídy elipsy.
-- Windows Runtime: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs), které můžete použít nativní Windows [ `Ellipse` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.ellipse.aspx) třídy.
+- UPW: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs), které můžete použít nativní Windows [ `Ellipse` ](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) třídy.
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) třída zobrazí několik z nich `EllipseView` objekty:
 
@@ -103,7 +106,7 @@ Jsou tři zobrazovací jednotku:
 
 - iOS: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
 - Android: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
-- Windows Runtime: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
+- UPW: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
 
 Zobrazovací jednotku zjištění změn do nativního ovládacího prvku a následně zavolat `SetValueFromRenderer`, odkazuje na vlastnost s vazbou definované v `StepSlider`, změnu způsobující `StepSlider` dovoleno vyvolávat `ValueChanged` událostí.
 

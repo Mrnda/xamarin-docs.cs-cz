@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 1aa5226e1e6867f77eea4d7679650e8d62f5b981
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994530"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156987"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Souhrn kapitoly 8. Kód a XAML v souladu
 
@@ -75,10 +75,9 @@ Události je možné přiřadit k obslužné rutiny událostí v XAML, ale samot
 
 Ale **MonkeyTap** program potřebuje zvuk. (Viz [další kapitolu](chapter09.md).)
 
-
-
 ## <a name="related-links"></a>Související odkazy
 
 - [8 kapitoly textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [Ukázky kapitoly 8](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 - [Ukázka kapitoly 8 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [Předávání argumentů v XAML](~/xamarin-forms/xaml/passing-arguments.md)

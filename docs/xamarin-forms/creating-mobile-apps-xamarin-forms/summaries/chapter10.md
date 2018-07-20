@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 74f7e2846a9e8d8390a8322c57db0845718bbba7
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997504"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157000"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Souhrn kapitoly 10. Rozšíření značek XAML
 
@@ -91,9 +91,8 @@ Můžete vytvořit vlastní rozšíření značek XAML napsáním třídu, kter�
 
 [ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) Ukázka předvádí, jak odkazovat na tuto knihovnu a pomocí rozšíření vlastních značek.
 
-
-
 ## <a name="related-links"></a>Související odkazy
 
 - [Kapitola 10 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
 - [Ukázky kapitoly 10](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [Rozšíření značek XAML](~/xamarin-forms/xaml/markup-extensions/index.md)

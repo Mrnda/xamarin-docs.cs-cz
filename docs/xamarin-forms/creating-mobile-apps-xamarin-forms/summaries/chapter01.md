@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 58a8976b054ac7fad5c4e24f0561d1b4e468c1b2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: abf30f2cd828d67ef6fb04f809fce6235e1add9b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995128"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156480"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Souhrn kapitoly 1. Jak zapadá Xamarin.Forms?
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Jeden z nejčastěji nepříjemným úlohy při programování je portování kódu z jedné platformy na jiný, zejména v případě, že tuto platformu zahrnuje různé programovací jazyk. Při přenášení kód Refaktorovat a je pokušení, ale pokud obě platformy musí být zachována paralelně, pak rozdíly mezi dvěma kódech bude ztížit budoucí údržby.
 
@@ -32,6 +35,9 @@ Xamarin aktuálně poskytuje nástroje, které cílí nativní Mac, iOS a Androi
 
 Vývojáři mohou pomocí platformy Xamarin pro psaní aplikací v jazyce C#, že cílové Mac, iOS nebo Android. Ale při cílení na více než jedné platformě, je velmi výhodné sdílet část z kódu mezi platformami cílového. To zahrnuje rozdělení program do kódu závislého na platformě (obecně zahrnující uživatelského rozhraní) a kód nezávislý na platformě, což obvykle vyžaduje pouze základní rozhraní .NET framework. Tento kód nezávislý na platformě se může nacházet v přenosnou knihovnou tříd (PCL) nebo sdíleného projektu, často označované jako projekt sdílených prostředků nebo SAP.
 
+> [!NOTE] 
+> Knihovny přenosných tříd byly nahrazeny knihovny .NET Standard. Ukázkový kód z knihy se převedlo na použití knihovny .NET standard.
+
 ## <a name="introducing-xamarinforms"></a>Úvod do Xamarin.Forms
 
 Při cílení na různé mobilní platformy, Xamarin.Forms umožňuje ještě větší sdílení kódu. Jeden program napsané pro Xamarin.Forms může cílit na pět různých platforem:
@@ -42,13 +48,21 @@ Při cílení na různé mobilní platformy, Xamarin.Forms umožňuje ještě v�
 - modul Runtime Windows rozhraní API systému Windows 8.1
 - modul Runtime Windows rozhraní API nástroje Windows Phone 8.1
 
-Aktuální šablony řešení Xamarin.Forms nezahrnují šablony projektů pro platformy Windows 8.1 a Windows Phone 8.1.
+> [!NOTE] 
+> Xamarin.Forms už podporuje Windows 8.1, Windows Phone 8.1 nebo Windows 10 Mobile, ale aplikace Xamarin.Forms běží na Windows 10 desktop. Je také podpora ve verzi preview [Mac](~/xamarin-forms/platform/mac.md), [WPF](~/xamarin-forms/platform/wpf.md), [GTK #](~/xamarin-forms/platform/gtk.md), a [Tizen](/xamarin-forms/platform/tizen.md) platformy.
 
-Hromadné Xamarin.Forms program existuje v PCL nebo SAP. Každou z platforem se skládá z zástupnou proceduru malou aplikaci, která volá PCL. Rozhraní API Xamarin.Forms mapování na nativní ovládací prvky na jednotlivých platformách tak, aby každá platforma udržuje jeho charakteristické vzhled a chování:
+Hromadné Xamarin.Forms program existuje v knihovně nebo SAP. Každou z platforem se skládá z zástupnou proceduru malou aplikaci, která volá tento sdílený kód. 
+
+Rozhraní API Xamarin.Forms mapování na nativní ovládací prvky na jednotlivých platformách tak, aby každá platforma udržuje jeho charakteristické vzhled a chování:
 
 [![Trojitá snímek obrazovky s vizuály platforma pro sdílení obsahu](images/ch01fg03-small.png "Xamarin.Forms ovládacích prvků na každé platformě")](images/ch01fg03-large.png#lightbox "Xamarin.Forms ovládacích prvků na každé platformě")
 
-Snímky obrazovky zleva doprava zobrazit Iphonu, telefonu s Androidem a Windows 10 Mobile phone. Na jednotlivých obrazovkách stránka obsahuje Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label) pro zobrazení textu, [ `Button` ](xref:Xamarin.Forms.Button) za inicializaci akce, [ `Switch` ](xref:Xamarin.Forms.Switch) pro výběr na hodnotu Zapnuto/vypnuto a [ `Slider` ](xref:Xamarin.Forms.Slider) pro zadání hodnoty průběžné rozsahu. Všechny čtyři tato zobrazení jsou podřízené [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
+Snímky obrazovky zleva doprava zobrazit Iphonu, telefonu s Androidem a Windows 10 Mobile phone. 
+
+> [!NOTE] 
+> Xamarin.Forms už nepodporuje Windows 10 Mobile.
+
+Na jednotlivých obrazovkách stránka obsahuje Xamarin.Forms [ `Label` ](xref:Xamarin.Forms.Label) pro zobrazení textu, [ `Button` ](xref:Xamarin.Forms.Button) za inicializaci akce, [ `Switch` ](xref:Xamarin.Forms.Switch) pro výběr na hodnotu Zapnuto/vypnuto a [ `Slider` ](xref:Xamarin.Forms.Slider) pro zadání hodnoty průběžné rozsahu. Všechny čtyři tato zobrazení jsou podřízené [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
 Také připojeny k stránky je Xamarin.Forms nástrojů, který se skládá z několika [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) objekty. Toto jsou viditelné jako ikony nahoře v iOS a Android obrazovek a v dolní části obrazovky Windows 10 Mobile.
 
@@ -79,8 +93,6 @@ Webové servery Xamarin a Microsoft obsahují informace o tom, jak to udělat:
 - [Windows Dev Center](http://dev.windows.com)
 
 Můžete vytvořit jednou a spouštění projektů pro tyto jednotlivé platformy, neměla mít problém vytváření a spouštění aplikací Xamarin.Forms.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

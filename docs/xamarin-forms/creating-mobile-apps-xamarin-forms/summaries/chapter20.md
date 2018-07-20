@@ -6,21 +6,27 @@ ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d606432174807498fd458470647109de4fa0b6b4
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996279"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156727"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Souhrn kapitoly 20. Asynchronní a souborové I/O
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
  Grafické uživatelské rozhraní musí reagovat na události uživatelského vstupu postupně. Z toho vyplývá, veškeré zpracování událostí uživatelského vstupu, které se musí vyskytovat v jednom vlákně, často označované jako *hlavního vlákna* nebo *vlákno uživatelského rozhraní*.
 
 Uživatelé očekávají, že grafické uživatelské rozhraní bude reagovat. To znamená, že program rychle musí zpracovávat události vstupu uživatele. Pokud to není možné, pak zpracování musí být předané centrům sekundární vlákna exekuce.
 
 Několik ukázkové aplikace v této příručce používají [ `WebRequest` ](xref:System.Net.WebRequest) třídy. V této třídě [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) metoda začíná pracovní podproces, který volá funkci zpětného volání, jakmile se dokončí. Však spuštění této funkce zpětného volání v pracovní vlákno, takže program musí volat [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) metody pro přístup k uživatelské rozhraní.
+
+> [!NOTE]
+> Xamarin.Forms programy by měly používat [ `HttpClient` ](xref:System.Net.Http.HttpClient) spíše než [ `WebRequest` ](xref:System.Net.WebRequest) pro přístup k souborům přes internet. `HttpClient` podporuje asynchronní operace.
 
 Více moderní přístup pro asynchronní zpracování je k dispozici v rozhraní .NET a C#. To zahrnuje [ `Task` ](xref:System.Threading.Tasks.Task) a [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) třídami a ostatními typy v [ `System.Threading` ](xref:System.Threading) a [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) obory názvů, a také 5.0 C# `async` a `await` klíčová slova. To je tato kapitola, která se zaměřuje na.
 
@@ -74,13 +80,16 @@ Nicméně pokud hledáte toto `System.IO` třídy v Xamarin.Forms PCL, které ne
 
 To znamená, že budete muset použít [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (nejprve podrobněji [ **kapitoly 9. Volání rozhraní API pro konkrétní platformu** ](chapter09.md) provádět vstupně-výstupní operace souboru.
 
+> [!NOTE]
+> Přenosná třída knihovnami byly nahrazeny knihovny .NET Standard 2.0 a podporuje .NET Standard 2.0 [ `System.IO` ](xref:System.IO) typy pro všechny platformy Xamarin.Forms. Už je nutné použít `DependencyService` pro většinu vstupně-výstupní úlohy. Zobrazit [zpracování souborů v Xamarin.Forms](~/xamarin-forms/app-fundamentals/files.md) pro více moderní přístup ke vstupně-výstupní operace souboru.
+
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>První snímek na vstupu a výstupu souborů napříč platformami
 
 [ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) definuje ukázková [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) rozhraní pro vstup a výstup souborů a implementace tohoto rozhraní ve všech platformách. Ale implementace modulu Windows Runtime nefungují pomocí metod v tomto rozhraní, protože jsou asynchronní vstupně-výstupní metody souboru Windows Runtime.
 
 ### <a name="accommodating-windows-runtime-file-io"></a>Narážely vstup a výstup souborů Windows Runtime
 
-Použít třídy v programy spuštěné v rámci modulu Windows Runtime [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) a [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) obory názvů pro soubor vstupně-výstupních operací, včetně místní úložiště aplikací. Protože Microsoft určili, že všechny operace, které vyžadují více než 50 MS by měl být asynchronní k zabránění blokování vlákna uživatelského rozhraní, jsou většinou asynchronní tyto metody vstupně-výstupní operace souboru.
+Použít třídy v programy spuštěné v rámci modulu Windows Runtime [ `Windows.Storage` ](/uwp/api/Windows.Storage) a [ `Windows.Storage.Streams` ](/uwp/api/Windows.Storage.Streams) obory názvů pro soubor vstupně-výstupních operací, včetně místní úložiště aplikací. Protože Microsoft určili, že všechny operace, které vyžadují více než 50 MS by měl být asynchronní k zabránění blokování vlákna uživatelského rozhraní, jsou většinou asynchronní tyto metody vstupně-výstupní operace souboru.
 
 Ukázka tento nový přístup kódu bude v knihovně tak, aby ho můžete použít jiné aplikace.
 
@@ -94,8 +103,6 @@ Je výhodné pro uložení opakovaně použitelný kód v knihovnách. To je sam
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), knihovny tříd s iOS
 - [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), knihovny tříd Androidu
 - [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), knihovnu tříd Universal Windows
-- [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), PCL pro Windows 8.1.
-- [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), PCL pro Windows Phone 8.1
 - [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), sdílený projekt pro kód, který je společné pro všechny platformy Windows
 
 Všechny projekty jednotlivé platformy (s výjimkou produktů **Xamarin.FormsBook.Platform.WinRT**) mají odkazy na **Xamarin.FormsBook.Platform**. Tři projekty Windows obsahují odkaz na **Xamarin.FormsBook.Platform.WinRT**.

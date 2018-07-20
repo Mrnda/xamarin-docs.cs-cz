@@ -6,19 +6,22 @@ ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: 49f2d96fb7f95ab880d5cfafa420afbbe933c1ad
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997423"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156714"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Souhrn kapitoly 4. Posouvání zásobníku
 
 Tato kapitola je primárně věnována zavedení konceptu *rozložení*, což je celková doba splatnosti třídy a techniky, které využívá Xamarin.Forms pro uspořádání vizuální zobrazení více zobrazení na stránce.
 
 Rozložení zahrnuje několik tříd, které jsou odvozeny z [ `Layout` ](xref:Xamarin.Forms.Layout) a [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). Tato kapitola se zaměřuje na [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
+
+> [!NOTE]
+> [ `FlexLayout` ](~/xamarin-forms/user-interface/layouts/flex-layout.md) Zavedené v Xamarin.Forms 3.0 je možné způsoby, které jsou podobné `StackLayout` , ale s větší flexibilitou.
 
 V této kapitole zavedli jsou [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), a [ `BoxView` ](xref:Xamarin.Forms.BoxView) třídy.
 
@@ -104,7 +107,7 @@ Vložení `StackLayout` v `ScrollView` je běžné, ale uváděním `ScrollView`
 
 Trik, jak zajistit je umožnit `ScrollView` podřízený `StackLayout` `VerticalOptions` nastavení `FillAndExpand`. To je patrné [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) vzorku.
 
-**BlackCat** ukázka také ukazuje, jak definovat a přístup k prostředkům programu, které jsou vložené v Přenosná knihovna tříd (PCL). Toho lze dosáhnout také pomocí sdílených projektů Asset (protokoly SAP), ale postup je trochu trickier, jako [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) ukázce.
+**BlackCat** ukázka také ukazuje, jak definovat a přístup k prostředkům programu, které jsou vloženy do sdílené knihovny. Toho lze dosáhnout také pomocí sdílených projektů Asset (protokoly SAP), ale postup je trochu trickier, jako [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) ukázce.
 
 
 
@@ -115,3 +118,4 @@ Trik, jak zajistit je umožnit `ScrollView` podřízený `StackLayout` `Vertical
 - [Ukázky kapitole 4 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [BoxView](~/xamarin-forms/user-interface/boxview.md)

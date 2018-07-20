@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: d1daceba29e45adf64947c89555cc4e75a850d32
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: fe6a8c3d17cf1fe6f489f6425bbdaa3cd30f390a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995274"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156677"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Souhrn kapitola 2. Anatomie aplikace
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 V aplikaci Xamarin.Forms, se nazývají objekty, které zabírají místo na obrazovce *vizuální prvky*, zapouzdřené podle [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) třídy. Vizuální prvky lze rozdělit do tří kategorií odpovídající tyto třídy:
 
@@ -28,7 +31,12 @@ Tato kapitola popisuje způsob vytvoření aplikace se zaměříte na [ `Label` 
 
 ## <a name="say-hello"></a>Přivítejte
 
-Díky platformě Xamarin, nainstalované můžete vytvořit nové řešení Xamarin.Forms v sadě Visual Studio nebo Visual Studio pro Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) řešení používá přenosné knihovny tříd pro společný kód. Ukazuje Xamarin.Forms řešení vytvořené v sadě Visual Studio bez možnosti úprav. Řešení se skládá z šesti projekty (poslední dva z nich nejsou vytvořeny s aktuální šablony řešení Xamarin.Forms):
+Díky platformě Xamarin, nainstalované můžete vytvořit nové řešení Xamarin.Forms v sadě Visual Studio nebo Visual Studio pro Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) řešení používá přenosné knihovny tříd pro společný kód. 
+
+> [!NOTE] 
+> Knihovny přenosných tříd byly nahrazeny knihovny .NET Standard. Ukázkový kód z knihy se převedlo na použití knihovny .NET standard.
+
+V této ukázce Xamarin.Forms řešení vytvořené v sadě Visual Studio bez možnosti úprav. Řešení se skládá z šesti projekty:
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), sdílet přenosnou knihovnou tříd (PCL) ostatních projektů
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), projekt aplikace pro Android
@@ -37,13 +45,19 @@ Díky platformě Xamarin, nainstalované můžete vytvořit nové řešení Xama
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), projekt aplikace pro Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), projekt aplikace pro Windows Phone 8.1
 
+> [!NOTE] 
+> Xamarin.Forms už podporuje Windows 8.1, Windows Phone 8.1 nebo Windows 10 Mobile, ale aplikace Xamarin.Forms běží na Windows 10 desktop. 
+
 Můžete provést některou z těchto projektů aplikace spouštěný projekt a potom sestavíte a spustíte program na zařízení nebo simulátor.
 
-V mnoha aplikacích Xamarin.Forms nebude změna projekty aplikací. Ty často zůstanou malý zástupné procedury jen ke spuštění programu. Většina fokus bude přenosné knihovny tříd, která je společná pro všechny aplikace.
+V mnoha aplikacích Xamarin.Forms nebude změna projekty aplikací. Ty často zůstanou malý zástupné procedury jen ke spuštění programu. Většina fokus budou knihovny, které jsou společné pro všechny aplikace.
 
 ## <a name="inside-the-files"></a>Uvnitř soubory
 
 Vizuály, zobrazí **Hello** programu jsou definovány v konstruktoru [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) třídy. `App` je odvozena z třídy Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application).
+
+> [!NOTE] 
+> Šablony řešení sady Visual Studio pro Xamarin.Forms vytvořit stránku pomocí souboru XAML. V této příručce, dokud není součástí XAML [kapitola 7](chapter07.md).
 
 **Odkazy** část **Hello** projekt PCL zahrnuje následující Xamarin.Forms sestavení:
 
@@ -60,21 +74,20 @@ Vizuály, zobrazí **Hello** programu jsou definovány v konstruktoru [ `App` ](
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
+> [!NOTE] 
+> **Odkazy** z těchto projektů nadále částech sestavení. Místo toho obsahuje soubor projektu **PackageReference** značky odkazující na balíček Xamarin.Forms NuGet. **Odkazy** části v seznamech sady Visual Studio **Xamarin.Forms** balíček místo sestavení Xamarin.Forms. 
+
 Všechny projekty aplikace obsahuje volání statické `Forms.Init` metodu `Xamarin.Forms` oboru názvů. To inicializuje knihovnu Xamarin.Forms. Na jinou verzi `Forms.Init` definované pro každou platformu. Volání této metody najdete v následující třídy:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UPW: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-Kromě toho musíte každou platformu vytvořit instanci `App` třídy umístění PCL. K tomuto dochází u volání `LoadApplication` v následující třídy:
+Kromě toho musíte každou platformu vytvořit instanci `App` třídy umístění ve sdílené knihovně. K tomuto dochází u volání `LoadApplication` v následující třídy:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
 - UPW: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
-- Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
-- Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
 V opačném případě tyto projekty aplikací jsou běžné "Neprovádět žádnou akci" programy.
 
@@ -82,30 +95,20 @@ V opačném případě tyto projekty aplikací jsou běžné "Neprovádět žád
 
 Je možné vytvořit řešení Xamarin.Forms s společný kód v přenosnou knihovnou tříd (PCL) nebo sdíleného prostředku projektu (SAP). K vytvoření řešení SAP, vyberte možnost sdílené v sadě Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) řešení ukazuje šablony SAP bez možnosti úprav.
 
-Sady přístup PCL všechny společné kódu v projektu knihovny odkazuje projektů aplikace platformy. S tímto přístupem SAP společný kód efektivně existuje ve všech projektech application platform a je sdílen mezi nimi.
+> [!NOTE] 
+> Knihovny přenosných tříd nahradila ji knihovny .NET Standard. Ukázkový kód z knihy se převedlo na použití knihovny .NET standard. V opačném případě jsou koncepčně podobné na knihovny PCL a .NET Standard.
 
-Většina vývojářů Xamarin.Forms radši PCL přístup. Většina řešení v této příručce jsou PCL. Klíčovými slovy SAP patří **Sap** přípony v názvu projektu.
+Přístup knihovny sady všechny společné kódu v projektu knihovny odkazuje projektů aplikace platformy. S tímto přístupem SAP společný kód efektivně existuje ve všech projektech application platform a je sdílen mezi nimi.
 
-Pro podporu všechny platformy Xamarin.Forms, musí na verzi .NET používané PCL zvládat s následujícími platformami:
-
-- .NET Framework 4.5
-- Windows 8
-- Windows Phone 8,1
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.IOS (Classic)
-
-To se označuje jako 111 profilu počítače.
+Většina vývojářů Xamarin.Forms radši přístup knihovny. Většina řešení v této příručce, použijte knihovnu. Klíčovými slovy SAP patří **Sap** přípony v názvu projektu.
 
 S přístupem SAP kódu ve sdíleném projektu můžete provést různý kód pro různé platformy pomocí jazyka C# direktivy preprocesoru (`#if`, #`elif`, a `#endif`) s těmito předdefinované identifikátory:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
 - UPW: `WINDOWS_UWP`
-- Windows 8.1: `WINDOWS_APP`
-- Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-V PCL můžete určit, jakou platformu máte spuštěnou za běhu, jak uvidíte později v této kapitole.
+Ve sdílené knihovně můžete určit, jakou platformu máte spuštěnou za běhu, jak uvidíte později v této kapitole.
 
 ## <a name="labels-for-text"></a>Popisky pro text
 
@@ -138,17 +141,13 @@ Ve verzi Xamarin.Forms pro knihy `Padding` lze vybrat vlastnost, které jsou spe
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) pro Windows 8.1, Windows Phone 8.1 a všechna zařízení UPW.
-- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), dřív slouží k identifikaci Windows Phone 8.0, ale je nyní nepoužívané
-- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) se nepoužívá
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) pro UPW zařízení.
 
 `Device.OnPlatform` Metody, `Device.OS` vlastnost a `TargetPlatform` výčtu jsou všechny nyní zastaralé. Místo toho použijte [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) vlastnost a porovnejte `string` návratová hodnota u následujících statických polí:
 
 - [`iOS`](xref:Xamarin.Forms.Device.iOS), řetězec "iOS"
 - [`Android`](xref:Xamarin.Forms.Device.Android), řetězec "Android"
-- [`UWP`](xref:Xamarin.Forms.Device.UWP), řetězec "UWP" odkazující na platformu Windows Runtime
-- `Windows`, řetězec "Windows" pro prostředí Windows Runtime (Windows 8.1 a Windows Phone 8.1, zastaralé)
-- `WinPhone`, řetězec "WinPhone" pro Windows Phone 8.0 (zastaralé)
+- [`UWP`](xref:Xamarin.Forms.Device.UWP), řetězec "UWP" odkazující na univerzální platformu Windows
 
 [ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Související statickou vlastnost jen pro čtení. Vrátí se členem [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), který má tyto členy:
 
@@ -157,7 +156,7 @@ Ve verzi Xamarin.Forms pro knihy `Padding` lze vybrat vlastnost, které jsou spe
 - [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
 - [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) se nepoužívá
 
-Pro zařízení s iOS a Android, odříznutí mezi `Tablet` a `Phone` šířku na výšku 600 jednotek. Pro platformu Windows `Desktop` označuje spuštěný pod Windows 10, aplikaci pro UPW `Tablet` je program Windows 8.1 a `Phone` označuje aplikaci pro UPW spuštěný pod Windows 10 nebo aplikace pro Windows Phone 8.1.
+Pro zařízení s iOS a Android, odříznutí mezi `Tablet` a `Phone` šířku na výšku 600 jednotek. Pro platformu Windows `Desktop` označuje aplikaci pro UPW spuštěný pod Windows 10 a `Phone` označuje aplikaci pro UPW s podle aplikace systému Windows 10.
 
 ## <a name="solution-3a-set-margin-on-the-label"></a>3a řešení. Nastavit okraj na popisek
 
@@ -199,8 +198,6 @@ Můžete také center text (nebo jeho následné uložení do osm umístění na
 - [`End`](xref:Xamarin.Forms.TextAlignment.End), což znamená pravé nebo dolní (v závislosti na orientaci)
 
 Tyto dvě vlastnosti jsou definovány pouze `Label`, že `HorizontalAlignment` a `VerticalAlignment` jsou definovány vlastnosti `View` a dědí všechny `View` vy. Vizuální výsledky zdají být podobné, ale jsou velmi odlišné, jak ukazuje následující kapitoly.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

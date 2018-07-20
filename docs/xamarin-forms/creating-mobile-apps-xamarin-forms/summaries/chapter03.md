@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 3ef8f14bd60cf612408bb9e3885ef319d3efc8c5
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: eabd001587034ac0bf1b86962fe63b016fe651e9
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998332"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156571"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Souhrn kapitolu 3. Hlouběji do textu
 
@@ -100,8 +100,6 @@ Nakonec definujte dvě statické vlastnosti jen pro čtení hodnoty speciální 
 - iOS: tmavý text na pozadí světla
 - Android: Světle v tmavém pozadí (v knize) nebo tmavý textu na pozadí světla (pro Material Design prostřednictvím AppCompat v **hlavní** větve v úložišti ukázka kódu)
 - UPW: Tmavý text na pozadí světla
-- Windows 8.1: Světle text v tmavém pozadí
-- Windows Phone 8.1: Světle text v tmavém pozadí
 
 `Color.Accent` Hodnota výsledky specifické pro platformu (a někdy uživatelsky volitelných) barvou, který je viditelný na tmavý a světlý na pozadí.
 

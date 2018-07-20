@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 5a535d60dd01e32dc1d888d3372db13312cc069a
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130956"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156961"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Bitmapa – základy ve ve Skiasharpu
 
@@ -21,6 +21,8 @@ _Načíst rastrové obrázky z různých zdrojů a jejich zobrazení._
 Podpora rastrové obrázky v SkiaSharp je poměrně rozsáhlý. Tento článek se týká pouze Základy &mdash; zatížení rastrové obrázky a způsob jejich zobrazení:
 
 ![](bitmaps-images/bitmapssample.png "Zobrazení dvou rastrových obrázků")
+
+Mnohem hlubší zkoumání rastrových obrázků najdete v části [rastrové obrázky ve Skiasharpu](../bitmaps/index.md).
 
 Rastrový obrázek ve Skiasharpu je objekt typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Existuje mnoho způsobů, jak vytvořit rastrový obrázek, ale v tomto článku omezuje na [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) metodu, která načte bitovou mapu z .NET `Stream` objektu.
 

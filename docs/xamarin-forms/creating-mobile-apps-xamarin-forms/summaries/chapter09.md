@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a035da3dec468df291a19849ca89964c6707589
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: e7b2eea22758155db7d79fa26f3376e16cf16a45
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994754"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39157013"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Souhrn kapitoly 9. Volání rozhraní API pro konkrétní platformu
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Někdy je potřeba spouštět nějaký kód, který se liší podle platformy. Tato kapitola popisuje techniky.
 
@@ -32,19 +35,20 @@ Více strukturovaný přístup při provádění kódu specifické pro platformu
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService a přenosné knihovny tříd
 
-Knihovnu nelze přistoupit, obvykle tříd v projektech aplikací. Toto omezení zdá se, že aby se zabránilo techniku ukazuje **PlatInfoSap2** z používání v PCL. Ale Xamarin.Forms obsahuje třídu s názvem [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) reflexe .NET, která používá pro přístup k veřejné třídy v projektu aplikace z PCL.
+> [!NOTE] 
+> Knihovny přenosných tříd byly nahrazeny knihovny .NET Standard. Ukázkový kód z knihy se převedlo na použití knihovny .NET standard.
 
-Musíte definovat PCL `interface` s členy, je třeba použít u různých platforem. Pak každou z platforem obsahuje implementaci rozhraní. Třída, která implementuje rozhraní musí být označena [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) na úrovni sestavení.
+Knihovnu nelze přistoupit, obvykle tříd v projektech aplikací. Toto omezení zdá se, že aby se zabránilo techniku ukazuje **PlatInfoSap2** z používán v knihovně. Ale Xamarin.Forms obsahuje třídu s názvem [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) reflexe .NET, která používá pro přístup k veřejné třídy v projektu aplikace z knihovny.
 
-PCL pak používá Obecné [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) metoda `DependencyService` k získání instance třídy platforma, která implementuje rozhraní.
+Musíte definovat knihovny `interface` s členy, je třeba použít u různých platforem. Pak každou z platforem obsahuje implementaci rozhraní. Třída, která implementuje rozhraní musí být označena [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) na úrovni sestavení.
+
+Pak používá obecné knihovna [ `Get` ](xref:Xamarin.Forms.DependencyService.Get*) metoda `DependencyService` k získání instance třídy platforma, která implementuje rozhraní.
 
 To je patrné [ **DisplayPlatformInfo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/DisplayPlatformInfo) vzorku.
 
 ## <a name="platform-specific-sound-generation"></a>Generování zvukového specifické pro platformu
 
 [ **MonkeyTapWithSound** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) ukázka přidá signálů k **MonkeyTap** program díky přístupu do zařízení pro generování zvuk u různých platforem.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

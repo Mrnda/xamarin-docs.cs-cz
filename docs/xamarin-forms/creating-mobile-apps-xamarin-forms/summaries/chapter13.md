@@ -6,26 +6,32 @@ ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: b27df7f63ac83206c50858175dc2945937142f78
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: d863ce1c6195ddaef164c3a15817a4ff87a3c332
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995466"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156623"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Souhrn Kapitola 13. Rastrové obrázky
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) prvek zobrazuje rastrový obrázek. Všechny platformy Xamarin.Forms Podpora formátů souboru JPEG, PNG, BMP a ve formátu GIF.
 
 Rastrové obrázky v Xamarin.Forms pocházet ze čtyř míst:
 
 - Prostřednictvím webu podle adresy URL
-- Je vložený jako prostředek v běžné knihovny přenosných tříd
+- Je vložený jako prostředek do sdílené knihovny
 - V projektech aplikace platformy je vložený jako prostředek
 - Z libovolného místa, které lze odkazovat pomocí .NET `Stream` objektu, včetně `MemoryStream`
 
-Prostředky rastrového obrázku v PCL jsou nezávislá na platformě, prostředky rastrového obrázku v projektech platformy jsou specifické pro platformu.
+Rastrový obrázek prostředky do sdílené knihovny jsou nezávislá na platformě, prostředky rastrového obrázku v projektech platformy jsou specifické pro platformu.
+
+> [!NOTE] 
+> Text knihu díky odkazů na přenosné knihovny tříd, které byly nahrazeny knihovny .NET Standard. Ukázkový kód z knihy se převedlo na použití knihovny .NET standard.
 
 Rastrový obrázek je určený nastavením [ `Source` ](xref:Xamarin.Forms.Image.Source) vlastnost `Image` na objekt typu [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), abstraktní třídy odvozené tři konfigurace:
 
@@ -63,7 +69,7 @@ Soubor rastrového obrázku můžete přidat PCL, nebo do složky PCL. Pojmenujt
 Sady program `VerticalOptions` a `HorizontalOptions` vlastnosti `Image` k `LayoutOptions.Center`, díky `Image` element vstupy bez omezení. `Image` a mají stejnou velikost rastrového obrázku:
 
 - V Iosu a Androidu `Image` pixel velikost rastrového obrázku. Existuje mapování 1: 1 mezi rastrový obrázek pixelů a obrazovky pixelů.
-- Na platformách Windows Runtime `Image` pixel velikost rastrového obrázku v jednotkách nezávislých na zařízení. Každý pixel rastrového obrázku na většině zařízení, zabírá více obrazovky pixelů.
+- Na univerzální platformu Windows `Image` pixel velikost rastrového obrázku v jednotkách nezávislých na zařízení. Každý pixel rastrového obrázku na většině zařízení, zabírá více obrazovky pixelů.
 
 [ **StackedBitmap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) vloží ukázková `Image` ve svislém směru `StackLayout` v XAML. Rozšíření značek s názvem [ `ImageResourceExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) pomáhá tak, aby odkazovaly na vložený prostředek v XAML. Tuto třídu pouze načte prostředky ze sestavení, ve kterém se nachází, takže nemůže být umístěn v knihovně.
 
@@ -82,7 +88,10 @@ Nejlepším řešením je začít s širší než telefon v jednotkách nezávis
 
 ### <a name="browsing-and-waiting"></a>Procházení a čekání
 
-[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) ukázka umožňuje uživateli procházet uložené obrázky uložené na webu Xamarin. Používá .NET `WebRequest` třídy ke stažení souboru JSON se seznamem rastrových obrázků.
+[ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) ukázka umožňuje uživateli procházet uložené obrázky uložené na webu Xamarin. Používá .NET [ `WebRequest` ](xref:System.Net.WebRequest) třídy ke stažení souboru JSON se seznamem rastrových obrázků.
+
+> [!NOTE]
+> Xamarin.Forms programy by měly používat [ `HttpClient` ](xref:System.Net.Http.HttpClient) spíše než [ `WebRequest` ](xref:System.Net.WebRequest) pro přístup k souborům přes internet. 
 
 Program používá [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator) k označení, že něco se děje. Zavedení každé rastrový obrázek, jen pro čtení [ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading) vlastnost `Image` je `true`. `IsLoading` Vlastnost tímto modulem stojí umožňujících vazbu vlastnosti, tak `PropertyChanged` událost je aktivována při změně této vlastnosti. Program připojí obslužnou rutinu události a používá aktuální nastavení `IsLoaded` nastavit [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/) vlastnost `ActivityIndicator`.
 
@@ -154,7 +163,7 @@ Rastrový obrázek má být vykreslen v jedné Čtvereček palce různé verze r
 
 Rastrový obrázek bude vždy vykreslování rychlostí 160 jednotkách nezávislých na zařízení. (Standardní šablony řešení Xamarin.Forms pouze zahrnuje hdpi, xhdpi a xxhdpi složek.)
 
-Projekty Windows Runtime podporují rastrový obrázek pojmenování schéma, které se skládá z měřítko v pixelech na jednotku nezávislých na zařízení jako procento, například:
+Projekt UWP podporuje schéma pojmenování rastrový obrázek, která se skládá měřítko v pixelech na jednotku nezávislých na zařízení jako procento, například:
 
 - MyImage.scale 200.jpg na čtvereček 320 pixelů
 
@@ -164,7 +173,7 @@ Při přidávání bitmap pro projekty platformy **akce sestavení** by měl bý
 
 - iOS: **BundleResource**
 - Android: **AndroidResource**
-- Windows Runtime: **obsahu**
+- UPW: **obsahu**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) vzorovým kódem se vytvoří dva objekty jako tlačítko skládající se z `Image` elementy `TapGestureRecognizer` nainstalované. Je určena, že objekty být jeden palce čtverec. `Source` Vlastnost `Image` se nastavuje pomocí `OnPlatform` a `On` objekty odkazují na potenciálně různé názvy souborů na platformách. Bitmapové obrázky zahrnout čísla označují jejich velikost v pixelech, abyste si mohli zobrazit, které velikost rastrového obrázku je načten a vykreslí.
 
@@ -188,10 +197,12 @@ IOS a Android vyžadují, aby stránka, která se zobrazí na panelu nástrojů 
 
 Rastrové obrázky pro konkrétní platformu – můžete použít také k nastavení [ `Image` ](xref:Xamarin.Forms.Button.Image) vlastnost `Button` do bitmapy čtverec 32 jednotkách nezávislých na zařízení, jak je uvedeno ve [ **ButtonImage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) vzorku.
 
-
+> [!NOTE]
+> Vylepšili jsme použití imagí na tlačítkách. Zobrazit [pomocí rastrové obrázky tlačítka](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons).
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Kapitola 13 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
 - [Ukázky Kapitola 13](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [Práce s obrázky](~/xamarin-forms/user-interface/images.md)
+- [Rastrové obrázky pomocí tlačítka](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

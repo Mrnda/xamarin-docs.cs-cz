@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: c4ad067778203759a54ed8141db0b82602e40f6c
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 083cb4ed57df989a55a26394cbf8440d53a9e769
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997449"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156656"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Souhrn kapitoly 16. Vytváření datových vazeb
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Programátoři často naleznou sami sebe zápis obslužné rutiny událostí, které zjišťují, když je změněna vlastnost jednoho objektu a použijte, chcete-li změnit hodnotu vlastnosti v jiném objektu. Tento proces je možné automatizovat pomocí technika *datové vazby*. Datové vazby jsou obvykle definovány v XAML a se stanou součástí definice uživatelského rozhraní.
 
@@ -85,6 +88,9 @@ Nastavte [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode) vlastnost `Binding` čl
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) tak, aby změny ve zdrojové a cílové vzájemně ovlivňují.
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default) použít [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) zadán při cíl `BindableProperty` byl vytvořen. Pokud nebyla zadána žádná výchozí hodnota je `OneWay` pro běžné vlastnosti umožňující vazbu, a `OneWayToSource` pro vlastnosti jen pro čtení s možností vazby.
 
+> [!NOTE]
+> `BindingMode` Výčet teď také zahrnuje `OnTime` pro použití vazby pouze v případě, že se změní kontext vazby a ne už při změně vlastnosti zdroje.
+
 Vlastnosti, které by mohly být cíle datové vazby ve scénářích MVVM obecně mít `DefaultBindingMode` z `TwoWay`. Toto jsou:
 
 - `Value` Vlastnost `Slider` a `Stepper`
@@ -137,3 +143,4 @@ Místo toho [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-b
 
 - [Kapitola 16 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
 - [Ukázky kapitola 16](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [Datová vazba](~/xamarin-forms/app-fundamentals/data-binding/index.md)

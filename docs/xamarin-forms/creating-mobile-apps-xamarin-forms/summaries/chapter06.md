@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/18/2018
+ms.openlocfilehash: 464fbdb043ac35eba7a4cc2d9ec76b78cc91ac5b
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997169"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156509"
 ---
 # <a name="summary-of-chapter-6-button-clicks"></a>Souhrn kapitola 6. Kliknutí na tlačítko
 
@@ -80,10 +80,12 @@ Volání `OnStart` dochází při spuštění programu. Není nutné čekat na v
 
 [ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) ukázka je velmi podobný **SimplestKeypad** s tím rozdílem, že program použije `OnSleep` přepsání uložit s aktuální položkou klávesnici a Konstruktor stránky pro tato data obnovit.
 
-
+> [!NOTE]
+> Dalším přístupem k ukládání nastavení programu je poskytován Xamarin.Essentials [Předvolby](~/essentials/preferences.md) třídy.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Kapitola 6 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [Ukázky kapitola 6](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 - [Ukázky kapitola 6 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [Tlačítko Xamarin.Forms](~/xamarin-forms/user-interface/button.md)

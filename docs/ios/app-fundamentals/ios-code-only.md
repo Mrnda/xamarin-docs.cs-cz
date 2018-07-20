@@ -1,64 +1,64 @@
 ---
-title: Vytváření iOS uživatelského rozhraní v kódu v Xamarin.iOS
-description: Tento dokument popisuje postup vytvoření uživatelského rozhraní pro aplikace Xamarin.iOS pomocí kódu. Popisuje zobrazení řadičů, vytváření hierarchie zobrazení, zpracování rotaci kolem a další.
+title: Vytváření uživatelských rozhraní iOS v kódu v Xamarin.iosu
+description: Tento dokument popisuje, jak použít kód pro vytvoření uživatelského rozhraní pro aplikace Xamarin.iOS. Tento článek popisuje kontrolery zobrazení, vytváření hierarchie zobrazení, zpracování otáčení a další.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5e9bf9555d10c8b34ad9323529d4af5ea66110f8
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784631"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156779"
 ---
-# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Vytváření iOS uživatelského rozhraní v kódu v Xamarin.iOS
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Vytváření uživatelských rozhraní iOS v kódu v Xamarin.iosu
 
-Uživatelské rozhraní aplikace iOS se podobá výkladní skříň – aplikace obvykle získá jeden interval, ale ho může zaplnit okno s jako mnoho objektů na to potřebuje, a objekty a uspořádání lze změnit v závislosti na tom, co aplikace chce, zobrazte. Objekty v tomto scénáři - věcí, které uživatel vidí - se nazývají zobrazení. K vytvoření jedné obrazovky v aplikaci, zobrazení jsou sebe v obsahu zobrazení hierarchie a hierarchie spravuje jeden řadič zobrazení. Aplikace s více obrazovek mají více obsahu zobrazení hierarchie, každou s vlastní řadiče zobrazení a aplikace umístí v okně vytvořit jiné obsahu zobrazení hierarchie založené na obrazovce, jejímž je uživatel v zobrazení.
+Uživatelské rozhraní aplikace pro iOS se trochu prezentace – aplikace obvykle získá jedno okno, ale to můžete vyplnit okna s jak velký počet objektů, které potřebuje, a objekty a pravidla lze změnit v závislosti na tom, jaké aplikace chce zobrazit. Objekty v tomto scénáři – věcí, které se uživateli zobrazí – se nazývají zobrazení. K sestavení na jedné obrazovce v aplikaci, zobrazení skládaný na sebe navzájem v obsahu zobrazení hierarchie a hierarchie spravuje Kontroleru jednoho zobrazení. Aplikace s více obrazovkami mají více obsahu zobrazení hierarchie, každý s vlastní kontroler zobrazení a aplikace umístí zobrazení v okně vytvoření různých obsahu zobrazení hierarchie založený na obrazovce, jejímž je uživatel v.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller, které přinášejí uživatelského rozhraní na obrazovce zařízení: 
+Následující diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a kontroler zobrazení, které vdechnou uživatelského rozhraní na obrazovce zařízení: 
 
-[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a kontroler zobrazení")](ios-code-only-images/image9.png#lightbox)
 
-Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio, ale je dobrým základní znalosti o tom, jak pracovat zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a běh vývoj jen kód uživatelského rozhraní.
+Tyto zobrazení hierarchie lze sestavit pomocí [návrháře Xamarin pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio, ale je dobré mít základní znalosti práce zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a spuštění s vývojem pro rozhraní pouze kód uživatele.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller, které přinášejí uživatelského rozhraní na obrazovce zařízení: 
+Následující diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a kontroler zobrazení, které vdechnou uživatelského rozhraní na obrazovce zařízení: 
 
-[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png#lightbox)
+[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a kontroler zobrazení")](ios-code-only-images/image9.png#lightbox)
 
-Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio pro Mac, ale je dobrým základní znalosti o tom, jak pracovat zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a běh vývoj jen kód uživatelského rozhraní.
+Tyto zobrazení hierarchie lze sestavit pomocí [návrháře Xamarin pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio pro Mac, ale je dobré mít základní znalosti práce zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a spuštění s vývojem pro rozhraní pouze kód uživatele.
 
 -----
 
-## <a name="creating-a-code-only-project"></a>Vytvoření projektu jen kódu
+## <a name="creating-a-code-only-project"></a>Vytvoření projektu kódu
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ## <a name="ios-blank-project-template"></a>Prázdná šablona projektu iOS
 
-Nejprve vytvořte projekt pro iOS pomocí sady Visual Studio **soubor > Nový Projekt > Visual C# > iPhone & iPad > iOS aplikace (Xamarin)** projektu, vidíte níže:
+Nejprve vytvořte projekt pro iOS pomocí sady Visual Studio **soubor > Nový Projekt > Visual C# > iPhone & iPad > aplikace (Xamarin) pro iOS** projektu, je uvedeno níže:
 
-[![Dialogové okno Nový projekt](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
+[![Dialogové okno nového projektu](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-Vyberte **prázdnou aplikaci** šablona projektu:
+Vyberte **prázdnou aplikaci** šablony projektu:
 
-[![Vyberte šablony dialogu](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
+[![Vyberte šablonu dialogové okno](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
-Prázdná šablona projektu přidá 4 soubory do projektu:
+Šablonu prázdného projektu přidá 4 soubory do projektu:
 
 [![Soubory projektu](ios-code-only-images/empty-project.w157-sml.png "soubory projektu")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
-1. **AppDelegate.cs** – obsahuje `UIApplicationDelegate` podtřídami, `AppDelegate` , který se používá ke zpracování událostí aplikací z iOS. Okno aplikace je vytvořen v `AppDelegate`na `FinishedLaunching` metoda.
+1. **AppDelegate.cs** – obsahuje `UIApplicationDelegate` podtřídy, `AppDelegate` , který se používá pro zpracování událostí aplikací z iOS. Okna aplikace se vytvoří v `AppDelegate`společnosti `FinishedLaunching` metody.
 1. **Main.cs** – obsahuje vstupní bod aplikace, která určuje třídu pro `AppDelegate` .
-1. **Info.plist** -soubor seznamu vlastností, který obsahuje informace o konfiguraci aplikace.
-1. **Entitlements.plist** – soubor seznamu vlastností, který obsahuje informace o možnostech a oprávnění aplikace.
+1. **Soubor info.plist** – soubor seznamu vlastností, který obsahuje informace o konfiguraci aplikace.
+1. **Do souboru Entitlements.plist** – soubor seznamu vlastností, který obsahuje informace o možnostech a oprávnění aplikace.
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -66,25 +66,25 @@ Prázdná šablona projektu přidá 4 soubory do projektu:
 ## <a name="ios-templates"></a>iOS šablony
 
 
-Visual Studio pro Mac neposkytuje prázdné šablony. Součástí všech šablon scénáře podpory, které Apple doporučuje jako primární způsob, jak vytvořit uživatelského rozhraní. Nicméně je možné vytvořit uživatelské rozhraní zcela v kódu. 
+Visual Studio pro Mac neposkytuje prázdnou šablonu. Všechny šablony se dodávají s podporou scénářů, které Apple doporučuje jako primární způsob, jak vytvořit uživatelské rozhraní. Nicméně je možné vytvořit uživatelské rozhraní zcela v kódu. 
 
-Následující postup vás provede odebrání scénáři z aplikace: 
+Následující postup vás provede scénáři odebrání aplikace: 
 
 
-1. Šablonu jediné zobrazení aplikace použijte k vytvoření nové iOS projektu:
+1. Můžete vytvořit nový projekt iOS aplikace s jedním zobrazením šablony:
     
-    [![](ios-code-only-images/single-view-app.png "Použít šablonu jediné zobrazení aplikace")](ios-code-only-images/single-view-app.png#lightbox)
+    [![](ios-code-only-images/single-view-app.png "Použít šablonu aplikace s jedním zobrazením")](ios-code-only-images/single-view-app.png#lightbox)
 
-1. Odstranit `Main.Storyboard` a `ViewController.cs` soubory. Proveďte **není** odstranit `LaunchScreen.Storyboard`. Řadiče zobrazení by měl odstranit, protože je kódu na pozadí pro řadič zobrazení, která je vytvořena ve scénáři:
-1. Je nutné vybrat **odstranit** z v místním dialogovém okně:
+1. Odstranit `Main.Storyboard` a `ViewController.cs` soubory. Proveďte **není** odstranit `LaunchScreen.Storyboard`. Kontroler zobrazení by měl odstranit, protože se kódu na pozadí pro kontroler zobrazení, která je vytvořena ve scénáři:
+1. Je nutné vybrat **odstranit** v místním dialogovém okně:
     
-    [![](ios-code-only-images/delete.png "Vyberte možnost odstranit z v místním dialogovém okně")](ios-code-only-images/delete.png#lightbox)
+    [![](ios-code-only-images/delete.png "Vyberte odstranit ze zobrazení dialogu")](ios-code-only-images/delete.png#lightbox)
 
-1. V Info.plist, odstraňte informací uvnitř **informace o nasazení > Main rozhraní** možnost:
+1. V souboru Info.plist, odstraňte informace uvnitř **informace o nasazení > hlavní rozhraní** možnost:
     
     [![](ios-code-only-images/main-interface.png "Odstranění informací uvnitř možnost Hlavní rozhraní")](ios-code-only-images/main-interface.png#lightbox)
 
-1. Nakonec přidejte následující kód do vaší `FinishedLaunching` metodu v třídě AppDelegate:
+1. Nakonec přidejte následující kód do vašeho `FinishedLaunching` metody ve třídě AppDelegate:
         
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -97,16 +97,16 @@ Následující postup vás provede odebrání scénáři z aplikace:
             return true;
         }
 
-Kód, který byl přidán do `FinishedLaunching` metoda v kroku 5 výše, je minimální množství kód potřebný k vytvoření okna pro aplikace iOS.
+Kód, který byl přidán do `FinishedLaunching` metoda v kroku 5 výše, je minimální množství kódu potřebného k vytvoření okna pro vaše aplikace pro iOS.
 
 
 -----
 
 
 
-aplikace pro iOS jsou vytvořeny pomocí [vzor MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). První obrazovka, která aplikace zobrazuje je vytvořený z okna kořenové zobrazení řadiče. Najdete v článku [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) Průvodce pro další podrobnosti o MVC vzor sám sebe.
+aplikace iOS se vytvářejí pomocí [vzor MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). Na první obrazovce se zobrazí aplikace je vytvořený z kontroleru zobrazení v okně root. Najdete v článku [Hello, iOS s více obrazovkami](~/ios/get-started/hello-ios-multiscreen/index.md) Průvodce pro další podrobnosti o MVC vzorku samotný.
 
-Implementace pro `AppDelegate` přidal šablona vytvoří okno aplikace služby, které existuje jenom jeden pro každou aplikaci iOS a zobrazí ho následujícím kódem:
+Implementace `AppDelegate` přidal šablona vytvoří okna aplikace nástroje, které existuje jen jednou pro každou aplikaci iOS a zobrazí ho následujícím kódem:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -130,11 +130,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Pokud jste ke spuštění této aplikace nyní, by pravděpodobně získat výjimka vyvolaná oznamující, že `Application windows are expected to have a root view controller at the end of application launch`. Umožňuje přidat řadič a nastavit jej jako řadič zobrazení kořenové aplikace.
+Pokud byste chtěli nyní tuto aplikaci spustit, by pravděpodobně získat výjimku vyvolanou oznamující, že `Application windows are expected to have a root view controller at the end of application launch`. Pojďme přidat kontroler a nastavte ji kontroler zobrazení kořenové aplikace.
 
 ## <a name="adding-a-controller"></a>Přidání Kontroleru
 
-Aplikace může obsahovat mnoho řadičů zobrazení, ale musí mít jeden kořenový řadič zobrazení řídit všechny řadiče zobrazení.  Přidat řadič do okna tak, že vytvoříte `UIViewController` instance a jeho nastavení na `window.RootViewController` vlastnost:
+Vaše aplikace může obsahovat mnoho Kontrolery zobrazení, ale musí mít jeden kořenový Kontroleru zobrazení k řízení všech Kontrolerů zobrazení.  Přidání kontroleru do okna tak, že vytvoříte `UIViewController` instance a nastavíte ho na `window.RootViewController` vlastnost:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -165,11 +165,11 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-Každý řadič má přidružené zobrazení, která je přístupná z `View` vlastnost. Ve výše uvedeném kódu změní zobrazení `BackgroundColor` vlastnost `UIColor.LightGray` tak, aby se nebude zobrazovat, jak je uvedeno níže:
+Má každý kontroler přidružené zobrazení, která je přístupná z `View` vlastnost. Ve výše uvedeném kódu se změní zobrazení `BackgroundColor` vlastnost `UIColor.LightGray` tak, aby ji uvidí, jak je znázorněno níže:
 
- [![](ios-code-only-images/image1.png "Pozadí zobrazení je viditelné světle šedé")](ios-code-only-images/image1.png#lightbox)
+ [![](ios-code-only-images/image1.png "V zobrazení na pozadí je viditelné světle šedá")](ios-code-only-images/image1.png#lightbox)
 
-Nemůžeme nastavit všechny `UIViewController` podtřídami jako `RootViewController` tímto způsobem je také možné, včetně řadičů z UIKit a také ty jsme si zápisu. Například následující kód přidá `UINavigationController` jako `RootViewController`:
+Může některý nastavíme `UIViewController` podtřídy jako `RootViewController` tímto způsobem, včetně řadičů z UIKit nezaloženými jsme napsat sami. Například následující kód přidá `UINavigationController` jako `RootViewController`:
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -203,15 +203,15 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-To vytváří řadičem vnořené v rámci kontroleru navigace, jak je uvedeno níže:
+Tímto se vytvoří kontroler vnořené kontroler navigace, jak je znázorněno níže:
 
- [![](ios-code-only-images/image2.png "Řadič vnořené v rámci kontroleru navigace")](ios-code-only-images/image2.png#lightbox)
+ [![](ios-code-only-images/image2.png "Kontroler vnořené kontroler navigace")](ios-code-only-images/image2.png#lightbox)
 
-## <a name="creating-a-view-controller"></a>Vytvoření řadiče zobrazení
+## <a name="creating-a-view-controller"></a>Vytvoření Kontroleru zobrazení
 
-Teď, když jste viděli jak přidat řadič jako `RootViewController` okna, podíváme se, jak vytvořit vlastní zobrazení řadič v kódu.
+Teď, když jsme jste viděli, jak přidat kontroler, jako `RootViewController` okraji okna, Pojďme zjistit, jak vytvořit vlastní zobrazení řadič v kódu.
 
-Přidejte novou třídu s názvem `CustomViewController` jak je uvedeno níže:
+Přidejte novou třídu s názvem `CustomViewController` jak je znázorněno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -223,7 +223,7 @@ Přidejte novou třídu s názvem `CustomViewController` jak je uvedeno níže:
 
 -----
 
-Třída musí dědit z `UIViewController`, což je v `UIKit` obor názvů, jak je znázorněno:
+Třída by měla dědit z `UIViewController`, což je v `UIKit` obor názvů, jak je znázorněno:
 
 ```csharp
 using System;
@@ -241,9 +241,9 @@ namespace CodeOnlyDemo
 
 ## <a name="initializing-the-view"></a>Inicializace zobrazení
 
-`UIViewController` obsahuje metodu s názvem `ViewDidLoad` který je volán při řadiče zobrazení prvním načtení do paměti. Toto je příslušné místo pro provádí inicializace zobrazení, jako je třeba nastavení jeho vlastnosti.
+`UIViewController` obsahuje metodu nazvanou `ViewDidLoad` , která je volána, když kontroler zobrazení je prvním načtení do paměti. Toto je provést inicializaci zobrazení, jako je nastavení vlastnosti na příslušné místo.
 
-Například následující kód přidá tlačítko a obslužné rutiny události tak, aby nabízel nového řadiče zobrazení do zásobníku navigační při stisknutí tlačítka:
+Například následující kód přidá tlačítko a obslužné rutiny události při stisknutí tlačítka Vložit nový kontroler zobrazení do navigačního zásobníku:
 
 ```csharp
 using System;
@@ -283,7 +283,7 @@ namespace CodyOnlyDemo
 }
 ```
 
-Načíst tento řadič v aplikaci a ukázka jednoduché navigace, vytvořte novou instanci třídy `CustomViewController`. Vytvořit nový řadič navigace, předejte v instanci řadiče zobrazení a nastavte nový řadič navigace v okně `RootViewController` v `AppDelegate` jako dříve:
+Načíst tento kontroler ve vaší aplikaci a ukázka jednoduchou navigaci, vytvořte novou instanci třídy `CustomViewController`. Vytvořit nový kontroler navigace, předejte instanci kontroleru zobrazení a nastavte nový kontroler navigace v okně `RootViewController` v `AppDelegate` stejně jako dříve:
 
 ```csharp
 var cvc = new CustomViewController ();
@@ -293,27 +293,27 @@ var navController = new UINavigationController (cvc);
 Window.RootViewController = navController;
 ```
 
-Nyní když načtení aplikace, `CustomViewController` je načteno uvnitř řadič navigace:
+Nyní při načtení aplikace, `CustomViewController` je načteno uvnitř kontroler navigace:
 
- [![](ios-code-only-images/customvc.png "CustomViewController je načtena uvnitř řadič navigace")](ios-code-only-images/customvc.png#lightbox)
+ [![](ios-code-only-images/customvc.png "Načtení CustomViewController uvnitř kontroler navigace")](ios-code-only-images/customvc.png#lightbox)
  
-Klepnutím na tlačítko, bude _nabízené_ nového řadiče zobrazení do zásobníku navigace:
+Kliknutím na tlačítko, bude _nabízených_ nový kontroler zobrazení do navigačního zásobníku:
 
-[![](ios-code-only-images/customvca.png "Nový řadič zobrazení vloženy do zásobníku navigace")](ios-code-only-images/customvca.png#lightbox)
+[![](ios-code-only-images/customvca.png "Nový kontroler zobrazení vloženy do navigačního zásobníku")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>Vytváření zobrazení hierarchie
 
-V předchozím příkladu jsme začala vytvářet uživatelské rozhraní v kódu přidáním tlačítka řadiče zobrazení.
+V předchozím příkladu jsme začali vytvářet uživatelské rozhraní v kódu tak, že přidáte tlačítko na kontroler zobrazení.
 
-iOS uživatelského rozhraní se skládají z hierarchie zobrazení. Další zobrazení, jako je například popisky tlačítek, posuvníků, atd., jsou přidány jako dílčích zobrazení některých nadřazeného zobrazení.
+iOS uživatelské rozhraní se skládají z zobrazit hierarchii. Další zobrazení, jako je například popisky, tlačítka, posuvníky a podobně se přidají jako dílčích zobrazení některých nadřazeného zobrazení.
 
-Umožňuje upravit, například `CustomViewController` vytvořit přihlašovací obrazovku, kde může uživatel zadat uživatelské jméno a heslo. Na obrazovce bude obsahovat dvě textové pole a tlačítko.
+Například můžeme upravit `CustomViewController` vytvořit přihlašovací obrazovka, ve kterém může uživatel zadat uživatelské jméno a heslo. Na obrazovce bude obsahovat dvě textová pole a tlačítko.
 
-### <a name="adding-the-text-fields"></a>Přidání textová pole
+### <a name="adding-the-text-fields"></a>Přidávání textových polí
 
-Nejprve odeberte tlačítko a událostí obslužná rutina, která byla přidána do [inicializace zobrazení](#Initializing_the_View) části. 
+Nejdřív odeberte tlačítko a události rutinu, která byla přidána do [inicializaci zobrazení](#Initializing_the_View) oddílu. 
 
-Přidání ovládacího prvku pro uživatelské jméno pomocí vytvoření a inicializace `UITextField` a jeho následným přidáním do zobrazení hierarchie, jak je uvedeno níže:
+Přidejte ovládací prvek pro uživatelské jméno ve vytváření a inicializaci `UITextField` a následným přidáním do zobrazení hierarchie, jak je znázorněno níže:
 
 ```csharp
 class CustomViewController : UIViewController
@@ -341,13 +341,13 @@ class CustomViewController : UIViewController
 }
 ```
 
-Když vytvoříme `UITextField`, nastaví `Frame` vlastnost určit jeho umístění a velikost. V iOS 0,0 souřadnice je v levém horním s + x napravo a + y dolů. Po nastavení `Frame` společně s několik dalších vlastností říkáme `View.AddSubview` přidat `UITextField` do zobrazení hierarchie. Díky tomu `usernameField` dílčí zobrazení `UIView` instanci `View` vlastnost odkazy. Dílčí zobrazení se přidá s pořadí, které je vyšší než jeho nadřazeném zobrazení, zobrazí se před nadřazeného zobrazení na obrazovce.
+Když vytvoříme `UITextField`, jsme nastavili `Frame` vlastnost k definování jeho umístění a velikosti. V Iosu 0,0 bod se souřadnicemi je v levém horním rohu znakem + x napravo a + y dolů. Po nastavení `Frame` společně s pár dalších vlastností říkáme `View.AddSubview` přidáte `UITextField` do zobrazení hierarchie. Díky tomu `usernameField` dílčí zobrazení `UIView` instanci, která `View` odkazy na vlastnosti. Dílčí zobrazení se přidá s pořadí vykreslování, která je vyšší než jeho nadřazeném zobrazení, aby se zobrazovalo před nadřazeného zobrazení na obrazovce.
 
-Aplikace s `UITextField` zahrnuté jsou uvedeny níže:
+Aplikace se `UITextField` zahrnuté jsou uvedené níže:
 
  [![](ios-code-only-images/image4.png "Aplikace s UITextField zahrnuté")](ios-code-only-images/image4.png#lightbox)
 
-Nyní můžete přidat `UITextField` hesla podobným způsobem, pouze v tomto případě nastaví `SecureTextEntry` vlastnost na hodnotu true, jak je uvedeno níže:
+Můžeme přidat `UITextField` pro heslo podobným způsobem, jenom tentokrát nastavíme `SecureTextEntry` vlastnost na hodnotu true, jak je znázorněno níže:
 
 ```csharp
 public class CustomViewController : UIViewController
@@ -371,15 +371,15 @@ public class CustomViewController : UIViewController
 
 ```
 
-Nastavení `SecureTextEntry = true` skryje zadaný v text `UITextField` uživatelem, jak je uvedeno níže:
+Nastavení `SecureTextEntry = true` skryje textem zadaným ve `UITextField` tímto uživatelem, jak je znázorněno níže:
 
- [![](ios-code-only-images/image4a.png "Nastavení SecureTextEntry true skryje text zadaný uživatelem")](ios-code-only-images/image4a.png#lightbox)
+ [![](ios-code-only-images/image4a.png "Nastavení SecureTextEntry true skryje textem zadaným uživatelem.")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Přidání tlačítka
 
-Tlačítko Další, přidáme, uživatel může odeslat uživatelské jméno a heslo. Tlačítko zobrazení hierarchie jako další ovládací prvek, přidá předáním jako argument pro nadřazené zobrazení `AddSubview` metoda znovu.
+V dalším kroku přidáme vám tlačítko tak, že uživatel může odeslat uživatelské jméno a heslo. Přidáno tlačítko Zobrazit hierarchii, stejně jako jakýkoli jiný ovládací prvek, jejím předáním jako argument pro nadřazené zobrazení `AddSubview` metoda znovu.
 
-Následující kód přidá tlačítko a zaregistruje obslužné rutiny události pro `TouchUpInside` událostí:
+Následující kód přidá tlačítko a zaregistruje obslužná rutina události `TouchUpInside` události:
 
 ```csharp
 var submitButton = UIButton.FromType (UIButtonType.RoundedRect);
@@ -394,48 +394,48 @@ submitButton.TouchUpInside += (sender, e) => {
 View.AddSubview(submitButton);
 ```
 
-Obrazovka pro přihlášení s tímto na místě, se teď zobrazí jak je uvedeno níže:
+Přihlašovací obrazovka s tímto na místě, se teď zobrazí jak je znázorněno níže:
 
- [![](ios-code-only-images/image5.png "Obrazovka pro přihlášení")](ios-code-only-images/image5.png#lightbox)
+ [![](ios-code-only-images/image5.png "Přihlašovací obrazovky")](ios-code-only-images/image5.png#lightbox)
 
-Na rozdíl od v předchozích verzích systému iOS, na pozadí výchozí tlačítko je transparentní. Změna na tlačítko `BackgroundColor` změny vlastností toto:
+Na rozdíl od v předchozích verzích systému iOS, výchozí pozadí tlačítka je transparentní. Změna na tlačítko `BackgroundColor` změní vlastnost toto:
 
 ```csharp
 submitButton.BackgroundColor = UIColor.White;
 ```
 
-Výsledkem bude odmocnina tlačítko spíše než typické zaokrouhlené s okraji tlačítko. Pokud chcete získat zaokrouhlené hranici, použijte následující fragment kódu:
+Výsledkem bude čtvercové tlačítko spíše než typické zaokrouhlí s okraji tlačítko. K získání zakulacený edge, použijte následující fragment kódu:
 
 ```csharp
 submitButton.Layer.CornerRadius = 5f;
 ```
 
-Tyto změny bude zobrazení vypadat například takto:
+Tyto změny zobrazení bude vypadat takto:
 
-[![](ios-code-only-images/image6.png "Na příkladu spuštění zobrazení")](ios-code-only-images/image6.png#lightbox)
+[![](ios-code-only-images/image6.png "Spuštění příkladu zobrazení.")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Přidání více zobrazení do zobrazení hierarchie
 
-iOS poskytuje budovy přidání více zobrazení do zobrazení hierarchie pomocí `AddSubviews`.
+iOS poskytuje zařízení, které chcete přidat více zobrazení do zobrazení hierarchie s použitím `AddSubviews`.
 
 ```csharp
 View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton }); 
 ```
 
-## <a name="adding-button-functionality"></a>Přidání tlačítka funkce
+## <a name="adding-button-functionality"></a>Přidání funkce tlačítko
 
-Při kliknutí na tlačítko vaši uživatelé budou očekávají, že určitou akci. Například se zobrazí výstraha nebo navigace se provede na další obrazovce. 
+Po kliknutí na tlačítko se vaši uživatelé očekávají něco stane. Například se zobrazí výstraha nebo se provádí navigaci na jinou obrazovku. 
 
-Přidejme nějaký kód, který má být umístěn v zásobníku navigační druhého řadiče zobrazení.
+Přidejme nějaký kód tak, aby nabízel druhý kontroler zobrazení do navigačního zásobníku.
 
-Nejprve vytvořte druhý řadiče zobrazení:
+Nejprve vytvořte druhý kontroler zobrazení:
 
 ```csharp
 var loginVC = new UIViewController () { Title = "Login Success!"};
 loginVC.View.BackgroundColor = UIColor.Purple;
 ```
 
-Potom přidá funkci, která `TouchUpInside` událostí:
+Pak přidejte funkci, která `TouchUpInside` události:
 
 ```csharp
 submitButton.TouchUpInside += (sender, e) => {
@@ -443,15 +443,15 @@ submitButton.TouchUpInside += (sender, e) => {
             };
 ```
 
-Dole je zobrazená navigaci:
+Navigace je znázorněno níže:
 
-[![](ios-code-only-images/navigation.png "Navigaci je znázorněna v tomto grafu")](ios-code-only-images/navigation.png#lightbox)
+[![](ios-code-only-images/navigation.png "Navigace je znázorněna v tomto grafu")](ios-code-only-images/navigation.png#lightbox)
 
-Všimněte si, že ve výchozím nastavení, pokud použijete řadič navigační iOS poskytuje aplikaci navigačním panelu a tlačítko Zpět a umožní vám vrátit zpět na zásobníku.
+Všimněte si, že ve výchozím nastavení, když použijete kontroler navigace, iOS poskytuje aplikaci navigačním panelu a tlačítko Zpět, aby bylo možné přesunout zpátky do zásobníku.
 
-## <a name="iterating-through-the-view-hierarchy"></a>Iterace v rámci hierarchie zobrazení
+## <a name="iterating-through-the-view-hierarchy"></a>Zobrazit hierarchii iterace
 
-Je možné k iteraci v rámci hierarchie dílčí zobrazení a vybrat žádné konkrétní zobrazení. Např. pro každou najít `UIButton` a poskytněte toto tlačítko jiné `BackgroundColor`, můžete použít následující fragment kódu
+Je možné k iteraci v rámci hierarchie dílčí zobrazení a vybrat všechny konkrétní zobrazení. Pro příklad, jak najít jednotlivé `UIButton` a poskytněte jinou toto tlačítko `BackgroundColor`, můžete použít následující fragment kódu
 
 ```csharp
 foreach(var subview in View.Subviews)
@@ -464,33 +464,33 @@ foreach(var subview in View.Subviews)
 }
 ```
 
-To, ale nebude fungovat, pokud je zobrazení se vstupní pro `UIView` jako všechna zobrazení, vrátí se znovu jako `UIView` jako objekty přidané do nadřazeného zobrazení sami dědění `UIView`.
+To, ale nebude fungovat, pokud je zobrazení probíhají pro `UIView` jako všechna zobrazení bude vracet jako `UIView` jako objekty přidané do nadřazeného zobrazení sami dědit `UIView`.
 
-## <a name="handling-rotation"></a>Zpracování otočení
+## <a name="handling-rotation"></a>Zpracování otáčení
 
-Pokud uživatel otočí zařízení na šířku, ovládací prvky se velikost odpovídajícím způsobem, jak ukazuje následující snímek obrazovky:
+Pokud uživatel otočí zařízení na šířku, ovládací prvky se velikost vhodným způsobem, jak ukazuje následující snímek obrazovky:
 
- [![](ios-code-only-images/image7.png "Pokud uživatel otočí zařízení na šířku, ovládací prvky velikost nemění správně")](ios-code-only-images/image7.png#lightbox)
+ [![](ios-code-only-images/image7.png "Pokud uživatel otočí zařízení na šířku, ovládací prvky odpovídajícím způsobem velikost")](ios-code-only-images/image7.png#lightbox)
 
-Je možné tento problém opravit nastavením `AutoresizingMask` vlastnost u jednotlivých zobrazení. V tomto případě chceme ovládacích prvků k roztahování vodorovně, proto doporučujeme nastavit každý `AutoresizingMask`. Následující příklad je určený pro `usernameField`, ale stejné by bylo potřeba použít na každou miniaplikaci v hierarchii zobrazení.
+Jeden způsob, jak tento problém vyřešit, je nastavení `AutoresizingMask` vlastnosti na každé zobrazení. V tomto případě chceme, aby ovládací prvky pro roztažení vodorovně, takže doporučujeme nastavit každý `AutoresizingMask`. Následující příklad je určený pro `usernameField`, ale stejné by bylo potřeba použít u každého miniaplikace v hierarchii zobrazení.
 
 ```csharp
 usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 ```
 
-Nyní když jsme otočte zařízení nebo simulátoru, vše, co roztahovány k vyplnění další prostor, jak je uvedeno níže:
+Nyní když jsme otočit zařízení nebo simulátoru, všechno, co roztáhne a vyplní další místo, jak je znázorněno níže:
 
- [![](ios-code-only-images/image8.png "Všechny ovládací prvky roztáhnou tak, aby vyplňování další místa")](ios-code-only-images/image8.png#lightbox)
+ [![](ios-code-only-images/image8.png "Všechny ovládací prvky roztáhnout tak, aby vyplnil další místo")](ios-code-only-images/image8.png#lightbox)
 
-## <a name="creating-custom-views"></a>Vytváření vlastních zobrazení
+## <a name="creating-custom-views"></a>Vytváření vlastních pohledů
 
-Kromě použití ovládacích prvků, které jsou součástí UIKit, můžete také použít vlastní zobrazení. Můžete vytvořit vlastní zobrazení, která dědí z `UIView` a přepsáním `Draw`. Umožňuje vytvořit vlastní zobrazení a přidejte ji do zobrazení hierarchie k předvedení.
+Kromě použití ovládacích prvků, které jsou součástí UIKit, je také možné vlastní zobrazení. Můžete vytvořit vlastní zobrazení dědění z `UIView` a přepsáním `Draw`. Pojďme vytvořit vlastní zobrazení a přidejte ho do zobrazení hierarchie předvést.
 
 ### <a name="inheriting-from-uiview"></a>Dědění z UIView
 
-První věc, kterou je potřeba udělat je vytvoření třídy pro vlastní zobrazení. Provedeme to pomocí **třída** šablony v sadě Visual Studio lze přidat prázdný třídu s názvem `CircleView`. Základní třída musí být nastavena na `UIView`, který jsme odvolat je v `UIKit` obor názvů. Budete také potřebovat `System.Drawing` i obor názvů. Další různých `System.*` obory názvů nemusí být použité v tomto příkladu, takže můžete bez obav odstranit je.
+První věc, kterou budeme muset udělat, je vytvořit třídu pro vlastního zobrazení. Provedeme to pomocí **třídy** šablony v sadě Visual Studio, chcete-li přidat prázdnou třídu s názvem `CircleView`. Základní třída musí být nastavená na `UIView`, které jsme si možná Vzpomínáte `UIKit` oboru názvů. Budete také potřebovat `System.Drawing` i obor názvů. Další různých `System.*` obory názvů nemusí být použitý v tomto příkladu, takže můžete bez obav odstranit je.
 
-Třída by měla vypadat takto:
+Třída by měla vypadat nějak takto:
 
 ```csharp
 using System;
@@ -505,9 +505,9 @@ namespace CodeOnlyDemo
 
 ### <a name="drawing-in-a-uiview"></a>Kreslení v UIView
 
-Každý `UIView` má `Draw` metoda, která je volána v systému, když je potřeba vykreslit. `Draw` by nikdy volat přímo. V systému je volána při zpracování spuštění smyčky. Při prvním prostřednictvím spuštění smyčky po přidání zobrazení do zobrazení hierarchie, jeho `Draw` metoda je volána. Následující volání `Draw` dojít, když zobrazení je označen jako museli být vykresleny voláním buď `SetNeedsDisplay` nebo `SetNeedsDisplayInRect` v zobrazení.
+Každý `UIView` má `Draw` metodu, která je volána v systému, když je potřeba vykreslit. `Draw` by se nikdy volat přímo. Během zpracování spuštění smyčky je volána v systému. Při prvním průchodu spuštění smyčky po zobrazení se přidá do zobrazení hierarchie jeho `Draw` metoda je volána. Následující volání `Draw` dojít, když je zobrazení označilo jako vyžadující vykreslit pomocí volání buď `SetNeedsDisplay` nebo `SetNeedsDisplayInRect` pro zobrazení.
 
-Kreslení kód jsme můžete přidat do našich zobrazení přidáním takový kód uvnitř přepsané `Draw` metoda, jak je uvedeno níže:
+Můžeme přidat kód pro vykreslování do našich zobrazení tak, že přidáte takový kód uvnitř přepsané `Draw` způsob, jak je znázorněno níže:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -533,7 +533,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Vzhledem k tomu `CircleView` je `UIView`, můžete také nastavit `UIView` také vlastnosti. Například můžete nastavit jsme `BackgroundColor` v konstruktoru:
+Protože `CircleView` je `UIView`, můžete také nastavit `UIView` také vlastnosti. Například jsme nastavili `BackgroundColor` v konstruktoru:
 
 ```csharp
 public CircleView()
@@ -542,15 +542,15 @@ public CircleView()
 }
 ```
 
-Použít `CircleView` jsme právě vytvořili, můžete buď přidáme ji jako dílčí zobrazení k zobrazení hierarchie v existujícím řadiči, jako jsme to udělali s `UILabels` a `UIButton` dříve, nebo se nám načíst jako zobrazení nového řadiče. Umožňuje provést ty druhé.
+Použít `CircleView` jsme právě vytvořili, můžete buď přidáme ji jako dílčí zobrazení na Zobrazit hierarchii v existujícího řadiče, jako jsme to udělali s `UILabels` a `UIButton` dříve, nebo nám můžete načíst jako zobrazení nového řadiče. Pojďme si ten.
 
 ### <a name="loading-a-view"></a>Načítání zobrazení
 
- `UIViewController` má metodu s názvem `LoadView` který je volán adaptérem vytvoření jeho zobrazení. Toto je příslušné místo pro vytvoření zobrazení a přiřaďte ho ke kontroleru `View` vlastnost.
+ `UIViewController` obsahuje metodu s názvem `LoadView` , která je volána metodou kontroleru k vytvoření jeho zobrazení. To je vhodné místo, kde můžete vytvořit zobrazení a přiřadit ji k kontroleru `View` vlastnost.
 
-Nejdřív potřebujeme řadič, takže vytvořte novou prázdnou třídu s názvem `CircleController`.
+Nejdřív potřebujeme kontroleru, vytvořte novou prázdnou třídu s názvem `CircleController`.
 
-V `CircleController` přidejte následující kód k nastavení `View` k `CircleView` (nesmí zavoláte `base` implementace v přepsání):
+V `CircleController` přidejte následující kód pro nastavení `View` k `CircleView` (byste neměli volat `base` implementace přepsání):
 
 ```csharp
 using UIKit;
@@ -570,7 +570,7 @@ namespace CodeOnlyDemo
 }
 ```
 
-Nakonec je potřeba k dispozici řadičem za běhu. Umožňuje provést přidáním obslužné rutiny události na tlačítko pro odeslání, který jsme přidali dříve, a to takto:
+Nakonec musíme prezentovat kontroleru za běhu. Provedeme to přidáním obslužné rutiny události na tlačítka pro odeslání, který jsme přidali dříve, následujícím způsobem:
 
 ```csharp
 submitButton.TouchUpInside += delegate
@@ -583,44 +583,44 @@ submitButton.TouchUpInside += delegate
 };
 ```
 
-Teď když jsme aplikaci spustit a klepněte na tlačítko pro odeslání, nové zobrazení s kroužkem se zobrazí:
+Nyní po spuštění aplikace a klepněte na tlačítko pro odeslání, se zobrazí nové zobrazení s kruh:
 
- [![](ios-code-only-images/circles.png "Zobrazí se nové zobrazení s kroužkem")](ios-code-only-images/circles.png#lightbox)
+ [![](ios-code-only-images/circles.png "Zobrazí se nové zobrazení s kruh")](ios-code-only-images/circles.png#lightbox)
 
-## <a name="creating-a-launch-screen"></a>Vytváření úvodní obrazovka
+## <a name="creating-a-launch-screen"></a>Vytvoření obrazovky spuštění
 
-A [úvodní obrazovka](~/ios/app-fundamentals/images-icons/launch-screens.md) se zobrazí při spuštění vaší aplikace jako způsob, jak zobrazit pro vaše uživatele, že se jedná o reaguje. Protože úvodní obrazovka se zobrazí při načítání aplikace, nemůže být vytvořeny ve kódu, jako je aplikace stále probíhá načtena do paměti. 
+A [spouštěcí obrazovka](~/ios/app-fundamentals/images-icons/launch-screens.md) se zobrazí při spuštění vaší aplikace jako způsob, jak zobrazit uživatelům, že je responzivní. Protože spouštěcí obrazovka se zobrazí, když se načítá aplikaci, nemůže být vytvořen v kódu, protože aplikace je stále načítáno do paměti. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Když vaše vytvoření projektu v sadě Visual Studio, spusťte obrazovky se poskytuje pro vás ve formě .xib souboru, který lze nalézt v iOS **prostředky** složky uvnitř projektu. 
+Pokud vaše vytvoření projektu v sadě Visual Studio, spusťte obrazovku poskytnuty v podobě .xib soubor, který se nachází v iOS **prostředky** složky v projektu. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Pokud vaše vytvoření iOS projektu v sadě Visual Studio pro Mac, spusťte obrazovky je poskytována pro vás ve formě soubor scénáře. 
+Pokud vaše vytvoření projektu pro iOS v sadě Visual Studio pro Mac, na obrazovce spuštění je poskytována pro vás ve formě souboru ve scénáři. 
 
 -----
 
-To se dá upravit tak, že dvojité kliknutí na tlačítko a ho otevřít v Návrháři iOS.
+To může upravit dvojité kliknutí na tlačítko a jeho otevřením v iOS designeru.
 
-Apple doporučuje .xib nebo Storyboard souboru se používá pro aplikace cílený na iOS 8 nebo novější, při spuštění buď soubor v Návrháři iOS, budete používat velikost třídy a automatického rozložení přizpůsobit rozložení tak, aby spokojeni a zobrazí správně, pro všechna zařízení velikosti. Statické spouštěcí image lze kromě .xib nebo Storyboard, povolit podporu pro cílení na dřívější verze aplikace.
+Apple doporučuje .xib nebo soubor scénáře se používá pro aplikace pro iOS 8 nebo novější, při spuštění buď soubor v iOS designeru budete používat třídy velikostí a automatické rozložení přizpůsobit si rozložení tak, aby vypadá dobře a zobrazí správně, pro všechna zařízení velikosti. Statické spouštěcí image je možné kromě .xib nebo scénáři povolit podporu pro cílení na dřívější verze aplikace.
 
-Další informace o vytvoření obrazovky spustit najdete v dokumentech níže:
+Další informace o vytvoření obrazovky spuštění najdete v níže uvedených dokumentech:
 
 - [Vytvoření obrazovky spuštění pomocí .xib](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
-- [Správa spuštění obrazovky s scénářů](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Správa spouštěcí obrazovky s použitím scénářů](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> Od verze iOS 9 Apple doporučuje, aby scénářů má být použit jako primární metodou pro vytvoření obrazovky spustit.
+> Od verze iOS 9 Apple doporučuje že scénáři by měla sloužit jako primární způsob vytvoření obrazovky spuštění.
 
-### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Vytváření obrazem spustit pro starší než iOS 8 aplikací
+### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Vytvoření Image spusťte pro iOS před 8 aplikací
 
-Statický obrázek lze použít kromě .xib nebo Storyboard úvodní obrazovka, pokud aplikace cílí verzím iOS 8. 
+Statický obrázek je možné kromě .xib nebo scénáře spouštěcí obrazovky, pokud je aplikace určena pro verze před iOS 8. 
 
-Tento statický obrázek lze nastavit v souboru Info.plist nebo katalog Asset (pro iOS 7) ve vaší aplikaci. Musíte zajistit samostatné Image pro každé zařízení velikost (320 x 480, 640 x 960, 640 x 1136), které aplikace může být na. Další informace na velikost obrazovky spustit [spuštění bitové kopie obrazovky](~/ios/app-fundamentals/images-icons/launch-screens.md) průvodce.
+Tento statický obrázek lze nastavit v souboru Info.plist nebo katalog prostředků (pro iOS 7) ve vaší aplikaci. Je potřeba zadat samostatné Image pro každou velikost zařízení (320 × 480 měřiče, 640 × 960, 640 × 1136), vaše aplikace může běžet na. Další informace o velikosti obrazovky spuštění zobrazit [obrázky po spuštění obrazovky](~/ios/app-fundamentals/images-icons/launch-screens.md) průvodce.
 
 > [!IMPORTANT]
-> Pokud má vaše aplikace bez spuštění obrazovky, můžete si všimnout, že nevejdou plně na obrazovce. Pokud je to tento případ, musí si nezapomeňte zahrnout alespoň, 640 x 1136 obrázek s názvem `Default-568@2x.png` k vaší Info.plist. 
+> Pokud aplikace nemá žádná obrazovka spuštění, můžete si všimnout, že se nevejde plně na obrazovce. Pokud je to tento případ, by měl nezapomeňte zahrnout alespoň 640 × 1136 image s názvem `Default-568@2x.png` do souboru Info.plist. 
 
 
 
@@ -628,11 +628,11 @@ Tento statický obrázek lze nastavit v souboru Info.plist nebo katalog Asset (p
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Tento článek popsané postupy pro vývoj aplikací pro iOS prostřednictvím kódu programu v sadě Visual Studio. Jsme se podívali na tom, jak sestavit projekt z prázdná šablona projektu, hovoříte o tom, jak vytvořit a přidat řadič zobrazení kořenové do okna. Jsme potom vám ukázal, jak pomocí ovládacích prvků z UIKit můžete vytvořit zobrazení hierarchie v kontroleru k vývoji obrazovce aplikace. Potom jsme se zaměřili na tom, jak chcete-li zobrazení Rozvrhněte správně v různých orientaci a jsme viděli, jak vytvořit vlastní zobrazení vytváření podtříd `UIView`, a jak načíst zobrazení v kontroleru. Nakonec jsme prozkoumali úvodní obrazovka přidání do aplikace.
+Tento článek byl věnován k vývoji aplikací pro iOS prostřednictvím kódu programu v sadě Visual Studio. Jsme se podívali na tom, jak vytvořit projekt z šablony Prázdný projekt diskuzemi o tom, jak vytvořit a přidat kontroler zobrazení kořenové do okna. Jsme pak jsme si ukázali, jak používat ovládací prvky z UIKit vytvoření hierarchie v kontroleru zobrazení pro vývoj obrazovce aplikace. Dále jsme se zaměřili jak provést zobrazení rozložení odpovídajícím způsobem v různých orientace a jsme viděli, jak vytvořit vlastní zobrazení ve vytváření podtříd `UIView`, také o tom se načíst zobrazení v rámci kontroleru. Nakonec Prozkoumali jsme Přidání spouštěcí obrazovky do aplikace.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Tento článek popsané postupy pro vývoj aplikací pro iOS prostřednictvím kódu programu v sadě Visual Studio for Mac. Jsme se podívali na tom, jak sestavit projekt ze šablony jednoho zobrazení, hovoříte o tom, jak vytvořit a přidat řadič zobrazení kořenové do okna. Jsme potom vám ukázal, jak pomocí ovládacích prvků z UIKit můžete vytvořit zobrazení hierarchie v kontroleru k vývoji obrazovce aplikace. Potom jsme se zaměřili na tom, jak chcete-li zobrazení Rozvrhněte správně v různých orientaci a jsme viděli, jak vytvořit vlastní zobrazení vytváření podtříd `UIView`, a jak načíst zobrazení v kontroleru. Nakonec jsme prozkoumali úvodní obrazovka přidání do aplikace.
+Tento článek byl věnován k vývoji aplikací pro iOS prostřednictvím kódu programu v sadě Visual Studio pro Mac. Jsme se podívali na tom, jak vytvořit projekt z šablony jedno zobrazení diskuzemi o tom, jak vytvořit a přidat kontroler zobrazení kořenové do okna. Jsme pak jsme si ukázali, jak používat ovládací prvky z UIKit vytvoření hierarchie v kontroleru zobrazení pro vývoj obrazovce aplikace. Dále jsme se zaměřili jak provést zobrazení rozložení odpovídajícím způsobem v různých orientace a jsme viděli, jak vytvořit vlastní zobrazení ve vytváření podtříd `UIView`, také o tom se načíst zobrazení v rámci kontroleru. Nakonec Prozkoumali jsme Přidání spouštěcí obrazovky do aplikace.
 
 -----
 

@@ -6,15 +6,18 @@ ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
-ms.date: 11/07/2017
-ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/19/2018
+ms.openlocfilehash: d04012d5d2ea6a7617d5c7559aa3e1532dad15d1
+ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995154"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39156909"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Souhrn kapitola 7. XAML vs. kód
+
+> [!NOTE] 
+> Poznámky na této stránce označit oblasti, kde se Xamarin.Forms se rozcházela z materiály uvedené v seznamu.
 
 Xamarin.Forms podporuje založené na XML značky jazyka nazvaného Extensible Application Markup Language nebo XAML (vyslovováno "zaml"). XAML poskytuje alternativu k C# při definování rozložení uživatelského rozhraní aplikace Xamarin.Forms a definování vazeb mezi prvky uživatelského rozhraní a příslušná data.
 
@@ -35,6 +38,9 @@ Někdy musí být vlastnost nastavena na objekt, který nelze vyjádřen jako je
 ## <a name="adding-a-xaml-page-to-your-project"></a>Přidání stránky XAML do projektu
 
 Xamarin.Forms Přenosná knihovna tříd může obsahovat stránky XAML při prvním vytvoření nebo stránky XAML můžete přidat do existujícího projektu. V dialogovém okně Přidat novou položku, vyberte položku, která odkazuje na stránku XAML nebo `ContentPage` a XAML. (Ne `ContentView`.)
+
+> [!NOTE] 
+> Možnosti aplikace Visual Studio změnily od této kapitole byla zapsána.
 
 Se vytvoří dva soubory: soubor XAML s .xaml příponu názvu souboru a soubor jazyka C# s příponou. xaml.cs. Soubor C# se často označuje jako *použití modelu code-behind* souboru XAML. Soubor kódu na pozadí je definicí částečné třídy, která je odvozena z `ContentPage`. V okamžiku sestavení je analyzován XAML a jiné definice částečné třídy je generován pro tutéž třídu. Tato generovaná třída obsahuje metodu s názvem `InitializeComponent` , která je volána z konstruktoru soubor kódu na pozadí.
 
@@ -72,10 +78,9 @@ Prvek vlastnosti `Label` je `Text`.
 
  [![Trojitá snímek text variace sdílení](images/ch07fg03-small.png "variace Text ve formátu")](images/ch07fg03-large.png#lightbox "variace formátovaný Text")
 
-
-
 ## <a name="related-links"></a>Související odkazy
 
 - [Kapitola 7 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
 - [Ukázky kapitola 7](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 - [Ukázka kapitola 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [XAML – základy](~/xamarin-forms/xaml/xaml-basics/index.md)
