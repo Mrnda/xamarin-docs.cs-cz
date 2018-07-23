@@ -1,68 +1,68 @@
 ---
-title: Profilace – aplikace Xamarin.iOS s nástroji
-description: Tento dokument popisuje, jak pomocí nástroje aplikace společnosti Apple profil nainstalovat na zařízení nebo simulátoru aplikace pro Xamarin.iOS.
+title: Profilace aplikací Xamarin.iOS pomocí Instruments
+description: Tento dokument popisuje způsob použití společnosti Apple Instruments aplikace do profilu aplikace pro Xamarin.iOS nainstalovaný na zařízení nebo simulátor.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 9b6168eba91a87af88891b9e07e3dd395301cc48
+ms.sourcegitcommit: 021027b78cb2f8061b03a7c6ae59367ded32d587
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785609"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182205"
 ---
-# <a name="profiling-xamarinios-applications-with-instruments"></a>Profilace – aplikace Xamarin.iOS s nástroji
+# <a name="profiling-xamarinios-applications-with-instruments"></a>Profilace aplikací Xamarin.iOS pomocí Instruments
 
-Xcode **Instruments** je nástroj, který je možné do profilu aplikace Xamarin.iOS na zařízení nebo v simulátoru. Mono používá jeho těsně za běhu modelu kompilace kódu a nástroje není tento druh dat interpretovat dobře, tak může být složité pro práci s výstupem na základě simulátoru aplikace, které používají nástroje.
-Kvůli tomuto problému se zaměří Tato příručka o tom, jak používat aplikaci vývojáře k interpretaci Instruments výstupu v tomto dokumentu.
+Xcode **nástrojů** je nástroj, který je možné do profilu aplikace Xamarin.iOS na zařízení nebo simulátoru. Mono používá jeho Just-in-Time model pro kompilaci kódu a nástroje není tento druh dat interpretovat dobře, tak může být obtížné pro práci s výstup ze simulátoru aplikacím, které používají nástroje.
+Kvůli tomuto problému tato příručka se soustředí na tom, jak používat aplikace pro vývojáře k interpretaci výstupu nástroje v tomto dokumentu.
 
 ## <a name="requirements"></a>Požadavky
 
-Nástrojů Xcode lze spustit pouze v počítačích Mac.
+Instrumentů Xcode se spustí jenom v počítačích Mac.
 
-## <a name="opening-the-instruments-app"></a>Otevření nástrojů aplikace
+## <a name="opening-the-instruments-app"></a>Otevřete aplikaci nástroje
 
-Vyberte zařízení a spusťte aplikaci nástroje:
+Vyberte zařízení a spuštění aplikace nástrojů:
 
-1.  Otevřete projekt Xamarin.iOS v sadě Visual Studio for Mac.
-2.  Vyberte **ladění | iPhone** konfigurace.
-3.  Připojení zařízení s iOS k počítači.
-4.  V **spustit** nabídce vyberte možnost **odeslat do zařízení** . Aplikace se teď vytvořené a nahrané do zařízení.
-5.  V **nástroje** nabídce vyberte možnost **spuštění nástroje**.
+1. Otevřete projekt Xamarin.iOS v sadě Visual Studio pro Mac.
+2. Vyberte **ladění | iPhone** konfigurace.
+3. Připojte zařízení s Iosem k počítači.
+4. V **spustit** nabídce vyberte možnost **odeslat do zařízení** . Aplikace se teď vytvořené a do tohoto zařízení nahrát.
+5. V **nástroje** nabídce vyberte možnost **spuštění nástrojů**.
 
 
-Instruments bude nyní otevřít a zobrazit následující dialogové okno:
+Nástrojů se nyní otevřít a zobrazit následující dialogové okno:
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Výběr šablony profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Zvolit šablonu, profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
-Kliknutím vyberte **přidělení** šablony. Další šablony jsou platné, ale tento článek popisuje pouze **přidělení** šablonu profilu.
+Kliknutím vyberte **přidělení** šablony. Další šablony jsou platné, ale tento článek popisuje pouze to, **přidělení** šablonu profilu.
 
-Potom vyberte zařízení a aplikací pomocí nabídky v horní části okna:
+Potom vyberte zařízení a aplikací v nabídce v horní části okna:
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Vyberte zařízení a aplikací")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
-Zařízení s iOS by měl vybraný v nabídce v horní části okna a aplikace se profilovaným, měla by být vybrána vedle sebe (**MemoryDemo** na snímku obrazovky výše).
+V nabídce v horní části okna by měla vybrané zařízení s Iosem a aplikací určených k profilaci, by měla být zaškrtnutá vedle něj (**MemoryDemo** ve výše uvedeném snímku obrazovky).
 
-Pokud zařízení není uvedené v části v nabídce, podívejte se **konzoly** v sadě Visual Studio pro Mac pro chybové zprávy, které mohou být zobrazeny, když chcete aplikaci nasadit do zařízení. Ujistěte se také, zařízení zřízená pro vývoj prostřednictvím Xcode médií.
+Pokud zařízení není uvedený v seznamu v nabídce, zkontrolujte, **konzoly** v sadě Visual Studio for Mac pro chybové zprávy, které se může zobrazit při nasazení aplikace do zařízení. Také se ujistěte, že zařízení byla zřízena pro vývoj až po médií Xcode.
 
-Klikněte na tlačítko **zvolte** by se měla objevit tlačítko a na další obrazovce:
+Klikněte na tlačítko **zvolit** by se měla zobrazit tlačítko a na další obrazovce:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Rozhraní profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Rozhraní profilování")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
-Klikněte na tlačítko záznam (červené kolečko v levé horní části) ke spuštění profilování.
+Klikněte na tlačítko záznam (červený kruh vlevo nahoře) spuštění profilování.
 
-Následující snímek obrazovky ukazuje příklad profilace pomocí **Instruments**:
+Následující snímek obrazovky ukazuje příklad profilace pomocí **nástrojů**:
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Příklad profilace pomocí nástroje")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Příklad použití nástrojů pro profilaci")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 
-Tento průvodce vám ukázal, jak spustit nástrojů Xcode k monitorování aplikace pro iOS z v sadě Visual Studio for Mac. Pokračujte [Instruments návod](~/ios/deploy-test/walkthrough-apples-instrument.md) příklad toho, jak diagnostikovat chybu paměti pomocí nástroje.
+Tento průvodce vám ukázal, jak spustit nástroje Xcode pro monitorování aplikací pro iOS ze sady Visual Studio pro Mac. Pokračujte [nástrojů návod](~/ios/deploy-test/walkthrough-apples-instrument.md) příklad toho, jak pro diagnostiku problému paměti pomocí nástroje.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Návod nástroje](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Uvolňování paměti Xamarin.iOS](https://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/)
+- [Názorný postup nástroje](~/ios/deploy-test/walkthrough-apples-instrument.md)
+- [Uvolňování paměti Xamarin.iOS (příspěvek na blogu)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

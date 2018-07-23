@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: ab810a2fdfc659e2f5f24d2646c044e9c8638258
+ms.sourcegitcommit: 3697c2aa4208fe2ac954a8c0297394d3bcb53ede
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998983"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175187"
 ---
-# <a name="ios-platform-specifics"></a>iOS specifik platforem
+# <a name="ios-platform-specifics"></a>iOS specifik platforem 
 
 _Specifika platforem umožňují používat funkce, která je dostupná jenom na konkrétní platformě, bez implementace vlastní renderery nebo účinky. Tento článek ukazuje, jak využívat iOS specifik platforem, které jsou součástí Xamarin.Forms._
 
@@ -620,7 +620,7 @@ Výsledkem je, že lze povolit vrhá stín [ `VisualElement` ](xref:Xamarin.Form
 
 Když [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) je připojen k zobrazení v posouvání zobrazení, všechny pan gesta jsou zachyceny na základě `PanGestureRecognizer` a nebudou předány posouvání zobrazení. Proto se už posune posouvání zobrazení.
 
-Povolí toto specifické pro platformu `PanGestureRecognizer` v posouvání zobrazení k zaznamenání a sdílení pan gesta s možností posouvání zobrazení. V XAML je využívá tak, že nastavíte [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) připojené vlastnosti `true`:
+Povolí toto specifické pro platformu `PanGestureRecognizer` v posouvání zobrazení k zaznamenání a sdílení pan gesta s možností posouvání zobrazení. V XAML je využívá tak, že nastavíte [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.PanGestureRecognizerShouldRecognizeSimultaneouslyProperty) připojené vlastnosti `true`:
 
 ```xaml
 <Application ...
@@ -640,7 +640,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, jestli je pro rozpoznávání gest posouvání v posouvání zobrazení se zachytit gesta pan nebo zachycení a sdílení posun gesta s možností posouvání zobrazení. Kromě toho [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) lze metoda vrátí, zda gesta pan dostaly posouvání zobrazení, která obsahuje [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+`Application.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.SetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, jestli je pro rozpoznávání gest posouvání v posouvání zobrazení se zachytit gesta pan nebo zachycení a sdílení posun gesta s možností posouvání zobrazení. Kromě toho [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Application.GetPanGestureRecognizerShouldRecognizeSimultaneously(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Application})) lze metoda vrátí, zda gesta pan dostaly posouvání zobrazení, která obsahuje [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
 
 Proto se tento konkrétní platformy povolena, když [ `ListView` ](xref:Xamarin.Forms.ListView) obsahuje [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), i `ListView` a `PanGestureRecognizer` obdrží pan gesta a ji zpracovat. Avšak v této konkrétní platformy zakázán, když `ListView` obsahuje `PanGestureRecognizer`, `PanGestureRecognizer` zachytíte pan gesta a zpracovávat je a `ListView` neobdrží gesta pan.
 
