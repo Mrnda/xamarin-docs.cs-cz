@@ -310,6 +310,7 @@
 ## [Pokročilé koncepty a vnitřní fungování](internals/index.md)
 ### [Rychlé renderery](internals/fast-renderers.md)
 ### [.NET Standard](internals/net-standard.md)
+### [Řešení závislostí](internals/dependency-resolution.md)
 ## [Odstraňování potíží](troubleshooting/index.md)
 ### [Nejčastější dotazy](troubleshooting/questions/index.md)
 #### [Můžu aktualizovat výchozí šablonu Xamarin.Forms na novější balíček NuGet?](troubleshooting/questions/update-forms-template.md)
