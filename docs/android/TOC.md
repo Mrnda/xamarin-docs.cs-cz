@@ -113,6 +113,8 @@
 ## [Funkce platformy](platform/index.md)
 ### [Android Beam](platform/android-beam.md)
 ### [Manifest v Androidu](platform/android-manifest.md)
+### [Přístup k souborům pomocí nástroje Xamarin.Android](platform/files/index.md)
+#### [Externí úložiště](platform/files/external-storage.md)
 ### [Ověřování pomocí otisku prstu](platform/fingerprint-authentication/index.md)
 #### [Začínáme](platform/fingerprint-authentication/get-started.md)
 #### [Skenování otisků prstů](platform/fingerprint-authentication/scanning.md)

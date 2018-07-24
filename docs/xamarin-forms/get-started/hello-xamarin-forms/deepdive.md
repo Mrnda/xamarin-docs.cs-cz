@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996230"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203095"
 ---
 # <a name="xamarinforms-deep-dive"></a>Podrobně o infrastruktuře Xamarin.Forms
 
@@ -79,7 +79,7 @@ Projekt se také skládá počet souborů:
 - **MainPage.xaml.cs** – kódu pro `MainPage` třídu, která obsahuje obchodní logiku, která se spustí, až uživatel pracuje se na stránce.
 - **PhoneTranslator.cs** – obchodní logiky, který je zodpovědný za převod aplikace word telefonní na telefonní číslo, které se vyvolá z **MainPage.xaml.cs**.
 
-Další informace o anatomií aplikaci Xamarin.iOS, naleznete v tématu [anatomie aplikace pro Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Další informace o anatomií aplikace pro Xamarin.Android, naleznete v tématu [anatomie aplikace Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Další informace o anatomií aplikaci Xamarin.iOS, naleznete v tématu [anatomie aplikace pro Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application). Další informace o anatomií aplikace pro Xamarin.Android, naleznete v tématu [anatomie aplikace Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
 ## <a name="architecture-and-application-fundamentals"></a>Architektura a principy aplikací
 

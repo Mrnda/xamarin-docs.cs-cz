@@ -6,19 +6,19 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/13/2018
+ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995861"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203108"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Editor
 
 _Víceřádkový textový vstup_
 
-`Editor` Ovládací prvek se používá tak, aby přijímal Víceřádkový vstupní. Tento článek se zabývá:
+[ `Editor` ](xref:Xamarin.Forms.Editor) Ovládací prvek se používá tak, aby přijímal Víceřádkový vstupní. Tento článek se týká:
 
 - **[Přizpůsobení](#customization)**  &ndash; možnosti klávesnice a barvu.
 - **[Interakce](#interactivity)**  &ndash; události, které mohou být data pro interaktivitu.
@@ -27,7 +27,7 @@ _Víceřádkový textový vstup_
 
 ### <a name="setting-and-reading-text"></a>Nastavení a čtení textu
 
-`Editor`, Stejně jako ostatní zobrazení nabízí ten samý text zpřístupňuje `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text na předložený `Editor`. Následující příklad ukazuje nastavení `Text` vlastnost v XAML:
+[ `Editor` ](xref:Xamarin.Forms.Editor), Stejně jako ostatní zobrazení nabízí ten samý text zpřístupňuje `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text na předložený `Editor`. Následující příklad ukazuje nastavení `Text` vlastnost v XAML:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -59,20 +59,86 @@ var editor = new Editor { ... MaxLength = 10 };
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že žádný vstup bude možné a hodnotu `int.MaxValue`, což je výchozí hodnota pro [ `Editor` ](xref:Xamarin.Forms.Editor), označuje, že je žádný platit omezení počtu znaků, které mohou být zadány.
 
-### <a name="keyboards"></a>Klávesnice
+### <a name="auto-sizing-an-editor"></a>Automatické nastavování editoru
 
-Klávesnice, který se zobrazí, když uživatelé možnost zasahovat `Editor` lze programově nastavit prostřednictvím [ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard) vlastnost.
+[ `Editor` ](xref:Xamarin.Forms.Editor) Můžete provést na automatickou velikost na jeho obsah tak, že nastavíte [ `Editor.AutoSize` ](xref:Xamarin.Forms.Editor.AutoSize) vlastnost [ `TextChanges` ](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges), má hodnotu [ `EditoAutoSizeOption` ](xref:Xamarin.Forms.EditorAutoSizeOption) výčtu. Tento výčet má dvě hodnoty:
 
-Možnosti pro typ klávesnice jsou:
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) Označuje, že automatickou změnu velikosti je zakázané a je výchozí hodnota.
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) Určuje, zda je povolena automatická změna velikosti.
 
-- **Výchozí** &ndash; výchozí klávesnice
-- **Chat** &ndash; použít pro odesílání textových zpráv a místa kde jsou užitečné emoji
-- **E-mailu** &ndash; použít při zadávání e-mailové adresy
-- **Číselné** &ndash; při zadání čísel
-- **Telefonní** &ndash; použít při zadávání telefonní čísla
-- **Adresa URL** &ndash; používá pro zadání cesty k souborům & webové adresy
+To lze provést v kódu následujícím způsobem:
 
-Je [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v oddílu recepty.
+```xaml
+<Editor Text="Enter text here" AutoSize="TextChanges" />
+```
+
+```csharp
+var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOption.TextChanges };
+```
+
+Pokud je povolená Automatická změna velikosti, výšku [ `Editor` ](xref:Xamarin.Forms.Editor) zvýší, když uživatel zadal s textem a výšku se sníží, protože uživatel odstraní text.
+
+> [!NOTE]
+> [ `Editor` ](xref:Xamarin.Forms.Editor) Bude if není Automatická velikost [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) byla nastavena vlastnost.
+
+### <a name="customizing-the-keyboard"></a>Přizpůsobení klávesnice
+
+Klávesnice, který se zobrazí, když uživatelé možnost zasahovat [ `Editor` ](xref:Xamarin.Forms.Editor) lze programově nastavit prostřednictvím [ `Keyboard` ](xref:Xamarin.Forms.InputView.Keyboard) vlastnost na jednu z následujících vlastností z [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) třídy:
+
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) – pro odesílání textových zpráv a místa, kde je užitečné emoji.
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) – výchozí klávesnice.
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) – Při zadávání e-mailové adresy.
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) – Při zadávání čísel.
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) – Při zadávání textu, bez jakékoli [ `KeyboardFlags` ](xref:Xamarin.Forms.KeyboardFlags) zadané.
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) – Při zadávání telefonních čísel.
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) – Při zadávání textu.
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) – používá se pro zadání cesty k souborům & webové adresy.
+
+To lze provést v XAML následujícím způsobem:
+
+```xaml
+<Editor Keyboard="Chat" />
+```
+
+Ekvivalentní kód jazyka C# je:
+
+```csharp
+var editor = new Editor { Keyboard = Keyboard.Chat };
+```
+
+Příklady každý klávesnice můžete najít v našich [recepty](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) úložiště.
+
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Třída má také [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) metoda factory, která slouží k přizpůsobení klávesnice zadáním chování malá a velká písmena, kontrola pravopisu a návrh. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) hodnoty výčtu uvedené jako argumenty pro metody s přizpůsobeným `Keyboard` se vrací. `KeyboardFlags` Výčet obsahuje následující hodnoty:
+
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – žádné funkce byly přidány na klávesnici.
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – Označuje, že první písmeno prvního slova větě zadané budou automaticky velká.
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) – Označuje, že kontrola pravopisu se provede na zadaný text.
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) – označuje toto slovo dokončování budou nabízet v zadaným textem.
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) – Označuje, že první písmeno každého slova budou automaticky velká.
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) – Označuje, že každému znaku budou automaticky velká.
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) – Označuje, že dojde k žádné automatické malá a velká písmena.
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) – Označuje, že kontrola pravopisu, dokončování slov a větu malá a velká písmena dojde u zadaným textem.
+
+Následující příklad kódu XAML ukazuje, jak přizpůsobit výchozí [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) nabízí dokončování slov, a využijte každý zadaný znak:
+
+```xaml
+<Editor>
+    <Editor.Keyboard>
+        <Keyboard x:FactoryMethod="Create">
+            <x:Arguments>
+                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+            </x:Arguments>
+        </Keyboard>
+    </Editor.Keyboard>
+</Editor>
+```
+
+Ekvivalentní kód jazyka C# je:
+
+```csharp
+var editor = new Editor();
+editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
+```
 
 ### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontroly pravopisu
 

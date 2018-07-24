@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 351119a8b0089f78d4ce98729a1516c3cd7bae7b
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38998297"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39203082"
 ---
 # <a name="customizing-a-map-pin"></a>Přizpůsobení špendlíku mapy
 
@@ -240,7 +240,7 @@ namespace CustomRenderer.iOS
 `GetViewForAnnotation` Metoda přijímá `IMKAnnotation` , který obsahuje data, poznámky a vrátí `MKAnnotationView` pro zobrazení na mapě a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
-MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
 {
     MKAnnotationView annotationView = null;
 
@@ -273,12 +273,12 @@ Tato metoda zajišťuje, že poznámka se zobrazí jako vlastní image, nikoli j
 1. `GetCustomPin` Metoda je volána k vrácení dat vlastní kód pin pro poznámku.
 1. Pro konzervaci paměti, zobrazit poznámky je ve fondu pro další použití volání [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
 1. `CustomMKAnnotationView` Třída rozšiřuje `MKAnnotationView` třídy s `Id` a `Url` vlastnostmi, které odpovídají na stejné vlastnosti v `CustomPin` instance. Novou instanci třídy `CustomMKAnnotationView` se vytvoří, za předpokladu, že je Poznámka `null`:
-  - `CustomMKAnnotationView.Image` Je nastavena na bitovou kopii, která bude představovat poznámky na mapě.
-  - `CustomMKAnnotationView.CalloutOffset` Je nastavena na `CGPoint` , která určuje, že bude popisek nad Poznámka na střed.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Je nastavena na obrázek opic, který se zobrazí nalevo od názvu poznámky a adresu.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Je nastavena na *informace* tlačítko, které se zobrazí napravo od názvu poznámky a adresu.
-  - `CustomMKAnnotationView.Id` Je nastavena na `CustomPin.Id` vlastnosti vrácené `GetCustomPin` metody. To umožňuje anotaci musí identifikovat tak, aby byly [popisek se dají dál přizpůsobit](#Selecting_the_Annotation), v případě potřeby.
-  - `CustomMKAnnotationView.Url` Je nastavena na `CustomPin.Url` vlastnosti vrácené `GetCustomPin` metody. Adresu URL se přejde poté, kdy uživatel [klepne na tlačítko v pravém popisek příslušenství zobrazení](#Tapping_on_the_Right_Callout_Accessory_View).
+    - `CustomMKAnnotationView.Image` Je nastavena na bitovou kopii, která bude představovat poznámky na mapě.
+    - `CustomMKAnnotationView.CalloutOffset` Je nastavena na `CGPoint` , která určuje, že bude popisek nad Poznámka na střed.
+    - `CustomMKAnnotationView.LeftCalloutAccessoryView` Je nastavena na obrázek opic, který se zobrazí nalevo od názvu poznámky a adresu.
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` Je nastavena na *informace* tlačítko, které se zobrazí napravo od názvu poznámky a adresu.
+    - `CustomMKAnnotationView.Id` Je nastavena na `CustomPin.Id` vlastnosti vrácené `GetCustomPin` metody. To umožňuje anotaci musí identifikovat tak, aby byly [popisek se dají dál přizpůsobit](#Selecting_the_Annotation), v případě potřeby.
+    - `CustomMKAnnotationView.Url` Je nastavena na `CustomPin.Url` vlastnosti vrácené `GetCustomPin` metody. Adresu URL se přejde poté, kdy uživatel [klepne na tlačítko v pravém popisek příslušenství zobrazení](#Tapping_on_the_Right_Callout_Accessory_View).
 1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Je nastavena na `true` tak, aby popisek se zobrazí po klepnutí na poznámku.
 1. Poznámka se vrátí k zobrazení na mapě.
 

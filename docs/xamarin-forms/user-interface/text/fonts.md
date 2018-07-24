@@ -1,35 +1,35 @@
 ---
-title: V Xamarin.Forms písem.
-description: Tento článek vysvětluje, jak můžete určit informace o písma na ovládací prvky, které zobrazí text v aplikacích Xamarin.Forms.
+title: Písma v Xamarin.Forms
+description: Tento článek vysvětluje, jak k určení informace písma pro ovládací prvky, které se zobrazí text v aplikacích Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3d5fe936da9086dd7201b7ee7d91185b81eb65a1
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: e6635bc13214a5a4e728fa3e71db86a8ea1c39d6
+ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269028"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202952"
 ---
-# <a name="fonts-in-xamarinforms"></a>V Xamarin.Forms písem.
+# <a name="fonts-in-xamarinforms"></a>Písma v Xamarin.Forms
 
-Tento článek popisuje, jak Xamarin.Forms umožňuje určit atributy písma (včetně váhy a velikost) na ovládací prvky, které zobrazení textu. Písmo informace může být [zadaný v kódu](#Setting_Font_in_Code) nebo [zadaný v jazyce XAML](#Setting_Font_in_Xaml).
-Je také možné použít [vlastní písma](#Using_a_Custom_Font).
+Tento článek popisuje, jak Xamarin.Forms umožňuje zadat atributy písma (včetně váhy a velikosti) na ovládací prvky, které se zobrazí text. Písmo informace mohou být [zadat v kódu](#Setting_Font_in_Code) nebo [zadané v XAML](#Setting_Font_in_Xaml).
+Je také možné použít [vlastní písmo](#Using_a_Custom_Font).
 
 <a name="Setting_Font_in_Code" />
 
 ## <a name="setting-font-in-code"></a>Nastavení písma v kódu
 
-Použijte tři písma související vlastnosti všech ovládacích prvků, které zobrazují text:
+Použijte tři vlastnosti související s písma všech ovládacích prvků, které se zobrazí text:
 
 - **FontFamily** &ndash; `string` název písma.
-- **Velikost písma** &ndash; velikost písma jako `double`.
-- **FontAttributes** &ndash; řetězec určující informace o stylu jako *Kurzíva* a **Bold** (pomocí `FontAttributes` výčet v jazyce C#).
+- **FontSize** &ndash; velikost písma jako `double`.
+- **FontAttributes** &ndash; řetězec určující styl informace, například *Kurzíva* a **tučné** (pomocí `FontAttributes` výčtu v jazyce C#).
 
-Tento kód ukazuje, jak vytvořit popisek a určete velikost písma a váhu k zobrazení:
+Tento kód ukazuje, jak vytvořit popisek a určete velikost písma a váhy k zobrazení:
 
 ```csharp
 var about = new Label {
@@ -43,20 +43,20 @@ var about = new Label {
 
 ### <a name="font-size"></a>Velikost písma
 
-`FontSize` Může být nastavena na hodnotu double, například:
+`FontSize` Vlastnost lze nastavit na hodnotu double pro instanci:
 
 ```csharp
 label.FontSize = 24;
 ```
 
-Můžete také `NamedSize` výčet, který obsahuje čtyři integrované možnosti; Xamarin.Forms vybere nejlepší velikost pro každou platformu.
+Můžete také použít `NamedSize` výčet, který obsahuje čtyři integrované možnosti; Xamarin.Forms zvolí ideální velikost pro každou platformu.
 
 -  **Micro**
--  **Malá**
+-  **Malé**
 -  **Střední**
--  **Velká**
+-  **Velké**
 
-`NamedSize` Výčtu lze použít kdekoli `FontSize` je možné zadat pomocí `Device.GetNamedSize` způsobů, jak převést hodnotu na `double`:
+`NamedSize` Výčtu lze použít všude, kde `FontSize` lze pomocí `Device.GetNamedSize` způsobů, jak převést hodnotu na `double`:
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
@@ -66,45 +66,21 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 
 ### <a name="font-attributes"></a>Atributy písma
 
-Styly písma, jako **tučné** a *Kurzíva* lze nastavit u `FontAttributes` vlastnost. Aktuálně jsou podporovány následující hodnoty:
+Styly písma, jako **tučné** a *Kurzíva* lze nastavit na `FontAttributes` vlastnost. Aktuálně jsou podporovány následující hodnoty:
 
 -  **None**
--  **Bold**
+-  **Tučné**
 -  **Kurzíva**
 
-`FontAttribute` Výčtu je možné následujícím způsobem (můžete určit jeden atribut nebo `OR` je společně):
+`FontAttribute` Výčtu je možné následujícím způsobem (můžete zadat jeden atribut nebo `OR` dohromady):
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="formattedstring"></a>FormattedString
+### <a name="setting-font-info-per-platform"></a>Informace o nastavení písma jednotlivé platformy
 
-Některé ovládací prvky Xamarin.Forms (například `Label`) podporovat i jiné písmo atributy v rámci řetězec pomocí `FormattedString` třídy. A `FormattedString` se skládá z jedné nebo více `Span`s, z nichž každá může mít svůj vlastní formátování atributy.
-
-`Span` Třída má následující atributy:
-
-* **Text** &ndash; hodnota pro zobrazení
-* **FontFamily** &ndash; název písma
-* **Velikost písma** &ndash; velikost písma
-* **FontAttributes** &ndash; jako informace o stylu *Kurzíva* a **tučně**
-* **ForegroundColor** &ndash; barvy
-* **BackgroundColor** &ndash; barva pozadí
-
-Příklad vytváření a zobrazování `FormattedString` jsou uvedeny níže &ndash; Všimněte si, že je přiřazena k zobrazí popisky `FormattedText` vlastnost a ne `Text` vlastnost.
-
-```csharp
-var labelFormatted = new Label ();
-var fs = new FormattedString ();
-fs.Spans.Add (new Span { Text="Red, ", ForegroundColor = Color.Red, FontSize = 20, FontAttributes = FontAttributes.Italic });
-fs.Spans.Add (new Span { Text=" blue, ", ForegroundColor = Color.Blue, FontSize = 32 });
-fs.Spans.Add (new Span { Text=" and green!", ForegroundColor = Color.Green, FontSize = 12 });
-labelFormatted.FormattedText = fs;
-```
-
-### <a name="setting-font-info-per-platform"></a>Informace o nastavení písma na každou platformu
-
-Případně `Device.RuntimePlatform` vlastnost lze nastavit různé názvy písem pro každou platformu, jak je předvedeno v tento kód:
+Další možností `Device.RuntimePlatform` vlastnost lze nastavit různé názvy na jednotlivých platformách, jak je ukázáno v tomto kódu:
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "Lobster-Regular" :
@@ -113,20 +89,20 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 ```
 
-Je dobré zdroj informací písma pro iOS [iosfonts.com](http://iosfonts.com).
+Dobrým zdrojem informací písma pro iOS je [iosfonts.com](http://iosfonts.com).
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="setting-the-font-in-xaml"></a>Nastavení písma v jazyce XAML
+## <a name="setting-the-font-in-xaml"></a>Nastavení písma v XAML
 
-Tento zobrazovaný text všechny ovládací prvky Xamarin.Forms `Font` vlastnost, která můžete nastavit v jazyce XAML. Nejjednodušší způsob, jak nastavit písmo v jazyce XAML je použití hodnoty výčtu s názvem velikost, jak je uvedeno v následujícím příkladu:
+Tento text zobrazení všech určuje Xamarin.Forms `Font` vlastnost, která je možné nastavit v XAML. Nejjednodušší způsob, jak nastavit písmo v XAML je použití hodnoty výčtu s názvem velikost, jak je znázorněno v tomto příkladu:
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-Je integrované převaděč pro `Font` vlastnost, která umožňuje všechna nastavení písma být vyjádřena jako hodnotu řetězce v jazyce XAML. Následující příklady ukazují, jak můžete zadat atributy písma a velikosti v jazyce XAML:
+Je integrované převaděč pro `Font` vlastnost, která umožňuje všechny nastavení písma a být vyjádřen jako hodnotu řetězce v XAML. Následující příklady ukazují, jak můžete zadat atributy písma a velikosti v XAML:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -134,7 +110,7 @@ Je integrované převaděč pro `Font` vlastnost, která umožňuje všechna nas
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-Chcete-li určit více `Font` nastavení zkombinovat do jednoho požadovaná nastavení `Font` atribut řetězec. Řetězec atributu písma musí být formátována jako `"[font-face],[attributes],[size]"`. Je důležité pořadí parametrů, všechny parametry jsou volitelné a více `attributes` lze zadat, například:
+Chcete-li zadat více `Font` nastavení, zkombinovat do jednoho požadovaná nastavení `Font` atribut řetězců. Atribut řetězců písmo by měl být ve formátu `"[font-face],[attributes],[size]"`. Je důležité pořadí parametrů, všechny parametry jsou volitelné a více `attributes` lze upravit, například:
 
 ```xaml
 <Label Text="Small bold text" Font="Bold, Micro" />
@@ -142,23 +118,7 @@ Chcete-li určit více `Font` nastavení zkombinovat do jednoho požadovaná nas
 <Label Text="Really big bold and italic text" Font="Bold, Italic, 72"  />
 ```
 
-`FormattedString` Třídu lze také použít v jazyce XAML, jak je vidět tady:
-
-```xaml
-<Label>
-    <Label.FormattedText>
-        <FormattedString>
-            <FormattedString.Spans>
-                <Span Text="Red, " ForegroundColor="Red" FontAttributes="Italic" FontSize="20" />
-                <Span Text=" blue, " ForegroundColor="Blue" FontSize="32" />
-                <Span Text=" and green! " ForegroundColor="Green" FontSize="12"/>
-            </FormattedString.Spans>
-        </FormattedString>
-    </Label.FormattedText>
-</Label>
-```
-
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) Můžete také použít v jazyce XAML k vykreslení jiné písmo na každou platformu. Následující příklad používá řez vlastní písmo v systému iOS (<span style="font-family:MarkerFelt-Thin">dynamicky MarkerFelt</span>) a určuje pouze velikost/atributy na jiných platformách:
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) Můžete také použít v XAML k vykreslení písmo na jednotlivých platformách. V následujícím příkladu vlastní písmo plochy v systému iOS (<span style="font-family:MarkerFelt-Thin">dynamicky MarkerFelt</span>) a určuje pouze velikost/atributy na jiných platformách:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -172,26 +132,26 @@ Chcete-li určit více `Font` nastavení zkombinovat do jednoho požadovaná nas
 </Label>
 ```
 
-Při zadávání řez vlastní písma, vždycky je vhodné použít `OnPlatform`, protože je obtížné vyhledat písmo, které je k dispozici na všech platformách.
+Při zadávání řez vlastní písma, je vždy vhodné použít `OnPlatform`, protože je obtížné najít písma, která je k dispozici na všech platformách.
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="using-a-custom-font"></a>Pomocí vlastního písma
+## <a name="using-a-custom-font"></a>Pomocí vlastní písma
 
-Použití písem než předdefinované řezů písma vyžaduje některé specifické pro platformu kódování. Tento snímek obrazovky ukazuje vlastní písmo **severského** z [Google open-source písem](https://www.google.com/fonts) vykreslen pomocí Xamarin.Forms.
+Pomocí písma než integrované řezů písma vyžaduje kódování specifické pro platformu. Tento snímek obrazovky ukazuje toto písmo **Lobster** z [písma open source od Googlu](https://www.google.com/fonts) vykreslen pomocí Xamarin.Forms.
 
- [![Vlastní písma na iOS a Android](fonts-images/custom-sml.png "vlastní písem příklad")](fonts-images/custom.png#lightbox "příklad vlastní písem")
+ [![Vlastní písmo v Iosu a Androidu](fonts-images/custom-sml.png "vlastní písma příklad")](fonts-images/custom.png#lightbox "příkladu vlastní písma")
 
-Níže jsou uvedeny kroky potřebné pro každou platformu. Při zahrnutí souborů vlastní písma s aplikací, ujistěte se, že jste ověřte, jestli písma licence poskytuje pro distribuci.
+Níže jsou uvedené kroky potřebné pro každou platformu. Při zahrnutí souborů vlastního písma do aplikace, nezapomeňte si ověřit, že licence písma umožňuje distribuci.
 
 ### <a name="ios"></a>iOS
 
-Je možné zobrazit vlastní písma tak, že nejdřív zajistit, že je načtena, pak na ně odkazovat podle názvu pomocí Xamarin.Forms `Font` metody.
-Postupujte podle pokynů v [tomto příspěvku na blogu](http://blog.xamarin.com/custom-fonts-in-ios/):
+Je možné zobrazit vlastní písma tak, že nejdřív se ujistíme, že je načtena, pak na ni odkazuje podle názvu pomocí Xamarin.Forms `Font` metody.
+Postupujte podle pokynů v [tento příspěvek na blogu](http://blog.xamarin.com/custom-fonts-in-ios/):
 
-1. Přidejte soubor písma s **akce sestavení: BundleResource**, a
-2. Aktualizace **Info.plist** souboru (**písem poskytované aplikace**, nebo `UIAppFonts`, klíče), pak
-3. Na ni odkazuje podle názvu bez ohledu na definujete písmo v Xamarin.Forms!
+1. Přidat soubor písma s **Build Action: BundleResource**, a
+2. Aktualizace **Info.plist** souboru (**písma poskytnutá aplikací**, nebo `UIAppFonts`, key), pak
+3. Na ni odkazovat podle názvu bez ohledu na to definujete písmo v Xamarin.Forms!
 
 ```csharp
 new Label
@@ -203,7 +163,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-Xamarin.Forms pro Android můžete odkazovat vlastní písma, který byl přidán do projektu podle konkrétní standardní pojmenování. Nejprve přidat soubor písma **prostředky** složky v projektu aplikace a sadu *akce sestavení: AndroidAsset*. Pak použijte úplnou cestu a *název písma* oddělených křížku (#) jako název písma v Xamarin.Forms, jak ukazuje následující fragment kódu:
+Xamarin.Forms pro Android můžete odkazovat na vlastní písmo, které byly přidány do projektu podle konkrétní standardní pojmenování. Nejprve přidat soubor písmo **prostředky** složky v projektu aplikace a nastavte *Build Action: AndroidAsset*. Potom použít úplnou cestu a *název písma* oddělené hodnoty hash (#) jako název písma v Xamarin.Forms, jak ukazuje následující fragment kódu:
 
 ```csharp
 new Label
@@ -215,7 +175,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Vlastní písma, který byl přidán do projektu podle konkrétní standardní pojmenování můžete odkazovat Xamarin.Forms na platformách systému Windows. Nejprve přidat soubor písma **/Assets/písem/** složky v projektu aplikace a sadu <span class="UIItem">sestavení akce: obsah</span>. Pak použijte úplnou cestu a písma filename, za nímž následuje křížku (#) a <span class="UIItem">název písma</span>, jak ukazuje následující fragment kódu:
+Xamarin.Forms pro platformy Windows můžete odkazovat na vlastní písmo, které byly přidány do projektu podle konkrétní standardní pojmenování. Nejprve přidat soubor písmo **/Assets/písma/** složky v projektu aplikace a nastavte <span class="UIItem">sestavení: obsah akce</span>. Potom použijte úplnou cestu a písma názvu souboru, za nímž následuje hodnoty hash (#) a <span class="UIItem">název písma</span>, jak ukazuje následující fragment kódu:
 
 ```csharp
 new Label
@@ -226,13 +186,13 @@ new Label
 ```
 
 > [!NOTE]
-> Poznámka: název souboru písma a název písma může lišit. Chcete-li zjistit název písmo v systému Windows, klikněte pravým tlačítkem na soubor ttf a vyberte **Preview**. Název písma můžete určit pak z okna náhledu.
+> Všimněte si, že písmo názvu souboru a název písma může být jiný. Chcete-li zjistit název písma ve Windows, klikněte pravým tlačítkem na soubor ttf a vyberte **ve verzi Preview**. Název písma se potom dá určit z okna náhledu.
 
-Společný kód aplikace je nyní dokončen. Kód programu Telefon specifické pro platformu phone se teď implementuje jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+Společný kód aplikace je nyní dokončena. Specifické pro platformu telefonní vytáčecí zařízení kódu budou nyní implementovány jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 ### <a name="xaml"></a>XAML
 
-Můžete také použít [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) v jazyce XAML pro vykreslení vlastního písma:
+Můžete také použít [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) v XAML pro vykreslení vlastního písma:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -250,10 +210,9 @@ Můžete také použít [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/de
 
 ## <a name="summary"></a>Souhrn
 
-Xamarin.Forms poskytuje jednoduché výchozí nastavení, umožňují velikost textu snadno pro všechny podporované platformy. Také umožňuje vám určit vzhled písma a velikost &ndash; i pro každou platformu &ndash; po požadované jemněji odstupňované řízení. `FormattedString` Třídu lze použít k vytvoření řetězec obsahující specifikace jiné písmo pomocí `Span` třídy.
+Xamarin.Forms poskytuje jednoduchý výchozí nastavení, které umožňují upravit velikost textu u všech podporovaných platformách. Můžete ho taky určit vzhled písma a velikost &ndash; i jinak pro každou platformu &ndash; při vyžádáním jemněji odstupňovanou kontrolu.
 
-Písmo informace lze zadat také v jazyce XAML pomocí atributů správně formátovaného písma nebo `FormattedString` element s `Span` podřízené objekty.
-
+Písmo informace lze zadat také v XAML pomocí atributů správně formátované písma.
 
 ## <a name="related-links"></a>Související odkazy
 
