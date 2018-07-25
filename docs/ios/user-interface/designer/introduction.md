@@ -1,102 +1,102 @@
 ---
-title: iOS základy návrháře
-description: Tento průvodce představuje návrháře Xamarin pro iOS. Ukazuje, jak používat iOS Návrhář vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti.
+title: Základy iOS designeru
+description: Tato příručka představuje návrháře Xamarin pro iOS. Ukazuje, jak používat v iOS designeru vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti.
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: 7e36a402619813214e821f3060e053d76c99cfb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6905eddbc4488b08f9c9e896efe5f980e0e03345
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30784255"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242365"
 ---
-# <a name="ios-designer-basics"></a>iOS základy návrháře
+# <a name="ios-designer-basics"></a>Základy iOS designeru
 
-_Tento průvodce představuje návrháře Xamarin pro iOS. Ukazuje, jak používat iOS Návrhář vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti._
+_Tato příručka představuje návrháře Xamarin pro iOS. Ukazuje, jak používat v iOS designeru vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti._
 
-Návrhář Xamarin pro iOS je podobná Xcode na rozhraní tvůrce vizuální rozhraní návrháře a Android návrháře. Mezi její mnoho funkcí patří bezproblémovou integraci s Visual Studio pro Mac a Visual Studio 2015 a 2017, přetahování myší, rozhraní pro nastavení obslužné rutiny událostí a možnost k vykreslení vlastní ovládací prvky.
+Návrhář Xamarin pro iOS je podobný Tvůrce rozhraní Xcode vizuální rozhraní návrháře a Android Designer. Mezi jeho řadu funkcí, patří bezproblémovou integraci s Visual Studio pro Mac a Visual Studio 2015 a 2017, přetáhněte myší, rozhraní pro vytvoření obslužné rutiny událostí a možnost vykreslovat vlastní ovládací prvky.
 
 ## <a name="requirements"></a>Požadavky
 
-IOS Návrhář je k dispozici v sadě Visual Studio pro Mac a v sadě Visual Studio 2015 a 2017 v systému Windows. V sadě Visual Studio 2015 nebo 2017 iOS Návrhář vyžaduje připojení k správně nakonfigurované Mac sestavení hostitele, i když Xcode nemusí být spuštěna.
+IOS Designer je k dispozici v sadě Visual Studio pro Mac a Visual Studio 2015 a 2017 na Windows. V sadě Visual Studio 2015 nebo 2017 v iOS designeru vyžaduje připojení k správně nakonfigurovanou hostiteli buildu Mac, ale nemusí být spuštěná Xcode.
 
-Tato příručka předpokládá znalost obsahu zahrnutého v [Začínáme provede](~/ios/get-started/index.md).
+Tento průvodce to předpokládá znalost obsah do [Začínáme provede](~/ios/get-started/index.md).
 
 <a name="how-it-works" />
 
-## <a name="how-the-ios-designer-works"></a>Jak funguje iOS návrháře
+## <a name="how-the-ios-designer-works"></a>Jak funguje v iOS designeru
 
-Tato část popisuje, jak iOS Návrhář usnadňuje vytváření uživatelské rozhraní a připojení ke kódu.
+Tato část popisuje, jak v iOS designeru usnadňuje vytváření uživatelského rozhraní a jejím propojením s kódem.
 
-IOS Designer umožňuje vývojářům vizuální návrh uživatelské rozhraní aplikace. Jak je uvedeno v [Úvod do scénářů](~/ios/user-interface/storyboards/index.md) průvodce, scénáře popisuje obrazovky (řadiče zobrazení) tvořící aplikaci, umístit na ty řadiče zobrazení a aplikace celkové navigační toku prvky rozhraní (zobrazení) . 
+IOS Designer umožňuje vývojářům vizuálně navrhovat uživatelské rozhraní aplikace. Jak je uvedeno v [Úvod do scénářů](~/ios/user-interface/storyboards/index.md) průvodce, scénář popisuje obrazovky (kontrolery zobrazení), které tvoří aplikaci, umístí na těchto kontrolery zobrazení a celkový tok navigační aplikace prvky rozhraní (zobrazení) . 
 
-Řadič zobrazení má dvě části: vizuální reprezentace v iOS Designer a přidruženou třídu C#:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Řadiče zobrazení v Návrháři iOS](introduction-images/1-storyboardwithviewcontroller-vsmac.png "řadiče zobrazení v Návrháři iOS")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
-
-[![Kód pro řadič zobrazení](introduction-images/2-viewcontrollercode-vsmac.png "kód pro řadič zobrazení")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Řadiče zobrazení v Návrháři iOS](introduction-images/1-storyboardwithviewcontroller-vs.png "řadiče zobrazení v Návrháři iOS")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
-
-[![Kód pro řadič zobrazení](introduction-images/2-viewcontrollercode-vs.png "kód pro řadič zobrazení")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
-
------
-
-Ve svém výchozím stavu řadič zobrazení neposkytuje žádné funkce; musí být naplněn s ovládacími prvky. Tyto ovládací prvky jsou umístěny v zobrazení řadiče zobrazení obdélníkovou oblast, která obsahuje veškerý obsah na obrazovce. Většina řadičů zobrazení obsahovat běžné ovládací prvky, např. tlačítka, popisky a textová pole, jak je znázorněno na následujícím snímku obrazovky, který ukazuje řadič zobrazení obsahující tlačítka: 
+Kontroler zobrazení má dvě části: vizuální reprezentace v iOS designeru a přidružené třídy C#:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Řadič zobrazení obsahující tlačítko](introduction-images/3-viewcontrollerwithbutton-vsmac.png "řadič zobrazení obsahující tlačítka")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
+[![Kontroler zobrazení v iOS designeru](introduction-images/1-storyboardwithviewcontroller-vsmac.png "kontroler zobrazení v iOS designeru")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
+
+[![Kód pro kontroler zobrazení](introduction-images/2-viewcontrollercode-vsmac.png "kód pro kontroler zobrazení")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Řadič zobrazení obsahující tlačítko](introduction-images/3-viewcontrollerwithbutton-vs.png "řadič zobrazení obsahující tlačítka")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
+[![Kontroler zobrazení v iOS designeru](introduction-images/1-storyboardwithviewcontroller-vs.png "kontroler zobrazení v iOS designeru")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
+
+[![Kód pro kontroler zobrazení](introduction-images/2-viewcontrollercode-vs.png "kód pro kontroler zobrazení")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
-Některé ovládací prvky, jako je například popisky, který obsahuje statický text, můžete přidat do řadiče zobrazení a zbývajících samostatně. Ale častěji, ovládací prvky musí být přizpůsobit prostřednictvím kódu programu. Například tlačítko přidané v předchozím kroku by tomu něco po klepnutí obslužné rutiny události musí být přidán v kódu.
+Ve výchozím stavu kontroler zobrazení neposkytuje všechny funkce. musí být vyplněno pomocí ovládacích prvků. Tyto ovládací prvky jsou umístěny v kontroleru zobrazení zobrazení obdélníkovou oblast, které obsahuje veškerý obsah na obrazovce. Většina kontrolery zobrazení obsahovat běžné ovládací prvky, jako je například tlačítek, popisků a textová pole, jak je znázorněno na následujícím snímku obrazovky, který ukazuje kontroler zobrazení obsahující tlačítko: 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aby bylo možné přistupovat a manipulovat s tlačítko v kódu, musí mít jedinečný identifikátor. Zadejte jedinečný identifikátor výběrem tlačítko Otevřít **vlastnosti Pad**a nastavení jeho **název** pole na hodnotu, jako je například "Odeslat":
-
-[![Tlačítkem na název v poli vlastnosti pro nastavení](introduction-images/4-settingbuttonname-vsmac.png "tlačítkem na název v poli vlastnosti pro nastavení")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
+[![Kontroler zobrazení obsahující tlačítko](introduction-images/3-viewcontrollerwithbutton-vsmac.png "kontroler zobrazení obsahující tlačítko")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Aby bylo možné přistupovat a manipulovat s tlačítko v kódu, musí mít jedinečný identifikátor. Zadejte jedinečný identifikátor výběrem tlačítko Otevřít **vlastnosti – okno**a nastavení jeho **název** pole na hodnotu, jako je například "Odeslat":
-
-[![Název na tlačítko nastavení v okně vlastností](introduction-images/4-settingbuttonname-vs.png "tlačítkem na název nastavení v okně vlastností")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
+[![Kontroler zobrazení obsahující tlačítko](introduction-images/3-viewcontrollerwithbutton-vs.png "kontroler zobrazení obsahující tlačítko")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
 -----
 
-Nyní, když na tlačítko název, můžete získat přístup v kódu. Ale jak to funguje?
+Některé ovládací prvky, jako je například popisky, který obsahuje statický text, můžete přidat kontroler zobrazení a Zbývá samostatně. Ale častěji, ovládací prvky musí být přizpůsobit prostřednictvím kódu programu. Například tlačítko přidané v předchozím kroku musí něco udělat klepnutí, takže obslužná rutina události musí být přidány v kódu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-V **řešení Pad**, navigační k **ViewController.cs** a kliknete na indikátor zpřístupnění zjistí, že řadiče zobrazení `ViewController` rozsahy definice třídy, dva soubory, z nichž každý obsahuje [třídu](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definice:
+Pokud chcete přístup k a manipulaci s tlačítko v kódu, musí mít jedinečný identifikátor. Zadejte jedinečný identifikátor tak, že vyberete tlačítko, otevřete **oblasti vlastnosti**a nastavení jeho **název** pole hodnota jako například "Odeslat":
 
-[![Dva soubory, které tvoří třídě ViewController: ViewController.cs a ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "dva soubory, které tvoří třídě ViewController: ViewController.cs a ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![Nastavení názvu tlačítka v oblasti vlastnosti](introduction-images/4-settingbuttonname-vsmac.png "nastavení název tlačítka v oblasti Vlastnosti")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-V **Průzkumníku řešení**, navigační k **ViewController.cs** a kliknete na indikátor zpřístupnění zjistí, že řadiče zobrazení `ViewController` zahrnuje dva soubory, každý z definice třídy obsahující [třídu](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definice:
+Pokud chcete přístup k a manipulaci s tlačítko v kódu, musí mít jedinečný identifikátor. Zadejte jedinečný identifikátor tak, že vyberete tlačítko, otevřete **okno vlastností**a nastavení jeho **název** pole hodnota jako například "Odeslat":
 
-[![Dva soubory, které tvoří třídě ViewController: ViewController.cs a ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "dva soubory, které tvoří třídě ViewController: ViewController.cs a ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![Nastavení názvu tlačítka v okně Vlastnosti](introduction-images/4-settingbuttonname-vs.png "nastavení název tlačítka v okně Vlastnosti")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** by měl být vyplněny vlastní kód týkající se `ViewController` třídy. V tomto souboru `ViewController` třída reagovat na různých iOS metody životního cyklu řadiče zobrazení, přizpůsobení uživatelského rozhraní a reagovat na uživatelský vstup, jako je klepne na tlačítko.
+Teď, když tlačítko má název, může být přístupné z kódu. Ale jak to funguje?
 
-- **ViewController.designer.cs** je to generovaný soubor vytvořený iOS Designer pro mapování rozhraní vizuálně sestavený ke kódu. Protože změny tohoto souboru budou přepsány, by neměl být upraven. Vlastnost deklarace v tomto souboru umožňují kód v `ViewController` třídy na přístupu, pomocí **název**, ovládací prvky sady nahoru v iOS Designer. Otevírání **ViewController.designer.cs** zjistí následující kód:
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+V **oblasti řešení**, navigační k **ViewController.cs** a kliknutím na indikátor zpřístupnění zjistí, že kontroler zobrazení `ViewController` soubory rozsahy definice třídy, dvě, z nichž každý obsahuje [částečné třídy](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definice:
+
+[![Dva soubory, které tvoří třídu ViewController: ViewController.cs a ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "dva soubory, které tvoří třídu ViewController: ViewController.cs a ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+V **Průzkumníka řešení**, navigační k **ViewController.cs** a kliknutím na indikátor zpřístupnění zjistí, že kontroler zobrazení `ViewController` definice třídy obsahuje dva soubory, každý z které se nachází [částečné třídy](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) definice:
+
+[![Dva soubory, které tvoří třídu ViewController: ViewController.cs a ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "dva soubory, které tvoří třídu ViewController: ViewController.cs a ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+
+-----
+
+- **ViewController.cs** mělo být vyplněno pomocí vlastního kódu související s `ViewController` třídy. V tomto souboru `ViewController` třídy reagovat na různé iOS metody životního cyklu kontroleru zobrazení, přizpůsobení uživatelského rozhraní a reakce na uživatelský vstup, jako je klepnutí tlačítka.
+
+- **ViewController.designer.cs** je vygenerovaný soubor vytvořený nástrojem v iOS designeru mapování rozhraní vizuálně vytvořený kód. Protože změny tohoto souboru budou přepsány, by se nemělo upravovat. Deklarace vlastností v tomto souboru umožňují kód v `ViewController` třídy přístup, tím **název**, ovládací prvky sady nahoru v iOS designeru. Otevírání **ViewController.designer.cs** odhalí následující kód:
 
 ```csharp
 namespace Designer
@@ -119,284 +119,284 @@ namespace Designer
 }
 ```
 
-`SubmitButton` Deklarace vlastnosti připojí celý `ViewController` třídy - není právě na **ViewController.designer.cs** soubor – tlačítko definované ve scénáři. Vzhledem k tomu **ViewController.cs** definuje součástí `ViewController` třídu, má přístup k `SubmitButton`.
+`SubmitButton` Deklarace vlastnosti se připojí celý `ViewController` třídy – ne jenom **ViewController.designer.cs** souboru – tlačítko definované ve scénáři. Protože **ViewController.cs** definuje část `ViewController` třídu, má přístup k `SubmitButton`.
 
-Následující snímek obrazovky ukazuje, že technologie IntelliSense nyní rozpoznává `SubmitButton` odkaz v **ViewController.cs**:
+Na následujícím snímku obrazovky ukazuje, že technologie IntelliSense nyní rozpoznává `SubmitButton` odkazovat v **ViewController.cs**:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![IntelliSense rozpozná odkaz Odeslat](introduction-images/6-submitbuttonintellisense-vsmac.png "rozpozná odkaz Odeslat IntelliSense")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
+[![Technologie IntelliSense uznání odkaz tlacitkoOdeslat](introduction-images/6-submitbuttonintellisense-vsmac.png "IntelliSense uznání tlacitkoOdeslat odkaz")](introduction-images/6-submitbuttonintellisense-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![IntelliSense rozpozná odkaz Odeslat](introduction-images/6-submitbuttonintellisense-vs.png "rozpozná odkaz Odeslat IntelliSense")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
+[![Technologie IntelliSense uznání odkaz tlacitkoOdeslat](introduction-images/6-submitbuttonintellisense-vs.png "IntelliSense uznání tlacitkoOdeslat odkaz")](introduction-images/6-submitbuttonintellisense-vs-large.png#lightbox)
 
 -----
 
-V této části vám ukázal, jak vytvořit tlačítka v iOS Designer a přístup k této tlačítko v kódu.
+Tato část vám ukázal, jak vytvořit tlačítko v iOS designeru a přistupovat k toto tlačítko v kódu.
 
-Zbývající část tohoto dokumentu obsahuje další přehled IOS Designer.
+Zbývající část tohoto dokumentu obsahuje další přehled v iOS designeru.
 
-## <a name="ios-designer-basics"></a>iOS základy návrháře
+## <a name="ios-designer-basics"></a>Základy iOS designeru
 
-Tato část uvádí části iOS Designer a poskytuje prohlídka její funkce.
+Tato část představuje částí v iOS designeru a poskytuje přehled používání jeho funkcí.
 
-### <a name="launching-the-ios-designer"></a>Spouštění iOS návrháře
+### <a name="launching-the-ios-designer"></a>Spouští se iOS designeru
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Xamarin.iOS projekty vytvořené pomocí sady Visual Studio pro Mac zahrnují scénáře. Pokud chcete zobrazit obsah scénáře, poklikejte na soubor .storyboard v **řešení Pad**:
+Projekty Xamarin.iOS vytvořené pomocí sady Visual Studio pro Mac zahrnout ve scénáři. Chcete-li zobrazit obsah ve scénáři, poklikejte na soubor .storyboard v **oblasti řešení**:
 
-[![Scénář otevřít v Návrháři iOS](introduction-images/7-storyboardopen-vsmac.png "scénáře otevřít v Návrháři iOS")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
+[![Ve scénáři otevřete v iOS designeru](introduction-images/7-storyboardopen-vsmac.png "scénáře otevřete v iOS designeru")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Většina Xamarin.iOS projekty vytvořené pomocí sady Visual Studio 2015 nebo 2017 zahrnují scénáře. Pokud chcete zobrazit obsah scénáře, poklikejte na soubor .storyboard v **Průzkumníku řešení**:
+Většina Xamarin.iOS projekty vytvořené pomocí sady Visual Studio 2015 nebo 2017 zahrnout ve scénáři. Chcete-li zobrazit obsah ve scénáři, poklikejte na soubor .storyboard v **Průzkumníka řešení**:
 
-[![Scénář otevřít v Návrháři iOS](introduction-images/7-storyboardopen-vs.png "scénáře otevřít v Návrháři iOS")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
+[![Ve scénáři otevřete v iOS designeru](introduction-images/7-storyboardopen-vs.png "scénáře otevřete v iOS designeru")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
 <a name="iOS_Designer_features"/>
 
-### <a name="ios-designer-features"></a>iOS Návrhář funkce
+### <a name="ios-designer-features"></a>iOS Designer funkce
 
-IOS Návrhář má šest primární částí:
+IOS Designer má primární šesti částí:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Části IOS Návrhář](introduction-images/8-sixpartsofiosdesigner-vsmac.png "části IOS návrháře")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
+[![Oddíly v iOS designeru](introduction-images/8-sixpartsofiosdesigner-vsmac.png "oddíly v iOS designeru")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
-1. **Návrh prostor** – primárním pracovním prostorem návrháře iOS. Zobrazí v oblasti dokumentu, umožňuje vizuální tvorbu uživatelského rozhraní.
-2. **Panel nástrojů omezení** – umožňuje přepínání mezi rámce úpravy režim a režim úprav omezení, dvěma různými způsoby na pozici prvky v uživatelském rozhraní.
-3. **Sada nástrojů** – uvádí řadiče, objekty, ovládací prvky, zobrazení dat, nástroje pro rozpoznávání gesto, windows a panely můžete přetáhnout na návrhovou plochu a přidat k uživatelské rozhraní.
-4. **Vlastnosti Pad** – se zobrazují vlastnosti pro vybraný ovládací prvek, včetně identitu, vizuální styly, usnadnění, rozložení a chování.
-5. **Osnova dokumentu** – zobrazuje stromu ovládacích prvků, které tvoří rozložení pro rozhraní Upravovaný. Kliknutím na položku ve stromové struktuře vybere v iOS Designer a zobrazuje jeho vlastnosti v **Pad vlastnosti**. To je užitečné, když vyberete určitý ovládací prvek v hluboko vnořené uživatelské rozhraní.
-6. **Dolů panel nástrojů** – obsahuje možnosti pro změnu, jak iOS Designer zobrazí .storyboard nebo .xib souboru, včetně zařízení, orientaci a přiblížení.
+1. **Návrhové ploše** – iOS Designer primární pracovní prostor. Zobrazit v oblasti dokumentu, umožňuje vizuální vytváření uživatelských rozhraní.
+2. **Panel nástrojů pro omezení** – umožňuje přepínání mezi snímek na pozici prvky v uživatelském rozhraní úpravy režim a režim úprav omezení, dvěma různými způsoby.
+3. **Panel nástrojů** – uvádí kontrolery, objekty, ovládací prvky, zobrazení dat, nástroje pro rozpoznávání gest, windows a panely je možné přetáhnout na návrhovou plochu a přidat k uživatelské rozhraní.
+4. **Panel vlastnosti** – zobrazuje vlastnosti pro vybraný ovládací prvek, včetně identit, vizuální styly, dostupnost, rozložení a chování.
+5. **Osnova dokumentu** – zobrazuje stromu ovládacích prvků, které tvoří rozložení pro rozhraní, který právě upravujete. Kliknutím na položky ve stromové struktuře vybere v iOS designeru a jeho vlastností v **oblasti vlastnosti**. To je užitečné pro výběr konkrétní ovládací prvek nejhlouběji vnořená uživatelské rozhraní.
+6. **Dolní panel nástrojů** – obsahuje možnosti pro změnu zobrazení souboru .storyboard nebo .xib, včetně zařízení, orientace a Lupa v iOS designeru.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Části IOS Návrhář](introduction-images/8-sixpartsofiosdesigner-vs.png "části IOS návrháře")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
+[![Oddíly v iOS designeru](introduction-images/8-sixpartsofiosdesigner-vs.png "oddíly v iOS designeru")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
-1. **Návrh prostor** – primárním pracovním prostorem návrháře iOS. Zobrazí v oblasti dokumentu, umožňuje vizuální tvorbu uživatelského rozhraní.
-2. **Panel nástrojů omezení** – umožňuje přepínání mezi rámce úpravy režim a režim úprav omezení, dvěma různými způsoby na pozici prvky v uživatelském rozhraní.
-3. **Sada nástrojů** – uvádí řadiče, objekty, ovládací prvky, zobrazení dat, nástroje pro rozpoznávání gesto, windows a panely můžete přetáhnout na návrhovou plochu a přidat k uživatelské rozhraní.
-4. **Vlastnosti – okno** – se zobrazují vlastnosti pro vybraný ovládací prvek, včetně identitu, vizuální styly, usnadnění, rozložení a chování.
-5. **Osnova dokumentu** – zobrazuje stromu ovládacích prvků, které tvoří rozložení pro rozhraní Upravovaný. Kliknutím na položku ve stromové struktuře vybere v iOS Designer a zobrazuje jeho vlastnosti v **vlastnosti – okno**. To je užitečné, když vyberete určitý ovládací prvek v hluboko vnořené uživatelské rozhraní.
-6. **Dolů panel nástrojů** – obsahuje možnosti pro změnu, jak iOS Designer zobrazí .storyboard nebo .xib souboru, včetně zařízení, orientaci a přiblížení.
+1. **Návrhové ploše** – iOS Designer primární pracovní prostor. Zobrazit v oblasti dokumentu, umožňuje vizuální vytváření uživatelských rozhraní.
+2. **Panel nástrojů pro omezení** – umožňuje přepínání mezi snímek na pozici prvky v uživatelském rozhraní úpravy režim a režim úprav omezení, dvěma různými způsoby.
+3. **Panel nástrojů** – uvádí kontrolery, objekty, ovládací prvky, zobrazení dat, nástroje pro rozpoznávání gest, windows a panely je možné přetáhnout na návrhovou plochu a přidat k uživatelské rozhraní.
+4. **Okno vlastností** – zobrazuje vlastnosti pro vybraný ovládací prvek, včetně identit, vizuální styly, dostupnost, rozložení a chování.
+5. **Osnova dokumentu** – zobrazuje stromu ovládacích prvků, které tvoří rozložení pro rozhraní, který právě upravujete. Kliknutím na položky ve stromové struktuře vybere v iOS designeru a jeho vlastností v **okno vlastností**. To je užitečné pro výběr konkrétní ovládací prvek nejhlouběji vnořená uživatelské rozhraní.
+6. **Dolní panel nástrojů** – obsahuje možnosti pro změnu zobrazení souboru .storyboard nebo .xib, včetně zařízení, orientace a Lupa v iOS designeru.
 
 -----
 
-### <a name="design-workflow"></a>Pracovní postup návrhu
+### <a name="design-workflow"></a>Návrh pracovního postupu
 
 #### <a name="adding-a-control-to-the-interface"></a>Přidání ovládacího prvku rozhraní
 
-Přidání ovládacího prvku do rozhraní, přetáhněte jej z **sada nástrojů** na návrhovou plochu. Při přidávání nebo umístění ovládacího prvku, zvýrazněte svislého a vodorovného pokyny běžně používané rozložení pozic například svisle na střed, vodorovném centru a okrajů:
+Přidání ovládacího prvku do rozhraní, přetáhněte ho **nástrojů** a umístěte jej na návrhové ploše. Při přidávání nebo umístění ovládacího prvku, zvýrazněte vertikálním a horizontálním pokyny běžně používané rozložení pozice například svisle na střed, vodorovné a okrajů:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
  
-![Na návrhovou plochu, zvýrazněte pokyny pro běžně používané rozložení pozic](introduction-images/9-layoutguides-vsmac.png "na návrhovou plochu, zvýrazněte pokyny pro běžně používané rozložení pozice")
+![Na návrhové ploše, zvýrazněte pokyny pro běžně používané rozložení pozice](introduction-images/9-layoutguides-vsmac.png "na návrhové ploše, zvýrazněte pokyny pro běžně používané rozložení pozice")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Na návrhovou plochu, zvýrazněte pokyny pro běžně používané rozložení pozic](introduction-images/9-layoutguides-vs.png "na návrhovou plochu, zvýrazněte pokyny pro běžně používané rozložení pozice")
+![Na návrhové ploše, zvýrazněte pokyny pro běžně používané rozložení pozice](introduction-images/9-layoutguides-vs.png "na návrhové ploše, zvýrazněte pokyny pro běžně používané rozložení pozice")
 
 -----
 
-Modré tečkovaná čára v předchozím příkladu poskytuje vodítko visual zarovnání vodorovném centru usnadní umístění tlačítka.
+Modrá čára s koncovými body v předchozím příkladu poskytuje vodítko Vodorovné zarovnání visual usnadňující umístění tlačítka.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-#### <a name="context-menu-commands"></a>Příkazy nabídky kontextu
+#### <a name="context-menu-commands"></a>Příkazy místní nabídky
 
-Je k dispozici na návrhovou plochu a v Kontextová nabídka **Osnova dokumentu**. Tato nabídka poskytuje příkazy pro vybraný ovládací prvek a jeho nadřazeným prvkem, což je užitečné, pokud práce se zobrazeními v vnořené hierarchii:
+Místní nabídka je k dispozici na návrhové ploše i v **Osnova dokumentu**. Tato nabídka poskytuje příkazy pro vybraný ovládací prvek a jeho nadřazeným prvkem, což je užitečné při práci s zobrazení ve vnořené hierarchie:
 
-[![V místní nabídce na návrhovou plochu](introduction-images/10-contextmenudesignsurface-vsmac.png "v místní nabídce na návrhovou plochu")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
+[![Kontextové nabídky na návrhové ploše](introduction-images/10-contextmenudesignsurface-vsmac.png "kontextovou nabídku povrchu návrhu")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 -----
 
-### <a name="constraints-toolbar"></a>Omezení panelu nástrojů
+### <a name="constraints-toolbar"></a>Panel nástrojů pro omezení
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
  
-[![Panel nástrojů omezení](introduction-images/11-constraintstoolbar-vsmac.png "omezení panelu nástrojů")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
+[![Omezení nástrojů](introduction-images/11-constraintstoolbar-vsmac.png "panel nástrojů pro omezení")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Panel nástrojů omezení](introduction-images/11-constraintstoolbar-vs.png "omezení panelu nástrojů")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+[![Omezení nástrojů](introduction-images/11-constraintstoolbar-vs.png "panel nástrojů pro omezení")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
 
 -----
 
-Panel nástrojů omezení byl aktualizován a nyní se skládá ze dvou ovládacích prvků: rámečku režimu úprav / omezení úpravy přepnutí režimu a omezení aktualizace / rámce tlačítko Aktualizovat.
+Panel nástrojů pro omezení bylo aktualizováno a nyní se skládá ze dvou ovládacích prvků: rámce režimu úprav / omezení editaci přepínač režimu omezení aktualizace / snímky tlačítko Aktualizovat.
 
-#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Rámce režimu úprav / omezení úpravy přepnutí režimu
+#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Rámec režimu úprav / přepnout režim úprav omezení
 
-V předchozích verzích systému iOS Designer kliknutím na zobrazení o již vybrána na návrhovou plochu přepínat stav mezi rámce úpravy režim a režim úprav omezení. Nyní ovládacího prvku přepnutí na panelu nástrojů omezení Přepne mezi tyto úpravy v režimu.
+V předchozích verzích nástroje v iOS designeru kliknete na pohled již vybrané na návrhové ploše přepínat mezi rámce úpravy režim a režim úprav omezení. Nyní ovládacím prvku přepínací tlačítko na panelu nástrojů omezení Přepne mezi těmito režimy úprav.
 
-- Rámce režimu úprav:
+- Režim úpravy snímku:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![Rámce úpravy tlačítka režimu](introduction-images/12a-frameeditingmode-vsmac.png "úpravy tlačítka režimu s rámečkem")
+![Snímek tlačítka režimu úpravy](introduction-images/12a-frameeditingmode-vsmac.png "rámec úpravy tlačítka režimu")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Rámce úpravy tlačítka režimu](introduction-images/12a-frameeditingmode-vs.png "úpravy tlačítka režimu s rámečkem")
+![Snímek tlačítka režimu úpravy](introduction-images/12a-frameeditingmode-vs.png "rámec úpravy tlačítka režimu")
 
 -----
 
-- Úpravy režim omezení:
+- Režim úprav omezení:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![Omezení úpravy tlačítka režimu](introduction-images/12b-constrainteditingmode-vsmac.png "tlačítko režimu úprav omezení")
+![Omezení úprav tlačítka režimu](introduction-images/12b-constrainteditingmode-vsmac.png "tlačítko Režim úprav omezení")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Omezení úpravy tlačítka režimu](introduction-images/12b-constrainteditingmode-vs.png "tlačítko režimu úprav omezení")
+![Omezení úprav tlačítka režimu](introduction-images/12b-constrainteditingmode-vs.png "tlačítko Režim úprav omezení")
 
 -----
 
-#### <a name="update-constraints--update-frames-button"></a>Aktualizovat omezení / aktualizace tlačítko rámce
+#### <a name="update-constraints--update-frames-button"></a>Aktualizovat omezení / snímky tlačítko Aktualizovat
 
-Omezení aktualizace / aktualizace rámců tlačítko nachází vpravo od rámečku režimu úprav / omezení úpravy přepnutí režimu.
+Aktualizovat omezení / aktualizaci snímků nachází tlačítko vpravo od rámce režimu úprav / přepnout režim úprav omezení.
 
-- V rámci režimu úprav upraví se kliknutím na toto tlačítko snímky všechny vybrané elementy tak, aby odpovídaly jejich omezení.
-- V režimu úprav omezení upraví se kliknutím na toto tlačítko omezení všechny vybrané elementy tak, aby odpovídaly jejich rámce.
+- V rámci režimu úprav kliknete na toto tlačítko upraví snímků všechny vybrané elementy tak, aby odpovídaly jejich omezení.
+- V režimu úprav omezení kliknete na toto tlačítko upraví omezení všechny vybrané elementy tak, aby odpovídala jeho snímků.
 
-### <a name="bottom-toolbar"></a>Dolním panelu nástrojů
+### <a name="bottom-toolbar"></a>Dolní panel nástrojů
 
-Spodním panelu nástrojů poskytuje způsob, jak vyberte zařízení, orientaci a přiblížení či oddálení použít k zobrazení souboru storyboard nebo .xib v iOS Designer:
+Dolní panel nástrojů poskytuje způsob, jak vyberte zařízení, orientace a Lupa slouží k zobrazení souboru storyboard nebo .xib v iOS designeru:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dolním panelu nástrojů použit k výběru zařízení a orientaci pro návrhovou plochu](introduction-images/13-bottomtoolbar-vsmac.png "dolním panelu nástrojů použit k výběru zařízení a orientaci pro návrhové plochy")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
+[![Dolní panel nástrojů používá pro výběr zařízení a orientace povrchu návrhu](introduction-images/13-bottomtoolbar-vsmac.png "dolního panelu nástrojů používá pro výběr zařízení a orientace povrchu návrhu")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dolním panelu nástrojů použit k výběru zařízení a orientaci pro návrhovou plochu](introduction-images/13-bottomtoolbar-vs.png "dolním panelu nástrojů použit k výběru zařízení a orientaci pro návrhové plochy")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
+[![Dolní panel nástrojů používá pro výběr zařízení a orientace povrchu návrhu](introduction-images/13-bottomtoolbar-vs.png "dolního panelu nástrojů používá pro výběr zařízení a orientace povrchu návrhu")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
 -----
 
 #### <a name="device-and-orientation"></a>Zařízení a orientace
 
-Po rozbalení spodním panelu nástrojů zobrazí všechna zařízení, orientace nebo úpravy vztahující se na aktuálním dokumentu. Klepnutím na jejich změníte zobrazení zobrazí na návrhovou plochu. 
+Po rozbalení dolního panelu nástrojů zobrazí všechna zařízení, orientace a úpravy pro aktuální dokument. Kliknutím na jejich změny zobrazení na návrhové ploše. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Spodním panelu nástrojů rozbalit a zobrazit zařízení a orientace](introduction-images/14-bottomtoolbarexpanded-vsmac.png "dolním panelu nástrojů rozbalit a zobrazit zařízení a orientace")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
+[![Dolní panel nástrojů rozbalit a zobrazit zařízení a orientacím používaným](introduction-images/14-bottomtoolbarexpanded-vsmac.png "dolního panelu nástrojů, rozšířili i na zařízeních a orientace")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Spodním panelu nástrojů rozbalit a zobrazit zařízení a orientace](introduction-images/14-bottomtoolbarexpanded-vs.png "dolním panelu nástrojů rozbalit a zobrazit zařízení a orientace")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
+[![Dolní panel nástrojů rozbalit a zobrazit zařízení a orientacím používaným](introduction-images/14-bottomtoolbarexpanded-vs.png "dolního panelu nástrojů, rozšířili i na zařízeních a orientace")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
 -----
 
-Upozorňujeme, že výběrem zařízení a orientaci změní jenom jak iOS Návrhář přináší náhled návrhu. Bez ohledu na aktuální výběr nově přidaná omezení se použijí ve všech zařízeních a orientace, pokud **upravit vlastnosti** tlačítko jsou využívány k určení jinak.
+Všimněte si, že výběrem zařízení a orientaci mění pouze jak v iOS designeru zobrazí náhled návrhu. Bez ohledu na aktuální výběr nově přidané omezení se použijí na všech zařízeních a orientace, není-li **upravit vlastnosti** tlačítka se použil k určení jinak.
 
-Když [velikost třídy](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) jsou [povoleno](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), **upravit vlastnosti** tlačítko se zobrazí v rozšířené spodním panelu nástrojů.  Kliknutím **upravit vlastnosti** tlačítko zobrazí možnosti pro vytvoření variace rozhraní založené na třídě velikost reprezentována na vybrané zařízení a orientaci. Vezměte v úvahu následující příklady:
+Když [velikost třídy](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) jsou [povolené](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), **upravit vlastnosti** v rozšířené dolního panelu nástrojů zobrazí tlačítko.  Kliknutím **upravit vlastnosti** tlačítko zobrazí možnosti pro vytvoření rozhraní variace podle velikosti třída představovaná typem vybrané zařízení a orientaci. Vezměte v úvahu následující příklady:
 
-- Pokud **iPhone SE** / **na výšku**, je vybrána, popover zajistí možnosti, jak vytvořit variace rozhraní k šířce compact regulární výšku velikosti třídy. 
-- Pokud **iPad Pro 9.7"** / **na šířku** / **celé obrazovky** je vybrána, popover poskytuje možnosti pro vytvoření variace rozhraní pro regulární šířka, regulární výšku velikosti třídy.
+- Pokud **iPhone SE** / **na výšku**, je vybrán, popover poskytne možnosti, jak vytvořit rozhraní variantu pro kompaktní šířku třída velikostí regulární výška. 
+- Pokud **iPad Pro 9.7"** / **na šířku** / **zobrazení na celé obrazovce** je vybrána, bude popover poskytovat možnosti, jak vytvořit rozhraní variantu pro pravidelné šířka, pravidelné výška velikosti třídy.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Spodním panelu nástrojů se používají ke změně rozhraní třídou velikost](introduction-images/15-edittraitsbutton-vsmac.png "dolním panelu nástrojů používá k odlišení rozhraní velikost – třída")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
+[![Dolní panel nástrojů se používají ke změně rozhraní podle třídy velikosti](introduction-images/15-edittraitsbutton-vsmac.png "dolní panel nástrojů se používají ke změně rozhraní podle třídy velikosti.")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Spodním panelu nástrojů se používají ke změně rozhraní třídou velikost](introduction-images/15-edittraitsbutton-vs.png "dolním panelu nástrojů používá k odlišení rozhraní velikost – třída")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
+[![Dolní panel nástrojů se používají ke změně rozhraní podle třídy velikosti](introduction-images/15-edittraitsbutton-vs.png "dolní panel nástrojů se používají ke změně rozhraní podle třídy velikosti.")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
 -----
 
-#### <a name="zoom-controls"></a>Ovládací prvky přiblížení
+#### <a name="zoom-controls"></a>Ovládací prvky zvětšení
 
-Návrhovou plochu, která podporuje přiblížení a oddálení prostřednictvím několika ovládacích prvků:
+Návrhové ploše podporuje přibližování přes několik ovládacích prvků:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
  
-![Ovládací prvky zvětšení v dolním panelu nástrojů](introduction-images/16-zoomcontrols-vsmac.png "ovládacích prvků zvětšení v dolním panelu nástrojů")
+![Ovládací prvky zvětšení v dolní panel nástrojů](introduction-images/16-zoomcontrols-vsmac.png "ovládací prvky zvětšení v dolního panelu nástrojů")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Ovládací prvky zvětšení v dolním panelu nástrojů](introduction-images/16-zoomcontrols-vs.png "ovládacích prvků zvětšení v dolním panelu nástrojů")
+![Ovládací prvky zvětšení v dolní panel nástrojů](introduction-images/16-zoomcontrols-vs.png "ovládací prvky zvětšení v dolního panelu nástrojů")
 
 -----
 
 Ovládací prvky zahrnují následující:
 
-1. Přiblížení podle
+1. Přizpůsobit zobrazení
 2. Oddálit
 3. Přiblížit
-4. Skutečná velikost (1:1 pixel velikost)
+4. Skutečná velikost (velikost v pixelech 1:1)
 
-Tyto ovládací prvky upravit přiblížení na návrhovou plochu. Neovlivňují uživatelské rozhraní aplikace za běhu.
+Tyto ovládací prvky upraveno přiblížení na návrhové ploše. Neovlivňují uživatelského rozhraní aplikace za běhu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-### <a name="properties-pad"></a>Vlastnosti odsazení
+### <a name="properties-pad"></a>Panel Vlastnosti
 
-Použití **vlastnosti Pad** úpravy identity, vizuální styly, usnadnění a chování ovládacího prvku. Následující snímek obrazovky ukazuje **vlastnosti Pad** možnosti pro tlačítko:
+Použití **oblasti vlastnosti** k úpravě identity, vizuální styly, dostupnost a chování ovládacího prvku. Následující snímek obrazovky ukazuje **oblasti vlastnosti** možnosti pro tlačítko:
 
-[![Odsazení vlastnosti pro tlačítko](introduction-images/17-buttonpropertiespad-vsmac.png "The Pad vlastnosti pro tlačítko")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
-#### <a name="properties-pad-sections"></a>Vlastnosti Pad části
+[![Panel vlastnosti pro tlačítko](introduction-images/17-buttonpropertiespad-vsmac.png "oblasti vlastnosti pro tlačítko")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
+#### <a name="properties-pad-sections"></a>Části panelu Vlastnosti
 
-**Vlastnosti Pad** skládá ze tří částí:
+**Oblasti vlastnosti** skládá ze tří částí:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="properties-window"></a>Okno vlastností
 
-Použití **vlastnosti – okno** upravit identity, vizuální styly, usnadnění a chování ovládacího prvku. Následující snímek obrazovky ukazuje **vlastnosti – okno** možnosti pro tlačítko:
+Použití **okno vlastností** úpravy identity, vizuální styly, dostupnost a chování ovládacího prvku. Následující snímek obrazovky ukazuje **okno vlastností** možnosti pro tlačítko:
 
-[![Okno vlastností pro tlačítko](introduction-images/17-buttonpropertieswindow-vs.png "okně Vlastnosti pro tlačítko")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
+[![V okně Vlastnosti tlačítko](introduction-images/17-buttonpropertieswindow-vs.png "okně Vlastnosti pro tlačítko")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
-#### <a name="properties-window-sections"></a>Vlastnosti – okno oddíly
+#### <a name="properties-window-sections"></a>Části okna Vlastnosti
 
-**Vlastnosti – okno** skládá ze tří částí:
+**Okno vlastností** skládá ze tří částí:
 
 -----
 
-1.  **Pomůcka** – hlavní vlastnosti ovládacího prvku, jako je například název třídy, vlastnosti stylu, atd. Zde jsou obvykle umístěny vlastnosti pro správu obsahu ovládacího prvku.
-2.  **Rozložení** – vlastnosti, které udržování přehledu o umístění a velikost ovládacího prvku, včetně omezení a rámce, jsou zde uvedeny.
-3.  **Události** – zde zadané události a obslužné rutiny událostí. Tato možnost je užitečná pro zpracování událostí například dotykového ovládání, klepněte na, přetáhněte atd. Události mohou být zpracovány také přímo v kódu.
+1.  **Widget** – hlavní vlastnosti ovládacího prvku, jako je název třídy, vlastnosti stylu, atd. Vlastnosti pro správu obsahu ovládacího prvku jsou obvykle umístěny zde.
+2.  **Rozložení** – vlastnosti, které udržovat přehled o umístění a velikost ovládacího prvku, včetně omezení a snímků, jsou zde uvedeny.
+3.  **Události** – události a obslužné rutiny událostí jsou zde uvedeny. Vhodný pro zpracování událostí, jako je například dotykového ovládání, klepněte na, přetáhněte atd. Události mohou být zpracovávány také přímo v kódu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-#### <a name="editing-properties-in-the-properties-pad"></a>Úprava vlastností v panelu pro vlastnosti
+#### <a name="editing-properties-in-the-properties-pad"></a>Úprava vlastností v panelu Vlastnosti
 
-Kromě úpravy s náhledem na návrhovou plochu, podporuje iOS Návrhář Úprava vlastností v **Pad vlastnosti**. Změna dostupné vlastnosti založené na vybraný ovládací prvek, které jsou popsány v následujících snímcích obrazovky:
+Kromě úpravy s náhledem na návrhové ploše, podporuje úpravy vlastností v iOS designeru **oblasti vlastnosti**. Dostupných vlastností mění v závislosti na vybraný ovládací prvek, jak je znázorněno v následujících snímcích obrazovky:
 
-[![Tlačítko Vlastnosti](introduction-images/18a-buttonpropertiespad-vsmac.png "tlačítko Vlastnosti")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
+[![Vlastnosti tlačítka](introduction-images/18a-buttonpropertiespad-vsmac.png "vlastnosti tlačítka")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
-[![Zobrazit vlastnosti řadiče](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "zobrazit vlastnosti řadiče")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
+[![Zobrazit vlastnosti kontroleru](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "zobrazit vlastnosti kontroleru")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-#### <a name="editing-properties-in-the-properties-window"></a>Úprava vlastností v okně vlastností
+#### <a name="editing-properties-in-the-properties-window"></a>Úprava vlastností v okně Vlastnosti
 
-Kromě úpravy s náhledem na návrhovou plochu, podporuje iOS Návrhář Úprava vlastností v **vlastnosti – okno**. Změna dostupné vlastnosti založené na vybraný ovládací prvek, které jsou popsány v následujících snímcích obrazovky:
+Kromě úpravy s náhledem na návrhové ploše, podporuje úpravy vlastností v iOS designeru **okno vlastností**. Dostupných vlastností mění v závislosti na vybraný ovládací prvek, jak je znázorněno v následujících snímcích obrazovky:
 
-[![Tlačítko Vlastnosti](introduction-images/18a-buttonpropertieswindow-vs.png "tlačítko Vlastnosti")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
+[![Vlastnosti tlačítka](introduction-images/18a-buttonpropertieswindow-vs.png "vlastnosti tlačítka")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
-[![Zobrazit vlastnosti řadiče](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "zobrazit vlastnosti řadiče")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
+[![Zobrazit vlastnosti kontroleru](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "zobrazit vlastnosti kontroleru")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
 
 -----
 
 > [!IMPORTANT]
-> Části Identity ukazuje nyní vlastnosti odsazení **modulu** pole. Je nutné vyplnit v této části, pouze při interoperabilitě se službou Swift třídy. Umožňuje vám zadat název modulu pro Swift třídy, které jsou namespaced.
+> Oddíl Identity oblasti vlastnosti teď zobrazují **modulu** pole. Je potřeba vyplnit v této části pouze při interoperabilitě se službou Swift třídy. Můžete zadat název modulu pro Swift třídy, které jsou namespaced.
 
 #### <a name="default-values"></a>Výchozí hodnoty
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Mnoho vlastností v **vlastnosti Pad** zobrazit žádnou hodnotu nebo výchozí hodnotu. Nicméně může kód aplikace upravovat tyto hodnoty. **Vlastnosti Pad** nezobrazuje hodnotami nastavenými v kódu.
+Mnoho vlastností v **oblasti vlastnosti** zobrazit žádnou hodnotu nebo výchozí hodnotu. Nicméně kód aplikace může upravovat tyto hodnoty. **Oblasti vlastnosti** nezobrazuje hodnoty nastavené v kódu.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Mnoho vlastností v **vlastnosti – okno** zobrazit žádnou hodnotu nebo výchozí hodnotu. Nicméně může kód aplikace upravovat tyto hodnoty. **Vlastnosti – okno** nezobrazuje hodnotami nastavenými v kódu.
+Mnoho vlastností v **okno vlastností** zobrazit žádnou hodnotu nebo výchozí hodnotu. Nicméně kód aplikace může upravovat tyto hodnoty. **Okno vlastností** nezobrazuje hodnoty nastavené v kódu.
 
 -----
 
@@ -404,59 +404,59 @@ Mnoho vlastností v **vlastnosti – okno** zobrazit žádnou hodnotu nebo vých
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Pokud chcete zadat vlastní obslužné rutiny pro různé události, použijte **události** kartě **Pad vlastnosti**. Například na tomto snímku obrazovky `HandleClick` metoda zpracovává na tlačítko **Touch uvnitř** událostí:
+Chcete-li určit obslužné rutiny vlastních událostí pro různé události, použijte **události** karty **oblasti vlastnosti**. Například v následujícím snímku obrazovky `HandleClick` obsluhovala tlačítka **Touch uvnitř** události:
 
-[![Panelu Vlastnosti pro obslužnou rutinu pro tlačítko nastavit](introduction-images/19-buttonpropertiespadevents-vsmac.png "The Pad vlastnosti obslužnou rutinu nastavit pro tlačítko")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
+[![Panel vlastnosti s obslužnou rutinu události pro tlačítko nastavit](introduction-images/19-buttonpropertiespadevents-vsmac.png "oblasti vlastnosti s obslužnou rutinu události pro tlačítko")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Pokud chcete zadat vlastní obslužné rutiny pro různé události, použijte **události** kartě **vlastnosti – okno**. Například na tomto snímku obrazovky `HandleClick` metoda zpracovává na tlačítko **Touch uvnitř** událostí:
+Chcete-li určit obslužné rutiny vlastních událostí pro různé události, použijte **události** karty **okno vlastností**. Například v následujícím snímku obrazovky `HandleClick` obsluhovala tlačítka **Touch uvnitř** události:
 
-[![Okně vlastností obslužnou rutinu pro tlačítko nastavit](introduction-images/19-buttonpropertieswindowevents-vs.png "okně vlastností obslužnou rutinu nastavit pro tlačítko")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
+[![Okno Vlastnosti s obslužnou rutinu události pro tlačítko nastavit](introduction-images/19-buttonpropertieswindowevents-vs.png "okně Vlastnosti s obslužnou rutinu události pro tlačítko")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-Jakmile obslužné rutiny události byl zadán, musí být metoda se stejným názvem přidána do odpovídající třídy kontroleru zobrazení. Jinak `unrecognized selector` výjimka se stane, když je stisknuté tlačítko:
+Jakmile byl zadán obslužnou rutinu události, musí metoda se stejným názvem přidána do odpovídající třídu kontroleru zobrazení. V opačném případě `unrecognized selector` dojde k výjimce při klepnutí na tlačítko:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Výjimku nerozpoznané selektor](introduction-images/20-unrecognizedselector-vsmac.png "výjimku nerozpoznané selektor")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
+[![Nerozpoznaný selektor výjimka](introduction-images/20-unrecognizedselector-vsmac.png "výjimku nerozpoznaný selektor")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
-Všimněte si, že po obslužné rutiny události byl v zadaný **vlastnosti Pad**, iOS Designer okamžitě otevřete odpovídající soubor kódu a nabízet vložit deklarace metody. 
+Všimněte si, že po obslužné rutiny události v zadané **oblasti vlastnosti**, iOS Designer se okamžitě otevřít odpovídajícím kódovým souborem a nabídky pro vložení deklarace metody. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Výjimku nerozpoznané selektor](introduction-images/20-unrecognizedselector-vs.png "výjimku nerozpoznané selektor")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
+[![Nerozpoznaný selektor výjimka](introduction-images/20-unrecognizedselector-vs.png "výjimku nerozpoznaný selektor")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
-Příklad, který používá vlastní obslužné rutiny, najdete v části [Hello, iOS – Příručka Začínáme](~/ios/get-started/hello-ios/index.md).
+Příklad, který používá vlastní obslužné rutiny, najdete [Hello, iOS – Příručka Začínáme](~/ios/get-started/hello-ios/index.md).
 
 ### <a name="outline-view"></a>Zobrazení osnovy
 
-IOS Designer lze také zobrazit hierarchii rozhraní ovládacích prvků jako přehled. Obrys je k dispozici výběrem **Osnova dokumentu** kartě, jak je uvedeno níže:
+IOS Designer můžete také zobrazit hierarchii rozhraní ovládacích prvků jako ohraničením. Přehled je k dispozici tak, že vyberete **Osnova dokumentu** kartu, jak je znázorněno níže:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Osnova dokumentu](introduction-images/21-buttonoutlineview-vsmac.png "Osnova dokumentu")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
+[![Osnova dokumentu](introduction-images/21-buttonoutlineview-vsmac.png "osnovu dokumentu")](introduction-images/21-buttonoutlineview-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Osnova dokumentu](introduction-images/21-buttonoutlineview-vs.png "Osnova dokumentu")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
+[![Osnova dokumentu](introduction-images/21-buttonoutlineview-vs.png "osnovu dokumentu")](introduction-images/21-buttonoutlineview-vs-large.png#lightbox)
 
 -----
 
-Vybraný ovládací prvek v zobrazení osnovy zůstává synchronizována s vybraný ovládací prvek na návrhovou plochu.  Tato funkce je užitečná pro výběrem položky z hierarchie hluboko vložené rozhraní.
+Vybraný ovládací prvek v zobrazení osnovy stále synchronizovaná s vybraný ovládací prvek na návrhové ploše.  Tato funkce je užitečná pro výběr položky z rozhraní hluboce vnořené hierarchie.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="revert-to-xcode"></a>Vrátit se do Xcode
+## <a name="revert-to-xcode"></a>Vrátit zpět do Xcode
 
-Je možné používat iOS Designer a Xcode rozhraní tvůrce zcela zaměnitelným významem. Otevřete storyboard nebo soubor .xib v Xcode rozhraní tvůrce, klikněte pravým tlačítkem na soubor a vyberte **otevřete s > Xcode rozhraní tvůrce**, které jsou popsány v následující snímek obrazovky:
+Je možné používat iOS Návrhář a Tvůrce rozhraní Xcode Zaměnitelně. Otevřete soubor .xib nebo scénáře v Tvůrce rozhraní Xcode, klikněte pravým tlačítkem na soubor a vyberte **otevřít v programu > Tvůrce rozhraní Xcode**, jak je znázorněno v následujícím snímku obrazovky:
 
-[![Otevření scénáře v Xcode rozhraní tvůrce](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "otevírání scénáře v Tvůrci rozhraní Xcode")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+[![Otevření scénáře Tvůrce rozhraní Xcode](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "otevření scénáře Tvůrce rozhraní Xcode")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
-Po provedení úpravy v Xcode rozhraní tvůrce, uložte soubor a vrátit k sadě Visual Studio for Mac. Změny se budou synchronizovat do projektu Xamarin.iOS.
+Po provedení úprav v Tvůrci rozhraní Xcode, uložte soubor a vrátí do sady Visual Studio pro Mac. Změny se synchronizují do projektu Xamarin.iOS.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -464,31 +464,31 @@ Po provedení úpravy v Xcode rozhraní tvůrce, uložte soubor a vrátit k sad�
 
 ## <a name="xib-support"></a>podpora .xib
 
-IOS Návrhář podporuje vytváření, úpravám a správě .xib soubory. Tyto jsou soubory formátu XML této hodnota představovat jeden, vlastní zobrazení, které lze přidat do aplikace zobrazení hierarchie. Soubor .xib obvykle představuje rozhraní pro jednoho zobrazení nebo obrazovky v aplikaci, zatímco scénáře představuje mnoho obrazovky a přechody mezi nimi.
+IOS Designer podporuje vytváření, úpravám a správě soubory .xib. Tyto jsou soubory formátu XML tohoto respresent jeden vlastní zobrazení které lze přidat do hierarchie zobrazení aplikace. Soubor .xib obvykle představuje rozhraní pro jedno zobrazení nebo obrazovku v aplikaci, že ve scénáři představuje mnoha obrazovkách a přechody mezi nimi.
 
-Existuje mnoho názory, o kterých řešení – soubory .xib, scénářů nebo kód – funguje nejlépe pro vytváření a údržbu uživatelské rozhraní. Ve skutečnosti neexistuje ideální řešení a je vždy vhodné zvažování nejlepší nástroj pro úlohu po ruce. Ale nutné dodat, .xib soubory jsou obecně nejúčinnější, když se používá k reprezentování vlastní zobrazení potřeby na více místech v aplikaci, například buňce zobrazení vlastní tabulky. 
+Existuje mnoho názory, o kterých řešení – soubory .xib, scénáři nebo kód – je nejvhodnější pro vytváření a správa uživatelského rozhraní. Ve skutečnosti neexistuje ideální řešení a je vždy vhodné vzhledem k tomu vždycky ten nejlepší nástroj pro aktuální úlohu. Ale nutné dodat, soubory .xib jsou obecně největší účinek, když používá k reprezentování vlastní potřeby na více místech v aplikaci, jako je například buňky zobrazení tabulky vlastní zobrazení. 
 
-Další dokumentaci o použití .xib souborů naleznete v následujících recepty:
+Další dokumentaci ke službě pomocí soubory .xib najdete v následujících návodů:
 
-- [Pomocí šablony .xib zobrazení](https://developer.xamarin.com/recipes/ios/general/templates/using_the_ios_view_xib_template/)
-- [Vytváření vlastní TableViewCell, použití .xib](https://developer.xamarin.com/recipes/ios/content_controls/tables/custom-tableviewcell/)
-- [Vytvoření obrazovky spustit pomocí .xib](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Pomocí šablony .xib zobrazení](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/using_the_ios_view_xib_template)
+- [Vytváří se vlastní TableViewCell pomocí .xib](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
+- [Vytvoření obrazovky spuštění pomocí .xib](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-Další informace týkající se použití scénářů, najdete v části [Úvod do scénářů](~/ios/user-interface/storyboards/index.md).
+Další informace týkající se použití scénářů, najdete [Úvod do scénářů](~/ios/user-interface/storyboards/index.md).
 
-Tato a další iOS související Návrhář příručky naleznete s použitím scénářů jako standardní přístup pro vytváření uživatelského rozhraní, protože ve výchozím nastavení většina Xamarin.iOS nové šablony projektu poskytují scénáře.
+Tato a další pokyny týkající se Návrhář iOS odkazovat na používání scénáře jako standardní postup pro vytváření uživatelských rozhraní, protože většina Xamarin.iOS nové šablony projektu zadejte ve scénáři ve výchozím nastavení.
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka poskytuje úvod do systému iOS Návrhář popisující její funkce a osnovy nástroje, které nabízí pro návrh Krásný uživatelského rozhraní.
+Tato příručka poskytuje úvod do iOS Designer, popisující její funkce a nástroje, které nabízí pro vytváření překrásných uživatelských rozhraní osnovy.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Úvod do scénářů](~/ios/user-interface/storyboards/index.md)
-- [iOS navrhovatelé návod ovládací prvky](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
+- [iOS navrhovatelé návod ovládacích prvků](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, iOS s více obrazovkami](~/ios/get-started/hello-ios-multiscreen/index.md)
-- [Android návrháře přehled](~/android/user-interface/android-designer/index.md)
+- [Android Designer – přehled](~/android/user-interface/android-designer/index.md)
 - [Částečné třídy a metody](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [Začnete návrháře Xamarin pro iOS – momentální 2014 (video)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
-- [Použití návrháře iOS k vytvoření obrazovky spuštění (video)](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
+- [Všemi zúčastněnými stranami návrháři Xamarin pro iOS – rozvíjet 2014 (video)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
+- [Použití v iOS designeru vytvoření obrazovky spuštění (video)](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
