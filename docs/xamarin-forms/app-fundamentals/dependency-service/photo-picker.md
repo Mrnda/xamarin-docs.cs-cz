@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: b593815df9ce942a98496806116bacfa63e2a2d9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: dafa60ff57f34bd4169af48e380079d9637d8d26
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999027"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241104"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Výběr z knihovny obrázků fotografie
 
@@ -48,7 +48,7 @@ Toto rozhraní je implementováno ve všech platformách pomocí kódu pro konkr
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **vybírat fotografii do Galerie** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **vybírat fotografii do Galerie** ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
 Je součástí implementace iOS [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) třídu v projektu pro iOS ukázkového kódu. Aby tato třída viditelná pro `DependencyService` správce, musí být určen třídy s [`assembly`] atribut typu `Dependency`, a musí být veřejné a explicitní implementace třídy `IPicturePicker` rozhraní:
 
@@ -146,7 +146,7 @@ Aplikace pro iOS vyžaduje oprávnění uživatele pro přístup k telefonu knih
 
 ## <a name="android-implementation"></a>Implementace s androidem
 
-Android implementace používá techniky popsané v [ **vyberte bitovou kopii** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků ale `OnActivityResult` přepsat ve třídě, která je odvozena z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídu v projektu pro Android má byla doplněna pole, vlastnosti a přepsání `OnActivityResult` metody:
+Android implementace používá techniky popsané v [ **vyberte bitovou kopii** ](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků ale `OnActivityResult` přepsat ve třídě, která je odvozena z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídu v projektu pro Android má byla doplněna pole, vlastnosti a přepsání `OnActivityResult` metody:
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -314,6 +314,6 @@ Klepnutím `Image` element na stránce se vrátí do normálu.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Zvolte fotografii v galerii (iOS)](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
-- [Vyberte bitovou kopii (Android)](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)
+- [Zvolte fotografii v galerii (iOS)](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
+- [Vyberte bitovou kopii (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)
 - [DependencyService (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)

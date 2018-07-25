@@ -1,56 +1,56 @@
 ---
 title: iOS 7 přehled uživatelského rozhraní
-description: iOS 7 zavádí nadbytku změny uživatelského rozhraní. V tomto článku klade důraz některé větší změny v vzhled ovládacích prvků a rozhraní API, které podporují nový design.
+description: iOS 7 přináší množství změny uživatelského rozhraní. Tento článek popisuje některé větší změny, vzhled ovládacích prvků a rozhraní API, která podporují nový návrh.
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3f5ea8abd41e718f9ac947c5acb290dffe400ddd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e7725418ed104bd9be014b80d20fd62de144ca5
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30781922"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242287"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 přehled uživatelského rozhraní
 
-_iOS 7 zavádí nadbytku změny uživatelského rozhraní. V tomto článku klade důraz některé větší změny v vzhled ovládacích prvků a rozhraní API, které podporují nový design._
+_iOS 7 přináší množství změny uživatelského rozhraní. Tento článek popisuje některé větší změny, vzhled ovládacích prvků a rozhraní API, která podporují nový návrh._
 
-iOS 7 se zaměřuje na obsah přes chrome. Prvky uživatelského rozhraní v iOS 7 zdůraznit chrome odebráním atributy například nadbytečné ohraničení, stavové řádky a navigační panely, které snižují množství místa na obrazovce používá zobrazení obsahu. Obsah v iOS 7, je určen k použití na celé obrazovce.
+iOS 7 se zaměřuje na obsah v chrome. Prvky uživatelského rozhraní v Iosu 7 zdůraznit chrome odebráním atributům, jako je nadbytečné ohraničení, stavovém řádku a navigačních panelů, které snižují množství obsahu zobrazení používané místo na obrazovce. V systému iOS 7 obsah je určen k použití na celou obrazovku.
 
-iOS 7 přináší několik změn v jiných: barva se používá k rozlišení prvků uživatelského rozhraní, místo atributy, jako je tlačítko ohraničení. Mnoho prvky, jako jsou například navigační panely a stavové řádky jsou nyní rozostřeného a průhledná nebo transparentní, s obsahu zobrazení trvá oblasti pod nimi. Tato zobrazení obsahu vykreslit prostřednictvím rozostřeného řádky, zdůraznění pocit hloubka v uživatelském rozhraní.
+iOS 7 přináší několik dalších změn: barva se používá k rozlišení prvků uživatelského rozhraní, namísto atributům, jako je tlačítko ohraničení. Mnoho prvků, jako je například navigačních panelů a stavové řádky jsou nyní rozmazaný a více průchody průsvitných nebo průhledné s obsahu zobrazení trvá oblast pod nimi. Tato zobrazení obsahu vykreslení prostřednictvím rozmazaný pruhy, které odlišují pocit hloubka v uživatelském rozhraní.
 
-Tento článek se zabývá řadu změny prvky uživatelského rozhraní v iOS 7 a také různé rozhraní API související s nový návrh uživatelského rozhraní.
+Tento článek se týká několik změn pro prvky uživatelského rozhraní v iOS 7, jakož i různých rozhraní API související s nový návrh uživatelského rozhraní.
 
 ## <a name="view-and-control-changes"></a>Zobrazení a řízení změn
 
-Všechna zobrazení v UIKit požadavkům nový vzhled a chování systému iOS 7. V této části jsou zdůrazněné některé změny těchto zobrazeních a také související rozhraní API, které se změnily pro podporu nového uživatelského rozhraní.
+Všechna zobrazení v Uikitu odpovídat nový vzhled a chování systému iOS 7. Tato část ukazuje některé změny těchto zobrazeních, jakož i související rozhraní API, které se změnily pro podporu nové uživatelské rozhraní.
 
-### <a name="uibutton"></a>UIButton
+### <a name="uibutton"></a>Tlačítka uživatelského rozhraní
 
-Tlačítka vytvořené z `UIButton` třídy jsou nyní bez okrajů bez pozadí ve výchozím nastavení, jak je uvedeno níže:
+Vytvořené z tlačítka `UIButton` třídy jsou teď další bez pozadí ve výchozím nastavení, jak je znázorněno níže:
 
- ![](ios7-ui-images/button.png "Ukázka UIButton")
+ ![](ios7-ui-images/button.png "Ukázka tlačítka uživatelského rozhraní")
 
-`UIButtonType.RoundedRect` Styl je zastaralá. Pokud se používá v iOS 7, `UIButtonType.RoundedRect` bude mít za následek `UIButtonType.System` používají, který vytvoří výchozí styl tlačítko bez pozadí a viditelná hranami, jak je uvedeno výše.
+`UIButtonType.RoundedRect` Style je zastaralá. Pokud se používá v systému iOS 7, `UIButtonType.RoundedRect` způsobí `UIButtonType.System` používán; produkuje výchozí styl tlačítka bez pozadí nebo viditelné hrany, jak je znázorněno výše.
 
 ### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
-Podobně jako `UIButton`, panelu tlačítka jsou i bez okrajů, jako výchozí bude použit k novému `UIBarButtonItemStyle.Plain` styl vidíte níže:
+Podobně jako `UIButton`, panel tlačítek jsou i další, jako výchozí se použije k novému `UIBarButtonItemStyle.Plain` style je uvedeno níže:
 
  ![](ios7-ui-images/barbuttonplain.png "Ukázka UIBarButtonItem")
 
-Kromě toho `UIBarButtonItemStyle.Bordered` styl je zastaralá. Nastavení `UIBarButtonItemStyle.Bordered` v iOS 7 způsobí `UIBarButtonItemStyle.Plain` styl používá.
+Kromě toho `UIBarButtonItemStyle.Bordered` style je zastaralá. Nastavení `UIBarButtonItemStyle.Bordered` v iOS 7 způsobí `UIBarButtonItemStyle.Plain` stylu používá.
 
-`UIBarButtonItemStyle.Done` Styl není zastaralá. Však vytvoří také bez okrajů tlačítko pouze s tučně styl, jak je znázorněno:
+`UIBarButtonItemStyle.Done` Nebyl zastaralý styl. Však vytvoří také další tlačítko, pouze se stylem tučným písmem, jak je znázorněno:
 
- ![](ios7-ui-images/barbuttondone.png "Ukázka UIBarButtonItem v styl Done")
+ ![](ios7-ui-images/barbuttondone.png "Ukázka UIBarButtonItem ve stylu Hotovo")
 
 ### <a name="uialertview"></a>UIAlertView
 
-Kromě Změna stylu pro nový iOS 7 vzhled a chování zobrazení výstrah již nepodporují přizpůsobení prostřednictvím dílčí zobrazení. I když `UIAlertView` dědí z `UIView`, volání `AddSubview` na `UIAlertView` nemá žádný vliv. Zvažte například následující kód:
+Zobrazení výstrah kromě Změna stylu pro vzhled a chování nového systému iOS 7, už nebude podporovat přizpůsobení prostřednictvím dílčí zobrazení. I když `UIAlertView` dědí z `UIView`, volání `AddSubview` na `UIAlertView` nemá žádný vliv. Zvažte například následující kód:
 
 ```csharp
 UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle.Plain, (s,e) =>
@@ -66,89 +66,89 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 });
 ```
 
-Tímto se vytvoří standardní zobrazení výstrah, s dílčí zobrazení bude ignorována, jak je uvedeno níže:
+Tímto se vytvoří standardní zobrazení výstrah s dílčí zobrazení bude ignorována, jak je znázorněno níže:
 
  ![](ios7-ui-images/alert.png "Ukázka UIAlertView")
  
- Poznámka: UIAlertView byla zrušena v iOS 8. Zobrazení [výstrahy řadiče](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/) recept na pomocí zobrazení výstrah v iOS 8 a vyšší.
+ Poznámka: UIAlertView se přestala nabízet v iOS 8. Zobrazení [upozornění řadič](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) recept na pomocí zobrazení výstrah v iOS 8 a novějším.
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
-Segmentovaným ovládacích prvků v iOS 7 jsou transparentní a podporují odstín barvy. Odstín barvy se používá pro barvu textu a ohraničení. Pokud je vybraná segment, barva je si místo mezi na pozadí a text, se TINT – barvu použitou zvýrazněte vybraný segment, jak je uvedeno níže:
+Segmentované ovládací prvky v iOS 7 jsou transparentní a podporují zabarvení. Barva zabarvení se používá pro barvu textu a ohraničení. Při výběru segment, který je barva prohození mezi na pozadí a text, barvu pro zvýraznění vybraného segmentu, jak je znázorněno níže:
 
  ![](ios7-ui-images/segmentedcontrol.png "Ukázka UISegmentedControl")
 
-Kromě toho `UISegmentedControlStyle` se již nepoužívá v iOS 7.
+Kromě toho `UISegmentedControlStyle` se už nepoužívá v systému iOS 7.
 
 ### <a name="picker-views"></a>Výběr zobrazení
 
-Rozhraní API pro výběr zobrazení je z velké části beze změny; Pokyny pro iOS 7 návrh však nyní stavu výběr zobrazení by měla zobrazit vložené spíš než jako vstupní zobrazení animovaný z dolní části obrazovky nebo prostřednictvím nového řadiče nabídnutých do zásobníku řadič navigace, jako předchozí iOS verze. To se zobrazí v aplikaci kalendáře systému:
+Rozhraní API pro výběr zobrazení je do značné míry beze změny; Pokyny pro iOS 7 návrh však nyní stavu výběru zobrazení by se měla zobrazit vložené, ne jako vstupní zobrazení animovat v dolní části obrazovky nebo prostřednictvím nového řadiče vloženy do zásobníku kontroler navigace, stejně jako v předchozím iOS verze. To lze zobrazit v aplikaci systému kalendáře:
 
- ![](ios7-ui-images/inlinepicker.png "To můžete zobrazit v aplikaci systému kalendáře")
+ ![](ios7-ui-images/inlinepicker.png "To lze zobrazit v aplikaci systému kalendáře")
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
-Panel hledání se teď zobrazí v navigačním panelu, když `UISearchDisplayController.DisplaysSearchBarInNavigationBar` je nastavena na hodnotu true. Pokud nastavíte hodnotu false, výchozí hodnota - navigačním panelu je skrytý, pokud se zobrazí řadičem vyhledávání.
+Na panelu hledání se teď zobrazují v navigačním panelu, když `UISearchDisplayController.DisplaysSearchBarInNavigationBar` je nastavena na hodnotu true. Pokud je nastavena na false, výchozí hodnota - navigační panel skrytý, pokud kontroler hledání se zobrazí.
 
-Následující snímek obrazovky ukazuje panelu Hledat v rámci `UISearchDisplayController`:
+Na následujícím snímku obrazovky se zobrazí na panelu hledání v rámci `UISearchDisplayController`:
 
  ![](ios7-ui-images/searchbar.png "Ukázka UISearchDisplayController")
 
 ### <a name="uitableview"></a>UITableView
 
-Rozhraní API související `UITableView` především jsou beze změny; ale se styl změnila výrazně tak, aby odpovídala nové návrh uživatelského rozhraní. Interní zobrazení hierarchie se taky poněkud liší. Tato změna nebude mít vliv na většinu aplikací, ale je něco znát.
+Rozhraní API kolem `UITableView` hlavně jsou beze změny, ale styl změnil výrazně tak, aby odpovídal na nový návrh uživatelského rozhraní. Také se poněkud liší interní zobrazit hierarchii. Tato změna nebude mít vliv na většinu aplikací, ale je byste měli vědět.
 
 #### <a name="grouped-table-style"></a>Styl seskupené tabulky
 
-Styl seskupené změnit byl aktualizován s obsahem teď rozšíření s okraji obrazovky, jak je uvedeno níže:
+Seskupené změnit styl aktualizoval s obsahem nyní rozšíření na okraji obrazovky, jak je znázorněno níže:
 
- ![](ios7-ui-images/table1.png "Styl ukázku seskupené tabulky")
+ ![](ios7-ui-images/table1.png "Styl ukázka seskupené tabulky")
 
 #### <a name="separatorinset"></a>SeparatorInset
 
-Oddělovač řádku může být nyní odsazeny nastavením `UITableVIewCell.SeparatorInset` vlastnost. Například následující kód se použije pro odsazení v buňkách od levého okraje:
+Oddělovače řádků lze nyní odsazeny nastavením `UITableVIewCell.SeparatorInset` vlastnost. Například následující kód se použije pro odsazení buňky od levého okraje:
 
 ```csharp
 cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 ```
 
-To vytváří v tabulce zobrazení se zobrazují odsazené buněk, jak je uvedeno níže:
+To vytvoří v zobrazení tabulky s odsazené buňky, jak je znázorněno níže:
 
  ![](ios7-ui-images/separatorinset.png "Ukázka UITableView SeparatorInset")
 
 #### <a name="table-button-styles"></a>Styly tlačítek tabulky
 
-Tlačítka různých používaných v zobrazeních tabulky všechny změnily. Na následujícím snímku obrazovky představuje zobrazení tabulky v režimu úprav:
+O různá tlačítka používaných v zobrazeních tabulky všechny změnily. Na následujícím snímku obrazovky představuje zobrazení tabulky v režimu úprav:
 
- ![](ios7-ui-images/table2.png "Tomto snímku obrazovky představuje zobrazení tabulky v režimu úprav")
+ ![](ios7-ui-images/table2.png "Tento snímek obrazovky představuje zobrazení tabulky v režimu úprav")
 
-### <a name="additional-control-changes"></a>Změny další ovládací prvek
+### <a name="additional-control-changes"></a>Další ovládací prvek změny
 
-Další ovládací prvky UIKit taky změnily, včetně posuvníky, přepínače a steppers. Tyto změny jsou čistě visual. Další informace najdete v části společnosti Apple [iOS 7 přechod uživatelského rozhraní průvodce](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html).
+Další ovládací prvky UIKit změnily, včetně posuvníky, přepínače a prvky krokování. Tyto změny jsou čistě visual. Další informace najdete v Apple [příručka přechod uživatelského rozhraní pro iOS 7](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html).
 
 ## <a name="general-user-interface-changes"></a>Uživatelské rozhraní obecné změny
 
-Kromě změn v UIKit, iOS 7 zavádí řadu visual změny v uživatelském rozhraní, včetně:
+Kromě změn v Uikitu, iOS 7 přináší širokou škálu vizuální změny v uživatelském rozhraní, včetně:
 
--  Obsah celé obrazovky
--  Panel vzhledu
--  Odstín barvy
+-  Obsah zobrazení na celé obrazovce
+-  Vzhled panelu
+-  Barevný nádech
 
 <a name="fullscreen" />
 
 ### <a name="full-screen-content"></a>Obsah celé obrazovky
 
-iOS 7 slouží pro aplikace využívat výhod celé obrazovky. Řadiče zobrazení se nyní zobrazí překryté k stavového řádku a v navigačním panelu – pokud takové existuje - a která se objeví pod stav a navigační panely.
+iOS 7 je navržena tak, aby aplikace využívat celou obrazovku. Kontrolery zobrazení teď budou zobrazovat překryté ve stavovém řádku a v navigačním panelu – pokud existuje – na rozdíl od uvedených níže stav a navigačních panelů.
 
-Během přípravy aplikace pro iOS 7, můžete změnit zarovnání dílčích zobrazení vizuálně pomocí *rozhraní tvůrce* nebo *Xamarin iOS Návrhář*. Také můžete jeden z nových rozhraní API a pomáhaly zvládat přes celou obrazovku obsahu prostřednictvím kódu programu. Tato rozhraní API jsou zavedené níže.
+Během přípravy vaší aplikace pro iOS 7, můžete změnit zarovnání vizuálně pomocí dílčích zobrazení *Tvůrce rozhraní* nebo *Xamarin pro iOS Designer*. Můžete také použít jeden z nových rozhraní API a pomáhaly zvládat celou obrazovku obsahu prostřednictvím kódu programu. Tato rozhraní API jsou zavedeny níže.
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide a BottomLayoutGuide
 
- `TopLayoutGuide` a `BottomLayoutGuide` sloužit jako referenční kde by měl zobrazení začínat ani končit, tak, aby obsah není překrytý průhledná `UIKit` řádku, jako v následujícím příkladu:
+ `TopLayoutGuide` a `BottomLayoutGuide` sloužit jako referenční informace pro kde zobrazení by měl začínat ani končit, takže obsah není překryto neobjektovým více průchody průsvitných `UIKit` řádku, jako v následujícím příkladu:
 
- [![](ios7-ui-images/clipped.png "Ukázkový obsah není překrytý průhledná UIKit panelu")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "Ukázkový obsah není překryto neobjektovým více průchody průsvitných UIKit panelu")](ios7-ui-images/clipped.png#lightbox)
 
-Tato rozhraní API slouží k výpočtu přestavění zobrazení z horní nebo dolní části obrazovky a odpovídajícím způsobem upravit umístění obsahu:
+Tato rozhraní API slouží k výpočtu zobrazení skrytého z horní nebo dolní části obrazovky a odpovídajícím způsobem upravit umístění obsahu:
 
 ```csharp
 public override void ViewDidLayoutSubviews ()
@@ -164,32 +164,32 @@ public override void ViewDidLayoutSubviews ()
 }
 ```
 
-Můžeme použít hodnotu vypočítat výše nastavit naše `ImageView`na přestavění z horní části obrazovky, takže celého obrázku je vidět:
+Můžeme použít hodnota vypočítaná výše nastavit naše `ImageView`posun od horní části obrazovky, takže celého obrázku je vidět:
 
- [![](ios7-ui-images/good2.png "Příklad ImageViews přestavění z horní části obrazovky")](ios7-ui-images/good2.png#lightbox)
+ [![](ios7-ui-images/good2.png "Příklad skrytého ImageViews od horního okraje obrazovky")](ios7-ui-images/good2.png#lightbox)
 
-Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) pro pracovní vzorek.
+Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) ukázku práce.
 
-Hodnota posunutí je generována dynamicky po přidání zobrazení do hierarchie, takže pokusu o čtení `TopLayoutGuide` a `BottomLayoutGuide` hodnoty v `ViewDidLoad` vrátí 0. Po zobrazení načetl – například v vypočítat hodnotu `ViewDidLayoutSubviews`.
+Hodnota posunutí se vygeneruje dynamicky po zobrazení je přidaný do hierarchie, tak při čtení `TopLayoutGuide` a `BottomLayoutGuide` hodnoty v `ViewDidLoad` vrátí hodnotu 0. Po zobrazení načtení – například v vypočítat hodnotu `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> `TopLayoutGuide` a `BottomLayoutGuide` jsou zastaralé v iOS 11 považuje nové rozložení bezpečné oblasti. Apple uvedli, že je kompatibilní s verzí iOS starší než iOS 11 pomocí bezpečné oblasti. Další informace najdete v tématu [aktualizace aplikace pro iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) průvodce.
+> `TopLayoutGuide` a `BottomLayoutGuide` se považují za zastaralé v Iosu 11 a nové rozložení pro bezpečnou oblast. Apple uvedli, že je kompatibilní s iOS verze starší než iOS 11 pomocí bezpečnou oblast. Další informace najdete v tématu [aktualizovat vaši aplikaci pro iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) průvodce.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
-Toto rozhraní API Určuje, které hrany zobrazení je třeba rozšířit na celé obrazovce, bez ohledu na panelu průsvitnosti. V iOS 7 navigační panely a panelů nástrojů zobrazí vrstvu nad kontroleru zobrazení – na rozdíl od v iOS předchozí verze, kde nebyla trvat až stejnému adresnímu prostoru. Aplikace systému iOS 7 fotografie znázorňuje výchozí `UIViewController.EdgesForExtendedLayout` hodnotu `UIRectEdge.All`. Toto nastavení vyplní celé všechny čtyři strany v okně s obsahem, vytváření účinek překrývajících se a celé obrazovky:
+Toto rozhraní API Určuje, které okraji zobrazení by měl rozšířit na celou obrazovku, bez ohledu na to panelu průsvitnost. V systému iOS 7 navigačních panelů a panelů nástrojů zobrazí vrstvu nad kontroleru zobrazení – na rozdíl od předchozích IOS verze, ve kterém nebyla trvat až na stejném místě. Aplikace systému iOS 7 fotografie ukazuje takovouto výchozí `UIViewController.EdgesForExtendedLayout` hodnotu `UIRectEdge.All`. Toto nastavení vyplní všechny čtyři strany v okně s obsahem, vytváření účinek se překrývají a na celé obrazovce:
 
  [![](ios7-ui-images/photos.png "Ukázka EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
-Klepnutím bitovou kopii odebere pruhů a ukazuje obrázek celé obrazovky:
+Klepnutím na obrázek odebere pruhy a zobrazuje obrázek celé obrazovky:
 
  [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout s pruhy odebrat")](ios7-ui-images/photos2.png#lightbox)
 
-Protože výchozí hodnota je celé obrazovky obsah, budou mít aplikace, nakonfigurované pro iOS 6 část zobrazení oříznut, stejně jako na následující snímek obrazovky:
+Vzhledem k tomu, že obsah celé obrazovky je výchozí nastavení, bude mít aplikace nastavené pro iOS 6 část zobrazení oříznut, stejně jako v následujícím snímku obrazovky:
 
- [![](ios7-ui-images/clipped.png "Nakonfigurované pro iOS 6 aplikace bude mít část zobrazení oříznut, stejně jako tento snímek obrazovky")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "Aplikace nakonfigurované pro iOS 6, bude mít část zobrazení oříznut, stejně jako v tomto snímku obrazovky")](ios7-ui-images/clipped.png#lightbox)
 
-Úpravy `UIViewController.EdgesForExtendedLayout` upraví vlastnosti pro toto chování. Jsme můžete určit, že zobrazení nevyplní žádné okraje, vyhnete se naše zobrazení, zobrazení obsahu v prostoru obsazena navigace nebo panelů nástrojů (v každé orientaci):
+Úpravy `UIViewController.EdgesForExtendedLayout` nastaví vlastnosti pro toto chování. Můžeme určit, že zobrazení není vyplnit jakékoli hran, tak naše zobrazení zabrání zobrazení obsahu v místo obsazené navigace nebo panelů nástrojů (na všechny orientace):
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -197,25 +197,25 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 }
 ```
 
-V naší aplikaci jsme se zobrazí v že zobrazení je znovu změnit jejich umístění, takže celého obrázku je vidět:
+V naší aplikaci uvidíme, že zobrazení znovu přemístí, celého obrázku je vidět:
 
  [![](ios7-ui-images/good.png "Příklad s viditelné celého obrázku")](ios7-ui-images/good.png#lightbox)
 
-Všimněte si, že se při důsledky `TopLayoutGuide/BottomLayoutGuide` a `EdgesForExtendedLayout` rozhraní API jsou podobné, jsou určená k vyplnění jiné cíle. Změna `EdgesForExtendedLayout` ve výchozím nastavení může problém vyřešit oříznutí zobrazení v aplikací navržených pro systém iOS 6, ale dobrý iOS 7 návrh by měl respektovat estetické celé obrazovky a poskytují celé obrazovce zobrazení prostředí, spoléhat na `TopLayoutGuide` a `BottomLayoutGuide`k správně umístění obsahu, který má chtěli upravit do možnost místo pro uživatele.
+Všimněte si, že při účinky `TopLayoutGuide/BottomLayoutGuide` a `EdgesForExtendedLayout` rozhraní API jsou podobné, jsou určené k vyplnění různé cíle. Změna `EdgesForExtendedLayout` výchozí nastavení lze pravděpodobně vyřešit zkrácený zobrazení v aplikacích pro iOS 6, ale návrh dobrý systému iOS 7 by měl případném dalším sdílení dodržovat aesthetic celé obrazovky a poskytovat celé obrazovce zobrazení prostředí, spoléhat na `TopLayoutGuide` a `BottomLayoutGuide`správně umístění obsahu, který se má do pohodlné místo, kde uživatel manipulovat.
 
-Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) pro pracovní vzorek.
+Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) ukázku práce.
 
-### <a name="status-and-navigation-bars"></a>Stav a navigační panely
+### <a name="status-and-navigation-bars"></a>Stav a navigačních panelů
 
-Průhlednost se vykreslují stavového řádku a navigační panely. Stavové řádky jsou transparentní, panely nástrojů a navigační panely jsou průhledné a rozostřeného nesou pocit hloubka v uživatelském rozhraní. Následující snímek obrazovky ukazuje tento stírá a transparentnosti, kde je barva pozadí blue zobrazení kolekce zobrazeno stavu a navigační pruhy, poskytnete jim světla blue vzhled:
+Stavový řádek a navigačních panelů se vykreslují průhlednost. Stavové řádky jsou transparentní, panely nástrojů a navigačních panelů více průchody průsvitných a rozmazaný vyjádřit dojem hloubky v uživatelském rozhraní. Následující snímek obrazovky ukazuje tento rozostření a transparentnost, kde je barva modré pozadí zobrazení kolekcí zobrazeno stavu a navigační panely, jim světle modrá vzhled:
 
- ![](ios7-ui-images/transparent-navbar.png "Ukázka stavu a navigační panel stírá")
+ ![](ios7-ui-images/transparent-navbar.png "Ukázka stavu a navigační panel rozostření")
 
 #### <a name="status-bar-styles"></a>Styly stavového řádku
 
-Spolu s stírá a průhlednost může být aktivní stavového řádku světlý nebo tmavý (tmavý se výchozí hodnota). Styl panelu stavu můžete nastavit od řadiče zobrazení. Řadič zobrazení můžete také nastavit, zda je skrytý nebo zobrazí stavový řádek.
+Spolu s rozostření a transparentnost může být popředí stavový řádek light nebo dark (tmavá se výchozí hodnota). Z řadiče zobrazení je možné nastavit styl stavového řádku. Kontroler zobrazení můžete také nastavit, zda stavový řádek je skryta nebo zobrazena.
 
-Například následující kód přepsání `PreferredStatusBarStyle` metoda řadič zobrazení, aby se na stavovém řádku zobrazit světla popředí:
+Například následující kód přepsání `PreferredStatusBarStyle` metoda kontroler zobrazení, aby na stavovém řádku zobrazit světla popředí:
 
 ```csharp
 public override UIStatusBarStyle PreferredStatusBarStyle ()
@@ -224,11 +224,11 @@ public override UIStatusBarStyle PreferredStatusBarStyle ()
 }
 ```
 
-To způsobí, že stavový řádek zobrazí jako níže:
+To způsobí, že stavovém řádku zobrazí níže:
 
  ![](ios7-ui-images/light-status-bar.png "Ukázka stavového řádku")
 
-Chcete-li skryje stavový řádek z řadiče zobrazení kódu, přepište `PrefersStatusBarHidden`, jak je uvedeno níže:
+Chcete-li skrýt stavový řádek z kontroleru zobrazení kódu, přepište `PrefersStatusBarHidden`, jak je znázorněno níže:
 
 ```csharp
 public override bool PrefersStatusBarHidden ()
@@ -237,31 +237,31 @@ public override bool PrefersStatusBarHidden ()
 }
 ```
 
-To skryje stavový řádek:
+Skryje stavový řádek:
 
- ![](ios7-ui-images/status-bar-hidden.png "Skrytý stavového řádku")
+ ![](ios7-ui-images/status-bar-hidden.png "Stavový řádek skryté")
 
-### <a name="tint-color"></a>Odstín barvy
+### <a name="tint-color"></a>Barevný nádech
 
-Tlačítka se nyní zobrazují jako text bez chrome. Barva textu se dá řídit pomocí nové `TintColor` vlastnost `UIView`. Nastavení `TintColor` použije barvu celého zobrazení hierarchie pro zobrazení, které ji nastaví. Použít `TintColor`v celé aplikaci a nastavte ji na `Window`. Můžete také zjistit, kdy se změní barvu TINT – prostřednictvím `UIView.TintColorDidChange` metoda.
+Tlačítka se nyní zobrazují jako text bez chrome. Barva textu je možné řídit pomocí nového `TintColor` vlastnost `UIView`. Nastavení `TintColor` barva se vztahuje na celý zobrazit hierarchii pro zobrazení, které ji nastaví. Chcete-li použít `TintColor`v celé aplikaci, nastavte ho na `Window`. Můžete také zjistit, když se změní barva zabarvení prostřednictvím `UIView.TintColorDidChange` metody.
 
-Například následující snímek obrazovky ukazuje účinek změna odstín barvy zobrazení řadič navigace na fialový:
+Například následující snímek obrazovky ukazuje účinek změna odstín barvy pro zobrazení kontroler navigace na fialový:
 
- ![](ios7-ui-images/tint-color.png "Fialové odstín barvy na navigační řadiče zobrazení")
+ ![](ios7-ui-images/tint-color.png "Fialový barevný nádech navigace kontrolerů zobrazení")
 
-Odstín barvy lze použít pro bitové kopie i když `RenderingMode` je nastaven na `UIImageRenderingMode.AlwaysTemplate`.
+Odstín barvy lze použít u bitové kopie i když `RenderingMode` je nastavena na `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
-> Odstín barvy se nedají nastavit pomocí `UIAppearance`.
+> Barevný nádech nelze nastavit pomocí `UIAppearance`.
 
 
-### <a name="dynamic-type"></a>Dynamic Type
+### <a name="dynamic-type"></a>Dynamický typ.
 
-V iOS 7 může uživatel zadat velikost textu v nastavení systému. Dynamické typu písmo objektů je upravena dynamicky vypadat dobře bez ohledu na velikost. `UIFont.PreferredFontForTextStyle` slouží k získání písma, která je optimalizovaná pro velikost řídí uživatele.
+V systému iOS 7 může uživatel zadat velikost textu v systémových nastaveních. S dynamickým typem písmo upraví dynamicky vypadat dobře bez ohledu na velikost. `UIFont.PreferredFontForTextStyle` by měl být použít k získání písma, která je optimalizovaná pro velikost řízené uživatelem.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek se zabývá změny prvky uživatelského rozhraní v iOS 7. Ho prozkoumá některé změny provedené v zobrazení a ovládacích prvků v UIKit, zvýraznění visual změny a také změny související rozhraní API. Nakonec zavádí nové rozhraní API pro práci s celé obrazovky obsahu, Nová podpora odstín barvy a dynamického typu.
+Tento článek popisuje změny prvky uživatelského rozhraní v systému iOS 7. To prozkoumá některé změny provedené v zobrazení a ovládacích prvků v Uikitu zvýraznění vizuální změny, stejně jako se změní na související rozhraní API. A konečně zavádí nové rozhraní API pro práci s obsah zobrazení na celé obrazovce, nový odstín barvy podpory a dynamického typu.
 
 ## <a name="related-links"></a>Související odkazy
 

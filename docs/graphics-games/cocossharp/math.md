@@ -1,44 +1,44 @@
 ---
-title: 2D matematické s CocosSharp
-description: Tento průvodce pokrývá 2D Matematika pro vývoj her. Pomocí CocosSharp ukazují, jak provádět běžné úkoly vývoj her a vysvětluje výpočty za tyto úlohy.
+title: 2D Matematika s Cocossharpem
+description: Tento průvodce popisuje 2D Matematika pro vývoj her. Ukazují, jak provádět běžné úlohy vývoj her pomocí Cocossharpu a vysvětluje matematické za tyto úlohy.
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 13279df69b7a22117c10d74f1a15c082aff13264
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 63c722b74c7dc7e034475e539f38204aca87763e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921575"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242050"
 ---
-# <a name="2d-math-with-cocossharp"></a>2D matematické s CocosSharp
+# <a name="2d-math-with-cocossharp"></a>2D Matematika s Cocossharpem
 
-_Tento průvodce pokrývá 2D Matematika pro vývoj her. Pomocí CocosSharp ukazují, jak provádět běžné úkoly vývoj her a vysvětluje výpočty za tyto úlohy._
+_Tento průvodce popisuje 2D Matematika pro vývoj her. Ukazují, jak provádět běžné úlohy vývoj her pomocí Cocossharpu a vysvětluje matematické za tyto úlohy._
 
-Přesun objektů s kódem a umístit je základní součástí vývoj her všech velikostí. Umístění a přesunutí vyžadují použití matematické, zda hru vyžaduje přesunutí objektu podél přímku nebo použití trigonometrické pro otočení. Tento dokument popisuje v následujících tématech:
+Přesun objektů s kódem a umístit je představují základní součást vývoj her všech velikostí. Umístění a přesouvání vyžadují použití matematické, jestli hru vyžaduje přesouvání objektu podél rovné čáry, nebo použijte trigonometrických pro otáčení. Tento dokument se týká následujících tématech:
 
  - Rychlost
  - Akcelerace
- - Otáčení CocosSharp objektů
- - Otočení pomocí rychlosti postupu
+ - Otáčení objektů Cocossharpu
+ - Otočení pomocí rychlosti
 
-Vývojáři, kteří nemají silné matematické pozadí nebo který dlouho zapomněli jste tato témata z školy, nemusíte si dělat starosti – tento dokument se rozdělte koncepty na velikost jimiž části a doprovodný teoretické vysvětlení s praktické příklady. Stručně řečeno, bude v tomto článku odpověď na otázku student pokládáme staletí starou matematické: "Pokud se ve skutečnosti třeba použít tento vlastní položky?"
+Vývojáři, kteří nemají silné matematické pozadí nebo kteří long zapomněli tato témata školy, nemusíte se obávat – tento dokument se tedy člení koncepty pobavení kusů a doprovodný teoretické vysvětlení praktických příkladech. Stručně řečeno, tento článek se odpovědět na otázku, letitý matematické studenta: "Když se ve skutečnosti potřebuji použít to?"
 
 
 ## <a name="requirements"></a>Požadavky
 
-I když tento dokument se zaměřuje především na matematické straně CocosSharp, ukázky kódu předpokládá pracovat s objekty dědění formuláře `CCNode`. Kromě toho od `CCNode` nezahrnuje hodnoty pro rychlost a akcelerace kód předpokládá práci s entitami, které poskytují hodnoty například VelocityX, VelocityY, AccelerationX a AccelerationY. Další informace o entity, najdete v našem návodu v [entity v CocosSharp](~/graphics-games/cocossharp/entities.md).
+I když tento dokument se zaměřuje především na straně matematické Cocossharpu, ukázky kódu předpokládají práci s objekty dědění formuláře `CCNode`. Kromě toho od `CCNode` neobsahuje hodnoty pro rychlost a akceleraci kód předpokládá práci s entitami, které obsahují hodnoty, jako je VelocityX, VelocityY, AccelerationX a AccelerationY. Další informace o entitách, najdete v našem návodu na [entity v Cocossharpu](~/graphics-games/cocossharp/entities.md).
 
 
 ## <a name="velocity"></a>Rychlost
 
-Herní vývojáři použít termín *rychlosti* popisují, jak je objekt přesunutí – konkrétně jak rychlé něco přesunutí a směr to je přesunutí. 
+Vývojáři her použijte termín *rychlosti* popisující, jak se objekt pohybuje – konkrétně jak rychle něco pohybuje a směr se pohybuje. 
 
-Rychlosti je definován pomocí dva typy jednotek: jednotka pozice a časovou jednotku. Například rychlost automobilu je definován jako paliva za hodinu nebo kilometrech za hodinu. Herní vývojáři přesune často použití pixelů za sekundu definovat jak rychlé objekt. Odrážka může například přesouvat rychlostí 300 pixelů za sekundu. To znamená pokud odrážku přesunutí na 300 pixelů za sekundu, pak mají přesune 600 jednotky ve dvou sekund a 900 jednotky v tři sekundy a tak dále. Obecně platí, hodnota rychlosti *přidá* na pozici objektu (jak jsme najdete níže).
+Rychlost je definován pomocí dvou typů jednotek: jednotka pozice a časovou jednotku. Například rychlost automobilu je definován jako mil za hodinu nebo kilometrů za hodinu. Přesouvá často použití pixelů za sekundu definovat jak rychle objekt vývojáři her. Například může přesunout odrážky rychlostí 300 pixelů za sekundu. To znamená pokud odrážky pohybuje v 300 pixelů za sekundu, pak ho budou přesunuty 600 jednotky ve dvou sekund a 900 jednotky do tří sekund a tak dále. Obecně platí, hodnota rychlosti *přidá* na pozici objektu (jak jsme uvidíte níže).
 
-I když jsme použili rychlost vysvětlit jednotky rychlosti, rychlosti termín obvykle odkazuje na hodnotu nezávisle na směru, při rychlosti výraz odkazuje na rychlost a směr. Proto přiřazení odrážka rychlosti (za předpokladu, že je třída, která obsahuje nezbytné vlastnosti odrážka) může vypadat takto:
+I když jsme rychlost použít k vysvětlení jednotky rychlosti, rychlost termín obvykle odkazuje na hodnotu nezávisle na směru, zatímco termín rychlosti odkazuje na rychlost a směr. Proto přiřazení odrážek rychlost (za předpokladu, že odrážka je třída, která obsahuje potřebné vlastnosti) může vypadat takto:
 
 
 ```csharp
@@ -49,9 +49,9 @@ bulletInstance.VelocityY = 300;
 ```
 
 
-### <a name="implementing-velocity"></a>Implementace rychlosti postupu
+### <a name="implementing-velocity"></a>Implementace rychlosti
 
-CocosSharp neimplementuje rychlosti, objekty, které vyžadují přesun ho tedy musí implementovat vlastní přesun logiku. Nové herní vývojáři implementace rychlosti často, aby chybu při jejich rychlosti závislé na obnovovací frekvence. To znamená, následující *nesprávné implementace* zajistit správné výsledky budou vypadat, ale budou založeny na příslušnou hru obnovovací frekvence:
+Cocossharpu neimplementuje rychlosti, tedy objekty, které vyžadují přesouvání bude nutné implementovat své vlastní logiky pohyb. Nové vývojáři her implementace rychlosti často uděláte zpřístupnění jejich rychlost závisí na snímkovou frekvenci. To znamená, následující *nesprávná implementace* se zdá se, že poskytuje správné výsledky, ale budou založeny na hry Snímková frekvence:
 
 ```csharp
 // VelocityX and VelocityY will be added every time this code executes
@@ -59,9 +59,9 @@ this.PositionX += this.VelocityX;
 this.PositionY += this.VelocityY;
 ```
 
-Pokud hra běží na vyšší frekvence snímků (například 60 snímků za sekundu místo 30 snímků za sekundu), objekt zobrazí na rychlejší než pokud máte s nižší rychlostí rámce. Podobně pokud hra se nepodařilo zpracovat rámce v jako vysokou obnovovací frekvence (který může být způsobeno procesy na pozadí pomocí prostředků zařízení), se zobrazí hra zpomalovat.
+Pokud hra trvá na vyšší frekvence snímků (například 60 snímků za sekundu místo 30 snímků za sekundu), se zobrazí objekt do postupovat rychleji, než pokud běží na nižší Snímková frekvence. Podobně pokud hry nedokáže zpracovat snímků na jako vysokou frekvenci (která může být způsobeno procesy na pozadí pomocí prostředky zařízení), hru zobrazí zpomalovat.
 
-Aby se zohlednily to, rychlosti je často implementovaná, pomocí hodnotu času. Například pokud `seconds` proměnná představuje číslo (nebo část) sekund vzhledem k tomu, že bylo použito poslední čas rychlosti, pak následující kód by způsobilo objekt s konzistentní Přesun bez ohledu na to obnovovací frekvence:
+Aby se zohlednily to, rychlost je často implementované, využívá hodnotu času. Například pokud `seconds` proměnná představuje číslo (nebo zlomek) sady sekund od poslední čas rychlosti, pak následující kód by způsobil objektu s bez ohledu na to, frekvence snímků konzistentní vzhledem k aplikacím přesunu:
 
 ```csharp
 // VelocityX and VelocityY will be added every time this code executes
@@ -69,16 +69,16 @@ this.PositionX += this.VelocityX * seconds;
 this.PositionY += this.VelocityY * seconds;
 ```
 
-Zvažte, že bude hra, který se spouští s nižší rychlostí rámce aktualizovat pozici jeho objektů méně často. Každá aktualizace proto způsobí objekty přesunutí další, než kdyby je sdíleli Pokud hra byly aktualizace častěji. `seconds` Hodnotu účty v takovém případě generování sestav, jak dlouhá doba od poslední aktualizace uplynul.
+Vezměte v úvahu, že hry, který se spouští s nižší rychlostí rámce aktualizuje umístění své objekty méně často. Jednotlivé aktualizace proto způsobí objekty přesunu dále, než kdyby je sdíleli Pokud hra se aktualizuje častěji. `seconds` Hodnota účty v takovém případě se vytváření sestav, kolik času uplynulo od poslední aktualizace.
 
-Příklad toho, jak přidat založené na čase přesun, naleznete v části [tento tajný recept pokrývajících čas na základě přesun](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/).
+Příklad toho, jak přidat podle času přesunu, naleznete v tématu [tento předpisu pokrývající čas na základě pohybu](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement).
 
 
-### <a name="calculating-positions-using-velocity"></a>Výpočet pozice pomocí rychlosti postupu
+### <a name="calculating-positions-using-velocity"></a>Výpočet pozice pomocí rychlosti
 
-Rychlosti lze provádět předpovědi o kde objekt budou po určitou dobu předává nebo pomáhají ladit chování objektu bez nutnosti spustit hru. Například vývojáři, který je implementace pohyb přímým odrážka je potřeba nastavit odrážka rychlosti po vytvoření instance. Velikost obrazovky lze použít jako základ pro nastavení rychlosti. To znamená pokud vývojář zná, který odrážkou přesuňte výšku obrazovky v sekundách 2 a potom rychlosti musí být nastavena na výšku obrazovce dělený 2. Pokud obrazovky je 800 pixelů vysoký, by odrážka rychlost nastavit na 400 (což je 800/2).
+Rychlost je možné předvídáme kde objekt budou po určitou dobu předá nebo pomoct vyladit chování objektů, aniž byste museli spouštět hry. Třeba vývojář, který implementuje přesun aktivace odrážky musí nastavit odrážky rychlosti po je vytvořena instance. Velikost obrazovky lze použít jako základ pro nastavení rychlosti. To znamená pokud vývojář, který zná odrážka by měl přesuňte výška obrazovky do 2 sekund a pak rychlosti by mělo být nastavené výšky na obrazovce, děleno 2. Pokud obrazovky 800 pixelů na výšku, by od odrážky rychlost nastavit na 400 (což je 800/2).
 
-Podobně ve hře logiku potřebovat vypočítat, jak dlouho bude trvat objekt pro dosažení cíle zadané jeho rychlosti. To lze vypočítat vydělením vzdálenosti projít, podle rychlosti provozní objekt. Například následující kód ukazuje, jak přiřadit text popisku, který zobrazuje, jak dlouho dokud střel neobsahuje požadovanou hodnotu:
+Logika hry podobně, může být potřeba vypočítat, jak dlouho bude trvat objektu k dosažení cíle zadané její rychlosti. To lze vypočítat vydělením vzdálenost projít podle rychlosti provozní objekt. Například následující kód ukazuje, jak přiřadit text popisku, který zobrazuje, jak dlouho dokud nedosáhne střel cíli:
 
 
 ```csharp
@@ -93,13 +93,13 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 
 ## <a name="acceleration"></a>Akcelerace
 
-*Akcelerace* je běžným pojmem v vývoj her a sdílí mnoho společného s rychlosti. Akcelerace kvantifikuje, zda je objekt urychlení nebo zpomalení (jak hodnota rychlosti změny v čase). Akcelerace *přidá* na rychlosti, stejně jako rychlosti přidá na pozici. Běžné aplikace akcelerace patří gravitace automobilu urychlení a aktivuje její thrusters lodě místa. 
+*Akcelerace* je běžným pojmem vývoj her a sdílí je mnoho podobností s rychlosti. Akcelerace kvantifikuje, zda je objekt urychlení nebo zpomalení (jak hodnota rychlosti změny v průběhu času). Akcelerace *přidá* ukazateli rychlost, stejně jako rychlosti přidá k umístění. Běžné aplikace zrychlení obsahují závažnosti, automobilu urychlení a místo dodání ohlásí jeho thrusters. 
 
-Podobně jako u rychlosti, akcelerace je definována v pozici a časovou jednotku; ale na akcelerace časovou jednotku se označuje jako *kvadratických* jednotky, která zobrazuje, jak je matematický definovaný akcelerace. To znamená, herní akcelerace často měřená v *spolehlivosti pixelů za sekundu*.
+Podobné ukazateli rychlost, akcelerace je definována v pozici a jednotkou času; ale zrychlení vaší časovou jednotku se označuje jako *kvadratických* jednotku, která odráží, jak matematicky definuje akcelerace. To znamená, herní akcelerace se často počítá v *pixelů za sekundu spolehlivosti*.
 
-Pokud objekt má zrychlení X 10 jednotek za sekundu spolehlivosti, pak to znamená, že se jeho rychlosti zvýšit 10 každou sekundu. Pokud od k nečinnosti, po jednu sekundu bude přesunutí na 10 jednotek za sekundu, dvě po sekund 20 jednotek za sekundu, a tak dále.
+Pokud má objekt zrychlení X 10 jednotek za sekundu spolehlivosti, pak to znamená, že její rychlosti zvýší o 10 za sekundu. Pokud od úplně paralyzuje, po sekundě bude Přesun na 10 jednotek za sekundu, dvě po sekundách 20 jednotek za druhé, a tak dále.
 
-Akcelerace v dvěma rozměry vyžaduje komponentu X a Y, takže může být přiřazen následujícím způsobem:
+Akcelerace ve dvou dimenzích vyžaduje komponentu X a Y, takže je možné přiřadit takto:
 
 
 ```csharp
@@ -110,14 +110,14 @@ icicle.AccelerationY = -50;
 ```
 
 
-### <a name="acceleration-vs-deceleration"></a>Akcelerace oproti zpomalení
+### <a name="acceleration-vs-deceleration"></a>Zrychlení a zpomalení
 
-I když jsou v každodenní řeči někdy rozlišené zrychlení a zpomalení, není žádný technické rozdíl mezi nimi. Gravitace je force, což vede k akcelerace. Pokud objekt je vyvolána nahoru pak gravitace bude zpomalit ho (zpomaluje), ale po objekt zastavil stoupající a je použit ve stejném směru jako gravitace pak gravitace je urychlení ho (urychlení). Jak vidíte níže, aplikace zrychlení je stejný, zda je používán ve stejném směru nebo opak směru pohybu. 
+Přestože zrychlení a zpomalení jsou rozlišené někdy v každodenní řeči, neexistuje žádné technické rozdíly mezi nimi. Závažnosti je platnost, což vede k akceleraci. Pokud objekt je vyvolána směrem nahoru pak závažnosti povede ke zpomalení ho (zpomaluje), ale jakmile se zastavila, tato hodnota roste a ve stejném směru jako závažnosti se opožďuje objektu pak závažnosti zrychlují ho (zrychlení). Jak je znázorněno níže, aplikace zrychlení je stejný, ať se právě používá ve stejném směru směr nebo naopak pohybu. 
 
 
-### <a name="implementing-acceleration"></a>Implementace akcelerace
+### <a name="implementing-acceleration"></a>Implementovat acceleration
 
-Akcelerace je podobná rychlosti při implementaci – není implementována automaticky podle CocosSharp a založené na čase akcelerace k požadované implementace (na rozdíl od na základě rámce akcelerace). Implementace jednoduchého akcelerace (spolu s rychlosti) proto může vypadat podobně jako:
+Akcelerace je podobné ukazateli rychlost při implementaci – není implementováno automaticky pomocí Cocossharpu a akcelerace podle času je požadovaného nasazení (na rozdíl od založených na snímcích akcelerace). Implementace jednoduchého akcelerace (spolu s rychlosti) proto může vypadat jako:
 
 ```csharp
 this.VelocityX += this.AccelerationX * seconds;
@@ -126,9 +126,9 @@ this.PositionX += this.VelocityX * seconds;
 this.PositionY += this.VelocityY * seconds;
 ```
 
-Výše uvedený kód je, co se označuje jako *lineární aproximace* pro implementaci akcelerace. Efektivní implementuje akcelerace vcelku close stupeň přesnost, ale není perfektně přesné model akcelerace. Vysvětlení koncept způsob implementace akcelerace je zahrnutá výše.
+Výše uvedený kód je, co se říká *lineární aproximace* pro zrychlení provádění. Efektivně implementuje akcelerace se poměrně zavřít úrovní přesnosti, ale není zcela přesné typu akcelerace. Vysvětlení konceptu jak implementovat acceleration je zahrnutý výše.
 
-Za následující implementaci je matematický přesné aplikace akcelerace a rychlosti:
+Následující implementaci je akcelerace a rychlosti matematicky přesné aplikace:
 
 
 ```csharp
@@ -143,14 +143,14 @@ this.VelocityX += this.AccelerationX * seconds;
 this.VelocityY += this.AccelerationY * seconds; 
 ```
 
-Nejobvyklejší rozdíl na výše uvedeném kódu je `halfSecondsSquared` proměnnou a její využití použít akcelerace na pozici. Matematické důvodem je nad rámec tohoto kurzu, ale vývojáři zájem o výpočty za to můžete najít další informace v [toto pojednání o integraci akcelerace.](http://www.cliffsnotes.com/math/calculus/calculus/integration/distance-velocity-and-acceleration)
+Nejobvyklejšími rozdíl na výše uvedeném kódu je `halfSecondsSquared` proměnnou a její používání použít akcelerace na pozici. Matematické důvodem je nad rámec tohoto návodu, ale vývojáři chtějí matematické za to, najdete další informace najdete v [této diskuse o integraci akcelerace.](http://www.cliffsnotes.com/math/calculus/calculus/integration/distance-velocity-and-acceleration)
 
-Praktický dopad `halfSecondSquare` je, že akcelerace budou chovat matematicky přesně a předvídatelné bez ohledu na to obnovovací frekvence. Lineární aproximace zrychlení podléhá obnovovací frekvence – Čím nižší snímkový kmitočet klesne méně přesný stane sblížení. Pomocí `halfSecondsSquared` záruky kódu budou chovat stejný bez ohledu na kmitočet snímků.
+Praktický dopad `halfSecondSquare` je, že akcelerace se bude chovat matematicky přesně a předvídatelným způsobem bez ohledu na to snímkovou frekvenci. Lineární aproximace akcelerace se může frekvence snímků – Čím nižší snímkové frekvence zahodí, tím méně přesné sblížení, stane. Pomocí `halfSecondsSquared` záruky, že kód se bude chovat stejně, bez ohledu na to snímkovou.
 
 
-## <a name="angles-and-rotation"></a>Úhly a oběh
+## <a name="angles-and-rotation"></a>Jedná o úhly a otočení
 
-Visual objekty, jako `CCSprite` podporu otočení prostřednictvím `Rotation` proměnné. To může být přiřadit hodnotu k nastavení jeho otočení ve stupních. Například následující kód ukazuje, jak otočit `CCSprite` instance:
+Vizuál objekty, jako `CCSprite` podporují otočení prostřednictvím `Rotation` proměnné. To můžete přiřadit na hodnotu nastavení otočení ve stupních. Například následující kód ukazuje, jak otočit `CCSprite` instance:
 
 
 ```csharp
@@ -173,35 +173,35 @@ Výsledkem je následující:
 
 ![](math-images/image1.png "Výsledkem je tento snímek obrazovky")
 
-Všimněte si, že je oběh je 45 stupňů doprava (což je historických důvodů je opakem otočení použití matematicky):
+Všimněte si, že je otáčení 45 stupňů doprava (což je z historických důvodů je opakem otočení použití matematicky):
 
-![](math-images/image2.png "Všimněte si, že je oběh je 45 stupňů po směru hodinových ručiček který historických důvodů je opakem otočení použití matematicky")
+![](math-images/image2.png "Všimněte si, že otočení je 45 stupňů po směru hodinových ručiček která z historických důvodů je opakem otočení použití matematicky")
 
-Otočení CocosSharp a regulární Matematika obecně můžete vizualizovat následujícím způsobem:
+Otočení Cocossharpu a matematického regulární systému obecně lze vizualizovat takto:
 
-![](math-images/image3.png "Obecně můžete vizualizovat otočení CocosSharp a regulární Matematika takto")
+![](math-images/image3.png "Obecně lze vizualizovat otočení Cocossharpu a matematického regulární systému tímto způsobem")
 
-![](math-images/image4.png "Obecně můžete vizualizovat otočení CocosSharp a regulární Matematika takto")
+![](math-images/image4.png "Obecně lze vizualizovat otočení Cocossharpu a matematického regulární systému tímto způsobem")
 
-Tento rozdíl je důležité, protože `System.Math` třída používá proti směru hodinových ručiček kolem, takže vývojáři, kteří znají Tato třída musí být Invertovat úhly při práci s `CCNode` instance.
+Toto rozlišení je důležité, protože `System.Math` třída používá proti směru hodinových ručiček otočení, takže třeba Invertovat úhly při práci s vývojáři, kteří znají Tato třída `CCNode` instancí.
 
-Je třeba poznamenat, že výše diagramy zobrazit otočení ve stupních; ale některé matematické funkce (jako je například funkce v `System.Math` oboru názvů) očekávat a návratové hodnoty v *radiánech* místo stupňů. Podíváme postupy pro převod mezi typy dvě jednotky se může dál v této příručce.
+Je třeba poznamenat, že výše uvedené diagramy zobrazit otočení ve stupních; ale některé matematické funkce (jako je například funkce v `System.Math` oboru názvů) očekávají a návratové hodnoty v *radiány* místo stupňů. Podíváme se na tom, jak převod mezi typy dvě jednotky o něco později v tomto průvodci.
 
 
-### <a name="rotating-to-face-a-direction"></a>Otáčení čelit směr
+### <a name="rotating-to-face-a-direction"></a>Otáčení směr pro rozpoznávání tváře
 
-Jako v příkladu nahoře, `CCSprite` lze otáčet pomocí `Rotation` vlastnost. `Rotation` Vlastnost zajišťuje `CCNode` (základní třída pro `CCSprite`), což znamená, že otočení lze použít pro entity, které dědí `CCNode` také. 
+Jak je uvedeno výše, `CCSprite` můžete otočit pomocí `Rotation` vlastnost. `Rotation` Poskytuje vlastnost `CCNode` (základní třída pro `CCSprite`), což znamená, že otočení lze použít k entitám, které dědí nastavení z `CCNode` také. 
 
-Některé hry vyžadují objekty, které se otáčet, se kterými se cíl. Mezi příklady patří počítače řízené enemy, čistá na cíl player nebo místa lodě plující pod směrem bodu, kde je uživatel klepnou na obrazovce. Ale hodnota otočení nejprve se počítá na základě na umístění entity otáčení a umístění cíle pro práci.
+Některé hry vyžadují objekty obměnit tak čelí cíl. Mezi příklady patří nepřítele spravovanými počítači potíží na cíl přehrávač nebo místo příjemce letíte bodu, kde je uživatel klepnou na obrazovce. Ale hodnota otočení musí nejprve se počítají na základě umístění entity střídajících a umístění cíle pro rozpoznávání tváře.
 
 Tento proces vyžaduje několik kroků:
 
- - Identifikace *posun* cíle. Posun odkazuje na X a Y vzdálenost mezi rotační entity a Cílová entita.
- - Výpočet úhel z posun pomocí funkce trigonometrické Arkus tangens (podrobně popsány níže).
- - Úprava pro rozdíl mezi směřující na doprava a směr, který rotační entity body při zrušení otočený 0 stupňů.
- - Úprava pro rozdíl mezi matematickém otočení (proti směru hodinových ručiček) a CocosSharp otočení (po směru hodinových ručiček).
+ - Identifikace *posun* cíle. Posun odkazuje na X a Y vzdálenost mezi entitou otáčení a Cílová entita.
+ - Výpočet úhlu z posunu pomocí trigonometrické funkce Arkus tangens (vysvětlení obsahuje podrobnější rozpis naleznete níže).
+ - Nastavení pro rozdíl mezi směřující na pravé straně a směr, ve kterém body otáčení entity při zrušení otočený 0 stupňů.
+ - Nastavení pro rozdíl mezi matematické otočení (proti směru hodinových ručiček) a otočení Cocossharpu (po směru hodinových ručiček).
 
-Následující funkce (předpokládá se, že má být zapsán v entitě) otočí entity, která má čelí cíl:
+Následující funkce (předpokládá se, že má být zapsán v entitě) otočí entita, která má cíl pro rozpoznávání tváře:
 
 
 ```csharp
@@ -242,7 +242,7 @@ public void FacePoint(float targetX, float targetY)
 } 
 ```
 
-Výše uvedený kód může otočit entitu, aby směřovala bodu, kde uživatel je klepnou na obrazovce takto:
+Výše uvedený kód může použít otočí entitu, aby směřovala k bodu, kde uživatel se dotýká obrazovky, následujícím způsobem:
 
 
 ```csharp
@@ -258,38 +258,38 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 
 Tento kód vrátí následující chování:
 
-![](math-images/image5.gif "Tento kód výsledkem toto chování")
+![](math-images/image5.gif "Tento kód má za následek toto chování")
 
-#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Použití Atan2 pro převod posune úhly
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Použití Atan2 pro převod posuny úhly
 
-`System.Math.Atan2` Umožňuje převést posun úhlu. Název funkce `Atan2` pochází z Arkus trigonometrické funkce. "2" přípona odlišuje tuto funkci od standardní `Atan` funkce, který by odpovídal výhradně matematickém chování Arkus. Arkus tangens je funkci, která vrátí hodnotu v rozsahu od -90 a + 90 stupňů (nebo ekvivalent v radiánech). Mnoho aplikací, včetně počítače hry, často vyžadují úplné 360 stupňů hodnot, proto `Math` třída zahrnuje `Atan2` ke splnění tohoto požadavku.
+`System.Math.Atan2` je možné převést posun úhlu. Název funkce `Atan2` pochází z Arkus tangens trigonometrické funkce. "2" přípona rozlišuje tuto funkci ze standardní `Atan` funkce, který přesně odpovídá matematické chování Arkus tangens. Arkus tangens je funkce, která vrátí hodnotu v rozsahu od -90 a + 90 degrees (nebo ekvivalent v radiánech). Mnoho aplikací včetně počítačové hry, často vyžadují úplné 360 stupňů hodnot, takže `Math` třída zahrnuje `Atan2` pro splnění tohoto požadavku.
 
-Všimněte si, že výše uvedený kód předá parametr Y nejprve, pak parametr X při volání metody `Atan2` metoda. Toto je zpětně z obvyklé X, Y řazení souřadnice polohy. Další informace [najdete v části dokumentace Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
+Všimněte si, že výše uvedený kód předá parametr Y nejprve, pak parametr X při volání `Atan2` metody. Toto je zpětně od obvyklého X, Y řazení souřadnice polohy. Další informace [najdete v článku dokumentace Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
-Je také vhodné poznamenat, že z hodnoty návratový `Atan2` je v radiánech, který se používá k měření úhly jiné jednotce. Tato příručka nepodporuje pokrývat podrobnosti radiánech, ale mějte na paměti, všechny trigonometrické funkce v `System.Math` obor názvů používá radiánech, takže všechny hodnoty musí být převedena na stupňů před na objekty CocosSharp používá. Další informace o radiánech můžete najít [na stránce Wikipedia radián](http://en.wikipedia.org/wiki/Radian).
+Je také vhodné poznamenat, že návratová hodnota z `Atan2` je v radiánech, který se používá k měření úhly jinou jednotku. Tato příručka nepodporuje pokrývat podrobnosti radiány, ale mějte na paměti, který všechny trigonometrické funkce v `System.Math` obor názvů použijte radiány, tak všechny hodnoty musí být převeden na stupně před v Cocossharpu objekty používají. Můžete najít další informace o radiány [stránce Wikipedie radián](http://en.wikipedia.org/wiki/Radian).
 
-#### <a name="forward-angle"></a>Předat dál úhlu
+#### <a name="forward-angle"></a>Dopředné úhel
 
-Jednou `FacePoint` metoda převede úhel radiánech, definuje `forwardAngle` hodnotu. Tato hodnota představuje úhlu, ve kterém je entita setkávají při jeho otočení hodnota rovná 0. V tomto příkladu předpokládáme, že entity směrem k směrem nahoru, což je 90 stupňů, při použití matematickém otočení (na rozdíl od CocosSharp otočení). Tady používáme matematickém otočení vzhledem k tomu, že jsme ještě nebyly obrácený otočení pro CocosSharp.
+Jednou `FacePoint` metoda převede úhel na radiány, definuje `forwardAngle` hodnotu. Tato hodnota představuje úhel, ve kterém entita je otočena směrem k při jeho otočení hodnota se rovná 0. V tomto příkladu předpokládáme, že entity je otočena směrem nahoru, což je 90 stupňů při použití matematických otočení (na rozdíl od Cocossharpu otočení). Tady používáme matematické otočení vzhledem k tomu, že jsme dosud nebyly obrácený otočení pro Cocossharpu.
 
-Následující příklad zobrazuje jaké entity s `forwardAngle` 90 stupňů může vypadat například:
+Následující příklad zobrazuje co entita se `forwardAngle` 90 stupňů může vypadat například takto:
 
-![](math-images/image6.png "Ukazuje to, jak může vypadat entity s forwardAngle 90 stupňů.")
+![](math-images/image6.png "To ukazuje, jak může vypadat entitu s forwardAngle 90 stupňů")
 
 
-### <a name="angled-velocity"></a>Úhlové rychlosti
+### <a name="angled-velocity"></a>Zalomená rychlosti
 
-Jsme, pokud jste již hledali v tom, jak převést posun úhlu. Tato část přejde jiný způsob – použije úhel a převede jej na X a Y hodnoty. Běžné příklady automobilu přesunutí v směr, kterým se setkávají nebo čistá odrážka, která přesune ve směru, se kterým se setkávají lodě lodě místa. 
+Zatím jsme se zabývali jak převést posun na úhlu. Tato část platí jiným způsobem – přebírá úhel a převede jej na X a Y. Běžné příklady automobilu přesouvání směr, ve kterém je otočena nebo místo příjemce potíží odrážky, které přesouvá v směr, ve kterém je otočena směrem k lodě. 
 
-Rychlost, lze vypočítat koncepčně, tak, že první definování požadované rychlosti při zrušení otočený pak otáčení této rychlosti k úhlu, se kterým se setkávají entity. VYSVĚTLENÍ Tento koncept, rychlosti (a akcelerace) můžete vizualizovat jako 2dimenzí *vektoru* (což je obvykle vykresluje jako šipka). Vektor pro hodnotu rychlosti s X = 100 a Y = 0 můžete vizualizovat následujícím způsobem:
+Rychlost, koncepčně dá vypočítat jako první definování požadovanou rychlost při zrušení otočený a otočení tohoto rychlosti úhlu, který je otočena směrem k entitě. Chcete-li pomoci s vysvětlením tento koncept, rychlost (a akceleraci) lze vizualizovat jako trojrozměrné na 2 *vektoru* (což je obvykle vykreslen jako šipka). Vektor pro hodnotu rychlosti s X = 100 a Y = 0 lze vizualizovat takto:
 
-![](math-images/image7.png "Vektor pro hodnotu rychlosti s X = 100 a Y = 0 můžete vizualizovat následujícím způsobem")
+![](math-images/image7.png "Vektor pro hodnotu rychlosti s X = 100 a Y = 0 lze vizualizovat takto")
 
-Tento problém lze otáčet za následek nové rychlosti. Například otáčení vektoru o 45 stupňů (pomocí proti směru hodinových ručiček kolem) způsobí následující:
+Tento problém můžete otočen za následek nové rychlosti. Například otáčení vektoru o 45 stupňů (pomocí otočení proti směru hodinových ručiček) vrátí následující:
 
-![](math-images/image8.png "Otáčení vektoru o 45 stupňů pomocí proti směru hodinových ručiček kolem výsledky v tomto")
+![](math-images/image8.png "Otáčení vektoru o 45 stupňů proti směru hodinových ručiček otočení výsledky použití v tomto")
 
-Naštěstí rychlosti, akcelerace a to i v pozici lze všechny otáčet se stejným kódem bez ohledu na to, jak se používají hodnoty. Následující funkce pro obecné účely lze hodnotu CocosSharp otočení otočení vektor:
+Naštěstí rychlosti, zrychlení a dokonce i umístění lze všechny otočit se stejným kódem bez ohledu na to, jak se používají hodnoty. Následující funkce pro obecné účely lze hodnota Cocossharpu otočení obměna vektoru:
 
 
 ```csharp
@@ -326,7 +326,7 @@ void RotateVector(ref CCVector2 vector, float cocosSharpDegrees)
 } 
 ```
 
-Úplné povědomí o `RotateVector` metoda vyžaduje, se seznamte s trigonometrické funkce kosinus a sinus společně s některé lineární algebra, což je nad rámec tohoto článku. Ale jednou implementována `RotateVector` metoda slouží k otočit žádné vektoru, včetně rychlosti vektoru. Například následující kód může aktivovat odrážku směrem určeného `rotation` hodnotu:
+Úplné povědomí o `RotateVector` metoda vyžaduje právě znáte trigonometrické funkce kosinus a sinus spolu s některé algebraický lineární, což je nad rámec tohoto článku. Ale jednou implementované `RotateVector` metody slouží k otočení jakékoli vektoru, včetně rychlosti vektoru. Například následující kód může vyvolat odrážek v určeném směru `rotation` hodnotu:
 
 
 ```csharp
@@ -350,11 +350,11 @@ newBullet.VelocityY = velocity.Y;
 newBullet.Rotation = rotation; 
 ```
 
-Tento kód může vytvořit něco podobného jako:
+Tento kód může vytvořit něco jako:
 
-![](math-images/image9.png "Tento kód může vytvořit snímek podobný následujícímu")
+![](math-images/image9.png "Tento kód může vytvořit něco jako tento snímek obrazovky")
 
 
 ## <a name="summary"></a>Souhrn
 
-Tento průvodce popisuje běžné matematické koncepty v 2D vývoj her. Ukazuje, jak přiřadit a implementovat rychlosti a akcelerace a vysvětluje postup otočit objekty a vektory pro přesun vede libovolným směrem.
+Tento průvodce popisuje běžné matematické vzorce vývoji 2D her. Ukazuje, jak přiřadit a implementovat rychlosti a akcelerace a popisuje, jak otočit objekty a vektory pro přesun vede libovolným směrem.

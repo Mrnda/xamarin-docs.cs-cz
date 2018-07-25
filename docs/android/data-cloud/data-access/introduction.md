@@ -1,73 +1,73 @@
 ---
-title: Úvod do úložiště dat v systému Android
+title: Úvod do úložiště dat v Androidu
 ms.prod: xamarin
 ms.assetid: FDAC0771-4749-4758-865A-F1BD190CA54B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/28/2017
-ms.openlocfilehash: 42af02d2ed2a679d89425257d92f03a3764675ce
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 26576fe31919822237022572a4e490cf6fc19d65
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646986"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241440"
 ---
 # <a name="introduction"></a>Úvod
 
 ## <a name="when-to-use-a-database"></a>Kdy použít databázi
 
-Když jsou zvýšení možnosti úložiště a zpracování mobilních zařízení, funkce lag za jejich stolní a přenosné protějšky telefonů a tabletů, stále. Z tohoto důvodu je vhodné místo pouze za předpokladu, že databáze je pravé odpovědi vždy trvá delší dobu plánování architektura úložiště dat pro vaši aplikaci. Existuje několik různých možností, která vyhovuje jiné požadavky, jako například:
+Zatímco roste úložnou a výpočetní kapacitu mobilních zařízení telefonů a tabletů i nadále bude tak hrozit jejich protějšky stolní a přenosné. Z tohoto důvodu je vhodné místo pouze za předpokladu, že databáze je správná odpověď neustále trvá nějakou dobu plánování architektura úložiště dat pro vaši aplikaci. Existuje mnoho různých možností, které vyhovují jiné požadavky, jako například:
 
--  **Předvolby** – Android nabízí integrovanou mechanismus pro ukládání jednoduché páry klíč hodnota dat. Pokud ukládáte uživatelská jednoduchého nastavení nebo malé data (například informace o přizpůsobení) použijte pro ukládání tento typ informací nativní funkce platformu.
--  **Textové soubory** – vstup uživatele nebo mezipamětí objektu stažen obsah (např. HTML) mohou být uloženy přímo v systému souborů. Pomocí příslušné konvence pojmenování souboru můžete uspořádat soubory a vyhledávat data.
--  **Serializovat datové soubory** – objekty můžete zachovat jako soubor XML nebo JSON v systému souborů. Rozhraní .NET framework zahrnuje knihovny, které serializaci a zrušte serializaci objektů snadné. Použijte vhodná jména k uspořádání datových souborů.
--  **Databáze** – SQLite databázový stroj je k dispozici na platformě Android a je užitečná pro ukládání strukturovaných dat, které potřebujete k dotazování, řazení nebo jinak manipulaci. Úložiště databáze je vhodnější seznam dat pomocí mnoho vlastností.
--  **Soubory obrázků** – Přestože je možné uložit binární data v databázi v mobilním zařízení, doporučujeme uložit je přímo v systému souborů. V případě potřeby můžete ukládat názvy souborů v databázi pro přidružení bitovou kopii s ostatními daty. Při plánování práce s velkých obrázků nebo velký počet obrázků, je dobrým zvykem plánování strategie ukládání do mezipaměti, který odstraní soubory, aby se zabránilo využívání prostoru úložiště pro všechny uživatele již nepotřebujete.
+-  **Předvolby** – Android nabízí předdefinovaný mechanismus pro ukládání dat jednoduché páry klíč hodnota. Pokud ukládáte jednoduché uživatelské nastavení nebo malé kousky dat (jako jsou informace o individuálním nastavení), použijte nativní funkce platformy pro ukládání tohoto typu informací.
+-  **Textové soubory** – vstup uživatele nebo z mezipamětí stažený obsah (např.) HTML) mohou být uloženy přímo v systému souborů. Pomocí odpovídající konvencí pojmenování souboru můžete uspořádat soubory a najít data.
+-  **Serializovat datových souborů** – objekty lze nastavit jako trvalý, XML nebo JSON v systému souborů. Rozhraní .NET framework obsahuje knihovny pro serializaci a deserializaci objektů snadno. Použijte odpovídající názvy pro uspořádání datových souborů.
+-  **Databáze** – The SQLite databázový stroj je k dispozici na platformě Android a je užitečné pro ukládání strukturovaných dat, které potřebujete k dotazování, řazení nebo jinak pracovat. Úložiště databáze je vhodné k seznamům dat s více vlastnostmi.
+-  **Soubory obrázků** – i když je možné k ukládání binárních dat v databázi na mobilním zařízení, se doporučuje uložit je přímo v systému souborů. V případě potřeby můžete ukládat názvy souborů v databázi a přidružit bitovou kopii s jinými daty. Při zpracování komplexnějších velké obrázky nebo velké množství bitové kopie, je vhodné k plánování strategie ukládání do mezipaměti, který odstraňuje soubory, které už nepotřebujete, aby využívání prostoru úložiště pro všechny uživatele.
 
-Pokud je databáze správné úložiště mechanismus pro vaši aplikaci, zbývající část tohoto dokumentu popisuje jak používat SQLite na platformě Xamarin.
+Pokud je databáze úložiště mechanismus pro vaši aplikaci, zbývající část tohoto dokumentu popisuje, jak použít SQLite na platformě Xamarin.
 
-## <a name="advantages-of-using-a-database"></a>Výhody používání databáze
+## <a name="advantages-of-using-a-database"></a>Mezi výhody používání databáze
 
-Existuje několik výhod používání databáze SQL v mobilní aplikaci:
+Existuje mnoho výhod použití databáze SQL v mobilní aplikaci:
 
--  Databáze SQL umožňuje efektivní uložení strukturovaná data.
--  Konkrétní data mohou být extrahuje složitých dotazů.
--  Výsledky dotazu může být seřazeny.
+-  SQL Database umožňují efektivní úložiště strukturovaných dat.
+-  Konkrétního data může být extrahována složitých dotazech.
+-  Může být řazeny výsledky dotazu.
 -  Výsledky dotazu se dají agregovat.
--  Vývojářům existujících dovedností databáze můžete využít svými znalostmi k návrhu kód přístup k databázi a data.
--  Datový model z komponenty serveru k připojené aplikaci znovu lze (celé nebo částečně) v mobilní aplikaci.
+-  Vývojářům stávající dovednosti: pište databáze se můžou využívat své znalosti na návrhu databáze a dat přístupový kód.
+-  Datový model z komponenty serveru připojenou aplikací může znovu použít (ať už zcela nebo zčásti) v mobilní aplikaci.
 
 
-## <a name="sqlite-database-engine"></a>SQLite databázový stroj
+## <a name="sqlite-database-engine"></a>Modul databáze SQLite
 
-SQLite je open-source databázový stroj, který přijal Google pro své mobilní platformu. Databázový stroj SQLite je integrované do obou operačních systémů, takže není žádné další kroky pro vývojáře k jej využít. SQLite je skvěle hodí pro mobilní vývoj pro různé platformy, protože:
+SQLite je modul open source databáze, který přijal Google pro konkrétní mobilní platformu. Databázový stroj SQLite je integrovaný v obou operačních systémech proto není žádné další práci vývojářům využívat jejich výhod. SQLite se skvěle hodí pro vývoj mobilních řešení napříč platformami, protože:
 
--  Databázový stroj je malý, rychlý a snadno přenosné.
--  Databáze je uložené v jednom souboru, který se snadno spravovat na mobilních zařízeních.
--  Formát souboru je snadno použitelný napříč platformami: zda 32 - nebo 64bitová verze a systémy big - nebo little endian.
+-  Databázový stroj je malé, rychlé a snadné přenosné.
+-  Databázi je uložena v jednom souboru, který má jednoduchou správu mobilních zařízení.
+-  Formát souboru je snadno použitelné napříč platformami: zda 32 - a 64-bit a systémy big - nebo little endian.
 -  Implementuje většinu standardní SQL92.
 
 
-Protože SQLite je navržen pro malé a rychlé, existují některé upozornění na jeho použití:
+Protože SQLite byla navržena jako malé a rychlé, existují některé upozornění na jeho použití:
 
 -  Některé syntaxe vnější spojení není podporována.
--  Pouze tabulky přejmenovat a ADDCOLUMN jsou podporovány. Nelze provést další změny schématu.
+-  Pouze tabulky přejmenovat a ADDCOLUMN jsou podporovány. Nelze provést jiné úpravy schématu.
 -  Zobrazení jsou jen pro čtení.
 
 
-Další informace o SQLite na webu – [SQLite.org](http://SQLite.org) – ale všechny informace, které budete muset použít SQLite s Xamarinem je obsažené v tomto dokumentu a související ukázky. Databázový stroj SQLite byl podporován Android od verze Android 2.
-I když nejsou zahrnuté v této kapitoly, SQLite je také k dispozici pro použití na Windows Phone a aplikace systému Windows.
+Další informace o SQLite na webu – [SQLite.org](http://SQLite.org) – ale všechny informace, je třeba použít SQLite s využitím kódu Xamarin je obsažen v tomto dokumentu a související ukázky. Databázový stroj SQLite se byla v Android podporuje od verze Android 2.
+I když nejsou zahrnuta v této kapitole, je také k dispozici pro použití v systémech Windows Phone a aplikace Windows SQLite.
 
-## <a name="windows-and-windows-phone"></a>Systém Windows a Windows Phone
+## <a name="windows-and-windows-phone"></a>Windows a Windows Phone
 
-SQLite lze také na platformách systému Windows, i když tyto platformy nejsou zahrnuté v tomto dokumentu.
-Další informace najdete v [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) a [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) studie případu a zkontrolujte [Tim Heuer blog](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
+SQLite lze také na platformách Windows, i když tyto platformy, které nejsou zahrnuté v tomto dokumentu.
+Další informace najdete v [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) a [Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) malá a velká studie a zkontrolujte [Tim Heuer blogu](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Recepty dat v androidu](https://developer.xamarin.com/recipes/android/data/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Recepty dat pro Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

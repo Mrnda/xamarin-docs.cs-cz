@@ -1,37 +1,37 @@
 ---
 title: Přidání formátování specifické pro iOS
-description: Tento článek vysvětluje, jak nastavit vzhled specifické pro iOS bez použití Xamarin.Forms vlastní zobrazovací jednotky.
+description: Tento článek vysvětluje, jak nastavit vzhled specifické pro iOS bez použití vlastního rendereru Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243528"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241374"
 ---
 # <a name="adding-ios-specific-formatting"></a>Přidání formátování specifické pro iOS
 
-Jeden ze způsobů, jak nastavit specifické pro iOS formátování je k vytvoření [vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pro ovládací prvek a sadu specifické pro platformu styly a barvami pro každou platformu.
+Jeden ze způsobů, jak nastavit specifické pro iOS formátování je vytvořit [vlastního rendereru](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pro ovládací prvek a nastavit pro konkrétní platformu – styly a barvy pro jednotlivé platformy.
 
-Další možnosti pro řízení způsobu, jakým aplikace iOS Xamarin.Forms vzhled zahrnují:
+Další možnosti, jak řídit způsob, jakým aplikace Xamarin.Forms s Iosem vzhled patří:
 
 * Možnosti v konfiguraci zobrazení [ **Info.plist**](#info-plist)
-* Nastavení stylů ovládacího prvku pomocí [ `UIAppearance` rozhraní API](#uiappearance)
+* Nastavení stylů pro ovládací prvek prostřednictvím [ `UIAppearance` rozhraní API](#uiappearance)
 
-Tyto možnosti jsou popsané dále.
+Tyto možnosti jsou popsány níže.
 
 <a name="info-plist"/>
 
-## <a name="customizing-infoplist"></a>Přizpůsobení Info.plist
+## <a name="customizing-infoplist"></a>Přizpůsobení souboru Info.plist
 
-**Info.plist** soubor umožňuje konfiguraci některých aspektů renderering aplikaci iOS, jako je například jak (a jestli) se zobrazí na stavovém řádku.
+**Info.plist** souboru umožňuje konfiguraci některých aspektů renderering aplikace pro iOS, jako je například jak (a zda) je zobrazen stavový řádek.
 
-Například [úkolů ukázkové](https://developer.xamarin.com/samples/xamarin-forms/Todo/) následující kód používá k nastavení navigačním panelu Barvy a barvy na všech platformách:
+Například [Todo ukázka](https://developer.xamarin.com/samples/xamarin-forms/Todo/) používá následující kód k nastavení navigační panel barvy a textového barvu na všech platformách:
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -39,15 +39,15 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-Výsledek je vidět v následujícím fragmentu obrazovky. Položky panelu stavu jsou černé (nejde nastavit v rámci Xamarin.Forms vzhledem k tomu, že je funkce specifické pro platformu).
+Výsledek se zobrazí v následujícím fragmentu kódu obrazovky. Všimněte si, že se položky panelu stavu černé (nejde nastavit v rámci Xamarin.Forms vzhledem k tomu, že je funkce specifické pro platformu).
 
 ![](theme-images/status-default-sml.png "iOS motivů")
 
-V ideálním případě by také být bílé stavový řádek – něco jsme můžete provést přímo v projektu pro iOS. Přidejte následující položky k **Info.plist** vynutit bílá stavovém řádku:
+V ideálním případě by také být bílé stavový řádek – něco jsme můžete provést přímo v projektu pro iOS. Přidejte následující položky do **Info.plist** přinutit stavový řádek bude bílé:
 
 ![](theme-images/info-plist.png "iOS Info.plist položky")
 
-nebo upravit odpovídající **Info.plist** soubor přímo do patří:
+nebo upravit odpovídající **Info.plist** souboru přímo na patří:
 
 ```xml
 <key>UIStatusBarStyle</key>
@@ -56,7 +56,7 @@ nebo upravit odpovídající **Info.plist** soubor přímo do patří:
 <false/>
 ```
 
-Při spuštění aplikace na navigačním panelu je zobrazen zeleně a jeho text je bílé (z důvodu formátování Xamarin.Forms) teď *a* text stavového řádku je také bílé Děkujeme do konfigurace specifické pro iOS:
+Nyní při spuštění aplikace na navigačním panelu se zeleně a jeho textu je bílé (z důvodu formátování Xamarin.Forms) *a* text stavového řádku je také bílé díky konfigurace specifické pro iOS:
 
 ![](theme-images/status-white-sml.png "iOS motivů")
 
@@ -64,11 +64,11 @@ Při spuštění aplikace na navigačním panelu je zobrazen zeleně a jeho text
 
 ## <a name="uiappearance-api"></a>UIAppearance rozhraní API
 
-[ `UIAppearance` Rozhraní API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) umožňuje nastavit vlastnosti visual na mnoho ovládacích prvků iOS *bez* museli vytvářet [vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) můžete použít k nastavení vlastností visual na mnoho ovládacích prvků iOS *bez* museli vytvářet [vlastního rendereru](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
-Přidání jeden řádek kódu **AppDelegate.cs** `FinishedLaunching` metoda můžete styl všechny ovládací prvky daného typu použití jejich `Appearance` vlastnost. Následující kód obsahuje dva příklady - globálně styly kartě panel a přepínačů ovládacího prvku:
+Přidání jediný řádek kódu **AppDelegate.cs** `FinishedLaunching` metoda můžete všechny ovládací prvky daného typu použití stylu jejich `Appearance` vlastnost. Následující kód obsahuje dva příklady – globální nastavení stylů na kartě panelu a přepnutí ovládacího prvku:
 
-**AppDelegate.cs** v projektu iOS
+**AppDelegate.cs** v projektu pro iOS
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -86,9 +86,9 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-Ve výchozím nastavení, v panelu ikonu vybraná karta [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) by blue:
+Ve výchozím nastavení, na ikonu panelu vybraná karta [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) by být modrý:
 
-![](theme-images/tabbar-default.png "IOS výchozí kartě panelu ikonu v TabbedPage")
+![](theme-images/tabbar-default.png "Výchozí kartu panelu ikonu TabbedPage iOS")
 
 Chcete-li toto chování změnit, nastavte `UITabBar.Appearance` vlastnost:
 
@@ -96,31 +96,31 @@ Chcete-li toto chování změnit, nastavte `UITabBar.Appearance` vlastnost:
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-To způsobí, že vybraná karta jako zelená:
+To způsobí, že vybraná karta bude zelené:
 
-![](theme-images/tabbar-custom.png "Zelená iOS karta panelu ikonu v TabbedPage")
+![](theme-images/tabbar-custom.png "Zelená iOS kartu panelu ikonu TabbedPage")
 
-Pomocí tohoto rozhraní API umožňuje přizpůsobení vzhledu platformě Xamarin.Forms `TabbedPage` v systému iOS s velmi malé kódem. Odkazovat [přizpůsobení karty recepturách](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/) další podrobnosti o použití vlastní zobrazovací jednotky pro nastavení konkrétní písmo karty.
+Pomocí tohoto rozhraní API umožňuje přizpůsobit vzhled Xamarin.Forms `TabbedPage` v systému iOS s velmi malým množstvím kódu. Odkazovat [přizpůsobení karty předpisu](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) podrobné informace o nastavení konkrétního písma pro kartu pomocí vlastní zobrazovací jednotky.
 
 ### <a name="uiswitch"></a>UISwitch
 
-`Switch` Řízení je další příklad, který lze snadno ve:
+`Switch` Ovládací prvek je další příklad, který lze snadno styl:
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Tyto zachycení snímku obrazovky dvě zobrazit výchozí `UISwitch` řízení na levé straně a upravenou verzi (nastavení `Appearance`) na pravé straně v [úkolů ukázkové](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
+Zachycení snímku tyto dvě obrazovky ukazují výchozí `UISwitch` ovládací prvek na levé straně a upravenou verzi (nastavení `Appearance`) na pravé straně v [Todo ukázka](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "Výchozí barvy UISwitch") ![ ] (theme-images/switch-custom.png "přizpůsobit UISwitch barev")
+![](theme-images/switch-default.png "Výchozí barva UISwitch") ![ ] (theme-images/switch-custom.png "přizpůsobit barvu UISwitch")
 
 ### <a name="other-controls"></a>Další ovládací prvky
 
-Mnoho iOS ovládacích prvků uživatelského rozhraní může mít jejich výchozí barvy a další atributy, nastavit pomocí [ `UIAppearance` rozhraní API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
+Může mít mnoho iOS ovládacích prvků uživatelského rozhraní, jejich výchozí barvy a další atributy sada s použitím [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [UIAppearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
-- [Přizpůsobení karet](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/)
+- [Přizpůsobení karty](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

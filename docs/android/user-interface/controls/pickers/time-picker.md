@@ -1,67 +1,67 @@
 ---
 title: Výběr času
-description: Výběr čas pomocí TimePickerDialog a DialogFragment
+description: Výběr času pomocí TimePickerDialog a DialogFragment
 ms.prod: xamarin
 ms.assetid: EB4E8206-E8AD-9F04-AC1C-82AC9364A9DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: c4261e3dccaccc4c88afe9c1033fb16b730fea6e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85d887cba7a596226d44bc13ca7155bc4a0d03ee
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30769894"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242300"
 ---
 # <a name="time-picker"></a>Výběr času
 
-Chcete-li poskytují způsob, jak uživateli vybrat dobu, můžete použít [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Aplikace pro Android se obvykle používají `TimePicker` s [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) pro výběr hodnotu času &ndash; tyto zásady pomáhají zajistit konzistentní rozhraní mezi zařízeními a aplikacemi. `TimePicker` umožňuje uživatelům vyberte denní dobu, v režimu dop. / odp 24 hodin nebo 12 hodin.
-`TimePickerDialog` je pomocná třída, který zapouzdřuje `TimePicker` v dialogu.
+Poskytnout způsob, jak může uživatel vybrat dobu, můžete použít [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Aplikace pro Android se obvykle používá `TimePicker` s [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) pro výběr času hodnoty &ndash; to pomáhá zajistit konzistentní rozhraní napříč zařízeními a aplikacemi. `TimePicker` umožňuje uživatelům vybrat čas v režimu 24 hodin nebo 12hodinový dop. / odp.
+`TimePickerDialog` je pomocnou třídu, která zapouzdřuje `TimePicker` v dialogovém okně.
 
-[![Příklad snímek obrazovky dialogového okna pro výběr čas v akci](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
+[![Příklad snímek obrazovky dialogového okna pro výběr času v akci](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
 
 ## <a name="overview"></a>Přehled
 
-Moderní aplikace pro Android se zobrazí `TimePickerDialog` v [DialogFragment](https://developer.xamarin.com/api/type/Android.App.DialogFragment/). To umožňuje pro aplikace pro zobrazení `TimePicker` jako dialogové okno místní nebo vložit aktivitu. Kromě toho `DialogFragment` spravuje životní cyklus a zobrazení dialogového okna, snižuje množství kód, který musí být implementována.
+Zobrazit moderních aplikací pro Android `TimePickerDialog` v [DialogFragment](https://developer.xamarin.com/api/type/Android.App.DialogFragment/). To umožňuje pro aplikace pro zobrazení `TimePicker` jako dialogové okno místní nabídky nebo ji vložit v nějaké aktivitě. Kromě toho `DialogFragment` spravuje životní cyklus a zobrazení dialogového okna, snižuje množství kódu, který musí být implementován.
 
-Tato příručka ukazuje, jak používat `TimePickerDialog`, zabalené v `DialogFragment`. Ukázková aplikace zobrazí `TimePickerDialog` jako modální dialogové okno, když uživatel klikne na tlačítko na aktivitu. Pokud čas je nastaven uživatelem, ukončí dialogové okno a obslužná rutina aktualizace `TextView` na obrazovce aktivity s časem, který byl vybrán.
+Tato příručka ukazuje, jak používat `TimePickerDialog`ohraničenému `DialogFragment`. Ukázková aplikace zobrazí `TimePickerDialog` jako modální dialogové okno, když uživatel klikne na tlačítko pro aktivitu. Když nastavíte čas tímto uživatelem, ukončí dialogové okno a obslužná rutina aktualizace `TextView` na obrazovce aktivita s časem, který byl vybrán.
 
 ## <a name="requirements"></a>Požadavky
 
-Ukázkové aplikace pro tato příručka cílem Android 4.1 (API úrovně
-16) nebo vyšší, ale je lze použít s Androidem 3.0 (API úrovně 11 nebo vyšší). Je možné podporují starší verze Android s přidáním systému v4 knihovna pro Android podporují a některé změny kódu projektu.
+Ukázkové aplikace pro tohoto průvodce cílí na Android 4.1 (úroveň rozhraní API
+16) nebo vyšší, ale je možné využít Androidu 3.0 (úroveň rozhraní API 11 nebo vyšší). Je možné pro podporu starší verze systému Android a uveďte v4 knihovnu pro Android podporují do projektu a některé změny kódu.
 
-## <a name="using-the-timepicker"></a>Pomocí TimePicker
+## <a name="using-the-timepicker"></a>Použití TimePicker
 
-V tomto příkladu rozšiřuje `DialogFragment`; implementace podtřídami `DialogFragment` (nazývá `TimePickerFragment` níže) hostitelem a zobrazí `TimePickerDialog`. Při prvním spuštění ukázkové aplikace se zobrazí **vybrat čas** výše uvedené tlačítko `TextView` který se použije k zobrazení vybrané času:
+Tento příklad rozšiřuje `DialogFragment`; podtřídy provádění `DialogFragment` (volá `TimePickerFragment` níže) hostitelem a zobrazí `TimePickerDialog`. Ukázková aplikace poprvé spustí, zobrazí **VYSKLADNĚNÍ čas** výše uvedené tlačítko `TextView` , který se použije k zobrazení ve vybraném čase:
 
-[![Počáteční ukázkové aplikace obrazovky](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
+[![Obrazovka počáteční ukázkové aplikace](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
-Když kliknete **vybrat čas** tlačítko spustí aplikaci příklad `TimePickerDialog` jak je vidět na tomto snímku obrazovky:
+Po kliknutí **VYSKLADNĚNÍ čas** tlačítko, například spuštění aplikace `TimePickerDialog` jak je vidět na tomto snímku obrazovky:
 
-[![Snímek obrazovky dialogového okna Výběr času výchozí zobrazí aplikace](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
+[![Snímek obrazovky aplikace zobrazí výchozí dialogové okno Výběr času](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
-V `TimePickerDialog`, čas výběrem a kliknutím na **OK** tlačítko příčiny `TimePickerDialog` k vyvolání metody [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
-Toto rozhraní je implementováno modulem, který je hostitelem `DialogFragment` (`TimePickerFragment`, které jsou popsány níže). Kliknutím **zrušit** tlačítko způsobí, že fragment a dialogovém okně můžete zrušit.
+V `TimePickerDialog`, výběrem čas a kliknutím na **OK** tlačítko způsobí, že `TimePickerDialog` k vyvolání metody [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
+Toto rozhraní je implementováno hostování `DialogFragment` (`TimePickerFragment`, které jsou popsány níže). Kliknutím **zrušit** tlačítko způsobí, že fragment a dialogové okno se zavře.
 
-`DialogFragment` vybraný čas vrátí k hostování Actvity v jednom ze tří způsobů:
+`DialogFragment` Vrátí ve vybraném čase k hostování Actvity v jednom ze tří způsobů:
 
-1. **Vyvolání metody nebo nastavením vlastnosti** &ndash; The aktivitu můžete zadat vlastnosti nebo metody speciálně pro nastavení této hodnoty.
+1. **Vyvolání metody nebo nastavení vlastnosti** &ndash; The aktivity můžete zadat vlastnosti nebo metody speciálně pro nastavení této hodnoty.
 
-2. **Vyvolání události** &ndash; `DialogFragment` můžete definovat na událost, která bude vyvolána při `OnTimeSet` je volána.
+2. **Vyvolání události** &ndash; `DialogFragment` můžete definovat událost, která bude vyvolána při `OnTimeSet` je vyvolána.
 
-3. **Pomocí `Action`**  &ndash; `DialogFragment` můžete vyvolat `Action<DateTime>` k zobrazení času v aktivitě. Poskytne aktivity `Action<DateTime` při vytváření instance `DialogFragment`. 
+3. **Pomocí `Action`**  &ndash; `DialogFragment` můžete vyvolat `Action<DateTime>` k zobrazení času v aktivitě. Aktivita se poskytuje `Action<DateTime` při vytváření instance `DialogFragment`. 
 
-Tato ukázka použije třetí technika, který vyžaduje, aby aktivity napájení `Action<DateTime>` obslužná rutina `DialogFragment`.
+Tato ukázka použije třetí techniku, která vyžaduje, aby aktivita napájení `Action<DateTime>` obslužná rutina `DialogFragment`.
 
 
 
-## <a name="start-an-app-project"></a>Spusťte projekt aplikace
+## <a name="start-an-app-project"></a>Spuštění projektu aplikace
 
-Spusťte nový projekt Android s názvem **TimePickerDemo** (Pokud nejste obeznámeni s vytváření projektů Xamarin.Android, přečtěte si téma [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Další informace o vytvoření nového projektu).
+Začít nový projekt Android s názvem **TimePickerDemo** (Pokud nejste obeznámeni s vytvářením projekty Xamarin.Android, přečtěte si téma [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) informace o vytvoření nového projektu).
 
-Upravit **Resources/layout/Main.axml** a nahraďte jeho obsah následující kód XML:
+Upravit **Resources/layout/Main.axml** a jeho obsah nahraďte následující kód XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,7 +89,7 @@ Upravit **Resources/layout/Main.axml** a nahraďte jeho obsah následující kó
 </LinearLayout>
 ```
 
-Toto je základní [LinearLayout](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) s [TextView](https://developer.xamarin.com/api/type/Android.Widget.TextView/) , zobrazí dobu a [tlačítko](https://developer.xamarin.com/api/type/Android.Widget.Button/) , otevře se `TimePickerDialog`. Všimněte si, že toto rozložení používá pevně řetězce a dimenze k vytvoření aplikace jednodušší a srozumitelnější &ndash; produkční aplikace obvykle používá prostředky pro tyto hodnoty (jak je vidět v [ovládací prvek DatePicker](https://github.com/xamarin/recipes/blob/master/android/controls/datepicker/select_a_date/Resources/layout/Main.axml) příklad kódu).
+Toto je základní [LinearLayout](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) s [TextView](https://developer.xamarin.com/api/type/Android.Widget.TextView/) , který zobrazí čas a [tlačítko](https://developer.xamarin.com/api/type/Android.Widget.Button/) , který se otevře `TimePickerDialog`. Všimněte si, že toto rozložení používá pevně zakódované řetězce a dimenze, aby aplikace jednodušší a srozumitelnější &ndash; produkční aplikace obvykle používá prostředky pro tyto hodnoty (jak je vidět v [DatePicker](https://github.com/xamarin/recipes/blob/master/Recipes/android/controls/datepicker/select_a_date/Resources/layout/Main.axml) příklad kódu).
 
 Upravit **MainActivity.cs** a nahraďte jeho obsah následujícím kódem:
 
@@ -120,18 +120,18 @@ namespace TimePickerDemo
 }
 ```
 
-Když sestavení a spuštění tohoto příkladu, byste měli vidět úvodní obrazovka, podobně jako na následujícím snímku obrazovky:
+Při sestavení a spuštění tohoto příkladu, měli byste vidět úvodní obrazovka podobně jako na následujícím snímku obrazovky:
 
 [![Úvodní obrazovka aplikace](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
-Kliknutím na **vybrat čas** tlačítko se nic nestane. protože `DialogFragment` není dosud implementována pro zobrazení `TimePicker`.
-Dalším krokem je vytvoření to `DialogFragment`.
+Kliknutím **výběr času** tlačítko nemá žádný účinek protože `DialogFragment` nebyla ještě implementována pro zobrazení `TimePicker`.
+Dalším krokem je vytvoření tohoto `DialogFragment`.
 
 
 
 ## <a name="extending-dialogfragment"></a>Rozšíření DialogFragment
 
-Chcete-li rozšířit `DialogFragment` pro použití s `TimePicker`, je nutné vytvořit podtřídu, který je odvozený od `DialogFragment` a implementuje `TimePickerDialog.IOnTimeSetListener`. Přidejte následující třídy k **MainActivity.cs**:
+Chcete-li rozšířit `DialogFragment` pro použití s `TimePicker`, je potřeba vytvořit podtřídu, který je odvozen z `DialogFragment` a implementuje `TimePickerDialog.IOnTimeSetListener`. Přidejte následující třídy, která se **MainActivity.cs**:
 
 ```csharp
 public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
@@ -165,27 +165,27 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 }
 ```
 
-To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v další části.
+To `TimePickerFragment` třída je rozdělené do menších a je vysvětleno v další části.
 
 
 ### <a name="dialogfragment-implementation"></a>Implementace DialogFragment
 
-`TimePickerFragment` implementuje několik metod: metoda factory, vytváření instancí dialogové okno metoda a `OnTimeSet` metoda obslužná rutina vyžaduje `TimePickerDialog.IOnTimeSetListener`.
+`TimePickerFragment` implementuje několik metod: metoda factory, metodu instance dialogové okno a `OnTimeSet` metodu obslužné rutiny vyžadují `TimePickerDialog.IOnTimeSetListener`.
 
--   `TimePickerFragment` je podtřídou třídy `DialogFragment`. Také implementuje `TimePickerDialog.IOnTimeSetListener` rozhraní (to znamená, poskytuje požadované `OnTimeSet` metoda):
+-   `TimePickerFragment` je podtřídou třídy `DialogFragment`. Implementuje navíc `TimePickerDialog.IOnTimeSetListener` rozhraní (to znamená, poskytuje požadované `OnTimeSet` metoda):
 
     ```csharp
     public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     ```
 
--   `TAG` inicializovaná pro účely protokolování (*MyTimePickerFragment* lze změnit na jakémkoli řetězec, kterou chcete použít). `timeSelectedHandler` Delegáta prázdné, aby se zabránilo výjimky odkazu s hodnotou null je inicializováno akce:
+-   `TAG` je inicializován pro účely protokolování (*MyTimePickerFragment* lze změnit na jakýkoli řetězec, kterou chcete použít). `timeSelectedHandler` Akce je inicializován na prázdný delegáta k zabránění výjimky odkaz s hodnotou null:
 
     ```csharp
     public static readonly string TAG = "MyTimePickerFragment";
     Action<DateTime> timeSelectedHandler = delegate { };
     ```
 
--   `NewInstance` Factory metoda je volána k vytvoření instance nového `TimePickerFragment`. Tato metoda přebírá `Action<DateTime>` obslužná rutina, která je volána, když uživatel klikne **OK** v tlačítko `TimePickerDialog`:
+-   `NewInstance` Výrobní metoda je volána k vytvoření instance nového `TimePickerFragment`. Tato metoda přebírá `Action<DateTime>` obslužná rutina, která je volána, když uživatel klikne **OK** tlačítko `TimePickerDialog`:
 
     ```csharp
     public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
@@ -196,8 +196,8 @@ To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v
     }
     ```
 
--   Po který se má zobrazit fragment Android volá `DialogFragment` metoda [OnCreateDialog](https://developer.xamarin.com/api/member/Android.App.DialogFragment.OnCreateDialog/p/Android.OS.Bundle/). 
-    Tato metoda vytvoří novou `TimePickerDialog` objektu a inicializuje s aktivitou, objekt zpětného volání (což je aktuální instancí třídy `TimePickerFragment`) a aktuální čas:
+-   Fragment se nezobrazí, volá Android `DialogFragment` metoda [OnCreateDialog](https://developer.xamarin.com/api/member/Android.App.DialogFragment.OnCreateDialog/p/Android.OS.Bundle/). 
+    Tato metoda vytvoří nový `TimePickerDialog` objektu a inicializuje ji s aktivitou, objekt zpětného volání (což je aktuální instancí třídy `TimePickerFragment`) a aktuální čas:
 
     ```csharp
     public override Dialog OnCreateDialog (Bundle savedInstanceState)
@@ -210,7 +210,7 @@ To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v
     }
     ```
 
--   Když uživatel změní nastavení času `TimePicker` dialogové okno, `OnTimeSet` metoda je volána. `OnTimeSet` vytvoří `DateTime` pomocí k aktuálnímu datu a sloučí v čase (hodin a minut) vybrané uživatelem:
+-   Když uživatel změní nastavení času `TimePicker` dialogového okna, `OnTimeSet` vyvolání metody. `OnTimeSet` vytvoří `DateTime` pomocí aktuálního data a sloučení v čase (hodinu a minutu) vybraný uživatelem:
 
     ```csharp
     public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
@@ -220,7 +220,7 @@ To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v
     ```
 
 
--   To `DateTime` je předán objekt `timeSelectedHandler` , není zaregistrována `TimePickerFragment` objektu v okamžiku vytvoření. `OnTimeSet` Vyvolá této obslužné rutiny aktualizace zobrazení času aktivity pro vybrané časové (Tato obslužná rutina je implementována v další části):
+-   To `DateTime` objekt je předán do `timeSelectedHandler` , který je zaregistrován `TimePickerFragment` objektu v okamžiku vytvoření. `OnTimeSet` vyvolá tuto obslužnou rutinu aktualizovat zobrazení času aktivity na vybraném časovém (Tato obslužná rutina je implementována v další části):
 
     ```csharp
     timeSelectedHandler (selectedTime);
@@ -230,7 +230,7 @@ To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v
 
 ## <a name="displaying-the-timepickerfragment"></a>Zobrazení TimePickerFragment
 
-Teď, když `DialogFragment` byla implementována, je čas vytvořit instanci `DialogFragment` pomocí `NewInstance` metoda factory a zobrazit ji vyvoláním [DialogFragment.Show](https://developer.xamarin.com/api/member/Android.App.DialogFragment.Show/p/Android.App.FragmentManager/System.String/):
+Teď, když `DialogFragment` byl implementován, je čas vytvořit instanci `DialogFragment` pomocí `NewInstance` výrobní metoda a zobrazit tak, že vyvolá [DialogFragment.Show](https://developer.xamarin.com/api/member/Android.App.DialogFragment.Show/p/Android.App.FragmentManager/System.String/):
 
 Přidejte následující metodu do `MainActivity`:
 
@@ -247,45 +247,45 @@ void TimeSelectOnClick (object sender, EventArgs eventArgs)
 }
 ```
 
-Po `TimeSelectOnClick` vytvoří `TimePickerFragment`, vytvoří a předá delegáta pro anonymní metodu, která aktualizuje zobrazení času aktivity času předané hodnotou. Nakonec se spustí `TimePicker` fragment dialogové okno (prostřednictvím `DialogFragment.Show`) k zobrazení `TimePicker` uživateli.
+Po `TimeSelectOnClick` vytvoří instanci `TimePickerFragment`, vytváří a předává pro anonymní metody, která aktualizuje zobrazení času aktivity s hodnotou času předané v delegátovi. Nakonec se spustí `TimePicker` fragment dialogového okna (prostřednictvím `DialogFragment.Show`) zobrazíte `TimePicker` uživateli.
 
-Na konci `OnCreate` metoda, přidejte následující řádek pro připojení k obslužné rutiny události **vybrat čas** tlačítka, které spouští dialogové okno:
+Na konci `OnCreate` metodu, přidejte následující řádek, který připojte obslužné rutiny události **VYSKLADNĚNÍ čas** tlačítko, které spustí dialogové okno:
 
 ```csharp
 timeSelectButton.Click += TimeSelectOnClick;
 ```
 
-Když **vybrat čas** po kliknutí na tlačítko `TimeSelectOnClick` bude volána k zobrazení `TimePicker` fragment dialogové okno pro uživatele.
+Při **VYSKLADNĚNÍ čas** po kliknutí na tlačítko, `TimeSelectOnClick` bude vyvoláno pro zobrazení `TimePicker` fragment dialogové okno pro uživatele.
 
 
 
 ## <a name="try-it"></a>Můžete je vyzkoušejte.
 
-Sestavte a spusťte aplikaci. Když kliknete **vybrat čas** tlačítko `TimePickerDialog` se zobrazí ve formátu času výchozí aktivity (v tomto režimu dop. / odp případu, 12 hodin):
+Sestavte a spusťte aplikaci. Po kliknutí **VYSKLADNĚNÍ čas** tlačítko, `TimePickerDialog` se zobrazí ve výchozím formátu pro čas aktivity (v tomto režimu AM/PM případu, 12 hodin):
 
-[![Zobrazí Dialog čas v režimu dop. / odp](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
+[![Čas dialogového okna se zobrazí v režimu AM/PM](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
-Když kliknete na tlačítko **OK** v `TimePicker` dialogové okno, obslužná rutina aktualizace aktivity `TextView` s zvoleném časovém a ukončí:
+Po kliknutí na **OK** v `TimePicker` dialogového okna, obslužná rutina aktualizace aktivity `TextView` zvoleném časovém a ukončení:
 
-[![Zobrazení času A/M v TextView aktivity](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
+[![Čas A/M je zobrazen ve TextView aktivity](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
-V dalším kroku přidejte následující řádek kódu `OnCreateDialog` ihned po `is24HourFormat` je deklarovaný a inicializovat:
+V dalším kroku přidejte následující řádek kódu, který `OnCreateDialog` ihned po `is24HourFormat` je deklarovány a inicializovány:
 
 ```csharp
 is24HourFormat = true;
 ```
 
-Tato změna vynutí příznak předaný `TimePickerDialog` konstruktor být `true` tak, že režimu 24 hodin se používá namísto formát času hostování aktivity. Po vytvoření a znovu spusťte aplikaci, klikněte na tlačítko **vybrat čas** tlačítko `TimePicker` dialogové okno se nyní zobrazí ve 24hodinovém formátu:
+Tato změna způsobí, že příznak předán `TimePickerDialog` konstruktoru bude `true` tak tohoto režimu 24 hodin se používá namísto formát času hostování aktivity. Když sestavujete a znovu spusťte aplikaci, klikněte na tlačítko **VYSKLADNĚNÍ čas** tlačítko, `TimePicker` dialog se teď zobrazuje ve 24hodinovém formátu:
 
 [![Dialogové okno TimePicker ve 24hodinovém formátu](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
-Protože obslužná rutina volá [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) čas na aktivitu vytisknout `TextView`, čas je stále vytištěno ve výchozím formátu dop. / odp 12 hodin.
+Protože obslužná rutina zavolá [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) tisknout čas na aktivitu `TextView`, čas je stále vytištěn v výchozí 12hodinový formát dop. / odp.
 
 
 
 ## <a name="summary"></a>Souhrn
 
-Postupy: zobrazení popsané v tomto článku `TimePicker` pomůcky jako místní modální dialogové okno z Android aktivity. Je poskytovala ukázku `DialogFragment` implementace a `IOnTimeSetListener` rozhraní. Tato ukázka také ukázán jak `DialogFragment` mohou komunikovat s hostiteli aktivita se má zobrazit vybraný čas.
+Tento článek vysvětlil, jak zobrazit `TimePicker` widgetu jako modální dialogové okno automaticky otevíraného okna z aktivitu pro Android. Zadaný vzorek `DialogFragment` implementace a popsaných `IOnTimeSetListener` rozhraní. Tento příklad také ukazuje jak `DialogFragment` mohou komunikovat s hostiteli aktivita k zobrazení ve vybraném čase.
 
 
 ## <a name="related-links"></a>Související odkazy
@@ -294,4 +294,4 @@ Postupy: zobrazení popsané v tomto článku `TimePicker` pomůcky jako místn�
 - [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/)
 - [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/)
 - [TimePickerDialog.IOnTimeSetListener](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog+IOnTimeSetListener/)
-- [TimePickerDemo (sample)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)
+- [TimePickerDemo (ukázka)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)

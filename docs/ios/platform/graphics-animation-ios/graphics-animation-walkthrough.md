@@ -1,33 +1,33 @@
 ---
-title: Použití jádra grafika a základní animace v Xamarin.iOS
-description: Tento článek ukazuje krok za krokem, jak vytvořit aplikaci, která používá základní grafika a základní animace. Zobrazuje postup kreslení na obrazovce v reakci na touch uživatele a také jak animace obrázek cestují podél cesty.
+title: Použití jádra grafika a animace jader v Xamarin.iOS
+description: Tento článek ukazuje krok za krokem, jak vytvořit aplikaci, která používá jádro grafika a animace Core. Ukazuje, jak se má kreslit na obrazovce v reakci na dotykové ovládání pro uživatele, jakož i jak animovat bitovou kopii k dopravě podél cesty.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787052"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242001"
 ---
-# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Použití jádra grafika a základní animace v Xamarin.iOS
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Použití jádra grafika a animace jader v Xamarin.iOS
 
-V tomto návodu budeme kreslení pomocí základní grafické prvky v reakci na touch vstup cestu. Potom přidáme `CALayer` obsahující obrázek, který jsme se animace v cestě.
+V tomto návodu budeme nakreslení cesty pomocí základní grafické prvky v reakci na dotykovým ovládáním. Potom přidáme `CALayer` obsahující bitovou kopii, která jsme se animace v cestě.
 
 Na následujícím snímku obrazovky je vidět hotová aplikace:
 
 ![](graphics-animation-walkthrough-images/00-final-app.png "Hotová aplikace")
 
-Než začneme stahování *GraphicsDemo* vzorku, který doprovází této příručce. Ho můžete stáhnout [sem](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) a je umístěn uvnitř **GraphicsWalkthrough** directory spuštění projektu s názvem **GraphicsDemo_starter** dvojitým kliknutím na soubor, a Otevřete `DemoView` třídy.
+Než začneme stahování *GraphicsDemo* vzorku, který doprovází tento průvodce. Ho můžete stáhnout [tady](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) a je umístěn uvnitř **GraphicsWalkthrough** directory spustit projekt s názvem **GraphicsDemo_starter** dvojitým kliknutím na něj, a Otevřete `DemoView` třídy.
 
-## <a name="drawing-a-path"></a>Kreslení cesty
+## <a name="drawing-a-path"></a>Nakreslení cesty
 
 
-1. V `DemoView` přidat `CGPath` proměnnou třídy a vytvoří instanci v konstruktoru. Také deklarovat dvě `CGPoint` proměnné, `initialPoint` a `latestPoint`, že budeme používat k zachycení bodu dotykového ovládání, ze které můžeme vytvořit cestu:
+1. V `DemoView` přidat `CGPath` proměnné do třídy a vytvořit její instanci v konstruktoru. Také deklarovat dvě `CGPoint` proměnné, `initialPoint` a `latestPoint`, budeme používat k zachycení bodu dotykového ovládání, ze kterého jsme vytvořit cestu:
     
     ```csharp
     public class DemoView : UIView
@@ -53,7 +53,7 @@ Než začneme stahování *GraphicsDemo* vzorku, který doprovází této přír
     using Foundation;
     ```
 
-3. V dalším kroku přepsat `TouchesBegan` a `TouchesMoved,` a přidejte následující implementace k zachycení bodu počáteční touch a každý bod následné touch v uvedeném pořadí:
+3. V dalším kroku přepsat `TouchesBegan` a `TouchesMoved,` a přidejte následující implementace zaznamenat dotykový počáteční bod a bod každé následné dotykové ovládání v uvedeném pořadí:
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -80,9 +80,9 @@ Než začneme stahování *GraphicsDemo* vzorku, který doprovází této přír
     }
     ```
 
-    `SetNeedsDisplay` bude volána pokaždé, když úpravy přesunout v pořadí pro `Draw` volá se při dalším spuštění smyčky průchodu.
+    `SetNeedsDisplay` bude volána pokaždé, když v dnešní přesunout v pořadí pro `Draw` pro volání při dalším spuštění smyčky pass.
 
-4. Přidáme řádky na cestu v `Draw` metoda a použití red, přerušované čáry k vykreslení s. [Implementace `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) kódem vidíte níže:
+4. Přidáme na cestu v řádcích `Draw` metody a použít červenou, přerušované čáry pro kreslení pomocí. [Implementace `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) kódem je uvedeno níže:
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -116,15 +116,15 @@ Než začneme stahování *GraphicsDemo* vzorku, který doprovází této přír
     }
     ```
 
-Pokud jsme spustit nyní aplikaci, jsme můžete touch kreslení na obrazovce, jak je znázorněno na následujícím snímku obrazovky:
+Pokud provozujeme aplikace nyní, jsme můžete dotykového ovládání pro kreslení na obrazovce, jak je znázorněno na následujícím snímku obrazovky:
 
-![](graphics-animation-walkthrough-images/01-path.png "Kreslení na obrazovce")
+![](graphics-animation-walkthrough-images/01-path.png "Kresby na obrazovce")
 
 ## <a name="animating-along-a-path"></a>Animace podél cesty
 
-Implementovali jsme kód, aby uživatelé mohli kreslení cestu, Pojďme přidat kód pro animaci vrstvu v vykresleného cestě.
+Teď, když jsme implementovali kód, který umožňuje uživatelům nakreslit cestu, přidáme kód pro animaci vrstvu vykresleného cestě.
 
-1. Nejprve přidejte [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) proměnnou třídy a vytvořte ji v konstruktoru:
+1. Nejprve přidejte [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) proměnné do třídy a vytvořit v konstruktoru:
 
     ```csharp
     public class DemoView : UIView
@@ -149,9 +149,9 @@ Implementovali jsme kód, aby uživatelé mohli kreslení cestu, Pojďme přidat
             }
     ```
 
-2. Potom přidáme vrstvě jako podvrstvu zobrazení vrstvy Pokud uživatel zruší si jejich prstem z obrazovky. Poté vytvoříme pomocí cesty, animace klíčových snímků animace vrstvy `Position`.
+2. V dalším kroku přidáme vrstvy jako podvrstvu zobrazení vrstvy když uživatel zruší se jejich prstem na obrazovce. Pak vytvoříme pomocí cesty, animace klíčových snímků animace vrstvy `Position`.
 
-    K tomu je potřeba přepsat `TouchesEnded` a přidejte následující kód:
+    K tomu potřebujeme k přepsání `TouchesEnded` a přidejte následující kód:
 
     ```csharp
     public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -172,17 +172,17 @@ Implementovali jsme kód, aby uživatelé mohli kreslení cestu, Pojďme přidat
         }
     ```
 
-3. Spusťte aplikaci teď a po kreslení, vrstvu s bitovou kopií se přidá a přenáší podél vykresleného cesty:
+3. Spusťte aplikaci nyní a po kreslení, vrstva s obrázkem přidá a přejde na vykresleného cestě:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Vrstva se bitovou kopii je přidána a přenáší podél vykresleného cesty")
+![](graphics-animation-walkthrough-images/00-final-app.png "Přidá vrstva s obrázkem a přejde na vykresleného cestě")
 
 ## <a name="summary"></a>Souhrn
 
-V tomto článku jsme provedl příklad, který je vázaný grafika a animace koncepty společně. Nejdřív jsme vám ukázal, jak používat základní grafiky k vykreslení cestu `UIView` v reakci na uživatele touch. Potom jsme vám ukázal, jak lze pomocí základní animace na bitovou kopii cestují podél této cestě.
+V tomto článku jsme prošli příklad, který grafika a animace koncepty spojených dohromady. Nejprve jsme vám ukázal, jak používat grafiku jádra k nakreslení cesty `UIView` v reakci na dotykové ovládání pro uživatele. Potom jsme vám ukázali jak používat animaci Core Nedělejte obrázky cestovní této cestě.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Základní animace recepty](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Základní animace recepty](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

@@ -1,35 +1,35 @@
 ---
-title: Pomocí dat v aplikaci pro iOS
-description: Tento dokument popisuje DataAccess_Adv vzorku, který ukazuje, jak shromažďovat vstup uživatele a provádět vytvořit, číst, aktualizovat a odstranit databázi operace v aplikaci pro Xamarin.iOS.
+title: Používání dat v aplikaci pro iOS
+description: Tento dokument popisuje DataAccess_Adv vzorku, který ukazuje, jak shromažďování vstupu uživatele a provádět vytvoření, čtení, aktualizace a odstranění (CRUD) operací databáze v aplikaci pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 5c9eab9316539ecf5988c8768bef9ef2cd61513e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 35caae657700e321a7560d1e95c8551b7b10a5ca
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784537"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242102"
 ---
-# <a name="using-data-in-an-ios-app"></a>Pomocí dat v aplikaci pro iOS
+# <a name="using-data-in-an-ios-app"></a>Používání dat v aplikaci pro iOS
 
-**DataAccess_Adv** příklad ukazuje funkční aplikaci, která umožňuje vstup uživatele a *CRUD* funkce databáze (vytvoření, čtení, aktualizace a odstranění). Aplikace se skládá ze dvou obrazovkách: seznam a dat. Všechna data kód přístup je opakovaně použitelné v iOS a Android beze změny.
+**DataAccess_Adv** příklad ukazuje funkční aplikaci, která umožňuje zadávání uživatelem a *CRUD* funkce databáze (vytvoření, čtení, aktualizace a odstranění). Aplikace se skládá ze dvou obrazovkách: seznam a formuláře datových záznamů. Všechny kód přístupu k datům je opakovaně použitelné v iOS a Android beze změny.
 
-Po přidání některá data obrazovky aplikace vypadat například takto v systému iOS:
+Po přidání některých dat na obrazovce aplikace vypadat nějak takto v systému iOS:
 
- ![](using-data-in-an-app-images/image9.png "seznam ukázek iOS")
+ ![](using-data-in-an-app-images/image9.png "seznam ukázek pro iOS")
 
- ![](using-data-in-an-app-images/image10.png "Detaily vzorku iOS")
+ ![](using-data-in-an-app-images/image10.png "Podrobnosti o ukázky iOS")
 
-IOS projektu je uveden níže – uvedeném v této části kódu je součástí **Orm** directory:
+Projekt pro iOS je uveden níže – kód zobrazený v této části je obsažena v **Orm** adresáře:
 
  ![](using-data-in-an-app-images/image13.png "strom projektu iOS")
 
-Nativní kód uživatelského rozhraní pro ViewControllers v iOS je mimo rozsah tohoto dokumentu.
-Odkazovat [iOS práce s tabulkami a buněk](~/ios/user-interface/controls/tables/index.md) průvodce Další informace o ovládacích prvků uživatelského rozhraní.
+Nativní kód uživatelského rozhraní pro ViewControllers v Iosu sahá nad rámec tohoto dokumentu.
+Odkazovat [iOS práce s tabulkami a buňky](~/ios/user-interface/controls/tables/index.md) Průvodce pro další informace o ovládacích prvků uživatelského rozhraní.
 
 ## <a name="read"></a>Číst
 
@@ -56,12 +56,12 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS vykreslí data jinak jako `UITableView`.
+iOS vykreslí data jiným způsobem jako `UITableView`.
 
-## <a name="create-and-update"></a>Vytváření a aktualizaci
+## <a name="create-and-update"></a>Vytvoření a aktualizaci
 
-Můžete zjednodušit kód aplikace, je jediný uložit metoda zadaný, který provádí typu vložení nebo aktualizace v závislosti na tom, jestli je nastavená PrimaryKey. Protože `Id` je vlastnost označena `[PrimaryKey]` atributu nesmí ho nastavit v kódu.
-Tato metoda zjistí, zda hodnota byl předchozí uložit (kontrolou vlastnost primárního klíče) a vložit nebo aktualizovat objekt odpovídajícím způsobem:
+Pro zjednodušení kódu aplikace, je jediného uložit metoda za předpokladu, který nepodporuje Insert nebo Update v závislosti na tom, zda byla nastavena PrimaryKey. Protože `Id` je vlastnost označena `[PrimaryKey]` atribut nesmí ji nastavíte v kódu.
+Tato metoda zjistí, zda hodnota byla předchozí uložit (že zkontrolujete vlastnost primárního klíče) a vložit nebo aktualizovat objekt odpovídajícím způsobem:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -79,13 +79,13 @@ public int SaveStock (Stock item)
 
 
 
-Skutečných aplikace bude obvykle vyžadují některé ověření (například povinná pole, minimální délky nebo jiných obchodních pravidel).
-Dobrý aplikací platformě implementovat co nejvíc ověření logické nejblíže v sdíleného kódu předávání chyb ověření zálohování na uživatelské rozhraní pro zobrazení podle funkce platformy.
+Reálného světa aplikací bude obvykle vyžadovat nějaké ověření (jako je povinná, minimální délky nebo jiné obchodní pravidla).
+Funkční aplikace napříč platformami implementovat největší část ověření logické nejrychleji sdíleného kódu, předávání chyb při ověřování zálohování do uživatelského rozhraní pro zobrazení podle možnosti platformy.
 
 ## <a name="delete"></a>Odstranit
 
-Na rozdíl od `Insert` a `Update` metody, `Delete<T>` metoda může přijímat pouze hodnotu primárního klíče místo úplná `Stock` objektu.
-V tomto příkladu `Stock` objekt je předán do metody, ale pouze vlastnost Id předaný `Delete<T>` metoda.
+Na rozdíl od `Insert` a `Update` metody, `Delete<T>` metoda může přijímat pouze hodnotu primárního klíče místo kompletní `Stock` objektu.
+V tomto příkladu `Stock` objekt je předán do metody, ale pouze vlastnost Id předána `Delete<T>` metody.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -96,18 +96,18 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>Pomocí předem vyplněná souboru databáze SQLite
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Použití předem naplněných databázového souboru SQLite
 
-Některé aplikace jsou dodávané s databází již naplněný daty.
-Snadno toho lze dosáhnout při odeslání stávající soubor databáze SQLite s vaší aplikací a kopírování do zapisovatelné adresáře než k ní přistupují v mobilní aplikaci. Protože SQLite je standardní formát, který se používá na mnoha platformách, existuje několik nástrojů, které jsou k dispozici pro vytvoření souboru databáze SQLite:
+Některé aplikace se dodávají s databází již naplněný daty.
+Snadno to lze provádět při odeslání existující soubor databáze SQLite s vaší aplikací a jejím zkopírováním na zapisovatelný adresář před přístupem k jeho v mobilní aplikaci. Protože SQLite je standardní formát, který se používá na spoustě platforem, existuje mnoho nástrojů dostupných k vytvoření souboru databáze SQLite:
 
--  **Rozšíření správce SQLite Firefox** – funguje na Mac a Windows a vytváří soubory, které jsou kompatibilní s iOS a Android.
+-  **Rozšíření správce SQLite Firefox** – funguje na Mac a Windows a vytvoří soubory, které jsou kompatibilní s iOS a Android.
 -  **Příkazový řádek** – viz [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
 
-Při vytváření souboru databáze pro distribuci s vaší aplikací, postará s názvy tabulek a sloupců zajistit budou odpovídat co očekává kódu, zvlášť pokud používáte SQLite.NET, který bude očekávat názvy tak, aby odpovídaly C# třídy a vlastnosti (nebo přidružené vlastní atributy).
+Při vytváření souboru databáze pro distribuci s vaší aplikací, aby se postaral s názvy tabulek a sloupců zajistit, aby odpovídaly co váš kód očekává, zejména v případě, že používáte SQLite.NET, který bude očekávat názvů tak, aby odpovídaly vaší třídy jazyka C# a vlastnosti (nebo přidružené vlastní atributy).
 
-Pro iOS, zahrnout soubor sqlite ve vaší aplikaci a ujistěte se, je označené **akce sestavení: obsahu**. Umístěte kód v `FinishedLaunching` při kopírování souboru do adresáře s možností zápisu *před* volání žádné metody data. Následující kód zkopíruje existující databázi názvem **data.sqlite**pouze v případě, že ještě neexistuje.
+Pro iOS, do aplikace zahrnout soubor sqlite a zajistit, je označené atributem **Build Action: obsahu**. Do kódu v `FinishedLaunching` zkopírovat soubor do adresáře, s možností zápisu *před* volat jakékoli metody data. Následující kód zkopíruje existující databázi s názvem **data.sqlite**pouze v případě, že ještě neexistuje.
 
 ```csharp
 // Copy the database across (if it doesn't exist)
@@ -119,12 +119,12 @@ if (!File.Exists (Database.DatabaseFilePath))
 }
 ```
 
-Žádný kód přístup dat (jestli ADO.NET nebo pomocí SQLite.NET), která se spouští po to má dokončené bude mít přístup k datům předem vyplněné.
+Libovolný kód přístupu k datům (ať už ADO.NET nebo používání SQLite.NET), který se spustí to po dokončení bude mít přístup k předem naplněných daty.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS recepty dat](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS recepty dat](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

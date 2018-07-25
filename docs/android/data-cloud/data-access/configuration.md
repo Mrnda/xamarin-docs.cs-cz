@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/11/2016
-ms.openlocfilehash: cf474015b28d9708d69719b38348391091040a28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3a7858361d25f26807ea328e8bfdd30ca8d483b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762581"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241874"
 ---
 # <a name="configuration"></a>Konfigurace
 
 Pro použití v aplikaci Xamarin.Android, budete muset určit správný soubor umístění souboru databáze SQLite.
 
-## <a name="database-file-path"></a>Cestu k souboru databáze
+## <a name="database-file-path"></a>Cesta k souboru databáze
 
-Bez ohledu na to, jakou metodu přístupu dat můžete použít musíte vytvořit soubor databáze před data se uloží s SQLite. Umístění souboru se liší v závislosti na platformě cílení. Pro Android třídu můžete použít prostředí vytvořit platnou cestu, jak je znázorněno v následující fragment kódu:
+Bez ohledu na to, jakou metodu přístupu dat použijete musíte vytvořit soubor databáze předtím, než se data dají uložit s SQLite. Umístění souboru se liší v závislosti na tom, jakou platformu cílíte. Pro Android můžete použít třídu prostředí vytvořit platnou cestu, jak je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Existují další co je potřeba vzít v úvahu při rozhodování, kam uložit soubor databáze. Například v systému Android můžete jestli se má používat interní nebo externí úložiště.
+Existují jiné co je potřeba vzít v úvahu při rozhodování, kam chcete soubor uložte do databáze. Například v systému Android je možné, jestli se má použít interní nebo externí úložiště.
 
-Pokud chcete použít jiné umístění na jednotlivých platformách ve vaší aplikaci křížové platformy můžete direktivu kompilátoru znázorněné ke generování jinou cestu pro každou platformu:
+Pokud si přejete použít jiné umístění na jednotlivých platformách ve vaší aplikace pro různé platformy můžete použít direktivy kompilátoru jak je znázorněno ke generování jinou cestu pro každou platformu:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Pomocné parametry o použití systému souborů v Android, najdete v části [Procházet soubory](https://developer.xamarin.com/recipes/android/data/Files/Browse_Files) recepturách. Najdete v článku [vytváření křížové platformy aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu pro další informace o použití direktivy kompilátoru napsat kód, které jsou specifické pro každou platformu.
+Pomocné parametry pomocí systému souborů v Androidu, najdete [Procházet soubory](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) předpisu. Najdete v článku [sestavování pro různé platformy aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokument pro další informace o použití direktivy kompilátoru psaní kódu, které jsou specifické pro každou platformu.
 
 ## <a name="threading"></a>Dělení na vlákna
 
-Neměli byste používat stejné připojení databáze SQLite napříč více vláken. Dávejte pozor, otevřít, použití a pak ukončete všechna připojení, které vytvoříte ve stejném vlákně.
+Neměli byste používat stejné připojení k databázi SQLite napříč více vlákny. Buďte opatrní při otevření, používat a pak zavřete všechna připojení, které vytvoříte ve stejném vlákně.
 
-Aby se zajistilo, že kód není pokouší o přístup k databázi SQLite z více vláken ve stejnou dobu, ručně proveďte zámek vždy, když chcete přístup k databázi, například takto:
+Aby bylo zajištěno, že se váš kód pokusu o přístup k databázi SQLite z více vláken ve stejnou dobu, ručně zámek pokaždé, když chcete získat přístup k databázi, například takto:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,12 @@ lock (locker){
 }
 ```
 
-Všechny přístup k databázi (čtení, zápisu, aktualizace atd.) by měl být uzavřen s stejné zámek. Musí dát pozor na vyhněte situaci zablokování zajištěním, že práce v klauzuli zámku se ukládají jednoduché a není volat jiné metody, které může trvat i zámek!
+Všechny přístup k databázi (čtení, zápisů, aktualizace atd.) by měl být uzavřen stejné zámku. Aby se zabránilo situaci zablokování tím, že zajišťuje, že práce v klauzuli zámek je jednoduché a není volání dalších metodách, které může také použít zámek musí věnovat pozornost.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Recepty dat v androidu](https://developer.xamarin.com/recipes/android/data/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Recepty dat pro Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

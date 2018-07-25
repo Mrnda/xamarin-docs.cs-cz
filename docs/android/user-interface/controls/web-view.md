@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2baf7dae71ce7607c629b570ad25f477dec66c17
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8d7b0e1abc8eb11bf812a111764b9cccfb41e041
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30765305"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241172"
 ---
 # <a name="web-view"></a>Webové zobrazení
 
-[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) Umožňuje vytvořit vlastní okna pro zobrazení webové stránky (nebo si vytvořit úplný prohlížeče). V tomto kurzu vytvoříte jednoduchou [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) , můžete zobrazit a přejděte na webové stránky.
+[`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) Umožňuje vytvořit vlastní okno pro zobrazení webových stránek (nebo vyvíjet i kompletní prohlížeče). V tomto kurzu vytvoříte jednoduchou [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) , která můžete zobrazit a procházet webové stránky.
 
 Vytvoření nového projektu s názvem **HelloWebView**.
 
-Otevřete **Resources/Layout/Main.axml** a vložte následující:
+Otevřít **Resources/Layout/Main.axml** a vložte následující:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -29,23 +29,23 @@ Otevřete **Resources/Layout/Main.axml** a vložte následující:
     android:layout_height="fill_parent" />
 ```
 
-Protože tato aplikace bude mít přístup k Internetu, je nutné přidat že soubor manifestu příslušná oprávnění pro systém Android. Otevřete vlastnosti projektu nastavit oprávnění, které vaše aplikace vyžaduje k provozu. Povolit `INTERNET` oprávnění, jak je uvedeno níže:
+Protože tato aplikace bude přístup k Internetu, je nutné přidat že soubor manifestu příslušná oprávnění pro Android. Otevřete vlastnosti projektu k určení oprávnění, která vyžaduje vaše aplikace fungovat. Povolit `INTERNET` oprávnění, jak je znázorněno níže:
 
-![Nastavení oprávnění k Internetu v Android Manifest](web-view-images/01-set-internet-permissions.png)
+![Nastavení oprávnění k Internetu v manifestu Android](web-view-images/01-set-internet-permissions.png)
 
-Nyní otevřete **MainActivity.cs** a přidejte do použitím direktivy pro Webkit:
+Nyní otevřete **MainActivity.cs** a přidejte do pomocí direktiv pro Webkit:
 
 ```csharp
 using Android.Webkit;
 ```
 
-V horní části `MainActivity` třídy, deklarovat [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) objektu:
+V horní části `MainActivity` třídy, deklarujte [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) objektu:
 
 ```csharp
 WebView web_view;
 ```
 
-Když **webové zobrazení** je požádán o načtení adresu URL, ji budou ve výchozím nastavení Delegovat požadavek na výchozí prohlížeč. Tak, aby měl **webové zobrazení** načíst adresu URL (namísto výchozího prohlížeče), je nutné podtřídami `Android.Webkit.WebViewClient` a přepsat `ShouldOverriderUrlLoading` metoda. Instance tento vlastní `WebViewClient` zajišťuje `WebView`. K tomu, přidejte následující vnořené `HelloWebViewClient` třídu `MainActivity`:
+Když **WebView** je muset načíst adresu URL, ji budou ve výchozím nastavení delegovat žádost o výchozí prohlížeč. Má **WebView** načíst adresu URL (spíše než výchozí prohlížeč), je nutné podtřídy `Android.Webkit.WebViewClient` a přepsat `ShouldOverriderUrlLoading` metoda. Instance tuto vlastní `WebViewClient` je k dispozici na `WebView`. K tomu, přidáním následující vnořené `HelloWebViewClient` třídu `MainActivity`:
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -58,9 +58,9 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-Když `ShouldOverrideUrlLoading` vrátí `false`, signalizuje do systému Android, aktuální `WebView` instance zpracovává žádosti a není potřeba žádná další akce. 
+Když `ShouldOverrideUrlLoading` vrátí `false`, signalizuje do systému Android, která aktuální `WebView` instance zpracovává žádost a není potřeba žádná další akce. 
 
-Pokud cílíte na úrovni rozhraní API, 24 nebo novější, použijte přetížení `ShouldOverrideUrlLoading` , která má `IWebResourceRequest` druhý argument místo `string`:
+Pokud se zaměřujete na úroveň rozhraní API, 24 nebo novější, použijte přetížení `ShouldOverrideUrlLoading` , která má `IWebResourceRequest` v druhém argumentu `string`:
 
 ```csharp
 public class HelloWebViewClient : WebViewClient
@@ -74,7 +74,7 @@ public class HelloWebViewClient : WebViewClient
 }
 ```
 
-V dalším kroku použít následující kód pro [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) metoda:
+Dále pomocí následujícího kódu pro [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) metody:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -91,10 +91,10 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Tento člen inicializuje [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) hodnotou z [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) rozložení a umožňuje JavaScript pro [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) s [ `JavaScriptEnabled` ](https://developer.xamarin.com/api/property/Android.Webkit.WebSettings.JavaScriptEnabled/) 
- `= true` (najdete v článku [volání C\# z jazyka JavaScript](https://developer.xamarin.com/recipes/android/controls/webview/call_csharp_from_javascript) recepturách informace o tom, jak volání C\# funkce z JavaScriptu). Nakonec je počáteční webová stránka načtená [ `LoadUrl(String)` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/%2fM%2fLoadUrl).
+Tento člen inicializuje [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) kopií ze [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/) rozložení a umožňuje jazyka JavaScript pro [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) s [ `JavaScriptEnabled` ](https://developer.xamarin.com/api/property/Android.Webkit.WebSettings.JavaScriptEnabled/) 
+ `= true` (najdete v článku [volání jazyka C\# z jazyka JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) recept na informace o tom, jak volání jazyka C\# funkce v JavaScriptu). Nakonec je počáteční webová stránka načtená [ `LoadUrl(String)` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/%2fM%2fLoadUrl).
 
-Sestavte a spusťte aplikaci. Měli byste vidět prohlížeč aplikace pro práci s jednoduchou webovou stránku jako je vidět na následujícím snímku obrazovky:
+Sestavte a spusťte aplikaci. Zobrazí se prohlížeč aplikace s jednoduchou webovou stránku jako je vidět na následujícím snímku obrazovky:
 
 [![Příklad zobrazení webové zobrazení aplikace](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
@@ -104,7 +104,7 @@ Zpracování **zpět** tlačítko stisknutí klávesy, přidejte následující 
 using Android.Views;
 ```
 
-Dál přidejte následující metodu uvnitř `HelloWebView` aktivity:
+V dalším kroku přidejte následující metodu uvnitř `HelloWebView` aktivity:
 
 ```csharp
 public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.KeyEvent e)
@@ -118,19 +118,19 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 }
 ```
 
-To [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent)) metoda zpětného volání bude volána, když je spuštěna aktivita stisknutí tlačítka. Podmínka uvnitř používá [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) zkontrolujte, zda klíč stisknutí je **zpět** tlačítko a jestli [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) ve skutečnosti může Navigace zpět (Pokud má historie). Pokud jsou obě nastavena hodnota true, pak se [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) metoda je volána, který bude přejděte zpět jedním krokem [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) historie. Vrácení `true` znamená, že událost byla zpracována. Pokud není tato podmínka splněná, událost je odeslána zpět do systému.
+To [ `OnKeyDown(int, KeyEvent)` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnKeyDown/(Android.Views.Keycode%2cAndroid.Views.KeyEvent)) volaná metoda zpětného volání při každém stisknutí tlačítka, když aktivita běží. Podmínka uvnitř používá [ `KeyEvent` ](https://developer.xamarin.com/api/type/Android.Views.KeyEvent/) ke kontrole, zda klávesa stisknuta v okamžiku je **zpět** tlačítko a určuje, zda [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) ve skutečnosti dokáže Navigace zpět (pokud ho už). Pokud jsou obě hodnotu true, pak bude [ `GoBack()` ](https://developer.xamarin.com/api/member/Android.Webkit.WebView.GoBack/) metoda je volána, který přejde zpět jedním krokem [ `WebView` ](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) historie. Vrací `true` znamená, že událost byla zpracována. Pokud tato podmínka není splněna, událost je odeslána zpět do systému.
 
-Spusťte aplikaci znovu. Teď by měla být moct odkazech a přejděte zpátky prostřednictvím stránky historie:
+Spusťte aplikaci znovu. Teď by měl být, použijte odkazy a přecházení zpět v historii stránky:
 
-[![Příklad snímky obrazovky na tlačítko Zpět na akce](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
+[![Příklad snímků obrazovky na tlačítko Zpět v akci](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 
-*Úpravy, které jsou na základě práce vytvořen a sdílí projektu pro Android otevřít zdroje a používají podle podmínek, které jsou popsané v části této stránky jsou*
-[*Creative Commons 2.5 porušení licence* ](http://creativecommons.org/licenses/by/2.5/).
+*Části této stránky jsou změn založených na vytvořené a sdílené s Androidem otevřete zdrojový projekt a používán v souladu s podmínkami uvedenými v práci*
+[*Creative Commons 2.5 Attribution License* ](http://creativecommons.org/licenses/by/2.5/).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Volání jazyka C# z jazyka JavaScript](https://developer.xamarin.com/recipes/android/controls/webview/call_csharp_from_javascript)
+- [Volání jazyka C# z jazyka JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
 - [Android.Webkit.WebView](https://developer.xamarin.com/api/type/Android.Webkit.WebView)
 - [KeyEvent](https://developer.xamarin.com/api/type/Android.Webkit.WebView/Client)

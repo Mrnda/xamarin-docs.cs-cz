@@ -1,55 +1,55 @@
 ---
-title: Základní animace v Xamarin.iOS
-description: Tento článek prozkoumá základní animace framework, znázorňující, jak umožňuje vysoký výkon, plynulá animace v UIKit, dobře, jak používat přímo k ovládacího prvku animace nižší úrovně.
+title: Základní animace v Xamarin.iosu
+description: Tento článek zkoumá rozhraní framework Core animace znázorňující, jak umožňuje vysoce výkonná a plynulé animace v Uikitu, jak použít přímo pro ovládací prvek animace nižší úrovně.
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5cc6019ed148b870e38659eb30ac7f2738481a50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3d26e58822385c20f3c08d0b75ba468467c2c9b1
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786813"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242128"
 ---
-# <a name="core-animation-in-xamarinios"></a>Základní animace v Xamarin.iOS
+# <a name="core-animation-in-xamarinios"></a>Základní animace v Xamarin.iosu
 
-_Tento článek prozkoumá základní animace framework, znázorňující, jak umožňuje vysoký výkon, plynulá animace v UIKit, dobře, jak používat přímo k ovládacího prvku animace nižší úrovně._
+_Tento článek zkoumá rozhraní framework Core animace znázorňující, jak umožňuje vysoce výkonná a plynulé animace v Uikitu, jak použít přímo pro ovládací prvek animace nižší úrovně._
 
-iOS zahrnuje [ *základní animace* ](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) k podpoře animace zobrazení ve vaší aplikaci.
-Proveďte všechny vysoce smooth animace v iOS například posouvání tabulek a k načtení mezi různá zobrazení stejně jako udělají, protože spoléhají na základní animace, interně.
+zahrnuje iOS [ *základní animace* ](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) kvůli zajištění podpory animace pro zobrazení v aplikaci.
+Všechny nabízenému plynulé animace v Iosu, jako je například posouvání tabulek prstů a potažení prstem mezi různá zobrazení tak dobře fungovat stejně, protože závisí na základní animace interně.
 
-Základní animace a základní grafické rozhraní můžou spolupracovat a vytvořit Krásný, animovaný 2D grafiky. Ve skutečnosti základní animace můžete i transformace grafiky 2D v 3D prostoru vytváření úžasné, formou prostředí. Ale pokud chcete vytvořit true 3D grafiky, potřebovali byste pomocí něčeho jako OpenGL ES, nebo o hry zapnout do rozhraní API, jako je například MonoGame, i když 3D je nad rámec tohoto článku.
+Základní animace a základní grafické rozhraní, můžou spolupracovat a vytvářet působivé, animovat 2D grafika. Ve skutečnosti animace Core můžete dokonce transformovat 2D grafika v 3D prostoru vytváření úžasných, formou prostředí. Však vytvořit true 3D grafiky, musíte pomocí něčeho jako OpenGL ES, nebo o zapnutí hry do rozhraní API, jako je například MonoGame, přestože 3D je nad rámec tohoto článku.
 
 <a name="Using_Core_Animation" />
 
 ## <a name="core-animation"></a>Základní animace
 
-iOS framework Core animace používá k vytvoření efekty animace například přechod mezi zobrazeními, klouzavé nabídky a posouvání efekty a další. Existují dva způsoby, jak pracovat s animace:
+k vytvoření efekty animace, jako je například převod mezi zobrazeními, klouzavé nabídky a posouvání účinky pár iOS používá animace Core framework. Existují dva způsoby, jak pracovat s animace:
 
-- [Prostřednictvím UIKit](#Using_UIKit_Animation), což zahrnuje animace na základě zobrazení, jakož i animované přechody mezi řadiči.
-- [Prostřednictvím základní animace](#Using_Core_Animation), které vrstvy přímo, povolení pro řízení citlivější.
+- [Prostřednictvím UIKit](#Using_UIKit_Animation), což zahrnuje animacemi založenými na zobrazení, jakož i animované přechody mezi řadiči.
+- [Prostřednictvím základní animace](#Using_Core_Animation), které vrstvy přímo, umožňující citlivější ovládacího prvku.
 
 <a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Pomocí UIKit animace
 
-UIKit poskytuje několik funkcí, které usnadňují přidání animace do aplikace. I když se interně používá základní animace, ho abstrahuje ji rychle, abyste pracovat pouze s zobrazeních a řadičích.
+UIKit poskytuje několik funkcí, které usnadňují přidání animace k aplikaci. I když se interně používá základní animace, ji odděluje ho mohli pracovat pouze s zobrazení a kontrolery.
 
-Tato část popisuje UIKit animace funkcí, včetně:
+Tato část popisuje UIKit animace funkce včetně:
 
 -  Přechody mezi řadiči
--  Přechodů mezi zobrazení
--  Zobrazení vlastností animace
+-  Přechody mezi zobrazeními
+-  Animace vlastností zobrazení
 
 
-### <a name="view-controller-transitions"></a>Přechody řadiče zobrazení
+### <a name="view-controller-transitions"></a>Přechody Kontrolerů zobrazení
 
- `UIViewController` poskytuje integrovanou podporu pro přechod mezi zobrazení řadičů prostřednictvím `PresentViewController` metoda. Při použití `PresentViewController`, volitelně může být animovaný přechodu do druhého řadiče.
+ `UIViewController` poskytuje integrovanou podporu pro přechod mezi kontrolery zobrazení prostřednictvím `PresentViewController` metody. Při použití `PresentViewController`, můžete volitelně animovat přechod na druhý kontroler.
 
-Například vezměte v úvahu aplikace s dva řadiče, kde dotykové ovládání tlačítka na první řadič volá `PresentViewController` zobrazíte další zařízení. Chcete-li řídit, jaké přechod animace se používá k zobrazení druhého řadiče, jednoduše nastavte její [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) vlastnost, jak je uvedeno níže:
+Zvažte například aplikaci dva řadiče, kde stisknutím tlačítka v prvním řadiči volá `PresentViewController` zobrazíte druhý kontroler. Pokud chcete řídit, jaké přechod animace se používá k zobrazení druhého řadiče, stačí nastavit jeho [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) vlastnost, jak je znázorněno níže:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -57,28 +57,28 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-V takovém případě `PartialCurl` animace se používá, i když některé další jsou k dispozici, včetně:
+V tomto případě `PartialCurl` animace se používá, i když některé další jsou k dispozici, včetně:
 
 -  `CoverVertical` – Snímky nahoru v dolní části obrazovky
--  `CrossDissolve` – Setmívá původní zobrazení & rozetmívá nové zobrazení
--  `FlipHorizontal` -Překlopit k vodorovných zprava doleva. Přechod na propouštění převrátí zleva doprava.
+-  `CrossDissolve` – Stará zobrazení setmívá & nové zobrazení rozetmí.
+-  `FlipHorizontal` -Převrátit na ose vodorovnou zprava doleva. Přechod na propuštění převrátí zleva doprava.
 
 
-Animace přechodu, předat `true` jako druhý argument `PresentViewController`:
+Má animovat přechod, předejte `true` jako druhý argument `PresentViewController`:
 
 ```csharp
 PresentViewController (vc2, true, null);
 ```
 
-Následující snímek obrazovky ukazuje, jak přechodu vypadá `PartialCurl` případ:
+Následující snímek obrazovky ukazuje, jak přechod vypadá `PartialCurl` případ:
 
  ![](core-animation-images/06-view-transitions.png "Tento snímek obrazovky ukazuje PartialCurl přechodu")
 
-### <a name="view-transitions"></a>Přechody zobrazení
+### <a name="view-transitions"></a>Zobrazit přechody
 
-Kromě přechody mezi řadiči UIKit také podporuje animování přechodů mezi zobrazení se Prohodit jedno zobrazení pro jinou.
+Kromě přechody mezi řadiči UIKit také podporuje animování přechody mezi zobrazeními pro jedno zobrazení dalších.
 
-Například vyslovte měl řadič s `UIImageView`, kde klepnutím na obrázku, by se měl zobrazit druhý `UIImageView`. Pro animaci bitovou kopii je jednoduché, volání superview zobrazení pro přechod do druhého zobrazení image `UIView.Transition`, předání `toView` a `fromView` jak je uvedeno níže:
+Například Řekněme, že jste měli kontroler `UIImageView`, kde by měl klepnete na ikonu zobrazení sekundy `UIImageView`. Animování image je stejně jednoduché jako volání funkce zobrazení superview přejít do zobrazení druhého image `UIView.Transition`, předají se jí `toView` a `fromView` jak je znázorněno níže:
 
 ```csharp
 UIView.Transition (
@@ -90,25 +90,25 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` také trvá `duration` parametr, který řídí, jak dlouho bude animace spuštěna, a také [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) k určení akcí, například animace použití a nejvýraznější funkce. Kromě toho můžete zadat dokončení obslužná rutina, která bude volána po dokončení animace.
+`UIView.Transition` také využívá `duration` parametr, který určuje, jak dlouho běží animace, stejně jako [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) k určení věcí například animace a funkci uvolnění použít. Kromě toho můžete určit, která bude volána po dokončení animace obslužné rutiny dokončení.
 
-Zobrazení animovaný přechod mezi bitovou kopii na snímku obrazovky níže zobrazit, kdy `TransitionFlipFromTop` se používá:
+Na snímku obrazovky níže ukazují animovaný přechod mezi image zobrazení, kdy `TransitionFlipFromTop` se používá:
 
- ![](core-animation-images/07-animated-transition.png "Tento snímek obrazovky ukazuje animovaný přechod mezi image zobrazení, pokud se používá TransitionFlipFromTop")
+ ![](core-animation-images/07-animated-transition.png "Tento snímek obrazovky ukazuje animovaný přechod mezi zobrazeními bitové kopie zadáním TransitionFlipFromTop")
 
-### <a name="view-property-animations"></a>Zobrazení vlastností animace
+### <a name="view-property-animations"></a>Animace vlastností zobrazení
 
-UIKit podporuje celou řadu vlastností animace na `UIView` třídy zdarma, včetně:
+UIKit podporuje širokou škálu vlastnosti animace v `UIView` třídy zdarma, včetně:
 
 -  Rámec
 -  Hranice
 -  Střed
--  Alpha
+-  systém Alpha
 -  Transformace
 -  Barva
 
 
-Tyto animací dojít implicitně zadáním změny vlastností v `NSAction` delegáta předaný statických `UIView.Animate` metoda. Například následující kód animuje středový bod `UIImageView`:
+Tyto animace budete stát implicitně zadáním změny vlastností v `NSAction` delegát předaný do statické `UIView.Animate` metody. Například následující kód animuje středu `UIImageView`:
 
 ```csharp
 pt = imgView.Center;
@@ -126,29 +126,29 @@ UIView.Animate (
 );
 ```
 
-To vede image animace a zpět v horní části obrazovky, jak je uvedeno níže:
+Výsledkem obrázku animace vpřed a zpět v horní části obrazovky, jak je znázorněno níže:
 
- ![](core-animation-images/08-animate-center.png "Obrázku animace a zpět v horní části obrazovky jako výstup")
+ ![](core-animation-images/08-animate-center.png "Obrázku animace vpřed a zpět v horní části obrazovky jako výstup")
 
-Stejně jako u `Transition` metody `Animate` umožňuje nastavit, společně s nejvýraznější funkce pro dobu trvání. Tento příklad používá také `UIViewAnimationOptions.Autoreverse` možnost, která způsobí, že animace animace z hodnoty zpět na počáteční jeden. Však také nastaví kód `Center` zpět na počáteční hodnoty v obslužné rutině dokončení. Při animace je interpolace hodnoty vlastností v čase, na skutečnou hodnotu modelu vlastnosti je vždy konečná hodnota, která byla nastavena. V tomto příkladu je hodnota bod po pravé straně superview. Bez nastavení `Center` počáteční bod, který je, kde kvůli dokončení animace `Autoreverse` nastaveno, bitovou kopii by snap zpět na pravé straně po dokončení animace, jak je uvedeno níže:
+Stejně jako u `Transition` metody `Animate` umožňuje nastavit spolu s funkci přechodu pro dobu trvání. Tento příklad používá také `UIViewAnimationOptions.Autoreverse` možnost, která způsobí, že animace animace od hodnoty zpět do původní objektu. Však také nastaví kód `Center` zpět na počáteční hodnotu v obslužné rutině dokončení. Při animaci je interpolace hodnoty vlastností v čase, skutečnou hodnotu modelu vlastnosti je vždy konečnou hodnotu, která byla nastavena. V tomto příkladu je hodnota bod u pravé strany superview. Bez nastavení `Center` počáteční bod, což je, kde kvůli dokončení animace `Autoreverse` nastavena, image by Přichytit zpět na pravou stranu po dokončení animace, jak je znázorněno níže:
 
- ![](core-animation-images/09-animation-complete.png "Bez nastavení centru na počáteční bod, bitovou kopii by snap zpět na pravé straně po dokončení animace")
+ ![](core-animation-images/09-animation-complete.png "Bez nastavení centru na počáteční bod, na obrázku by Přichytit zpět na pravou stranu po dokončení animace")
 
-## <a name="using-core-animation"></a>Použití jádra animace
+## <a name="using-core-animation"></a>Pomocí základní animace
 
- `UIView` animace povolit spoustu schopností a by měl použít pokud je to možné kvůli usnadnění implementace. Jak už bylo zmíněno dříve, použijte UIView animací framework Core animace. Ale některé věci nelze provést s `UIView` animací, jako je například animaci další vlastnosti, které nelze animovaný se zobrazením nebo interpolace podél – lineární cesty. V takových případech, kde je nutné jemnějšího ovládání základní animace lze také přímo.
+ `UIView` animace povolit spoustu schopností a by měl být pokud je to možné použít kvůli snadné implementaci. Jak už bylo zmíněno dříve, pomocí animací UIView framework Core animace. Ale nejde udělat pár věcí u `UIView` animace, jako je například animace další vlastnosti, které nelze animovat se zobrazením nebo interpolace nelineárních cestě. V takových případech, kdy potřebujete lepší kontrolu Core animace lze také přímo.
 
-### <a name="layers"></a>Vrstev.
+### <a name="layers"></a>Vrstvy
 
-Při práci s animace jádra, animace se odehrává prostřednictvím *vrstvy*, které jsou typu `CALayer`. Vrstva se koncepčně podobá zobrazení v, že je vrstvy hierarchie, podobně jako zobrazení hierarchie. Ve skutečnosti vrstvy zpět zobrazení, se zobrazení přidat podporu pro interakci s uživatelem. Můžete získat přístup k vrstvě všechna zobrazení v zobrazení `Layer` vlastnost. Ve skutečnosti kontext použít v `Draw` metodu `UIView` skutečně vytvořena z vrstvy. Interně vrstvě zálohování `UIView` má jeho delegáta nastavenou na zobrazení sebe, což je co volá `Draw`. Ano, při kreslení na `UIView`, jsou ve skutečnosti kreslení na jeho vrstvu.
+Při práci s animací základní animace se odehrává prostřednictvím *vrstvy*, které jsou typu `CALayer`. Vrstva se koncepčně podobá zobrazení v tom, že je vrstvy hierarchie, podobně jako zobrazení hierarchie. Ve skutečnosti vrstvy zpět zobrazení, když je zobrazení přidání podpory pro interakci s uživatelem. Přistupujete k vrstvě všechna zobrazení v zobrazení `Layer` vlastnost. Ve skutečnosti kontextu použít v `Draw` metoda `UIView` skutečně vytvořena z vrstvy. Interně jsou vrstvy zálohování `UIView` má jeho delegáta nastavená na view samostatně, což je agentura `Draw`. Ano, při kreslení k `UIView`, jsou ve skutečnosti kreslení k její vrstvy.
 
-Vrstva animace může být implicitním nebo explicitním. Implicitní animace jsou deklarativní. Jednoduše deklarovat, co by se měl změnit vlastnosti vrstvy a animace prostě funguje. Explicitní animací na druhé straně jsou vytvořené prostřednictvím třídu animace, který je přidán do vrstvy. Explicitní animací povolit přidání kontrolu nad vytváření animace. V následujících částech se pustíte do implicitní a explicitní animací podrobněji.
+Animace vrstva může být implicitní nebo explicitní. Implicitní animace jsou deklarativní. Jednoduše deklarujete, co by měl změnit vlastnosti vrstvy a animace prostě to funguje. Explicitní animací na druhé straně vytvářejí prostřednictvím třídu animace, která se přidá do vrstvy. Explicitní animace povolit přidání kontrolu nad vytvoření animace. V následujících částech se pustíte do implicitní a explicitní animace do větší hloubky.
 
 ### <a name="implicit-animations"></a>Implicitní animace
 
-Jedním ze způsobů animace vlastnosti vrstvy je prostřednictvím implicitní animace. `UIView` animace vytvořit implicitní animace. Můžete však vytvořit implicitní animací přímo na vrstvu také.
+Jedním ze způsobů animace vlastností vrstvy je prostřednictvím implicitního animace. `UIView` animace vytvoření implicitního animace. Však můžete vytvořit přímo proti vrstvě také implicitní animace.
 
-Například následující kód nastaví vrstvy `Contents` z bitové kopie, nastaví barva a šířka ohraničení a přidá vrstvě jako podvrstvu zobrazení vrstvy:
+Například následující kód nastaví vrstvy `Contents` Nastaví šířku ohraničení a barvy z obrázku, a přidá vrstvu jako podvrstvu zobrazení vrstvy:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -167,7 +167,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Chcete-li přidat implicitní animace pro vrstvy, jednoduše zabalit změny vlastností v `CATransaction`. To umožňuje animace vlastnosti, které nebude animatable s animace zobrazení, jako `BorderWidth` a `BorderColor` jak je uvedeno níže:
+Pokud chcete přidat animaci implicitní pro vrstvu, jednoduše zabalit změny vlastností v `CATransaction`. Díky tomu animace vlastností, které by se animovatelné s animace zobrazení, jako například `BorderWidth` a `BorderColor` jak je znázorněno níže:
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -183,21 +183,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Tento kód také animuje vrstvy `Position`, což je umístění, měřenou z levé horní části superlayer souřadnice bodu ukotvení vrstvy. Bodu ukotvení vrstvy je bod normalizovaný v rámci vrstvy souřadnicový systém.
+Tento kód také animuje vrstvy `Position`, což je umístění měřená v levém horním rohu superlayer souřadnice bodu ukotvení vrstvy. Bod ukotvení vrstvy je normalizované bod v rámci vrstvy souřadnicový systém.
 
-Následující obrázek znázorňuje bod pozice a ukotvení:
+Následující obrázek znázorňuje pozici a ukotvení bodu:
 
- ![](core-animation-images/10-postion-anchorpt.png "Následující obrázek ukazuje bod pozice a ukotvení")
+ ![](core-animation-images/10-postion-anchorpt.png "Tento obrázek ukazuje bodu pozici a ukotvení")
 
-Při spuštění v příkladu `Position`, `BorderWidth` a `BorderColor` animace, jak je vidět na následujících snímcích obrazovky:
+Při spuštění v příkladu `Position`, `BorderWidth` a `BorderColor` animace, jak je znázorněno na následujících snímcích obrazovky:
 
- ![](core-animation-images/11-implicit-animation.png "Když se spustí v příkladu, pozice, hodnota BorderWidth a Barva okraje animace znázorněné")
+ ![](core-animation-images/11-implicit-animation.png "Při spuštění v příkladu animace umístění a hodnotou vlastnosti BorderWidth BorderColor jak je znázorněno")
 
 ### <a name="explicit-animations"></a>Explicitní animace
 
-Kromě implicitní animací základní animace zahrnuje celou řadu třídy, které dědí od `CAAnimation` které umožňují zapouzdření animace, které jsou pak explicitně přidat do vrstvy. Tyto rutiny umožňují řídit citlivější animací, jako je například úprava počáteční hodnotu animace, seskupování animace a určení klíčových snímků umožňující – lineární cesty.
+Kromě implicitní animace animace Core zahrnuje celou řadu tříd, které dědí z `CAAnimation` , které umožňují zapouzdřit animace, které jsou pak explicitně přidány do vrstvy. Tyto rutiny umožňují řídit citlivější animace, jako jsou úpravy počáteční hodnoty animace, seskupení animace a určení klíčové snímky na povolit nelineárních cesty.
 
-Následující kód ukazuje příklad použití explicitní animace `CAKeyframeAnimation` pro vrstvu uvedené dříve (v části implicitní animace):
+Následující kód ukazuje příklad explicitního animací použitím polí `CAKeyframeAnimation` pro vrstvu výše (v části implicitní animace):
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -228,19 +228,19 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Tento kód se změní `Position` vrstvy vytvořením cestu, která se pak používá k definování animace klíčových snímků. Všimněte si, že vrstvy `Position` nastavena na konečná hodnota `Position` z animace. Bez toho by vrstva náhle vrátit k jeho `Position` před animace vzhledem k tomu, že animace pouze změní hodnotu prezentace a ne na skutečnou hodnotu modelu. Nastavením hodnoty modelu na konečná hodnota z animace umístění na konci animace zůstane vrstvě.
+Tento kód se změní `Position` vrstvy tak, že vytvoříte cestu, která se pak použije k definování klíčový snímek animace. Všimněte si, že vrstvy `Position` konečná hodnota nastavena `Position` z animace. Bez toho by vrstvu náhle vrátil k jeho `Position` před animace protože animace změní pouze hodnotu prezentace a nikoli skutečnou hodnotu modelu. Nastavením hodnoty modelu na konečnou hodnotu z animace vrstvě zůstat na místě na konci animace.
 
-Na následujících snímcích obrazovky zobrazit vrstvu obsahující bitovou kopii animace pomocí zadané cesty:
+Na následujících snímcích obrazovky zobrazit vrstvu, která obsahuje image animace prostřednictvím zadaná cesta:
 
- ![](core-animation-images/12-explicit-animation.png "Tento snímek obrazovky ukazuje vrstvu, která obsahuje bitovou kopii animace pomocí zadané cesty")
+ ![](core-animation-images/12-explicit-animation.png "Tento snímek obrazovky ukazuje vrstvu, která obsahuje image animace pomocí zadané cesty")
  
 ## <a name="summary"></a>Souhrn
 
-V tomto článku jsme se podívali na animace možnosti poskytované prostřednictvím *základní animace* architektury. Jsme se zaměřili na základní animace, zobrazující jak ho pohání animace v UIKit i jeho použití přímo pro ovládací prvek animace nižší úrovně.
+V tomto článku jsme se podívali na animace poskytované prostřednictvím *základní animace* architektur. Jsme se zaměřili na základní animace, zobrazuje, jak využívají animace v Uikitu i jak ho lze použít přímo pro ovládací prvek animace nižší úrovně.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázka základní animace](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [Ukázkové základní animace](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
 - [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Grafika a návod animace](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Core Animation](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Grafika a animace návodu](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [Core Animation](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

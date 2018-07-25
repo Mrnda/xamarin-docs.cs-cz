@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: 188d4b89354f97341c22036d90b55924650203ce
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a7740fa6ca79bc48568dc0a2cc87af51b5eb869e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38996626"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242115"
 ---
 # <a name="hello-android"></a>Hello, Android
 
@@ -32,4 +32,4 @@ V druhé části tohoto dokumentu budete zkontrolujte, co byl vytvořen a rozví
 
 - [Začínáme s androidem](http://developer.android.com/training/index.html)
 - [Ladění v sadě Visual Studio](https://docs.microsoft.com/visualstudio/debugger/)
-- [Visual Studio for Mac recepty – ladění](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/)
+- [Visual Studio for Mac recepty – ladění](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

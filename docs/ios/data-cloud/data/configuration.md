@@ -1,26 +1,26 @@
 ---
 title: Konfigurace SQLite v Xamarin.iOS
-description: Tento dokument popisuje, jak k určení umístění souboru databáze SQLite aplikace pro Xamarin.iOS. Tyto koncepty jsou relevantní bez ohledu na to mechanismus přístupu vybraná data.
+description: Tento dokument popisuje, jak určit umístění souboru databáze SQLite aplikace pro Xamarin.iOS. Tyto koncepty jsou relevantní bez ohledu na to mechanismus přístupu vybraná data.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 57645c0bb947a60a3d74436b752210d1bac18124
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f170aa753ff490b75ab66ac858051516935876fe
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784378"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241263"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>Konfigurace SQLite v Xamarin.iOS
 
 Pro použití ve vaší aplikaci Xamarin.iOS, budete muset určit správný soubor umístění souboru databáze SQLite.
 
-## <a name="database-file-path"></a>Cestu k souboru databáze
+## <a name="database-file-path"></a>Cesta k souboru databáze
 
-Bez ohledu na to, jakou metodu přístupu dat můžete použít musíte vytvořit soubor databáze před data se uloží s SQLite. Umístění souboru se liší v závislosti na platformě cílení. Pro iOS třídu můžete použít prostředí vytvořit platnou cestu, jak je znázorněno v následující fragment kódu:
+Bez ohledu na to, jakou metodu přístupu dat použijete musíte vytvořit soubor databáze předtím, než se data dají uložit s SQLite. Umístění souboru se liší v závislosti na tom, jakou platformu cílíte. Pro iOS můžete použít třídu prostředí vytvořit platnou cestu, jak je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -29,9 +29,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Existují další co je potřeba vzít v úvahu při rozhodování, kam uložit soubor databáze. V systému iOS můžete databázi na zálohované automaticky (nebo ne).
+Existují jiné co je potřeba vzít v úvahu při rozhodování, kam chcete soubor uložte do databáze. V Iosu můžete databázi zálohovanou automaticky (nebo nemusíte).
 
-Pokud chcete použít jiné umístění na jednotlivých platformách ve vaší aplikaci křížové platformy můžete direktivu kompilátoru znázorněné ke generování jinou cestu pro každou platformu:
+Pokud si přejete použít jiné umístění na jednotlivých platformách ve vaší aplikace pro různé platformy můžete použít direktivy kompilátoru jak je znázorněno ke generování jinou cestu pro každou platformu:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -47,13 +47,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Odkazovat [práce pomocí systému souborů](~/ios/app-fundamentals/file-system.md) článku Další informace o umístění, ve kterých soubor používat v systému iOS. Najdete v článku [vytváření křížové platformy aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu pro další informace o použití direktivy kompilátoru napsat kód, které jsou specifické pro každou platformu.
+Odkazovat [práce pomocí systému souborů](~/ios/app-fundamentals/file-system.md) najdete další informace, na jaké umístění souborů pro použití v systému iOS. Najdete v článku [sestavování pro různé platformy aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokument pro další informace o použití direktivy kompilátoru psaní kódu, které jsou specifické pro každou platformu.
 
 ## <a name="threading"></a>Dělení na vlákna
 
-Neměli byste používat stejné připojení databáze SQLite napříč více vláken. Dávejte pozor, otevřít, použití a pak ukončete všechna připojení, které vytvoříte ve stejném vlákně.
+Neměli byste používat stejné připojení k databázi SQLite napříč více vlákny. Buďte opatrní při otevření, používat a pak zavřete všechna připojení, které vytvoříte ve stejném vlákně.
 
-Aby se zajistilo, že kód není pokouší o přístup k databázi SQLite z více vláken ve stejnou dobu, ručně proveďte zámek vždy, když chcete přístup k databázi, například takto:
+Aby bylo zajištěno, že se váš kód pokusu o přístup k databázi SQLite z více vláken ve stejnou dobu, ručně zámek pokaždé, když chcete získat přístup k databázi, například takto:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -63,12 +63,12 @@ lock (locker){
 }
 ```
 
-Všechny přístup k databázi (čtení, zápisu, aktualizace atd.) by měl být uzavřen s stejné zámek. Musí dát pozor na vyhněte situaci zablokování zajištěním, že práce v klauzuli zámku se ukládají jednoduché a není volat jiné metody, které může trvat i zámek!
+Všechny přístup k databázi (čtení, zápisů, aktualizace atd.) by měl být uzavřen stejné zámku. Aby se zabránilo situaci zablokování tím, že zajišťuje, že práce v klauzuli zámek je jednoduché a není volání dalších metodách, které může také použít zámek musí věnovat pozornost.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS recepty dat](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS recepty dat](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

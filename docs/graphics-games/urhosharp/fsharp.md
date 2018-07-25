@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 430c4eca7c6dbd7107692246b70ff93bafa44d01
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111196"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241831"
 ---
 # <a name="programming-urhosharp-with-f"></a>Programování Urhosharpu pomocí jazyka F #
 
@@ -19,11 +19,11 @@ Urhosharpu možné jej naprogramovat pomocí pomocí stejné koncepty používan
 
 Stejně jako mnoho knihoven, které vytvoří se v celém světě C++ řada funkcí Urhosharpu vrací logické hodnoty nebo celých čísel, která udává úspěch nebo neúspěch. Měli byste použít `|> ignore` ignorovat tyto hodnoty.
 
-[Ukázkový program](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) Urhosharpu z jazyka F # je "Hello World".
+[Ukázkový program](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) Urhosharpu z jazyka F # je "Hello World".
 
 ## <a name="creating-an-empty-project"></a>Vytvořit prázdný projekt
 
-Šablony F # pro Urhosharpu nejsou dosud k dispozici, takže k vytvoření projektu Urhosharpu můžete buď začíná [ukázka](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) nebo postupujte podle těchto kroků:
+Šablony F # pro Urhosharpu nejsou dosud k dispozici, takže k vytvoření projektu Urhosharpu můžete buď začíná [ukázka](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) nebo postupujte podle těchto kroků:
 
 1. Ze sady Visual Studio pro Mac, vytvořte nový **řešení**. Zvolte **iOS > aplikace > aplikace s jedním zobrazením** a vyberte **F #** jako implementaci jazyka. 
 1. Odstranit **Main.storyboard** souboru. Otevřít **Info.plist** soubor a v **iPhone / iPod informace o nasazení** podokně odstranit `Main` řetězce v **hlavní rozhraní** rozevíracího seznamu.
@@ -114,4 +114,4 @@ Výsledný program by měl vypadat:
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Procházet na Githubu (ukázka)](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [Procházet na Githubu (ukázka)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

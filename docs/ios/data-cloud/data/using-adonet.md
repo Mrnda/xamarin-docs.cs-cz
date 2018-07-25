@@ -1,26 +1,26 @@
 ---
-title: Pomocí ADO.NET Xamarin.iOS
-description: Tento dokument popisuje, jak používat technologie ADO.NET jako metodu pro přístup k SQLite aplikace pro Xamarin.iOS. Popisuje, odkazy na sestavení, Mono.Data.Sqlite a BasicDataAccess vzorku.
+title: Pomocí technologie ADO.NET s Xamarin.iOS
+description: Tento dokument popisuje, jak používat technologie ADO.NET jako metoda pro přístup k SQLite aplikace pro Xamarin.iOS. Popisuje odkazy na sestavení, Mono.Data.Sqlite a BasicDataAccess vzorku.
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8240e3052b4deb4bfdf0ec94e67fbd6827a34dab
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 83f6059c405b2156270f4359cbba33177861af02
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784826"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241235"
 ---
-# <a name="using-adonet-with-xamarinios"></a>Pomocí ADO.NET Xamarin.iOS
+# <a name="using-adonet-with-xamarinios"></a>Pomocí technologie ADO.NET s Xamarin.iOS
 
-Xamarin má integrovanou podporu pro databázi SQLite, která je k dispozici v systému iOS, které jsou vystavené pomocí známé syntaxe pro technologii ADO.NET. Pomocí těchto rozhraní API vyžaduje, abyste zápisu příkazů SQL, které jsou zpracovány SQLite, jako například `CREATE TABLE`, `INSERT` a `SELECT` příkazy.
+Xamarin nabízí integrovanou podporu pro databázi SQLite, která je k dispozici v systémech iOS, která je vystavena pomocí známé syntaxe pro ADO.NET. Pomocí těchto rozhraní API vyžaduje, abyste zápisu příkazů SQL, které jsou zpracovány SQLite, jako například `CREATE TABLE`, `INSERT` a `SELECT` příkazy.
 
 ## <a name="assembly-references"></a>Odkazy na sestavení
 
-Použití access SQLite prostřednictvím ADO.NET, je nutné přidat `System.Data` a `Mono.Data.Sqlite` odkazuje do projektu iOS, jak je vidět tady (pro ukázky v sadě Visual Studio pro Mac a Visual Studio):
+Použití přístupu pomocí ADO.NET, je nutné přidat SQLite `System.Data` a `Mono.Data.Sqlite` odkazy na váš projekt pro iOS, jak je znázorněno zde (pro ukázky v sadě Visual Studio pro Mac a Visual Studio):
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -32,21 +32,21 @@ Použití access SQLite prostřednictvím ADO.NET, je nutné přidat `System.Dat
 
 -----
 
-Klikněte pravým tlačítkem na **odkazy > Upravit odkazy...**  pak zaškrtněte požadovaná sestavení.
+Klikněte pravým tlačítkem na **odkazy > Upravit odkazy...**  pak kliknutím vyberte požadovaná sestavení.
 
 ## <a name="about-monodatasqlite"></a>O Mono.Data.Sqlite
 
-Budeme používat `Mono.Data.Sqlite.SqliteConnection` třídy za účelem vytvoření souboru prázdnou databázi a potom vytvořit instanci `SqliteCommand` objekty, že budeme moci použít pro spouštění instrukcí SQL v databázi.
+Budeme používat `Mono.Data.Sqlite.SqliteConnection` třídy za účelem vytvoření souboru prázdnou databázi a pak vytvořit instanci `SqliteCommand` objekty, můžeme použít pro spouštění instrukcí SQL na databázi.
 
 
-1. **Vytváření prázdnou databázi** -volání `CreateFile` metoda platný (ie. zapisovatelné) cesta k souboru. Byste měli zkontrolovat, zda soubor již existuje před voláním této metody, jinak se vytvoří novou (prázdnou) databázi v horní části starý data v původní soubor se ztratí:
+1. **Vytvoření prázdné databáze** – volání `CreateFile` metoda s platným (ie. zapisovatelná) cesta k souboru. Zkontrolujte, zda soubor před voláním této metody již existuje, jinak se vytvoří novou (prázdnou) databázi v horní části starý a data v původní soubor se ztratí:
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-    > `dbPath` Proměnná by měla určit podle pravidla popsané dříve v tomto dokumentu.
+    > `dbPath` Proměnné byste měli určit podle pravidel popsaných výše v tomto dokumentu.
 
-2. **Vytvoření připojení k databázi** – po vytvoření souboru databáze SQLite můžete vytvořit objekt připojení pro přístup k datům. Připojení je vytvořený pomocí připojovací řetězec, který má formu `Data Source=file_path`, jak je vidět tady:
+2. **Vytváří se připojení k databázi** – po vytvoření souboru databáze SQLite můžete vytvořit objekt připojení pro přístup k datům. Připojení je vytvořený pomocí připojovací řetězec, který má formu `Data Source=file_path`, jak je znázorněno zde:
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -55,9 +55,9 @@ Budeme používat `Mono.Data.Sqlite.SqliteConnection` třídy za účelem vytvo�
     connection.Close();
     ```
 
-    Jak už bylo zmíněno dříve, připojení nebude pravděpodobně znovu použít v různých vláknech. Pokud máte pochybnosti, vytvořte připojení podle potřeby a zavřete ho, když jste hotovi; ale mějte na paměti to tento další často než příliš nezbytné.
+    Jak už bylo zmíněno dříve, připojení by nikdy neměly být znovu použít v různých vláknech. Pokud máte pochybnosti, vytvořte připojení podle potřeby a zavřete ho, až to budete mít; ale mějte na paměti dělat toto více často než příliš požadované.
     
-3. **Vytváření a spouštění příkazu databáze** – když máme připojení můžeme spouštět libovolné příkazy SQL u ní. Následující kód ukazuje příkazu CREATE TABLE spouštěna.
+3. **Vytvoření a spuštění příkazu databáze** – Jakmile budeme mít připojení můžeme spouštět libovolné příkazy SQL před ním. Následující kód ukazuje při provádění příkazu CREATE TABLE.
 
     ```csharp
     using (var command = connection.CreateCommand ()) {
@@ -66,17 +66,17 @@ Budeme používat `Mono.Data.Sqlite.SqliteConnection` třídy za účelem vytvo�
     }
     ```
 
-Při provádění příkazu SQL přímo s databází, které byste měli vzít normální opatření Nedělejte neplatných požadavků, jako je například pokusu o vytvoření tabulku, která již existuje. Zachovat informace o struktuře vaší databáze, tak, aby vám nezpůsobí SqliteException, například "již existuje tabulka chyba SQLite [položky]".
+Při provádění SQL přímo na databázi byste měli podniknout normální opatření Nedělejte neplatných požadavků, jako například pokusu vytvořit tabulku, která již existuje. Sledovat, struktura databáze tak, aby nezpůsobí SqliteException jako "tabulky chyba SQLite [položky] již existuje".
 
-## <a name="basic-data-access"></a>Základní přístup k datům
+## <a name="basic-data-access"></a>Přístup k základním datům
 
-*DataAccess_Basic* při spuštění v systému iOS se ukázkový kód pro tento dokument vypadat třeba takto:
+*DataAccess_Basic* při spuštění v Iosu se ukázkový kód pro tento dokument vypadá například takto:
 
- ![](using-adonet-images/image9.png "Ukázka iOS ADO.NET")
+ ![](using-adonet-images/image9.png "Ukázka technologie ADO.NET pro iOS")
 
 Následující kód ukazuje, jak provádět jednoduché operace SQLite a zobrazí výsledky v jako text v hlavním okně aplikace.
 
-Budete muset zahrnují tyto obory názvů:
+Je potřeba zahrnout tyto obory názvů:
 
 ```csharp
 using System;
@@ -84,13 +84,13 @@ using System.IO;
 using Mono.Data.Sqlite;
 ```
 
-Následující příklad kódu ukazuje interakce celé databáze:
+Následující příklad kódu ukazuje interakci celou databázi:
 
-1.  Vytvoření souboru databáze
+1.  Vytvoření databázového souboru
 2.  Vkládání některá data
 3.  Dotazování na data
 
-Tyto operace by obvykle zobrazují na několika místech kódu, například můžete vytvořit soubor databáze a tabulky při prvním spuštění aplikace a provádět data čtení a zápisu v jednotlivých obrazovek v aplikaci. V následujícím příkladu, byly seskupeny do jedné metody v tomto příkladu:
+Tyto operace by obvykle zobrazují na několika místech kódu, například můžete vytvořit soubor databáze a tabulky při prvním spuštění aplikace a provádět zápisy a čtení dat na jednotlivých obrazovkách v aplikaci. V následujícím příkladu, byly seskupeny do jedné metody v tomto příkladu:
 
 ```csharp
 public static SqliteConnection connection;
@@ -147,14 +147,14 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>Složitější dotazy
 
-Protože SQLite umožňuje libovolné příkazů SQL pro použit pro data, můžete provést ať vytvořte, vložit, aktualizovat, odstranit nebo vyberte příkazy, které se vám líbí. Další informace o příkazech jazyka SQL nepodporuje SQLite na webu Sqlite. Příkazy SQL jsou spustit pomocí jedné ze tří metod SqliteCommand objektu:
+Protože SQLite umožňuje libovolné příkazy SQL, spouštějte data, můžete provést cokoli, co vytvořit, vložení, aktualizace, odstranění nebo vyberte příkazy, které vám vyhovuje. Další informace o SQL příkazy podporované SQLite na webu Sqlite. Příkazy SQL se spouštějí pomocí jedné ze tří metod objektu SqliteCommand:
 
--  **ExecuteNonQuery** – obvykle používá k vytvoření nebo data vložení tabulky. Návratovou hodnotu pro některé operace počet ovlivněných řádků, v opačném případě je -1.
--  **ExecuteReader** – použít, když bude kolekce řádků má být vrácen jako `SqlDataReader` .
--  **ExecuteScalar** – načte jednu hodnotu (například agregace).
+-  **Metodu ExecuteNonQuery** – obvykle používá pro vložení vytváření nebo dat tabulky. Počet ovlivněných řádků je návratová hodnota pro některé operace, v opačném případě je hodnota -1.
+-  **ExecuteReader** – při kolekce řádků má být vrácen jako `SqlDataReader` .
+-  **ExecuteScalar** – načte hodnotu single (například agregace).
 
 
-### <a name="executenonquery"></a>EXECUTENONQUERY
+### <a name="executenonquery"></a>METODU EXECUTENONQUERY
 
 Příkazy INSERT, UPDATE a DELETE vrátí počet ovlivněných řádků. Všechny ostatní příkazy SQL vrátí hodnotu -1.
 
@@ -167,7 +167,7 @@ using (var c = connection.CreateCommand ()) {
 
 ### <a name="executereader"></a>EXECUTEREADER
 
-Následující metodu ukazuje klauzule WHERE v příkazu SELECT. Protože kód je věnujte dokončení příkazu jazyka SQL ho musí postará, abyste se vyhnuli vyhrazené znaky, jako je například uvozovky (') kolem řetězce.
+Následující metoda ukazuje klauzule WHERE v příkazu SELECT. Protože kód je vytváření úplný příkaz jazyka SQL ho musíte pečlivě řídicí vyhrazených znaků uvozovky (') řetězce.
 
 ```csharp
 public static string MoreComplexQuery ()
@@ -194,15 +194,15 @@ public static string MoreComplexQuery ()
 }
 ```
 
-ExecuteReader metoda vrátí objekt SqliteDataReader. Kromě metodu pro čtení v příkladu další užitečné vlastnosti zahrnují:
+Vrátí metodu ExecuteReader SqliteDataReader objektu. Kromě metodu pro čtení je znázorněno v příkladu další užitečné vlastnosti patří:
 
--  **RowsAffected** – počet řádků, vliv na dotaz.
--  **HasRows** – jestli nebyly vráceny žádné řádky.
+-  **RowsAffected** – počet řádků, které jsou ovlivněny dotazu.
+-  **HasRows** – Určuje, zda nebyly vráceny žádné řádky.
 
 
 ### <a name="executescalar"></a>EXECUTESCALAR
 
-Používejte pro příkazy SELECT, které vrátí jednu hodnotu (například agregace).
+Používá se pro příkazy SELECT, které vrátí jednu hodnotu (jako jsou agregace).
 
 ```csharp
 using (var contents = connection.CreateCommand ()) {
@@ -211,12 +211,12 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-`ExecuteScalar` Návratový typ metody `object` – výsledku v závislosti na databázový dotaz by měl přetypování. Výsledkem může být celé číslo od dotazu COUNT nebo řetězec z dotazu vyberte jeden sloupec. Všimněte si, že se jedná o liší od jiných metod Execute, které vrací objekt čtečky nebo počet ovlivněných řádků.
+`ExecuteScalar` Je návratový typ metody `object` – měli přetypovat výsledku v závislosti na databázového dotazu. Výsledkem může být celé číslo od AGREGAČNÍ dotaz nebo řetězec dotazu vyberte jeden sloupec. Všimněte si, že se jedná o různé jiné spouštět metody, které vracejí objekt čtečky nebo počet ovlivněných řádků.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS recepty dat](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS recepty dat](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

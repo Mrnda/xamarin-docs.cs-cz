@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997436"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242404"
 ---
 # <a name="cross-platform-performance"></a>Výkon napříč platformami
 
@@ -340,7 +340,7 @@ Další informace najdete v tomto blogovém příspěvku: [jak k zachovat Your A
 
 ## <a name="optimize-image-resources"></a>Optimalizace prostředků obrázků
 
-Bitové kopie jsou některé nejdražší prostředky, které používají aplikace a jsou často zachytí na vysoké rozlišení. Ačkoli tím se vytvoří živý imagí úplné podrobností, aplikace, které zobrazují tyto bitové kopie obvykle vyžadují další využití procesoru pro dekódování obrázku a víc paměti k ukládání dekódovaný obrázek. Je plýtvání dekódování obrázek s vysokým rozlišením v paměti, když ho bude vertikálně snížit kapacitu menší velikost pro zobrazení. Místo toho snížit nároky na procesor využití a paměti tak, že vytvoříte několik verzí řešení uložené obrázky, které se blíží velikosti předpokládané zobrazení. Obrázek zobrazen v zobrazení seznamu by měla být například pravděpodobně nižší rozlišení, než na celé obrazovce zobrazí obrázek. Kromě toho kapacitu vertikálně snížit verzích obrázků ve vysokém rozlišení lze načíst efektivně jejich zobrazení tak, aby minimální paměti vliv. Další informace najdete v tématu [zatížení velké rastrové obrázky efektivně](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Bitové kopie jsou některé nejdražší prostředky, které používají aplikace a jsou často zachytí na vysoké rozlišení. Ačkoli tím se vytvoří živý imagí úplné podrobností, aplikace, které zobrazují tyto bitové kopie obvykle vyžadují další využití procesoru pro dekódování obrázku a víc paměti k ukládání dekódovaný obrázek. Je plýtvání dekódování obrázek s vysokým rozlišením v paměti, když ho bude vertikálně snížit kapacitu menší velikost pro zobrazení. Místo toho snížit nároky na procesor využití a paměti tak, že vytvoříte několik verzí řešení uložené obrázky, které se blíží velikosti předpokládané zobrazení. Obrázek zobrazen v zobrazení seznamu by měla být například pravděpodobně nižší rozlišení, než na celé obrazovce zobrazí obrázek. Kromě toho kapacitu vertikálně snížit verzích obrázků ve vysokém rozlišení lze načíst efektivně jejich zobrazení tak, aby minimální paměti vliv. Další informace najdete v tématu [zatížení velké rastrové obrázky efektivně](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
 
 Bez ohledu na rozlišení obrázku můžete zobrazení prostředků obrázků výrazně zvýšit nároky na paměť aplikace. Proto jsou by měl pouze vytvořit při vyžaduje a by měly být vydány ihned poté, co aplikace již nevyžaduje.
 

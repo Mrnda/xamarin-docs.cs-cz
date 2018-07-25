@@ -1,48 +1,48 @@
 ---
-title: Zobrazení výstrah v Xamarin.iOS
-description: Tento dokument popisuje, jak zobrazit oznámení v Xamarin.iOS pomocí UIAlertController rozhraní API byla zavedená v iOS 8.
+title: Zobrazení oznámení v Xamarin.iosu
+description: Tento dokument popisuje, jak zobrazit oznámení v Xamarin.iosu pomocí UIAlertController zavedené v Iosu 8 rozhraní API.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789591"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241331"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Zobrazení výstrah v Xamarin.iOS
+# <a name="displaying-alerts-in-xamarinios"></a>Zobrazení oznámení v Xamarin.iosu
 
-Od verze iOS 8, UIAlertController má dokončené nahrazené UIActionSheet a UIAlertView z nich jsou nyní zastaralé.
+Od verze iOS 8, má UIAlertController dokončené nahrazené UIActionSheet a UIAlertView z nich jsou už zastaralé.
 
-Na rozdíl od třídy nahrazováno, které jsou podtřídy UIView, UIAlertController je podtřídou třídy UIViewController.
+Na rozdíl od tříd, které nahradilo, které jsou podtřídami UIView UIAlertController je podtřídou třídy UIViewController.
 
-Použití `UIAlertControllerStyle` k označení typu výstrahy k zobrazení. Jsou tyto typy výstrah:
+Použití `UIAlertControllerStyle` k označení typu výstrahy k zobrazení. Tyto typy výstrah jsou:
 
 - **UIAlertControllerStyleActionSheet**
     * IOS před 8 to by byl UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * IOS před 8 to by byl UIAlertView 
+    * IOS před 8 to bylo UIAlertView 
 
-Existují tři kroky potřebné při vytváření řadič výstrah:
+Existují tři kroky nezbytné pro při vytvoření Kontroleru oznámení:
 
-- Vytvoření a konfigurace upozornění s a:
+- Vytvoření a konfigurace upozornění pomocí a:
     * Název
     * – zpráva
     * preferredStyle
     
 - (Volitelné) Přidat textové pole
 - Přidejte požadované akce
-- Řadiče zobrazení k dispozici
+- K dispozici kontroler zobrazení
 
-Nejjednodušší výstrahu obsahuje jedno tlačítko, jak je vidět na tomto snímku obrazovky:
+Nejjednodušší upozornění obsahuje jedno tlačítko, jak je znázorněno na tomto snímku obrazovky:
 
- ![Upozorní na jedno tlačítko](alerts-images/alert1.png)
+ ![Upozornění s jedno tlačítko](alerts-images/alert1.png)
 
-Kód, který zobrazí upozornění na jednoduchý vypadá takto:
+Kód k zobrazení oznámení na jednoduché vypadá takto:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Zobrazení výstrahy v několika variantách, se provádí podobným způsobem, ale přidat dvě akce. Například následující snímek obrazovky ukazuje výstraha s dvě tlačítka:
+Zobrazení výstrahy s několika možnostmi, se provádí podobným způsobem, ale přidejte dvě akce. Například následující snímek obrazovky ukazuje výstrahy s dvě tlačítka:
 
- ![ Upozorní na dvě tlačítka](alerts-images/alert2.png)
+ ![ Upozornění s dvě tlačítka](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Výstrahy lze také zobrazit akce listu, podobně jako tento snímek obrazovky:
+Výstrahy můžete zobrazit také akce list, podobně jako na následujícím snímku obrazovky:
 
- ![Výstraha list akce](alerts-images/alert3.png)
+ ![Akce upozornění list](alerts-images/alert3.png)
 
-Tlačítka se přidají do výstraha s `AddAction` metoda:
+Tlačítka jsou přidány do upozornění s `AddAction` metody:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -114,4 +114,4 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 ## <a name="related-links"></a>Související odkazy
 
 - [Ovládací prvky (ukázka)](https://developer.xamarin.com/samples/Controls/)
-- [Výstrahy řadiče](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [Upozornění Kontroleru](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

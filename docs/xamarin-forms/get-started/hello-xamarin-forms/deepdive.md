@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203095"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242222"
 ---
 # <a name="xamarinforms-deep-dive"></a>Podrobně o infrastruktuře Xamarin.Forms
 
@@ -325,7 +325,7 @@ Phoneword aplikaci pro Xamarin.Forms přináší několik konceptů, které nejs
 
 ## <a name="testing-and-deployment"></a>Testování a nasazení
 
-Visual Studio pro Mac a Visual Studio poskytují mnoho možností pro testování a nasazení aplikace. Ladění aplikací je běžné součástí životního cyklu vývoje aplikací a pomáhá diagnostikovat problémy v kódu. Další informace najdete v tématu [nastavte zarážku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kód prostřednictvím kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), a [výstupní informace do okna protokolu](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Visual Studio pro Mac a Visual Studio poskytují mnoho možností pro testování a nasazení aplikace. Ladění aplikací je běžné součástí životního cyklu vývoje aplikací a pomáhá diagnostikovat problémy v kódu. Další informace najdete v tématu [nastavte zarážku](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [kód prostřednictvím kroku](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code), a [výstupní informace do okna protokolu](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
 Simulátorů jsou vhodné místo pro spuštění nasazení a testování aplikace a funkce užitečných funkcí pro testování aplikací. Uživatelé však nebude využívat konečné aplikaci v simulátoru, tak aplikace by měl být testován na skutečných zařízeních již v rané fázi a často. Další informace o zřizování zařízení s Iosem, najdete v části [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md). Další informace o zřizování zařízení s Androidem, najdete v části [nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md).
 

@@ -1,50 +1,50 @@
 ---
-title: Základní grafické prvky v Xamarin.iOS
-description: Tento článek popisuje architektury iOS základní grafické prvky. Ukazuje, jak používat základní grafiky k vykreslení geometry, Image a soubory PDF.
+title: Základní grafické prvky v Xamarin.iosu
+description: Tento článek popisuje základní grafické prvky architektury iOS. Ukazuje, jak používat grafiku základní kreslení geometrie, obrázky a soubory PDF.
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d7124c7d09ca4e36ce22d60f578ea4a75d4a05b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82c54074db722824c56ae3ae86620c804b8d109e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786753"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241946"
 ---
-# <a name="core-graphics-in-xamarinios"></a>Základní grafické prvky v Xamarin.iOS
+# <a name="core-graphics-in-xamarinios"></a>Základní grafické prvky v Xamarin.iosu
 
-_Tento článek popisuje architektury iOS základní grafické prvky. Ukazuje, jak používat základní grafiky k vykreslení geometry, Image a soubory PDF._
+_Tento článek popisuje základní grafické prvky architektury iOS. Ukazuje, jak používat grafiku základní kreslení geometrie, obrázky a soubory PDF._
 
-zahrnuje iOS [ *základní grafické prvky* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) framework k podpoře nízké úrovně kreslení. Co povolit bohaté grafické možnosti v rámci UIKit jsou tyto rozhraní. 
+zahrnuje iOS [ *základní grafické prvky* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) framework k zajištění podpory nízké úrovně výkresu. Tyto architektury se, co povolit bohaté grafické možnosti v rámci UIKit. 
 
-Základní grafické prvky je nízké úrovně 2D grafické rozhraní, které umožňuje kreslení nezávislé grafiky zařízení. Kreslení v UIKit všechny 2D interně používá základní grafické prvky.
+Základní grafiky je nízké úrovně 2D grafika rozhraní, která umožňuje kreslení nezávislé grafiky zařízení. Všechny 2D kreslení v Uikitu používá jádro grafiky interně.
 
-Kreslení v různých scénářích včetně podporuje grafiky jádra:
+Základní grafiky podporuje vykreslení v řadě scénářů, včetně:
 
 -  [Kreslení na obrazovku prostřednictvím `UIView` ](#Drawing_in_a_UIView_Subclass) .
 -  [Vykreslování obrázků v paměti nebo na obrazovce](#Drawing_Images_and_Text).
--  Vytváření a kreslení do PDF.
--  Čtení a kreslení existujícího PDF.
+-  Vytváření a vykreslování do formátu PDF.
+-  Čtení a kreslení existujícího souboru PDF.
 
 
-## <a name="geometric-space"></a>Geometrickou místa
+## <a name="geometric-space"></a>Geometrické místa
 
-Bez ohledu na to scénář všechny kreslení provést s základní grafiky provádí v geometrické místa, což znamená, že funguje v abstraktní bodů namísto pixelů. Popisují, co chcete vykresleného z hlediska geometrie a kreslení stavu například barvy, styly řádku atd. a zpracovává základní grafické prvky překladu všechno, co do pixelů. Takový stav vkládá grafiky kontext, který si můžete představit jako plátno kopírovat.
+Bez ohledu na scénář všechny kreslení provést s grafikou Core provádí v geometrické místa, to znamená, že to funguje v abstraktní body a ne v pixelech. Popište, co chcete vykresleného z hlediska geometrie a kreslení stavu, jako jsou barvy, styly řádku a podobně a základní grafické prvky zpracovává všechno, co překládá na pixelech. Takové stavu se přidá do grafiky kontext, který si můžete představit jako plátno kopírovat.
 
 Existuje několik výhod tohoto přístupu:
 
--  Kreslení kódu se stane dynamické a následně můžete upravit grafiky za běhu.
--  Snižuje potřebu statických bitových kopií v sadě aplikací můžete snížit velikost aplikace.
--  Grafika stát odolnější vůči změny rozlišení mezi zařízeními.
+-  Vykreslení kódu stane dynamické a následně upravit grafiky v době běhu.
+-  Omezuje potřebu statické obrázky do sady prostředků aplikace může snížit velikost aplikace.
+-  Grafika stát odolnější vůči změny rozlišení napříč zařízeními.
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
-## <a name="drawing-in-a-uiview-subclass"></a>Kreslení v UIView podtřídy
+## <a name="drawing-in-a-uiview-subclass"></a>Kreslení v podtřídou UIView
 
-Každý `UIView` má `Draw` metoda, která je volána v systému, když je potřeba vykreslit. Přidat zobrazení, kreslení kód podtřídami `UIView` a přepsání `Draw`:
+Každý `UIView` má `Draw` metodu, která je volána v systému, když je potřeba vykreslit. Chcete-li přidat kód pro vykreslování na zobrazení podtřídy `UIView` a přepsat `Draw`:
 
 ```csharp
 public class TriangleView : UIView
@@ -56,21 +56,21 @@ public class TriangleView : UIView
 }
 ```
 
-Kreslení by měla být volána nikdy přímo. V systému je volána při zpracování spuštění smyčky. Při prvním prostřednictvím spuštění smyčky po přidání zobrazení do zobrazení hierarchie, jeho `Draw` metoda je volána. Následující volání `Draw` dojít, když zobrazení je označen jako museli být vykresleny voláním buď `SetNeedsDisplay` nebo `SetNeedsDisplayInRect` v zobrazení.
+Draw by se nikdy volat přímo. Během zpracování spuštění smyčky je volána v systému. Při prvním průchodu spuštění smyčky po zobrazení se přidá do zobrazení hierarchie jeho `Draw` metoda je volána. Následující volání `Draw` dojít, když je zobrazení označilo jako vyžadující vykreslit pomocí volání buď `SetNeedsDisplay` nebo `SetNeedsDisplayInRect` pro zobrazení.
 
-### <a name="pattern-for-graphics-code"></a>Vzor pro kód grafiky
+### <a name="pattern-for-graphics-code"></a>Vzor pro grafický kód
 
-Kód `Draw` implementace by měl popisují, co chce vykresleného. Kreslení kód pracuje podle vzoru, ve kterém nastaví některé kreslení stavu a volá metodu pro žádosti, je nutné vykreslit. Tento vzor může být zobecněn následujícím způsobem:
+Kód v `Draw` implementace, měl by popisovat, co chce vystavené. Kód pro vykreslování probíhá podle vzoru, ve kterém nastaví stav některých vykreslování a volá metodu žádosti je potřeba vykreslit. Tento model můžete zobecnit následujícím způsobem:
 
-1. Získáte grafiky kontextu.
+1. Získáte kontext grafiky.
 
 2. Nastavte atributy kreslení.
 
-3. Vytvořte některé geometrie z kreslení primitiv.
+3. Vytvořte některé geometrie od kreslení primitiv.
 
-4. Volání metody kreslení nebo tahu.
+4. Volání metody Draw nebo tah.
 
-### <a name="basic-drawing-example"></a>Příklad základní kreslení
+### <a name="basic-drawing-example"></a>Příklad základního kreslení
 
 Zvažte například následující fragment kódu:
 
@@ -99,14 +99,14 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 }
 ```
 
-Pojďme rozdělíme tento kód:
+Pojďme rozdělit tento kód:
 
 ```csharp
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
-V řádku nejdřív získá aktuální kontext grafiky, který má použít pro kreslení. Si můžete představit kontextu grafiky jako na plátno, kreslení se stane, obsahující všechny stavy o výkresu, jako je například tahu a barvy výplně, jakož i geometrie k vykreslení.
+S tímto řádkem nejprve získá aktuální kontext grafiky má být použit pro kreslení. Si můžete představit grafiky kontextu jako na plátně, kreslení se stane, obsahující všechny stavy o výkresu, jako je například stroke a barvy výplně, jakož i geometrie, chcete-li nakreslit.
 
 ```csharp
 g.SetLineWidth (10);
@@ -114,9 +114,9 @@ UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
 ``` 
 
-Po získání kontextu grafiky kód nastaví některých atributů pro použití při kreslení uvedené výše. V takovém případě se nastavují šířku tahu a výplně barvy řádku. Všechny následné kreslení pak bude používat tyto atributy, protože jsou zachována ve stavu grafiky kontextu.
+Po získání kontextu grafiky kód nastaví některé atributy pro použití při kreslení, je uveden výše. V tomto případě jsou nastavené barvy čar šířku, protože byl zdvih a výplně. Všechny následné kreslení pak bude používat tyto atributy jsou uchovávány v kontextu grafiky stavu.
 
-K vytvoření geometrie kód používá `CGPath`, což umožňuje cesty grafiky popsat z čar a křivek. V takovém případě cesta přidá řádky pole bodů tvoří trojúhelníku připojování. Podle následující používá grafiky základní tabulky souřadnicový systém zobrazení kreslení, jejichž zdrojem je v levém horním kladné x-Direct kladnou y směrem dolů a doprava:
+Vytvoření geometrie kód používá `CGPath`, což umožňuje cesty grafiky popsány z čar a křivek. V takovém případě přidá cestu čáry spojující body a společně tvoří trojúhelník pole. Jak se zobrazuje pod základní grafické prvky používá souřadnicový systém zobrazení kreslení, jejichž zdrojem je v levém horním rohu kladná x-Direct směru y pozitivní dolů a doprava:
 
 ```csharp
 var path = new CGPath ();
@@ -129,15 +129,15 @@ new CGPoint (220, 200)});
 path.CloseSubpath ();
 ``` 
 
-Jakmile je cesta vytvořena, je přidán do kontextu grafiky tak, aby volání `AddPath` a `DrawPath` v uvedeném pořadí můžete kreslení ho.
+Jakmile vytvoříte cestu, přidá se do kontextu grafiky tak, aby volání `AddPath` a `DrawPath` v uvedeném pořadí jej lze nakreslit.
 
-Výsledné zobrazení je zobrazena níže:
+Výsledné zobrazení je uveden níže:
 
- ![](core-graphics-images/00-bluetriangle.png "Ukázka výstupu trojúhelníku")
+ ![](core-graphics-images/00-bluetriangle.png "Trojúhelník ukázkový výstup")
 
 ## <a name="creating-gradient-fills"></a>Vytvoření přechodu výplně
 
-Širší formy kreslení jsou k dispozici. Například základní grafické prvky umožňuje vytvoření přechodu výplně a použití ořezové cesty. Kreslení přechodu výplně uvnitř cesty z předchozího příkladu, nejprve cestu je třeba nastavit jako cestu výstřižek:
+Bohatší formy kresby jsou také k dispozici. Například základní grafické prvky umožňuje vytvoření přechodu výplně a použití ořezové cesty. Chcete-li nakreslit přechodovou výplní uvnitř cesty z předchozího příkladu, nejprve cesta musí být nastavený na ořezovou cestu:
 
 ```csharp
 // add the path back to the graphics context so that it is the current path
@@ -146,7 +146,7 @@ g.AddPath (path);
 g.Clip ();
 ```
 
-Nastavení aktuální cesty jako cesty výstřižek omezí všechny následné kreslení v geometrické cesty, jako je například následující kód, který nevykresluje lineárního přechodu:
+Nastavení aktuální cestu jako ořezové cesty omezí všechny následné kreslení v rámci geometrické cesty, jako je například následující kód, který vykreslí lineárního přechodu:
 
 ```csharp
 // the color space determines how Core Graphics interprets color information
@@ -165,30 +165,30 @@ Nastavení aktuální cesty jako cesty výstřižek omezí všechny následné k
     }
 ```
 
-Tyto změny vytvoření přechodu výplně, jak je uvedeno níže:
+Tyto změny vytvořit přechodové výplně, jak je znázorněno níže:
 
- ![](core-graphics-images/01-gradient-fill.png "Příklad s přechodu výplně")
+ ![](core-graphics-images/01-gradient-fill.png "V příkladu s přechodovou výplní")
 
-## <a name="modifying-line-patterns"></a>Úpravy vzorů řádku
+## <a name="modifying-line-patterns"></a>Úprava řádku vzorců
 
-Atributy kreslení čar můžete také změnit základní grafické prvky. To zahrnuje, změnit barvu čáry šířky a tahu, jakož i vzoru řádku samostatně, jak je vidět v následujícím kódu:
+Atributy kreslení čar můžete také upravit s grafikou Core. To zahrnuje změnu barvu čáry šířku a stroke, jakož i vzorek, samostatně, jak je znázorněno v následujícím kódu:
 
 ```csharp
 //use a dashed line
 g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 ```
 
-Přidávání tento kód před kreslení výsledky operace v jednotkách přerušované tahy 10 dlouhý a s 4 jednotky mezery mezi pomlčky, jak je uvedeno níže:
+Přidání tohoto kódu před žádné výkresu výsledky operace v přerušované tahy 10 jednotek, long, 4 jednotky mezery mezi pomlčky, jak je znázorněno níže:
 
- ![](core-graphics-images/02-dashed-stroke.png "Přidání tohoto kódu před kreslení výsledky operace v přerušované tahy")
+ ![](core-graphics-images/02-dashed-stroke.png "Přidání tohoto kódu před žádné výkresu výsledky operace v přerušované tahy")
  
-Všimněte si, že při použití unifikované API v Xamarin.iOS, typ pole, je potřeba `nfloat`a také musí být explicitně převést na Math.PI.
+Všimněte si, že při použití v Xamarin.iOS Unified API, typ pole musí být `nfloat`a také musí být explicitně přetypován na Math.PI.
 
 <a name="Drawing_Images_and_Text"/>
 
-## <a name="drawing-images-and-text"></a>Kreslení obrázky a Text
+## <a name="drawing-images-and-text"></a>Vykreslování obrázků a textu
 
-Kromě kreslení cest v kontextu zobrazení grafiky, základní grafické prvky také podporuje vykreslení obrázky a text. Kreslení obrázku, stačí vytvořit `CGImage` a předejte jej `DrawImage` volání:
+Kromě kreslení cest v kontextu grafické zobrazení, základní grafické prvky také podporuje vykreslování obrázků a textu. Chcete-li nakreslit obrázek, jednoduše vytvořit `CGImage` a předat ho metodě `DrawImage` volání:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -201,13 +201,13 @@ public override void Draw (CGRect rect)
 }
 ```
 
-To však vytvoří bitovou kopii vykreslovat opačně, jak je uvedeno níže:
+Ale tímto se vytvoří bitovou kopii vykreslit vzhůru nohama, jak je znázorněno níže:
 
- ![](core-graphics-images/03-upside-down-monkey.png "Obrázek vykreslovat obráceně")
+ ![](core-graphics-images/03-upside-down-monkey.png "Obrázek vykreslit vzhůru nohama")
 
-Důvodem je základní grafické prvky počátek kreslení obrázku je v levém dolním při zobrazení má původ v levé horní části. Proto ke správnému zobrazení bitovou kopii, počátek má být změněn, jehož lze dosáhnout úpravou *aktuální transformační matice* *(CTM)*. CTM definuje, kde body za provozu, také známé jako *uživatele místo*. Převrácení CTM ve směru osy y a posunem podle výšky hranice ve směru osy y záporné můžete překlopit bitovou kopii.
+Důvodem je, že počátek souřadných jádra pro kreslení obrázku je v levém dolním, zatímco zobrazení má původ v levém horním rohu. Proto a zobrazte obrázek správně, původ musí být upravena, jehož lze dosáhnout úpravou *aktuální transformační matice* *(CTM)*. CTM definuje, ve kterém body za provozu, označované také jako *uživatele místo*. Převrácení CTM ve směru osy y a posunu podle výšky na hranice ve směru osy y negativní přepnout na obrázku.
 
-Kontext grafiky obsahuje pomocné metody pro transformaci CTM. V takovém případě `ScaleCTM` "převrátí" kreslení a `TranslateCTM` přesouvá vlevo nahoře, jak je uvedeno níže:
+Kontext grafiky obsahuje pomocné metody pro transformaci CTM. V takovém případě `ScaleCTM` "převrátí" kreslení a `TranslateCTM` přesouvá na levém horním rohu, jak je znázorněno níže:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -223,16 +223,16 @@ public override void Draw (CGRect rect)
 }   
 ```
 
-Výsledný obraz se následně zobrazí výšku:
+Výsledná bitová kopie se následně zobrazí svislé:
 
- ![](core-graphics-images/04-upright-monkey.png "Svisle obrázku zobrazovaného ukázka")
+ ![](core-graphics-images/04-upright-monkey.png "Obrázek zobrazený sloupku vzorku")
 
 > [!IMPORTANT]
-> Změny v kontextu grafiky platí pro všechny následné kreslení operace. Proto je převede CTM, bude mít vliv žádné další kreslení. Například pokud jste po transformaci CTM obrázek trojúhelníku, by se zobrazilo obráceně.
+> Změny v rámci grafiky platí pro všechny následné operace kreslení. Proto když se transformuje CTM, bude mít vliv na žádné další kreslení. Například pokud nakreslili trojúhelníku po transformaci CTM, měl by se zobrazit vzhůru nohama.
 
-### <a name="adding-text-to-the-image"></a>Přidávání textu do bitové kopie
+### <a name="adding-text-to-the-image"></a>Přidání textu do bitové kopie
 
-Jako s cesty a bitové kopie, zahrnuje kreslení textu pomocí základní grafické prvky stejné základní vzor nastavení některé grafiky stavu a voláním metody k vykreslení. V případě text, metoda pro zobrazení textu je `ShowText`. Při přidání do bitové kopie kreslení příklad, následující kód nakreslí některé textu s použitím základní grafické prvky:
+Jako s cestami a obrázky, kreslení textu pomocí základní grafické prvky zahrnuje stejné základní vzor stav některých grafiky a volání metody, chcete-li nakreslit. V případě text, je metoda k zobrazení textu `ShowText`. Když se přidá do image kreslení příklad, následující kód vykreslí některé textu s použitím základní grafické prvky:
 
 ```csharp
 public override void Draw (RectangleF rect)
@@ -260,31 +260,31 @@ public override void Draw (RectangleF rect)
 }
 ```
 
-Jak vidíte, nastavení stavu grafiky pro vykreslování textu je podobná kreslení geometrie. Pro text kreslení ale, jsou také použít vykreslování režim a písmo textu. V takovém případě stín platí také, i když použití stínů funguje stejně pro cestu kreslení.
+Jak je vidět, nastavení stavu grafiky pro vykreslování textu je nějak nakreslení geometrie. Pro text ale kreslení, se použijí i vykreslování režimu a písmo textu. V tomto případě stín platí také, ačkoli použití odstínů funguje stejně v případě cesty kreslení.
 
-Výsledný text se zobrazí s bitovou kopii, jak je uvedeno níže:
+Výsledný text se zobrazí s imagí, jak je znázorněno níže:
 
- ![](core-graphics-images/05-text-on-image.png "Výsledný text se zobrazí Image")
+ ![](core-graphics-images/05-text-on-image.png "Zobrazí se výsledný text s imagí")
 
-## <a name="memory-backed-images"></a>Zálohovaná paměti bitové kopie
+## <a name="memory-backed-images"></a>Pamětí Imagí
 
-Kromě kreslení na kontext zobrazení grafiky zálohovaný podporuje základní grafické prvky kreslení paměti bitové kopie, také známé jako kreslení mimo obrazovku. Díky tomu vyžaduje:
+Kromě kreslení do kontextu zobrazení grafické podporovaný Core grafiky podporuje vykreslení paměti imagí, označované také jako kreslení obrazovku. To vyžaduje:
 
--  Vytvoření kontextu grafiky, který je zálohovaný díky v paměti rastrového obrázku
--  Nastavení kreslení stavu a vydání příkazy pro kreslení
--  Získávání bitovou kopii z kontextu
+-  Vytvoření kontextu grafiky, která je založená na v paměti rastrový obrázek
+-  Nastavení vykreslení stavu a vydání příkazy pro kreslení
+-  Načítání obrázku z kontextu
 -  Odebrání kontextu
 
 
-Na rozdíl od `Draw` metoda, kde poskytuje kontext zobrazení, v tomto případě vytvoříte kontextu v jednom ze dvou způsobů:
+Na rozdíl od `Draw` metodu, pokud kontext je poskytnut pomocí zobrazení, v tomto případě vytvoříte kontextu v jednom ze dvou způsobů:
 
-1. Při volání `UIGraphics.BeginImageContext` (nebo `BeginImageContextWithOptions`)
+1. Voláním `UIGraphics.BeginImageContext` (nebo `BeginImageContextWithOptions`)
 
-2. Vytvořením nového `CGBitmapContextInstance`
+2. Vytvořit nový `CGBitmapContextInstance`
 
- `CGBitmapContextInstance` je užitečné, když pracujete přímo s bity bitové kopie, například pro případy, kdy používáte se vlastní image manipulaci s algoritmem. Ve všech ostatních případech, měli byste použít `BeginImageContext` nebo `BeginImageContextWithOptions`.
+ `CGBitmapContextInstance` je užitečné při práci přímo s bity image, například pro případy, kdy používáte algoritmus manipulaci s vlastní image. Ve všech ostatních případech byste měli použít `BeginImageContext` nebo `BeginImageContextWithOptions`.
 
-Až budete mít kontextu obrázku, přidání kódu kreslení je stejně, jako je v `UIView` podtřídy. Například příklad kódu dříve použitá k vykreslení trojúhelník slouží k vykreslení na bitovou kopii v paměti místo v `UIView`, jak je uvedeno níže:
+Jakmile budete mít objekt context obrázku, přidání vykreslení kódu je stejně jako v `UIView` podtřídy. Například v příkladu kódu předtím použili ke kreslení trojúhelník slouží k vykreslení obrázku v paměti namísto v `UIView`, jak je znázorněno níže:
 
 ```csharp
 UIImage DrawTriangle ()
@@ -324,7 +324,7 @@ UIImage DrawTriangle ()
 }
 ```
 
-Běžně se používají kreslení na bitmapu zálohovaná paměti je pro zachycení image z libovolného `UIView`. Například následující kód vykreslí vrstvy zobrazení na kontext rastrového obrázku a vytvoří `UIImage` z něj:
+Je běžné použití kresby na rastrový obrázek pamětí pro zachycení image z jakéhokoli `UIView`. Například následující kód vykreslí vrstva zobrazení na kontext rastrový obrázek a vytvoří `UIImage` z něj:
 
 ```csharp
 UIGraphics.BeginImageContext (cellView.Frame.Size);
@@ -339,13 +339,13 @@ UIGraphics.EndImageContext ();
 
 ## <a name="drawing-pdfs"></a>Kreslení soubory PDF
 
-Kromě bitové kopie podporuje základní grafické prvky kreslení PDF. Jako obrázky, vám může vykreslit PDF v paměti, stejně jako čtení souborů PDF pro vykreslování v `UIView`.
+Kromě bitové kopie podporuje základní grafické prvky kreslení PDF. Jako jsou obrázky, můžete můžete vykreslit PDF v paměti i čtení dokumentu PDF pro vykreslování `UIView`.
 
 ### <a name="pdf-in-a-uiview"></a>PDF v UIView
 
-Základní grafické prvky také podporuje čtení ze souboru PDF a vykreslování v zobrazení pomocí `CGPDFDocument` třídy. `CGPDFDocument` Třída reprezentuje PDF v kódu a slouží ke čtení a vykreslení stránky.
+Základní grafické prvky také podporuje čtení ze souboru PDF a vykreslování v zobrazení pomocí `CGPDFDocument` třídy. `CGPDFDocument` Třída představuje PDF v kódu a slouží ke čtení a vykreslení stránky.
 
-Například následující kód v `UIView` podtřídami čtení ze souboru do PDF `CGPDFDocument`:
+Například následující kód na `UIView` podtřídy čte ze souboru do formátu PDF `CGPDFDocument`:
 
 ```csharp
 public class PDFView : UIView
@@ -365,7 +365,7 @@ public class PDFView : UIView
 }
 ```
 
-`Draw` Metoda pak můžete použít `CGPDFDocument` k načtení stránky do `CGPDFPage` a vykreslit ho voláním `DrawPDFPage`, jak je uvedeno níže:
+`Draw` Pak můžete použít metodu `CGPDFDocument` k načtení stránky do `CGPDFPage` a vykreslit ho voláním `DrawPDFPage`, jak je znázorněno níže:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -393,11 +393,11 @@ public override void Draw (CGRect rect)
 }
 ```
 
-### <a name="memory-backed-pdf"></a>Paměť záložních souborů PDF
+### <a name="memory-backed-pdf"></a>Pamětí PDF
 
-Pro v paměti PDF, je potřeba vytvořit PDF kontextu voláním `BeginPDFContext`. Kreslení do PDF je granulární na stránky. Každé stránce spuštění voláním `BeginPDFPage` a dokončí voláním `EndPDFContent`, pomocí grafického kódu v rozmezí. Také jako s kreslení obrázku paměti zálohovaný PDF kreslení používá počátek v levém dolním, který může být účtována změnou CTM stejně jako s obrázky.
+Pro v paměti PDF, je potřeba vytvořit kontext PDF voláním `BeginPDFContext`. Kreslení do formátu PDF je detailní stránky. Spuštění každou stránku voláním `BeginPDFPage` a dokončí voláním `EndPDFContent`, pomocí grafického kódu mezi. Také jak s kreslení obrázku paměti zajišťuje PDF vykreslování používá původ v levém dolním, který může být zahrnuté úpravou CTM stejně jako s obrázky.
 
-Následující kód ukazuje, jak kreslení textu do PDF:
+Následující kód ukazuje, jak vykreslení textu do formátu PDF:
 
 ```csharp
 //data buffer to hold the PDF
@@ -420,16 +420,16 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 UIGraphics.EndPDFContent ();
 ```
 
-Výsledný text vykreslením do PDF, který je pak obsažené v `NSData` , lze uložit, nahrané, poslaného e-mailem atd.
+Výsledný text je vykreslen do formátu PDF, které jsou pak obsaženy v `NSData` , který můžete uložit, nahrané, e-mailem, např.
 
 
 ## <a name="summary"></a>Souhrn
 
-V tomto článku jsme se podívali na možnosti grafiky poskytované prostřednictvím *základní grafické prvky* framework. Jsme viděli, jak používat základní grafiky k vykreslení geometry, Image a soubory PDF v kontextu `UIView,` stejně jako na záložních paměti grafiky kontexty.
+V tomto článku jsme se podívali na grafické funkce poskytuje prostřednictvím *základní grafické prvky* rozhraní framework. Jsme viděli, jak pomocí základní grafické prvky v rámci kontextu nakreslete geometry, obrázky a soubory PDF `UIView,` stejně jako na kontexty pamětí grafiky.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázka základní grafiky](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Grafika a návod animace](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [Základní ukázka grafiky](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [Grafika a animace návodu](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Základní animace recepty](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Základní animace recepty](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

@@ -1,26 +1,26 @@
 ---
 title: Úvod do Renderscript
-description: Tento průvodce uvádí Renderscript a vysvětluje, jak používat v vnitřní Renderscript rozhraní API v aplikaci Xamarin.Android této úrovni cíle rozhraní API 17 nebo vyšší.
+description: Tato příručka představuje Renderscript a vysvětluje, jak použít vnitřní Renderscript rozhraní API v aplikaci Xamarin.Android této úrovni cíle rozhraní API 17 nebo vyšší.
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f9e21a51c409c5444f137a63eb2c6fadfef03cbe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3331eb579f0aa2d7f29508773c588455c134f56a
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772013"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241185"
 ---
 # <a name="an-introduction-to-renderscript"></a>Úvod do Renderscript
 
-_Tento průvodce uvádí Renderscript a vysvětluje, jak používat v vnitřní Renderscript rozhraní API v aplikaci Xamarin.Android této úrovni cíle rozhraní API 17 nebo vyšší._
+_Tato příručka představuje Renderscript a vysvětluje, jak použít vnitřní Renderscript rozhraní API v aplikaci Xamarin.Android této úrovni cíle rozhraní API 17 nebo vyšší._
 
 ## <a name="overview"></a>Přehled
 
-Renderscript je programovací rozhraní vytvořené Google za účelem zvýšení výkonu aplikací pro Android, které vyžadují rozsáhlé výpočetní prostředky. Je nízké úrovni a vysoce výkonných rozhraní API na základě [C99](http://en.wikipedia.org/wiki/C99). Protože je nízkou úroveň rozhraní API, které se spustí na procesory a grafickými procesory, DSPs, Renderscript je vhodné pro aplikace pro Android, které může být nutné provést následující akce:
+Renderscript je programovací rozhraní vytvořených pomocí Google za účelem zvýšení výkonu aplikací pro Android, které vyžadují rozsáhlé výpočetní prostředky. Je nízké úrovně, vysoký výkon rozhraní API na základě [C99](http://en.wikipedia.org/wiki/C99). Protože je nízká úroveň rozhraní API, které se spustí na CPU, procesory nebo DSPs, Renderscript je velmi vhodná pro aplikace pro Android, které může být zapotřebí provést některý z následujících akcí:
 
 * Grafika
 * Zpracování obrázků
@@ -28,92 +28,92 @@ Renderscript je programovací rozhraní vytvořené Google za účelem zvýšen�
 * Zpracování signálu
 * Matematické rutiny
 
-Použije Renderscript `clang` a skripty, které LLVM bajtů kód, který je seskupeny do APK kompilaci. Při prvním spuštění aplikace, kód LLVM bajtů se zkompiluje do počítače kód pro procesory na zařízení. Tato architektura umožňuje aplikace platformy Android využívat výhod zkompilovaný kód, aniž by sami museli psát ho pro každý procesor na zařízení sami.
+Použije Renderscript `clang` a kompilaci skripty pro LLVM bajtový kód, který se dodává v sadě do APK. Při prvním spuštění aplikace, LLVM bajtový kód se zkompiluje do strojového kódu pro procesory na zařízení. Tato architektura umožňuje aplikaci pro Android do využívat výhod strojového kódu bez vývojáři musejí k jeho zápisu pro každý procesor na zařízení sami.
 
-Existují dvě součásti, které Renderscript rutiny:
+Existují dvě součásti, které Renderscript rutinu:
 
-1. **Modul runtime Renderscript** &ndash; Toto je nativní rozhraní API, která slouží k provádění Renderscript. To zahrnuje všechny Renderscripts napsané pro aplikace.
+1. **Modul runtime Renderscript** &ndash; jde nativní rozhraní API, která slouží k provádění Renderscript. To zahrnuje všechny Renderscripts napsané pro aplikace.
 
-2. **Spravované obálky z rozhraní Android** &ndash; spravované třídy, které umožňují řídit a komunikovat s Renderscript runtime a skripty aplikace pro Android. Kromě framework poskytuje třídy pro řízení Renderscript runtime Android nástrojů prozkoumá Renderscript zdrojový kód a vygenerujte třídy spravovaná obálka pro použití aplikace pro Android.
+2. **Spravované obálky z Android Framework** &ndash; spravované třídy, které umožňují řídit a interakci s Renderscript runtime a skripty aplikace pro Android. Kromě rozhraní framework poskytuje třídy pro řízení Renderscript modulu runtime bude Android sada nástrojů zkontrolujte zdrojový kód Renderscript a generování tříd spravovaných obálek pro použití aplikací s Androidem.
 
-Následující diagram znázorňuje, jak se vztahují tyto komponenty:
+Následující diagram znázorňuje, jak se týkají těchto součástí:
 
-![Diagram ilustrující, jak rozhraní Android komunikuje s modulem Renderscript Runtime](renderscript-images/renderscript-01.png)
+![Diagram znázorňující, jak Android Framework komunikuje s modulem Renderscript Runtime](renderscript-images/renderscript-01.png)
 
-Existují tři důležité koncepty pro používání Renderscripts v aplikaci Android:
+Existují tři důležité koncepty pro používání Renderscripts v aplikaci pro Android:
 
-1. **Kontext** &ndash; A spravované rozhraní API poskytované Android SDK, který přiděluje prostředky k Renderscript a umožňuje aplikaci pro Android předat a přijímat data z Renderscript.
+1. **Kontext** &ndash; A spravovaných rozhraní API sady Android SDK, který přiděluje prostředky Renderscript a umožňuje, aby přijímala data z Renderscript předal aplikace pro Android.
 
-2. **A _výpočetní jádra_**  &ndash; také označované jako _kořenové jádra_ nebo _jádra_, tato rutina, která provádí práce. Je velmi podobné funkce C; jádra je může běžet paralelně rutiny, který se má spustit přes všechna data v přidělené paměti.
+2. **A _výpočetní jádra_**  &ndash; označované také jako _kořenové jádra_ nebo _jádra_, tuto rutinu, která provádí. Jádra je velmi podobný funkci C. je paralelizovat rutinu, která se spustí napříč všemi daty v přidělené paměti.
 
-3. **Paměť přidělit** &ndash; dat je předán do a z jádra prostřednictvím  _[přidělení](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Jádro může mít jeden vstup, nebo jednu výstupní přidělení.
+3. **Přidělené paměti** &ndash; datové předána do a z jádra prostřednictvím  _[přidělení](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Jádra může mít jeden vstup a/nebo jednu výstupní přidělení.
 
-[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) obor názvů obsahuje třídy pro interakci s modulem runtime Renderscript. Konkrétně [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) třídy bude spravovat životní cyklus a prostředky Renderscript stroje. Aplikace pro Android musí inicializovat jeden nebo více [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) objekty. Přidělení je spravované rozhraní API, která zodpovídá za přidělování a přístupu k paměti, která jsou sdílena mezi aplikace pro Android a Renderscript runtime. Obvykle jednu přidělení se vytvoří pro vstup a volitelně jiné přidělení se vytvoří pro výstup jádra. Modul runtime Renderscript a přidružené spravovaná obálka třídy bude spravovat přístup k paměti držené přidělení, není nutné pro vývojář aplikace pro Android žádné další práci.
+[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) obor názvů obsahuje třídy pro interakci s modulem runtime Renderscript. Konkrétně se [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) třídy budou spravovat životní cyklus a prostředky Renderscript stroje. Aplikace pro Android musí inicializovat jeden nebo více [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) objekty. Přidělení je spravované rozhraní API, která zodpovídá za přidělování a přístup k paměti, která jsou sdílena mezi aplikace pro Android a Renderscript modulu runtime. Obvykle se vytvoří jedna alokace pro vstup a volitelně další přidělení vytvořená k uložení výstupu jádra. Modul runtime Renderscript a přidružených spravovaných obálkové třídy bude spravovat přístup k držení přidělení paměti, není nutné pro vývojáře aplikací pro Android provedete jakékoli další práce.
 
-Přidělení budou obsahovat jedno nebo více [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
-Elementy jsou specializované typ, který popisuje data v každém přidělení.
-Typy prvků výstupu přidělení musí odpovídat typy elementu input. Při provádění, Renderscript iteraci nad každý prvek v vstupní přidělení paralelně a zapsat výsledky do výstupu přidělení. Existují dva typy elementů:
+Přidělení bude obsahovat jeden nebo více [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
+Prvky jsou speciálním typem, které popisují data v každém přidělení.
+Typy prvků výstupu přidělení musí odpovídat typy elementu input. Při provádění, Renderscript iterovat každý prvek ve vstupním přidělení paralelně a zapsat výsledky do výstupu přidělení. Existují dva typy prvků:
 
-- **Jednoduchý typ** &ndash; koncepčně je to stejné jako datový typ C, `float` nebo `char`.
+- **Jednoduchý typ** &ndash; koncepčně jde o stejný jako datový typ jazyka C, `float` nebo `char`.
 
-- **komplexní typ** &ndash; tento typ je podobná a C `struct`.
+- **komplexní typ** &ndash; tento typ je podobný C `struct`.
 
-Kontrola běhu elementů v každém přidělení musí být kompatibilní s vyžadují jádra provede modul Renderscript. Pokud datový typ elementů v přidělení neshodují typu dat, který je očekáván jádra, bude vyvolána výjimka.
+Modul Renderscript provede kontrolu za běhu programu na prvky v každém přidělení musí být kompatibilní s toho, co vyžaduje jádra. Pokud datový typ prvků v přidělení neshodují datový typ, který očekává jádra, bude vyvolána výjimka.
 
-Všechny Renderscript jádra bude možné je zabalit pomocí typu, který je následníka [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/) třídy. `Script` Třída se používá k nastavení parametrů pro Renderscript, nastavte odpovídající `Allocations`, a spusťte Renderscript. Existují dva `Script` podtřídy v Android SDK:
+Typ, který je potomkem se uzavřou všech jádrech Renderscript [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/) třídy. `Script` Třída se používá k nastavení parametrů pro Renderscript, nastavte odpovídající `Allocations`, a spusťte Renderscript. Existují dva `Script` podtřídy třídy v sadě Android SDK:
 
 
-- **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Některé běžné úlohy Renderscript jsou seskupeny v Android SDK a jsou přístupné pro podtřídou třídy [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) třídy. Není třeba vývojář trvat žádné dodatečné kroky, aby tyto skripty používat ve svých aplikacích, jako jsou již k dispozici.
+- **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Některé z běžnějších Renderscript úloh jsou spojeny v sadě Android SDK a jsou přístupné pomocí podtřídou třídy [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) třídy. Není nutné pro vývojáře provést žádné další kroky a tyto skripty používat ve svých aplikacích, jako jsou už k dispozici.
 
-- **`ScriptC_XXXXX`** &ndash; Také označované jako _uživatelské skripty_, jedná se o skripty, které jsou napsané vývojáři a součástí APK. Při kompilaci vygeneruje Android nástrojů spravovaná obálka třídy, které vám umožní skripty, které mají být použity v aplikaci pro Android.
-  Název tyto vygenerované třídy je název souboru Renderscript předponu `ScriptC_`. Psaní a zařadit skriptů uživatele není oficiálně podporován Xamarin.Android a nad rámec této příručky.
+- **`ScriptC_XXXXX`** &ndash; Také _uživatelské skripty_, jde o skripty, které jsou napsané vývojáři a zabalení do APK. V době kompilace vygeneruje nástrojů Android spravované třídy obálky, které vám umožní skripty pro použití v aplikaci pro Android.
+  Název tyto vygenerované třídy je název souboru Renderscript předponu `ScriptC_`. Psaní a začlenění uživatelské skripty není oficiálně podporován Xamarin.Android a nad rámec této příručky.
 
-Z těchto dvou typů, jenom `StringIntrinsic` podporuje Xamarin.Android. Tato příručka popisuje postup používání vnitřní skripty v aplikaci Xamarin.Android.
+Z těchto dvou typů, pouze `StringIntrinsic` podporuje Xamarin.Android. Tato příručka popisuje použití vnitřní skripty v aplikaci Xamarin.Android.
 
 ## <a name="requirements"></a>Požadavky
 
-Tento průvodce je pro aplikace Xamarin.Android této úrovni cílové rozhraní API 17 nebo vyšší. Použití _uživatelské skripty_ není součástí této příručky.
+Tento průvodce je pro aplikace Xamarin.Android tuto Cílová úroveň rozhraní API 17 nebo vyšší. Použití _uživatelské skripty_ není součástí této příručky.
 
-[Knihovna podpory v8: Xamarin.Android](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) backports instrinsic Renderscript API pro aplikace, které cílí na starší verze sady SDK pro Android. Přidání tohoto balíčku do projektu Xamarin.Android by měl povolit aplikacím tento cíl starší verze sady SDK pro Android můžete využít vnitřní skripty.
+[Xamarin.Android V8 Support Library](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) zpětné instrinsic Renderscript API pro aplikace, které jsou cíleny na starší verze sady SDK pro Android. Tento balíček přidává do projektu Xamarin.Android by měl povolit aplikace, které jsou cílové starší verze sady SDK pro Android využívat vlastní skripty.
 
-## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>Použití vnitřní Renderscripts v Xamarin.Android
+## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>Pomocí vnitřní Renderscripts v Xamarin.Android
 
-Vnitřní skriptů jsou skvělý způsob, jak provádět náročné výpočetní úlohy s minimální velikostí další kód. Nejsou ruční přizpůsobená pro nabízejí optimální výkon na velké průřezy zařízení.
-Je běžné pro vnitřní skript spustit 10 x rychlejší než spravovaného kódu a časy 2 až 3 x po než vlastní implementaci C. Mnoho scénářů typické zpracování jsou předmětem vnitřní skripty. Tento seznam vnitřní skripty popisuje aktuální skripty v Xamarin.Android:
+Vnitřní skripty jsou skvělý způsob, jak provádět náročné na výpočetní úlohy s minimální velikostí další kód. Byly ručně, která je vyladěná pro optimální výkon na velké průřezu zařízení.
+Není, vnitřní skript ke spuštění 10 x rychlejší než spravovaného kódu a časy 2 až 3 x po než vlastní implementace jazyka C. Mnoho scénářů typické zpracování jsou zahrnuté do vnitřní skripty. Seznam vnitřní skriptů, které popisuje aktuální skripty v Xamarin.Android:
 
 - [ScriptIntrinsic3DLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic3DLUT//) &ndash; převede RGB RGBA pomocí 3D vyhledávací tabulky. 
 
-- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh výkonu Renderscript rozhraní API pro [BLAS](http://www.netlib.org/blas/). BLAS (základní lineární Algebra podprogramy) jsou rutiny, které poskytují standardních stavebních bloků pro provádění operace matice a základní vektoru. 
+- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh výkonu rozhraní API Renderscript k [BLAS](http://www.netlib.org/blas/). BLAS (základní lineární algebraický podprogramy) jsou rutiny, které poskytují standardních stavebních bloků pro provádění základních vektorové a maticové operace. 
 
 - [ScriptIntrinsicBlend](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlend) &ndash; smíchá dvě přidělení společně.
 
-- [ScriptIntrinsicBlur](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlur) &ndash; platí Gaussovské rozostření pro přidělení.
+- [ScriptIntrinsicBlur](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlur) &ndash; Gaussovy rozostření se vztahuje na přidělení.
 
-- [ScriptIntrinsicColorMatrix](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicColorMatrix/) &ndash; platí matice barev k přidělení (tj. Změna barvy, upravte hue).
+- [ScriptIntrinsicColorMatrix](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicColorMatrix/) &ndash; platí matice barev k přidělení (například změna barvy upravit hue).
 
-- [ScriptIntrinsicConvolve3x3](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve3x3/) &ndash; platí matice barev 3 x 3 pro přidělení.
+- [ScriptIntrinsicConvolve3x3](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve3x3/) &ndash; platí matice velikosti 3 × 3 barev pro přidělení.
 
 - [ScriptIntrinsicConvolve5x5](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve5x5/) &ndash; platí matice barev 5 × 5 pro přidělení.
 
 - [ScriptIntrinsicHistogram](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicHistogram/) &ndash; filtr vnitřní histogram.
 
-- [ScriptIntrinsicLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicLUT/) &ndash; se vztahuje na kanál vyhledávací tabulky do vyrovnávací paměti.
+- [ScriptIntrinsicLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicLUT/) &ndash; platí za kanál vyhledávací tabulky do vyrovnávací paměti.
 
 - [ScriptIntrinsicResize](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicResize/) &ndash; skript k provedení změny velikosti 2D přidělení.
 
-- [ScriptIntrinsicYuvToRGB](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicYuvToRGB/) &ndash; převede na RGB YUV vyrovnávací paměti.
+- [ScriptIntrinsicYuvToRGB](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicYuvToRGB/) &ndash; převede RGB YUV vyrovnávací paměti.
 
-Podrobnosti o jednotlivých vnitřní skriptů najdete v dokumentaci rozhraní API.
+Informace o jednotlivých vnitřních skriptů najdete v dokumentaci k rozhraní API.
 
-Základní kroky pro používání Renderscript v aplikaci Android jsou popsané dále.
+Základní postup pro použití v aplikaci pro Android Renderscript jsou popsány níže.
 
-**Vytvoření kontextu Renderscript** &ndash; [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) třída je spravovaný obálku kolem kontext Renderscript a řídit inicializace, správu prostředků a vyčistit. Objekt Renderscript je vytvořený pomocí `RenderScript.Create` metoda factory, který přebírá kontextu Android (například aktivitu) jako parametr. Následující kód ukazuje, jak se inicializovat kontext Renderscript:
+**Vytvoření kontextu Renderscript** &ndash; [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) třída je spravovaná obálka kolem Renderscript kontextu a řídit inicializace, Správa prostředků a vyčistit. Vytvoření objektu Renderscript se použije `RenderScript.Create` factory metodu, která přebírá Android kontext (jako je například aktivita) jako parametr. Následující řádek kódu ukazuje, jak inicializovat kontext Renderscript:
 
 ```csharp
 Android.Renderscripts.RenderScript renderScript = RenderScript.Create(this);
 ```
 
-**Vytvoření přidělení** &ndash; v závislosti na vnitřní skriptu, může být potřeba vytvořit jeden nebo dva kusy `Allocation`s. [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) Třída obsahuje několik metod objektu pro vytváření, které pomáhají při vytváření instance přidělení pro vnitřní. Jako příklad následující fragment kódu ukazuje, jak vytvořit přidělení pro rastrové obrázky.
+**Vytvořit přiřazení** &ndash; v závislosti na vnitřní skript může být potřeba vytvořit jeden nebo dva `Allocation`s. [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) Třída má několik metody pro vytváření objektů pomoci při vytváření instance přidělení pro vnitřní objekt. Například následující fragment kódu ukazuje, jak vytvořit přidělení pro rastrových obrázků.
 
 ```csharp
 Android.Graphics.Bitmap originalBitmap;
@@ -123,20 +123,20 @@ Android.Renderscripts.Allocation inputAllocation = Allocation.CreateFromBitmap(r
                                                      AllocationUsage.Script);
 ```
 
-Často, bude nutné vytvořit `Allocation` k ukládání dat výstup skriptu. Tato následující fragment kódu ukazuje způsob použití `Allocation.CreateTyped` pomocné rutiny pro vytvoření instance druhý `Allocation` stejný typ jako původní:
+Často, bude potřeba vytvořit `Allocation` pro uchovávání dat výstup skriptu. Tento následující fragment kódu ukazuje způsob použití `Allocation.CreateTyped` pomocné rutiny pro vytvoření instance sekundy `Allocation` stejného typu jako původní:
 
 ```csharp
 Android.Renderscripts.Allocation outputAllocation = Allocation.CreateTyped(renderScript, inputAllocation.Type);
 ```
 
-**Vytvořit instanci skriptu obálku** &ndash; každý obálkové třídy vnitřní skriptu by měl mít pomocné metody (obvykle nazývá `Create`) pro vytvoření instance objektu obálku pro tento skript. Následující fragment kódu je příklad toho, jak k vytváření instancí `ScriptIntrinsicBlur` rozostření objektu. `Element.U8_4` Pomocná metoda vytvoří Element, který popisuje datový typ, který je 4 pole 8bitové bez znaménka celočíselné hodnoty, vhodná pro k datům `Bitmap` objektu:
+**Vytvořit instanci skriptu obálky** &ndash; každá obálkové třídy vnitřní skriptu by měla mít pomocné metody (obvykle nazývá `Create`) pro vytvoření instance objektu obálky pro tento skript. Následující fragment kódu je příklad toho, jak vytvořit instanci `ScriptIntrinsicBlur` rozostření objektu. `Element.U8_4` Pomocná metoda vytvoří Element, který popisuje datový typ, který je 4 polích 8 bitů, nepodepsaných celočíselných hodnot, vhodná pro data `Bitmap` objektu:
 
 ```csharp
 Android.Renderscripts.ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.Create(renderScript, Element.U8_4(renderScript));
 ```
 
-**Přiřadit Allocation(s), nastavte parametry a spustit skript** &ndash; `Script` třída poskytuje `ForEach` metodu pro spuštění ve skutečnosti Renderscript. Tato metoda bude iteraci každé `Element` v `Allocation` který obsahuje vstupní data. V některých případech může být potřeba zadat `Allocation` , obsahuje výstup.
-`ForEach` přepíše obsah výstup přidělení. Při provádění s fragmenty kódu z předchozích kroků, tento příklad ukazuje, jak chcete přiřadit vstupní přidělení, nastavte parametr a nakonec spusťte skript (kopírování výsledků do výstupu přidělení):
+**Přiřadit Allocation(s), nastavte parametry a spustit skript** &ndash; `Script` poskytuje třídy `ForEach` metoda ve skutečnosti spuštěna programovacím Renderscript. Tato metoda provádí iterace nad každý `Element` v `Allocation` obsahující vstupní data. V některých případech může být nezbytné k zajištění `Allocation` , který obsahuje výstup.
+`ForEach` přepíše obsah výstupu přidělení. Provádět pomocí fragmentů kódu z předchozích kroků v tomto příkladu ukazuje, jak přiřadit vstupní přidělení, nastavte parametr a nakonec spusťte skript (kopírování výsledků výstupu přidělení):
 
 ```csharp
 blurScript.SetInput(inputAllocation);
@@ -144,17 +144,17 @@ blurScript.SetRadius(25);  // Set a pamaeter
 blurScript.ForEach(outputAllocation);
 ```
 
-Chcete rezervovat [rozostření obrázek s Renderscript](https://developer.xamarin.com/recipes/android/other_ux/drawing/blur_an_image_with_renderscript/) recepturách, je kompletní příklad toho, jak použít vlastní skript v Xamarin.Android.
+Možná budete chtít rezervovat [rozostření bitovou kopii s Renderscript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript) předpisu, je kompletní příklad toho, jak použít vlastní skript v Xamarin.Android.
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka se zavedl Renderscript a způsobu jeho použití v aplikaci Xamarin.Android. Stručně popsané, co je Renderscript a jak to funguje v aplikaci pro Android. Je popsané některé z klíčových součástí v Renderscript a rozdíl mezi _uživatelské skripty_ a _instrinsic skripty_. Tato příručka navíc popsané kroky v pomocí vnitřní skriptu v aplikaci Xamarin.Android.
+Tato příručka zavedené Renderscript a jak ji používat v aplikaci Xamarin.Android. Stručně popsané, co je Renderscript a jak to funguje v aplikaci pro Android. To popisuje některé z klíčových součástí Renderscript a rozdíl mezi _uživatelské skripty_ a _instrinsic skripty_. Tento průvodce nakonec popsané kroky pomocí vnitřní skriptu v aplikaci Xamarin.Android.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Obor názvů Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
-- [Obrázek s Renderscript rozostření](https://developer.xamarin.com/recipes/android/other_ux/drawing/blur_an_image_with_renderscript/)
+- [Obrázek s Renderscript rozostření](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
 - [Renderscript](https://developer.android.com/guide/topics/renderscript/compute.html)
 - [Kurz: Začínáme s Renderscript](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)

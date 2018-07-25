@@ -1,26 +1,26 @@
 ---
-title: Popisky v Xamarin.iOS
-description: Tento dokument popisuje, jak používat popisky v Xamarin.iOS. Popisuje vytváření prostřednictvím kódu programu a s iOS Designer.
+title: Popisky v Xamarin.iosu
+description: Tento dokument popisuje, jak použít popisky v Xamarin.iOS. Popisuje postup vytvoření popisky prostřednictvím kódu programu a v IOS designeru.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789886"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241910"
 ---
-# <a name="labels-in-xamarinios"></a>Popisky v Xamarin.iOS
+# <a name="labels-in-xamarinios"></a>Popisky v Xamarin.iosu
 
-`UILabel` Řízení se používá pro zobrazení jeden a více řádků číst pouze text. 
+`UILabel` Ovládací prvek se používá pro zobrazení jedné a více řádky, přečtěte si pouze text. 
 
-## <a name="implementing-a-label"></a>Implementace štítek
+## <a name="implementing-a-label"></a>Implementace popisek
 
-Po vytvoření instance se vytvoří nový štítek [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
+Po vytvoření instance se vytvoří nový popisek [ `UILabel` ](https://developer.xamarin.com/api/type/UIKit.UILabel/):
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,33 +28,33 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>Popisky a scénářů
 
-Při použití návrháře iOS, můžete přidat také popisek pro uživatelské rozhraní. Vyhledejte **popisek** v **sada nástrojů** a přetáhněte jej do zobrazení:
+Popisek můžete také přidat do vašeho uživatelského rozhraní při použití v iOS designeru. Vyhledejte **popisek** v **nástrojů** a přetáhněte jej do zobrazení:
 
-![Návěští v sadě nástrojů](labels-images/image3.png)
+![Popisek v panelu nástrojů](labels-images/image3.png)
 
-Na panelu pro vlastnosti lze upravit následující vlastnosti:
+Na panelu Vlastnosti je možné upravit následující vlastnosti:
 
-![Popisek vlastnost panely](labels-images/image2.png)
+![Panel vlastnosti popisku](labels-images/image2.png)
 
-- **Text kontextu** – prostý nebo s atributy. Prostý text můžete nastavit [atributů formátování](#Formatting_Text_and_Label) pro celý řetězec. S atributy texty umožňuje nastavit formátování pro jiné znaky nebo slova v řetězci.
-- **Barvy, písma, zarovnání** – atributy formátování, který lze použít k popisku.
-- **Řádky** – nastaví počet řádků, které může mít rozsah popisku. Tuto možnost nastavíte na 0 pro povolení štítek, který chcete použít libovolný počet řádků, podle potřeby.
-- **Chování** – můžete nastavit na hodnotu povoleno nebo Highlighted. Povolena je ve výchozím nastavení zakázaný text se zobrazí v světlejší šedou barvu. Zvýrazněná ve výchozím nastavení vypnutá a umožňuje štítek, který chcete překreslen pomocí zvýrazněná stavu, pokud je vybraná uživatelem.
-- **Baselane a koncem řádku** – 
-    - Basline Určuje, jak tento text bude umístěna, pokud se liší od verze zadaná velikost písma.
-    - Konce řádků určit, jak bude řetězec zabalené nebo zkrácen, pokud je delší než jeden řádek.
-- **Autoshrink** – Určuje, jak bude minimalizovat velikost písma v rámci štítku, v případě potřeby.
-- **Zvýrazní, stín, posun** – umožňuje nastavit barvu Hightlighted a stínové a posun stínu.
+- **Kontext text** – prostý nebo s atributy. Prostý text vám umožní nastavit [atributů formátování](#Formatting_Text_and_Label) na celý řetězec. S atributy texty vám umožní nastavit formátování pro jiné znaky nebo slova v řetězci.
+- **Barva písma, zarovnání** – formátování atributů, který lze použít pro popisek.
+- **Řádky** – nastaví počet řádků, které může mít rozsah popisku. Nastavíte na 0 pro povolení popisek, který můžete použít libovolný počet řádků podle potřeby.
+- **Chování** – můžete nastavit na povoleno nebo zvýrazněný. Je povolené ve výchozím nastavení zakázaný text se zobrazí v světlejší šedou barvu. Zvýrazněný je ve výchozím nastavení zakázané a umožňuje tento popisek se měl překreslit zvýrazněné stavem při výběru uživatelem.
+- **Baselane a zalomení řádku** – 
+    - Basline Určuje, jak tento text bude umístěn, pokud se liší od verze zadaná velikost písma.
+    - Konce řádků zjistěte, jak bude řetězec zabalené nebo zkrácen, pokud je delší než jeden řádek.
+- **Automatické zmenšování** – Určuje, jak se v rámci popisku, minimalizovat velikost písma v případě potřeby.
+- **Zvýrazní, stín posun** – umožňuje nastavit barvu zvýrazněnou a stínové a Posunutí stínu.
 
-## <a name="truncating-and-wrapping"></a>Zkracování a zabalení
+## <a name="truncating-and-wrapping"></a>Zkracování a balení
 
-Informace o používání řádku dělí na iOS, naleznete na [zkrátit a zalamování řádků](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) recepturách.
+Pro informace o používání řádku přestane fungovat v iOS, najdete [Truncate and Zalamovat text](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) předpisu.
 
 <a name="Formatting_Text_and_Label"/>
 
-## <a name="formatting-text-and-label"></a>Formátování textu a popisku
+## <a name="formatting-text-and-label"></a>Formátování textu a popisek
 
-Formátování řetězce, který používáte v popisku můžete buď sadu atributů pro celý řetězec formátování nebo můžete použít s atributy řetězce. Následující příklady ukazují, jak implementovat tyto:
+Chcete-li formátovací řetězec, který používáte v popisku můžete buď sadu atributů na celý řetězec formátování nebo můžete použít s atributy řetězce. Následující příklady ukazují, jak je implementovat:
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Další informace o používání stylů text `NSAttributedString` odkazovat [styl textu](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/style_text/) recepturách.
+Další informace o stylu textu s využitím `NSAttributedString` odkazovat [styl textu](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) předpisu.
 
-Ve výchozím nastavení mají štítky `Enabled` nastaven na hodnotu true, ale je možné nastavit na zakázána a přidělit uživateli nápovědu, aby bylo zakázané určité ovládacího prvku:
+Ve výchozím nastavení mají popisky `Enabled` nastavena na hodnotu true, ale je možné ji nastavit na hodnotu zakázáno a přidělit uživateli pokyn, že je zakázána určité ovládacího prvku:
 
 ```csharp
 label.Enabled = false;
 ```
 
-Toto nastaví popisek světla šedou barvu, jak je znázorněno na následujícím obrázku Příklad obrazovky omezení v iOS:
+Tím se nastaví popisek světla šedou barvu, jak je znázorněno na následujícím obrázku obrazovky omezení v iOS:
 
-![Zakázané tlačítko v iOS](labels-images/image1.png)
+![Zakázané tlačítko v Iosu](labels-images/image1.png)
 
-Můžete také nastavit zvýraznění a stín barvy textu na text popisku pro další důsledky:
+Můžete také nastavit text barvy zvýraznění a stínové textu popisku pro další efekty:
 
 ```csharp
 label.Highlighted = true;
@@ -98,9 +98,9 @@ label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 
 Zobrazuje text takto:
 
-![Zvýrazněte a stínové sadu na text](labels-images/image4.png)
+![Nastavení zvýraznění a stínové v textu](labels-images/image4.png)
 
-Další informace o Změna písma UILabel, najdete v části [Změna písma](https://developer.xamarin.com/recipes/ios/standard_controls/labels/change_the_font/) recepturách.
+Další informace o změně písma UILabel najdete [Změna písma](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) předpisu.
 
 
 

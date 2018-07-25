@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/16/2018
-ms.openlocfilehash: 57304f2f07a0834c31e32bb89a4742a2de7e861c
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 272887f0abb0785f959c542e65789d7645a583f1
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202991"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241222"
 ---
 # <a name="xamarinforms-entry"></a>Položka Xamarin.Forms
 
@@ -84,7 +84,7 @@ Ekvivalentní kód jazyka C# je:
 var entry = new Entry { Keyboard = Keyboard.Chat };
 ```
 
-Příklady každý klávesnice můžete najít v našich [recepty](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) úložiště.
+Příklady každý klávesnice můžete najít v našich [recepty](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) úložiště.
 
 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Třída má také [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) metoda factory, která slouží k přizpůsobení klávesnice zadáním chování malá a velká písmena, kontrola pravopisu a návrh. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) hodnoty výčtu uvedené jako argumenty pro metody s přizpůsobeným `Keyboard` se vrací. `KeyboardFlags` Výčet obsahuje následující hodnoty:
 

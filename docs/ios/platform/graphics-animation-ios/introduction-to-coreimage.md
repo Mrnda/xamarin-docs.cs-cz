@@ -1,43 +1,43 @@
 ---
-title: Základní bitové kopie v Xamarin.iOS
-description: Základní Image je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS.
+title: Základní Image Xamarin.iOS
+description: Základní Image je novou architekturou zavedena v systému iOS 5 a poskytují zpracování obrázků a živého videa vylepšení funkcí. Tento článek přináší tyto funkce pomocí ukázky Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7af57856079813e8cb1831a7f22a0a098a6be771
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786629"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242163"
 ---
-# <a name="core-image-in-xamarinios"></a>Základní bitové kopie v Xamarin.iOS
+# <a name="core-image-in-xamarinios"></a>Základní Image Xamarin.iOS
 
-_Základní Image je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS._
+_Základní Image je novou architekturou zavedena v systému iOS 5 a poskytují zpracování obrázků a živého videa vylepšení funkcí. Tento článek přináší tyto funkce pomocí ukázky Xamarin.iOS._
 
-Základní Image je novou architekturou, zavedená v iOS 5, který poskytuje řadu předdefinovaných filtrů a efekty uplatňovat na obrázky a videa, včetně detekce řez.
+Základní Image je novou architekturou zavedená v systému iOS 5, která poskytuje řadu předdefinovaných filtrů a efekty, které chcete použít pro obrázky a videa, včetně rozpoznávání tváře.
 
-Tento dokument obsahuje jednoduché příklady, jak:
+Tento dokument obsahuje jednoduché příklady:
 
--  Čelí detekce.
+-  Rozpoznávání tváře.
 -  Použití filtrů pro bitovou kopii
--  Výpis k dispozici tyto filtry.
+-  Seznam dostupných filtrů.
 
 
-Tyto příklady by vám pomůžou začít začlenění funkce základní bitovou kopii do aplikace Xamarin.iOS.
+Tyto příklady by vám pomůžou začít začlenění funkcí základní Image do aplikace Xamarin.iOS.
 
 ## <a name="requirements"></a>Požadavky
 
 Musíte použít nejnovější verzi Xcode.
 
-## <a name="face-detection"></a>Vzhled detekce
+## <a name="face-detection"></a>Rozpoznávání tváře
 
-Funkce rozpoznávání vzhled základní Image neobsahuje právě co zobrazuje – se pokusí identifikovat tyto řezy v fotografie a vrátí souřadnice žádné řezy, které ji rozpoznává. Tyto informace lze zjistit, kolik lidí do image, kreslení ukazatele na bitovou kopii (např. pro "označování, osoby v fotografie), nebo cokoliv jiného, si můžete představit.
+Funkce rozpoznávání tváře základní Image nemá právě co stavu – se pokusí identifikovat fotografie tváře a vrací souřadnice žádné tváře, které rozpozná. Tyto informace je možné zjistit počet uživatelů v obrázku, nakreslete ukazatele na obrázku (např.) "přidáváním značek" lidé v fotografie), nebo cokoli jiného si můžete představit.
 
-Tento kód z CoreImage\SampleCode.cs ukazuje, jak vytvořit a použít vzhled detekce na vložený obrázek:
+Tento kód z CoreImage\SampleCode.cs ukazuje, jak vytvořit a používat rozpoznávání tváře na vložený obrázek:
 
 ```csharp
 var image = new UIImage("photoFace.JPG");
@@ -47,17 +47,17 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-Vyplní pole funkce s `CIFaceFeature` objekty (pokud nebyly zjištěny žádné řezy). Došlo `CIFaceFeature` pro každý řez. `CIFaceFeature` má následující vlastnosti:
+Funkce pole se vyplní `CIFaceFeature` objekty (pokud nebyly zjištěny žádné tváře). Je `CIFaceFeature` pro každou plochu. `CIFaceFeature` má následující vlastnosti:
 
--  HasMouthPosition – jestli byla zjištěna úst Tento řez.
--  HasLeftEyePosition – jestli byla zjištěna levého oka Tento řez.
--  HasRightEyePosition – jestli byla zjištěna pravého Tento řez. 
--  MouthPosition – souřadnice úst pro tento řez.
--  LeftEyePosition – souřadnice levého oka pro tento řez.
--  RightEyePosition – souřadnice správné oko pro tento řez.
+-  HasMouthPosition – Určuje, zda byl zjištěn přidržte pro tento rozpoznávání tváře.
+-  HasLeftEyePosition – Určuje, zda byl zjištěn levého oka pro tento rozpoznávání tváře.
+-  HasRightEyePosition – Určuje, zda byl zjištěn pravého pro tento rozpoznávání tváře. 
+-  MouthPosition – souřadnice ústí pro tento rozpoznávání tváře.
+-  LeftEyePosition – souřadnice levého oka pro tento rozpoznávání tváře.
+-  RightEyePosition – souřadnice pravého oka pro tuto plošku.
 
 
-Souřadnice pro tyto vlastnosti mají původ v levé dolní – na rozdíl od UIKit, který používá levém horním jako počátek. Při použití souřadnice na `CIFaceFeature` nezapomeňte 'překlopit' je. Toto zobrazení velmi základní vlastní image ve CoreImage\CoreImageViewController.cs ukazuje, jak k vykreslení trojúhelníčky 'vzhled ukazatele, na bitovou kopii (Poznámka: `FlipForBottomOrigin` metoda):
+Souřadnice pro všechny tyto vlastnosti mají původ v levé dolní – na rozdíl od UIKit, který používá jako původ vlevo nahoře. Při použití souřadnice na `CIFaceFeature` nezapomeňte "překlopit". Toto zobrazení velmi základní vlastní image v CoreImage\CoreImageViewController.cs ukazuje, jak nakreslit obrázek trojúhelníky "indikátor pro rozpoznávání tváře. (Poznámka: `FlipForBottomOrigin` metoda):
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -102,7 +102,7 @@ public class FaceDetectImageView : UIView
 }
 ```
 
-Potom v souboru SampleCode.cs bitové kopie a funkce jsou přiřazeny předtím, než bude překreslen bitovou kopii:
+Potom v souboru SampleCode.cs image a funkce jsou přiřazeny předtím, než se překreslí image:
 
 ```csharp
 faceView.Image = image;
@@ -110,26 +110,26 @@ faceView.Features = features;
 faceView.SetNeedsDisplay();
 ```
 
-Na snímku obrazovky vidíte ukázkový výstup: umístění zjištěných funkce rozpoznávání obličeje se zobrazují v UITextView a vykreslovány na zdrojové bitové kopie pomocí CoreGraphics.
+Snímek obrazovky ukazuje příklad výstupu: umístění zjištěných funkce rozpoznávání obličeje se zobrazuje UITextView a vykreslit do zdrojového obrázku pomocí CoreGraphics.
 
-Kvůli způsobu práce rozpoznávání obličeje, se někdy zjistí operace než lidské řezy (např. Tyto opice hračka!).
+Vzhledem ke způsobu rozpoznávání obličeje funguje to příležitostně zjistí věci kromě lidské tváře (např. Tyto opice slonovi!).
 
 ## <a name="filters"></a>Filtry
 
-Existuje více než 50 různé integrované filtry a rozhraní je rozšiřitelný, tak, aby nové filtry se dají implementovat.
+Existuje více než 50 různými integrované filtry a rozhraní je možné rozšířit tak, že je možné implementovat nové filtry.
 
 ## <a name="using-filters"></a>Pomocí filtrů
 
-Použití filtru pro bitovou kopii má čtyři kroky odlišné: načítání bitovou kopii, vytváření filtru, použití filtru a ukládání (nebo zobrazení) výsledek.
+Použití filtrování podle obrázku má čtyři různé kroky: načtení obrázku, vytváření filtru, použití filtru a uložení (nebo zobrazení) výsledek.
 
-Nejdřív načíst bitovou kopii do `CIImage` objektu.
+Nejdřív načtěte do image `CIImage` objektu.
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
 var ciimage = new CIImage (uiimage);
 ```
 
-Druhý vytvořte třídu filtru a nastavit jeho vlastnosti.
+Za druhé vytvořte třídu filtr a nastavte jeho vlastnosti.
 
 ```csharp
 var sepia = new CISepiaTone();
@@ -137,7 +137,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-Třetí, přístup `OutputImage` vlastnost a volání `CreateCGImage` metoda k vykreslení konečný výsledek.
+Třetí, přístup `OutputImage` vlastnosti a volání `CreateCGImage` metoda k vykreslení konečný výsledek.
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -145,16 +145,16 @@ var context = CIContext.FromOptions(null);
 var cgimage = context.CreateCGImage (output, output.Extent);
 ```
 
-Nakonec přiřadíte bitovou kopii k zobrazení zobrazíte výsledek. V reálné aplikaci může uložit výsledný obraz systému souborů, alba fotografií, Tweet nebo e-mailu.
+Nakonec přiřadíte bitovou kopii k zobrazení, abyste viděli výsledek. V reálné aplikaci může uložit výsledná bitová kopie systému souborů, fotoalba, Tweetu nebo e-mailu.
 
 ```csharp
 var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-Tyto snímky obrazovky zobrazit výsledek `CISepia` a `CIHueAdjust` filtry, které je ukázán v CoreImage.zip ukázkový kód.
+Tyto snímky obrazovky ukazují výsledek `CISepia` a `CIHueAdjust` filtry, které je ukázán v CoreImage.zip ukázkový kód.
 
-Najdete v článku [upravit kontraktu a také Průraznost o tajný recept bitovou kopii](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) příklad `CIColorControls` filtru.
+Najdete v článku [jasu recept Image a upravit smlouvu](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) příklad `CIColorControls` filtru.
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -194,7 +194,7 @@ imgview.Image = ui;
 
 ### <a name="listing-filters-and-their-properties"></a>Seznam filtrů a jejich vlastnosti
 
-Tento kód z CoreImage\SampleCode.cs výstupy úplný seznam předdefinovaných filtrů a jejich parametrů.
+Tento kód z CoreImage\SampleCode.cs vypíše úplný seznam předdefinovaných filtrů a jejich parametry.
 
 ```csharp
 var filters = CIFilter.FilterNamesInCategories(new string[0]);
@@ -210,21 +210,21 @@ foreach (var filter in filters){
 }
 ```
 
-[Referenci třídy CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html) popisuje 50 integrované filtry a jejich vlastnosti. Tento kód výše můžete můžete dotazovat třídy filtru, včetně výchozí hodnoty pro parametry a maximální a minimální povolené hodnoty (které by bylo možné ověřit vstupy před použitím filtru).
+[Referenční třída CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html) popisuje 50 integrované filtry a jejich vlastnosti. Pomocí kódu výše si můžete dotazovat tříd filtru včetně výchozí hodnoty pro parametry a maximální a minimální povolené hodnoty (které by mohly ověřit vstupy před použitím filtru).
 
-Seznam kategorií výstup vypadá takto v simulátoru – můžete procházet v seznamu zobrazíte všechny filtry a jejich parametrů.
+Seznam kategorií výstup vypadá takto v simulátoru – můžete procházet seznam zobrazíte všechny filtry a jejich parametry.
 
  [![](introduction-to-coreimage-images/coreimage05.png "Seznam kategorií výstup vypadá takto v simulátoru")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
-Každý filtr uvedené má byla zpřístupněná jako třídu v Xamarin.iOS, tak můžete také zkoumat rozhraní API Xamarin.iOS.CoreImage v prohlížeči sestavení nebo pomocí automatického dokončování v sadě Visual Studio pro Mac nebo Visual Studio. 
+Každý filtr uvedené byl zpřístupněn jako třída v Xamarin.iOS, takže můžete také prozkoumat rozhraní API Xamarin.iOS.CoreImage v prohlížeči sestavení nebo použití automatického dokončování v sadě Visual Studio for Mac nebo Visual Studio. 
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukazuje, jak používat některé z nových funkcí framework základní Image systém iOS 5 jako detekce vzhled a použití filtrů pro bitovou kopii. Nejsou k dispozici v rámci budete moci použít desítek filtry jinou bitovou kopii.
+Tento článek ukazuje, jak používat některé z nových funkcí framework základní Image systém iOS 5 jako jsou rozpoznávání tváří a použití filtrů pro bitovou kopii. Nejsou k dispozici v rámci můžete použít desítky filtry jiný obrázek.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Základní Image (ukázka)](https://developer.xamarin.com/samples/CoreImage/)
-- [Upravit kontraktu a také Průraznost složení bitové kopie](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [Použití filtrů základní bitové kopie](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
-- [Odkaz na CIFilter – třída](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)
+- [Nastavte smlouvy a jas recept obrázek](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
+- [Pomocí základní Image filtry](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Referenční třída CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

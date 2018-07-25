@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832381"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242430"
 ---
 # <a name="xamarinforms-quickstart"></a>Rychlý start Xamarin.Forms
 
@@ -190,17 +190,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    V **konfigurace prázdná formulářová aplikace** dialogového okna, název nové aplikace **Phoneword**, ujistěte se, že pomocí .NET Standard přepínací tlačítko zaškrtnuto a klikněte na tlačítko Další tlačítka:
+    Uložit změny do **PhoneTranslator.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
 12. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item.png "Přidat novou položku")
 
-13. Konfigurace aplikace Forms
+13. V **přidat novou položku** dialogového okna, vyberte **Visual C# > kód > rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **přidat** tlačítka:
 
     ![](quickstart-images/vs/add-idialer-interface.w157.png "Přidat nové rozhraní")
 
-14. Konfigurace projektu formuláře Selhání název řešení a projektu `Dial`Phoneword způsobí mnoho chyb sestavení.
+14. V **IDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód definuje `Dial` metodu, která musí být implementována na jednotlivých platformách přeložené telefonní číslo:
 
     ```csharp
     namespace Phoneword
@@ -212,20 +212,20 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    V **oblasti řešení**, dvakrát klikněte na panel **MainPage.xaml** otevřete:
+    Uložit změny do **IDialer.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
     > [!NOTE]
-    > Uložit změny do MainPage.xaml výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor. V [oblasti řešení](~/xamarin-forms/app-fundamentals/dependency-service/index.md), dvakrát klikněte na panel MainPage.xaml.cs otevřete:
+    > Společný kód aplikace je nyní dokončena. Specifické pro platformu telefonní vytáčecí zařízení kódu budou nyní implementovány jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-15. **a** metody se spustí v reakci **přeložit** a **volání** tlačítka klepnutí na uživatelské rozhraní v uvedeném pořadí:
+15. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword.iOS** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item-ios.png "Přidat novou položku")
 
-16. Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
+16. V **přidat novou položku** dialogového okna, vyberte **Apple > kód > třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítka:
 
     ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Přidejte novou třídu")
 
-17. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří <code>Dial</code> metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
+17. V **PhoneDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód vytvoří <code>Dial</code> metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
 
     ```csharp
     using Foundation;
@@ -247,17 +247,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
+    Uložit změny do **PhoneDialer.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-18. Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
+18. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword.Android** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item-android.png "Přidat novou položku")
 
-19. V **nový soubor** dialogového okna, vyberte **Obecné > prázdné rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **nový** tlačítka:
+19. V **přidat novou položku** dialogového okna, vyberte **Visual C# > Android > třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítka:
 
     ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Přidejte novou třídu")
 
-20. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Uložit změny do `Dial`IDialer.cs výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor.
+20. V **PhoneDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód vytvoří `Dial` metodu, která se použije na platformu Android na přeložený telefonní číslo:
 
     ```csharp
     using Android.Content;
@@ -306,9 +306,9 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
+    Všimněte si, že tento kód předpokládá, že používáte nejnovější rozhraní API systému Android. Uložit změny do **PhoneDialer.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-21. V **oblasti řešení**, vyberte **Phoneword.iOS** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
+21. V **Průzkumníka řešení**v **Phoneword.Android** projektu, klikněte dvakrát na **MainActivity.cs** Pokud chcete soubor otevřít, odeberte všechny šablony kód a nahraďte ho hodnotou Následující kód:
 
     ```csharp
     using Android.App;
@@ -357,7 +357,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Přidejte novou třídu")
 
-26. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří `Dial` metoda a pomocné metody, které budou použity na univerzální platformu Windows na přeložený telefonní číslo:
+26. V **PhoneDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód vytvoří `Dial` metoda a pomocné metody, které budou použity na univerzální platformu Windows na přeložený telefonní číslo:
 
     ```csharp
     using Phoneword.UWP;
@@ -406,7 +406,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
+    Uložit změny do **PhoneDialer.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
 27. V **Průzkumníka řešení**v **Phoneword.UWP** projektu, klikněte pravým tlačítkem na **odkazy**a vyberte **přidat odkaz...** :
 
@@ -624,7 +624,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/xs/add-idialer-interface.png "Přidat nové rozhraní")
 
-14. Konfigurace projektu formuláře Selhání název řešení a projektu `Dial`Phoneword způsobí mnoho chyb sestavení.
+14. V **IDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód definuje `Dial` metodu, která musí být implementována na jednotlivých platformách přeložené telefonní číslo:
 
     ```csharp
     namespace Phoneword
@@ -638,7 +638,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     Uložit změny do **IDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
     > [!NOTE]
-    > Uložit změny do MainPage.xaml výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor. V [oblasti řešení](~/xamarin-forms/app-fundamentals/dependency-service/index.md), dvakrát klikněte na panel MainPage.xaml.cs otevřete:
+    > Společný kód aplikace je nyní dokončena. Specifické pro platformu telefonní vytáčecí zařízení kódu budou nyní implementovány jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 15. V **oblasti řešení**, vyberte **Phoneword.iOS** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
@@ -648,7 +648,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/xs/new-phonedialer-ios.png "Přidejte novou třídu")
 
-17. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří `Dial` metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
+17. V **PhoneDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód vytvoří `Dial` metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
 
     ```csharp
     using Foundation;
@@ -680,7 +680,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/xs/new-phonedialer-android.png "Přidejte novou třídu")
 
-20. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Uložit změny do `Dial`IDialer.cs výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor.
+20. V **PhoneDialer.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód vytvoří `Dial` metodu, která se použije na platformu Android na přeložený telefonní číslo:
 
     ```csharp
     using Android.Content;
@@ -729,7 +729,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
+    Všimněte si, že tento kód předpokládá, že používáte nejnovější rozhraní API systému Android. Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
 21. V **oblasti řešení**v **Phoneword.Droid** projektu, klikněte dvakrát na **MainActivity.cs** Pokud chcete soubor otevřít, odeberte všechny kód šablony a nahraďte ji následujícím kódem :
 

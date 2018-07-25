@@ -6,72 +6,72 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/09/2018
-ms.openlocfilehash: b8a8005c69c8aaee5d92bdabb3429bd52fc76b4a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3e12aa47404d8ee4e52ddada3d99f91250e6c54d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30770232"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242261"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Oprávnění v Xamarin.Android
 
 
 ## <a name="overview"></a>Přehled
 
-Spouštění aplikací pro Android v vlastní izolovaného prostoru a zabezpečení důvodů nemají přístup k některým systémové prostředky nebo hardwaru na zařízení. Uživatel musí explicitně udělit oprávnění k aplikaci, než ho může použít tyto prostředky. Například aplikace nebudou mít přístup GPS na zařízení bez explicitního oprávnění od uživatele. Android vyvolá výjimku `Java.Lang.SecurityException` Pokud se aplikace pokusí o přístup k chráněnému prostředku bez oprávnění.
+Spouštění aplikací pro Android v jejich vlastním sandboxu a zabezpečení důvodů nemají přístup k některým systémovým prostředkům nebo hardwaru na zařízení. Předtím, než může použít tyto prostředky, musí uživatel explicitně udělit oprávnění k aplikaci. Například aplikace nemá přístup k GPS zařízení bez explicitní oprávnění od uživatele. Android vyvolá výjimku `Java.Lang.SecurityException` Pokud se aplikace pokusí o přístup k chráněnému prostředku bez oprávnění.
 
-Oprávnění jsou deklarované v **AndroidManifest.xml** podle vývojář aplikace, když je aplikace vyvinuté. Android má dva různé pracovní postupy pro získání souhlasu uživatele pro tato oprávnění:
+Oprávnění jsou deklarovány v **AndroidManifest.xml** vývojář aplikace, když se aplikace vyvíjí. Android má dva různé pracovní postupy pro získání souhlas uživatele pro tato oprávnění:
  
-* Pro aplikace, které cílí Android 5.1 (API úrovně 22) nebo nižší oprávnění žádosti došlo k chybě při instalaci aplikace. Pokud uživatel neudělí oprávnění, nebude aplikace nainstaluje. Jakmile je aplikace nainstalovaná, neexistuje žádný způsob, jak odvolat oprávnění kromě odinstalací aplikace.
-* Počínaje systémem Android 6.0 (úroveň rozhraní API 23), uživatelé byly zadány větší kontrolu nad oprávněními; mohou udělit nebo odvolat oprávnění, dokud aplikace se nainstaluje na zařízení. Tento snímek obrazovky ukazuje nastavení oprávnění pro aplikaci Google kontakty. Zobrazí seznam různých oprávnění a umožňuje uživatelům povolit nebo zakázat oprávnění:
+* Pro aplikace, které jsou cíleny 5.1 Android (úroveň rozhraní API 22) nebo nižší žádost o oprávnění došlo k chybě při instalaci aplikace. Pokud uživatel neudělí oprávnění, by aplikace nainstalovaná. Jakmile je aplikace nainstalovaná, neexistuje žádný způsob, jak odvolání oprávnění s výjimkou při odinstalování aplikace.
+* Od verze Android 6.0 (úroveň rozhraní API 23), se uživatelům zobrazí větší kontrolu nad oprávněními; jsou-li udělit nebo odvolat oprávnění, za předpokladu, aplikace se nainstaluje na zařízení. Tento snímek obrazovky ukazuje nastavení oprávnění pro aplikace kontakty Google. Obsahuje seznam různých oprávnění a umožňuje uživatelům povolit nebo zakázat oprávnění:
 
-![Ukázka oprávnění obrazovky](permissions-images/01-permissions-check.png) 
+![Ukázka obrazovky oprávnění](permissions-images/01-permissions-check.png) 
 
-Aplikace pro Android musíte zkontrolovat, při spuštění zobrazit, pokud mají oprávnění k přístupu k chráněnému prostředku. Pokud aplikace nemá oprávnění, je třeba provést požadavky pomocí nových rozhraní API poskytované Android SDK pro uživatele k udělení oprávnění. Oprávnění jsou rozdělené do dvou kategorií:
+Aplikace pro Android musí zkontrolovat v době běhu, pokud chcete zobrazit, pokud mají oprávnění pro přístup k chráněnému prostředku. Pokud aplikace nemá oprávnění, pak musí vytvořit požadavky pomocí nových rozhraní API poskytovaných sady Android SDK pro daného uživatele udělit oprávnění. Oprávnění jsou rozdělená do dvou kategorií:
 
-* **Normální oprávnění** &ndash; jedná se o oprávnění, které představují malé bezpečnostní riziko pro zabezpečení nebo ochranu osobních údajů uživatele. Android 6.0 automaticky udělí normálními oprávněními v době instalace. Informujte se v systému Android dokumentaci [úplný seznam normálními oprávněními](https://developer.android.com/guide/topics/permissions/normal-permissions.html).
-* **Nebezpečná oprávnění** &ndash; normálními oprávněními, na rozdíl od nebezpečná oprávnění jsou ty, které chrání zabezpečení nebo ochranu osobních údajů uživatele. Uživatel musí mít explicitně uděleno. Odesílání nebo přijímání zpráva SMS je příklad akce nutnosti nebezpečná oprávnění.
+* **Normální oprávnění** &ndash; jedná se o oprávnění, které představují malé bezpečnostní riziko pro zabezpečení nebo ochranu osobních údajů uživatele. Android 6.0 automaticky udělí normální oprávnění v době instalace. V dokumentaci Android pro [úplný seznam normálními oprávněními](https://developer.android.com/guide/topics/permissions/normal-permissions.html).
+* **Nebezpečná oprávnění** &ndash; na rozdíl od normální oprávnění nebezpečných oprávnění jsou ty, které chrání zabezpečení nebo ochranu osobních údajů uživatele. Explicitně ty musí být udělena uživatelem. Odesílání a příjem zpráva SMS je příklad akce vyžadující nebezpečných oprávnění.
 
 > [!IMPORTANT]
-> Kategorii, která patří oprávnění může časem změnit.  Je možné, že oprávnění, která byla kategorizována jako "normální" oprávnění může být zvýšena v budoucnosti úrovně rozhraní API na nebezpečná oprávnění.
+> Kategorie, které patří oprávnění může v průběhu času měnit.  Je možné, že oprávnění, která byla kategorizována jako "normální" oprávnění může být zvýšena v budoucnu úrovně rozhraní API na nebezpečných oprávnění.
 
-Nebezpečná oprávnění další dílčí dělí do [ _oprávnění skupiny_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups). Oprávnění skupiny bude obsahovat oprávnění, které logicky souvisejí. Když uživatel uděluje oprávnění na jeden člen skupiny oprávnění, Android automaticky udělí oprávnění u všech členů této skupiny. Například [ `STORAGE` ](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) skupině oprávnění obsahuje i `WRITE_EXTERNAL_STORAGE` a `READ_EXTERNAL_STORAGE` oprávnění. Pokud uživatel uděluje oprávnění k `READ_EXTERNAL_STORAGE`, pak se `WRITE_EXTERNAL_STORAGE` oprávnění je automaticky přiděleno ve stejnou dobu.
+Nebezpečná oprávnění se dále dílčí dělí do [ _skupiny oprávnění_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups). Oprávnění skupiny bude obsahovat oprávnění, která jsou logicky souvisí. Když uživatel udělí oprávnění pro jednoho člena skupiny oprávnění, Android automaticky udělí oprávnění u všech členů této skupiny. Například [ `STORAGE` ](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) oprávnění skupiny obsahuje i `WRITE_EXTERNAL_STORAGE` a `READ_EXTERNAL_STORAGE` oprávnění. Pokud uživatel udělí oprávnění k `READ_EXTERNAL_STORAGE`, pak bude `WRITE_EXTERNAL_STORAGE` automaticky uděleno oprávnění ve stejnou dobu.
 
-Před vyžaduje jeden nebo více oprávnění, je osvědčeným postupem zadejte odůvodnění, proč aplikace vyžaduje oprávnění před vyžádáním oprávnění. Jakmile uživatel nerozumí odůvodnění, aplikace může požádat o oprávnění od uživatele. Porozuměním odůvodnění, může uživatel provést informované rozhodnutí, pokud chtějí udělit oprávnění a pokud ne, pochopit má. 
+Než požádáte o jedno nebo více oprávnění, je vhodné zajistit důvody, proč aplikace vyžaduje oprávnění než požádáte o oprávnění. Jakmile uživatel nerozumí důvody, aplikace může požádat o oprávnění uživatele. Pochopením důvody může uživatel provést informované rozhodnutí, když budou chtít udělit oprávnění a pochopit má, pokud tomu tak není. 
 
-Celý pracovní postup kontroly a vyžadování oprávnění se označuje jako _běhu oprávnění_ zkontrolujte a může být souhrnu v následujícím diagramu: 
+Celý pracovní postup kontroly a vyžadování oprávnění se označuje jako _oprávnění za běhu_ zkontrolujte a můžeme shrnout v následujícím diagramu: 
 
-[![Vývojový diagram kontrola běhu oprávnění](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[![Vývojový diagram kontrola oprávnění za běhu](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
-Knihovna pro Android podporu backports některé z nových rozhraní API Správce oprávnění pro starší verze systému Android. Tyto přeneseny zpět rozhraní API automaticky zkontroluje verzi Androidu na zařízení, takže není nutné provádět kontrolu úrovně rozhraní API pokaždé, když.  
+Knihovna pro Android podporu zpětné některé z nových rozhraní API pro oprávnění ke starším verzím systému Android. Tyto přeneseny zpět rozhraní API automaticky vyhledala verzi Androidu na zařízení, takže není nutné provádět kontrolu úrovně rozhraní API pokaždé, když.  
 
-Tento dokument popisuje postup přidání oprávnění k aplikaci Xamarin.Android a jak aplikace, které cílí na Android 6.0 (úroveň rozhraní API 23) nebo vyšší musí provést kontrolu oprávnění běhu.
+Tento dokument popisuje přidání oprávnění do aplikace Xamarin.Android a jak aplikace, které cílí na Android 6.0 (úroveň rozhraní API 23) nebo vyšším byste provést kontrolu oprávnění za běhu.
 
 
 > [!NOTE]
-> Je možné, že oprávnění pro hardware může mít vliv na filtrování aplikace pomocí služby Google Play. Například pokud aplikace vyžaduje oprávnění pro fotoaparát, pak Google Play nebudou zobrazovat aplikace Google Play Storu na zařízení, která nemá nainstalovanou kameru.
+> Je možné, že oprávnění pro hardwaru může ovlivnit, jak aplikace se filtrují podle Google Play. Například pokud aplikace vyžaduje oprávnění pro fotoaparátu/kamery, pak Google Play nezobrazí aplikaci ve Store Google Play na zařízení, který nemá nainstalovanou kameru.
 
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
-Důrazně doporučujeme, zahrnují Xamarin.Android projekty [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) balíček NuGet. Toto oprávnění backport bude balíček, který konkrétní rozhraní API pro starší verze systému Android, poskytuje jeden běžné rozhraní bez nutnosti neustále zkontrolujte verzi systému Android, která aplikace běží na.
+Důrazně doporučujeme, že projekty Xamarin.Android zahrnout [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) balíček NuGet. Tento balíček bude backport oprávnění, které konkrétní rozhraní API pro starší verze systému Android, poskytuje jednu společnou rozhraní bez nutnosti neustále zkontrolujte verzi Androidu aplikace je spuštěná na.
 
 
-## <a name="requesting-system-permissions"></a>Požaduje oprávnění systému
+## <a name="requesting-system-permissions"></a>Vyžadování oprávnění systému
 
-Prvním krokem při práci s Androidem oprávnění je deklarovat, že oprávnění v Android manifest souboru. To je potřeba bez ohledu na úrovni rozhraní API, které se budou zaměřovat je aplikace.
+Chcete-li deklarovat, že soubor manifestu oprávnění v Androidu je prvním krokem při práci s oprávnění Androidu. To je nutné provést bez ohledu na úroveň rozhraní API, že aplikace je zaměřen.
 
-Aplikace, které cílí na Android 6.0 nebo vyšší nelze předpokládat, že vzhledem k tomu, že uživatel oprávnění v určitém okamžiku v minulosti, že oprávnění budou platné při příštím. Aplikace, která je cílena Android 6.0 musí vždy provést kontrolu oprávnění modulu runtime. Není potřeba provést kontrolu oprávnění spuštění aplikace, které cílí na Android 5.1 nebo nižší.
+Aplikace, které cílí na Android 6.0 nebo vyšší nelze předpokládat, protože uživatel oprávnění v určitém okamžiku v minulosti, že oprávnění budou platit při příštím. Aplikace, která cílí na Android 6.0 vždycky musí provádět kontrolu oprávnění za běhu programu. Aplikace, které cílí na Android 5.1 nebo nižší, není potřeba provést kontrolu oprávnění za běhu.
 
 > [!NOTE]
-> Aplikace by měla pouze požádat o oprávnění, která vyžadují.
+> Aplikace by měl pouze požádat o oprávnění, která vyžadují.
 
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Deklarování oprávnění v manifestu
 
-Oprávnění jsou přidány do **AndroidManifest.xml** s `uses-permission` elementu. Například pokud aplikace odkazuje na vyhledejte pozici zařízení, se vyžaduje bez problémů a kurzu umístění oprávnění. Následující dva elementy se přidají k manifestu: 
+Oprávnění jsou přidány do **AndroidManifest.xml** s `uses-permission` elementu. Například pokud aplikace, je nalezení polohu zařízení, se vyžaduje bez problémů a kurzu oprávnění umístění. Následující dva prvky jsou přidány do manifestu: 
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -80,49 +80,49 @@ Oprávnění jsou přidány do **AndroidManifest.xml** s `uses-permission` eleme
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Je možné deklarovat oprávnění pomocí podpory nástroje integrovaná v sadě Visual Studio:
+Je možné deklarovat oprávnění s využitím podpory nástroje integrované do sady Visual Studio:
 
-1. Klikněte dvakrát na **vlastnosti** v **Průzkumníku řešení** a vyberte **Android Manifest** kartě v okně vlastností:
+1. Dvakrát klikněte na panel **vlastnosti** v **Průzkumníka řešení** a vyberte **Manifest v Androidu** karty v okně Vlastnosti:
 
-    [![Požadovaná oprávnění na kartě Android Manifest](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
+    [![Požadovaná oprávnění na kartě Manifest pro Android](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
-2. Pokud aplikace již nemá AndroidManifest.xml, klikněte na tlačítko **ne AndroidManifest.xml nalezen. Klikněte na tlačítko Přidat jeden** jak je uvedeno níže:
+2. Pokud aplikace již nemá souboru AndroidManifest.xml, klikněte na tlačítko **ne AndroidManifest.xml nalezen. Klikněte a přidejte ho** jak je znázorněno níže:
 
-    [![Žádná zpráva AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [![Žádná zpráva o souboru AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
-3. Vyberte všechna oprávnění, aplikace musí z **požadovaná oprávnění** seznamu a uložte:
+3. Vyberte všechna oprávnění, které vaše aplikace potřebuje z **požadovaná oprávnění** seznamu a uložte:
 
-    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [![FOTOAPARÁT oprávnění příklad vybrali](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Je možné deklarovat oprávnění pomocí podpory nástroje součástí sady Visual Studio pro Mac:
+Je možné deklarovat oprávnění s využitím podpory nástroje integrované do sady Visual Studio pro Mac:
 
-1. Dvakrát klikněte na projekt **řešení Pad** a vyberte **možnosti > sestavení > aplikace pro Android**:
+1. Dvakrát klikněte na projekt v **oblasti řešení** a vyberte **možnosti > sestavení > aplikace pro Android**:
 
-    [![Povinná sekce oprávnění vidět](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [![Požadovaná oprávnění část uvedenou](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
-2. Klikněte **přidat Android Manifest** tlačítko Pokud projekt již nemá **AndroidManifest.xml**:
+2. Klikněte na tlačítko **přidat Manifest Android** tlačítko, pokud projekt již nemá **AndroidManifest.xml**:
 
-    [![Chybí projektu manifestu systému Android.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
+    [![Chybí manifest Android tohoto projektu](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
-3. Vyberte všechna oprávnění, aplikace musí z **požadovaná oprávnění** seznamu a klikněte na tlačítko **OK**:
+3. Vyberte všechna oprávnění, které vaše aplikace potřebuje z **požadovaná oprávnění** seznamu a klikněte na tlačítko **OK**:
 
-    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [![FOTOAPARÁT oprávnění příklad vybrali](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
-Xamarin.Android automaticky přidají některá oprávnění v čase vytvoření buildu do sestavení pro ladění. Bude ladění aplikace jednodušší. Zejména dvě významné oprávnění jsou `INTERNET` a `READ_EXTERNAL_STORAGE`. Tato oprávnění automaticky set nezobrazí povolení v **požadovaná oprávnění** seznamu. Verze sestavení, ale, použijte jenom oprávnění, která jsou explicitně nastavené **požadovaná oprávnění** seznamu. 
+Xamarin.Android automaticky přidá některé oprávnění v okamžiku sestavení k sestavení pro ladění. Díky tomu budou ladění aplikace snazší. Konkrétně se dvě důležité oprávnění jsou `INTERNET` a `READ_EXTERNAL_STORAGE`. Tato oprávnění automaticky sada nebude zobrazovat v **požadovaná oprávnění** seznamu. Verze sestavení, ale, použijte pouze oprávnění, která jsou explicitně nastaveny **požadovaná oprávnění** seznamu. 
 
-Pro aplikace, které cílí na Android 5.1 (API úrovně 22) nebo nižší není nic jiného, který je potřeba udělat. Aplikace, které poběží na Android 6.0 (API 23 úroveň 23) nebo vyšší musí pokračovat k další části o tom, jak provést běhu ověří oprávnění. 
+Pro aplikace, které cílí 5.1 Android (úroveň rozhraní API 22) nebo nižší není nic jiného, který je potřeba udělat. Aplikace, které poběží na Android 6.0 (úroveň rozhraní API 23 23) nebo novějším by mělo pokračovat k další části o tom, jak provádět běhu kontroluje oprávnění. 
 
 
-### <a name="runtime-permission-checks-in-android-60"></a>Ověří oprávnění Runtime v Android 6.0
+### <a name="runtime-permission-checks-in-android-60"></a>Oprávnění za běhu se změnami s Androidem 6.0
 
-`ContextCompat.CheckSelfPermission` – Metoda (k dispozici s knihovnou Android podporu) se používá k ověření, pokud byla udělena zvláštní oprávnění. Tato metoda vrátí [ `Android.Content.PM.Permission` ](https://developer.xamarin.com/api/type/Android.Content.PM.Permission/) výčtu, která obsahuje jednu ze dvou hodnot:
+`ContextCompat.CheckSelfPermission` – Metoda (k dispozici s knihovnou Android podporu) se používá ke kontrole, pokud byla udělena zvláštní oprávnění. Tato metoda vrátí [ `Android.Content.PM.Permission` ](https://developer.xamarin.com/api/type/Android.Content.PM.Permission/) výčtu, která má jednu ze dvou hodnot:
 
-* **`Permission.Granted`** &ndash; Byla udělena oprávnění k zadané.
-* **`Permission.Denied`** &ndash; Zadané oprávnění nebylo uděleno.
+* **`Permission.Granted`** &ndash; Zadané oprávnění bylo uděleno.
+* **`Permission.Denied`** &ndash; Nebylo uděleno oprávnění k zadané.
 
 Tento fragment kódu je příklad toho, jak zkontrolovat oprávnění fotoaparát v aktivitě: 
 
@@ -137,19 +137,19 @@ else
 }
 ```
 
-Je osvědčeným postupem informovat o tom, proč je oprávnění nezbytná pro aplikaci tak, aby můžete provést informované rozhodnutí o udělení oprávnění uživatele. Příkladem tohoto může být aplikaci, která přebírá fotky a geografická značky je. Je zřejmé, uživateli, je nutné oprávnění fotoaparát, ale nemusí být jasné, proč aplikace také musí umístění zařízení. Logický základ hlediska by měl zobrazit zprávu pomoct pochopit, proč oprávnění umístění je žádoucí a že není vyžadováno oprávnění fotoaparát uživateli.
+Je osvědčeným postupem je informovat uživatele, proč je oprávnění nutná pro aplikaci tak, že můžete provést informované rozhodnutí udělit oprávnění. Příklad tohoto by aplikace, která přijímá fotografie a geo-tags je. Je uživateli zřejmé, že oprávnění fotoaparát je nezbytné, ale nemusí být jasné, proč se umístění zařízení musí aplikace. Důvody by se zobrazit zpráva umožňující uživateli snáze pochopit, proč oprávnění umístění je žádoucí a že není vyžadováno oprávnění k fotoaparátu.
 
-`ActivityCompat.ShouldShowRequestPermissionRational` Metoda se používá k určení, pokud by měl být vysvětlení zobrazí uživateli. Tato metoda vrátí `true` Pokud má být zobrazena důvody dané oprávnění. Tento snímek obrazovky ukazuje příklad Snackbar, zobrazí aplikace, která vysvětluje, proč aplikace musí znát umístění zařízení:
+`ActivityCompat.ShouldShowRequestPermissionRational` Metoda se používá k určení, pokud by měl být důvody zobrazí uživateli. Tato metoda vrátí `true` Pokud by se mělo zobrazit důvody pro dané oprávnění. Tento snímek obrazovky ukazuje příklad Snackbar zobrazí aplikace, která vysvětluje, proč se aplikace potřebuje znát umístění zařízení:
 
-![Důvody tohoto umístění](permissions-images/07-rationale-snackbar.png) 
+![Důvody pro umístění](permissions-images/07-rationale-snackbar.png) 
 
-Pokud uživatel udělí oprávnění, `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` metoda by měla být volána. Tato metoda vyžaduje následující parametry:
+Pokud uživatel udělí oprávnění, `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` by měla být volána metoda. Tato metoda vyžaduje následující parametry:
 
-* **aktivita** &ndash; jedná o aktivitu, která požaduje oprávnění a je informováni Android výsledky.
+* **aktivita** &ndash; jedná o aktivitu, která žádá o oprávnění a je informován androidem výsledků.
 * **oprávnění** &ndash; seznam oprávnění, které jsou požadovány.
-* **requestCode** &ndash; celočíselná hodnota, která se používá k porovnání výsledků žádosti o oprávnění na `RequestPermissions` volání. Tato hodnota by měla být větší než nula.
+* **requestCode** &ndash; celočíselnou hodnotu, která slouží k porovnání výsledků žádost o oprávnění k `RequestPermissions` volání. Tato hodnota by měla být větší než nula.
 
-Tento fragment kódu je příkladem dvě metody, které byly popsané. Nejprve se provede kontrola k určení, pokud by se měly zobrazit odůvodnění oprávnění. Pokud odůvodnění se má zobrazit, se zobrazí Snackbar s odůvodnění. Pokud uživatel klikne na **OK** v Snackbar, potom aplikace bude požadovat oprávnění. Pokud uživatel nepřijímá odůvodnění, aplikace by neměl pokračovat s žádostí o oprávnění. Pokud není zobrazen vysvětlení a bude požadovat aktivity oprávnění:
+Tento fragment kódu je příkladem dvě metody, které nebyly popsány. Nejprve se provede kontrola k určení, pokud by se zobrazit důvody oprávnění. Pokud důvody je zobrazený, se zobrazí Snackbar s důvody. Pokud uživatel klikne **OK** v Snackbar, potom aplikace požádá o oprávnění. Pokud uživatel nepřijímá důvody, aplikace by neměl pokračujte požádat o oprávnění. Pokud není uvedené důvody, aktivita bude požadovat oprávnění:
 
 ```csharp
 if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.AccessFineLocation)) 
@@ -176,11 +176,11 @@ else
 }
 ```
 
-`RequestPermission` je možné volat i v případě, že uživatel už má uděleno oprávnění. Následující volání nejsou potřebné, ale poskytují možnost potvrďte (nebo ji odvolat) oprávnění uživatele. Když `RequestPermission` je volána, řízení je předávána operačního systému, který se zobrazí uživatelské rozhraní pro přijetí oprávnění:  
+`RequestPermission` je možné volat i v případě, že uživatel už udělil oprávnění. Následná volání nejsou nezbytné, ale poskytují uživateli možnost potvrzení (nebo ji odvolat) oprávnění. Když `RequestPermission` je volána, ovládací prvek je předáno do operačního systému, který se zobrazí uživatelské rozhraní pro příjem oprávnění:  
 
 ![Dialogové okno Permssion](permissions-images/08-location-permission-dialog.png)
 
-Po dokončení uživatele Android se vrátí výsledky aktivity prostřednictvím metody zpětného volání, `OnRequestPermissionResult`. Tato metoda je součástí rozhraní `ActivityCompat.IOnRequestPermissionsResultCallback` které musí být implementována pomocí aktivity. Toto rozhraní obsahuje jedinou metodu, `OnRequestPermissionsResult`, který bude vyvolán Android k informování aktivitu volby uživatele. Pokud uživatel má uděleno oprávnění, můžete aplikaci pokračujte a použít k chráněnému prostředku. Příklad, jak implementovat `OnRequestPermissionResult` jsou uvedeny níže: 
+Po dokončení uživatele Androidu výsledky vrátí do aktivity prostřednictvím metody zpětného volání, `OnRequestPermissionResult`. Tato metoda je součástí rozhraní `ActivityCompat.IOnRequestPermissionsResultCallback` který musí implementovat aktivitou. Toto rozhraní obsahuje jedinou metodu, `OnRequestPermissionsResult`, který bude vyvolán s Androidem a informovat aktivity volby uživatele. Pokud uživatel udělil oprávnění, můžete aplikace pokračujte a použijte chráněnému prostředku. Příklad toho, jak implementovat `OnRequestPermissionResult` je uveden níže: 
 
 ```csharp
 public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -212,11 +212,11 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka popsané, jak přidat a zkontrolujte oprávnění v zařízení se systémem Android. Rozdíly v fungování oprávnění mezi původním aplikace pro Android (rozhraní API na úrovni < 23) a nové aplikace pro Android (rozhraní API na úrovni > 22). Je popsané, jak provádět kontroly oprávnění běhu v Android 6.0.
+Tato příručka probírali přidání a zkontrolujte oprávnění v zařízení s Androidem. Rozdíly ve fungování oprávnění mezi původní aplikace pro Android (API úrovně < 23) a nové aplikace pro Android (úroveň rozhraní API > 22). Ho popsané postupy provádět kontroly oprávnění za běhu v Android 6.0.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Seznam normálními oprávněními](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
-- [Modul runtime oprávnění ukázkové aplikace](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
-- [Zpracování oprávnění v Xamarin.Android](https://developer.xamarin.com/recipes/android/general/projects/add_permissions_to_android_manifest)
+- [Seznam běžných oprávnění](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
+- [Ukázková aplikace oprávnění modulu runtime](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
+- [Zpracování oprávnění v Xamarin.Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)

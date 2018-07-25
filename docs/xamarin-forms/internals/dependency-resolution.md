@@ -1,22 +1,22 @@
 ---
 title: Řešení závislostí v Xamarin.Forms
-description: Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms, tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislosti aplikace .
+description: Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203170"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242378"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Řešení závislostí v Xamarin.Forms
 
-_Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms, tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislosti aplikace . Příklady kódu pocházejí ze [řešení závislostí](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) vzorku._
+_Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace. Příklady kódu pocházejí ze [řešení závislostí](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) vzorku._
 
 V rámci aplikace Xamarin.Forms, která používá vzor Model-View-ViewModel (MVVM) kontejner vkládání závislostí lze pro registraci a jejich řešení zobrazit modely a pro registraci služby a vkládá je do zobrazení modelů. Při vytváření modelu zobrazení kontejneru vkládá všechny závislosti, které jsou požadovány. Pokud tyto závislosti ještě nevytvořili, kontejner vytvoří a nejprve řeší závislosti. Další informace o vkládání závislostí, včetně příkladů injektáž závislostí do zobrazení modelů, naleznete v tématu [injektáž závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
@@ -55,7 +55,7 @@ public partial class App : Application
 V tomto příkladu je nastavena metoda řešení závislostí pro lambda výraz, který používá kontejneru pro vkládání závislosti Autofac vyřešit všechny typy, které jste zaregistrovali pomocí kontejneru. V opačném případě `null` bude vrácen, jejímž výsledkem bude Xamarin.Forms pokus o vyřešení typu.
 
 > [!NOTE]
-> Rozhraní API používá kontejner vkládání závislostí je specifické pro kontejner. Příklady kódu v tomto článku použijte Autofac jako kontejner vkládání závislostí, které poskytuje `IContainer` a `ContainerBuilder` typy. Alternativní závislost vkládání kontejnery rovnoměrně by bylo možné použít, ale byste použili různých rozhraní API než okomentovat.
+> Rozhraní API používá kontejner vkládání závislostí je specifické pro kontejner. Příklady kódu v tomto článku použijte Autofac jako kontejner vkládání závislostí, které poskytuje `IContainer` a `ContainerBuilder` typy. Alternativní závislost vkládání kontejnery rovnoměrně by bylo možné použít, ale byste použili různých rozhraní API, než jsou uvedeny zde.
 
 Všimněte si, že neexistuje žádný požadavek na nastavte jako metodu řešení závislostí při spuštění aplikace. Kdykoli můžete nastavit. Jediným omezením je to, že je potřeba vědět o způsobu řešení závislostí podle času, která se aplikace pokusí využívat typů uložená v kontejneru pro vkládání závislosti Xamarin.Forms. Pokud v kontejneru pro vkládání závislosti, které aplikace bude vyžadovat, aby při spuštění služby, metoda překladu závislost bude mít tudíž nastavit v rané fázi životního cyklu aplikace. Podobně pokud spravuje kontejneru pro vkládání závislosti vytváření a dobu života konkrétní [ `Effect` ](xref:Xamarin.Forms.Effect), Xamarin.Forms potřebovat vědět o způsobu řešení závislostí předtím, než se pokusí o vytvoření zobrazení, která který používá `Effect`.
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-V tomto příkladu `App.RegisterTypeWithParameters` metoda registrů `VideoPlayerRenderer` s kontejneru pro vkládání závislosti s metodou registrace zajistit, aby `MainActivity` instance budou vloženy jako `Context` argument a že `Logger`typu budou vloženy jako `ILogger` argument.
+V tomto příkladu `App.RegisterTypeWithParameters` metoda registrů `VideoPlayerRenderer` s kontejneru pro vkládání závislostí. Metoda registrace zajistí, že `MainActivity` instance budou vloženy jako `Context` argument a že `Logger` typu budou vloženy jako `ILogger` argument.
 
 ### <a name="registering-effects"></a>Registrace efekty
 

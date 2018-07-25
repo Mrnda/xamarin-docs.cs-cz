@@ -1,33 +1,33 @@
 ---
-title: Pomocí dat v aplikaci pro Android
+title: Používání dat v aplikaci pro Android
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b79b2e44e79a6ff75b096c7443f6d46c20e27144
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 563c04ef1c8eec00108844894c5f9bdc0e9950e3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31647031"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241887"
 ---
-# <a name="using-data-in-an-app"></a>Pomocí dat v aplikaci
+# <a name="using-data-in-an-app"></a>Používání dat v aplikaci
 
-**DataAccess_Adv** příklad ukazuje funkční aplikaci, která umožňuje vstup uživatele a funkce databáze CRUD (vytvoření, čtení, aktualizace a odstranění). Aplikace se skládá ze dvou obrazovkách: seznam a dat. Všechna data kód přístup je opakovaně použitelné v iOS a Android beze změny.
+**DataAccess_Adv** příklad ukazuje funkční aplikaci, který umožňuje vstup uživatele a funkce databáze CRUD (vytvoření, čtení, aktualizace a odstranění). Aplikace se skládá ze dvou obrazovkách: seznam a formuláře datových záznamů. Všechny kód přístupu k datům je opakovaně použitelné v iOS a Android beze změny.
 
-Po přidání některá data obrazovky aplikace vypadat například takto v systému Android:
+Po přidání některých dat na obrazovce aplikace vypadat nějak takto v Androidu:
 
-![Seznam ukázek Android](using-data-in-an-app-images/image11.png "seznam Android ukázek")
+![Seznam ukázek Android](using-data-in-an-app-images/image11.png "seznamu ukázka pro Android")
 
-![Detaily Android vzorku](using-data-in-an-app-images/image12.png "detaily Android vzorku")
+![Ukázka pro Android podrobností](using-data-in-an-app-images/image12.png "podrobností ukázka pro Android")
 
-Projektu pro Android je zobrazena níže &ndash; uvedeném v této části kódu je součástí **Orm** directory:
+Projekt pro Android je uveden níže &ndash; kód uvedené v této části je obsažen v rámci **Orm** adresáře:
 
-![Projekt pro Android stromu](using-data-in-an-app-images/image14.png "stromu projekt pro Android")
+![Projekt pro Android stromu](using-data-in-an-app-images/image14.png "stromu projektu pro Android")
 
-Nativní kód uživatelského rozhraní pro aktivity v Android je mimo rozsah tohoto dokumentu. Odkazovat [Android ListViews a adaptéry](~/android/user-interface/layouts/list-view/index.md) průvodce Další informace o ovládacích prvků uživatelského rozhraní.
+Nativní kód uživatelského rozhraní pro aktivity v Androidu sahá nad rámec tohoto dokumentu. Odkazovat [Android zobrazení a adaptéry](~/android/user-interface/layouts/list-view/index.md) Průvodce pro další informace o ovládacích prvků uživatelského rozhraní.
 
 ## <a name="read"></a>Číst
 
@@ -55,9 +55,9 @@ public Stock GetStock (int id)
 
 Android vykreslí data jako `ListView`.
 
-## <a name="create-and-update"></a>Vytváření a aktualizaci
+## <a name="create-and-update"></a>Vytvoření a aktualizaci
 
-Můžete zjednodušit kód aplikace, je jediný uložit metoda zadaný, který provádí typu vložení nebo aktualizace v závislosti na tom, jestli je nastavená PrimaryKey. Protože `Id` je vlastnost označena `[PrimaryKey]` atributu nesmí ho nastavit v kódu. Tato metoda zjistí, zda hodnota byl předchozí uložit (kontrolou vlastnost primárního klíče) a vložit nebo aktualizovat objekt odpovídajícím způsobem:
+Pro zjednodušení kódu aplikace, je jediného uložit metoda za předpokladu, který nepodporuje Insert nebo Update v závislosti na tom, zda byla nastavena PrimaryKey. Protože `Id` je vlastnost označena `[PrimaryKey]` atribut nesmí ji nastavíte v kódu. Tato metoda zjistí, zda hodnota byla předchozí uložit (že zkontrolujete vlastnost primárního klíče) a vložit nebo aktualizovat objekt odpovídajícím způsobem:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-Skutečných aplikace bude obvykle vyžadují některé ověření (například povinná pole, minimální délky nebo jiných obchodních pravidel). Dobrý aplikací platformě implementovat co nejvíc ověření logické nejblíže v sdíleného kódu předávání chyb ověření zálohování na uživatelské rozhraní pro zobrazení podle funkce platformy.
+Reálného světa aplikací bude obvykle vyžadovat nějaké ověření (jako je povinná, minimální délky nebo jiné obchodní pravidla). Funkční aplikace napříč platformami implementovat největší část ověření logické nejrychleji sdíleného kódu, předávání chyb při ověřování zálohování do uživatelského rozhraní pro zobrazení podle možnosti platformy.
 
 ## <a name="delete"></a>Odstranit
 
-Na rozdíl od `Insert` a `Update` metody, `Delete<T>` metoda může přijímat pouze hodnotu primárního klíče místo úplná `Stock` objektu. V tomto příkladu `Stock` objekt je předán do metody, ale pouze vlastnost Id předaný `Delete<T>` metoda.
+Na rozdíl od `Insert` a `Update` metody, `Delete<T>` metoda může přijímat pouze hodnotu primárního klíče místo kompletní `Stock` objektu. V tomto příkladu `Stock` objekt je předán do metody, ale pouze vlastnost Id předána `Delete<T>` metody.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -88,17 +88,17 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>Pomocí předem vyplněná souboru databáze SQLite
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Použití předem naplněných databázového souboru SQLite
 
-Některé aplikace jsou dodávané s databází již naplněný daty. Snadno toho lze dosáhnout při odeslání stávající soubor databáze SQLite s vaší aplikací a kopírování do zapisovatelné adresáře než k ní přistupují v mobilní aplikaci. Protože SQLite je standardní formát, který se používá na mnoha platformách, existuje několik nástrojů, které jsou k dispozici pro vytvoření souboru databáze SQLite:
+Některé aplikace se dodávají s databází již naplněný daty. Snadno to lze provádět při odeslání existující soubor databáze SQLite s vaší aplikací a jejím zkopírováním na zapisovatelný adresář před přístupem k jeho v mobilní aplikaci. Protože SQLite je standardní formát, který se používá na spoustě platforem, existuje mnoho nástrojů dostupných k vytvoření souboru databáze SQLite:
 
--   **Rozšíření správce SQLite Firefox** &ndash; funguje na Mac a Windows a vytváří soubory, které jsou kompatibilní s iOS a Android.
+-   **Rozšíření správce SQLite Firefox** &ndash; funguje na Mac a Windows a vytvoří soubory, které jsou kompatibilní s iOS a Android.
 
--   **Příkazový řádek** &ndash; najdete v části [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
+-   **Příkazový řádek** &ndash; naleznete v tématu [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
-Při vytváření souboru databáze pro distribuci s vaší aplikací, postará s názvy tabulek a sloupců zajistit budou odpovídat co očekává kódu, zvlášť pokud používáte SQLite.NET, který bude očekávat názvy tak, aby odpovídaly C# třídy a vlastnosti (nebo přidružené vlastní atributy).
+Při vytváření souboru databáze pro distribuci s vaší aplikací, aby se postaral s názvy tabulek a sloupců zajistit, aby odpovídaly co váš kód očekává, zejména v případě, že používáte SQLite.NET, který bude očekávat názvů tak, aby odpovídaly vaší třídy jazyka C# a vlastnosti (nebo přidružené vlastní atributy).
 
-Aby se zajistilo, že některé kód běží před nic jiného v aplikacích pro Android, můžete ji umístit první aktivitu načíst nebo můžete vytvořit `Application` podtřídami, který je načten před žádné aktivity. Kód uvedený níže ukazuje `Application` podtřídami, který kopíruje stávající soubor databáze **data.sqlite** mimo **/Resources/Raw/** adresáře.
+Aby bylo zajištěno, že nějaký kód spuštěn dříve, než nic jiného v aplikaci pro Android, je možné je umístit v první aktivita pro načtení nebo můžete vytvořit `Application` podtřídy, který je načten před žádné aktivity. Níže uvedený kód ukazuje `Application` podtřídu, která zkopíruje existující soubor databáze **data.sqlite** z celkového počtu **/Resources/Raw/** adresáře.
 
 ```csharp
 [Application]
@@ -137,7 +137,7 @@ public class YourAndroidApp : Application {
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup Basic (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [Rozšířené přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Recepty dat v androidu](https://developer.xamarin.com/recipes/android/data/)
+- [Basic přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [Pokročilé přístup (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Recepty dat pro Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Přístup k datům Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)

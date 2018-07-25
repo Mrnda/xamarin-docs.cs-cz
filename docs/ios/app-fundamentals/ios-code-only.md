@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: 5e9bf9555d10c8b34ad9323529d4af5ea66110f8
-ms.sourcegitcommit: 8555a4dd1a579b2206f86c867125ee20fbc3d264
+ms.openlocfilehash: 688457ab25398e8c5b9848a7e58f6163db4c0a05
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39156779"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242391"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Vytváření uživatelských rozhraní iOS v kódu v Xamarin.iosu
 
@@ -607,7 +607,7 @@ Apple doporučuje .xib nebo soubor scénáře se používá pro aplikace pro iOS
 
 Další informace o vytvoření obrazovky spuštění najdete v níže uvedených dokumentech:
 
-- [Vytvoření obrazovky spuštění pomocí .xib](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Vytvoření obrazovky spuštění pomocí .xib](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 - [Správa spouštěcí obrazovky s použitím scénářů](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]

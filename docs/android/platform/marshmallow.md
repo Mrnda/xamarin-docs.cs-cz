@@ -1,257 +1,257 @@
 ---
 title: Funkce marshmallow
-description: Tento článek vám pomůže začít používat pomocí Xamarin.Android k vývoji aplikací pro Android 6.0 Marshmallow.
+description: Tento článek vám pomůže začít používat pro vývoj aplikací pro Android 6.0 Marshmallow pomocí Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: d2150e18a377d61a2e79fabfc845f57cfab8a5c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4f0bcd25662d3def719a89ccf833e845eb1728f2
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774945"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242235"
 ---
 # <a name="marshmallow-features"></a>Funkce marshmallow
 
-_Tento článek vám pomůže začít používat pomocí Xamarin.Android k vývoji aplikací pro Android 6.0 Marshmallow._
+_Tento článek vám pomůže začít používat pro vývoj aplikací pro Android 6.0 Marshmallow pomocí Xamarin.Android._
 
-Tento článek poskytuje přehled nových funkcí v systému Android Marshmallow 6.0, vysvětluje, jak připravit Xamarin.Android pro vývoj pro Android Marshmallow a poskytuje odkazy na ukázkové aplikace, které ukazují, jak využívat nové Android Marshmallow funkce v aplikacích pro Xamarin.Android. 
+Tento článek poskytuje přehled nových funkcí v Androidu Marshmallow 6.0, vysvětluje postup přípravy Xamarin.Android pro vývoj pro Android Marshmallow a obsahuje odkazy na ukázkové aplikace, které ukazují, jak používat nové Android Marshmallow funkce v aplikacích pro Xamarin.Android. 
 
 
 ## <a name="overview"></a>Přehled
 
-[Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html), je další Android hlavní verzi po Android typu Lupa.
+[Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html), je pro Android další hlavní verzi po Androidu Lollipop.
 Xamarin.Android podporuje Android Marshmallow a zahrnuje:
 
--   **Rozhraní API 23/Android 6.0 vazby** &ndash; Android 6.0 přidá mnoho nových rozhraní API pro nové funkce popsané níže; tato rozhraní API jsou k dispozici pro aplikace Xamarin.Android při cíle 23 úroveň rozhraní API. Další informace o rozhraní API systému Android 6.0 najdete v tématu [rozhraní API systému Android 6.0](http://developer.android.com/preview/api-overview.html). 
+-   **Rozhraní API 23/Android 6.0 vazby** &ndash; s Androidem 6.0 přidá mnoho nových rozhraní API pro nové funkce popsané níže; tato rozhraní API jsou dostupná pro aplikace Xamarin.Android, když Cílová úroveň rozhraní API 23. Další informace o rozhraních API pro Android 6.0, naleznete v tématu [rozhraní API s Androidem 6.0](http://developer.android.com/preview/api-overview.html). 
 
-[![Nejdůležitější bitové kopie tablety a telefony s Marshmallow](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
+[![Tablety a telefony s Marshmallow Hero bitové kopie](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
-I když Marshmallow verze se zaměřuje především na "polština a kvality", umožňuje také mnoha nových funkcí, které vás zajímají vývojářům Xamarin.Android. Tyto funkce patří: 
+I když Marshmallow vydání se zaměřuje především na "polština a kvalitu", poskytuje také mnoho nových funkcí, které vás zajímají pro vývojáře prostředí Xamarin.Android. Tyto funkce patří: 
 
--   **Modul runtime oprávnění** &ndash; toto vylepšení umožňuje uživatelům schválit oprávnění zabezpečení pro případ od případu v době běhu. 
+-   **Oprávnění modulu runtime** &ndash; toto vylepšení umožňuje uživatelům schválení oprávnění zabezpečení pro případ od případu v době běhu. 
 
--   **Vylepšení ověřování** &ndash; od verze Android Marshmallow, aplikace teď můžete použít snímače otisků prstů k ověření uživatelů a novou *potvrďte pověření* funkce snižuje nutnost zadávání hesla. 
+-   **Vylepšení ověřování** &ndash; od verze Android Marshmallow, aplikace teď můžete pomocí otisku prstu senzorů ověřovat uživatele a nový *ověřte přihlašovací údaje* funkce minimalizuje nutnost zadávání hesla. 
 
--   **Propojování aplikace** &ndash; tato funkce vám pomůže omezit potřebě mít **aplikace výběru** otevíraném automaticky přidružením aplikace webových domén. 
+-   **Propojení App** &ndash; tato funkce pomáhá eliminovat nutnost s **výběr aplikace** vyvstane automaticky přidruží webové domény aplikace. 
 
--   **Přímé sdílení** &ndash; můžete definovat *přímé sdílení cíle* které usnadňují sdílení rychlé a intuitivní uživatelům; tato funkce umožňuje uers sdílet obsah s jinými aplikacemi. 
+-   **Přímé sdílení** &ndash; můžete definovat *přímé sdílení cíle* , které usnadňují sdílení intuitivní a rychlé uživatelům; tato funkce umožňuje uživatelé sdílet obsah s jinými aplikacemi. 
 
--   **Hlas interakce** &ndash; toto nové rozhraní API umožňuje sestavovat funkce hlasového konverzačního do vaší aplikace. 
+-   **Hlasové interakce** &ndash; toto nové rozhraní API vám umožní vytvářet konverzační hlasové funkce do vaší aplikace. 
 
--   **Režim zobrazení 4 KB** &ndash; v Android Marshmallow vaše aplikace může požádat o 4 K rozlišení obrazovky na hardwaru, která ho podporuje. 
+-   **Režim zobrazení 4 KB** &ndash; v Androidu Marshmallow aplikaci požádat o rozlišení 4 K zobrazení na hardwaru, která ho podporuje. 
 
--   **Nové funkce audia** &ndash; počínaje Marshmallow, Android teď podporuje protokol MIDI. Poskytuje také nové třídy pro vytvoření digitální zvuku a přehrávání a nabízí nové háky rozhraní API pro přidružení audia a vstupní zařízení. 
+-   **Nové funkce zvuk** &ndash; počínaje Marshmallow, Android teď podporuje protokol MIDI. Nabízí taky nové třídy k vytvoření digitální zvukový zachytávání a přehrávání objektů a nabízí nové zachytávání rozhraní API pro přidružení zvuku a vstupní zařízení. 
 
--   **Nové funkce videa** &ndash; Marshmallow poskytuje novou třídu, která pomáhá aplikace vykreslení audio a video datové proudy synchronizované; Tato třída rovněž poskytuje podporu pro dynamické přehrávání rychlost. 
+-   **Nové funkce videa** &ndash; Marshmallow poskytuje novou třídu, která pomáhá aplikacím k vykreslení datových proudů audio a video synchronizované, tato třída také poskytuje podporu pro rychlost přehrávání dynamické. 
 
--   **Android for Work** &ndash; Marshmallow zahrnuje rozšířené ovládací prvky pro zařízení ve vlastnictví firmy, jednoho uživatele. Podporuje bezobslužnou instalaci a odinstalaci aplikace je vlastník zařízení, automatické přijetí aktualizací systému, vylepšené certifikát správy, data využití sledování, správu oprávnění a oznámení o stavu pracovních. 
+-   **Android for Work** &ndash; Marshmallow zahrnuje rozšířené ovládací prvky pro zařízení vlastněných společností, jednoho uživatele. Podporuje tichou instalaci a odinstalaci aplikací podle vlastníka zařízení, automatické přijetí aktualizací systému, vylepšené certifikát správy, sledování využití dat, správu oprávnění a oznámení o stavu pracovních. 
 
--   **Knihovna podpory podstatným návrhu** &ndash; nové *knihovna podpory návrhu* poskytuje součásti návrhu a vzorů, které usnadňuje sestavení materiálu návrhu vzhled a chování do vaší aplikace. 
+-   **Material Design Support Library** &ndash; nové *návrhu Support Library* poskytuje návrh komponent a vzory, které usnadňuje rychlé vytváření Material Design vzhled a chování do vaší aplikace. 
 
-Kromě toho mnoho aktualizací základní knihovna pro Android, které byly vydané s Androidem M a tyto aktualizace poskytovat nové funkce systému Android M a dřívějších verzích systému Android.
+Kromě toho byly vydány mnoho aktualizací základní knihovna pro Android pomocí systému Android M a tyto aktualizace nabízí nové funkce systému Android M a dřívějších verzích Androidu.
 
-Kromě toho mnoho aktualizací základní knihovna pro Android, které byly vydané s Android Marshmallow a tyto aktualizace zadejte nové funkce pro Android Marshmallow a dřívějších verzích systému Android. Tento článek vysvětluje, jak začít vytvářet aplikace s Android Marshmallow a nabízí že přehled nové funkce jsou vysvětlené v Android 6.0. 
+Kromě toho mnoho aktualizací základní knihovna pro Android, které byly vydané s Androidem Marshmallow, a tyto aktualizace nabízí nové funkce pro Android Marshmallow a dřívějších verzích Androidu. Tento článek vysvětluje, jak začít vytvářením aplikací s Androidem Marshmallow, a nabízí že přehled o nové funkce zvýrazní v Android 6.0. 
 
 ## <a name="requirements"></a>Požadavky
 
-Toto je potřeba použít nové funkce systému Android Marshmallow v aplikace založené na Xamarinu: 
+Pokud chcete používat nové funkce Android Marshmallow v aplikacích založených na Xamarinu jsou vyžadovány následující položky: 
 
--   **Xamarin.Android** &ndash; Xamarin.Android 5.1.7.12 nebo novější musí být nainstalovaná a nakonfigurovaná s Visual Studio nebo Xamarin Studio.
+-   **Xamarin.Android** &ndash; Xamarin.Android 5.1.7.12 nebo novější musí být nainstalované a nakonfigurované pomocí sady Visual Studio nebo Xamarin Studio.
 
--   **Visual Studio pro Mac** nebo **Visual Studio** &ndash; Pokud používáte Visual Studio pro Mac, verze 5.9.7.22 nebo novější je požadovaná. Pokud používáte Visual Studio, verze 3.11.1537 nebo novější nástroje Xamarin pro Visual Studio se vyžaduje. 
+-   **Visual Studio pro Mac** nebo **sady Visual Studio** &ndash; Pokud používáte Visual Studio pro Mac verze 5.9.7.22 nebo novější je povinný. Pokud používáte Visual Studio, verze 3.11.1537 nebo novější nástroje Xamarin pro Visual Studio je povinný. 
 
--   **Sady SDK pro Android** &ndash; Android SDK 6.0 (API 23) nebo novější musí být nainstalován prostřednictvím Android SDK Manager.
+-   **Sada SDK pro Android** &ndash; 6.0 Android SDK (API 23) nebo novější musí být nainstalován prostřednictvím správce sady Android SDK.
 
--   **Sady pro vývojáře Java** &ndash; Xamarin.Android vyžaduje [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) nebo novější, pokud vyvíjíte pro úroveň rozhraní API 24 nebo větší (JDK 1.8 také podporuje úrovně rozhraní API starší než 24, včetně Marshmallow). 64bitové verze JDK 1.8 je vyžaduje, pokud používáte vlastní ovládací prvky nebo prohlížeč formulářů.
+-   **Java Developer Kit** &ndash; Xamarin.Android vyžaduje [sadu JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) nebo novější, pokud vyvíjíte pro úroveň rozhraní API 24 nebo větší (sadu JDK 1.8 také podporuje úrovně rozhraní API starších než 24, včetně Marshmallow). 64-bit verze sadu JDK 1.8 je povinné, pokud používáte vlastní ovládací prvky nebo prohlížeč formulářů.
 
-Můžete dál používat [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Pokud vývoj speciálně pro úroveň rozhraní API 23 nebo starším. 
+Můžete dál používat [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) vývoj speciálně pro rozhraní API úrovně 23 nebo dřívější. 
 
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste mohli začít používat Android Marshmallow s Xamarin.Android, musíte stáhnout a nainstalovat nejnovější nástroje a balíčky SDK před vytvořením projektu Android Marshmallow: 
+Abyste mohli začít používat s Androidem Marshmallow s Xamarin.Android, musíte stáhnout a nainstalovat nejnovější nástroje a sady SDK balíčky, než budete moct vytvořit projekt Android Marshmallow: 
 
-1.  Nainstalujte nejnovější aktualizace Xamarin z **stabilní** kanál. 
+1.  Nainstalujte nejnovější aktualizace z Xamarin **stabilní** kanálu. 
 
-2.  Instalace nástrojů a SDK pro Android Marshmallow 6.0 balíčky.
+2.  Instalace sady SDK pro Android Marshmallow 6.0 balíčky a nástrojů.
 
-3.  Vytvoření nového projektu Xamarin.Android s cílem Android 6.0 Marshmallow (API 23 úroveň). 
+3.  Vytvoření nového projektu Xamarin.Android, který cílí na Android 6.0 Marshmallow (API úrovně 23). 
 
-4.  Konfigurace pro Android Marshmallow emulátoru nebo zařízení.
+4.  Konfigurace zařízení nebo emulátoru systému Android marshmallow od.
 
 Každý z těchto kroků je vysvětlené v následujících částech:
 
 
-### <a name="install-xamarin-updates"></a>Nainstalovat Xamarin aktualizace
+### <a name="install-xamarin-updates"></a>Aktualizace Xamarinu
 
-Chcete-li aktualizovat Xamarin tak, že obsahují podporu systému Android marshmallow od 6.0, změňte aktualizace kanál, ke **stabilní** a nainstalovat všechny aktualizace. Další informace o instalaci aktualizace z tohoto kanálu aktualizace najdete v tématu [změnit kanál aktualizace](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/). 
-
-
-### <a name="install-the-android-60-sdk"></a>Instalace sady SDK Android 6.0
-
-K vytvoření projektu Xamarin.Android pro Android Marshmallow, musíte nejprve použít Android SDK Manager k instalaci sady SDK pro Android 6.0:
-
--   Spustit Android SDK Manager (v sadě Visual Studio pro Mac, použijte **nástroje > SDK Manager**; v sadě Visual Studio, použijte **nástroje > Android > Android SDK Manager**) a nainstalujte nejnovější nástroje pro Android SDK:
-
-    [![Nástroje pro výběr sady SDK pro Android v Android SDK Manager](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
-
--   Také nainstalovat nejnovější **Android 6.0** SDK balíčky:
-
-    [![Výběr sady SDK pro Android 6.0 balíčky v Android SDK Manager](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
-
-Je nutné nainstalovat nástroje pro Android SDK revize 24.3.4 nebo novější.
-Další informace o použití Android SDK Manager k instalaci sady SDK pro Android 6.0 najdete v tématu [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
+Xamarin aktualizovat tak, že obsahují podporu systému Android marshmallow od 6.0, změňte kanálu aktualizace **stabilní** a nainstalujte všechny aktualizace. Další informace o instalaci aktualizace z kanálu aktualizace, naleznete v tématu [změnit kanálu aktualizace](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel). 
 
 
+### <a name="install-the-android-60-sdk"></a>Nainstalovat SDK pro Android 6.0
 
-### <a name="start-a-xamarinandroid-project"></a>Zahájení projektu Xamarin.Android
+Do systému Android marshmallow od vytvoření projektu Xamarin.Android, musíte nejprve použít správce sady Android SDK nainstalovat SDK pro Android 6.0:
 
-Vytvoření nového projektu Xamarin.Android. Pokud jste pro vývoj pro Android pomocí Xamarinu nové, přečtěte si téma [Hello, Android](~/android/get-started/hello-android/index.md) Další informace o vytváření projektů Android. 
+-   Spustit správce sady Android SDK (v sadě Visual Studio pro Mac, použijte **nástroje > správce sady SDK**; v sadě Visual Studio, použijte **nástroje > Android > správce sady Android SDK**) a nainstalujte nejnovější Android SDK Tools:
 
-Když vytvoříte projekt pro Android, musíte nakonfigurovat nastavení verze Android 6.0 MarshMallow cíl. Chcete-li cíle projektu pro systém Marshmallow, je nutné nakonfigurovat svůj projekt pro **úroveň rozhraní API 23 (Xamarin.Android verze 6.0 podporu)**. Další informace o konfiguraci úrovní úrovně rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
+    [![Výběr nástroje sady Android SDK v správce sady Android SDK](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
+
+-   Také, nainstalujte nejnovější **s Androidem 6.0** balíčků sady SDK:
+
+    [![Výběr sady SDK pro Android 6.0 balíčky Android SDK Manager](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
+
+Je nutné nainstalovat Android SDK Tools revize 24.3.4 nebo novější.
+Další informace o použití Android SDK Manager k instalaci sady Android SDK 6.0 najdete v tématu [správce sady SDK](http://developer.android.com/tools/help/sdk-manager.html).
+
+
+
+### <a name="start-a-xamarinandroid-project"></a>Spuštění projektu Xamarin.Android
+
+Vytvoření nového projektu Xamarin.Android. Pokud jste ještě na vývoj pro Android s využitím kódu Xamarin, najdete v článku [Hello, Android](~/android/get-started/hello-android/index.md) Další informace o vytváření projekty Android. 
+
+Když vytvoříte projekt pro Android, musíte nakonfigurovat nastavení verzí do cíle s Androidem MarshMallow 6.0. Pro Marshmallow cílit na váš projekt, musíte nakonfigurovat svůj projekt pro **rozhraní API úrovně 23 (Xamarin.Android 6.0 podporu)**. Další informace o konfiguraci úrovně rozhraní Android API úrovně, naleznete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
 
 
 
 ### <a name="configure-an-emulator-or-device"></a>Konfigurace zařízení nebo emulátoru
 
-Pokud používáte emulátor, spusťte Správce AVD Android a vytvoření nového zařízení s následujícím nastavením:
+Pokud používáte emulátor, spusťte Správce AVD s Androidem a vytvoření nového zařízení pomocí následujících nastavení:
 
 -   Zařízení: Nexus 5, 6 nebo 9.
--   Cíl: Android 6.0 - úroveň rozhraní API 23
+-   Cíl: Android 6.0 – rozhraní API úrovně 23
 -   ABI: x86
 
-Tato virtuální zařízení je například nakonfigurován emulovat Nexus 5:
+Tato virtuální zařízení je třeba nakonfigurovat pro emulaci Nexus 5:
 
-[![Konfigurace AVD pomocí zařízení Nexus 5, cílového Android 6.0 a Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
+[![Konfigurace AVD pomocí Nexus 5 zařízení s Androidem 6.0 cíl a Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
-Pokud používáte fyzické zařízení, jako je například Nexus 5, 6 nebo 9, můžete nainstalovat bitovou kopii preview systému Android Marshmallow. Další informace o aktualizaci vašeho zařízení na Android Marshmallow najdete v tématu [bitové kopie systému hardwaru](http://developer.android.com/preview/download.html#images).
+Pokud používáte fyzické zařízení, jako je například Nexus 5, 6 nebo 9, můžete nainstalovat image ve verzi preview nástroje Android Marshmallow. Další informace o aktualizaci zařízení s Androidem Marshmallow, naleznete v tématu [bitové kopie systému hardwaru](http://developer.android.com/preview/download.html#images).
 
 
 
 ## <a name="new-features"></a>Nové funkce
 
-Mnoho změn byla zavedená v systému Android Marshmallow jsou zaměřené na vylepšení zkušeností uživatelů zařízení s Androidem, zvýšení výkonu a opravě chyb. Marshmallow však zavedli taky některé rozsáhlé změny na základní informace o platformě Android. Následující části zvýrazněte tato vylepšení a obsahují odkazy na vám pomůže začít pomocí nové funkce systému Android Marshmallow ve vaší aplikaci. 
+Mnoho změny zavedené v Androidu Marshmallow se zaměřuje na zlepšení zkušeností uživatele Androidu, zvýšit výkon a opravu chyb. Marshmallow však také zavádí některé rozsáhlé změn se základními informacemi platformy Android. Následující části zvýrazněte tato vylepšení a poskytují odkazy vám pomůžou začít s použitím nové funkce s Androidem Marshmallow ve vaší aplikaci. 
 
 
 
-### <a name="runtime-permissions"></a>Modul runtime oprávnění
+### <a name="runtime-permissions"></a>Oprávnění modulu runtime
 
-V systému Android oprávnění je výrazně Optimalizovaná a zjednodušená od typu Android Lupa. V systému Android Marshmallow uživatelům udělit oprávnění na základě případ od případu za běhu, spíše než v době instalace. Pro podporu této funkce na Android Marshmallow nebo novější, navrhněte své aplikace a zobrazit výzvu uživateli pro oprávnění za běhu (v rámci kterých jsou potřeba oprávnění). Tato změna usnadňuje uživatelům začít používat aplikaci okamžitě, protože se zjednodušuje proces instalace a upgradu vaší aplikace. 
+V systému Android oprávnění byla výrazně Optimalizovaná a zjednodušená od Androidu Lollipop. V Androidu Marshmallow uživatelům udělit oprávnění pro případ od případu za běhu, spíše než v čas instalace. Pro podporu této funkce v Androidu Marshmallow nebo novější, navrhněte aplikaci tak, aby zobrazit výzvu uživateli pro oprávnění za běhu (v rámci které se vyžadují oprávnění). Tato změna usnadňuje uživatelům začít používat aplikace okamžitě, protože zjednodušuje proces instalace a upgrade vaší aplikace. 
 
-V tématu [požaduje oprávnění Runtime v systému Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) další podrobnosti (včetně příkladů kódu) o implementaci Runtime oprávnění v aplikacích pro Xamarin.Android.
-Xamarin také poskytuje ukázkové aplikace, která ukazuje, jak fungují runtime oprávnění v Android Marshmallow (nebo novější): [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
+Zobrazit [žádosti o oprávnění modulu Runtime v Androidu Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) další podrobnosti (včetně příkladů kódu) o implementaci oprávnění modulu Runtime v Xamarin.Android apps.
+Xamarin poskytuje také ukázkovou aplikaci, která ukazuje, jak fungují oprávnění modulu runtime v Androidu Marshmallow (a novější): [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
 
 Tato ukázková aplikace ukazuje následující:
 
--   Postup kontroly a žádosti o oprávnění za běhu.
+-   Návod k ověření a požádat o oprávnění v době běhu.
 -   Jak deklarovat oprávnění pro zařízení s Androidem M.
 
-Použití této ukázkové aplikace:
+Chcete-li použít tato ukázková aplikace:
 
-1.  Klepněte **fotoaparát** nebo **kontakty** tlačítka se zobrazí oprávnění vyžádat dialogové okno.
-2.  Udělit oprávnění k zobrazení fragmenty fotoaparátu nebo kontakty.
+1.  Klepněte **fotoaparát** nebo **kontakty** tlačítka pro zobrazení oprávnění vyžádat dialogového okna.
+2.  Udělit oprávnění k zobrazení fragmentů fotoaparát nebo kontakty.
 
-Další informace o nových funkcích oprávnění runtime v systému Android Marshmallow najdete v tématu [práce oprávnění systému](https://developer.android.com/preview/features/runtime-permissions.html).
+Další informace o nových funkcích oprávnění modulu runtime v Androidu Marshmallow najdete v tématu [práce s oprávněními systému](https://developer.android.com/preview/features/runtime-permissions.html).
 
 
 
 ### <a name="authentication-enhancements"></a>Vylepšení ověřování
 
-Android Marshmallow obsahuje dvě vylepšení ověřování, které pomáhají eliminují nutnost použití hesla:
+Android Marshmallow zahrnuje dvě vylepšení ověřování, které pomohou eliminovat potřebu hesla:
 
--   **Čtečka otisků ověřování** &ndash; kontrolu otisk prstu se používá k ověřování uživatelů.
+-   **Otisků prstů ověřování** &ndash; k ověřování uživatelů používá skenování otisků prstů.
 
--   **Potvrďte pověření** &ndash; ověřuje uživatele založené na tom, jak dlouho byl odemčen zařízení.
+-   **Zkontrolujte přihlašovací údaje** &ndash; ověřuje uživatele, založené na jak dlouho zařízení byl odemčen.
 
-Odkazy a ukázkových aplikací, které jsou popsána dále můžou pomoct se známé se tyto nové funkce.
+Odkazy a ukázkové aplikace popsané dále pomáhají známý se s těmito novými funkcemi.
 
 
-#### <a name="fingerprint-authentication"></a>Otisk prstu ověřování
+#### <a name="fingerprint-authentication"></a>Ověřování pomocí otisku prstu
 
-Na zařízení, která podporují otisk prstu skenování hardwaru, můžete použít nové `FingerPrintManager` třída k ověření uživatele.
-Další informace o funkci otisk prstu ověřování v systému Android Marshmallow najdete v tématu [otisk prstu ověřování](https://developer.android.com/preview/api-overview.html#fingerprint-authentication).
+Na zařízení, která podporují otisk prstu skenování hardwaru, můžete použít novou `FingerPrintManager` třídy k ověření uživatele.
+Další informace o funkci ověřování otiskem prstu v Androidu Marshmallow najdete v tématu [ověřování pomocí otisku prstu](https://developer.android.com/preview/api-overview.html#fingerprint-authentication).
 
-Xamarin obsahuje ukázkovou aplikaci, která ukazuje, jak používat registrované otisky prstů k ověření uživatele ve vaší aplikaci: [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
+Xamarin poskytuje ukázkovou aplikaci, která ukazuje, jak používat registrované otisky prstů k ověření uživatele ve vaší aplikaci: [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
 
-Použití této ukázkové aplikace:
+Chcete-li použít tato ukázková aplikace:
 
-1.  Touch **nákupu** tlačítko otevřete dialogové okno ověřování otisků prstů.
+1.  Touch **nákupní** tlačítka otevřete dialogové okno ověřování otiskem prstu.
 2.  Kontrola v registrovaných prstu k ověření.
 
-Všimněte si, že tato ukázková aplikace vyžaduje zařízení s čtečka otisků prstů.
-Tato aplikace nejsou uložené otisk prstu (nebo heslo).
+Všimněte si, že tato ukázková aplikace vyžaduje zařízení se čtečkou otisků prstů.
+Tato aplikace neukládá váš otisk prstu (nebo heslo).
 
 
 
 #### <a name="voice-interactions"></a>Hlasové interakce
 
-Funkci nové hlasové interakce byla zavedená v systému Android Marshmallow umožňuje uživatelům vaší aplikace slouží k potvrzení akce a vyberte ze seznamu možností hlasu. Další informace o interakcích hlasové najdete v tématu [přehled rozhraní API interakce hlasové](https://developers.google.com/voice-actions/interaction/). 
+Nové funkce hlasové interakce zavedené v Androidu Marshmallow umožňuje uživatelům vaší aplikace použití hlasu k potvrzení akce a vyberte ze seznamu možností. Další informace o hlasové interakce najdete v tématu [přehled rozhraní API hlasové interakce](https://developers.google.com/voice-actions/interaction/). 
 
-V tématu [přidat konverzace do vaší aplikace Android pomocí hlasového interakce](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/) další podrobnosti (včetně příkladů kódu) o implementaci interakcí hlasové v aplikacích pro Xamarin.Android.
-Ukázkové aplikace je k dispozici, ukazuje, jak používat rozhraní API interakce hlasové v aplikaci Xamarin.Android: [hlasové interakce](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
-
-
-
-#### <a name="confirm-credential"></a>Potvrďte přihlašovacích údajů
-
-Pomocí nové *potvrďte pověření* funkce systému Android Marshmallow, můžete uvolnit uživatelé nebudou muset mějte na paměti a zadejte specifické pro aplikace hesla tak, že je založena na jak dlouho byl odemčen jejich zařízení.
-K tomuto účelu můžete použít novou `SetUserAuthenticationValidityDurationSeconds` metodu `KeyGenerator`. Použití `KeyGuardManager`na `CreateConfirmDeviceCredentialIntent` metoda opakované ověření uživatele z vaší aplikace. Další informace o této nové funkce v systému Android Marshmallow najdete v tématu [potvrďte pověření](https://developer.android.com/preview/api-overview.html#confirm-credential).
-
-Xamarin obsahuje ukázkovou aplikaci, která ukazuje, jak používat přihlašovací údaje zařízení (například PIN kód, vzor nebo heslo) ve vaší aplikaci: [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
-
-Použití této ukázkové aplikace:
-
-1.  Nastavení zabezpečení zámek obrazovky na vašem zařízení (**zabezpečeného > zabezpečení > Screenlock**).
-2.  Klepněte **nákupu** tlačítko a potvrďte pověření zabezpečení zámku obrazovky.
+V tématu [konverzaci přidat do aplikace pro Android s hlasové interakce](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/) najdete další podrobnosti (včetně příkladů kódu) implementace hlasové interakce v Xamarin.Android apps.
+Ukázková aplikace je k dispozici, který ukazuje, jak použít rozhraní API hlasové interakce v aplikaci Xamarin.Android: [hlasové interakce](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
 
-### <a name="chrome-custom-tabs"></a>Vlastní karty Chrome
+#### <a name="confirm-credential"></a>Zkontrolujte přihlašovací údaje
 
-Vývojáři aplikací čelí vybrat, když uživatel klepne na adresu URL: aplikace můžete buď spustit prohlížeč, nebo použijte prohlížeče v aplikaci na základě `WebView`. Obě možnosti nést výzvy, &ndash; spuštění prohlížeče je těžká kontextu přepínač, který není přizpůsobitelné, při `WebView`s nesdílejí stavu pomocí prohlížeče. Navíc použití `WebView`s můžete přidat další údržby režii. 
+Pomocí nové *ověřte přihlašovací údaje* funkce systému Android Marshmallow můžete uvolnit uživatelé nebudou muset pamatovat si a zadání hesel konkrétní aplikace je založena na jak dlouho byl odemčen jejich zařízení prostřednictvím.
+K tomuto účelu můžete použít novou `SetUserAuthenticationValidityDurationSeconds` metodu `KeyGenerator`. Použití `KeyGuardManager`společnosti `CreateConfirmDeviceCredentialIntent` metoda opakované ověření uživatele z vaší aplikace. Další informace o této nové funkce v Androidu Marshmallow najdete v tématu [ověřte přihlašovací údaje](https://developer.android.com/preview/api-overview.html#confirm-credential).
 
-*Vlastní karty pro Chrome* umožňuje snadno a který elegantně zobrazit weby s výkonným Chrome bez nutnosti vaši uživatelé nechte vaší aplikace. Tato funkce poskytuje aplikace větší kontrolu nad uživatele webové prostředí; Ujistěte se přechodů mezi nativní a webový obsah plynulejší bez nutnosti uchýlit k `WebView`. Aplikace může ovlivnit také jak Chrome vypadá a funguje přizpůsobením následující: 
+Xamarin poskytuje ukázkovou aplikaci, která ukazuje, jak používat přihlašovací údaje zařízení (například kód PIN, vzor nebo heslo) ve vaší aplikaci: [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
 
--   Barva panelu nástrojů
+Chcete-li použít tato ukázková aplikace:
 
--   Zadejte a ukončení animace
+1.  Nastavení zabezpečené uzamčení obrazovky na zařízení (**Secure > zabezpečení > Screenlock**).
+2.  Klepněte **nákupní** tlačítko a ověřte přihlašovací údaje zabezpečení zámku obrazovky.
 
--   Vlastní akce v nabídce panelu nástrojů a přetečení Chrome
 
--   Před zahájení a obsahu před načtením (pro rychlejší načítání) pro Chrome
 
-Chcete-li tuto funkci využít v aplikaci Xamarin.Android, stáhněte a nainstalujte [karty knihovna pro Android podporu vlastní](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/).
+### <a name="chrome-custom-tabs"></a>Chrome vlastní karty
+
+Vývojáři aplikací pro rozpoznávání tváře zvolit po klepnutí adresu URL: aplikaci můžete spustit prohlížeč nebo pomocí prohlížeče v aplikaci na základě `WebView`. Obě možnosti nést výzvy &ndash; spouští se prohlížeč je těžké kontextu přepínač, který není přizpůsobitelný při `WebView`s nesdílejí stavu pomocí prohlížeče. Také můžete použít z `WebView`s můžete přidat další údržby režii. 
+
+*Chrome vlastní karty* umožňuje snadno a elegantně zobrazit webů s využitím výkonu Chrome bez nutnosti opustit aplikaci uživatelům. Tato funkce poskytuje aplikaci další kontrolu nad komfortem při uživatelské web; Zkontrolujte přechody mezi nativním a webový obsah bezproblémové bez nutnosti uchýlit se k `WebView`. Vaše aplikace může také ovlivnit, jak Chrome vypadá a funguje přizpůsobením následující: 
+
+-   Barva nástrojů
+
+-   Nastavení a ukončení animace
+
+-   Vlastní akce v nabídce nástrojů a přetečení Chrome
+
+-   Před spuštěním a obsahu před načtením (pro rychlejší načítání) pro Chrome
+
+Chcete-li využít výhod této funkce v aplikaci Xamarin.Android, stáhněte a nainstalujte [karty knihovna pro Android podporu vlastní](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/).
 Další informace o této funkci najdete v tématu [Chrome vlastní karty](https://developer.chrome.com/multidevice/android/customtabs).
 
 
 
-### <a name="material-design-support-library"></a>Knihovna podpory podstatným návrhu
+### <a name="material-design-support-library"></a>Knihovna podpory Material Design
 
-Android typu Lupa zavedená [materiálu návrhu](http://www.google.com/design/spec/material-design/introduction.html) jako o nový jazyk návrhu aktualizace prostředí Android (najdete v části [materiálu motiv](~/android/user-interface/material-theme.md) informace o používání podstatným návrhu v aplikacích pro Xamarin.Android). Pomocí Android Marshmallow Google zavedená *knihovnu podpory Android návrhu* aby bylo snazší pro aplikaci vývojáři přijmout materiálu návrh vzhledu a chování. Tato knihovna obsahuje následující součásti:
+Androidu Lollipop zavedené [Material Design](http://www.google.com/design/spec/material-design/introduction.html) jako nový jazyk návrhu aktualizovat prostředí Android (naleznete v tématu [motiv Material](~/android/user-interface/material-theme.md) informace o používání specifikacím material design v Xamarin.Android apps). S Androidem Marshmallow, Google zavedené *Android návrhu Support Library* aby bylo snazší pro aplikace aby museli vývojáři uplatňovat materiálu navrhnout vzhled a chování. Tato knihovna obsahuje následující součásti:
 
--   **CoordinatorLayout** &ndash; nové `CoordinatorLayout` pomůcky je podobná ale výkonnější než `FrameLayout`. Můžete použít `CoordinatorLayout` jako kontejner pro podřízené zobrazení, nebo jako nejvyšší úrovně rozložení a poskytuje `layout_anchor` atribut, který slouží k zobrazení ukotvení relativně k jiným zobrazením.
+-   **CoordinatorLayout** &ndash; nové `CoordinatorLayout` widgetu je podobný, ale výkonnější než `FrameLayout`. Můžete použít `CoordinatorLayout` jako kontejner pro podřízené zobrazení, nebo jako rozložení nejvyšší úrovně a poskytuje `layout_anchor` atribut, který slouží k zobrazení ukotvení vzhledem k dalším zobrazením.
 
--   **Sbalení panely nástrojů** &ndash; nové `CollapsingToolbarLayout` je ztenčeného panel aplikace, který představuje obálku pro `Toolbar`. (Všimněte si, že *indikátor aplikace* je, co byl dříve označované jako *panelu akcí*.)
+-   **Sbalování panelů nástrojů** &ndash; nové `CollapsingToolbarLayout` je sbalení panelu aplikace, který tvoří obálku pro `Toolbar`. (Všimněte si, že *panel aplikace* je, co bylo dříve označované jako *panel akcí*.)
 
--   **Plovoucí tlačítko akce** &ndash; zaokrouhlí tlačítko, které označuje primární akce na rozhraní vaší aplikace.
+-   **Plovoucí tlačítko akce** &ndash; kulaté tlačítko, která označuje primární akce na rozhraní vaší aplikace.
 
--   **Plovoucí popisky pro úpravy textu** &ndash; používá nový `TextInputLayout` pomůcky (která zabalí `EditText`) zobrazíte plovoucí štítek při nápovědu je skrytý, pokud uživatel zadá text.
+-   **Číslo s plovoucí čárkou popisky pro úpravy textu** &ndash; používá nový `TextInputLayout` widgetu (která zabalí `EditText`) zobrazíte popisek s plovoucí desetinnou čárkou, když pomocného parametru je skrytý, pokud uživatel zadá text.
 
--   **Zobrazení navigace** &ndash; nové `NavigationView` pomůcky vám pomůže používat panel navigační způsobem, který usnadňuje navigace.
+-   **Zobrazení navigace** &ndash; nové `NavigationView` widgetu vám pomůže používat navigační panel tak, aby je uživatelé přejít.
 
--   **Snackbar** &ndash; nové `SnackBar` je widget (podobně jako oznámení) lightweight zpětnou vazbu mechanismus, který zobrazí krátkou zprávu v dolní části obrazovky, zobrazování nad všemi další prvky na obrazovce.
+-   **Snackbar** &ndash; nové `SnackBar` je widget (podobně jako oznámení) lehký zpětnou vazbu mechanismus, který zobrazí zprávu (BRIEF) v dolní části obrazovky, povolí nad všemi dalšími prvky na obrazovce.
 
--   **Podstatným karty** &ndash; nové `TabLayout` pomůcky poskytuje vodorovném rozložení pro zobrazení karet jako způsob, jak implementovat navigaci na nejvyšší úrovně ve vaší aplikaci.
+-   **Materiál karty** &ndash; nové `TabLayout` pomůcky máte k dispozici vodorovné rozložení pro zobrazení tabulek jako způsob, jak implementovat navigace nejvyšší úrovně ve vaší aplikaci.
 
-Chcete využít výhod [knihovna podpory návrhu](http://developer.android.com/tools/support-library/features.html#design) v aplikaci Xamarin.Android stáhnout a nainstalovat Xamarin [Xamarin podpory knihovny návrhu](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) balíček NuGet.
+Abyste mohli využívat [návrhu Support Library](http://developer.android.com/tools/support-library/features.html#design) v aplikaci Xamarin.Android, stáhněte a nainstalujte Xamarin [Xamarin podporu knihovny návrhu](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) balíček NuGet.
 
-V tématu [Krásný materiálu návrh s knihovnou Android návrhu podporu](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) další podrobnosti (včetně příkladů kódu) o použití knihovny materiálu návrhu podpory v aplikacích pro Xamarin.Android.
-Xamarin obsahuje ukázkovou aplikaci, která demos nové knihovny návrh Androidu na Xamarin.Android &ndash; [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
-Tento příklad znázorňuje následující funkce sady knihovně návrhu:
+Zobrazit [krásné Material Design s knihovnou Android podporu návrhu](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) další podrobnosti (včetně příkladů kódu), o použití knihovny podporu návrhu materiál do aplikace Xamarin.Android.
+Xamarin poskytuje ukázkovou aplikaci, která demos nový návrh Androidu knihovny v Xamarin.Android &ndash; [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
+Tato ukázka demonstruje následující funkce knihovny návrhu:
 
 
 -   Sbalení panelu nástrojů
@@ -260,29 +260,29 @@ Tento příklad znázorňuje následující funkce sady knihovně návrhu:
 -   NavigationView
 -   Snackbar
 
-Další informace o knihovně návrhu najdete v tématu [knihovnu podpory Android návrhu](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) v blogu Android Developer.
+Další informace o knihovně návrhu, naleznete v tématu [Android návrhu Support Library](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) v blogu Android Developer.
 
 
 ### <a name="additional-library-updates"></a>Další knihovny aktualizace
 
-Kromě Android Marshmallow oznámila Google související aktualizace pro několik základní knihovny systému Android. Xamarin poskytuje Xamarin.Android podporu pro tyto aktualizace prostřednictvím několik balíčků NuGet verzi preview: 
+Kromě s Androidem Marshmallow Google oznámilo související aktualizace na několik jader s Androidem knihovny. Xamarin poskytuje podporu Xamarin.Android pro tyto aktualizace přes několik balíčků NuGet verzi preview: 
 
--   [Služby Google Play](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; nejnovější verze služby Google Play zahrnuje nové *žádostí aplikace* funkci, která umožňuje uživatelům sdílet své aplikace s přátel. Další informace o této funkci najdete v tématu [Reach rozšířit vaše aplikace s žádostí aplikace Google](http://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
+-   [Služby Google Play](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; nejnovější verzi služby Google Play obsahuje novou *aplikace vyzve* funkci, která umožňuje uživatelům sdílet své aplikace s přáteli. Další informace o této funkci najdete v tématu [záběr rozbalte vaší aplikace Google aplikace vyzve](http://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
 
--   [Android podpory knihovny](https://www.nuget.org/packages?q=xamarin+support+library) &ndash; tyto NuGets nabízejí funkce, které jsou dostupné jenom pro knihovnu rozhraní API při současném poskytování zpětně kompatibilní verze rozhraní Android API. 
+-   [Podpůrné knihovny pro Android](https://www.nuget.org/packages?q=xamarin+support+library) &ndash; funkce, které jsou k dispozici pouze pro knihovny rozhraní API poskytuje zpětně kompatibilní verze rozhraní Android API nabízejí tyto balíčky Nuget. 
 
--   [Knihovna pro Android Wearable](https://www.nuget.org/packages/Xamarin.Android.Wear) &ndash; tento NuGet zahrnuje vazby služby Google Play. Nejnovější verzi wearable knihovny přináší nové funkce (včetně usnadnil navigaci pro vlastní aplikace) pro platformu Android nosit. 
+-   [Knihovna pro Android přenosném](https://www.nuget.org/packages/Xamarin.Android.Wear) &ndash; tento NuGet zahrnuje vazby služby Google Play. Nejnovější verzi knihovny přenosném přináší nové funkce (včetně zjednodušují navigaci pro vlastní aplikace) pro platformu Android Wear. 
 
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zavedená Android Marshmallow a vysvětlení, jak nainstalovat a nakonfigurovat na Marshmallow nejnovější nástroje a balíčky pro vývoj pro Xamarin.Android. Tu taky přehled nejvíce skvělé nové funkce systému Android Marshmallow pro vývoj pro Xamarin.Android.
+Tento článek zavedená s Androidem Marshmallow a bylo vysvětleno, jak nainstalovat a nakonfigurovat na Marshmallow nejnovější nástroje a balíčky pro vývoj pro Xamarin.Android. Poskytuje také přehled o nejvíce skvělým novým funkcím Android Marshmallow pro vývoj pro Xamarin.Android.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Android 6.0 Marshmallow](http://developer.android.com/about/versions/marshmallow/index.html)
-- [Získání sady SDK pro Android](https://developer.android.com/sdk/index.html#Other)
+- [Získání sady Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [Přehled funkcí](https://developer.android.com/preview/api-overview.html)
 - [Zpráva k vydání verze](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1.99/)
 - [RuntimePermissions (ukázka)](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)
