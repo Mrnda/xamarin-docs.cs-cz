@@ -1,164 +1,164 @@
 ---
-title: Práce s seznamů vlastností v Xamarin.iOS
-description: Toto téma představuje Visual Studio pro Mac na grafickém uživatelském rozhraní nebo rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a Entitlements.plist. Ilustruje ikony nastavení a spuštění bitové kopie pro aplikace pro iOS z v sadě Visual Studio for Mac.
+title: Práce s seznamů vlastností v Xamarin.iosu
+description: Toto téma představuje sady Visual Studio pro Mac grafické a rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a do souboru Entitlements.plist. Ukazuje nastavení ikon a spouštěcí obrázky pro aplikace pro iOS v rámci sady Visual Studio for Mac
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 6b22acab3fb19a6209fac8dcf6a0870763e601d2
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b102f268fd457ca42f3d64b5766a2b3824e3849d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784465"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242326"
 ---
-# <a name="working-with-property-lists-in-xamarinios"></a>Práce s seznamů vlastností v Xamarin.iOS
+# <a name="working-with-property-lists-in-xamarinios"></a>Práce s seznamů vlastností v Xamarin.iosu
 
-_Toto téma představuje Visual Studio pro Mac na grafickém uživatelském rozhraní nebo rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a Entitlements.plist. Ilustruje ikony nastavení a spuštění bitové kopie pro aplikace pro iOS z v sadě Visual Studio for Mac._
+_Toto téma představuje sady Visual Studio pro Mac grafické a rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a do souboru Entitlements.plist. Ukazuje nastavení ikon a spouštěcí obrázky pro aplikace pro iOS v rámci sady Visual Studio for Mac_
 
-Visual Studio pro Mac funkce editor grafické .plist, který umožňuje úpravy vlastností aplikace a možnosti jednodušší. Visual Studio pro Mac má dva .plists - `Info.plist` pro úpravy vlastností aplikace a ikony, a `Entitlements.plist` pro správu možnosti aplikace. Tento průvodce uvádí Info.plists a poskytuje přehled o práci s nimi v sadě Visual Studio for Mac. Informace o Entitlements.plist najdete v tématu [práce oprávnění](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
+Visual Studio for Mac obsahuje editor grafické .plist, který umožňuje úpravy vlastností aplikace a jednodušší možnosti. Visual Studio for Mac obsahuje dvě .plists - `Info.plist` pro úpravy vlastností aplikace a ikony, a `Entitlements.plist` pro správu aplikace funkcí. Tento průvodce přináší Info.plists a poskytuje přehled o práci s nimi v sadě Visual Studio pro Mac. Informace o do souboru Entitlements.plist, najdete v článku [práce s nároky](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
 
 ## <a name="infoplist"></a>Info.plist
 
-Seznam vlastností informace ( `Info.plist`) je soubor vyžaduje iOS, která poskytuje informace o konfiguraci vaší aplikace do systému. Visual Studio pro Mac je vlastní `Info.plist` editor funkce zbývající tři panely řízené karty v dolní části okna editoru:
+Informace o seznamu vlastností ( `Info.plist`) je povinný iOS soubor, který poskytuje informace o konfiguraci vaší aplikace do systému. V sadě Visual Studio for Mac vlastní `Info.plist` funkce editoru zbývající tři panely řídí karty v dolní části okna editoru:
 
- [![](property-lists-images/tabs.png "Zbývající karty editor Info.plist v dolní části okna editoru")](property-lists-images/tabs.png#lightbox)
+ [![](property-lists-images/tabs.png "Zbývající karty editoru Info.plist v dolní části okna editoru")](property-lists-images/tabs.png#lightbox)
 
-Jednotlivé panely prvky různé vlastnosti, jak je uvedeno níže:
+Každý panel – ovládací prvky různé vlastnosti, jak je uvedeno níže:
 
--  **Panel aplikace** -grafické rozhraní pro nastavení vlastnosti aplikace a také ikony a spuštění bitové kopie; zadejte integrace mapy a backgrounding režimy.
--  **Rozšířené panely** -pokročilé panel je na místě k určení typů podporovaných dokumentů, UTIs a typy adresy URL.
--  **Zdroj panely** – ovládací prvky panelu zdroj méně běžné vlastnosti, jakož i vlastní vlastnosti pro aplikaci.
+-  **Panel aplikace** – grafické rozhraní pro nastavení vlastností aplikace stejně jako ikony a spouštěcí Image; zadejte integrace s mapami a zpracování úloh na pozadí režimy.
+-  **Pokročilé Panel** – pokročilé panel je místem, kde můžete určit typy podporovaných dokumentů, identifikátory Uti a typy adres URL.
+-  **Panel zdroje** – ovládací prvky panelu zdroj, méně běžné vlastnosti, jakož i vlastní vlastnosti aplikace.
 
 
 V následujících třech částech prozkoumat funkce jednotlivé panely podrobněji.
 
 ## <a name="application-panel"></a>Panel aplikace
 
-Visual Studio pro Mac funkce grafické rozhraní pro úpravy běžné `Info.plist` položek pro aplikaci:
+Visual Studio pro Mac nabízí grafické rozhraní pro úpravy common `Info.plist` záznamy aplikace:
 
 1.  Vlastnosti aplikace
 1.  Typy podporovaných zařízení
 1.  Orientace podporu pro každý typ zařízení
-1.  Stavový řádek stylu a barvy
-1.  Ikony a spuštění obrazovky
-1.  Mapy a režimy pozadí
+1.  Stavový řádek styl a barvy
+1.  Ikony a úvodní obrazovky
+1.  Mapy a režimy běhu na pozadí
 
 
-Tyto možnosti jsou popsány podrobněji v dalších částech.
+Tyto možnosti jsou popsány podrobněji v následujících částech.
 
  <a name="iOS_Application_Target" />
 
 
-### <a name="ios-application-target"></a>iOS cílové aplikace
+### <a name="ios-application-target"></a>Cíl aplikace pro iOS
 
 Tato část obsahuje důležité informace, které popisují vaše aplikace.
-**Identifikátor** uložené v tomto poli musí odpovídat identifikátor svazku, který jste zadali v iTunes Connect (aplikace pro aplikace pro Store) a taky v seznamu zřizování ID aplikace portálu iOS a vývoj a distribuci certifikátů.
+**Identifikátor** uložené zde musí odpovídat identifikátoru sady prostředků, která je zadána ve službě iTunes Connect (pro aplikace pro Store App) a taky na seznam iOS zřizování ID aplikace portálu a vývoje a distribuce certifikátů.
 
- [![](property-lists-images/image24.png "iOS cílové aplikace")](property-lists-images/image24.png#lightbox)
+ [![](property-lists-images/image24.png "Cíl aplikace pro iOS")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Nasazení zařízení
 
  [![](property-lists-images/deployment.png "Nasazení zařízení")](property-lists-images/deployment.png#lightbox)
 
-Zařízení **nasazení** informace o části se zobrazí selektivně, v závislosti na výběru v **zařízení** rozevírací seznam v **cíl aplikací** část výše. **Hlavní rozhraní** rozevíracího seznamu je nastaven na **MainStoryboard** v řízené Storyboard aplikace. Pokud uživatelské rozhraní je zcela napsán v kódu, a to může být ponecháno prázdné.
+Zařízení **nasazení** informace o oddílech se zobrazují jednotlivě, v závislosti na výběru v **zařízení** rozevírací seznam v **cíl aplikace** výše uvedené části. **Hlavní rozhraní** rozevíracího seznamu je nastavena na **MainStoryboard** aplikace řízené scénáře. Pokud uživatelské rozhraní je zcela napsané v kódu, a to může být ponecháno prázdné.
 
-### <a name="supported-device-orientations"></a>Orientace zařízení
+### <a name="supported-device-orientations"></a>Podporované orientace zařízení
 
- **Podporované orientace zařízení** řídí, jak aplikaci reagovat na otočení zařízení. Je velmi běžné pro iPhone nebo iPad aplikace pro podporu pouze **na výšku**, nebo všechno, ale **opačně**. Všechny aplikace na zařízení iPad s výjimkou hry obecně by měly podporovat všechny orientace.
+ **Podporované orientace zařízení** řídí způsob reakce aplikace na otočení obrazovky. Je velmi běžné, že aplikace pro iPhone/iPad pro podporu pouze **na výšku**, nebo všechno, ale **vzhůru nohama**. Všechny aplikace pro iPad s výjimkou hry obecně by měl podporovat všechny orientace.
 
 ### <a name="status-bar-styles"></a>Styly stavového řádku
 
-**Stav panelu Styly** část se grafické rozhraní pro úpravy aplikace `UIStatusBarStyle`:
+**Styly řádku stav** grafické rozhraní pro úpravy aplikace je oddíl `UIStatusBarStyle`:
 
  [![](property-lists-images/status.png "Styly stavového řádku")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
 
-### <a name="icons-launch-images-and-itunes-artwork"></a>Ikony, spusťte Image a iTunes kresby
+### <a name="icons-launch-images-and-itunes-artwork"></a>Ikony, obrázky po spuštění a obrázky pro iTunes
 
-Informace o používání ikony, Image a kresby v souboru Info.plist najdete v [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) průvodce.
-
-
+Informace o použití ikony, obrázky a obrázky v souboru Info.plist najdete v [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) průvodce.
 
 
-### <a name="maps-integration-and-background-modes"></a>Integrace mapy a režimy pozadí
 
-`Info.plist` Obsahuje speciální části k určení integrace mapy a backgrounding režimy. Výběr možností, které chcete podporovat přidá požadované vlastnosti pro aplikaci za vás.
 
- [![](property-lists-images/maps.png "Integrace mapy")](property-lists-images/maps.png#lightbox)
+### <a name="maps-integration-and-background-modes"></a>Integrace s mapami a režimy běhu na pozadí
 
-Další informace o práci s mapy, najdete v části Xamarin [iOS mapy](~/ios/user-interface/controls/ios-maps/index.md) průvodce.
+`Info.plist` Obsahuje speciální části k určení integrace s mapami a zpracování úloh na pozadí režimy. Výběr možnosti, které chcete podporovat přidá požadované vlastnosti pro aplikaci za vás.
+
+ [![](property-lists-images/maps.png "Integrace s mapami")](property-lists-images/maps.png#lightbox)
+
+Další informace o práci s mapami najdete Xamarin [iOS mapy](~/ios/user-interface/controls/ios-maps/index.md) průvodce.
 
  [![](property-lists-images/bging.png "Režimy pozadí")](property-lists-images/bging.png#lightbox)
 
-Další informace o režimy pozadí, najdete v části Xamarin [Backgrounding v iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) průvodce.
+Další informace o režimy běhu na pozadí, přečtěte si Xamarin [zpracování úloh na pozadí v Iosu](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) průvodce.
 
-## <a name="advanced-panel"></a>Pokročilé panely
+## <a name="advanced-panel"></a>Pokročilé Panel
 
-Ovládací prvky panelu Další typů dokumentů a schémata URL, které podporuje aplikace.
+Panelu pokročilé ovládací prvky, typy dokumentů a schémata URL, které aplikace podporuje.
 
- [![](property-lists-images/image34.png "Pokročilé panely")](property-lists-images/image34.png#lightbox)
+ [![](property-lists-images/image34.png "Pokročilé Panel")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
 
-## <a name="document-types"></a>Typů dokumentů.
+## <a name="document-types"></a>Typy dokumentů
 
-Pro aplikace, které podporují otevírání konkrétní typy souborů, poskytuje iOS `CFBundleDocumentTypes` klíč. Pokud chceme, aby naše aplikace pro podporu určitých typů souborů známých – například soubory PDF - doporučujeme přidat hodnotu PDF ke klíči. Tato část nabízí pohodlný způsob, jak zadejte data, která bude uložená v `CFBundleDocumentTypes` klíče v `Info.plist` souboru.
+Pro aplikace, které podporují otevření konkrétní typy souborů poskytuje iOS `CFBundleDocumentTypes` klíč. Pokud chceme, aby naše aplikace pro podporu určitých souborů známých typů – například soubory PDF – doporučujeme přidat hodnotu PDF ke klíči. Tato část poskytuje pohodlný způsob, jak zadat data ukládaná ve službě `CFBundleDocumentTypes` klíče v `Info.plist` souboru.
 
-Informace naleznete v dokumentaci na [registrace podporuje vaše aplikace soubor typy](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) podrobnosti o tom, jak nakonfigurovat tyto hodnoty.
+Další informace naleznete v dokumentaci v [registraci souboru typy vaše aplikace podporuje](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html) podrobnosti o tom, jak nakonfigurovat tyto hodnoty.
 
-## <a name="utis"></a>UTIs
+## <a name="utis"></a>Identifikátory Uti
 
-V některých případech aplikace musí podporovat otevírání vlastní typ souboru. Například může chceme otevřít soubory obrázků s příponou vlastní *.xam*. Pokud chcete zadat vlastní typ souboru, vytvoříme vlastní UTI - univerzální typ identifikátor - pomocí `UIExportedTypeDeclarations` klíč. Následující snímek obrazovky ukazuje, jak vytvořit vlastní UTI .xam rozšíření:
+Někdy aplikace musí podporovat otevřením souboru vlastního typu. Například může chceme k otevírání souborů obrázků s vlastní příponou *.xam*. Chcete-li určit vlastní typ souboru, vytvoříme vlastní identifikátor UTI – univerzální identifikátor typu – použití `UIExportedTypeDeclarations` klíč. Následující snímek obrazovky ukazuje, jak vytvořit vlastní identifikátor UTI .xam rozšíření:
 
- [![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png#lightbox)
+ [![](property-lists-images/uti.png "Editor identifikátory Uti")](property-lists-images/uti.png#lightbox)
 
-Stejně jako exportovaný typ UTIs zadejte vlastní UTIs specifické pro vaši aplikaci *importovat typ UTIs* ( `UIImportedTypeDeclarations` klíč) zadejte vlastní typy podporuje, ale není vlastníkem vaší aplikace.
+Stejně jako exportované identifikátory Uti typů zadejte vlastní identifikátory Uti specifické pro vaši aplikaci *importovat identifikátory Uti typů* ( `UIImportedTypeDeclarations` klíče) zadejte vlastní typy podporované, ale není vlastněn vaší aplikace.
 
-Další informace o používání vlastní UTIs, najdete v části společnosti Apple [podporuje aplikace registrace souboru typy vaše](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) průvodce.
+Další informace o používání vlastní identifikátory Uti najdete společnosti Apple [registraci souboru typy vaše aplikace podporuje](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1) průvodce.
 
 ## <a name="custom-urls"></a>Vlastní adresy URL
 
-Název schématu adresy URL (také nazývané protocol) je první část adresy URL. Například `http://` a `https://` jsou společných schémat URL. Máte možnost vytvořit vlastní schéma adresy URL pro aplikaci. Vlastní schémata URL se používají ke komunikaci a odesílat data a zpět s jinými aplikacemi. Následující snímek obrazovky ukazuje vytvoření nové vlastní schéma adresy URL názvem `monkeys://`:
+Název schématu adresy URL (také nazývané protocol) je první část adresy URL. Například `http://` a `https://` jsou společných schémat URL. Máte možnost vytvořit vlastní schéma adresy URL pro vaši aplikaci. Vlastní schémata adres URL se používají ke komunikaci a odesílat data vpřed a zpět s jinými aplikacemi. Následující snímek obrazovky ukazuje vytvoření nové vlastní schéma adresy URL názvem `monkeys://`:
 
  [![](property-lists-images/url.png "Vlastní adresy URL")](property-lists-images/url.png#lightbox)
 
 
 
-Další informace o implementaci vlastní schémata URL, najdete v části společnosti Apple [implementace vlastní schémata URL části této příručky](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+Další informace o implementaci vlastní schémata URL, najdete v od Applu [implementace vlastní schémata URL části této příručky](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 
-## <a name="source-panel"></a>Panel Zdroj
+## <a name="source-panel"></a>Panel zdroje
 
-**Zdroj** kartě `Info.plist` souboru umožňuje vlastní hodnoty a přidal nebo upravil. Visual Studio pro Mac obsahuje seznam nejčastějších vlastnosti:
+**Zdroj** karty `Info.plist` soubor umožňuje vlastní hodnoty a přidávat ani upravovat. Visual Studio for Mac obsahuje seznam nejběžnějších vlastnosti:
 
- [![](property-lists-images/image31.png "Přidání nové vlastnosti z rozevírací seznam")](property-lists-images/image31.png#lightbox)
+ [![](property-lists-images/image31.png "Přidání nové vlastnosti z rozevíracího seznamu")](property-lists-images/image31.png#lightbox)
 
-Pro známé vlastnosti Visual Studio pro Mac se seznam platných hodnot, které jsou popsány v následující snímek obrazovky:
+Pro známé vlastnosti sady Visual Studio pro Mac bude seznam platných hodnot, jak je znázorněno v následujícím snímku obrazovky:
 
- [![](property-lists-images/image32.png "Vyberte hodnotu ze seznamu hodnot přehled")](property-lists-images/image32.png#lightbox)
+ [![](property-lists-images/image32.png "Vyberte hodnotu ze seznamu hodnot ví")](property-lists-images/image32.png#lightbox)
 
-Visual Studio pro Mac také detekuje vlastnost typu, jak je znázorněno:
+Visual Studio pro Mac také detekuje tento typ vlastnosti, jak je znázorněno:
 
  [![](property-lists-images/image33.png "Dostupné typy vlastností")](property-lists-images/image33.png#lightbox)
 
-Zkontrolujte společnosti Apple [související prostředky aplikace](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) odkazy na další informace o volitelných vlastností.
+Projděte si společnosti Apple [související prostředky aplikace](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) odkazy na další informace o volitelných vlastností.
 
  <a name="Entitlements" />
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal pomocí grafického rozhraní a pokročilých .plist editory upravit také obvyklé konfigurace aplikace, zadejte ikony a spuštění bitové kopie. Je také zavedená `Entitlements.plist` pro přidávání a správa možnosti aplikace.
+V tomto článku jsme vám ukázali, pomocí grafických pokročilé i pokročilé .plist editory upravit také obvyklé konfigurace aplikace zadejte ikony a spouštěcí obrázky. Je také představila `Entitlements.plist` pro přidávání a Správa aplikace funkcí.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [IDE](https://developer.xamarin.com/recipes/cross-platform/ide)
-- [Aplikace související prostředky](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [Vaše aplikace podporuje registraci soubor typy.](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [INTEGROVANÉ VÝVOJOVÉ PROSTŘEDÍ](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
+- [Prostředky související s aplikacemi](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
+- [Vaše aplikace podporuje registraci souboru typy.](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
 - [Použití vlastní adresu URL schémat](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
-- [O Asset katalogů](https://developer.apple.com/library/ioshttps://developer.xamarin.com/recipes/xcode_help-image_catalog-1.0/Recipe.html)
+- [Odkaz na prostředek katalogu formát](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)
