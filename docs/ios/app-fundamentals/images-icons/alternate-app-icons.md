@@ -1,75 +1,75 @@
 ---
-title: Alternativní aplikace ikony v Xamarin.iOS
-description: Tento dokument popisuje, jak používat alternativní aplikace ikony v Xamarin.iOS. Popisuje, jak přidat do projektu Xamarin.iOS tyto ikony, jak upravit soubor Info.plist a jak spravovat ikona aplikace prostřednictvím kódu programu.
+title: Alternativní ikony aplikace v Xamarin.iosu
+description: Tento dokument popisuje způsob použití alternativní ikony aplikace v Xamarin.iOS. Popisuje, jak do projektu Xamarin.iOS přidejte tyto ikony, jak upravit soubor Info.plist a jak prostřednictvím kódu programu spravovat ikona aplikace.
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 1d37a29982454367c35bfdfad205abce0eb025af
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3f009d84d1d38c379f65de52949c66f3e86fc654
+ms.sourcegitcommit: ffb0f3dbf77b5f244b195618316bbd8964541e42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784107"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39275986"
 ---
-# <a name="alternate-app-icons-in-xamarinios"></a>Alternativní aplikace ikony v Xamarin.iOS
+# <a name="alternate-app-icons-in-xamarinios"></a>Alternativní ikony aplikace v Xamarin.iosu
 
-_Tento článek popisuje použití alternativní aplikace ikony v Xamarin.iOS._
+_Tento článek popisuje použití alternativní ikony aplikace v Xamarin.iOS._
 
-Apple přidala do systému iOS 10.3, které umožní aplikaci ke správě jeho ikonu několik vylepšení:
+Apple přidal do zařízení iOS 10.3, díky kterým můžou aplikace pro správu jeho ikonu několik vylepšení:
 
- - `ApplicationIconBadgeNumber` -Získá nebo nastaví oznámení "BADGE" ikony aplikace v můstek.
- - `SupportsAlternateIcons` -Pokud `true` má alternativní sadu ikony aplikace.
- - `AlternateIconName` -Vrátí název ikonu alternativní aktuálně vybrané nebo `null` při použití ikonu primární.
- - `SetAlternameIconName` -Použijte tuto metodu přepnout na ikonu dané alternativní ikona aplikace.
+ - `ApplicationIconBadgeNumber` -Získá nebo nastaví v můstek Odznáček ikony aplikace.
+ - `SupportsAlternateIcons` -Pokud `true` má alternativní sadu ikon aplikace.
+ - `AlternateIconName` -Vrátí název alternativní aktuálně vybraná ikona nebo `null` používáte-li primární ikonu.
+ - `SetAlternameIconName` – Pomocí této metody můžete přepnout na daný alternativní ikoně ikona aplikace.
 
-![](alternate-app-icons-images/icons04.png "Ukázkové výstrahu, když se změní jeho ikona aplikace")
+![](alternate-app-icons-images/icons04.png "Ukázkové upozornění, když aplikace změní jeho ikonu")
 
 <a name="Adding-Alternate-Icons" />
 
-## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Přidávání ikon alternativní do projektu Xamarin.iOS
+## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Přidání alternativní ikony do projektu Xamarin.iOS
 
-Povolit aplikaci přejdete do alternativní ikonu, kolekci obrázků, ikona muset být zahrnutý v projektu aplikace Xamarin.iOS. Tyto bitové kopie nelze přidat do projektu pomocí typické `Assets.xcassets` metodu, musí se přidat do **prostředky** složky přímo.
+Umožňuje přepnout do alternativní ikony aplikace kolekce obrázky ikon muset být zahrnutý v projektu aplikace Xamarin.iOS. Tyto Image nelze přidat do projektu pomocí typické `Assets.xcassets` metodu, musí se přidat do **prostředky** složku přímo.
 
-Postupujte takto:
+Postupujte následovně:
 
-1. Vyberte požadované ikonu bitové kopie do složky, vyberte všechny a přetáhněte je do **prostředky** složky v **Průzkumníku řešení**:
+1. Vyberte požadované ikonu bitové kopie do složky, vyberte všechny a přetáhněte je do **prostředky** složky **Průzkumníka řešení**:
 
-    ![](alternate-app-icons-images/icons00.png "Vyberte ikony bitové kopie ze složky")
+    ![](alternate-app-icons-images/icons00.png "Vyberte Image ikony ze složky")
 
-2. Po zobrazení výzvy vyberte **kopie**, **použít stejnou akci pro všechny vybrané soubory** a klikněte na tlačítko **OK** tlačítko:
+2. Po zobrazení výzvy vyberte **kopírování**, **použít stejnou akci pro všechny vybrané soubory** a klikněte na tlačítko **OK** tlačítka:
 
-    ![](alternate-app-icons-images/icons02.png "Přidejte soubor do složky dialogového okna")
+    ![](alternate-app-icons-images/icons02.png "Přidat soubor do složky dialogového okna")
 
-3. **Prostředky** složku by měl vypadat jako následující po dokončení:
+3. **Prostředky** složky by měl vypadat jako následující po dokončení:
 
-    ![](alternate-app-icons-images/icons01.png "Složky zdrojů by měl vypadat takto")
+    ![](alternate-app-icons-images/icons01.png "Složka prostředků by měl vypadat přibližně takto")
 
 <a name="Modifying-the-Info.plist-File" />
 
 ## <a name="modifying-the-infoplist-file"></a>Úprava souboru Info.plist
 
-S požadované obrázky přidat do **prostředky** složku, [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) klíč bude třeba přidat do projektu **Info.plist** souboru. Tento klíč se definuje název na ikonu Nový a bitové kopie, které ji tvoří.
+S požadované Image přidat do **prostředky** složku, [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) klíč bude muset přidat do projektu **Info.plist** souboru. Tento klíč se definuje název na ikonu Nový a obrázků, které tvoří ji.
 
-Postupujte takto:
+Postupujte následovně:
 
-1. V **Průzkumníku řešení**, dvakrát klikněte **Info.plist** soubor otevřete pro úpravy.
-2. Přepnout **zdroj** zobrazení.
-3. Přidat **sady ikony** klíče a nechat **typ** nastavena na **slovník**.
-4. Přidat `CFBundleAlternateIcons` klíče a nastavte **typ** k **slovník**.
-5. Přidat `AppIcons2` klíče a nastavte **typ** k **slovník**. To bude název nové sady ikonu alternativní aplikaci.
+1. V **Průzkumníka řešení**, dvakrát klikněte **Info.plist** jej otevřete pro úpravy.
+2. Přepněte **zdroj** zobrazení.
+3. Přidat **sadu ikon** klíče a nechte **typ** nastavena na **slovníku**.
+4. Přidat `CFBundleAlternateIcons` klíče a nastavte **typ** k **slovníku**.
+5. Přidat `AppIcon2` klíče a nastavte **typ** k **slovníku**. To bude název nové sady ikonu alternativní aplikaci.
 6. Přidat `CFBundleIconFiles` klíče a nastavte **typ** k **pole**
-7. Přidat nový řetězec k `CFBundleIconFiles` pole pro každý soubor ikony vynechala rozšíření a `@2x`, `@3x`, přípony atd. (příklad `100_icon`). Tento krok opakujte pro každý soubor, který tvoří sada alternativní ikonu.
-8. Přidat `UIPrerenderedIcon` klíče k `AppIcons2` nastavit slovník **typ** k **Boolean** a hodnota, která má **ne**.
+7. Přidat nový řetězec k `CFBundleIconFiles` pole pro každý soubor ikony vynecháním rozšíření a `@2x`, `@3x`, přípony atd. (příklad `100_icon`). Tento krok opakujte pro každý soubor, který tvoří sada alternativní ikoně.
+8. Přidat `UIPrerenderedIcon` klíč `AppIcon2` slovníku, nastavte **typ** k **logická** a hodnota, která má **č**.
 9. Uložte změny do souboru.
 
 Výsledná **Info.plist** soubor by měl vypadat jako následující po dokončení:
 
-![](alternate-app-icons-images/icons03.png "Dokončené souboru Info.plist")
+![](alternate-app-icons-images/icons03.png "Hotový soubor Info.plist")
 
-Nebo podobně jako tento Pokud otevřít v textovém editoru:
+Nebo třeba pokud otevřít v textovém editoru:
 
 ```xml
 <key>CFBundleIcons</key>
@@ -109,9 +109,9 @@ Nebo podobně jako tento Pokud otevřít v textovém editoru:
 
 ## <a name="managing-the-apps-icon"></a>Správa ikona aplikace 
 
-S obrázky ikonu zahrnutý v projektu Xamarin.iOS a **Info.plist** soubor správně nakonfigurovaný, vývojář může použít jeden z mnoha nových funkcí, které jsou přidány do systému iOS 10.3 k řízení ikona aplikace.
+S obrázky ikon, které jsou součástí projektu Xamarin.iOS a **Info.plist** soubor správně nakonfigurované, Vývojář můžete jednu řadu nových funkcí do systému iOS 10.3 řídit ikona aplikace.
 
-`SupportsAlternateIcons` Vlastnost `UIApplication` třída umožňuje vývojáři chcete zobrazit, pokud aplikace podporuje alternativní ikony. Příklad:
+`SupportsAlternateIcons` Vlastnost `UIApplication` třída umožňuje vývojářům zobrazit, pokud aplikace podporuje alternativní ikony. Příklad:
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-`ApplicationIconBadgeNumber` Vlastnost `UIApplication` třída umožňuje vývojáři získání nebo nastavení aktuální počet oznámení "BADGE" ikony aplikace v můstek. Výchozí hodnota je nula (0). Příklad:
+`ApplicationIconBadgeNumber` Vlastnost `UIApplication` třída umožňuje vývojářům získat nebo nastavit aktuální oznámení "BADGE" počet na ikonu aplikace v můstek. Výchozí hodnota je nula (0). Příklad:
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-`AlternateIconName` Vlastnost `UIApplication` třída umožňuje vývojáři získat název ikonu pro aktuálně vybrané alternativní aplikace nebo vrátí `null` Pokud aplikace používá primární ikonu. Příklad:
+`AlternateIconName` Vlastnost `UIApplication` třída umožňuje vývojářům získat název ikony aktuálně vybraný alternativní aplikace nebo vrátí `null` Pokud aplikace používá primární ikonu. Příklad:
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-`SetAlternameIconName` Vlastnost `UIApplication` třída umožňuje vývojáři změnit na ikonu aplikace. Předat název na ikonu vyberte nebo `null` se vraťte do ikonu primární. Příklad:
+`SetAlternameIconName` Vlastnost `UIApplication` třída umožňuje vývojářům změnit ikonu aplikace. Předejte název a vyberte ikonu nebo `null` se vraťte do primární ikonu. Příklad:
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -156,19 +156,19 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 }
 ```
 
-Při spuštění aplikace a uživatel vyberte ikonu alternativní, zobrazí se výstraha takto:
+Při spuštění aplikace a uživatele můžete vybrat alternativní ikonu, zobrazí se výstraha vypadat asi takto:
 
-![](alternate-app-icons-images/icons04.png "Ukázkové výstrahu, když se změní jeho ikona aplikace")
+![](alternate-app-icons-images/icons04.png "Ukázkové upozornění, když aplikace změní jeho ikonu")
 
-Pokud uživatel přepíná zpět na primární ikonu, zobrazí se výstraha takto:
+Uživatel přepne zpět do primární ikonu, zobrazí se výstraha vypadat asi takto:
 
-![](alternate-app-icons-images/icons05.png "Když se aplikace se změní na ikonu primární ukázka upozornění")
+![](alternate-app-icons-images/icons05.png "Ukázkové upozornění, když aplikace změní na ikonu primární")
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek má zahrnutých přidávání ikon alternativní aplikace do projektu Xamarin.iOS a jejich používání v aplikaci.
+V tomto článku zahrnují přidání alternativní ikony aplikace do projektu Xamarin.iOS a jejich použití v rámci aplikace.
 
 
 

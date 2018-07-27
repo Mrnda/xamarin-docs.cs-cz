@@ -1,181 +1,148 @@
 ---
-title: Použití sdílených projektů sdílení kódu
-description: Sdílení projektů umožňují zápisu společný kód, který je odkazován počet projekty jinou aplikaci. Kód kompiluje v rámci každého odkazující projektu a může obsahovat direktivy kompilátoru můžete začlenit do sdíleného kódu základní funkce specifické pro platformu.
+title: Použití sdílených projektech ke sdílení kódu
+description: Sdílené projekty umožňují napsat společný kód, který je odkazován celou řadou projektů různé aplikace. Kód je zkompilován jako součást každé odkazující projekt a může obsahovat direktivy kompilátoru pomáhají začlenit funkce specifické pro platformu do sdílené kódové základny.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-author: asb3993
-ms.author: amburns
-ms.date: 03/23/2017
-ms.openlocfilehash: 749daac36cce26c9d24d04b89e933aab994791b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: conceptdev
+ms.author: crdun
+ms.date: 07/18/2018
+ms.openlocfilehash: 61096635cd94d0fdd0abe6fda59c4efa41eeceb1
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781800"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270212"
 ---
-# <a name="using-shared-projects-to-share-code"></a>Použití sdílených projektů sdílení kódu
+# <a name="shared-projects-code-sharing"></a>Sdílené projekty sdílení kódu
 
-_Sdílení projektů umožňují zápisu společný kód, který je odkazován počet projekty jinou aplikaci. Kód kompiluje v rámci každého odkazující projektu a může obsahovat direktivy kompilátoru můžete začlenit do sdíleného kódu základní funkce specifické pro platformu._
+_Sdílené projekty umožňují napsat společný kód, který je odkazován celou řadou projektů různé aplikace. Kód je zkompilován jako součást každé odkazující projekt a může obsahovat direktivy kompilátoru pomáhají začlenit funkce specifické pro platformu do sdílené kódové základny._
 
-Sdílených projektů (nazývané také někdy sdílených projektů Asset) umožňují napsat kód, který je sdílen více projektů cíl, včetně aplikace Xamarin.
+Sdílené projekty (také říká se jim sdílený prostředek projekty) umožňují napsat kód, který je sdílen mezi více projekty cíl, včetně aplikací v Xamarinu.
 
-Direktivy kompilátoru podporují tak, aby podmíněně může obsahovat kód specifický pro platformu sestavují do podmnožinu projektů, které odkazují na sdílený projekt. Je také podpora rozhraní IDE pomáhají spravovat direktivy kompilátoru a vizualizovat vzhled kód v každé žádosti.
+Direktivy kompilátoru podporují, takže může podmíněně zahrnout kód specifický pro platformu se zkompiluje do dílčích projektů, které se odkazuje na sdílený projekt. Existuje také podpora integrované vývojové prostředí umožňující správu direktivy kompilátoru a vizualizaci, jak bude vypadat kód v jednotlivých aplikací.
 
-Pokud jste použili soubor propojení v minulosti sdílet kód mezi projekty, sdílených projektů funguje podobným způsobem, ale s podstatně vylepšená podpora rozhraní IDE.
+Pokud soubor propojení v minulosti jste použili ke sdílení kódu mezi projekty, sdílet projekty funguje podobným způsobem, ale s mnohem lepší podpora integrované vývojové prostředí.
 
+## <a name="what-is-a-shared-project"></a>Co je sdíleného projektu?
 
+Na rozdíl od většinu ostatních typů projektu sdíleného projektu nemá žádný výstup (v podobě knihovny DLL), místo toho kód je zkompilován do jednotlivých projektů, která na něj odkazuje. To je znázorněno v následujícím diagramu: koncepčně celý obsah ze sdíleného projektu je "zkopírovaný do" každý odkazující projekt a zkompilovány, jako by byly součástí je.
 
-## <a name="what-is-a-shared-project"></a>Co je sdílený projekt?
+![](shared-projects-images/sharedassetproject.png "Architektura sdíleného projektu")
 
-Na rozdíl od většiny jiné typy projektů sdílený projekt nemá žádný výstup (v podobě knihovny DLL), místo toho je zkompilovat kód do každý projekt, který odkazuje. To je znázorněno v následujícím diagramu – koncepčně celý obsah sdílený projekt je "zkopírovaný do" každý odkazující projekt a kompilovat, jako by byl součástí je.
+Kód v sdíleného projektu může obsahovat direktivy kompilátoru, které se povolí nebo zakáže části kódu v závislosti na aplikaci, pro kterou je projekt pomocí kódu, který je navržen podle barevné platformy políček v diagramu.
 
- ![](shared-projects-images/sharedassetproject.png "Architektura sdílených projektů")
+Sdíleného projektu získat kompilovány nebyl sama o sobě, existuje čistě jako seskupení souborů zdrojového kódu, které mohou být součástí jiných projektů. Pokud jiný projekt odkazuje, kód je zkompilován účinně jako *část* tohoto projektu. Sdílené projekty nemůžou odkazovat na jiný typ projektu (včetně jiných sdílených projektech).
 
-Kód v projektu sdíleného může obsahovat direktivy kompilátoru, která bude povolit nebo zakázat sekcí kódu v závislosti na aplikaci, pro kterou je projekt pomocí kódu, který je navržen podle barevnou platformy políček v diagramu.
+Všimněte si, že aplikace pro Android projekty nemůžou odkazovat na jiné projekty aplikace pro Android – například testovací projekt Android jednotky nemůže odkazovat na projekt aplikace pro Android. Další informace o toto omezení, najdete v tomto [diskuzi na fóru](http://forums.xamarin.com/discussion/comment/98092/).
 
-Sdílené projektu získat zkompilovat není sama o sobě, existuje čistě jako seskupení soubory zdrojového kódu, které můžou být součástí jiných projektů. Když odkazuje jiného projektu, kód efektivně kompiluje jako *část* tohoto projektu. Sdílených projektů nesmí odkazovat na jiný typ projektu (včetně jiných sdílených projektů).
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Všimněte si, že aplikace pro Android projekty nemůže odkazovat na jiné aplikace pro Android projekty – například projektu testování částí Android nemůže odkazovat na projekt aplikace pro Android. Další informace o toto omezení najdete [diskuzi na fóru](http://forums.xamarin.com/discussion/comment/98092/).
+## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac návodu
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+Tato část vás provede postupy vytváření a používání sdíleného projektu pomocí sady Visual Studio pro Mac. Najdete na [sdílené příklad projektu](#Shared_Project_Example) část Úplný příklad.
 
+## <a name="creating-a-shared-project"></a>Vytvoření sdíleného projektu
 
+Chcete-li vytvořit nový sdílený projekt, přejděte na **soubor > nové řešení...**  (nebo existujícím řešení klikněte pravým tlačítkem myši a zvolíte **Přidat > Přidat nový projekt...** ):
 
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio pro Mac návod
+[![Nový sdílený projekt](shared-projects-images/xs-newsolution-sml.png "nové řešení")](shared-projects-images/xs-newsolution.png#lightbox)
 
+Na další obrazovce vyberte název projektu a klikněte na tlačítko **vytvořit**.
 
-Tato část vás provede postup vytvoření a používání sdíleného projektu pomocí sady Visual Studio for Mac. Najdete na [sdílené příklad projektu](#Shared_Project_Example) části kompletní příklad.
+Nový sdílený projekt je uveden níže – Všimněte si, že nebyly žádné odkazy nebo součást uzly; ty nejsou podporovány pro sdílené projekty.
 
+![Prázdný sdílený projekt](shared-projects-images/xs-empty.png "prázdný sdílený projekt")
 
-## <a name="creating-a-shared-project"></a>Vytvoření sdílené projektu
+Pro projekt sdílí užitečnost musí odkazovat aspoň jeden u sestavení projektu (například pro iOS nebo aplikace pro Android nebo knihovna nebo projekt PCL). Sdíleného projektu získat kompilovány nebyl když nic odkazující na to, takže syntaxe (nebo jakékoli jiné) nemá chyby nebudou zvýrazněny, dokud se odkazovalo podle něco jiného.
 
+Přidává se odkaz na projekt sdílí se provádí stejným způsobem jako odkazující pravidelné projektové knihovny. Tento snímek obrazovky ukazuje projekt Xamarin.iOS odkazování na sdílený projekt.
 
-Chcete-li vytvořit nový projekt sdílené přejděte na **soubor > Nový řešení...**  a zvolte název.
+![](shared-projects-images/xs-reference.png "Odkaz na projekt do sdíleného projektu")
 
-
-![](shared-projects-images/xs-newsolution.png "Nové řešení")
-
-
-Můžete také přidat nový projekt, který je sdílený řešení pravým tlačítkem myši na soubor řešení a zvolením **Přidat > Přidat nový projekt...** . Nový projekt sdílené vypadá takto - Všimněte si, neexistují žádné odkazy nebo součást uzlů; Tyto nejsou podporovány u sdílených projektů.
-
-
-![](shared-projects-images/xs-empty.png "Prázdný sdílený projekt")
-
-
-Pro projekt sdílené být užitečné musí být odkazuje alespoň jednu možnost pro sestavení projektu (třeba iOS nebo Android aplikace nebo knihovny nebo PCL projektu). Sdílené projektu získat zkompilovat není při nic odkazující na ho, takže syntaxe (nebo jakékoliv) obsahuje chyby nebude mít zvýrazněná, dokud bylo odkazováno podle něco jiného.
-
-
-
-Přidat odkaz na projekt se sdílet se provádí stejným způsobem jako odkazující regulární projektu knihovny. Tento snímek obrazovky ukazuje projektu Xamarin.iOS odkazování na sdílené projektu.
-
-
-![](shared-projects-images/xs-reference.png "Odkaz na projekt na sdílený projekt")
-
-
-Jakmile sdílený projekt odkazuje jiná knihovny nebo aplikace můžete sestavit řešení a zobrazit všechny chyby v kódu. Když sdílený projekt odkazuje _dva nebo více_ další projekty nabídky se zobrazí v levé horní části editoru zdrojového kódu, ukazuje zvolili, projekty, které odkazují tento soubor.
-
-
+Po sdíleného projektu odkazují jiné knihovny nebo aplikace můžete vytvářet řešení a zobrazit všechny chyby v kódu. Když se odkazuje sdíleného projektu _dvě nebo více_ jiné projekty, zobrazí se nabídka v levé horní části editor zdrojového kódu, ze kterých ukazuje vybrat projekty, které odkazují na tento soubor.
 
 ## <a name="shared-project-options"></a>Sdílené možnosti projektu
 
-
-Když klikněte pravým tlačítkem na projekt sdílené a zvolte **možnosti** existuje nastavení méně než jiné typy projektů. Protože sdílených projektů nejsou kompilovány (na vlastní), nelze nastavit výstupní nebo kompilátoru možnosti konfigurace projektu, podepsání sestavení nebo vlastní příkazy. Tyto hodnoty kódu v projektu sdíleného efektivně dědí z ať je odkazuje.
-
+Když pravým tlačítkem myši na sdílený projekt a zvolte **možnosti** existuje míň nastavení než ostatní typy projektů. Protože sdílené projekty nejsou zkompilovány (nedělají), nelze nastavit možnosti kompilátoru nebo výstupu, konfigurace projektu, podepisování sestavení nebo vlastní příkazy. Kód v projektu sdíleného efektivně zdědí tyto hodnoty cokoli, co se na ně odkazují.
 
 
-**Možnosti** obrazovka se zobrazí pod - projektu **název** a **výchozí Namespace** jsou pouze dvě nastavení, které se obecně změní.
+
+**Možnosti** dole. projekt se zobrazí obrazovka **název** a **výchozí Namespace** jsou jenom dvě nastavení, která se obvykle změní.
 
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Sdílené možnosti projektu")
 
 
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 
 
 ## <a name="visual-studio-walkthrough"></a>Návod pro Visual Studio
 
 
-Tato část vás provede postup vytvoření a používání sdíleného projektu pomocí sady Visual Studio. Odkazovat na na [sdílené příklad projektu](#Shared_Project_Example) části pro dokončení implementace.
+Tato část vás provede postupem vytvoření a používání sdíleného projektu pomocí sady Visual Studio. Odkazovat na do [sdílené příklad projektu](#Shared_Project_Example) části zcela implementován.
 
+### <a name="creating-a-shared-project"></a>Vytvoření sdíleného projektu
 
-### <a name="creating-a-shared-project"></a>Vytvoření sdílené projektu
-
-
-Chcete-li vytvořit nový projekt sdílené přejděte na **soubor > Nový řešení...**  a zvolte název projektu a řešení.
-
+Chcete-li vytvořit nový sdílený projekt, přejděte na **soubor > nové řešení...**  a vyberte název projektu a řešení.
 
 ![](shared-projects-images/vs-newsolution.png "Nové řešení")
 
+Můžete také přidat nový sdílený projekt do řešení tak, že kliknete pravým tlačítkem na soubor řešení a zvolíte **Přidat > Nový projekt...** . Nový sdílený projekt vypadá takto (po přidání souboru třídy) – Všimněte si, že neexistují žádné odkazy nebo součást uzly; ty nejsou podporovány pro sdílené projekty.
 
-Můžete také přidat nový projekt, který je sdílený řešení pravým tlačítkem myši na soubor řešení a zvolením **Přidat > Nový projekt...** . Nový projekt sdílené vypadá takto (po přidání souboru třídy) – Všimněte si, neexistují žádné odkazy nebo součást uzlů; Tyto nejsou podporovány u sdílených projektů.
+![](shared-projects-images/vs-empty.png "Prázdný sdíleného projektu")
 
+Pro projekt sdílí užitečnost musí odkazovat aspoň jeden u sestavení projektu (například pro iOS nebo aplikace pro Android nebo knihovna nebo projekt PCL). Sdíleného projektu získat kompilovány nebyl když nic odkazující na to, takže syntaxe (nebo jakékoli jiné) nemá chyby nebudou zvýrazněny, dokud se odkazovalo podle něco jiného.
 
-![](shared-projects-images/vs-empty.png "Prázdný sdílený projekt")
+Přidává se odkaz na projekt sdílí se provádí stejným způsobem jako odkazující pravidelné projektové knihovny. Tento snímek obrazovky ukazuje projekt Xamarin.iOS odkazování na sdílený projekt.
 
+![](shared-projects-images/vs-reference.png "Odkaz na projekt do sdíleného projektu")
 
-Pro projekt sdílené být užitečné musí být odkazuje alespoň jednu možnost pro sestavení projektu (třeba iOS nebo Android aplikace nebo knihovny nebo PCL projektu). Sdílené projektu získat zkompilovat není při nic odkazující na ho, takže syntaxe (nebo jakékoliv) obsahuje chyby nebude mít zvýrazněná, dokud bylo odkazováno podle něco jiného.
-
-
-
-Přidat odkaz na projekt se sdílet se provádí stejným způsobem jako odkazující regulární projektu knihovny. Tento snímek obrazovky ukazuje projektu Xamarin.iOS odkazování na sdílené projektu.
-
-
-![](shared-projects-images/vs-reference.png "Odkaz na projekt na sdílený projekt")
+Po sdíleného projektu odkazují jiné knihovny nebo aplikace můžete vytvářet řešení a zobrazit všechny chyby v kódu. Když se odkazuje sdíleného projektu _dvě nebo více_ jiné projekty, zobrazí se nabídka v levé horní části editor zdrojového kódu, který chcete zobrazit projekty, které odkazují na aktuální soubor kódu.
 
 
-Jakmile sdílený projekt odkazuje jiná knihovny nebo aplikace můžete sestavit řešení a zobrazit všechny chyby v kódu. Když sdílený projekt odkazuje _dva nebo více_ další projekty nabídky se zobrazí v levé horní části editoru kódu zdroje zobrazíte projekty, které odkazují na aktuální soubor kódu.
+### <a name="shared-project-properties"></a>Vlastnosti sdíleného projektu
 
 
-### <a name="shared-project-properties"></a>Vlastnosti sdílené projektu
+Když vyberete sdíleného projektu existuje míň nastavení na panelu Vlastnosti než ostatní typy projektů. Protože sdílené projekty nejsou zkompilovány (nedělají), nelze nastavit možnosti kompilátoru nebo výstupu, konfigurace projektu, podepisování sestavení nebo vlastní příkazy. Kód v projektu sdíleného efektivně zdědí tyto hodnoty cokoli, co se na ně odkazují.
 
+**Vlastnosti** panelu se zobrazí takto: **kořenové Namespace** je pouze nastavení, která může měnit.
 
-Když vyberete sdílet projektu existuje méně nastavení v panelu Vlastnosti než jiné typy projektů. Protože sdílených projektů nejsou kompilovány (na vlastní), nelze nastavit výstupní nebo kompilátoru možnosti konfigurace projektu, podepsání sestavení nebo vlastní příkazy. Tyto hodnoty kódu v projektu sdíleného efektivně dědí z ať je odkazuje.
-
-
-
-**Vlastnosti** panelu jsou uvedeny níže - **kořenové Namespace** se jenom nastavení, které můžete změnit.
-
-
-![](shared-projects-images/vs-sharedprojectproperties.png "Vlastnosti sdílené projektu")
-
-
+![](shared-projects-images/vs-sharedprojectproperties.png "Vlastnosti sdíleného projektu")
 
 -----
 
 <a name="Shared_Project_Example"/>
 
-## <a name="shared-project-example"></a>Příklad sdílený projekt
+## <a name="shared-project-example"></a>Příklad sdíleného projektu
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) příklad používá sdílený projekt tak, aby obsahovala společný kód používá obě iOS, Android a Windows Phone aplikace. Jak `SQLite.cs` a `TaskRepository.cs` soubory zdrojového kódu, používat direktivy kompilátoru (např. `#if __ANDROID__`) k vytvoření odlišný výstup pro každou aplikaci, která na ně odkazují.
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) příklad používá sdílený projekt tak, aby obsahovala společný kód používá obě iOS, Android a Windows Phone aplikací. Jak `SQLite.cs` a `TaskRepository.cs` souborů se zdrojovým kódem limitu direktivy kompilátoru (např.) `#if __ANDROID__`) vytvořit různé výstup pro jednotlivé aplikace, které na ně odkazují.
 
-Struktura úplné řešení je zobrazena níže (v sadě Visual Studio pro Mac a Visual Studio v uvedeném pořadí):
+Struktura tak získají kompletní řešení jsou uvedené níže (v sadě Visual Studio pro Mac a Visual Studio v uvedeném pořadí):
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](shared-projects-images/xs-examplesolution.png "Visual Studio pro Mac řešení")
+![](shared-projects-images/xs-examplesolution.png "Visual Studio pro Mac řešení")
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- ![](shared-projects-images/vs-examplesolution.png "Řešení aplikace Visual Studio")
+![](shared-projects-images/vs-examplesolution.png "Řešení v sadě Visual Studio")
 
 -----
 
-Windows Phone projektu lze procházet z v sadě Visual Studio pro Mac, i když tento typ projektu není podporován pro kompilaci v sadě Visual Studio for Mac.
+Projekt Windows Phone se dá Navigovat z Visual Studia pro Mac, i v případě, že typ projektu není podporován pro kompilaci v sadě Visual Studio pro Mac.
 
-Níže jsou uvedeny spuštěné aplikace.
+Spouštění aplikací jsou uvedeny níže:
 
- ![](shared-projects-images/example.png "iOS, Android, Windows Phone příklady")
-
-
+![](shared-projects-images/example.png "iOS, Android, Windows Phone příklady")
 
 ## <a name="summary"></a>Souhrn
 
-Tento dokument popisuje, jak sdílených projektů fungují, jak jde vytvořit a použít v sadě Visual Studio pro Mac a Visual Studio a zavedená jednoduché ukázkovou aplikaci, která ukazuje na sdílený projekt v akci.
+Tento dokument popisuje, jak sdílené projekty fungují, jak se můžete vytvořit a použít v sadě Visual Studio pro Mac a Visual Studio a zavedl jednoduchou ukázkovou aplikaci, která předvádí sdílený projekt v akci.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Tasky ukázkové aplikace](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
-- [Knihovny přenosných tříd (ukázka)](~/cross-platform/app-fundamentals/pcl.md)
-- [Sdílení kódu možnosti (ukázka)](~/cross-platform/app-fundamentals/code-sharing.md)
+- [Přenosné knihovny tříd (ukázka)](~/cross-platform/app-fundamentals/pcl.md)
+- [Sdílení kód – možnosti (ukázka)](~/cross-platform/app-fundamentals/code-sharing.md)

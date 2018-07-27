@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242378"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270485"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Řešení závislostí v Xamarin.Forms
 
@@ -111,7 +111,7 @@ Když aplikace využívá metoda řešení závislostí přeložit typy z kontej
 
 Po registraci typu z projektu platformy, `IContainer` objekt musí být sestaveny, která provádí volání `BuildContainer` metoda. Tato metoda vyvolá společnosti Autofac `Build` metodu `ContainerBuilder` instanci, která vytvoří nový kontejner vkládání závislostí, který obsahuje registrace, které byly provedeny.
 
-V následující části `Logger` třída, která implementuje `ILogger` rozhraní, se vloží do třídy konstruktory. `Logger` Pomocí funkce třída implementuje jednoduchou protokolování `Debug.WriteLine` metoda a slouží k předvedení jak může služba vloženy do vlastní renderery, účinky, a [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementace.
+V následující části `Logger` třídu, která implementuje `ILogger` rozhraní se vloží do třídy konstruktory. `Logger` Pomocí funkce třída implementuje jednoduchou protokolování `Debug.WriteLine` metoda a slouží k předvedení jak může služba vloženy do vlastní renderery, účinky, a [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementace.
 
 ### <a name="registering-custom-renderers"></a>Registrace vlastní renderery
 
