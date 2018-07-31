@@ -1,55 +1,56 @@
 ---
-title: Proč není volaných Xamarin podporuje?
-description: Tento dokument popisuje na vysoké úrovni, Xamarin pro interakci se systémem volaných CI. Popisuje také několik běžné problémy, které se spustit při práci s volaných.
+title: Proč se pomocí Xamarin nepodporuje Jenkins?
+description: Tento dokument popisuje na vysoké úrovni Xamarinu pro interakci se systémem Jenkins CI. Také popisuje několik běžných problémů, ke kterým při práci s Jenkinsem.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: cf1a59d3084f178187209fdf3999af10efe6203a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: 54947d04d6241120df4b3a0f60947ed5cc2b7ffd
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782447"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351156"
 ---
-# <a name="why-isnt-jenkins-supported-by-xamarin"></a>Proč není volaných Xamarin podporuje?
+# <a name="why-isnt-jenkins-supported-by-xamarin"></a>Proč se pomocí Xamarin nepodporuje Jenkins?
 
-## <a name="jenkins-support-explanation"></a>Vysvětlení volaných podpory
+## <a name="jenkins-support-explanation"></a>Vysvětlení podporu Jenkinse
 
-Volaných je sada CI open-source; z důvodu tohoto počtu problémy, které jsou přímo způsobeny volaných *samotné* bude muset být vytvářené jako problémy, na které jste získali kód; například [hlavní úložišti volaných](https://github.com/jenkinsci/jenkins), nebo úložišti pro [ Jenkins.App](https://github.com/stisti/jenkins-app).
+Jenkins je open source sada CI; z důvodu tolik problémů, které jsou přímo způsobeny Jenkinse *samotného* bude muset být zaznamenávané jako problémy, proti které jste získali kód; například [hlavním úložišti Jenkins](https://github.com/jenkinsci/jenkins), nebo úložiště pro [ Jenkins.App](https://github.com/stisti/jenkins-app).
 
-Výjimkou je na problémy, které může být izolované na konkrétní chyby v nástrojích pro Xamarin; Pokud se domníváte, že to tak můžete zkontrolovat vaše [podporují možnosti](~/cross-platform/troubleshooting/support-options.md), když znovu, tento problém může být něco mimo podporu Xamarin tým může *přímo* usnadní.
+Výjimkou je na problémy, které můžou být izolované na konkrétní chyby v Xamarinu pro nástroje. Pokud se domníváte, že to v případě můžete zkontrolovat vaše [možnosti podpory](~/cross-platform/troubleshooting/support-options.md), když znovu, problém může být něco mimo podporu Xamarinu týmu můžete *přímo* usnadní.
 
-## <a name="setup-jenkins-with-xamarin"></a>Instalační program volaných xamarinu
+## <a name="setup-jenkins-with-xamarin"></a>Nastavení Jenkinse s využitím kódu Xamarin
 
-Při výše uvedených hodnot volaných problémy nepodporují přímo náš tým; [volaných pomocí xamarinu](~/tools/ci/jenkins-walkthrough.md) příručka slouží k nastavení volaných CI serveru, který je integrován s funkcí Xamarin. 
+Při výše uvedené problémy Jenkins nejsou podporovány přímo náš tým; [použití Jenkinse s využitím kódu Xamarin](~/tools/ci/jenkins-walkthrough.md) příručka slouží k nastavení serveru Jenkins CI je integrovaná se sadou Xamarin. 
 
-## <a name="fixes-for-common-issues"></a>Opravy pro běžné problémy
+## <a name="fixes-for-common-issues"></a>Řeší běžné problémy
 
-### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Volaných se nepodařilo najít SDK pro Android
+### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Jenkins nelze nalézt sadu Android SDK
 
 Chybová zpráva pro tento problém je přibližně takto:
 
-> Chyba XA5205: nebyl nalezen Android adresáře sady SDK. Nastavte prosím prostřednictvím /p:AndroidSdkDirectory
+> Chyba XA5205: The Android adresář sady SDK se nenašel. Nastavte prosím přes /p:AndroidSdkDirectory
 
-Možnosti nastavení umístění SDK může lišit v závislosti na přesné modul plug-in Android volaných, kterou používáte; Dobrým místem, kde hledat toto nastavení je v Průvodci modulu plug-in. Například; [modul plug-in Android emulátoru](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration) automaticky vyhledá sadu SDK, ale pokud ji nemůže najít; umístění lze také nastavit prostřednictvím volaných systému konfigurační stránku pro tento modul plug-in. 
+Možnosti pro nastavení umístění sady SDK se mohou lišit v závislosti na přesné Jenkins Android modul plug-in, které používáte; Dobrým vyhledejte nastavení to je v Průvodci modulu plug-in. Například; [modul plug-in Android Emulator](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration) automaticky vyhledá sady SDK, ale pokud ho nelze najít; umístění lze také nastavit na stránce konfigurace systému Jenkins pro tento modul plug-in. 
 
 
 ## <a name="deprecated-errors"></a>Nepoužívané chyby
 
 > [!IMPORTANT]
-> Tento problém byl vyřešen v posledních verzích Xamarin. Ale pokud k danému problému dojde na nejnovější verzi softwaru, prosím soubor [nové chyb](~/cross-platform/troubleshooting/questions/howto-file-bug.md) s vaší úplná Správa verzí informace a úplné sestavení výstup protokolu.
+> Tento problém byl vyřešen v nejnovějších verzích Xamarin. Ale pokud k problému dochází na nejnovější verzi softwaru, požádejte prosím [nová chyba](~/cross-platform/troubleshooting/questions/howto-file-bug.md) s plnou verzí informace a plná výstup protokolu sestavení.
 
 
 
-### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Volaných sestavy neplatná licence Xamarin
-Chybové zprávy pro tento problém se obvykle něco podobného jako
+### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins sestavy neplatná licence Xamarinu
+Chybové zprávy pro tento problém jsou obvykle něco jako
 
-> Chyba XA9008: sestavení z příkazového řádku je nutná licence firmy
+> Chyba XA9008: sestavování z příkazového řádku musí mít licenci firmy
 
 or
 
-> Chyba: Starter Edition Xamarin.iOS nepodporuje vytváření mimo Xamarin Studio 
+> Chyba: Počáteční verzi Xamarin.iOS nepodporuje sestavování mimo Xamarin Studio 
 
-Nejběžnější příčina tohoto scénáře je použití volaných přihlášením pomocí uživatelského účtu nejsou přidružené licence na aplikaci Xamarin. Nejjednodušší způsob, jak řešení, je instalace volaných jako aplikace přímo přes uživatelský účet. Tento proces a některé další aspekty jsou popsány zde: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
+Nejběžnější příčina tohoto scénáře je použití Jenkinse po přihlášení pomocí uživatelského účtu není přidružené k vaší licence Xamarinu. Nejjednodušším způsobem řešení, je instalace Jenkinse aplikace přímo prostřednictvím uživatelského účtu. Tento proces a některé další aspekty jsou popsány zde: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)

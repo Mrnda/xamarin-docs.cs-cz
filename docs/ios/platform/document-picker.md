@@ -1,77 +1,78 @@
 ---
-title: Výběr dokumentu v Xamarin.iOS
-description: Tento dokument popisuje iOS výběr dokumentu a způsobu jeho použití v Xamarin.iOS. Podívejte se na serveru služby iCloud, dokumentů, běžné instalační kód, dokumentu poskytovatele rozšíření a další trvá.
+title: Výběr dokumentu v Xamarin.iosu
+description: Tento dokument popisuje iOS výběr dokumentu a jeho použití v Xamarin.iOS. To se podíváme na serveru služby iCloud, dokumenty, společný kód nastavení, rozšíření poskytovatelů dokumentu a další.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: ca0c7a6e655fdc44aa673a59be71bc83044d3085
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786883"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353331"
 ---
-# <a name="document-picker-in-xamarinios"></a>Výběr dokumentu v Xamarin.iOS
+# <a name="document-picker-in-xamarinios"></a>Výběr dokumentu v Xamarin.iosu
 
-Nástroje pro výběr dokumentu umožňuje dokumenty ke sdílení mezi aplikacemi. Tyto dokumenty můžou být uložená v Icloudu nebo v adresáři jinou aplikaci. Dokumenty jsou sdíleny prostřednictvím sadu [dokumentu poskytovatele rozšíření](~/ios/platform/extensions.md) uživatel nainstaloval na svém zařízení. 
+Umožňuje nástroj pro výběr dokumentu dokumenty, které se sdílejí mezi aplikacemi. Tyto dokumenty mohou být uloženy v Icloudu nebo v adresáři jiné aplikace. Dokumenty jsou sdílené úložiště přes sadu [rozšíření poskytovatelů dokumentu](~/ios/platform/extensions.md) uživatel nainstaloval na svém zařízení. 
 
-Z důvodu je obtížné zachovat dokumenty synchronizována v rámci aplikace a cloudu ale vést k určité množství potřebné složitost.
+Z důvodu potíže role při ochraně dokumentů synchronizaci napříč aplikacemi a cloudu přinášejí určité množství nezbytné složitost.
 
 ## <a name="requirements"></a>Požadavky
 
-Pokud chcete provést kroky uvedené v tomto článku se vyžaduje následující text:
+Pokud chcete provést kroky uvedené v tomto článku jsou vyžadovány následující položky:
 
--  **Xcode 7 a iOS 8 nebo novější** – společnosti Apple Xcode 7 a iOS 8 nebo novější rozhraní API muset být nainstalovaná a nakonfigurovaná na počítači pro vývojáře.
--  **Visual Studio nebo Visual Studio pro Mac** – musí být nainstalována nejnovější verze sady Visual Studio pro Mac.
--  **Zařízení iOS** – zařízení se systémem iOS se systémem iOS 8 nebo novější.
+-  **Xcode 7 a iOS 8 nebo novější** – Apple Xcode 7 a iOS 8 nebo novějších rozhraní API musí být nainstalovaná a nakonfigurovaná v počítači vývojáře.
+-  **Visual Studio nebo Visual Studio pro Mac** – by měl být nainstalována nejnovější verze sady Visual Studio pro Mac.
+-  **Zařízení se systémem iOS** – zařízení s iOS s iOS 8 nebo novější.
 
 ## <a name="changes-to-icloud"></a>Změny na serveru služby iCloud
 
-Pokud chcete implementovat nové funkce nástroje pro výběr dokumentu, byly provedeny následující změny icloudem společnosti Apple služby:
+Implementace nové funkce nástroje pro výběr dokumentu, byly provedeny následující změny na Apple serveru služby iCloud služby:
 
--  Na serveru služby iCloud démon má byla kompletně přepsaná pomocí CloudKit.
--  Existující Icloudu, kterou je funkce přejmenovat Icloudu jednotky.
--  Byla přidána podpora pro operačního systému Microsoft Windows na serveru služby iCloud.
--  V nástroji hledání Mac OS se přidal k složce serveru služby iCloud.
--  zařízení s iOS můžete přístup k obsahu složky systému Mac OS serveru služby iCloud.
+-  Na serveru služby iCloud démon zcela přepsali jsme pomocí CloudKit.
+-  Existujícího serveru služby iCloud funkce byly přejmenovány Icloudu jednotky.
+-  Byla přidána podpora pro operační systém Microsoft Windows na serveru služby iCloud.
+-  Ve Finderu operační systém Mac se přidala k složce serveru služby iCloud.
+-  zařízení s Iosem můžete přístup k obsahu složky systému Mac OS serveru služby iCloud.
 
 > [!IMPORTANT]
-> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům umožňuje správně zpracovat Evropské unie obecného Regulation (GDPR).
 
 ## <a name="what-is-a-document"></a>Co je dokument?
 
-Při odkazování na dokument v Icloudu, je jeden, samostatné entity a by měl být považována jako takový uživatel. Uživatel může chtít změnit dokument nebo sdílet s jinými uživateli (například pomocí e-mailu).
+Při odkazování na dokument v Icloudu, je jeden, samostatné entity a by měl být vnímané jako takový uživatel. Uživatel může chtít upravovat nebo sdílet s ostatními uživateli (třeba pomocí e-mailu).
 
-Existuje několik typů souborů, že uživatel okamžitě rozpozná jako dokumenty, jako je například stránky, soubory //Build nebo čísla. Však není omezen na tento koncept serveru služby iCloud. Například stav hry (například Šachy shoda) můžete zacházet jako dokument a uložené v serveru služby iCloud. Tento soubor by prošel mezi zařízení uživatele a povolení jejich vyzvednutí hry, kde skončil na jiném zařízení.
+Existuje několik typů souborů, že uživatel okamžitě rozpozná jako dokumenty, jako jsou například stránky, soubory hlavní vystoupení nebo čísla. Však není omezen na tento koncept serveru služby iCloud. Například stav hry (jako je například porovnávání šachy) můžete považován za dokumentu a uložená v Icloudu. Tento soubor může být předány mezi zařízeními uživatelů a zajistí, aby získaly hru, kde skončil na jiném zařízení.
 
-## <a name="dealing-with-documents"></a>Plánování práce s dokumenty
+## <a name="dealing-with-documents"></a>Práce s dokumenty
 
-Předtím, než začnete je kód potřebný k pomocí nástroje pro výběr dokumentu s Xamarinem, v tomto článku budete tak, aby pokrývalo osvědčené postupy pro práci s Icloudem dokumenty a některé změny provedené v stávajících rozhraní API potřebné k podpoře nástroje pro výběr dokumentu.
+Před všemi zúčastněnými stranami je kód potřebný k pomocí nástroje pro výběr dokumentu s využitím kódu Xamarin, v tomto článku se bude zabývat osvědčené postupy pro práci s dokumenty Icloudu a některé změny provedené do stávajících rozhraní potřeba k podpoře nástroje pro výběr dokumentu.
 
-### <a name="using-file-coordination"></a>Pomocí souboru spolupráce
+### <a name="using-file-coordination"></a>Pomocí souboru koordinace
 
-Vzhledem k tomu, že soubor můžete upravit z několika různých místech, použije koordinaci předchází se tak ztrátě dat.
+Vzhledem k tomu, že soubor můžete upravit z několika různých míst, musí se tak ztrátě dat použít koordinace.
 
- [![](document-picker-images/image1.png "Pomocí souboru spolupráce")](document-picker-images/image1.png#lightbox)
+ [![](document-picker-images/image1.png "Pomocí souboru koordinace")](document-picker-images/image1.png#lightbox)
 
-Podívejme se na obrázku výše:
+Pojďme se podívat na obrázku výše:
 
-1.  Zařízení se systémem iOS pomocí souboru koordinaci vytvoří nový dokument a uloží do složky serveru služby iCloud.
-2.  Icloudu změněný soubor uloží do cloudu pro distribuci ke každé zařízení.
-3.  Připojené Mac vidí změněný soubor v na serveru služby iCloud složky a používá koordinaci souborů ke zkopírování změny do souboru.
-4.  Zařízení není pomocí souboru koordinaci provede změny do souboru a uloží do složky serveru služby iCloud. Tyto změny jsou okamžitě replikovat do jiných zařízení.
+1.  Zařízení se systémem iOS pomocí souboru koordinace vytvoří nový dokument a uloží jej do složky serveru služby iCloud.
+2.  iCloud upravený soubor uloží do cloudu pro distribuci do všech zařízení.
+3.  Připojené Mac vidí změněný soubor ve složce serveru služby iCloud a poznamenejte změny do souboru pomocí souboru koordinace.
+4.  Zařízení bez použití souboru koordinace provede změnu v souboru a uloží jej do složky serveru služby iCloud. Tyto změny se okamžitě replikují do dalších zařízení.
 
-Předpokládejme původní zařízení s iOS nebo Mac se úpravy souboru, nyní se jejich změny ztráty a přepsat verzi souboru ze nekoordinovaná zařízení. Pokud chcete zabránit ztrátě dat, je soubor koordinace musí při práci s dokumenty založená na cloudu.
+Předpokládejme, původní zařízení se systémem iOS nebo Mac se úpravy souboru nyní ztrátě nebo přepsána verzí souborů ze zařízení nekoordinovaná jejich změny. Aby se zabránilo ztrátě dat, soubor koordinace je nezbytnost při práci s dokumenty založené na cloudu.
 
 ### <a name="using-uidocument"></a>Pomocí UIDocument
 
- `UIDocument` Díky jednoduché věcí (nebo `NSDocument` v systému macOS) pomocí tohoto postupu všechny lifting těžký pro vývojáře. Poskytuje vytvořené v souboru koordinaci s fronty pozadí udržovat blokovat uživatelského rozhraní aplikace.
+ `UIDocument` zjednodušuje věci (nebo `NSDocument` v systému macOS) tímto způsobem všechny těžkou pro vývojáře. Poskytuje integrované v souboru koordinaci s frontami pozadí zabránit zablokování uživatelského rozhraní aplikace.
 
- `UIDocument` zpřístupní několika vyžaduje vysoké úrovně rozhraní API, která usnadňují náročnost vývoje aplikace Xamarin pro všechny vývojáře účel.
+ `UIDocument` poskytuje několik rozhraní API vysoké úrovně, která usnadňují náročnost vývoje aplikace Xamarin pro všechny účely vývojář vyžaduje.
 
-Následující kód vytvoří podtřídou třídy `UIDocument` implementovat obecné dokument založený na textu, který slouží k uložení a načtení textu ze serveru služby iCloud:
+Následující kód vytvoří podtřída `UIDocument` implementovat Obecný dokument založený na textu, který slouží k uložení a načtení textu ze serveru služby iCloud:
 
 ```csharp
 using System;
@@ -151,13 +152,13 @@ namespace DocPicker
 }
 ```
 
-`GenericTextDocument` Třídy uvedené výše se použije v tomto článku při práci s výběr dokumentu a externí dokumentů v aplikaci Xamarin.iOS 8.
+`GenericTextDocument` Třídy uvedené výše se použije v rámci tohoto článku, při práci s výběr dokumentu a externí dokumenty do aplikace Xamarin.iOS 8.
 
-## <a name="asynchronous-file-coordination"></a>Asynchronní souboru spolupráce
+## <a name="asynchronous-file-coordination"></a>Koordinace asynchronní souboru
 
-iOS 8 poskytuje několik nových funkcí asynchronní koordinaci souboru prostřednictvím nových rozhraní API koordinaci souboru. Před iOS 8 byly všech stávajících rozhraní API souboru koordinaci zcela synchronní. Vynutila si, že vývojář je zodpovědná za implementaci vlastní pozadí služby Řízení front zabránit souboru koordinaci blokování uživatelského rozhraní aplikace.
+iOS 8 nabízí několik nových funkcí asynchronní koordinace souboru prostřednictvím nových rozhraní API souboru koordinace. Před iOS 8 všechny stávající rozhraní API souboru koordinace byly zcela synchronní. To znamená, že jste byli vývojář za implementaci vlastní pozadí služby Řízení front do souboru koordinace zabránit zablokování uživatelského rozhraní aplikace.
 
-Nové `NSFileAccessIntent` třída obsahuje adresu URL odkazující na soubor a celou řadu možností pro řízení typu koordinaci vyžaduje. Následující kód ukazuje přesun souboru z jednoho umístění do druhého pomocí tříd Intent:
+Nové `NSFileAccessIntent` třída obsahuje adresu URL odkazující na soubor a celou řadu možností pro ovládací prvek typu vyžaduje koordinaci. Následující kód ukazuje přesouvání souboru z jednoho umístění do druhého pomocí tříd Intent:
 
 ```csharp
 // Get source options
@@ -185,66 +186,66 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 });
 ```
 
-## <a name="discovering-and-listing-documents"></a>Vyhledávání a výpisy dokumenty
+## <a name="discovering-and-listing-documents"></a>Zjišťování a zobrazení dokumentů
 
-Je způsob, jak zjistit a seznam dokumentů pomocí stávající `NSMetadataQuery` rozhraní API. Tato část popisuje nové funkce přidané do `NSMetadataQuery` , usnadnění práce s dokumenty i jednodušší než dřív.
+Způsob zjišťování a seznam dokumentů je pomocí stávajícího `NSMetadataQuery` rozhraní API. Tato část se bude zabývat nových funkcích `NSMetadataQuery` , která usnadňuje práci s dokumenty ještě jednodušší než dřív.
 
-### <a name="existing-behavior"></a>Chování existující
+### <a name="existing-behavior"></a>Stávající chování
 
-Před iOS 8 `NSMetadataQuery` bylo pomalé v sítích na změny ve výstupní místního souboru jako například: Odstraní, vytvoří a přejmenuje.
+Před iOS 8 `NSMetadataQuery` bylo pomalé v sítích na změny vyzvednutí místního souboru jako například: Odstraní a vytvoří přejmenuje.
 
- [![](document-picker-images/image2.png "Přehled změny NSMetadataQuery místního souboru")](document-picker-images/image2.png#lightbox)
+ [![](document-picker-images/image2.png "Přehled změn NSMetadataQuery místního souboru")](document-picker-images/image2.png#lightbox)
 
 V diagramu:
 
-1.  Pro soubory, které již existují v kontejneru aplikace `NSMetadataQuery` má existující `NSMetadata` záznamů předem vytvořené a zařazovány do fronty, takže jsou k dispozici okamžitě k aplikaci.
+1.  Pro soubory, které již existují v kontejneru aplikace `NSMetadataQuery` má existující `NSMetadata` záznamy předem vytvořené a zařazení tak, aby byly aplikace okamžitě k dispozici.
 1.  Aplikace vytvoří nový soubor v kontejneru aplikace.
-1.  Dochází ke zpoždění před `NSMetadataQuery` uvidí úpravy ke kontejneru aplikace a vytvoří požadované `NSMetadata` záznamu.
+1.  Dochází ke zpoždění před `NSMetadataQuery` vidí změny do kontejneru aplikace a vytvoří požadované `NSMetadata` záznamu.
 
 
-Z důvodu zpoždění při vytváření `NSMetadata` záznamu, aplikace měla mít dva datové zdroje otevřete: jeden pro změny místního souboru a jeden pro cloud na základě změny.
+Kvůli zpoždění při vytváření `NSMetadata` záznamů, aplikace musí mít dva datové zdroje otevřete: jeden pro změny místního souboru a jeden pro cloud na základě změny.
 
-### <a name="stitching"></a>Ve hřbetu
+### <a name="stitching"></a>Spojování
 
-V iOS 8 `NSMetadataQuery` je jednodušší použít přímo s novou funkci s názvem Stitching:
+IOS 8 `NSMetadataQuery` je jednodušší použít přímo s novou funkci jako spojů:
 
- [![](document-picker-images/image3.png "NSMetadataQuery pomocí nové funkce volá Stitching")](document-picker-images/image3.png#lightbox)
+ [![](document-picker-images/image3.png "Volá se, spojů NSMetadataQuery pomocí nové funkce")](document-picker-images/image3.png#lightbox)
 
-Pomocí Stitching v diagramu:
+Používání spojů v diagramu:
 
-1.  Jako předtím, pro soubory, které již existují v kontejneru aplikace `NSMetadataQuery` má existující `NSMetadata` záznamů předem vytvořené a zařazovány do fronty.
-1.  Aplikace vytvoří nový soubor v kontejneru aplikace pomocí souboru spolupráce.
-1.  Háku v kontejneru aplikace uvidí úpravy a volání `NSMetadataQuery` vytvoření požadovaných `NSMetadata` záznamu.
-1.  `NSMetadata` Záznamu je vytvořen přímo po souboru a je k dispozici pro aplikaci.
+1.  Stejně jako předtím u souborů, které již existují v kontejneru aplikace `NSMetadataQuery` má existující `NSMetadata` záznamy předem vytvořené a zařazení.
+1.  Aplikace vytvoří nový soubor v kontejneru aplikace pomocí koordinace souboru.
+1.  Volání v kontejneru aplikace vidí změny a volání `NSMetadataQuery` vytvoření požadovaných `NSMetadata` záznamu.
+1.  `NSMetadata` Záznam se vytvoří přímo po souboru a je k dispozici pro aplikaci.
 
 
-Pomocí Stitching aplikace už má otevřít zdroj dat pro monitorování místní a cloudové na základě změn souborů. Teď můžete aplikaci spoléhají na `NSMetadataQuery` přímo.
+Pomocí spojů aplikace není k dispozici k otevření zdroje dat pro monitorování místní a cloudové změny souborů. Nyní můžete aplikace využívají `NSMetadataQuery` přímo.
 
 > [!IMPORTANT]
-> Ve hřbetu funguje jenom v případě aplikace používá soubor koordinaci uvedenou výše v části. Pokud soubor koordinaci není používán, rozhraní API výchozí chování pro iOS 8 existující před.
+> Spojování funguje jenom v případě, že aplikace používá soubor koordinace uvedenou výše v části. Pokud se nepoužívá soubor koordinace, rozhraní API ve výchozím nastavení stávající chování pre iOS 8.
 
 
 
 
-### <a name="new-ios-8-metadata-features"></a>Nové funkce Metadata iOS 8
+### <a name="new-ios-8-metadata-features"></a>Nové funkce metadat iOS 8
 
-Následující nové funkce přidané do `NSMetadataQuery` v iOS 8:
+Byly přidány následující nové funkce do `NSMetadataQuery` v iOS 8:
 
--   `NSMetatadataQuery` Nyní můžete seznam nemístních dokumenty uložené v cloudu.
--  Přidaná nová rozhraní API pro přístup k informacím metadata v dokumentech cloudové. 
--  Nová `NSUrl_PromisedItems` rozhraní API, které budou pro přístup k souboru atributy souborů, které může nebo nemusí mít k dispozici obsah místně.
--  Použít `GetPromisedItemResourceValue` metodu za účelem získání informací o daného souboru nebo pomocí `GetPromisedItemResourceValues` metoda získat informace o na více než jeden soubor současně.
+-   `NSMetatadataQuery` můžete teď zobrazit seznam jiné než místní dokumenty uložené v cloudu.
+-  Byly přidány nové rozhraní API pro přístup k informacím metadata dokumentů založené na cloudu. 
+-  Je tu nový `NSUrl_PromisedItems` rozhraní API, které budou pro přístup k souboru atributy souborů, které může nebo nemusí mít obsah k dispozici místně.
+-  Použít `GetPromisedItemResourceValue` metodu k získání informací o daný soubor nebo použijte `GetPromisedItemResourceValues` metodu k získání informací ve více než jeden soubor současně.
 
 
-Pro práci s metadaty byly přidány dva nové příznaky koordinaci souboru:
+Pro práci s metadaty jsme přidali dvě nové příznaky koordinace souboru:
 
 -   `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 -   `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
 
 
-Výše uvedené příznaků obsah souboru dokumentu nemusí být k dispozici místně pro ně má být použit.
+Výše uvedené Flags není potřeba obsah souboru dokumentu být k dispozici místně je možné použít.
 
-Následující segment kódu ukazuje, jak používat `NSMetadataQuery` pro dotazování existenci konkrétní soubor a soubor sestavení, pokud neexistuje:
+Následující segment kódu ukazuje, jak používat `NSMetadataQuery` pro dotazování pro konkrétní soubor existuje a soubor sestavení, pokud neexistuje:
 
 ```csharp
 using System;
@@ -424,60 +425,60 @@ internal void RaiseDocumentLoaded(GenericTextDocument document) {
 
 ### <a name="document-thumbnails"></a>Miniatur dokumentů
 
-Apple domnívá, že nejlepších výsledků při výpisu dokumentů pro aplikaci je pomocí verze Preview. Díky tomu kontext koncového uživatele, takže identifikují můžete rychle dokumentu, který chtějí pracovat.
+Apple, jako je nejlepší uživatelské prostředí při výpisu dokumenty pro aplikaci použít verze Preview. Díky tomu kontextu koncoví uživatelé tak můžou rychle určit dokumentu, který chtějí pracovat.
 
-Před iOS 8 zobrazující náhledy dokumentů vyžaduje vlastní implementaci. Nový iOS 8 jsou atributy systému souborů, které umožňuje vývojářům snadno pracovat s miniatur dokumentů.
+Před iOS 8 povinné zobrazující náhledy dokumentů vlastní implementaci. Nový operační systém na iOS 8 jsou atributy systému souborů, které umožňuje vývojářům rychle pracovat s miniaturami dokumentu.
 
 #### <a name="retrieving-document-thumbnails"></a>Načítání miniatur dokumentů 
 
-Při volání `GetPromisedItemResourceValue` nebo `GetPromisedItemResourceValues` metody, `NSUrl_PromisedItems` rozhraní API, `NSUrlThumbnailDictionary`, je vrácena. Pouze klíč právě tohoto slovníku `NSThumbnial1024X1024SizeKey` a jeho odpovídající `UIImage`.
+Při volání `GetPromisedItemResourceValue` nebo `GetPromisedItemResourceValues` metody, `NSUrl_PromisedItems` rozhraní API, `NSUrlThumbnailDictionary`, je vrácena. Pouze klíč aktuálně v tento slovník je `NSThumbnial1024X1024SizeKey` a jeho odpovídající `UIImage`.
 
-#### <a name="saving-document-thumbnails"></a>Ukládání miniatur dokumentů
+#### <a name="saving-document-thumbnails"></a>Uložení dokumentu miniatury
 
-Nejjednodušší způsob, jak uložit na miniaturu je pomocí `UIDocument`. Při volání `GetFileAttributesToWrite` metodu `UIDocument` a nastavení miniaturu, ji budou automaticky uloženy po souboru dokumentu. Na serveru služby iCloud démon se zobrazit tato změna a rozšířit na serveru služby iCloud. V systému Mac OS X miniatury jsou automaticky generované pro vývojáře modulu plug-in rychlé vypadat.
+Nejjednodušší způsob, jak uložit miniaturu je pomocí `UIDocument`. Při volání `GetFileAttributesToWrite` metodu `UIDocument` a nastavení na miniaturu, bude automaticky uložen dokument se. Na serveru služby iCloud démon této změně najdete v článku, který se šíří do Icloudu. V systému Mac OS X miniatury jsou automaticky generovány pro vývojáře pomocí modulu plug-in rychlé vypadat.
 
-Se základy práce s dokumenty Icloudu založené na místě změny existujícího rozhraní API, jsme připraveni k implementaci dokumentu výběr View Controller v Xamarin iOS 8 mobilní aplikace.
+Se základy práce s dokumenty Icloudu založené na místě, spolu s změny existujícího rozhraní API, jsme připraveni k implementaci kontroler zobrazení pro výběr dokumentu v Xamarin pro iOS 8 mobilní aplikace.
 
 
 ## <a name="enabling-icloud-in-xamarin"></a>Povolení Icloudu v Xamarinu
 
-Před použitím nástroje pro výběr dokumentu v aplikaci Xamarin.iOS, musí být povolena ve vaší aplikaci a prostřednictvím Apple podporu serveru služby iCloud. 
+Před použitím nástroje pro výběr dokumentu v aplikaci Xamarin.iOS, je potřeba povolit ve vaší aplikaci a prostřednictvím Apple podporu serveru služby iCloud. 
 
 Následující kroky návodu proces zřizování pro serveru služby iCloud.
 
-1. Vytvořte serveru služby iCloud kontejneru.
+1. Vytvoření kontejneru iCloud.
 2. Vytvoření ID aplikace, která obsahuje na serveru služby iCloud služby App Service.
-3. Vytvořit profil zřizování, který zahrnuje číslem ID této aplikace.
+3. Vytvořit profil zřizování, který obsahuje ID této aplikace.
 
-[Práce s možností](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) Průvodce vás provede první dva kroky. Pokud chcete vytvořit profil pro zřizování, postupujte podle kroků v [profil zřizování](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) průvodce.
+[Práce s funkcemi](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) Průvodce vás provede první dva kroky. K vytvoření zřizovacího profilu, postupujte podle kroků v [zřizovací profil](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) průvodce.
 
 
 
-Následující kroky návodu proces konfigurace aplikace pro serveru služby iCloud:
+Následující kroky návodu procesem konfigurace vaší aplikace pro serveru služby iCloud:
 
-Postupujte takto:
+Postupujte následovně:
 
 1.  Otevřete projekt v sadě Visual Studio pro Mac nebo Visual Studio.
-2.  V **Průzkumníku**, klikněte pravým tlačítkem na projekt a vyberte možnosti.
-3.  V dialogové okno Možnosti vyberte **iOS aplikace**, ujistěte se, že **identifikátor svazku** odpovídá ten, který byl definován v **ID aplikace** vytvořili výše pro aplikaci. 
-4.  Vyberte **iOS podepisování sady**, vyberte **vývojáře Identity** a **profil zřizování** vytvořili výše.
-5.  Klikněte **OK** tlačítko Uložit změny a zavřete dialogové okno.
-6.  Klikněte pravým tlačítkem na `Entitlements.plist` v **Průzkumníku řešení** a otevře se v editoru.
+2.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte možnosti.
+3.  Dialogové okno Možnosti vyberte **aplikace pro iOS**, ujistěte se, že **identifikátor sady prostředků** odpovídá, která byla definována v **ID aplikace** vytvořené výše pro aplikaci. 
+4.  Vyberte **podepsání sady prostředků aplikace pro iOS**, vyberte **Developer Identity** a **zřizovací profil** vytvořili výše.
+5.  Klikněte na tlačítko **OK** tlačítko a uložte změny a zavřete dialogové okno.
+6.  Klikněte pravým tlačítkem na `Entitlements.plist` v **Průzkumníka řešení** ho otevřete v editoru.
 
     > [!IMPORTANT]
-    > V sadě Visual Studio budete muset otevřít editor oprávnění kliknutím pravým tlačítkem myši, vyberte **otevřít v programu...** a výběrem Editor seznamu vlastností
+    > V sadě Visual Studio budete muset otevřít editor oprávnění kliknutím pravým tlačítkem myši na něj, vyberete **otevřít v programu...** a vyberete Editor seznamu vlastností
 
-7.  Zkontrolujte **povolit Icloudu** , **Icloudu dokumenty** , **klíč hodnota úložiště** a **CloudKit** .
-8.  Ujistěte se, **kontejneru** existuje pro aplikaci (jak vytvořili výše). Příklad: `iCloud.com.your-company.AppName`
+7.  Zkontrolujte **povolit iCloud** , **dokumenty Icloudu** , **úložiště hodnot klíčů** a **CloudKit** .
+8.  Zkontrolujte, **kontejneru** existuje pro aplikaci (vytvořené výše). Příklad: `iCloud.com.your-company.AppName`
 9.  Uložte změny do souboru.
 
-Další informace o oprávnění najdete v části [práce oprávnění](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
+Další informace o oprávnění najdete [práce s nároky](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
 
-K nastavení výše na místě aplikace teď můžete použít cloudové dokumenty a nového řadiče zobrazení výběr dokumentu.
+Pomocí výše uvedených nastavení v místě aplikace teď můžete použít cloudové dokumenty a nový kontroler zobrazení pro výběr dokumentu.
 
-## <a name="common-setup-code"></a>Běžné instalační kód
+## <a name="common-setup-code"></a>Společný kód instalační program
 
-Než začnete s řadičem dokumentu výběr zobrazení, se vyžaduje kód některé standardní instalace. Začněte tím, že úpravy aplikace `AppDelegate.cs` souboru a nastavit jej vypadat třeba takto:
+Než začnete s kontroler zobrazení pro výběr dokumentu, je nějaký kód standardní instalační program vyžaduje. Začněte tím, že úpravy aplikace `AppDelegate.cs` souboru a nastavte ji vypadat nějak takto:
 
 ```csharp
 using System;
@@ -793,11 +794,11 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> Ve výše uvedeném kódu obsahuje kód z výše uvedené části Discovering a výpis dokumentů. Zobrazí se zde jako celek, jak se objevuje v aplikaci skutečný. Pro jednoduchost, tento příklad funguje jeden, pevně souborem (`test.txt`) jenom.
+> Ve výše uvedeném kódu obsahuje kód z výše uvedené části Discovering a výpis dokumenty. To je zde uvedený v celém rozsahu, jak se bude zobrazovat v aplikace skutečný. Pro zjednodušení tento příklad funguje s jeden pevně zakódované souborů (`test.txt`) pouze.
 
-Výše uvedený kód zpřístupňuje několik zástupce serveru služby iCloud jednotky je mohli snadněji pracovat ve zbývající části aplikace.
+Výše uvedený kód poskytuje několik klávesové zkratky Icloudu jednotku pro snadnější pracovat ve zbývající části aplikace.
 
-Dál přidejte následující kód k žádnému zobrazení nebo zobrazení kontejneru, který bude pomocí nástroje pro výběr dokumentu nebo práce s dokumenty založená na cloudu:
+V dalším kroku přidejte následující kód všech zobrazení nebo zobrazení kontejneru, který se pomocí nástroje pro výběr dokumentu nebo práce s dokumenty založené na cloudu:
 
 ```csharp
 using CloudKit;
@@ -814,43 +815,43 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-Tento postup přidá zástupce pro zajištění `AppDelegate` a přístup k serveru služby iCloud zástupce vytvořili výše.
+Tento postup přidá zástupce zobrazíte `AppDelegate` a přístup k serveru služby iCloud zkratky vytvořili výše.
 
-S tímto kódem na místě Podívejme se na implementaci řadiče zobrazení výběr dokumentu v aplikaci Xamarin iOS 8.
+S tímto kódem na místě Pojďme se podívat na implementaci kontroler zobrazení pro výběr dokumentu v aplikaci Xamarin iOS 8.
 
-## <a name="using-the-document-picker-view-controller"></a>Pomocí řadiče zobrazení dokumentu výběr.
+## <a name="using-the-document-picker-view-controller"></a>Použití Kontroleru zobrazení pro výběr dokumentu
 
-Před iOS 8 se velmi obtížné přístup k dokumentům z jiné aplikace, protože žádný způsob, jak zjistit dokumenty mimo aplikaci z aplikace.
+Před iOS 8 je velmi obtížné získat přístup k dokumentům z jiné aplikace, protože neexistoval způsob, jak zjistit dokumenty mimo aplikaci z v rámci aplikace.
 
-### <a name="existing-behavior"></a>Chování existující
+### <a name="existing-behavior"></a>Stávající chování
 
- [![](document-picker-images/image31.png "Existující chování – přehled")](document-picker-images/image31.png#lightbox)
+ [![](document-picker-images/image31.png "Přehled stávající chování")](document-picker-images/image31.png#lightbox)
 
-Podívejme se na přístup k externím dokumentu před iOS 8:
+Pojďme se podívat na přístup k externím dokumentu před iOS 8:
 
-1.  Nejdřív by uživatel musel otevřít aplikace, který původně vytvořil v dokumentu.
-1.  Dokument je vybraná a `UIDocumentInteractionController` se používá k odeslání dokumentu do nové aplikace.
-1.  Nakonec kopii původního dokumentu je umístěn v kontejneru novou aplikaci.
+1.  Nejprve uživatelé aplikaci, který původně vytvořil dokument otevřít.
+1.  Dokument je vybraná a `UIDocumentInteractionController` se používá k odeslání dokumentu na novou aplikaci.
+1.  Nakonec kopii původního dokumentu je umístěn v nové aplikace kontejneru.
 
 
-Zde je k dispozici pro druhý aplikace otevírat a upravovat v dokumentu.
+Odtud dokument je k dispozici pro druhou aplikaci otevřít a upravit.
 
-### <a name="discovering-documents-outside-of-an-apps-container"></a>Zjišťování dokumenty mimo kontejner aplikace
+### <a name="discovering-documents-outside-of-an-apps-container"></a>Zjišťování dokumentů mimo kontejner aplikace
 
-Aplikace v iOS 8, je moct snadno přístup k dokumentům mimo svůj vlastní aplikace kontejneru:
+Aplikace v iOS 8, je možné získat přístup k dokumentům mimo svůj vlastní kontejner aplikace s lehkostí a elegancí:
 
- [![](document-picker-images/image32.png "Zjišťování dokumenty mimo kontejner aplikace")](document-picker-images/image32.png#lightbox)
+ [![](document-picker-images/image32.png "Zjišťování dokumentů mimo kontejner aplikace")](document-picker-images/image32.png#lightbox)
 
-Použití nového serveru služby iCloud výběr dokumentu ( `UIDocumentPickerViewController`), aplikace pro iOS můžete přímo zjistit a využít mimo jeho kontejneru aplikace. `UIDocumentPickerViewController` Poskytuje mechanismus pro uživatele a udělit přístup k upravit ty zjištěna dokumentů prostřednictvím oprávnění.
+Pomocí nového serveru služby iCloud výběr dokumentu ( `UIDocumentPickerViewController`), aplikace pro iOS můžete přímo zjistit a přístup mimo svůj kontejner aplikace. `UIDocumentPickerViewController` Poskytuje mechanismus pro uživateli udělit přístup k a upravit tyto zjištěné dokumenty pomocí oprávnění.
 
-Aplikace musí přihlásit k jeho dokumentů zobrazí v na serveru služby iCloud výběr dokumentu a být k dispozici pro jiné aplikace zjistit a pracovat s nimi. Má aplikace Xamarin iOS 8 sdílet své aplikace kontejneru, upravit `Info.plist` v standardního textového editoru soubor a přidejte následující dva řádky do dolní části slovníku (mezi `<dict>...</dict>` značky):
+Aplikace musí přihlásit k jeho dokumentů zobrazí v na serveru služby iCloud výběr dokumentu a být k dispozici pro jiné aplikace při zjišťování a s nimi pracovat. Aby aplikace Xamarin iOS 8 a sdílet své aplikace kontejneru, upravit ho `Info.plist` v standardního textového editoru a přidejte následující dva řádky na konec slovníku (mezi `<dict>...</dict>` značek):
 
 ```xml
 <key>NSUbiquitousContainerIsDocumentScopePublic</key>
 <true/>
 ```
 
-`UIDocumentPickerViewController` Poskytuje skvělé nové uživatelské rozhraní, která umožňuje uživatelům zvolit dokumenty. Pokud chcete zobrazit řadiče zobrazení výběr dokumentu v aplikaci Xamarin iOS 8, postupujte takto:
+`UIDocumentPickerViewController` Poskytuje skvělé nové uživatelské rozhraní, který umožňuje uživateli zvolit dokumenty. Chcete-li zobrazit kontroler zobrazení pro výběr dokumentu v aplikaci Xamarin iOS 8, postupujte takto:
 
 ```csharp
 using MobileCoreServices;
@@ -902,63 +903,63 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> Vývojář musí volat `StartAccessingSecurityScopedResource` metodu `NSUrl` můžete získat přístup k externím dokumentu. `StopAccessingSecurityScopedResource` Musí být volána metoda uvolnit zámek zabezpečení při načtení dokumentu.
+> Vývojář musí volat `StartAccessingSecurityScopedResource` metodu `NSUrl` můžete získat přístup k externím dokumentu. `StopAccessingSecurityScopedResource` Musí být volána metoda uvolnění zámku zabezpečení, co nejdříve po načtení dokumentu.
 
 ### <a name="sample-output"></a>Vzorový výstup
 
-Tady je příklad, jakým způsobem se výše uvedený kód by zobrazení dokumentu výběr při spuštění na zařízení iPhone:
+Tady je příklad, jak by se výše uvedený kód zobrazí výběr dokumentu, při spuštění na zařízení iPhone:
 
 1.  Uživatel spustí aplikaci, a zobrazí se hlavní rozhraní:   
  
     [![](document-picker-images/image33.png "Zobrazí se hlavní rozhraní")](document-picker-images/image33.png#lightbox)
-1.  Odposlouchávání uživatele **akce** tlačítka v horní části obrazovky a se zobrazí výzva k výběru **dokumentu zprostředkovatele** ze seznamu dostupných zprostředkovatelů:   
+1.  Odposlouchávání uživatele **akce** tlačítko v horní části obrazovky a se zobrazí výzva k výběru **dokumentu poskytovatele** ze seznamu dostupných zprostředkovatelů:   
  
-    [![](document-picker-images/image34.png "Vyberte zprostředkovatele dokumentu ze seznamu dostupných zprostředkovatelů")](document-picker-images/image34.png#lightbox)
-1.  **Dokumentu výběr View Controller** se zobrazí pro vybrané **dokumentu zprostředkovatele**:   
+    [![](document-picker-images/image34.png "Vybrat dokument zprostředkovatele ze seznamu dostupných zprostředkovatelů")](document-picker-images/image34.png#lightbox)
+1.  **Kontroler zobrazení pro výběr dokumentu** se zobrazí pro vybrané **dokumentu poskytovatele**:   
  
-    [![](document-picker-images/image35.png "Výběr řadiče zobrazení dokumentu se zobrazí.")](document-picker-images/image35.png#lightbox)
-1.  Uživatel klepnutím na **složku dokumentů** zobrazíte její obsah:   
+    [![](document-picker-images/image35.png "Zobrazí se kontroler zobrazení pro výběr dokumentu")](document-picker-images/image35.png#lightbox)
+1.  Uživatel klepne na **složku dokumentů** zobrazíte jeho obsah:   
  
-    [![](document-picker-images/image36.png "Obsah dokumentu složky")](document-picker-images/image36.png#lightbox)
-1.  Uživatel vybere **dokumentu** a **dokumentu výběr** je uzavřený.
-1.  Hlavní rozhraní se zobrazí znovu, **dokumentu** se načtou z externí kontejneru a její obsah zobrazí.
+    [![](document-picker-images/image36.png "Obsah složky dokumentu")](document-picker-images/image36.png#lightbox)
+1.  Uživatel vybere **dokumentu** a **výběr dokumentu** je zavřený.
+1.  Hlavní rozhraní se zobrazí znovu, **dokumentu** je načteno z externí kontejneru a jeho obsah zobrazí.
 
 
-Skutečné zobrazení řadiče zobrazení dokumentu výběr závisí na poskytovateli dokumentu, že uživatel nainstaloval na zařízení a které režim výběru dokumentu byla implementace. Výše uvedený příklad používá režim otevření, jiné typy režimu budou popsané v níže uvedené podrobnosti.
+Skutečné zobrazení kontroler zobrazení pro výběr dokumentu závisí na dokument poskytovatelů, že uživatel má nainstalovanou na zařízení a které režimu pro výběr dokumentu se implementují. Výše uvedený příklad používá režim otevření, jiné typy režimu probereme podrobnější rozpis naleznete níže.
 
 ## <a name="managing-external-documents"></a>Správa externích dokumentů
 
-Jak je popsáno výše, před iOS 8, aplikace by mohla přístup jenom k dokumenty, které byly součástí jeho kontejneru aplikace. V iOS 8 aplikace můžete přístup k dokumentům z externích zdrojů:
+Jak je popsáno výše, před iOS 8, aplikace může jenom přístup k dokumentům, které byly součástí jeho kontejneru aplikace. V Iosu 8 aplikace přístupné dokumenty z externích zdrojů:
 
  [![](document-picker-images/image37.png "Externí dokumenty přehled správy")](document-picker-images/image37.png#lightbox)
 
-Když uživatel vybere dokumentu z externího zdroje, referenční dokument je zapsán do kontejneru aplikace, který odkazuje na původního dokumentu.
+Když uživatel vybere dokument z externího zdroje, referenční dokument je zapsán do kontejneru aplikace, která odkazuje na původního dokumentu.
 
-Jako pomoc při přidávání nové možnost do existující aplikace, některé nové funkce přidané `NSMetadataQuery` rozhraní API. Obvykle se aplikace používá oboru Všudypřítomný dokumentu do seznamu dokumentů, které za provozu v rámci příslušného kontejneru aplikace. Pomocí tohoto oboru, jen na dokumenty v kontejneru aplikace bude nezobrazí.
+Jako pomoc při přidávání tato nová funkce do existující aplikace, bylo přidáno několik nových funkcí do `NSMetadataQuery` rozhraní API. Aplikace obvykle používá všudypřítomná obor dokumentu do seznamu dokumentů, kteří žijí v rámci jeho kontejneru aplikace. Pomocí tohoto oboru, pouze dokumenty v kontejneru aplikace bude pořád zobrazuje.
 
-Pomocí nového Všudypřítomný externí oboru dokumentu vrátí dokumenty, které za provozu mimo kontejneru aplikace a vrátí metadata pro ně. `NSMetadataItemUrlKey` Bude odkazovat na adresu URL, kde se ve skutečnosti nachází v dokumentu.
+Pomocí nového všudypřítomná externí dokument oboru vrátí dokumenty, které za provozu mimo kontejner aplikace a vrátí metadata pro ně. `NSMetadataItemUrlKey` Bude odkazovat na adresu URL, kde se skutečně nachází dokumentu.
 
-Aplikace nemá někdy chtějí pracovat s dokumenty na odkazuje tý odkazu. Místo toho aplikace chce pracovat přímo v referenčním dokumentu. Aplikace může například chtít zobrazit dokument ve složce aplikace v uživatelském rozhraní, nebo chcete umožnit uživatelům pohyb odkazy do složky.
+Někdy aplikace nechce pro práci s dokumenty neodkazují th odkaz. Místo toho aplikace chce pracovat přímo s referenčním dokumentu. Aplikace může být vhodné například pro zobrazení dokumentu ve složce vaší aplikace v uživatelském rozhraní, nebo aby uživatel mohl pohyb odkazy uvnitř složky.
 
-V iOS 8 nový `NSMetadataItemUrlInLocalContainerKey` poskytuje přímý přístup v referenčním dokumentu. Tento klíč odkazuje na skutečný odkaz na externí dokumentu v kontejneru aplikace.
+IOS 8 nový `NSMetadataItemUrlInLocalContainerKey` byl poskytnut přístup přímo k referenčním dokumentu. Tento klíč odkazuje na skutečný odkaz na externím dokumentu v kontejneru aplikace.
 
-`NSMetadataUbiquitousItemIsExternalDocumentKey` Slouží k otestování, jestli dokument je externí do kontejneru aplikace. `NSMetadataUbiquitousItemContainerDisplayNameKey` Se používá pro přístup k názvu kontejneru, který se nachází původní kopii externí dokumentu.
+`NSMetadataUbiquitousItemIsExternalDocumentKey` Slouží k otestování, jestli dokument je mimo kontejner aplikace. `NSMetadataUbiquitousItemContainerDisplayNameKey` Se používá pro přístup k názvu kontejneru, který je bydlení původní kopii externím dokumentu.
 
-### <a name="why-document-references-are-required"></a>Proč se požadované odkazy na dokumenty
+### <a name="why-document-references-are-required"></a>Proč jsou požadované odkazy na dokumenty
 
-Hlavním důvodem této iOS 8 používá odkazy pro přístup k externí dokumenty je zabezpečení. Žádná aplikace je poskytnut přístup k žádné jiné aplikace kontejneru. Pouze výběr dokumentu to udělat, protože je spuštěné out-of-process a má široký přístup k systému.
+Hlavním důvodem této iOS 8 používá odkazy pro přístup k externí dokumenty je zabezpečení. Žádná aplikace je poskytnut přístup k jakékoli jiné aplikace v kontejneru. Pouze výběr dokumentu můžete to provést, protože je spuštěné mimo proces a má široký přístup k systému.
 
-Jediným způsobem, jak získat k dokumentu mimo kontejneru aplikace je pomocí nástroje pro výběr dokumentu, a pokud adresa URL vrácené nástroje pro výběr obor zabezpečení. Adresa URL obor zabezpečení obsahuje právě dostatek informací pro vybraný dokument spolu s vymezená práva potřebná k udělení přístupu aplikaci v dokumentu.
+Je jediný způsob, jak získat k dokumentu mimo kontejner aplikace s použitím nástroje pro výběr dokumentu, a pokud adresy URL vrácené nástroje pro výběr oboru zabezpečení. Adresa URL obor zabezpečení obsahuje jenom dostatek informací pro vybraný dokument spolu s vymezeným oborem oprávnění nutná k aplikaci udělit přístup k tomuto dokumentu.
 
-Je důležité si uvědomit, že pokud adresu URL obor zabezpečení byl serializován do řetězce a pak deserializovaný, informace o zabezpečení by dojít ke ztrátě a soubor by být nedostupný z adresy URL. Funkce odkaz na dokument poskytuje mechanismus pro návrat k souborům ukazující na tyto adresy URL.
+Je důležité si uvědomit, že pokud adresu URL obor zabezpečení se serializovat do řetězce a pak deserializovaný, informace o zabezpečení by dojít ke ztrátě a soubor by být nedostupný z adresy URL. Odkaz na dokument funkce poskytuje mechanismus pro získání zpátky k souborům, na které odkazují tyto adresy URL.
 
-Ano, pokud aplikace získá `NSUrl` z jednoho z odkazů na dokumenty, již má k oboru zabezpečení, který je připojen a slouží k přístupu k souboru. Z tohoto důvodu důrazně doporučujeme, vývojáři použít `UIDocument` protože zpracovává všechny této informace a procesy pro ně.
+Pokud aplikace získá `NSUrl` z jednoho z referenční dokumenty již má obor zabezpečení připojené a slouží k přístupu k souboru. Z tohoto důvodu vysoce doporučuje se, že vývojáři použít `UIDocument` protože zpracovává všechna z těchto informací a procesy pro ně.
 
 ### <a name="using-bookmarks"></a>Použití záložek
 
-Vždy není možné provést výčet dokumenty aplikace nelze vrátit zpět k určitému dokumentu, například při provádění obnovení stavu. iOS 8 poskytuje mechanismus pro vytvoření záložky, jejichž přímým cílem daného dokumentu.
+Vždy není možné vytvořit výčet dokumenty aplikace chcete vrátit zpět do určitého dokumentu, například při provádění obnovení stavu. iOS 8 poskytuje mechanismus pro vytvoření záložky, jejichž přímým cílem daného dokumentu.
 
-Následující kód vytvoří záložku z `UIDocument`na `FileUrl` vlastnost:
+Následující kód vytvoří záložky z `UIDocument`společnosti `FileUrl` vlastnost:
 
 ```csharp
 // Trap all errors
@@ -988,7 +989,7 @@ catch (Exception e) {
 }
 ```
 
-Existujícího rozhraní API záložku se používá k vytvoření záložku proti existující `NSUrl` , mohou být uloženy a načteny poskytnout přímý přístup k externí soubor. Následující kód obnoví záložka, která byla vytvořena výše:
+Rozhraní API pro stávající záložky se používá k vytvoření záložky proti existující `NSUrl` , které lze uložit a načíst a zajistit tak přístup s přímým přístupem do externího souboru. Následující kód obnoví záložku, která byla vytvořena výše:
 
 ```csharp
 if (Bookmark != null) {
@@ -1015,132 +1016,132 @@ if (Bookmark != null) {
 }
 ```
 
-## <a name="open-vs-import-mode-and-the-document-picker"></a>Otevřete vs. Výběr dokumentu a režimu import.
+## <a name="open-vs-import-mode-and-the-document-picker"></a>Otevřít vs. Režim importu a nástroje pro výběr dokumentu
 
-Výběr řadiče zobrazení dokumentu funkce dvou různých režimech:
+Kontroler zobrazení pro výběr dokumentu obsahuje dva různé režimy činnosti:
 
-1.  **Otevřete režimu** – v tomto režimu při uživatel vybere a externí dokumentu, nástroje pro výběr dokumentu vytvořte záložku obor zabezpečení v kontejneru aplikace.   
+1.  **Otevřete režim** – v tomto režimu, když uživatel vybere a externím dokumentu, vytvoří nástroj pro výběr dokumentu záložku obor zabezpečení v kontejneru aplikace.   
  
-    [![](document-picker-images/image37.png "Záložku v kontejneru aplikace obor zabezpečení")](document-picker-images/image37.png#lightbox)
-1.  **Režim import** – v tomto režimu, když uživatel vybere a externí dokumentu, nástroje pro výběr dokumentu nebude vytvořte záložku, ale místo toho zkopírujte soubor do dočasného umístění a poskytnout přístup k aplikaci v dokumentu v tomto umístění:   
+    [![](document-picker-images/image37.png "Bezpečnostní obor záložky v kontejneru aplikace")](document-picker-images/image37.png#lightbox)
+1.  **Importování** – v tomto režimu, když uživatel vybere a externím dokumentu, nástroje pro výběr dokumentu nebude vytvoření záložky, ale místo toho zkopírujte soubor do dočasné složky a poskytují přístup k aplikacím v dokumentu na tomto místě:   
  
-    [![](document-picker-images/image38.png "Nástroje pro výběr dokumentu bude zkopírujte soubor do dočasného umístění a poskytují přístup k aplikaci v dokumentu v tomto umístění")](document-picker-images/image38.png#lightbox)   
- Jakmile se aplikace ukončí z jakéhokoli důvodu, vyprázdnění dočasného umístění a odebrat soubor. Pokud aplikace potřebuje k získání přístupu k souboru, měl by vytvořit kopii a jeho následné uložení do své aplikace kontejneru.
+    [![](document-picker-images/image38.png "Výběr dokumentu bude zkopírujte soubor do dočasné složky a poskytovat přístup k aplikacím v dokumentu na tomto místě")](document-picker-images/image38.png#lightbox)   
+ Po ukončení aplikace z nějakého důvodu, vyprázdní dočasného umístění a soubor odebrán. Pokud aplikace potřebuje udržovat přístup k souboru, by měl vytvořit kopii a umístěte ho do svého kontejneru aplikace.
 
 
-Režim otevření je užitečné, když aplikace chce spolupracovat s jinou aplikací a sdílet všechny změny provedené v dokumentu s touto aplikací. Režim Import se používá, když aplikace nechce sdílet své změny do dokumentu s jinými aplikacemi.
+Otevřete režim je užitečný, pokud aplikace chce s jinou aplikací při spolupráci a sdílení všechny změny provedené v dokumentu s touto aplikací. Režim importu se používá při aplikace chcete sdílet své změny do dokumentu s ostatními aplikacemi.
 
-## <a name="making-a-document-external"></a>Provedení externí dokumentu
+## <a name="making-a-document-external"></a>Provedení externího dokumentu
 
-Jak jsme uvedli výše, aplikace pro iOS 8 nemá přístup do kontejneru mimo svůj vlastní aplikace kontejneru. Aplikace můžete zapsat do vlastní kontejner místně nebo do dočasného umístění a pak použijte režim speciální dokumentu k přesunutí výsledný dokument mimo kontejneru aplikace pro zvolené umístění uživatele.
+Jak bylo uvedeno výše, aplikace pro iOS 8 nemá přístup do kontejnerů mimo svůj vlastní kontejner aplikace. Aplikace můžou zapisovat do vlastního kontejneru místně nebo do dočasného umístění, a pak pomocí režimu speciálním dokumentu s přesunout výsledný dokumentu mimo kontejner aplikace pro zvolené umístění uživatele.
 
-Pro přesun dokumentu do externího umístění, postupujte takto:
+Chcete-li přesunout dokument do externího umístění, postupujte takto:
 
-1.  Nejprve vytvořte nový dokument v umístění místní nebo dočasné.
-1.  Vytvoření `NSUrl` který by odkazoval na nový dokument.
-1.  Otevřete nový řadič zobrazení dokumentu výběr možností a předejte ji `NSUrl` s režimu `MoveToService` . 
-1.  Jakmile uživatel vybere nové umístění, bude dokument přesunout z jeho aktuálního umístění do nového umístění.
-1.  Odkaz na dokument se zapíšou do kontejneru aplikace aplikace tak, aby soubor můžete pořád použít vytváření aplikací.
+1.  Nejprve vytvořte nový textový dokument v místním nebo dočasné umístění.
+1.  Vytvoření `NSUrl` , která odkazuje na nový dokument.
+1.  Otevřete nový kontroler zobrazení pro výběr dokumentu a předejte ji `NSUrl` s režim `MoveToService` . 
+1.  Po kliknutí na nové umístění, dokument se přesunou z jeho aktuálního umístění do nového umístění.
+1.  Referenční dokument se zapíšou do kontejneru aplikace aplikace tak, že soubor je pořád přístupný vytváření aplikace.
 
 
-Následující kód slouží k přesunutí dokumentu do externího umístění: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
+Následující kód je možné se přesunout dokument do externího umístění: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
-V referenčním dokumentu vrácený proces výše je přesně stejný jako jeden vytvořené otevřete režim výběru dokumentu. Existují však pokusů, které aplikace může chtít přesunout dokumentu bez udržuje odkaz na něj.
+Referenční dokument výše proces vrátí je přesně stejný jako jeden Autor otevřete režim výběr dokumentu. Existují však případů, kdy aplikace možná budete chtít přesunout dokument bez zachování na ni odkaz.
 
-Pokud chcete přesunout dokumentu bez generování odkaz, použijte `ExportToService` režimu. Příklad: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
+Pokud chcete přesunout dokument bez generování odkazu, použijte `ExportToService` režimu. Příklad: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
-Při použití `ExportToService` režimu, dokument se zkopíruje do kontejneru externí a existující kopie je ponechán v původním umístění.
+Při použití `ExportToService` režimu, je dokument zkopírován do externí kontejneru a stávající kopie zůstane v původním umístění.
 
 ## <a name="document-provider-extensions"></a>Rozšíření poskytovatelů dokumentu
 
-S iOS 8 Apple chce koncový uživatel moct získat přístup k žádnému své dokumenty založená na cloudu, bez ohledu na to, kde se skutečně existuje. K dosažení tohoto cíle, poskytuje iOS 8 nového mechanismu dokumentu poskytovatele rozšíření.
+Se systémem iOS 8 Apple chce, aby koncový uživatel bude mít přístup k žádným své dokumenty založené na cloudu, bez ohledu na to, kde jsou skutečně existuje. K dosažení tohoto cíle, iOS 8 obsahuje nový mechanismus rozšíření zprostředkovatel dokumentu.
 
-### <a name="what-is-a-document-provider-extension"></a>Co je zprostředkovatel přípona?
+### <a name="what-is-a-document-provider-extension"></a>Co je rozšíření zprostředkovatel dokumentu?
 
-Jednoduše řečeno, přípona zprostředkovatele je způsob, jak vývojář nebo třetích stran, k poskytování úložiště alternativní dokumentu aplikací, které je přístupné přesný stejným způsobem jako existující umístění úložiště iCloud.
+Jednoduše řečeno, rozšíření zprostředkovatel dokumentu je způsob pro vývojáře nebo třetí strany, zadejte do úložiště aplikací alternativní dokumentu, který je přístupný přesně stejným způsobem jako existující úložiště iCloud.
 
-Uživatele můžete vybrat jednu z těchto umístění alternativní úložiště z nástroje pro výběr dokument a mohou používat přesně stejnou režimů přístupu (Open, Import, přesunutí nebo Export) pro práci se soubory v tomto umístění.
+Uživatele můžete vybrat jednu z těchto umístění alternativní úložiště z nástroje pro výběr dokumentu a ten může použít přesně stejnou režimy přístupu (otevřít, importovat, přesunout nebo Export) pro práci se soubory v dané oblasti.
 
 Tato možnost je implementovaná pomocí dvou různých rozšíření:
 
--  **Výběr rozšíření dokumentů** – poskytuje `UIViewController` podtřídami, která poskytuje grafické rozhraní pro uživatele, zvolit z úložiště alternativní umístění dokumentu. Jako součást řadičem dokumentu výběr zobrazení se zobrazí tato podtřídy.
--  **Zadejte příponu souboru** – to je bez uživatelského rozhraní rozšíření, která pracuje s ve skutečnosti poskytování obsahu souborů. Tato rozšíření jsou k dispozici prostřednictvím koordinaci souboru ( `NSFileCoordinator` ). To je další důležité případu, kdy je potřeba soubor spolupráce.
+-  **Rozšíření výběr dokumentu** – poskytuje `UIViewController` podtřídu, která poskytuje grafické rozhraní pro uživatele k výběru dokument z umístění alternativní úložiště. Jako součást kontroler zobrazení pro výběr dokumentu se zobrazí tato podtřídy.
+-  **Zadejte příponu souboru** – to je rozšířením bez uživatelského rozhraní, které se zabývají vlastně i obsah souborů. Tato rozšíření jsou k dispozici prostřednictvím souboru koordinace ( `NSFileCoordinator` ). Toto je jiný důležité případ, ve kterém jsou vyžadována koordinace souboru.
 
 
-Následující diagram znázorňuje tok typické dat při práci s dokumentu poskytovatele rozšíření:
+Následující diagram znázorňuje tok typické dat při práci s rozšíření poskytovatelů dokumentu:
 
- [![](document-picker-images/image39.png "Tento diagram zobrazuje tok typické dat při práci s dokumentu poskytovatele rozšíření")](document-picker-images/image39.png#lightbox)
+ [![](document-picker-images/image39.png "Tento diagram znázorňuje tok typické dat při práci s rozšíření poskytovatelů dokumentu")](document-picker-images/image39.png#lightbox)
 
 Spustí následující proces:
 
-1.  Aplikace uvede řadič dokumentu výběr umožňující uživateli vybrat soubor, který chcete pracovat.
-1.  Uživatel vybere alternativní umístění a souboru vlastní `UIViewController` zobrazit uživatelské rozhraní se nazývá rozšíření.
-1.  Uživatel vybere soubor z tohoto umístění a adresa URL je předán zpět do nástroje pro výběr dokumentu.
-1.  Nástroje pro výběr dokumentu vybere adresu URL souboru a vrátí ji do aplikace pro uživatele při práci.
-1.  Adresa URL je předán koordinátorem souboru k vrácení soubory obsahu do aplikace.
-1.  Koordinátor souboru volá vlastní zprostředkovatele příponu souboru se načíst soubor.
-1.  Obsah souboru se vrátíte na koordinátorem souboru.
-1.  Obsah souboru se vrátí do aplikace.
+1.  Aplikace prezentuje Kontroleru pro výběr dokumentu umožňující uživateli vybrat soubor, který chcete pracovat.
+1.  Uživatel vybere alternativní umístění a vlastní `UIViewController` rozšíření je volána k zobrazení uživatelského rozhraní.
+1.  Uživatel vybere soubor z tohoto umístění a adresa URL se předá zpět do nástroje pro výběr dokumentu.
+1.  Výběr dokumentu vybere adresu URL k souboru a vrátí ji do aplikace pro uživatele na.
+1.  Adresa URL je předán koordinátor souboru k vrácení souborů obsahu do aplikace.
+1.  Koordinátor soubor volá vlastní rozšíření zprostředkovatel souborů pro načtení souboru.
+1.  Do souboru koordinátor se vrátí obsah souboru.
+1.  Aplikace se vrátí obsah souboru.
 
 
 ### <a name="security-and-bookmarks"></a>Zabezpečení a záložky
 
-Tato část bude trvat rychlý přehled zabezpečení a trvalé soubor přístupu prostřednictvím záložky funguje s příponami zprostředkovatele dokumentu. Na rozdíl od na serveru služby iCloud poskytovatele dokumentu, který automaticky uloží zabezpečení a záložky ke kontejneru aplikace, dokumentu poskytovatele rozšíření si, protože nejsou součástí systému odkaz na dokument.
+Tato část zabere rychlý pohled na zabezpečení a trvalý soubor přístupu prostřednictvím záložky spolupracuje s rozšíření poskytovatelů dokumentu. Na rozdíl od na serveru služby iCloud poskytovatele dokumentu, které automaticky uloží do kontejneru aplikace zabezpečení a záložky, rozšíření poskytovatelů dokument není protože nejsou součástí systému odkaz na dokument.
 
-Příklad: v prostředí organizace, která poskytuje zabezpečené úložiště vlastní společnosti, správci nechcete důvěrné podnikové informace získat přístup nebo zpracovávaných veřejné Icloudu servery. Proto nelze použít předdefinované referenčního systému dokumentu.
+Příklad: v nastavení organizace, která poskytuje zabezpečené úložiště dat vlastní pořádaného microsoftem, správci nechtějí důvěrné firemní informace získat přístup nebo zpracována v Icloudu veřejné servery. Proto nelze použít předdefinovaný systémový odkaz na dokument.
 
-Záložka systému, je možné použít a je zodpovědností přípona souboru zprostředkovatele správně zpracovat záložkou adresy URL a vrátí obsah dokumentu, na kterou se odkazuje.
+Systém Záložka je stále možné a zodpovídá rozšíření zprostředkovatel souborů správně zpracovat adresu URL označenou záložkou a doplňujte a vrátí obsah dokumentu, na kterou se odkazuje.
 
-Z bezpečnostních důvodů má iOS 8 izolační vrstvy, které ukládá informace o tom, které má aplikace přístup ke které identifikátor uvnitř poskytovatele, kterého souboru. Je potřeba poznamenat, že tato vrstva izolace řídí všechny přístup k souborům.
+Z bezpečnostních důvodů má iOS 8 izolační vrstvy, která udržuje informace o tom, které má aplikace přístup ke které identifikátor uvnitř kterého soubor zprostředkovatele. Je třeba poznamenat, že tato vrstva izolace řídí všechny přístup k souborům.
 
-Následující diagram znázorňuje tok dat při práci s záložky a přípona zprostředkovatele:
+Následující diagram znázorňuje tok dat při práci s záložek a poskytovatele rozšíření dokumentu:
 
- [![](document-picker-images/image40.png "Tento diagram zobrazuje tok dat při práci s záložky a příponu zprostředkovatele dokumentu")](document-picker-images/image40.png#lightbox)
+ [![](document-picker-images/image40.png "Tento diagram znázorňuje tok dat při práci s záložek a poskytovatele rozšíření dokumentu")](document-picker-images/image40.png#lightbox)
 
 Spustí následující proces:
 
-1.  Aplikace je zadejte na pozadí a musí se zachovat stav. Zavolá `NSUrl` k vytvoření záložek do souboru v alternativní úložiště.
-1.  `NSUrl` volá zprostředkovatele příponu získat trvalé adresa URL k dokumentu. 
-1.  Přípona souboru zprostředkovatele vrátí adresu URL jako řetězec tak, aby `NSUrl` .
+1.  Aplikace je zaujmout na pozadí a musí zachovat jeho stav. Volá `NSUrl` k vytvoření záložky do souboru v alternativní úložiště.
+1.  `NSUrl` volá rozšíření zprostředkovatel souborů pro získání trvalé adresy URL dokumentu. 
+1.  Rozšíření zprostředkovatel souborů vrátí adresu URL jako řetězec `NSUrl` .
 1.  `NSUrl` Obsahuje ureitou adresu URL do záložku a vrátí ji do aplikace.
-1.  Když aplikace se probudí z probíhá na pozadí a je potřeba obnovit stav, předá záložku `NSUrl` .
-1.  `NSUrl` volá přípona souboru zprostředkovatele s adresou URL souboru.
-1.  Poskytovatele rozšíření souborů má přístup k souboru a umístění souboru, který se vrátí `NSUrl` .
-1.  Umístění souboru je instalován s informace o zabezpečení a vrátí aplikaci.
+1.  Když se aplikace se probudí z probíhá na pozadí a je potřeba obnovit stav, předá záložku na `NSUrl` .
+1.  `NSUrl` volá rozšíření zprostředkovatel souborů s adresou URL souboru.
+1.  Rozšíření zprostředkovatel souborů přistoupí k souboru a vrátí jeho umístění souboru, který se `NSUrl` .
+1.  Umístění souboru je spojeny s informacemi o zabezpečení a vrátí aplikaci.
 
 
-Tady můžete aplikaci přístup k souboru a s ním pracovat jako normální.
+Z tohoto místa můžete aplikace přístup k souboru a s ním pracovat běžným způsobem.
 
-### <a name="writing-files"></a>Zápis souborů
+### <a name="writing-files"></a>Zápis do souborů
 
-Tato část bude trvat rychlý přehled jak zápis souborů do alternativního umístění s funguje dokumentu poskytovatele rozšíření. Aplikace systému iOS pomocí souboru koordinaci uložit informace o disku uvnitř kontejneru aplikace. Krátce po souboru byla úspěšně zapsána, přípona souboru zprostředkovatele budou informováni o změnu.
+Tato část zabere rychlý přehled jak zápis souborů do alternativního umístění pomocí rozšíření zprostředkovatel dokumentu funguje. Aplikace pro iOS pomocí souboru koordinace informace uložit na disk v kontejneru aplikace. Krátce po souboru byla úspěšně zapsána, rozšíření zprostředkovatel souborů budete informováni o změnu.
 
-V tomto okamžiku přípona souboru zprostředkovatele můžete spustit soubor odeslat do alternativního umístění (nebo označit tento soubor jako nekonzistentní a vyžadují nahrávání).
+V tomto okamžiku rozšíření zprostředkovatel souborů můžete spustit nahrávání souboru do alternativního umístění (nebo označte ho jako změny a která vyžaduje odeslání).
 
-### <a name="creating-new-document-provider-extensions"></a>Vytváření nového poskytovatele rozšíření dokumentu
+### <a name="creating-new-document-provider-extensions"></a>Vytváření nových dokumentů poskytovatele rozšíření
 
-Vytvoření nového dokumentu poskytovatele rozšíření je mimo rozsah této úvodní článek. Tyto informace se zde k ukazují, že, podle rozšíření, která uživatel načetl ve svém zařízení s iOS, aplikace může mít přístup k umístění úložiště dokumentů mimo Apple zadané umístění serveru služby iCloud.
+Vytvoření nového dokumentu rozšíření poskytovatelů je mimo rozsah této úvodní článek. Tyto informace je k dispozici zde k zobrazení, podle rozšíření, která uživatel byl načten v zařízení s Iosem, aplikace může mít přístup k umístění úložiště dokumentů mimo Apple zadané umístění serveru služby iCloud.
 
-Vývojáři měli vědět o této skutečnosti, při použití nástroje pro výběr dokumentu a práce s externí dokumenty. Převzaly nesmí těchto dokumentů, které jsou hostované v serveru služby iCloud.
+Vývojáři měli vědět o této skutečnosti, při použití nástroje pro výběr dokumentu a práce s externí dokumenty. Neměli předpokládají tyto dokumentu jsou hostované v Icloudu.
 
-Další informace o vytváření zprostředkovatele úložiště nebo rozšíření výběr dokumentu, najdete v tématu [Úvod do rozšíření aplikace](~/ios/platform/extensions.md) dokumentu.
+Další informace o vytvoření poskytovatele úložiště nebo rozšíření výběr dokumentu, najdete v tématu [Úvod do rozšíření aplikace](~/ios/platform/extensions.md) dokumentu.
 
-## <a name="migrating-to-icloud-drive"></a>Migrace na serveru služby iCloud jednotky
+## <a name="migrating-to-icloud-drive"></a>Migrace icloud jednotky
 
-V systému iOS 8 uživatelé mohou pokračovat pomocí existující Icloudu dokumenty systému používané v iOS 7 (a staršími systémy) nebo můžete vybrat k migraci stávající dokumenty do nového mechanismu jednotky serveru služby iCloud.
+V systému iOS 8 uživatelé mohou pokračovat v používání existujícího serveru služby iCloud dokumenty systému použít v iOS 7 (a staršími systémy) nebo můžete vybrat k migraci stávajících dokumentů do nové serveru služby iCloud mechanismu.
 
-Na Mac OS X Yosemite, Apple neposkytuje zpětné kompatibility, je potřeba migrovat všechny dokumenty na serveru služby iCloud disku nebo se již nebude aktualizovat na zařízeních.
+Na Mac OS X Yosemite Apple neposkytuje zpětné kompatibility tak, aby všechny dokumenty musí migrovat na serveru služby iCloud jednotky nebo se už aktualizovat napříč zařízeními.
 
-Po migraci uživatelský účet na serveru služby iCloud jednotky pouze zařízení pomocí Icloudu disku bude moct rozšířit změny na dokumenty v těchto zařízeních.
+Po migraci pod uživatelským účtem Icloudu jednotky uvidí pouze zařízení pomocí serveru služby iCloud jednotky šíření změny dokumentů mezi tato zařízení.
 
 > [!IMPORTANT]
-> Vývojáři měli vědět, že nové funkce popsaná v tomto článku jsou k dispozici pouze pokud účet uživatele se migroval na serveru služby iCloud jednotky. 
+> Vývojáři měli vědět, že nové funkce popsané v tomto článku jsou k dispozici pouze pokud účet uživatele se migroval na disku serveru služby iCloud. 
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek má zahrnutých změny icloudem existující rozhraní API potřebné k podpoře serveru služby iCloud jednotky a nového řadiče zobrazení výběr dokumentu. Které souboru koordinace a proč je důležité při práci s dokumenty založená na cloudu. Má zahrnutých instalace požadovaných k povolení dokumenty cloudové aplikace pro Xamarin.iOS a zadané úvodní prohlédnout práce s dokumenty mimo kontejner aplikace aplikace pomocí řadiče zobrazení výběr dokumentu.
+V tomto článku zahrnují změny existujícího serveru služby icloud rozhraní API nutné k podpoře serveru služby iCloud jednotky a nový kontroler zobrazení pro výběr dokumentu. Které soubor koordinaci a proč je důležité při práci s dokumenty založené na cloudu. Má zahrnuté nastavení povolit dokumenty cloudové aplikace pro Xamarin.iOS a daný úvodní Přehled práce s dokumenty mimo kontejner aplikace vaší aplikace pomocí kontroler zobrazení pro výběr dokumentu.
 
-Kromě toho tento článek stručně zahrnutých dokumentu poskytovatele rozšíření a proč vývojáři měli vědět, je při psaní aplikací, které může zpracovat cloudové dokumenty.
+Kromě toho tento článek stručně popisuje rozšíření poskytovatelů dokumentu a proč vývojář by měl být vědomi, při psaní aplikace, které dokáže zpracovat dokumentů založené na cloudu.
 
 ## <a name="related-links"></a>Související odkazy
 

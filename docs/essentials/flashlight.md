@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831408"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353357"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: výstražná
 
@@ -42,7 +42,7 @@ Otevřít **AndroidManifest.xml** soubor **vlastnosti** složky a přidejte nás
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **VÝSTRAŽNÁ** a **FOTOAPARÁT** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt pro Android a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **VÝSTRAŽNÁ** a **FOTOAPARÁT** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
 
 Přidáním těchto oprávnění [Google Play odfiltruje automaticky zařízení](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) bez konkrétní hardware. Můžete získat vyřešit přidáním následujícího kódu do souboru AssemblyInfo.cs vašeho projektu Android:
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Specifika platforem implementace
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Třída výstražná byla optmized založený na operačním systému zařízení.
+Třída výstražná byla optimalizována založený na operačním systému zařízení.
 
 #### <a name="api-level-23-and-higher"></a>Rozhraní API úrovně 23 a vyšší
 
@@ -108,11 +108,11 @@ Na novější úrovně rozhraní API [svítilnou režimu](https://developer.andr
 
 Vytvoření fotoaparátu povrchu textury můžete zapnout nebo vypnout `FlashMode` jednotky fotoaparát. 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) slouží k zapnutí a vypnutí svítilnou a Flash režimu zařízení.
 
-### <a name="uwptabuwp-specifics"></a>[UPW](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) slouží ke zjištění první sadu lamp na zadní straně zařízení můžete zapnout nebo vypnout.
 
