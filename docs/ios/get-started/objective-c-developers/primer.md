@@ -1,49 +1,50 @@
 ---
-title: Úvod do jazyka C# pro vývojáře jazyka Objective-C
-description: Tento dokument popisuje C# pro vývojáře jazyka Objective-C. Porovnává a dvou jazyků se liší od prověřením Selektory protokolů a rozhraní, kategorie a rozšiřující metody, rozhraní a sestavení a pojmenované parametry a další.
+title: Úvod do jazyka C# pro vývojáře v Objective-C
+description: Tento dokument popisuje C# pro vývojáře v Objective-C. Porovná a dva jazyků se liší od zkoumáním protokolů a rozhraní, kategorie a rozšiřující metody, architektury a sestavení, selektory a pojmenované parametry a další.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 514841bb18ebed72c07377ff95127dff247f0d71
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 7fbc37a561b0a1c0b0d5a16fea2892e7faf1a86b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786210"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351506"
 ---
-# <a name="c-primer-for-objective-c-developers"></a>Úvod do jazyka C# pro vývojáře jazyka Objective-C
+# <a name="c-primer-for-objective-c-developers"></a>Úvod do jazyka C# pro vývojáře v Objective-C
 
-_Xamarin.iOS umožňuje bez ohledu na platformu kód napsaný v jazyce C# být sdílen napříč platformami. Stávající aplikace pro iOS však vhodné využít jazyka Objective-C kód, který již existuje. Tento článek slouží jako krátký úvod do jazyka Objective-C vývojářům vyhledávání přesunout do Xamarin a jazyka C#._
+_Xamarin.iOS umožňuje více platforem kódu napsaného v jazyce C# ke sdílení napříč platformami. Existujících aplikací pro iOS však může chtít využít kód Objective-C, které již byly vytvořeny. Tento článek slouží jako krátký přehled pro vývojáře v Objective-C uvažujete o přesunu do Xamarinu a jazyka C#._
 
-iOS a OS X aplikace vyvinuté v Objective-C mohou těžit z výhod Xamarin s využitím C# na místech, kde není vyžadována, kód specifický pro platformu povolení takový kód, který se má použít na zařízeních bez Apple. Věci, jako webové služby, JSON a XML analýzy a vlastní algoritmy lze způsobem napříč platformami.
+iOS a OS X aplikace vyvinuté v jazyce Objective-C mohou těžit z Xamarin s využitím C# na místech, kde platformě závislého kódu se nevyžaduje, což takový kód, který se má použít na zařízeních bez Apple. Věci, jako webové služby, JSON a XML analýzy a vlastní algoritmy lze pak použít způsobem napříč platformami.
 
-Pokud chcete využít výhod Xamarin při zachování existující prostředky jazyka Objective-C, první mohou být zpřístupněny C# v technologie z Xamarin známé jako vazeb, které surface kód jazyka Objective-C spravované, World C#. Také v případě potřeby kód lze přenést řádek po řádku jazyka C# také. Bez ohledu na to přístupu ale ať už být vazba nebo portování, některé znalost jazyka Objective-C a C# je nutné efektivně využívat stávající kód jazyka Objective-C s Xamarin.iOS.
+Xamarin využít při zachování stávajících aktiv Objective-C, Bývalé daly vystavit do jazyka C# v technologii xamarin označované jako vazby, které zařízení surface kód Objective-C pro spravované, C# celý svět. Také v případě potřeby kód může být přenesená řádek po řádku jazyka C# také. Bez ohledu na to, přístup však, zda se vazba nebo přenesení, základní znalost jazyka Objective-C a C# je potřeba efektivně využít existující kód Objective-C s Xamarin.iOS.
 
 ## <a name="objective-c-interop"></a>Zprostředkovatel komunikace s objekty jazyka Objective-C
 
-V současné době není žádné podporované mechanismus pro vytvoření knihovny v C# s použitím Xamarin.iOS, kterou lze volat z Objective-c Hlavním důvodem je že mono runtime je také nutný kromě vazby. Většina logika však můžete vytvořit v Objective-C, včetně uživatelského rozhraní. K tomuto účelu zabalení kód jazyka Objective-C v knihovně a vytvořte vazbu na ni. Xamarin.iOS je potřeba k navázání připojení aplikace (což znamená, musíte vytvořit `Main` vstupního bodu). Potom může být další logiku v Objective-C, vystavený C# prostřednictvím vazby (nebo P/Invoke). Tímto způsobem můžete zachovat určitou logiku platformy v Objective-C a vývoj platformy lhostejné částí v jazyce C#.
+V současné době není podporovaný žádný mechanismus pro vytvoření knihovny v jazyce C# s použitím Xamarin.iOS, která může být volána z Objective-C. Hlavním důvodem pro to je, že modul Mono runtime je také nutný kromě vazby. Většina svoji logiku však můžete vytvořit v Objective-C, včetně uživatelského rozhraní. K tomuto účelu zabalit kód Objective-C v knihovně a vytvořit vazbu k němu. Xamarin.iOS je potřeba ke spuštění aplikace (to znamená, se musí vytvořit `Main` vstupního bodu). Potom může být další logiku v jazyce Objective-C, vystaveni C# prostřednictvím vazby (nebo prostřednictvím P/Invoke). Díky tomu můžete zachovat logika specifická pro platformy v Objective-C a vývoj platformy bez částí v jazyce C#.
 
-V tomto článku klade důraz některé klíče podobnosti, jakož i se liší od několika rozdíly v obou jazycích, která bude sloužit jako základy při přesunu na C# s použitím Xamarin.iOS, zda vytvoření vazby na existující kód jazyka Objective-C nebo portování jazyka C#.
+Tento článek některé klíčovým podobnostem zvýrazňuje, jakož i několik rozdílů v oba jazyky, která bude sloužit jako základy při přesunu do jazyka C# s Xamarin.iOS, zda vazba vytváří k existující kód Objective-C nebo přenos do jazyka C# se liší od.
 
-Informace o vytváření vazeb naleznete v dalších dokumentů v [vazby Objective-C](~/ios/platform/binding-objective-c/index.md).
+Podrobnosti o vytváření vazeb naleznete v části Další dokumenty v [vazeb Objective-C](~/ios/platform/binding-objective-c/index.md).
 
-## <a name="language-comparison"></a>Porovnání jazyka
+## <a name="language-comparison"></a>Porovnání jazyků
 
-Jazyka Objective-C a C# jsou velmi různé jazyky syntakticky i z hlediska modulu runtime. Jazyka Objective-C je dynamická jazyk a používá předávání zpráv schématu, zatímco C# je staticky zadán. Jazyka Objective-C Syntax-Wise, je třeba Smalltalk, zatímco C# odvozuje většinu jeho základní syntaxe z prostředí Java, i když má vyspěla zahrnout mnoho schopnosti nad běžný Java v posledních letech.
+Objective-C a C# jsou velmi různých jazycích syntakticky i z hlediska modulu runtime. Objective-C je dynamické jazyk a používá předávání zpráv schéma, zatímco C# je staticky zadán. Syntax-Wise Objective-C je jako Smalltalk, zatímco C# je odvozena velkou část jeho základní syntaxe z Javy, i když vyvstává zahrnout mnoho možnosti nad rámec běžné Java v posledních letech.
 
-Ale nutné dodat, že existuje několik funkcí jazyka Objective-C a C#, které jsou podobné ve funkci. Při vytváření vazby ke kódu jazyka Objective-C z jazyka C#, nebo když portování jazyka Objective-C jazyka C#, vysvětlení těchto podobnosti je užitečné.
+Ale nutné dodat, že existuje několik funkcí jazyka Objective-C a C#, které jsou podobné funkce. Při vytváření vazeb Objective-C kódu z jazyka C#, nebo při přenosu je užitečné Objective-C jazyka C#, pochopení těchto podobnosti.
 
 ### <a name="protocols-vs-interfaces"></a>Protokoly vs. Rozhraní
 
-Jazyka Objective-C a C# se jedna dědičnost jazyků. Však obě jazyky je podpora implementace více rozhraní v dané třídě. V Objective-C se nazývají tyto logické rozhraní *protokoly* zatímco v jazyce C#, označují se jako *rozhraní*. Hlavní rozdíl mezi rozhraní jazyka C# a protokol jazyka Objective-C Implementation-Wise, je, že k tomu může mít volitelné metody. Další informace najdete v článku [protokoly, delegáti a události](~/ios/app-fundamentals/delegates-protocols-and-events.md) článku.
+Objective-C a C# jsou jednoduchá dědičnost jazyky. Ale oba jazyky mají podporu pro implementaci rozhraní více v dané třídy. V jazyce Objective-C se nazývají těchto logických rozhraní *protokoly* vzhledem k tomu v jazyce C# jsou volány *rozhraní*. Hlavní rozdíl mezi rozhraní jazyka C# a protokol Objective-C Implementation-Wise, je že ten nesmí být volitelné metody. Další informace najdete v článku [protokolů, delegáti a události](~/ios/app-fundamentals/delegates-protocols-and-events.md) článku.
 
-### <a name="categories-vs-extension-methods"></a>Kategorie vs. Metody rozšíření
+### <a name="categories-vs-extension-methods"></a>Kategorie vs. Rozšiřující metody
 
-Jazyka Objective-C umožňuje metody, které chcete přidat do třídy, pro které nemáte implementaci kódu pomocí *kategorie*. V jazyce C# je k dispozici prostřednictvím, která se označuje jako podobný koncept *rozšiřující metody*.
+Objective-C umožňuje metody mají být přidány do třídy, pro které nemáte provádění kódu pomocí *kategorie*. V jazyce C# je k dispozici prostřednictvím co se označuje jako podobný koncept *rozšiřující metody*.
 
-Rozšiřující metody umožňují přidat statické metody do třídy, kde jsou obdobou metody třídy v Objective-c statické metody v jazyce C# Například následující kód přidá metodu s názvem `ScrollToBottom` k `UITextView` třídy, který je spravovaný třídu, která je vázána na jazyka Objective-C `UITextView` třídy z UIKit:
+Rozšiřující metody umožňují přidat statické metody do třídy, ve kterém jsou podobná metody třídy v jazyce Objective-C. statické metody v jazyce C# Například následující kód přidá metodu s názvem `ScrollToBottom` k `UITextView` třídy, který je zase spravované třídy, která je vázána na Objective-C `UITextView` třídy z UIKit:
 
 ```csharp
 public static class UITextViewExtensions
@@ -55,33 +56,33 @@ public static class UITextViewExtensions
 }
 ```
 
-Poté, pokud instance `UITextView` se vytvoří v kódu metodu bude k dispozici v seznamu automatického dokončování, jak je uvedeno níže:
+Potom, pokud instance `UITextView` se vytvoří v kódu, metoda bude k dispozici v seznamu Automatické dokončování, jak je znázorněno níže:
 
- ![](primer-images/01-extensionmethodintellisense.png "Metoda dostupná ve automatického dokončování")
+ ![](primer-images/01-extensionmethodintellisense.png "K dispozici v automatické dokončování – metoda")
 
-Při volání metody rozšíření instance předaný argument, například `textView` v tomto příkladu.
+Při volání metody rozšíření instance je předán jako argument, `textView` v tomto příkladu.
 
 ### <a name="frameworks-vs-assemblies"></a>Rozhraní vs. Sestavení
 
-Související třídy jazyka Objective-C balíčky v speciální adresáře označuje jako rozhraní. V C# a rozhraní .NET však sestavení se používají k poskytování opakovaně použitelné bits předkompilovaných kódu. V prostředích mimo iOS sestavení obsahovat kód intermediate language (IL), který je právě v čase (JIT) kompilované za běhu. Apple však neumožňuje JIT v aplikacích pro iOS. Proto je kód C# cílení na iOS s Xamarinem předem zkompilovat (AOT), který vytvořil jeden spustitelný soubor Unix společně se soubory metadat, které jsou součástí sady aplikací.
+Balíčky jazyka Objective-C související třídy v speciální adresáře označované jako rámce. V jazyce C# a .NET však sestavení se používají k poskytování opakovaně použitelné bits předkompilovaný kód. V prostředí mimo iOS sestavení obsahují kód intermediate language (IL), který je za běhu (JIT) kompilaci za běhu. Apple však neumožňuje JIT v aplikacích pro iOS. Proto kód jazyka C# cílících na iOS pomocí Xamarinu je předem zkompilovat (AOT), vytváření jeden spustitelný soubor systému Unix spolu se soubory metadat, které jsou zahrnuty do sady prostředků aplikace.
 
 ### <a name="selectors-vs-named-parameters"></a>Selektory vs. Pojmenované parametry
 
-Metody jazyka Objective-C ze své podstaty zahrnout názvy parametrů selektory ze své podstaty. Například selektor jako `AddCrayon:WithColor:` jasně ukazuje, co každý parametr znamená, když se používá v kódu. C# volitelně podporuje také pojmenované argumenty.
+Objective-C metody ze své podstaty obsahovat názvy parametrů v selektorech ze své podstaty. Například výběr jako `AddCrayon:WithColor:` je zřejmé, co každý parametr znamená, že při použití v kódu. Volitelně podporuje jazyk C# také pojmenované argumenty.
 
-Například by být podobné kódu v C# pomocí pojmenované argumenty:
+Například by být podobný kód v C# pomocí pojmenované argumenty:
 
 ```csharp
 AddCrayon (crayon: myCrayon, color: UIColor.Blue);
 ```
 
-Přestože C# přidá tato podpora ve verzi 4.0 jazyk, v praxi se nepoužívá velmi často. Ale pokud budete chtít lze odvodit přímo v kódu, podporu pro něj existuje.
+Ačkoli C# ve verzi 4.0 jazyka přidání této podpory, v praxi není použit příliš často. Pokud chcete explicitně v kódu, podporu, ale existuje.
 
-### <a name="headers-and-namespaces"></a>Záhlaví a obory názvů
+### <a name="headers-and-namespaces"></a>Hlavičky a obory názvů
 
-Je nadmnožinou C, Objective-C používá hlavičky pro veřejné deklarace, které jsou oddělené od soubor implementace. C# nepoužívá soubory hlaviček. Na rozdíl od jazyka Objective-C C# – kód je obsažený v oborech názvů. Pokud chcete zahrnout kód je k dispozici v některé oboru názvů, můžete přidat buď pomocí – direktiva na začátek souboru implementace, nebo můžete kvalifikaci typu se úplný obor názvů.
+Je nadstavbou jazyka C, Objective-C používá hlavičky pro veřejné deklarace, které jsou oddělené od implementační soubor. C# nepoužívá soubory hlaviček. Na rozdíl od jazyka Objective-C kód jazyka C# je součástí oborů názvů. Pokud chcete zahrnout kód je k dispozici v některých oboru názvů, můžete přidat buď using – direktiva k hornímu okraji implementace souboru nebo se kvalifikaci typu s plnou oboru názvů.
 
-Například následující kód obsahuje `UIKit` obor názvů, zpřístupnění každá třída v daném oboru názvů pro implementaci:
+Například následující kód obsahuje `UIKit` obor názvů, zpřístupnění každá třída v tomto oboru názvů pro implementaci:
 
 ```csharp
 using UIKit
@@ -91,11 +92,11 @@ namespace MyAppNamespace
 }
 ```
 
-Klíčové slovo oboru názvů ve výše uvedeném kódu také nastaví obor názvů používá pro samotný soubor implementace. Pokud více souborů implementace sdílet stejný obor názvů, je není potřeba zahrnovat obor názvů v pomocí – direktiva taky, jak je implicitní.
+Obor názvů – klíčové slovo v kódu uvedeného výše se nastaví také, oboru názvů použitého pro samotný soubor implementace. Pokud více souborů implementace sdílejí stejný obor názvů, není nutné zahrnout oboru názvů using – direktiva stejně, jako je vyjádřena.
 
 ### <a name="properties"></a>Vlastnosti
 
-Jazyka Objective-C a C# mají koncept zajistit vysokou úroveň abstrakce kolem přístupových metod vlastností. V Objective C @property kompilátoru je použita pro efektivní generování přístupových metod. Naproti tomu C# zahrnuje podporu pro vlastnosti v rámci jazyk sám sebe. Vlastnost C# lze implementovat pomocí a delší styl, který přistupuje k zálohování pole nebo pomocí kratší, automatické vlastnost syntaxe, jak je znázorněno v následujících příkladech:
+Objective-C a C# využívá koncepce vlastností, které budou poskytovat vysokou úroveň abstrakce kolem přístupové metody. V jazyce Objective-C @property direktivy kompilátoru slouží k efektivní generovat přístupové metody. Naproti tomu C# obsahuje podporu pro vlastnosti v rámci samotný jazyk. Vlastnost jazyka C# je možné implementovat pomocí a delší styl, který přistupuje k pomocné pole nebo pomocí kratší, automatickou vlastnost syntaxe, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 // automatic property syntax
@@ -116,15 +117,15 @@ public string Address {
 
 ### <a name="static-keyword"></a>Static – klíčové slovo
 
-*Statické* – klíčové slovo má velmi jiný význam mezi jazyka Objective-C a C#. V Objective-C statické funkce slouží k omezení oboru funkce, která se aktuální soubor. V jazyce C# však oboru se udržují prostřednictvím *veřejné*, *privátní* a *interní* klíčová slova.
+*Statické* – klíčové slovo má velmi odlišný význam mezi Objective-C a C#. V jazyce Objective-C statické funkce umožňují omezit obor funkce, která se aktuální soubor. V jazyce C# však oboru se udržují prostřednictvím *veřejné*, *privátní* a *interní* klíčová slova.
 
-Při použití proměnné v Objective-C static – klíčové slovo, proměnná udržuje svou hodnotu mezi volání funkcí.
+Při static – klíčové slovo použití proměnné v jazyce Objective-C, proměnnou udržuje jeho hodnota ve volání funkce.
 
-C# má také static – klíčové slovo. Při použití metody, tak efektivně činí samé `+` modifikátor nemá v Objective-c Konkrétně vytvoří se metoda třídy. Podobně při použití jiných objektů, jako je například pole, vlastností a událostí, umožňuje těchto součástí typu, které jsou deklarovány v rámci a nikoli s jakoukoli instanci daného typu. Můžete provést také statická třída, ve kterém všechny metody definovaný ve třídě, musí být statické také.
+C# obsahuje také static – klíčové slovo. Při použití metody, je efektivně provede stejnou akci, která `+` modifikátor nemá v jazyce Objective-C. Konkrétně vytvoří metodu třídy. Podobně při použití jiných objektů, jako je například pole, vlastnosti a události, díky těchto součástí typu, které jsou deklarovány v rámci, nikoli s jakoukoli instanci daného typu. Můžete provést také statické třídy, ve kterém všechny metody, které jsou definovány ve třídě, musí být statické i.
 
 ### <a name="nsarray-vs-list-initialization"></a>NSArray vs. Inicializace seznamu
 
-Jazyka Objective-C nyní zahrnuje literálu syntaxe pro použití s `NSArray`, což usnadňuje inicializaci. C# má ale bohatší typu s názvem `List` tedy *Obecné*, což znamená typ seznamu obsahuje, můžete zadat kód, který vytvoří seznam (například šablony v jazyce C++). Seznamy navíc podporují Automatická inicializace syntaxe, jak je uvedeno níže:
+Objective-C teď obsahuje syntaxi literálu pro použití s `NSArray`, což usnadňuje inicializovat. C# však má širší typ s názvem `List` tedy *obecný*, což znamená, typ obsahuje seznamu lze zadat kód, který vytvoří seznam (jako jsou šablony v jazyce C++). Seznamy navíc podporují syntaxe inicializace automaticky, jak je znázorněno níže:
 
 ```csharp
 MyClass object1 = new MyClass ();
@@ -134,7 +135,7 @@ List<MyClass> myList = new List<MyClass>{ object1, object2 };
 
 ### <a name="blocks-vs-lambda-expressions"></a>Bloky vs. Výrazy lambda
 
-Používá jazyka Objective-C *bloky* vytvořit uzavření, kde můžete vytvořit vložené funkce, které můžete provést pomocí stavu, kde je uzavřen. C# má podobný koncept prostřednictvím výrazy lambda. V jazyce C# lambda výrazy vytvořené mají `=>` operátor, jak je uvedeno níže:
+Objective-C používá *bloky* vytvoříte uzávěry kde si můžete vytvořit vložené funkce, které můžete provést pomocí stavu, ve kterém je uzavřen. C# používá podobný koncept pomocí výrazů lambda. V jazyce C# lambda výrazy jsou vytvořeny pomocí `=>` operátor, jak je znázorněno níže:
 
 ```csharp
 (args) => {
@@ -142,8 +143,8 @@ Používá jazyka Objective-C *bloky* vytvořit uzavření, kde můžete vytvoř
 };
 ```
 
-Další informace o výrazy lambda, najdete v článku společnosti Microsoft [Průvodce programováním v C#](http://msdn.microsoft.com/library/vstudio/bb397687.aspx).
+Další informace o výrazech lambda naleznete v tématu Microsoftu [Průvodce programováním v C#](http://msdn.microsoft.com/library/vstudio/bb397687.aspx).
 
 ## <a name="summary"></a>Souhrn
 
-V tomto článku byly rozdíl celou řadu funkcí jazyka od aktualizovaného mezi jazyka Objective-C a C#. V některých případech se volá se podobá funkce, které existují mezi oba jazyky, jako je bloky výrazy lambda a kategorie, které metody rozšíření. Kromě toho je rozdíl od aktualizovaného míst, kde jazyky odchýlit, například stejně jako u oborů názvů v jazyce C# a význam static – klíčové slovo.
+V tomto článku byly širokou škálu funkcí jazyka rozdíly mezi Objective-C a C#. V některých případech se volá na obdobné funkce, které existují mezi oba jazyky, jako je například bloky pro výrazy lambda a kategorie, které metody rozšíření. Kromě toho rozdíly místa, kde jazyky odchýlit, například stejně jako u oborů názvů v jazyce C# a význam static – klíčové slovo.

@@ -6,27 +6,49 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/30/2018
+ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995203"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351493"
 ---
 # <a name="listview-data-sources"></a>Zdroje dat ListView
 
-ListView je používána pro seznamy dat zobrazení. Seznámíme naplnění ListView s daty a jak jsme vázat na vybranou položku.
+A [ `ListView` ](xref:Xamarin.Forms.ListView) je používána pro seznamy dat zobrazení. Seznámíme naplnění ListView s daty a jak jsme vázat na vybranou položku.
 
 - **[Nastavení vlastnost ItemsSource](#ItemsSource)**  &ndash; používá jednoduchý seznam nebo pole.
 - **[Vytváření datových vazeb](#Data_Binding)**  &ndash; vytváří vztah mezi modelem a ListView. Vazba je ideální pro vzor MVVM.
 
 ## <a name="itemssource"></a>Vlastnost ItemsSource
-ListView se vyplní pomocí dat `ItemsSource` vlastnost, která může přijmout všechny kolekce implementace `IEnumerable`. Nejjednodušší způsob, jak naplnit `ListView` zahrnuje použití pole řetězců:
+
+A [ `ListView` ](xref:Xamarin.Forms.ListView) se vyplní pomocí dat [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) vlastnost, která může přijmout všechny kolekce implementace `IEnumerable`. Nejjednodušší způsob, jak naplnit `ListView` zahrnuje použití pole řetězců:
+
+```xaml
+<ListView>
+      <ListView.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>mono</x:String>
+            <x:String>monodroid</x:String>
+            <x:String>monotouch</x:String>
+            <x:String>monorail</x:String>
+            <x:String>monodevelop</x:String>
+            <x:String>monotone</x:String>
+            <x:String>monopoly</x:String>
+            <x:String>monomodal</x:String>
+            <x:String>mononucleosis</x:String>
+          </x:Array>
+      </ListView.ItemsSource>
+</ListView>
+```
+
+Ekvivalentní kód jazyka C# je:
 
 ```csharp
 var listView = new ListView();
-listView.ItemsSource = new string[]{
+listView.ItemsSource = new string[]
+{
   "mono",
   "monodroid",
   "monotouch",
@@ -145,10 +167,6 @@ Toto je výsledek:
 
 Za předpokladu, že `listView`společnosti `ItemsSource` je seznam řetězců, `SomeLabel` bude mít vlastnost text vázán na `SelectedItem`.
 
-
-
 ## <a name="related-links"></a>Související odkazy
 
 - [Dvě vazby způsobem (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [zpráva k vydání verze 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [Poznámky k verzi 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

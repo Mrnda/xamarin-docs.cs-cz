@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830450"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353292"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Zabezpečené úložiště
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 Uložte hodnotu daného _klíč_ v zabezpečeném úložišti:
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 K načtení hodnoty ze zabezpečeného úložiště:
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -90,7 +104,7 @@ Na novější úrovně rozhraní API **AES** klíč je získané z úložiště 
 
 Na starší úrovně rozhraní API, úložiště klíčů Android podporuje pouze ukládání **RSA** klíče, které se používá se **RSA/ECB/PKCS1Padding** šifry šifrování **AES** (náhodně klíče Generovat za běhu) a uloženy v souboru sdílené předvolby pod klíčem _SecureStorageKey_, pokud nebyla byl vygenerován.
 
-Všechny šifrované hodnoty se odeberou, když aplikace se odinstaluje ze zařízení.
+**SecureStorage** používá [Předvolby](preferences.md) rozhraní API a stejné trvalost dat uvedených v následující [Předvolby](preferences.md#persistence) dokumentaci. Pokud zařízení se upgraduje z rozhraní API úrovně 22 nebo nižší úroveň rozhraní API 23 a vyšší, tento typ šifrování nadále použít, pokud aplikace se odinstaluje nebo **RemoveAll** je volána.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -100,11 +114,11 @@ V některých případech data řetězce klíčů se synchronizují s serveru sl
 
 # <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) slouží k zašifrovaný hodnoty bezpečně na zařízeních UPW.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) slouží k šifrované hodnoty bezpečně na zařízeních UPW.
 
-Zašifrovaný hodnoty jsou uloženy v `ApplicationData.Current.LocalSettings`, uvnitř kontejneru s názvem **[YOUR-APP-ID] .xamarinessentials**.
+Šifrované hodnoty se uloží v `ApplicationData.Current.LocalSettings`, uvnitř kontejneru s názvem **[YOUR-APP-ID] .xamarinessentials**.
 
-Odinstalace aplikace způsobí, že _LocalSettings_a všechny šifrované hodnoty chcete také odebrat.
+**SecureStorage** používá [Předvolby](preferences.md) rozhraní API a stejné trvalost dat uvedených v následující [Předvolby](preferences.md#persistence) dokumentaci.
 
 -----
 

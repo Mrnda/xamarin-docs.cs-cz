@@ -1,58 +1,58 @@
 ---
-title: Úvod do CoreML v Xamarin.iOS
-description: Tento dokument popisuje CoreML, která umožňuje machine learning v iOS. Tento dokument popisuje, jak začít pracovat s CoreML a způsobu jeho použití s vize framework.
+title: Úvod do CoreML v Xamarin.iosu
+description: Tento dokument popisuje CoreML, umožňující strojového učení v systému iOS. Tento dokument popisuje, jak začít pracovat s CoreML a jak pomocí rozhraní pro zpracování obrazu.
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: 8b489fd1a1bcce474decf6881e8eb6620c2ee2e3
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 08/30/2017
+ms.openlocfilehash: 13178d4530e3214c6cf31c1018b21815ccd2227f
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240733"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350681"
 ---
-# <a name="introduction-to-coreml-in-xamarinios"></a>Úvod do CoreML v Xamarin.iOS
+# <a name="introduction-to-coreml-in-xamarinios"></a>Úvod do CoreML v Xamarin.iosu
 
-CoreML přináší machine learning k iOS – aplikace mohou využít výhod vyškolení machine learning modely k provádění nejrůznějším úloh, od řešení problémů k rozpoznávání bitové kopie.
+CoreML přináší strojového učení pro iOS – aplikace můžete využít výhod modelů vyškolených strojového učení k provádění nejrůznější úlohy, od problémů k rozpoznávání obrazu.
 
-Tento úvod obsahuje následující:
+Tento úvod popisuje následující:
 
 - [Začínáme s CoreML](#coreml)
-- [Pomocí rozhraní vize CoreML](#coremlvision)
+- [Pomocí rozhraní pro zpracování obrazu CoreML](#coremlvision)
 
 <a name="coreml" />
 
 ## <a name="getting-started-with-coreml"></a>Začínáme s CoreML
 
-Tyto kroky popisují, jak přidat CoreML do projektu iOS. Odkazovat [Pricer prostředí Mars ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/) praktické příklad.
+Tyto kroky popisují, jak přidat CoreML na projekt iOS. Odkazovat [Mars Habitat Pricer ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/) praktické příklad.
 
-![Snímek obrazovky ukázkové předpověď ceny MARS prostředí](coreml-images/marspricer-heading.png)
+![Snímek obrazovky ukázkové prediktivní cena Habitat MARS](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-coreml-model-to-the-project"></a>1. Do projektu přidejte CoreML modelu
+### <a name="1-add-the-coreml-model-to-the-project"></a>1. Do projektu přidejte modelů CoreML
 
-Přidání modelu CoreML (soubor s **.mlmodel** rozšíření) k **prostředky** adresáři projektu. 
+Přidání modelu CoreML (soubor s **.mlmodel** rozšíření) k **prostředky** adresáře projektu. 
 
-Ve vlastnostech souboru modelu jeho **akce sestavení** je nastaven na **CoreMLModel**. To znamená, že se zkompiluje do **.mlmodelc** souboru, když je aplikace vytvářena.
+Ve vlastnostech souboru modelu jeho **akce sestavení** je nastavena na **CoreMLModel**. To znamená, že se zkompiluje do **.mlmodelc** souboru, když je aplikace sestavená.
 
 ### <a name="2-load-the-model"></a>2. Načíst model
 
-Načtení modelu pomocí `MLModel.Create` statickou metodu:
+Načtení pomocí modelu `MLModel.Create` statickou metodu:
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
 model = MLModel.Create(assetPath, out NSError error1);
 ```
 
-### <a name="3-set-the-parameters"></a>3. Nastavte parametry
+### <a name="3-set-the-parameters"></a>3. Nastavit parametry
 
-Parametry modelu jsou předaná a odhlašování pomocí třídu kontejneru, který implementuje `IMLFeatureProvider`.
+Parametry modelu jsou předávány dovnitř a ven pomocí třídou kontejneru, která implementuje `IMLFeatureProvider`.
 
-Třídy zprostředkovatele funkce chovají jako slovník řetězce a `MLFeatureValue`s, kde každé funkce hodnotou může být jednoduchý řetězec nebo číslo, pole nebo data nebo vyrovnávací paměti pixelů obsahující bitovou kopii.
+Třídy zprostředkovatele funkce chovají se jako slovník řetězce a `MLFeatureValue`s, kde každá hodnota funkce může být jednoduchý řetězec nebo číslo, pole nebo data nebo pixel vyrovnávací paměť obsahující bitovou kopii.
 
-Kód pro zprostředkovatele funkce s jednou hodnotou je zobrazena níže:
+Kód pro funkce s jednou hodnotou zprostředkovatele je zobrazena níže:
 
 ```csharp
 public class MyInput : NSObject, IMLFeatureProvider
@@ -67,20 +67,20 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-Pomocí třídy jako to, vstupní parametry lze zadat tak, aby se rozumí CoreML. Názvy funkcí (například `myParam` v příkladu kódu) co očekává modelu se musí shodovat.
+Použití tříd tímto způsobem, vstupní parametry lze zadat tak, aby je srozumitelné CoreML. Názvy funkcí (jako například `myParam` v příkladu kódu) musí odpovídat hodnotám modelu očekává.
 
 ### <a name="4-run-the-model"></a>4. Spustit model
 
-Pomocí modelu vyžaduje, aby se zprostředkovatel funkci chcete vytvořit instanci a parametry nastavené, potom, `GetPrediction` volat metodu:
+Pomocí modelu vyžaduje, aby se zprostředkovatel funkce má být vytvořena a parametry nastaven, pak, která `GetPrediction` volat metodu:
 
 ```csharp
 var input = new MyInput {MyParam = 13};
 var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 ```
 
-### <a name="5-extract-the-results"></a>5. Extrahování výsledky
+### <a name="5-extract-the-results"></a>5. Extrahovat výsledky
 
-Výsledek předpovědi `outFeatures` je také instanci `IMLFeatureProvider`; výstupní hodnoty lze přistupovat pomocí `GetFeatureValue` s názvu každého výstupního parametru (například `theResult`), protože v tomto příkladu:
+Předpověď výsledků `outFeatures` je také instancí `IMLFeatureProvider`; výstupní hodnoty lze přistupovat pomocí `GetFeatureValue` pomocí názvu každého výstupního parametru (například `theResult`), jako v tomto příkladu:
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
@@ -88,17 +88,17 @@ var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 622702
 
 <a name="coremlvision" />
 
-## <a name="using-coreml-with-the-vision-framework"></a>Pomocí rozhraní vize CoreML
+## <a name="using-coreml-with-the-vision-framework"></a>Pomocí rozhraní pro zpracování obrazu CoreML
 
-CoreML můžete také použít ve spojení s rozhraní vize k provádění operací na bitovou kopii, jako je rozpoznávání tvaru, identifikace objektu a další úlohy.
+CoreML lze také použít ve spojení s rozhraní pro zpracování obrazu k provádění operací na bitovou kopii, jako je například rozpoznávání tvar, identifikace objektů a další úlohy.
 
-Níže uvedené kroky popisují, jak CoreML a vize používá společně [CoreMLVision ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/). Ukázka kombinuje [obdélníků rozpoznávání](~/ios/platform/introduction-to-ios11/vision.md#rectangles) z rozhraní framework vize s _MNINSTClassifier_ CoreML modelu k identifikaci psané číslice v fotografie.
+Níže uvedené kroky popisují, jak CoreML a zpracování obrazu se používají společně v [CoreMLVision ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/). Ukázka kombinuje [obdélníky rozpoznávání](~/ios/platform/introduction-to-ios11/vision.md#rectangles) z rozhraní pro zpracování obrazu pomocí _MNINSTClassifier_ modelů CoreML k identifikaci rukou psaný číslici v fotografie.
 
-![Obrázek rozpoznávání čísla 3](coreml-images/vision3.png) ![Obrázek rozpoznávání čísla 5](coreml-images/vision5.png)
+![Rozpoznávání obrazu čísla 3](coreml-images/vision3.png) ![Rozpoznávání obrazu čísla 5](coreml-images/vision5.png)
 
-### <a name="1-create-a-vision-coreml-model"></a>1. Vytvoření modelu vize CoreML
+### <a name="1-create-a-vision-coreml-model"></a>1. Vytvoření modelu zpracování obrazu CoreML
 
-CoreML model _MNISTClassifier_ je načíst a pak uzavřen do `VNCoreMLModel` takže modelu k dispozici pro úlohy vize. Tento kód také vytvoří dva požadavky vizi: nejdřív pro hledání obdélníky v bitovou kopii a potom pro zpracování obdélníku s modelem CoreML:
+Modelů CoreML _MNISTClassifier_ je načten a pak je obalen `VNCoreMLModel` které zpřístupňuje model pro úkoly pro zpracování obrazu. Tento kód také vytvoří dva požadavky pro zpracování obrazu: nejprve pro vyhledání obdélníků v obrázku a potom pro zpracování obdélníku s modelem CoreML:
 
 ```csharp
 // Load the ML model
@@ -113,11 +113,11 @@ RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
-Třída musí implementovat `HandleRectangles` a `HandleClassification` metody pro žádosti o vizi, zobrazí v krocích 3 a 4 níže.
+Stále musí implementovat třídu `HandleRectangles` a `HandleClassification` metody pro zpracování obrazu požadavky, zobrazí v krocích 3 a 4 níže.
 
-### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování vize
+### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování pro zpracování obrazu
 
-Následující kód spustí zpracování požadavku. V **CoreMLVision** ukázku, tento kód spustí po uživatel vybral obrázku:
+Následující kód spustí zpracování požadavku. V **CoreMLVision** ukázku, tento kód se spustí poté, co uživatel vybral obrázku:
 
 ```csharp
 // Run the rectangle detector, which upon completion runs the ML classifier.
@@ -127,13 +127,13 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Tato obslužná rutina předá `ciImage` Framework vize `VNDetectRectanglesRequest` který byl vytvořen v kroku 1.
+Tato obslužná rutina předá `ciImage` Framework pro zpracování obrazu `VNDetectRectanglesRequest` , který byl vytvořen v kroku 1.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků vize zpracování
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků zpracování pro zpracování obrazu
 
-Po dokončení detekce obdélníku se provede `HandleRectangles` metodu, která ořízne obrázek, který se extrahuje první obdélníku, převede obrázek obdélníku stupně šedi a předává je pro model CoreML pro klasifikaci.
+Po dokončení detekce obdélník se provede `HandleRectangles` metodu, která ořízne obrázek, který se extrahuje prvních obdélníku, převede obdélník obrázku do odstínů šedi a předá ho do modelů CoreML pro klasifikaci.
 
-`request` Parametr předaná této metodě obsahuje podrobnosti o vizi požadavku a pomocí `GetResults<VNRectangleObservation>()` metoda, vrátí seznam obdélníků najít v bitové kopii. První rámeček `observations[0]` je extrahována a předaný CoreML modelu:
+`request` Parametr předaný této metodě obsahuje podrobnosti o požadavku pro zpracování obrazu a použití `GetResults<VNRectangleObservation>()` metody, vrátí seznam obdélníky nalezen na obrázku. První obdélník `observations[0]` se extrahují a předat modelů CoreML:
 
 ```csharp
 void HandleRectangles(VNRequest request, NSError error) {
@@ -149,11 +149,11 @@ void HandleRectangles(VNRequest request, NSError error) {
 }
 ```
 
-`ClassificationRequest` Byl inicializován v kroku 1 používat `HandleClassification` metoda definované v dalším kroku.
+`ClassificationRequest` Byl inicializován v kroku 1 použít `HandleClassification` metody definované v dalším kroku.
 
-### <a name="4-handle-the-coreml"></a>4. Zpracování CoreML
+### <a name="4-handle-the-coreml"></a>4. Popisovač CoreML
 
-`request` Parametr předaná této metodě obsahuje podrobnosti o CoreML požadavku a pomocí `GetResults<VNClassificationObservation>()` metoda, vrátí seznam možných výsledky seřazené podle spolehlivosti (nejvyšší spolehlivosti první):
+`request` Parametr předaný této metodě obsahuje podrobnosti o požadavku CoreML a pomocí `GetResults<VNClassificationObservation>()` metody, vrátí seznam možných výsledky seřazené podle spolehlivosti (nejvyšší spolehlivosti první):
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
@@ -169,19 +169,19 @@ void HandleClassification(VNRequest request, NSError error){
 
 ## <a name="samples"></a>Ukázky kódu
 
-Existují tři CoreML ukázky můžete vyzkoušet:
+Existují tři CoreML vzorky vyzkoušet:
 
-* [Předpověď ceny prostředí Mars ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/) má jednoduché číselné vstupy a výstupy.
+* [Ukázka prediktivní cena Habitat Mars](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/) má jednoduché číselné vstupy a výstupy.
 
-* [Vize & CoreML ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/) přijme parametrem bitové kopie a používá rozhraní vize k identifikaci odmocnina oblasti v bitovou kopii, které jsou předávány CoreML modelu, který rozpoznává jeden číslic.
+* [Vision a CoreML ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/) přijímá parametr image a používá rozhraní pro zpracování obrazu k identifikaci Čtvereček oblasti na obrázku, ve kterých jsou předány CoreML modelu, který rozpozná jednotné číslic.
 
-* Nakonec [CoreML Image rozpoznávání ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/) CoreML používá k identifikaci funkcí v fotografie. Ve výchozím nastavení používá menší **SqueezeNet** modelu (5MB), ale bylo zapsáno tak, aby si můžete stáhnout a začlenit delší **VGG16** modelu (553 MB). Další informace najdete v tématu [tohoto příkladu readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md).
+* Nakonec [rozpoznávání obrazu CoreML ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/) CoreML používá k identifikaci funkce fotografie. Ve výchozím nastavení používá menší **SqueezeNet** model (5MB), ale bylo zapsáno tak, aby si můžete stáhnout a začlenit větší **VGG16** modelu (553 MB). Další informace najdete v tématu [vzorku readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md).
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Machine Learning (Apple)](https://developer.apple.com/machine-learning/)
-- [Příklad CoreML (Mars prostředí) (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/)
+- [Ve službě Machine Learning (Apple)](https://developer.apple.com/machine-learning/)
+- [Příklad CoreML (Mars Habitat) (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreML/)
 - [CoreML a zpracování obrazu (číslo rozpoznávání) (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/)
-- [Rozpoznávání CoreML bitové kopie (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)
-- [CoreML s Azure vlastní vize (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
-- [Představení CoreML (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/703/)
+- [Rozpoznávání obrazu CoreML (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/)
+- [CoreML s Azure Custom Vision (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
+- [Představujeme CoreML (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/703/)

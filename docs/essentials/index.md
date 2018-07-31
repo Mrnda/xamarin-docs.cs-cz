@@ -4,13 +4,13 @@ description: Tento dokument obsahuje odkazy na různá vodítka, které popisuj�
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/30/2018
+ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
+ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831550"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360999"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -43,8 +43,10 @@ Postupujte podle pokynů pro tyto funkce Xamarin.Essentials integrovat do svých
 * [Geokódování](geocoding.md?context=xamarin/xamarin-forms) – přesnějším a reverzní geokód adresy a souřadnice.
 * [Informace o zeměpisné poloze](geolocation.md?context=xamarin/xamarin-forms) – načíst poloha GPS zařízení.
 * [Volný setrvačník](gyroscope.md?context=xamarin/xamarin-forms) – sledování otočení kolem tři primární osy zařízení.
+* [Spouštěč](launcher.md?context=xamarin/xamarin-forms) – umožňuje aplikaci identifikátoru URI otevřete v systému.
 * [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) – zjišťovat orientace zařízení vzhledem k země na východozápadní ose magnetické pole.
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – spouštění kódu na hlavního vlákna aplikace. 
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – spouštění kódu na hlavního vlákna aplikace.
+* [Mapuje](maps.md?content=xamarin/xamarin-forms) – otevřete aplikaci mapy do určitého umístění.
 * [Otevřete prohlížeč](open-browser.md?context=xamarin/xamarin-forms) – rychle a jednoduše otevřete prohlížeč na konkrétní web.
 * [Orientace senzor](orientation-sensor.md?context=xamarin/xamarin-forms) – načíst orientace zařízení do tří rozměrného prostoru.
 * [Telefon](phone-dialer.md?context=xamarin/xamarin-forms) – otevřete telefonní vytáčecí zařízení.

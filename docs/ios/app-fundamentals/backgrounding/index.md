@@ -1,27 +1,28 @@
 ---
-title: Backgrounding v Xamarin.iOS
-description: Pozadí zpracování nebo backgrounding je proces, když je umožněno aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v iOS na pozadí.
+title: Zpracování úloh na pozadí v Xamarin.iosu
+description: Pozadí zpracování nebo zpracování úloh na pozadí je proces aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v Iosu na pozadí.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b22f3ef3276129f7f46c23cc1d06666f151f5ac4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: 73344b790bf6d4719d9a92cfa9146578dffe04e9
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783539"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350765"
 ---
-# <a name="backgrounding-in-xamarinios"></a>Backgrounding v Xamarin.iOS
+# <a name="backgrounding-in-xamarinios"></a>Zpracování úloh na pozadí v Xamarin.iosu
 
-_Pozadí zpracování nebo backgrounding je proces, když je umožněno aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v iOS na pozadí._
+_Pozadí zpracování nebo zpracování úloh na pozadí je proces aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v Iosu na pozadí._
 
-Backgrounding v mobilních aplikacích se zásadně liší od tradiční koncept multitasking na ploše. Stolní počítače mají různé druhy prostředků, které jsou k dispozici pro aplikaci, včetně obrazovky nemovitosti, napájení a paměti. Aplikace jsou lze spustit souběžně sdílená a zůstanou původce a dá se použít. Na mobilním zařízení prostředky jsou mnohem omezenější. Je obtížné zobrazit více než jednu aplikaci na malou obrazovku a spuštěných víc aplikací při plné rychlosti by vyprazdňování baterie. Backgrounding je konstantní kompromis mezi poskytnutí prostředků ke spuštění úlohy na pozadí, které potřebují k provedení dobře aplikace a zachování přizpůsobivý foregrounded aplikace a zařízení. IOS a Android má předpisy pro backgrounding, ale jejich zpracování velmi různými způsoby.
+Zpracování úloh na pozadí v mobilních aplikacích se zásadně liší od tradiční konceptu multitaskingu v klientských počítačích. Stolní počítače mají různé prostředky dostupné pro aplikace, včetně plochy obrazovky, výkon a paměť. Aplikace jsou schopni spustit vedle sebe a zůstat výkonné a dá se použít. Na mobilním zařízení jsou mnohem méně prostředků. Je obtížné zobrazit více než jednu aplikaci na malé obrazovce a spuštěných víc aplikací při plné rychlosti by vybíjení baterie. Zpracování úloh na pozadí je konstantní kompromis mezi poskytuje prostředky ke spuštění úlohy na pozadí, které potřebují k provedení dobře aplikací a aby responzivní foregrounded aplikace a zařízení. IOS a Android mají opatření pro zpracování úloh na pozadí, ale jejich zpracování zcela novými způsoby.
 
-V iOS backgrounding rozpoznán jako stav aplikace a aplikace se přesunou do/z stav pozadí v závislosti na chování aplikaci a uživatele. iOS také nabízí několik možností pro vzájemné propojení aplikace ke spuštění na pozadí, třeba požádat OS dobu pro dokončení důležité úlohy, jako typ známé pozadí nezbytné aplikace, a aktualizovat obsah aplikace na webu intervaly.
+V Iosu zpracování úloh na pozadí je považován za stav aplikace a aplikace se přesunou do stavu na pozadí v závislosti na chování uživatele a aplikace. iOS také nabízí několik možností pro vzájemné propojení aplikace běžet na pozadí, včetně s dotazem, operační systém pro čas k dokončení důležité úlohy, jako typ aplikace na pozadí potřeby známé a aktualizovat obsah aplikace v určených intervaly.
 
-V této příručce a doplňujícími návody přidáme další úkoly aplikace na pozadí. Jsme se týkají klíčových konceptů a osvědčené postupy a poté procházet vytvořit skutečných aplikaci, která získává aktualizace umístění na pozadí.
+V této příručce a doprovodných návody budeme se naučíte, jak provádět aplikace úlohy na pozadí. Budeme se věnují klíčové koncepty a osvědčené postupy a poté krokovat s vytvářením reálné aplikace, která bude přijímat aktualizace polohy na pozadí.
 
 ## <a name="contents"></a>Obsah
 
@@ -33,14 +34,14 @@ V této příručce a doplňujícími návody přidáme další úkoly aplikace 
 
 ## <a name="summary"></a>Souhrn
 
-V této příručce zavedli jsme různé způsoby plnění zpracování na pozadí v iOS. Jsme popsaná iOS aplikace stavy a zkontrolován roli backgrounding plní v iOS životního cyklu aplikace. Kromě toho jsme zjistili, jak jsme by se mohl zaregistrovat jednotlivé úlohy nebo celé aplikace fungovat na pozadí v iOS. Nakonec jsme zesílené naše pochopení backgrounding v systému iOS ve vytváření aplikací, které provedení aktualizace na pozadí.
+V této příručce zavedli jsme různé způsoby provedení zpracování na pozadí v Iosu. Zahrnuté stavy aplikace iOS jsme prozkoumat roli zpracování úloh na pozadí jde skvěle dohromady v Iosu životního cyklu aplikací. Kromě toho jsme zjistili, jak jsme mohli zaregistrovat jednotlivých úloh nebo celé aplikace pracovat na pozadí v Iosu. Nakonec jsme posílit naše porozumění zpracování úloh na pozadí v Iosu vytvořením aplikace, které provádějí aktualizace na pozadí.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Backgrounding v systému Android](~/android/app-fundamentals/services/index.md)
+- [Zpracování úloh na pozadí v Androidu](~/android/app-fundamentals/services/index.md)
 - [LifecycleDemo (ukázka)](https://developer.xamarin.com/samples/monotouch/LifecycleDemo/)
 - [Umístění (ukázka)](https://developer.xamarin.com/samples/monotouch/Location/)
-- [Jednoduché přenosu na pozadí (ukázka)](https://developer.xamarin.com/samples/monotouch/SimpleBackgroundTransfer/)
-- [iOS provádění pozadí](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)
+- [Jednoduché přenos na pozadí (ukázka)](https://developer.xamarin.com/samples/monotouch/SimpleBackgroundTransfer/)
+- [iOS zpracování na pozadí](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html)

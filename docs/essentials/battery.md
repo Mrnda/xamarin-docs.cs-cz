@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855052"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353451"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: baterie
 
@@ -29,7 +29,7 @@ Pro přístup **baterie** funkce je následující nastavení konkrétní platfo
 Otevřít **AssemblyInfo.cs** soubor **vlastnosti** složky a přidejte:
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 NEBO aktualizovat Android Manifest:
@@ -37,10 +37,10 @@ NEBO aktualizovat Android Manifest:
 Otevřít **AndroidManifest.xml** soubor **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **baterie** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt pro Android a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **baterie** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ public class BatteryTest
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * Zařízení musí použít k testování rozhraní API. 
-* Pouze vrátí `Ac` nebo `Battery` pro `PowerSource`. 
+* Pouze vrátí `AC` nebo `Battery` pro `PowerSource`.
 * Není možné zrušit pronikavost.
 
 # <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-* Pouze vrátí `Ac` nebo `Battery` pro `PowerSource`. 
+* Pouze vrátí `AC` nebo `Battery` pro `PowerSource`.
 
 -----
 

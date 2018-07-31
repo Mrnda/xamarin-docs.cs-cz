@@ -1,46 +1,46 @@
 ---
-title: Úvod do ARKit v Xamarin.iOS
-description: Tento dokument popisuje rozšířená skutečnost v iOS 11 s ARKit. Popisuje, jak přidat 3D model do aplikace, konfigurace zobrazení, implementovat delegáta relace, umístěte 3D modelu na světě a pozastavení rozšířená skutečnosti relace.
+title: Úvod do arkit, která v Xamarin.iosu
+description: Tento dokument popisuje v Iosu 11 s ARKit rozšířené realitě. Popisuje, jak přidat 3D modelu do mobilní aplikace, konfigurace zobrazení, relace delegáta implementujete, umístěte na 3D model na světě a pozastavit relaci rozšířené realitě.
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: 55ef2004f66cb808f878b2215dfdd59a45015877
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: 14bbb35477c098738e9cd7e2cb92154422d394ee
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787162"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350612"
 ---
-# <a name="introduction-to-arkit-in-xamarinios"></a>Úvod do ARKit v Xamarin.iOS
+# <a name="introduction-to-arkit-in-xamarinios"></a>Úvod do arkit, která v Xamarin.iosu
 
-_Rozšířená skutečnost pro iOS 11_
+_Rozšířená realita pro iOS 11_
 
-ARKit umožňuje širokou škálu rozšířená skutečnosti aplikace a hry. Tato část obsahuje následující témata:
+Arkit, která umožňuje širokou škálu rozšířené realitě aplikací a her. Tato část obsahuje následující témata:
 
 - [Začínáme s ARKit](#gettingstarted)
-- [Pomocí ARKit UrhoSharp](urhosharp.md)
+- [Pomocí ARKit Urhosharpu](urhosharp.md)
 
 <a name="gettingstarted" />
 
 ## <a name="getting-started-with-arkit"></a>Začínáme s ARKit
 
-Začít s rozšířená skutečnosti podle následujících pokynů provede jednoduchou aplikaci: umístění 3D modelu, takže ARKit zachovat modelu v místě s jeho funkce sledování.
+Abyste mohli začít s rozšířené realitě, postupujte podle následujících pokynů provede jednoduchou aplikaci: umístění na 3D model, takže ARKit zachovat modelu v místě s jeho funkce sledování.
 
-![3D modelu Jet číslo s plovoucí čárkou s vyloučením bitové kopie](images/jet-sml.png)
+![Jet s plovoucí desetinnou čárkou s vyloučením obrazu 3D modelu](images/jet-sml.png)
 
 ### <a name="1-add-a-3d-model"></a>1. Přidání 3D modelu
 
-Prostředky musí být přidaní do projektu s **SceneKitAsset** akce sestavení.
+Prostředky by měly být přidány do projektu s **SceneKitAsset** akci sestavení.
 
-![SceneKit prostředky v projektu](images/scene-assets.png)
+![Prostředků sady scén v projektu](images/scene-assets.png)
 
 
 ### <a name="2-configure-the-view"></a>2. Konfigurace zobrazení
 
-V kontroleru zobrazení `ViewDidLoad` metoda, asset scény načíst a nastavit `Scene` vlastnost v zobrazení:
+V kontroleru zobrazení `ViewDidLoad` metodu načtení prostředku scény a nastavte `Scene` vlastnost pro zobrazení:
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -54,7 +54,7 @@ SceneView.Scene = scene;
 
 ### <a name="3-optionally-implement-a-session-delegate"></a>3. Volitelně můžete implementovat delegáta relace
 
-Ačkoli to není požadováno pro jednoduché případy, implementace delegáta relace může být užitečné při ladění stavu relace ARKit (a v aplikacích skutečné poskytnutí zpětné vazby pro uživatele). Vytvoření jednoduchého delegáta pomocí následující kód:
+I když není nutné pro jednoduché případy, implementace delegáta relace může být užitečné při ladění stavu relace ARKit (a aplikace skutečný, poskytování zpětné vazby na uživatele). Vytvoření jednoduché delegáta pomocí níže uvedeného kódu:
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -67,16 +67,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Přiřadit delegáta v v `ViewDidLoad` metoda:
+Přiřaďte delegáta v v `ViewDidLoad` metody:
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4. Pozice 3D modelu na světě.
+### <a name="4-position-the-3d-model-in-the-world"></a>4. Umístěte na 3D model na světě
 
-V `ViewWillAppear`, následující kód vytvoří relaci ARKit a nastaví pozici 3D modelu v prostoru relativně k fotoaparátu zařízení:
+V `ViewWillAppear`, následující kód vytvoří relaci Arkitem a nastavuje pozici 3D modelu do prostoru relativně k fotoaparát zařízení:
 
 ```csharp
 // Create a session configuration
@@ -94,11 +94,11 @@ var ship = SceneView.Scene.RootNode.FindChildNode("ship", true);
 ship.Position = new SCNVector3(2f, -2f, -9f);
 ```
 
-Pokaždé, když je aplikace spustit nebo obnovit, 3D modelu bude umístěna před fotoaparát. Jakmile je nastavený model, přesuňte kamera a sledujte ARKit udržuje modelu umístěný.
+Pokaždé, když je spuštění nebo obnovení, aplikace na 3D model bude umístěn před fotoaparátu/kamery. Jakmile model je umístěn, posunutí kamery a podívejte se, jak arkit, která zajišťuje model umístěn.
 
-### <a name="5-pause-the-augmented-reality-session"></a>5. Pozastavení rozšířená skutečnosti relace
+### <a name="5-pause-the-augmented-reality-session"></a>5. Pozastavit relaci rozšířená realita
 
-Je dobrým zvykem pozastavit ARKit relace, pokud není viditelná řadiče zobrazení (v `ViewWillDisappear` metoda:
+Je dobrým zvykem pozastavit ARKit relace, když kontroler zobrazení není viditelné (v `ViewWillDisappear` metody:
 
 ```csharp
 SceneView.Session.Pause();
@@ -106,15 +106,15 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>Souhrn
 
-Výše uvedený kód za následek jednoduchou aplikaci ARKit. Složitější příklady by uživatel očekával řadiče zobrazení hostování rozšířená skutečnosti relace k implementaci `IARSCNViewDelegate`, a další metody implementovat.
+Výše uvedený kód za následek jednoduché arkit, která aplikace. Složitější příklady byste očekávali kontroler zobrazení hostuje relaci rozšířené realitě k implementaci `IARSCNViewDelegate`, a implementovat další metody.
 
-ARKit nabízí spoustu sofistikovanější funkce, jako je prostor sledování a interakci s uživatelem. Najdete v článku [UrhoSharp ukázku](urhosharp.md) příklad kombinování ARKit sledování s UrhoSharp.
+Arkit, která poskytuje velké množství složitější funkce, jako je surface sledování a interakce uživatelů. Najdete v článku [Urhosharpu ukázka](urhosharp.md) příklad kombinování ARKit sledováním Urhosharpu.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozšířená skutečnosti (Apple)](https://developer.apple.com/arkit/)
-- [Pomocí ARKit UrhoSharp](urhosharp.md)
+- [Rozšířené realitě (Apple)](https://developer.apple.com/arkit/)
+- [Pomocí ARKit Urhosharpu](urhosharp.md)
 - [Ukázka jednoduché ARKit (Jet)](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
-- [ARKit umístění objekty (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
-- [Představení ARKit - rozšířená skutečnost pro iOS (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [Uvedení objektů ARKit (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
+- [Představujeme ARKit – rozšířená realita pro iOS (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/602/)

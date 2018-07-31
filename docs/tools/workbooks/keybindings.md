@@ -1,26 +1,27 @@
 ---
-title: Xamarin sešity Editor klávesové zkratky
-description: Tento dokument popisuje klávesové zkratky, které jsou k dispozici pro použití v editoru sešity Xamarin. Konkrétně vypadá na různých způsobů, návratový klíč se používá.
+title: Klávesové zkratky editoru sešity Xamarin
+description: Tento dokument popisuje klávesové zkratky, které jsou k dispozici pro použití v editoru Xamarin Workbooks. Zejména dohlíží na různé způsoby, jak použít klávesu Return.
 ms.prod: xamarin
 ms.assetid: 6375A371-3215-4A7C-B97B-A19E58BE96D6
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b0ba268367ebf6a9eb55bd00dd84014de247649b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/30/2017
+ms.openlocfilehash: c2b4a8c1bcb8f7b88ab2ae1e2906b1c9c702b76a
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793901"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351675"
 ---
-# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Xamarin sešity Editor klávesové zkratky
+# <a name="xamarin-workbooks-editor-keyboard-shortcuts"></a>Klávesové zkratky editoru sešity Xamarin
 
-## <a name="the-return-key-and-its-nuances"></a>Klíč vrátit a jeho drobné odlišnosti
+## <a name="the-return-key-and-its-nuances"></a>Vrátí klíč a jeho odlišnosti
 
-Následující tabulka popisuje různé vazeb klíče pro provádění kódu a vytváření markdownu. Přesměrovali jsme pozor zvolit rozumný a konzistentní vazeb klíče, které jsou známé a plynulá práce.
+Následující tabulka popisuje různé klávesové zkratky pro provádění kódu a vytváření markdownu. Přesměrovali jsme velmi pečlivě zvolit rozumné a konzistentní klávesové zkratky, které jsou známé a plynulé.
 
-|Vazbu na klíč|Buňky kódu|Buňky markdownu|
+|Klávesová zkratka|Buňky kódu|Markdown buňky|
 |--- |--- |--- |
-|<kbd>Vrátí</kbd>|<p>Pokud znak je na konci buňky vyrovnávací paměti a buňky možné úspěšně analyzovat, bude spuštěn a výsledky se zobrazí pod vyrovnávací paměti a nové buňky kódu se vloží a zaměřuje buňky po spuštění buňky.</p><p>Pokud analýza není úspěšné., nový řádek se vloží do vyrovnávací paměti. Kompilátoru diagnostiky nebude možné vytvořit, pokud analýza není úspěšné.</p>|<p><kbd>Vrátí</kbd> vykazuje různé chování v závislosti na kontextu Markdownu na pomocí kurzoru.</p><ul><li>Pokud pomocí kurzoru v bloku kódu Markdownu, vloží se literálu nový řádek.</li><li>Pokud pomocí kurzoru v Markdownu seznamu bloku, vytvořit novou položku seznamu, nebo rozdělit aktuální položky seznamu.</li><li>Pokud pomocí kurzoru v žádný jiný druh Markdownu bloku, vytvořit nový blok odstavce nebo rozdělení aktuálnímu bloku.</li></ul>|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Win</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>Vždy se pokusí pro analýzu a zpracování obsah buňky. Pokud kompilace úspěšné, výsledky (včetně zpracování výjimek) se zobrazí pod vyrovnávací paměť, a pokud neexistují žádné další buněk, budou novou vytvořen a zaměřuje.</p><p>Pokud nejsou žádné chyby kompilace, zobrazí diagnostiky a vyrovnávací paměť zůstanou cílených s pomocí kurzoru pozici beze změny.</p>|Vloží a pokrývá nové buňky kódu po aktuální buňky markdownu.|
-|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Win</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|Vloží a pokrývá nové buňky markdownu po aktuální buňky.|Stejné chování jako <kbd>vrátit</kbd>|
-|<kbd>Shift‑Return</kbd>|Vždy vloží nový řádek, bez ohledu na umístění pomocí kurzoru nebo obsahu.|Vloží zalomení řádku pevný v aktuální Markdownu bloku.|
+|<kbd>Vrátí</kbd>|<p>Pokud blikající kurzor na konec vyrovnávací paměti buňky a buňku může být úspěšně analyzován, se spustí a výsledky se zobrazí pod vyrovnávací paměti a novou buňku kódu bude vložen a zaměřuje buňky po prováděnou buňky.</p><p>Pokud analýza není úspěšné, vloží nový řádek do vyrovnávací paměti. Diagnostika kompilátoru nebude vytvořeno, pokud analýzy se nepovedlo úspěšně dokončit.</p>|<p><kbd>Vrátí</kbd> vykazují různé chování v závislosti na kontextu Markdownu za blikajícím kurzorem.</p><ul><li>Pokud kurzor se v bloku kódu Markdown, je vložena literálu nový řádek.</li><li>Pokud blikající kurzor je v seznamu bloku Markdownu, vytvořte novou položku seznamu nebo rozdělit aktuální položky seznamu.</li><li>Pokud blikající kurzor je v jiném typu blok Markdownu, vytvořte nový blok odstavce nebo rozdělení aktuálního bloku.</li></ul>|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Return</kbd></dd><dt>Windows</dt><dd><kbd>Control‑Return</kbd></dd></dl>|<p>Vždy se pokusí analyzovat a spouštět obsah buňky. Je-li sestavení úspěšné, výsledky (včetně zpracování výjimek) se zobrazí pod vyrovnávací paměť, a pokud neexistují žádné další buňky, nové vytvoření, který se zaměřuje.</p><p>Pokud nejsou žádné chyby kompilace, diagnostiky se zobrazí a vyrovnávací paměť zůstane cílené s nezměněná pozice blikajícího kurzoru.</p>|Vloží a pokrývá novou buňku kódu po aktuální buňky markdownu.|
+|<dl><dt>Mac</dt><dd><kbd>Command‑Shift‑Return</kbd><dd><dt>Windows</dt><dd><kbd>Control‑Shift‑Return</kbd></dd></dl>|Vloží a pokrývá novou buňku markdownu za aktuální buňku.|Stejné chování jako <kbd>vrátit</kbd>|
+|<kbd>Shift‑Return</kbd>|Vždy vloží nový řádek, bez ohledu na pozici blikajícího kurzoru nebo obsahu.|Vloží konec řádku pevný v rámci aktuálního bloku Markdownu.|

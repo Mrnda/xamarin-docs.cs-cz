@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270199"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351740"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Certifikace konzultační partneři nabízet mobilních řešení
 
@@ -112,6 +112,7 @@ _Uvedené ve primárního umístění, mnoho partnerů poskytování služeb nap
 |[Interknowlogy](http://www.interknowlogy.com/)|Síť SAN Diegu, certifikační Autority, USA|Po celém světě jeden z lídrů na vývoj vlastních aplikací, využívá InterKnowlogy aktuálními a nově vznikajícími technologií propojené prostředí díky dotykového ovládání, gest a řeči|
 |[InTouch řešení](http://www.intouchsol.com )|Overland Park, Lokálně, USA Londýn, Spojené království; Chicago, IL, USA New York, NY, USA|Nepovedlo se počáteční digitální agentura v rámci Pharma a místo na zdravotní péče|
 |[iTexico](http://www.itexico.com)|Austin, Texas, USA|iTexico je globální softwaru technologická společnost, která se zaměřuje na pomáhá společnostem vývoje mobilních aplikací v průběhu projektu "Äôs životní cyklus prostřednictvím nearshore outsourcingu.|
+|[JBS](https://www.jbssolutions.com)|Velká Británie, USA|JBS je poskytovatel řešení vlastního softwaru.|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto, certifikační Autority, USA Chicago, IL, USA Toledo, OH, USA Seongnam incidentech Gyeonggi, Jižní Korea|Kaonsoft je inovativní softwarovou společnost, která poskytuje kompletní řešení konec konec vytvoření enterprise mobility aplikací pro různé platformy.|
 |[Katalyst Technologies, Inc. ](http://www.katalysttech.com )|Evanston, IL, USA Atlanta, všeobecné dostupnosti, USA Bombaj, Maharashtra, Indie Hyderabad Telangana, Indie Puné, Maharashtra, Indie|Na Katalyst Domníváme se, že technologie může být skutečně podpůrnou technologii. Který má důvod, proč počáteční důvěřuje se nám to nejen poskytují produkty a služby, ale také změnit způsob, jakým funguje jejich podstatu podnikání prostřednictvím přizpůsobené zvládat řešení, které jsou rozmístěny podniku.|
 |[Technologie Kleio LLC](http://kleiotechnology.com)|Královská Palm Beach, USA|Zabývali jsme se tradičně vzdělávání, značky a identit. studium klienta obchodní problém vyřešit v návrhu uživatelského prostředí a obsahu strategie. Pomáháme firmy oslovit požadavky klientů a usnadnit ziskové|

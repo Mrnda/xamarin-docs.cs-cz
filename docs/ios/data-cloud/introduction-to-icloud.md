@@ -1,37 +1,37 @@
 ---
 title: Pomocí serveru služby iCloud Xamarin.iOS
-description: Tento dokument popisuje Icloudu a jeho použití v aplikacích Xamarin.iOS. Popisuje, klíč hodnota úložiště, ukládání dokumentů a na Icloudu zálohování.
+description: Tento dokument popisuje iCloud a jeho použití v aplikacích Xamarin.iOS. Popisuje úložiště hodnot klíčů, úložiště dokumentů a zálohy na Icloudu.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b72ecc40994d9336c4941f3db700796edd80e81f
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785535"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353214"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Pomocí serveru služby iCloud Xamarin.iOS
 
-Úložiště iCloud rozhraní API v iOS 5 umožňuje aplikacím ukládat dokumenty uživatele a specifická data do centrálního umístění a přístup k těmto položkám ze zařízení, všechny uživatele.
+Úložiště iCloud rozhraní API v systému iOS 5 umožňuje aplikacím ukládat dokumenty uživatele a specifická data do centrálního umístění a přístup k tyto položky zařízení pro všechny uživatele.
 
 K dispozici jsou čtyři typy úložiště:
 
-- **Klíč-hodnota úložiště** – Pokud chcete sdílet malé množství dat s vaší aplikací na jiných zařízení uživatele.
+- **Úložiště hodnot klíčů** – Pokud chcete sdílet malých objemů dat s vaší aplikací na dalším zařízením uživatele.
 
-- **Úložiště UIDocument** – Pokud chcete ukládat dokumenty a další data v účtem Icloudu uživatele pomocí podtřídou třídy UIDocument.
+- **Úložiště UIDocument** – Pokud chcete ukládat dokumenty a další data v účtu iCloud uživatele pomocí podtřída UIDocument.
 
 - **CoreData** -úložiště databáze SQLite.
 
-- **Jednotlivé soubory a adresáře** – pro správu spoustu různých souborů přímo v systému souborů.
+- **Jednotlivé soubory a adresáře** – pro správu mnoho různých souborů přímo v systému souborů.
 
 Tento dokument popisuje první dva typy - páry klíč-hodnota a UIDocument podtřídy – a jak používat tyto funkce v Xamarin.iOS.
 
 > [!IMPORTANT]
-> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům umožňuje správně zpracovat Evropské unie obecného Regulation (GDPR).
 
 ## <a name="requirements"></a>Požadavky
 
@@ -41,46 +41,46 @@ Tento dokument popisuje první dva typy - páry klíč-hodnota a UIDocument podt
 
 ## <a name="preparing-for-icloud-development"></a>Příprava pro vývoj na Icloudu
 
-Aplikace musí být nakonfigurované na používání Icloudu v [portál zřizování Apple](https://developer.apple.com/account/ios/overview.action) a projekt sám sebe. Před vývoji pro Icloudu (nebo vyzkoušení ukázky) podle následujících pokynů.
+Aplikace musí být nakonfigurován pro použití Icloudu v [portálem pro zřizování Apple Developer](https://developer.apple.com/account/ios/overview.action) a samotného projektu. Před vývojem pro Icloudu (nebo vyzkoušení ukázky) použijte následující postup.
 
-Chcete-li správně nastavit aplikaci, aby přístup k serveru služby iCloud:
+Chcete-li správně nakonfigurovat aplikaci pro přístup k serveru služby iCloud:
 
--   **Najít váš TeamID** -přihlášení k [developer.apple.com](http://developer.apple.com) a přejděte **Member Center > váš účet > Souhrn účtu vývojáře** k získání ID týmu (nebo jednotlivé ID pro vývojáře v jednom ). Bude řetězec 10 znaků ( **A93A5CM278** třeba) – to je součástí "kontejneru identifikátor".
+-   **Najít vaše TeamID** – Přihlaste se k [developer.apple.com](http://developer.apple.com) a přejděte **centra > svůj účet > Přehled účtů pro vývojáře** ID týmu (nebo jednotlivé ID pro jednoho vývojáře ). Je řetězec znaků 10 ( **A93A5CM278** třeba) – to je součástí "identifikátor kontejneru".
 
--   **Vytvoření nového ID aplikace** – k vytvoření ID aplikace, postupujte podle kroků uvedených v [zřizování pro úložiště technologie část průvodce zřizování zařízení](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)a zkontrolujte **Icloudu** jako povolená služba:
+-   **Vytvoření nového ID aplikace** – Chcete-li vytvořit ID aplikace, postupujte podle kroků uvedených v [zřizování pro Store technologie části Průvodce Device Provisioning](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)a nezapomeňte se podívat **Icloudu** jako povolené služby:
 
- [![](introduction-to-icloud-images/icloud-sml.png "Zkontrolujte Icloudu jako povolené služby")](introduction-to-icloud-images/icloud.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-sml.png "Kontrola serveru služby iCloud jako povolené služby")](introduction-to-icloud-images/icloud.png#lightbox)
 
-- **Vytvořit nový profil pro zřizování** – Pokud chcete vytvořit profil zřizování, postupujte podle kroků uvedených v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) .
+- **Vytvoření nového profilu zřizování** – Chcete-li vytvořit zřizovací profil, postupujte podle kroků uvedených v [Device Provisioning průvodce](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
 
-- **Přidejte identifikátor kontejneru Entitlements.plist** -formát identifikátor kontejneru je `TeamID.BundleID`. Další informace najdete v části [práce oprávnění](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
+- **Přidejte identifikátor kontejneru do souboru Entitlements.plist** – formát identifikátor kontejneru je `TeamID.BundleID`. Další informace najdete [práce s nároky](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
 
-- **Konfigurace vlastností projektu** – v Info.plist zkontrolujte soubor **identifikátor svazku** odpovídá **ID sady** nastavena, když [vytvoření ID aplikace ](~/ios/deploy-test/provisioning/capabilities/index.md); Podepisování sady používá iOS **profil zřizování** obsahující ID aplikace se na serveru služby iCloud služby App Service a **vlastní oprávnění** soubor vybraný. Všechny stačí v sadě Visual Studio v podokně vlastností projektu.
+- **Konfigurace vlastností projektu** – v souboru Info.plist zkontrolujte soubor **identifikátor sady prostředků** odpovídá **ID sady prostředků** nastavena, když [vytvoření ID aplikace ](~/ios/deploy-test/provisioning/capabilities/index.md); Podepisování sad prostředků používá pro iOS **zřizovací profil** obsahující ID aplikace se na serveru služby iCloud služby App Service a **vlastní oprávnění** vybraný soubor. To všechno můžete dělat v sadě Visual Studio v podokně vlastností projektu.
 
-- **Povolit Icloudu na vašem zařízení** – přejděte na **Nastavení > Icloudu** a ujistěte se, že zařízení je přihlášen.
+- **Povolit iCloud na vašem zařízení** – přejděte na **Nastavení > Icloudu** a ujistěte se, že zařízení je přihlášen.
 Vyberte a zapnout **dokumenty a Data** možnost.
 
-- **Zařízení musí používat pro testování Icloudu** -nebude fungovat v simulátoru.
-Ve skutečnosti je skutečně potřebujete minimálně dva zařízení všechny přihlášení pod stejným Apple ID zobrazíte Icloudu v akci.
+- **Zařízení musí používat k testování Icloudu** -nebude fungovat v simulátoru.
+Ve skutečnosti opravdu potřebujete dva nebo více zařízení všech přihlášení pomocí stejného Apple ID, které chcete zobrazit v akci na Icloudu.
 
 
-## <a name="key-value-storage"></a>Klíč hodnota úložiště
+## <a name="key-value-storage"></a>Úložiště hodnot klíčů
 
-Klíč hodnota úložiště je určený pro malé množství dat, který uživatel může jako trvalé mezi zařízení – například poslední stránky, které budou si zobrazili v knize nebo časopis. Klíč hodnota úložiště není vhodné používat pro zálohování up data.
+Úložiště hodnot klíčů je určený pro malé množství dat, která uživatel může jako trvalý napříč zařízení – například poslední stránky, kterou se zobrazit v knize nebo magazine. Úložiště hodnot klíčů není vhodné používat pro data zálohování.
 
-Existují některá omezení být vědět, když používáte klíč hodnota úložiště:
+Existují některá omezení je potřeba vědět při použití úložiště klíč / hodnota:
 
-- **Maximální velikost klíče** -klíč názvy nesmí být delší než 64 bajtů.
+- **Maximální velikost klíče** – názvy klíč nesmí být delší než 64 bajtů.
 
-- **Maximální hodnota velikosti** -nelze uložit více než 64 kB jedinou hodnotu.
+- **Maximální hodnota velikosti** – více než 64 kB nelze ukládat v jedné hodnoty.
 
-- **Úložiště dvojic klíč hodnota maximální velikosti pro aplikaci** -aplikace může ukládat až 64 kB klíč hodnota dat pouze celkem. Pokusí se nastavit klíče překračuje tento limit se nezdaří a předchozí hodnotu zachová.
+- **Úložiště dvojic klíč hodnota maximální velikost pro aplikaci** – aplikace může ukládat až 64 kB daty klíč hodnota pouze celkem. Pokusí se nastavit klíče nad rámec tohoto limitu se nezdaří a zachová předchozí hodnotu.
 
-- **Datové typy** – pouze základní typy jako řetězců, čísel a může být uložený logické hodnoty.
+- **Datové typy** – pouze základní typy, jako jsou řetězce, čísla a logické hodnoty mohou být uloženy.
 
-**ICloudKeyValue** příklad ukazuje, jak to funguje. Ukázkový kód vytvoří klíč s názvem pro každé zařízení: můžete nastavit tento klíč na jednom zařízení a podívejte se na hodnotu get rozšíří do jiné. Vytvoří také klíč s názvem "Sdílené", který lze upravovat na libovolném zařízení – Pokud chcete upravit najednou na mnoho zařízení, Icloudu rozhodne hodnotu "wins" (použití časového razítka na změny) a získá rozšířeny.
+**ICloudKeyValue** příklad ukazuje, jak to funguje. Vzorový kód vytvoří klíč s názvem pro každé zařízení: můžete nastavit tento klíč na jednom zařízení a podívejte se na hodnotu získat rozšíří na další. Také vytvoří klíč s názvem "Sdílené", který lze upravovat na libovolném zařízení – Pokud upravíte současně na mnoha zařízeních, Icloudu rozhodne hodnotu "wins" (použití časového razítka na změně), který získá rozšířena.
 
-Tento snímek obrazovky ukazuje ukázku používán. Při přijímání oznámení o změnách z Icloudu jsou vytištěn v posouvání zobrazení textu v dolní části obrazovky a aktualizována v vstupních polí.
+Tento snímek obrazovky znázorňuje ukázku používá. Při přijetí oznámení o změnách ze serveru služby iCloud jsou zobrazeny v posouvání zobrazení textu v dolní části obrazovky a aktualizuje ve vstupních polí.
 
 
 
@@ -96,7 +96,7 @@ store.SetString("testkey", "VALUE IN THE CLOUD");  // key and value
 store.Synchronize();
 ```
 
-Volání metody synchronizace zajišťuje, že hodnota je uložit trvale na místní diskové úložiště jenom. Synchronizace na serveru služby iCloud se odehrává na pozadí a nelze "Vynutit" kód aplikace. S funkční připojení k síti synchronizace často dojde během 5 sekund, ale pokud síť není nízký (nebo odpojených) aktualizace může trvat výrazně déle.
+Volání synchronizovat zajistí, že hodnota se ukládají do jenom úložiště místního disku. Synchronizace na serveru služby iCloud probíhá na pozadí a nejde "Vynutit" kódem aplikace. Pomocí funkční připojení k síti synchronizace často proběhne do 5 sekund, ale pokud síť není nízký (nebo odpojených) aktualizace může trvat mnohem déle.
 
 Můžete načíst hodnotu s tímto kódem:
 
@@ -105,11 +105,11 @@ var store = NSUbiquitousKeyValueStore.DefaultStore;
 display.Text = store.GetString("testkey");
 ```
 
-Hodnota je načten z místního úložiště dat – tato metoda se nepokusí ke kontaktování serveru služby iCloud serverů pro získání hodnotě "posledního". Icloudu se aktualizuje místním úložišti podle svůj vlastní plán.
+Hodnota je načten z místního úložiště dat – tato metoda se nepokusí ke kontaktování serveru služby iCloud serverů pro získání hodnotu "posledního". iCloud aktualizuje místní úložiště dat podle vlastního plánu.
 
-### <a name="deleting-data"></a>Odstraňování dat
+### <a name="deleting-data"></a>Odstranění dat
 
-K úplnému odebrání pár klíč hodnota, použijte metodu odebrat takto:
+Pokud chcete úplně odebrat pár klíč hodnota, použijte metodu odebrat následujícím způsobem:
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -119,8 +119,8 @@ store.Synchronize();
 
 ### <a name="observing-changes"></a>Sledování změn
 
-Aplikace také můžete přijímat upozornění, když jsou hodnoty změnit pomocí Icloudu přidáním pozorovatel k `NSNotificationCenter.DefaultCenter`.
-Následující kód z **KeyValueViewController.cs** `ViewWillAppear` metoda ukazuje, jak čekat na těchto oznámení a vytvoří seznam z nich došlo ke změně klíčů:
+Aplikace může také přijímat oznámení, když se změní hodnoty serveru služby iCloud přidáním pozorovatel k `NSNotificationCenter.DefaultCenter`.
+Následující kód z **KeyValueViewController.cs** `ViewWillAppear` metoda ukazuje, jak k naslouchání pro tato oznámení a vytvoří seznam z nich byly změněny klíče:
 
 ```csharp
 keyValueNotification =
@@ -142,49 +142,49 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 });
 ```
 
-Proveďte kódu můžete některé akce se seznamem změněné klíčů, jako je například místní kopii je aktualizace nebo aktualizace uživatelského rozhraní s novými hodnotami.
+Váš kód pak můžou některé akce se seznamem změněné klíčů, jako je například aktualizaci jejich místní kopie nebo aktualizaci uživatelského rozhraní s novými hodnotami.
 
-Změna možné důvody jsou: ServerChange (0), InitialSyncChange (1) nebo QuotaViolationChange (2). Můžete používat z důvodu a v případě potřeby provedení různých zpracování (například možná budete muset odebrat některé klíče jako výsledek toho *QuotaViolationChange*).
+Možné změny důvody jsou: ServerChange (0), InitialSyncChange (1) nebo QuotaViolationChange (2). Můžete používat z důvodu a provádět jiné zpracování v případě potřeby (například budete muset odebrat některé klíče kvůli *QuotaViolationChange*).
 
-## <a name="document-storage"></a>Ukládání dokumentů
+## <a name="document-storage"></a>Úložiště dokumentů
 
-Icloudu úložiště dokumentů je navržená ke správě dat, která je důležité pro vaši aplikaci (a pro uživatele). Slouží ke správě souborů a další data, která vaše aplikace je potřeba spustit, když ve stejnou dobu sdílení funkcí v zařízeních všechny uživatele a poskytuje zálohování na iCloud.
+iCloud úložiště dokumentů je určen ke správě dat, která jsou důležité pro vaši aplikaci (a pro uživatele). Slouží ke správě souborů a další data, která vaše aplikace potřebuje ke spuštění, zatímco ve stejnou dobu poskytuje zálohování na iCloud a sdílení funkcí mezi všechny uživatele zařízení.
 
-Tento diagram znázorňuje, jak se všechny vešel společně. Každé zařízení má data uložená na místní úložiště (UbiquityContainer) a na Icloudu operačního systému, který má na starosti démon odesílat a přijímat data v cloudu. Přístup ke UbiquityContainer všech souborů je třeba provést prostřednictvím FilePresenter/FileCoordinator, aby se zabránilo souběžný přístup. `UIDocument` Třída implementuje těch, které pro vás; tento příklad ukazuje, jak používat UIDocument.
+Tento diagram znázorňuje, jak to všechno dohromady vyhovuje. Každé zařízení má data uložená na místním úložišti (UbiquityContainer) a na Icloudu operačního systému, který proces démon se postará o odesílání a přijímání dat v cloudu. Všechny přístup k souborům UbiquityContainer musíte to udělat pomocí FilePresenter/FileCoordinator zabránit souběžný přístup. `UIDocument` Třída implementuje tyto pro vás; tento příklad ukazuje způsob použití UIDocument.
 
- [![](introduction-to-icloud-images/icloud-overview.png "V dokumentu úložiště – přehled")](introduction-to-icloud-images/icloud-overview.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-overview.png "Přehled úložiště dokumentu")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
-Příklad iCloudUIDoc implementuje jednoduchou `UIDocument` podtřídami, který obsahuje jedno textové pole. Text je vykreslen v `UITextView` a úpravy rozšířeny pomocí Icloudu s jinými zařízeními s zprávu oznámení zobrazené červeně. Ukázkový kód není řešit pokročilejší funkce serveru služby iCloud jako řešení konfliktů.
+Příklad iCloudUIDoc implementuje jednoduchou `UIDocument` podtřídy, která obsahuje textové pole. Text je vykreslen v `UITextView` a úpravy se rozšíří pomocí serveru služby iCloud s jinými zařízeními s zprávu s oznámením zobrazí červeně. Vzorový kód není využívání pokročilejší funkce Icloudu, jako je řešení konfliktů.
 
-Tento snímek obrazovky ukazuje ukázkovou aplikaci - po změně textu a stisknutím klávesy **UpdateChangeCount** dokumentu se synchronizují prostřednictvím serveru služby iCloud s jinými zařízeními.
+Tento snímek obrazovky ukazuje ukázkové aplikace - po změně text a stisknutím klávesy **UpdateChangeCount** dokumentu synchronizována prostřednictvím serveru služby iCloud s jinými zařízeními.
 
- [![](introduction-to-icloud-images/iclouduidoc.png "Tento snímek obrazovky ukazuje ukázkovou aplikaci po změně textu a stisknutím klávesy UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
+ [![](introduction-to-icloud-images/iclouduidoc.png "Tento snímek obrazovky ukazuje ukázkovou aplikaci po změně text a stisknutím klávesy UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
-Existují pět částí iCloudUIDoc ukázce:
+Existuje pět částí iCloudUIDoc ukázku:
 
-1. **Přístup k UbiquityContainer** -zjistit, zda je povoleno Icloudu a pokud ano cesta k oblasti úložiště iCloud vaší aplikace.
+1. **Přístup k UbiquityContainer** – určení, zda je povolena na Icloudu a pokud ano cestu k oblasti úložiště iCloud vaší aplikace.
 
-1. **Vytváření podtřídy UIDocument** -vytvořte třídu pro zprostředkující mezi Icloudu úložiště a vaše objekty modelu.
+1. **Vytvoření podtřídy UIDocument** – vytvořit třídu pro zprostředkující mezi úložiště iCloud a objekty modelu.
 
-1. **Hledání a otevírání dokumentů serveru služby iCloud** -použít `NSFileManager` a `NSPredicate` k vyhledání serveru služby iCloud dokumenty a jejich otevření.
+1. **Vyhledání a otevírání dokumenty Icloudu** – použijte `NSFileManager` a `NSPredicate` dokumenty Icloudu najít a otevřít je.
 
-1. **Zobrazování dokumentů serveru služby iCloud** -vystavení vlastností z vaší `UIDocument` tak, aby můžete pracovat s ovládacími prvky uživatelského rozhraní.
+1. **Zobrazení dokumenty Icloudu** -vystavení vlastností z vaší `UIDocument` tak, že budete moct setkat s ovládacích prvků uživatelského rozhraní.
 
-1. **Ukládání dokumentů serveru služby iCloud** – Ujistěte se, že jsou na disku a na Icloudu trvalé změny provedené v uživatelském rozhraní.
+1. **Ukládání dokumentů s Icloudem** – Ujistěte se, že jsou trvalé změny provedené v uživatelském rozhraní na disk a na Icloudu.
 
-Všechny operace Icloudu spustit (nebo se má spustit) asynchronně, takže jejich neblokovat při čekání na určitou akci. Zobrazí se třemi různými způsoby toho dosáhnout v ukázce:
+Spustit všechny operace na Icloudu (nebo by měly být spuštěny) asynchronně, takže nemusíte blokují při čekání na určitou akci. Zobrazí se třemi různými způsoby toho dosáhnout v ukázce:
 
- **Vlákna** – v `AppDelegate.FinishedLaunching` počáteční volání `GetUrlForUbiquityContainer` se provádí na jiné vlákno k zabránění blokování hlavního vlákna.
+ **Vlákna** – v `AppDelegate.FinishedLaunching` počáteční volání `GetUrlForUbiquityContainer` se provádí v jiném vlákně, aby se zabránilo blokování hlavního vlákna.
 
  **NotificationCenter** – registrace pro oznámení, když asynchronní operace, jako `NSMetadataQuery.StartQuery` dokončení.
 
- **Obslužné rutiny dokončení** – předejte metod ke spuštění na dokončení asynchronní operace, jako je `UIDocument.Open`.
+ **Obslužné rutiny dokončení** – předejte metod ke spuštění při dokončení asynchronní operace, jako je `UIDocument.Open`.
 
 ### <a name="accessing-the-ubiquitycontainer"></a>Přístup k UbiquityContainer
 
-Prvním krokem při použití serveru služby iCloud úložiště dokumentů je určit, zda je povoleno Icloudu a pokud ano umístění všudypřítomnosti kontejner, (adresář, kde jsou uloženy soubory Icloudu povoleno na zařízení).
+Prvním krokem při používání serveru služby iCloud úložiště dokumentů je určit, zda je povoleno Icloudu a pokud ano umístění "všudypřítomnosti kontejneru" (adresář, kde jsou uloženy soubory povolena na Icloudu na zařízení).
 
-Tento kód je v `AppDelegate.FinishedLaunching` metoda ukázky.
+Tento kód je v `AppDelegate.FinishedLaunching` metoda vzorku.
 
 ```csharp
 // GetUrlForUbiquityContainer is blocking, Apple recommends background thread or your UI will freeze
@@ -213,18 +213,18 @@ ThreadPool.QueueUserWorkItem (_ => {
 });
 ```
 
-I když ukázku, uděláte tak, Apple doporučuje volání GetUrlForUbiquityContainer vždy, když aplikace je teď dostupná popředí.
+I když se ukázka není Uděláte to tak, Apple doporučuje volání GetUrlForUbiquityContainer pokaždé, když se aplikace pochází na popředí.
 
 ### <a name="creating-a-uidocument-subclass"></a>Vytváření UIDocument podtřídy
 
-Všechny Icloudu soubory a adresáře (ie. nic uložené v adresáři UbiquityContainer) musí být spravované pomocí NSFileManager metod, implementaci protokolu NSFilePresenter a zápis prostřednictvím NSFileCoordinator.
-Nejjednodušší způsob, jak provést všechny této se zapisuje na sami, ale podtřídami UIDocument, která dělá všechny pro vás.
+Všechny Icloudu soubory a adresáře (ie. nic uložené v adresáři UbiquityContainer) se musí spravovat NSFileManager metody, implementace protokolu NSFilePresenter a zápis přes NSFileCoordinator.
+Nejjednodušší způsob, jak to udělat se zapsat sami, ale podtřídy UIDocument, která to udělá za vás.
 
-Existují pouze dvě metody, které musí implementovat v podtřídy UIDocument pro práci s serveru služby iCloud:
+Existují pouze dvě metody, které je nutné implementovat v UIDocument podtřídu pro práci s serveru služby iCloud:
 
-- **LoadFromContents** -předá NSData obsahu souboru můžete rozbalit do třídy modelu/es.
+- **LoadFromContents** -předá NSData obsah souboru můžete rozbalit do vaší třídy/es modelu.
 
-- **ContentsForType** -požadavek na zadání NSData reprezentace třídy modelu nebo es uložit na disk (a v cloudu).
+- **ContentsForType** -požadavek, kde zadáte NSData reprezentace třídy modelu/es na uložení na disk (a v cloudu).
 
 Tento ukázkový kód z **iCloudUIDoc\MonkeyDocument.cs** ukazuje, jak implementovat UIDocument.
 
@@ -274,11 +274,11 @@ public class MonkeyDocument : UIDocument
 }
 ```
 
-Datový model v tomto případě je velmi jednoduchý – textové pole. Datového modelu může být složité podle potřeby, například dokumentu Xml nebo binární data. Primární rolí UIDocument implementace je pro převod mezi tříd modelu a reprezentaci NSData, kterou lze uložit nebo načíst na disku.
+Datový model v tomto případě je velmi jednoduché – textové pole. Datový model může být komplexního, jako povinné, například k dokumentu Xml nebo binární data. Primární role UIDocument implementace je pro převod mezi třídách modelu a reprezentaci NSData, které lze uložit/načíst na disku.
 
-### <a name="finding-and-opening-icloud-documents"></a>Hledání a otevírání dokumentů Icloudu
+### <a name="finding-and-opening-icloud-documents"></a>Hledání a otevírání dokumenty Icloudu
 
-Ukázková aplikace zpracovává jenom s jedním souborem - test.txt - proto kód v **AppDelegate.cs** vytvoří `NSPredicate` a `NSMetadataQuery` hledat speciálně pro tento název souboru. `NSMetadataQuery` Běží asynchronně a odešle oznámení po dokončení. `DidFinishGathering` Získá nazvané oznámení pozorovatele, zastaví dotaz a LoadDocument, který používá `UIDocument.Open` metoda s obslužnou rutinou dokončení pokusu načíst soubor a zobrazit ji v `MonkeyDocumentViewController`.
+Ukázková aplikace zabývá pouze jeden soubor - test.txt – proto kódu v **AppDelegate.cs** vytvoří `NSPredicate` a `NSMetadataQuery` vás pod rouškou speciálně pro tento název souboru. `NSMetadataQuery` Běží asynchronně a odešle oznámení, když se dokončí. `DidFinishGathering` Získá volány oznámení pozorovatele, zastaví dotaz a volá LoadDocument, který používá `UIDocument.Open` metodu obslužné rutiny dokončení pokusí se načíst soubor a zobrazit je v `MonkeyDocumentViewController`.
 
 ```csharp
 string monkeyDocFilename = "test.txt";
@@ -340,12 +340,12 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 }
 ```
 
-### <a name="displaying-icloud-documents"></a>Zobrazování dokumentů s Icloudem
+### <a name="displaying-icloud-documents"></a>Zobrazení dokumenty Icloudu
 
-Zobrazení UIDocument nesmí být žádné jiné pro jiné třídy modelu
-- vlastnosti se zobrazí v ovládacích prvků uživatelského rozhraní, může být upraven uživatelem a pak zpětně zapsat do modelu.
+Zobrazení UIDocument nesmí být nijak neliší do jiné třídy modelu
+- Zobrazí se vlastnosti v ovládacích prvcích uživatelského rozhraní, může být upraven uživatelem a pak zapíše zpět do modelu.
 
-V příkladu **iCloudUIDoc\MonkeyDocumentViewController.cs** zobrazí text MonkeyDocument v `UITextView`. `ViewDidLoad` čeká na oznámení odeslaných za `MonkeyDocument.LoadFromContents` metoda. `LoadFromContents` je volána, když Icloudu má nová data souboru, takže oznámení určuje, zda dokument byl aktualizován.
+V příkladu **iCloudUIDoc\MonkeyDocumentViewController.cs** zobrazí text MonkeyDocument v `UITextView`. `ViewDidLoad` čeká na oznámení odeslané `MonkeyDocument.LoadFromContents` metody. `LoadFromContents` je volána, když na Icloudu má nová data k souboru, tak, aby oznámení určuje, že aktualizovaný dokument.
 
 ```csharp
 NSNotificationCenter.DefaultCenter.AddObserver (this,
@@ -355,7 +355,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (this,
 );
 ```
 
-Obslužná rutina oznámení ukázkový kód volá metodu v tomto případě aktualizovat uživatelské rozhraní – bez jakékoli zjišťování konfliktů nebo rozlišení.
+Obslužné rutiny oznámení ukázkový kód volá metodu v tomto případě aktualizovat uživatelské rozhraní – bez nutnosti jakékoli zjišťování konfliktů nebo rozlišení.
 
 ```csharp
 [Export ("dataReloaded:")]
@@ -367,9 +367,9 @@ void DataReloaded (NSNotification notification)
 }
 ```
 
-### <a name="saving-icloud-documents"></a>Ukládání dokumentů Icloudu
+### <a name="saving-icloud-documents"></a>Ukládá dokumenty Icloudu
 
-Chcete-li přidat UIDocument icloudem můžete volat `UIDocument.Save` přímo (pro pouze nové dokumenty) nebo přesunout existující soubor pomocí `NSFileManager.DefaultManager.SetUbiquitious`. Příklad kódu vytvoří nový dokument přímo v kontejneru všudypřítomnosti s tímto kódem (existují dvě dokončení obslužné rutiny tady, jeden pro `Save` operace a druhý pro Open):
+Přidat UIDocument na serveru služby iCloud můžete volat `UIDocument.Save` přímo (pro pouze nové dokumenty) nebo přesunout existující soubor pomocí `NSFileManager.DefaultManager.SetUbiquitious`. Příklad kódu vytvoří nový dokument přímo v kontejneru všudypřítomnosti s tímto kódem (existují dvě dokončení obslužné rutiny, jeden pro `Save` operace a druhý pro otevřené):
 
 ```csharp
 var docsFolder = Path.Combine (iCloudUrl.Path, "Documents"); // NOTE: Documents folder is user-accessible in Settings
@@ -394,49 +394,49 @@ if (saveSuccess) {
 }
 ```
 
-Následující změny v dokumentu "uložíte" přímo, místo toho jsme říct `UIDocument` , se změnila s `UpdateChangeCount`, a automaticky ji bude plán uložení na disk operace:
+Následné změny v dokumentu "neuloží" přímo, namísto toho nám říct `UIDocument` , která se změnila s `UpdateChangeCount`, a automaticky naplánuje uložit na disk operace:
 
 ```csharp
 doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 ```
 
-### <a name="managing-icloud-documents"></a>Správa dokumentů na serveru služby iCloud
+### <a name="managing-icloud-documents"></a>Správa dokumentů na Icloudu
 
-Uživatelé mohou spravovat Icloudu dokumenty v **dokumenty** adresář všudypřítomnosti kontejner, mimo aplikaci prostřednictvím nastavení; mohou prohlížet seznam souborů a prstem odstranit. Kód aplikace by měl být schopna zpracovávat situaci, kde jsou dokumenty odstraněno uživatelem. Neukládejte interní aplikační data v **dokumenty** adresáře.
+Uživatelé mohou spravovat dokumenty Icloudu **dokumenty** adresáře "kontejneru všudypřítomnosti" mimo vaši aplikaci nastavení; můžete zobrazit seznam souborů a posunutí prstem odstranit. Kód aplikace by měl být schopný zvládnout situaci, ve kterém jsou dokumenty odstraněno uživatelem. Neukládejte interní aplikační data v **dokumenty** adresáře.
 
- [![](introduction-to-icloud-images/icloudstorage.png "Správa dokumentů serveru služby iCloud pracovního postupu")](introduction-to-icloud-images/icloudstorage.png#lightbox)
+ [![](introduction-to-icloud-images/icloudstorage.png "Správa pracovního postupu dokumenty Icloudu")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
-Uživatelé obdrží upozornění na jiný, při pokusu o odebrání aplikace povoleno Icloudu z jejich zařízení, a informujte je o stavu serveru služby iCloud dokumenty související k dané aplikaci.
+Uživatelé obdrží upozornění na jiné, při pokusu o odebrání serveru služby iCloud povolené aplikace z jejich zařízení, a informujte je o stavu serveru služby iCloud dokumenty týkající se této aplikace.
 
- [![](introduction-to-icloud-images/icloud-delete1.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete1.png "Ukázkové dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [![](introduction-to-icloud-images/icloud-delete2.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete2.png "Ukázkové dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
-## <a name="icloud-backup"></a>Zálohování serveru služby iCloud
+## <a name="icloud-backup"></a>Zálohy na Icloudu
 
-Při zálohování na iCloud není funkce, která je přímo přistupovat vývojáři, způsob návrhu aplikace může ovlivnit činnost koncového uživatele.
-Poskytuje Apple [iOS pokyny úložiště dat](http://developer.apple.com/icloud/documentation/data-storage/) pro vývojáře podle ve svých aplikacích iOS.
+Při zálohování do Icloudu není funkce, která se využívají přímo od vývojářů, způsob návrhu aplikace mohou ovlivnit uživatelské prostředí.
+Poskytuje Apple [iOS pokyny pro úložiště dat](http://developer.apple.com/icloud/documentation/data-storage/) pro vývojáře v jejich aplikací pro iOS.
 
-Většina důležitý aspekt spočívá v tom, jestli vaše aplikace ukládá velkých souborů, které nejsou generované uživatelem (například katalogu čtečky aplikace, která ukládá hundred-plus obsah za problém v megabajtech). Apple upřednostní neukládejte toto řazení dat, kde bude mít zálohovaná na serveru služby iCloud a zbytečně vyplnění kvóty Icloudu uživatele.
+Většina důležitý aspekt spočívá v tom, jestli vaše aplikace ukládá velké soubory, které nejsou generované uživatelem (například magazine čtečky aplikaci, která ukládá obsah na problém hundred-plus v megabajtech). Apple upřednostňuje neukládejte tento druh dat, kde ji bude možné zálohovaná na serveru služby iCloud a zbytečně vyplnit kvóty uživatele serveru služby iCloud.
 
-Aplikace, které ukládají velké objemy dat, jako je to měli buď uložit v jednom z adresáře uživatele, které není zálohovaná (např. Mezipaměti nebo tmp) nebo použijte `NSFileManager.SetSkipBackupAttribute` příznak použít k těmto souborům tak, aby je iCloud ignoruje během operace zálohování.
+Aplikace, které ukládat velké objemy dat tímto způsobem byste buď uložit v jednom z adresáře uživatele, které není zálohovanou (např.) Mezipaměti nebo technického) nebo použijte `NSFileManager.SetSkipBackupAttribute` použít příznak k těmto souborům tak, aby je iCloud ignoruje během operace zálohování.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zavedla nová funkce serveru služby iCloud součástí systém iOS 5. Je zkontrolován kroky nutné ke konfiguraci projektu pro použití Icloudu a pak poskytuje příklady, jak implementovat funkce serveru služby iCloud.
+Tento článek zavedeny nové funkce Icloudu zahrnuté v systému iOS 5. Ho prozkoumat kroky vyžadované ke konfiguraci projektu pro použití serveru služby iCloud a pak k dispozici příklady, jak implementovat funkce serveru služby iCloud.
 
-V příkladu klíč hodnota úložiště ukázán, jak lze pomocí Icloudu ukládat malé množství dat, podobně jako, které jsou uloženy NSUserPreferences. Příklad UIDocument vám ukázal, jak další komplexní data můžete ukládat a synchronizována v rámci více zařízení prostřednictvím serveru služby iCloud.
+Úložiště hodnot klíčů příklad jsme vám ukázali, jak lze ukládat malé množství dat, podobně jako způsob, jakým se ukládají NSUserPreferences serveru služby iCloud. Příklad UIDocument ukázal vytváření komplexních datových můžete ukládat a synchronizovat napříč více zařízeními prostřednictvím serveru služby iCloud.
 
-Nakonec zahrnuty stručné informace o přidání serveru služby iCloud zálohování, jak by mělo ovlivnit návrh vaší aplikace.
+Nakonec zahrnuté stručný popis na přidání serveru služby iCloud Backup, jak by mělo ovlivnit návrh vaší aplikace.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Úvod do Icloudu (ukázka)](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
-- [Icloudu seminář ukázkový kód](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [Snímky seminář Icloudu](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
-- [Icloudu NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
-- [Icloudu úložiště](http://support.apple.com/kb/HT4847)
+- [iCloud seminář ukázkový kód](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
+- [Snímky přednášky na Icloudu](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
+- [Úložiště iCloud](http://support.apple.com/kb/HT4847)

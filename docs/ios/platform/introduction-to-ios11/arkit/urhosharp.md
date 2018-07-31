@@ -1,66 +1,66 @@
 ---
-title: Pomocí ARKit UrhoSharp v Xamarin.iOS
-description: Tento dokument popisuje, jak nastavit ARKit aplikaci Xamarin.iOS, poté vyhledá způsobu rámce vykreslení, jak upravit fotoaparátu, k zjištění rovin, jak pracovat s osvětlení a další. Popisuje také UrhoSharp a zápis kódu pro HoloLens.
+title: Pomocí ARKit Urhosharpu v Xamarin.iosu
+description: Tento dokument popisuje, jak nastavit arkit, která aplikaci Xamarin.iOS, poté vyhledá jak vykreslením snímků jsou, jak upravit fotoaparátu/kamery, jak detekovat rovin, jak pracovat s osvětlení a další. Popisuje také Urhosharpu a psaní kódu pro HoloLens.
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/01/2016
-ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/01/2017
+ms.openlocfilehash: 728082eb27684c2176feb2038b7948986ce6a694
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787100"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351688"
 ---
-# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Pomocí ARKit UrhoSharp v Xamarin.iOS
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Pomocí ARKit Urhosharpu v Xamarin.iosu
 
-Se zavedením [ARKit](https://developer.apple.com/arkit/), Apple má provedené u vývojářům vytvářet aplikace aktualizovaná skutečnosti. ARKit můžete sledovat přesnou pozici vašeho zařízení a zjištění různých ploch na světě a je pak až developer a přizpůsobte dat pocházejících mimo ARKit do vašeho kódu.
+Se zavedením [ARKit](https://developer.apple.com/arkit/), Apple bylo jednoduché pro vývojáře umožňující vytváření aplikací v rozšířené realitě. Arkit, která umožňuje přesnou polohu vašeho zařízení a zjištění různých ploch na celém světě a je pak až po vývojáře dat pocházejících mimo arkit, která do kódu a přizpůsobte.
 
-[UrhoSharp](~/graphics-games/urhosharp/index.md) poskytuje komplexní a snadno použitelný 3D rozhraní API, můžete použít k vytvoření 3D aplikací.   Obě tyto může být společně smíšení ARKit zajistit fyzické informace o na světě a Urho k vykreslení výsledky.
+[Urhosharpu](~/graphics-games/urhosharp/index.md) poskytuje komplexní a snadné použití 3D rozhraní API, můžete použít k vytvoření 3D aplikací.   Obě tyto může být prolnuty společně arkit, která poskytují fyzické informace o celém světě a Urho vykreslovat výsledky.
 
-Tato stránka vysvětluje, jak připojit tyto dvě světů dohromady a vytvoří skvělé rozšířená skutečnosti aplikace.
+Tato stránka vysvětluje, jak se připojit tyto dva světů dohromady a vytvoří aplikace skvělé rozšířené realitě.
 
 
 ## <a name="the-basics"></a>Základní informace
 
-Co chcete udělat je přítomen 3D obsah na celém světě, registrovaného aplikací pro iPhone.   Cílem je, a přizpůsobte obsah pocházejících z fotoaparátu telefonu s 3D obsahem a jako uživatel telefonu přesune kolem místnosti zajistit, aby objekt 3D tak, jak je jejich součástí této místnosti – k tomu je potřeba ukotvení objekty do tohoto world.
+Co chcete udělat je k dispozici 3D obsah na celém světě, jak je vidět v Iphonu.   Cílem je obsah pocházející z fotoaparátu telefonu s 3D obsahem a přizpůsobte a jako uživatel telefonu přesune po celé místnosti zajistit, aby 3D objekt chovat dle jejich je součástí tohoto místa – to se provádí ukotvení objektů v tomto světě.
 
 ![Animovaný obrázek v ARKit](urhosharp-images/image1.gif)
 
 
-Jsme pomocí knihovny Urho načtení naše 3D prostředků a umístit je na světě a použijeme ARKit získat datový proud videa z fotoaparátu, jakož i umístění telefonu na světě.   Jako uživatel přesune s jeho telefon, budeme používat změny v umístění aktualizace souřadnicový systém, který je modul Urho zobrazení.
+Můžeme pomocí knihovny Urho načtení naše 3D prostředků a umístit je na celém světě a použijeme ARKit zobrazíte datový proud videa z fotoaparátu/kamery, jakož i umístění na telefonu v celém světě.   Jak uživatel pohybuje pomocí telefonu, použije k aktualizaci souřadnicový systém, který zobrazuje modul Urho změny v umístění.
 
-Tímto způsobem, když umístíte objekt v 3D prostoru a uživatel přesune, umístění 3D objektu odráží místo a umístění, kde je umístěn.
+Tímto způsobem, při umístit objekt v 3D prostoru a uživatel přesune, umístění 3D objektu odpovídá místo a umístění, ve kterém byl umístěn.
 
 ## <a name="setting-up-your-application"></a>Nastavení aplikace
 
-### <a name="ios-application-launch"></a>Spuštění aplikace iOS
+### <a name="ios-application-launch"></a>Spouštění aplikace iOS
 
-Aplikace iOS musí vytvořit a spustit 3D obsah, můžete provést vytvořením implementace podtřídou třídy [ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) a zadejte instalační kód přepsáním `Start` metoda.  Toto je, kde získá vaše scény naplněný daty, událost obslužné rutiny jsou nastavení a tak dále.
+Vaše aplikace pro iOS je potřeba vytvořit a spustit 3D obsahu, můžete to provést tak, že vytvoříte implementace podtřídou třídy [ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) a poskytnutí ověřovacího kódu instalační program tak, že přepíšete `Start` metody.  To je, pokud vaše Scéna získá naplněný daty, událost obslužné rutiny jsou nastavení a tak dále.
 
-Zavedli jsme `Urho.ArkitApp` třídy, která je podtřídou `Urho.Application` a na jeho `Start` metoda nemá lifting náročné.   Stačí udělat vaší existující Urho aplikace je změňte základní třídu být typu `Urho.ArkitApp` a máte aplikaci, která se spustí vaše urho scény na světě.
+Zavedli jsme `Urho.ArkitApp` třídy, která je podtřídou `Urho.Application` a na jeho `Start` metoda provede rutinní.   Všechno, co potřebujete udělat pro vaše stávající Urho aplikace je změnit základní třídu typu `Urho.ArkitApp` a budete mít aplikaci, která se spustí vaše urho scény na světě.
 
-### <a name="the-arkitapp-class"></a>ArkitApp – třída
+### <a name="the-arkitapp-class"></a>Třída ArkitApp
 
-Tato třída poskytuje sadu vhodnou výchozí hodnoty, jak scény s některé objekty klíče a zpracování událostí ARKit dodaným v operačním systému.
+Tato třída poskytuje sadu vhodné výchozí hodnoty, oba scény pomocí některé klíčové objekty, stejně jako zpracování ARKit události dodaným v operačním systému.
 
-Instalace probíhá `Start` virtuální metoda.   Pokud tuto metodu přepíšete na vaše podtřída, budete muset zkontrolujte, zda řetězec nadřazenému pomocí `base.Start()` na vlastní implementaci.
+Instalace probíhá `Start` virtuální metody.   Když je na vaší podtřídy přepsat tuto metodu, je třeba Ujistěte se, že ke sledu k Tvému pomocí `base.Start()` na vlastní implementaci.
 
-`Start` Metoda nastaví scény, zobrazení, fotoaparát a směrové a poskytuje tyto veřejné vlastnosti:
+`Start` Metoda nastaví scény, zobrazení, kamera a směrové světlo a poskytuje informace o těch jako veřejné vlastnosti:
 
-- [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/) pro uložení vašich objektů
-- směru [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) s stíny a jejichž umístění je k dispozici prostřednictvím `LightNode` vlastnost
-- [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) jejichž součástí jsou aktualizovány při ARKit přináší aktualizaci aplikace a
+- [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/) držet objekty,
+- směrové [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) stíny a jehož umístění je k dispozici prostřednictvím `LightNode` vlastnost
+- [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) jehož součástí jsou aktualizovány při arkit, která poskytuje aktualizace aplikace a
 - [ `ViewPort` ](https://developer.xamarin.com/api/type/Urho.Viewport/) zobrazení výsledků.
 
 
 ### <a name="your-code"></a>Váš kód
 
-Pak musíte podtřídou `ArkitApp` třídy a přepsat `Start` metoda.   První věc, kterou metodu měli udělat je řetězec až `ArkitApp.Start` voláním `base.Start()`.  Potom můžete žádné z nastavení vlastnosti podle ArkitApp Pokud chcete přidat objekty do scény, přizpůsobit indikátory, stínů nebo události, které chcete zpracovat.
+Potom budete potřebovat podtřídy `ArkitApp` třídy a přepsat `Start` metody.   První věc, kterou metodu měli udělat, je řetězec až `ArkitApp.Start` voláním `base.Start()`.  Potom můžete použít žádné z nastavení vlastnosti pomocí ArkitApp Chcete-li přidat objekty do scény, přizpůsobit světla, stíny nebo události, které chcete zpracovat.
 
-Ukázka ARKit/UrhoSharp načte znakem animovaný s textury a hraje animace za následující implementaci:
+Ukázka ARKit/Urhosharpu načte animovaný znak s texturami a přehraje animace, následující implementaci:
 
     ```csharp
     public class MutantDemo : ArkitApp
@@ -90,43 +90,43 @@ Ukázka ARKit/UrhoSharp načte znakem animovaný s textury a hraje animace za n�
     }
     ```
 
-A který je opravdu že všechno, co musíte udělat v tuto chvíli 3D obsahu serveru zobrazí ve skutečnosti aktualizovaná.
+A to je opravdu že všechno, budete muset udělat, v tuto chvíli 3D obsahu zobrazují v rozšířené realitě.
 
-Urho používá vlastní formáty pro 3D modely a animací, proto je třeba exportovat vaše prostředky do tohoto formátu.   Můžete použít nástroje, například [Urho3D digestoru Add-in](https://github.com/reattiva/Urho3D-Blender) a [UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) , můžete převést tyto prostředky z oblíbených formátů DBX, DAE, OBJ, Blend, vyžadují Urho 3D-Max do formátu.
+Urho používá vlastní formáty pro 3D modely a animace, proto je nutné exportovat vaše prostředky v tomto formátu.   Můžete používat nástroje, například [doplněk blenderu Urho3D](https://github.com/reattiva/Urho3D-Blender) a [UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) , který lze převést tyto prostředky z oblíbených formátů, jako jsou DBX, DAE, OBJ, programu Blend, 3D-Max do formátu vyžadované Urho.
 
-Další informace o vytváření 3D aplikací s použitím Urho, najdete [Úvod do UrhoSharp](~/graphics-games/urhosharp/introduction.md) průvodce.
+Další informace o vytváření 3D aplikací pomocí Urho, přejděte [Úvod do Urhosharpu](~/graphics-games/urhosharp/introduction.md) průvodce.
 
-## <a name="arkitapp-in-depth"></a>ArkitApp podrobněji
+## <a name="arkitapp-in-depth"></a>ArkitApp do hloubky
 
 > [!NOTE]
-> Tato část je určena pro vývojáře, které chcete přizpůsobit výchozí možností UrhoSharp a ARKit nebo chcete získat podrobnější přehled o tom, jak funguje integrace.   Není nutné ke čtení v této části.
+> V této části je určený pro vývojáře, které chcete přizpůsobit výchozí možnosti Urhosharpu a ARKit nebo chcete získat podrobnější přehledy o tom, jak integrace funguje.   Není nutné v tomto tématu.
 
-Rozhraní API ARKit je poměrně jednoduché, můžete vytvořit a nakonfigurovat [ARSession](https://developer.apple.com/documentation/arkit/arsession) objektu, který pak spusťte doručování [ARFrame](https://developer.apple.com/documentation/arkit/arframe) objekty.   Ty obsahují image zachycenou kamera a také odhadované pozice skutečné zařízení.
+Rozhraní API arkit, která je docela jednoduché, vytvoření a konfigurace [ARSession](https://developer.apple.com/documentation/arkit/arsession) objekt, který pak začněte poskytovat [ARFrame](https://developer.apple.com/documentation/arkit/arframe) objekty.   Ty obsahují image nezachytává fotoaparátu/kamery, jakož i odhadovanou pozici skutečná zařízení.
 
-Jsme bude skládání bitové kopie se doručil fotoaparát nám s náš 3D obsah a upravte kamera v UrhoSharp tak, aby odpovídaly šance v umístění zařízení a místo.
+Budeme se vytváření bitové kopie distribuována pomocí fotoaparátu/kamery nám naše 3D obsahu a upravit fotoaparátu/kamery v Urhosharpu tak, aby odpovídaly pravděpodobnost v umístění zařízení a umístění.
 
 Následující diagram znázorňuje, co probíhá `ArkitApp` třídy:
 
-[![Diagram třídy a obrazovky v ArkitApp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[![Diagram tříd a obrazovky ArkitApp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>Vykreslování rámce
 
-Cílem je jednoduché, kombinací video vycházejících z fotoaparátu s naše 3D grafiky k vytvoření kombinované bitové kopie.     Jsme získávání řadu tyto zaznamenané bitové kopie v pořadí, a tento vstup jsme se kombinovat s scény Urho.
+Cílem je jednoduché, kombinovat videu přicházejícím z fotoaparátu/kamery s naší 3D grafiky k vytvoření kombinované bitové kopie.     Jsme získání řadu těchto zaznamenané bitové kopie v pořadí a tento vstup jsme se kombinovat s Urho scény.
 
-Nejjednodušší způsob, jak to provést, je k vložení [ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/) do hlavní [ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/).  Toto je sadu příkazů, které se provádí k vykreslení jeden snímek.  Tento příkaz se vyplní zobrazení se všechny textury, kterou jsme předat.    Jsme toto nastavení na první snímek, který je proces a skutečné definice se provádí v tý **ARRenderPath.xml** soubor, který je nyní načtena.
+Nejjednodušší způsob, jak to udělat, je vložit [ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/) do hlavní [ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/).  Toto je sadu příkazů, které se provádí pro kreslení jeden snímek.  Tento příkaz vyplní zobrazení se všechny textury, který předáme do něj.    Jsme toto nastavení na první snímek, který je proces a skutečnou definici se provádí v th **ARRenderPath.xml** soubor, který je v tuto chvíli načíst.
 
-Ale jsme se potýkají s dva problémy k mísí tyto dvě světů:
-
-
-1. V systému iOS, musí mít GPU textury řešení, která je druhou mocninou dva, ale rámců, které nám se získat z fotoaparátu nemají řešení, které jsou power dva, například: 1280 × 720.
-2. Snímky jsou v kódování [YUV](https://en.wikipedia.org/wiki/YUV) formátu, která je reprezentována dvě bitové kopie - luma a sytost.
-
-Rámce YUV mají dvě různá řešení.  bitovou kopii 1280 × 720 představující světlostí (v podstatě šedé bitová kopie) a mnohem menší 640 x 360 pro komponentu chrominance:
-
-![Ukázka kombinování Y a UV součástí bitové kopie](urhosharp-images/image3.png)
+Ale jsme se potýkají s společně a přizpůsobte tyto dvě světů dva problémy:
 
 
-Kreslení úplné barevnou image pomocí OpenGL ES máme zápisu malých shaderu, která přebírá z sloty texture světlostí (součást Y) a chrominance (UV roviny).  V UrhoSharp budou mít názvy - "sDiffMap" a "sNormalMap" a převést na formát RGB:
+1. V systémech iOS, musí mít GPU textury řešení, která je mocninou čísla 2, ale počet snímků, které získáme z fotoaparátu/kamery nemají rozlišení, které jsou mocninou čísla 2, například: 1280 × 720.
+2. Snímky jsou zakódovány [YUV](https://en.wikipedia.org/wiki/YUV) formátu reprezentována dvě Image - luma a sytost.
+
+Snímky YUV se dělí na dvě různá řešení.  bitovou kopii 1280 × 720 představující světelnost (v podstatě obrázku šedé) a mnohem menší 640 × 360 chrominance komponenty:
+
+![Ukázka kombinování Y a komponenty UV obrázek](urhosharp-images/image3.png)
+
+
+Chcete-li nakreslit úplné barevné image pomocí OpenGL ES máme zápisu malých shader, který přijímá světelnost (součást Y) a chrominance (UV roviny) ze slotů textury.  V Urhosharpu mají názvy - "sDiffMap" a "sNormalMap" a je převést na formát RGB:
 
 ```csharp
 mat4 ycbcrToRGBTransform = mat4(
@@ -140,7 +140,7 @@ vec4 ycbcr = vec4(texture2D(sDiffMap, vTexCoord).r,
 gl_FragColor = ycbcrToRGBTransform * ycbcr;
 ```
 
-K vykreslení texture, na kterém není mocninou dvě řešení máme definovat Texture2D s následujícími parametry:
+K vykreslení textury, který nemá mocninou dvou řešení budeme muset definovat Texture2D s následujícími parametry:
 
 ```chsarp
 // texture for UV-plane;
@@ -152,27 +152,27 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.U, TextureAddressMode.Clamp);
 cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 ```
 
-Snažíme se proto může vykreslit zaznamenané bitové kopie jako na pozadí a vykreslit všechny scény nad ním jako je například strach mutanta.
+Proto jsme schopní vykreslování zaznamenané Image na pozadí a vykreslení tímto způsobem scary mutanta jakékoli scény nad ním.
 
-### <a name="adjusting-the-camera"></a>Úprava kamera
+### <a name="adjusting-the-camera"></a>Nastavení fotoaparátu/kamery
 
-`ARFrame` Objekty obsahovat také odhadované zařízení pozici.  Jsme teď musíme přesunout herní fotoaparát ARFrame – před ARKit nebyla big pozornosti orientace zařízení sledovat (kumulativní, výšky a úhlu natočení) a vykreslování definovaného hologram nad video -, ale pokud přesunete zařízení trochu - hologramy bude soubor.
+`ARFrame` Objekty obsahovat také odhadovaný zařízení pozici.  Jsme teď budeme muset přesunout her fotoaparát ARFrame – před arkit, která nebyla důležitá záležitost orientace zařízení sledování (vrácení, výšku a úhlu natočení) a vykreslování připnuté hologram nad video -, ale pokud přesunete zařízení trochu - vntana bude odchylek.
 
-K tomu dojde, protože není schopný sledovat pohybů předdefinované senzorů, jako je například volný setrvačník, mohou pouze akcelerace.  ARKit analýzy jednotlivých funkcí rámec a extrahuje bodů ke sledování a proto je schopen poskytnout nám přesný transformace matice obsahující data o přesouvání a otočení.
+K tomu dojde, protože předdefinovaných snímače, například volný setrvačník není schopen sledovat pohybů plb typu, mohou pouze akcelerace.  Analýzy ARKit jednotlivé funkce rámce a extrahuje odkazuje na sledování a proto je schopen poskytnout nám přesný transformace matice obsahující data o přesunu a otočení.
 
-Například to je, jak jsme můžete získat aktuální pozici:
+To je například jak nám můžete získat aktuální pozice:
 
 ```csharp
 var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-Používáme `-row.Z` protože ARKit používá pravou rukou souřadnicový systém.
+Používáme `-row.Z` vzhledem k tomu arkit, která používá pravoruký systém souřadnic.
 
 
-### <a name="plane-detection"></a>Detekce roviny
+### <a name="plane-detection"></a>Rovina detekce
 
-ARKit je schopna zjistit vodorovné roviny a tato možnost vám umožňuje komunikovat s reálném světě, například mutovanými můžete umístit na skutečné tabulky nebo podlaží. Nejjednodušší způsob, jak to udělat, je použití hitTest – metoda (raycasting). Převede ji souřadnice obrazovky (0,5; 0,5 je centrem) do skutečných souřadnice (0; 0; 0 je první rámečku umístění).
+Arkit, která je schopna zjistit horizontální rovin a tato možnost umožňuje interakci s reálným světem, například mutovanými můžete umístit na skutečné tabulky nebo a podlaží. Nejjednodušší způsob, jak to udělat, je použití hitTest – metoda (raycastingu). Převede souřadnice obrazovky (0,5; 0,5 je centrem) do reálného světa souřadnice (0; 0; 0 je umístění prvního rámce).
 
 ```chsarp
 protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
@@ -188,7 +188,7 @@ protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
 }
 ```
 
-mutovanými jsme teď můžete umístit na vodorovný prostor v závislosti na tom, kde na obrazovce zařízení, které jsme klepněte na:
+Nyní jsme lze umístit mutovanými na vodorovný ploše v závislosti na tom, kde na obrazovce zařízení, které jsme klepněte na:
 
 ```chsarp
 void OnTouchEnd(TouchEndEventArgs e)
@@ -205,7 +205,7 @@ void OnTouchEnd(TouchEndEventArgs e)
 
 ### <a name="realistic-lighting"></a>Realistické osvětlení
 
-V závislosti na osvětlení podmínkách reálného světa musí být virtuální scény světlejší nebo tmavší tak, aby lépe odpovídaly okolí. ARFrame obsahuje LightEstimate vlastnost, která jsme lze upravit okolního světla Urho děje se to jako:
+V závislosti na podmínkách osvětlení reálného světa by měl být virtuální scény světlejší nebo tmavší tak, aby lépe odpovídala jeho okolí. ARFrame obsahuje LightEstimate vlastnost, která můžeme použít k úpravě Urho okolí světlo, Uděláte to takto:
 
 
     var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
@@ -215,14 +215,14 @@ V závislosti na osvětlení podmínkách reálného světa musí být virtuáln
 
 ### <a name="beyond-ios---hololens"></a>Nad rámec iOS – HoloLens
 
-UrhoSharp [spustí pro všechny hlavní operační systémy](~/graphics-games/urhosharp/platform/index.md), takže můžete opakovaně použít váš stávající kód jinde.
+Urhosharpu [běží na všech hlavních operačních systémech](~/graphics-games/urhosharp/platform/index.md), takže můžete znovu použít jinde svůj existující kód.
 
-HoloLens je jedním z nejvíce zajímavých platformy, které běží na.   To znamená, že můžete snadno přepínat mezi iOS a HoloLens vytvářet úžasné rozšířen skutečnosti aplikace pomocí UrhoSharp.
+HoloLens je jednou z nejskvělejších platformy, na kterých se spouští.   To znamená, že lze snadno přepínat mezi systémy iOS a vytvářet úžasné aplikace rozšířené Reality používání Urhosharpu HoloLens.
 
-Můžete najít zdroj MutantDemo [github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo).
+Můžete najít zdroje MutantDemo v [github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo).
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)
-- [ARKitXamarinDemo (s UrhoSharp) (ukázka)](https://github.com/EgorBo/ARKitXamarinDemo)
+- [ARKitXamarinDemo (s Urhosharpu) (ukázka)](https://github.com/EgorBo/ARKitXamarinDemo)

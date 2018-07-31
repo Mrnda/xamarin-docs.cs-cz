@@ -1,68 +1,67 @@
 ---
-title: Kdy a jak by měla I souboru sestavy chyb?
-description: Tento dokument popisuje, kdy, kde a jak k hlášení o chybě. Poskytuje taky sestavy chyb osvědčené postupy, které umožňují technikům nejvhodnější diagnostikovat problém.
+title: Kdy a jak by měl mám ohlásit chybu?
+description: Tento dokument popisuje, kdy, kde a jakým způsobem chcete-li ohlásit chybu. Poskytuje také hlášení o chybě, doporučené postupy, které umožňují techniky pro co nejlepší Diagnostikujte problém.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 8AD9CFBF-282A-4C1F-95E9-25F21141B052
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 08a782e9637442a43e9c63305ddf161403519169
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: b70fe29a79e099f1141c1295d907b48afaa2c3c7
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781940"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351603"
 ---
-# <a name="when-and-how-should-i-file-a-bug-report"></a>Kdy a jak by měla I souboru sestavy chyb?
+# <a name="when-and-how-should-i-file-a-bug-report"></a>Kdy a jak by měl mám ohlásit chybu?
 
+Hlášení chyb v Xamarinu pro Bugzilla sledování chyb tady: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all ](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all).
 
-V Xamarin pro Bugzilla sledování chyb zde soubor chyb: [ https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all ](https://bugzilla.xamarin.com/enter_bug.cgi?classification=__all).
+## <a name="file-a-bug-if"></a>Oznámit chybu, pokud...
 
-## <a name="file-a-bug-if"></a>Založení záznamu o chybě, pokud...
-
-
-Máte sadu kroky, které si myslíte, že technici Xamarin bude moct použít pro reprodukci problému, která je způsobena Xamarin.
+Máte sadu kroků, které si myslíte, že technici Xamarinu budete moct použít reprodukovat problém, který je způsobeno Xamarin.
 
 NEBO
 
-Pečlivě můžete popsat viditelné příznaky problému, zejména v případě, že můžete také popisují některé přesné okolnosti související s problém. <sup> [[1]](#note-1)</sup>
+Pečlivě popíšete viditelné příznaky problému, zejména v případě, že můžete také popisují některé přesné okolnosti týkající se problému. <sup> [[1]](#note-1)</sup>
 
 
-## <a name="best-practices-to-help-xamarin-address-bugs-quickly-and-efficiently"></a>Doporučené postupy pro zlepšení Xamarin adresu chyby rychle a efektivně
+## <a name="best-practices-to-help-xamarin-address-bugs-quickly-and-efficiently"></a>Doporučené postupy pro zlepšení Xamarin adresa chyby rychle a efektivně vyřešit
 
 
-1. <a name="ref-1" />Hledání [Bugzilla](https://bugzilla.xamarin.com/query.cgi?format=specific&amp;bug_status=__all__) a webu pro existující chyb sestavy nebo návrhy využití, které může potíže vyřešit přímo.<sup> [[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
+1. <a name="ref-1" />Hledání [Bugzilla](https://bugzilla.xamarin.com/query.cgi?format=specific&amp;bug_status=__all__) a web pro existující chyby sestavy nebo využití návrhy, které tento problém může vyřešit přímo.<sup> [[2]](#note-2)</sup><sup>[[3]](#note-3)</sup>
 
-1. <a name="ref-2" />Postupujte podle [chyb zápisu pokyny](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html) libovolný jasně a výstižně nejdříve, včetně popis co se stalo a byla očekávána provést popis problému.
+1. <a name="ref-2" />Postupujte podle [chyby zápisu pokyny](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html) k popisu problému očekávaným jasně a výstižně nejvíce, včetně popis co se stalo a se nestane.
 
-1. <a name="ref-3" />Zahrnout všechny trasování zásobníku relevantní, text chybové zprávy nebo protokoly o chybách. <sup>[[4]](#note-4)</sup>
+1. <a name="ref-3" />Zahrnout všechny relevantní zásobníku trasování, text chybové zprávy nebo protokoly o chybách. <sup>[[4]](#note-4)</sup>
 
-1. <a name="ref-4" />Poznamenejte si všechny důležité chybové zprávy, které se zobrazují v snímek přílohy jako prostý text příliš.
+1. <a name="ref-4" />Zapište si důležité chybové zprávy, které se zobrazují v přílohy snímek obrazovky jako prostý text příliš.
 
-1. <a name="ref-5" />Zahrnout malé, úplný a samostatný testovacího případu, který se shoduje s chyb s jako málo kód míře.  Pokud nelze reprodukujte problém s zcela nový projekt (vytvořený pomocí jedné z předdefinované šablony), prosím zip projekt, který ukazuje problém a připojit ke zprávě.  Zkontrolujte příklad projektu co nejjednodušší před jejich připojení. <sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
+1. <a name="ref-5" />Zahrnout malé, samostatná testovací případ, který reprodukuje chyby s, malým množstvím kódu nejvíce.  Pokud nelze reprodukovat problém s úplně novým projektem (vytvořený pomocí jedné z předdefinovaných šablon), pak prosím zip projektu, který demonstruje daný problém a připojte ji k hlášení o chybě.  Vytvořit příklad projektu co nejjednodušší před jejich připojení. <sup> [[5]](#note-5)</sup><sup>[[6]](#note-6)</sup>
 
-1. <a name="ref-6" />Popisují prostředí, kde byl zjištěn chyby, včetně operačního systému a [verzích Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md) a všechny závislosti.
+1. <a name="ref-6" />Popis prostředí, kde byla zjištěna chyba, včetně operačního systému a [verze Xamarin](~/cross-platform/troubleshooting/questions/version-logs.md) a všechny závislosti.
 
 ---
 
 ## <a name="additional-details"></a>Další podrobnosti
 
-1. <a name="note-1" />[*^*](#ref-1) V ideálním případě popis "viditelné příznaky" by měla obsahovat dostatek podrobnosti tak, aby se zákazníci navzájem můžete ověřit, zda budou se zobrazuje ke stejnému problému (stejné chybové zprávy, stejné snížení výkonu, stejné trasování zásobníku z havárie, _atd._ ). Pro "přesné okolností", jeden dobrým příkladem je pokud řekněte přibližně: "normálně dosáhnu problém 75 % času, ale pokud dojde ke změně této jednou z věcí poté můžete zabránit problém úplně." Další příklad podobné "přesné okolnosti" je, pokud přechod na starší verzi na předchozí verzi Xamarin přestane problém.
+1. <a name="note-1" />[*^*](#ref-1) Popis "viditelné příznaky" v ideálním případě by měl obsahovat dostatek podrobností, aby ostatní zákazníci můžete ověřit, jestli se zobrazují stejný problém (stejné chybové zprávy, stejné snížení výkonu, stejné trasování zásobníku z chybovému ukončení, _atd._ ). Pro "přesné okolností" jeden dobrým příkladem je-li vám můžete říct, že něco jako: "obvykle dosáhnu problém 75 % času, ale když změním tuto jednu věc potom jsem problému se lze vyhnout úplně." Pokud downgradu k předchozí verzi Xamarinu zastaví problému je jiný podobně jako například "přesné závislá na".
 
-1. <a name="note-2" />[*^*](#ref-2) Jak jste zvyklí, fragmenty text chyby (nebo jiné jednoznačně popisný text) jsou obvykle nejlepší hledaným výrazům. Pokud stávající Sestava chyb je nekompletní, pak jste úvodní přidáním podrobností o nebo souboru nový, lépe Sestava chyb.
+1. <a name="note-2" />[*^*](#ref-2) Dle očekávání, fragmenty textu chyby (nebo jakýkoli jiný jednoznačně popisný text) je obvykle nejlepší hledaným výrazům. Pokud stávající Sestava chyb je nekompletní, pak určitě můžete přidat podrobnosti nebo soubor nový, lepší Sestava chyb.
 
-1. <a name="note-3" />[*^*](#ref-3) Jiné dobrý otázka se, jestli stejný problém hlášené pro všechny Java, Objective-C nebo Swift aplikace. Pokud ano, problém je velmi pravděpodobně části Android nebo iOS sám sebe, nikoli součást Xamarin.
+1. <a name="note-3" />[*^*](#ref-3) Další dobrá otázkou je, jestli je stejný problém hlášeno pro libovolný jazyk Java Objective-C a Swift aplikace. Pokud ano, problém je velmi pravděpodobné části Android nebo iOS samotné, nikoli součástí Xamarin.
 
-1. <a name="note-4" />[*^*](#ref-4) Několik příkladů informace, které zahrnují:
+1. <a name="note-4" />[*^*](#ref-4) Několik příkladů informace, včetně:
 
-    1. Pro chyby, ke kterým dochází při sestavování projektu, patří prosím dokončení [výstup diagnostiky sestavení](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output) v sestavě chyb.
+    1. Pro chyby, ke kterým dochází při sestavování projektu, uveďte prosím kompletní [výstup diagnostiky sestavení](~/android/troubleshooting/troubleshooting.md#Diagnostic_MSBuild_Output) na hlášení o chybě.
     
-    1. Pro chyby, ke kterým dochází při vytváření nebo ladění projektu iOS ze sady Visual Studio, spusťte _pomoci > Xamarin > Zip protokoly_ po stiskne chyba a zahrnout výsledný soubor ZIP v sestavě chyb.
+    1. Chyby, ke kterým dochází při sestavování nebo ladění projektu pro iOS ze sady Visual Studio, spusťte prosím _Nápověda > Xamarin > Zip protokoly_ po dosažení chybu a obsahovat výsledný soubor ZIP na hlášení o chybě.
     
-    1. Pro výjimky nebo dojde k chybě v aplikacích pro Android nebo iOS, uveďte odpovídajícího "[ladění protokoly pro aplikace Xamarin.Android a Xamarin.iOS](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)."
+    1. Výjimky a chyby v aplikacích pro Android nebo iOS, uveďte prosím příslušné "[ladit protokoly pro aplikace pro Xamarin.Android a Xamarin.iOS](~/cross-platform/troubleshooting/questions/version-logs.md#debug-logs-for-xamarin-apps)."
 
-1. <a name="note-5" />[*^*](#ref-5) Pro určitý problém, pokud je to možné vynikající jednou z možností je znovu vytvořit problém přidáním malý počet souborů z vašeho původního řešení do úplně nové řešení. Xamarin týmu často bude moct zkoumání problémů i na větší testovacích případů (za předpokladu, že postup reprodukování jsou vysvětleny jasně), ale má největší šanci rychle vyřešit chybě jednodušší poskytuje testovací případy.
+1. <a name="note-5" />[*^*](#ref-5) Pokud je to možné pro konkrétního problému, jeden skvělou možností je znovu vytvořit problém tak, že přidáte malý počet soubory z původního řešení do úplně nové řešení. Xamarin tým často bude moct prozkoumat problémy i na větší testovací případy (za předpokladu, že kroky pro reprodukci jsou vysvětleny jasně), ale má největší šanci, že se dá rychle vyřešit chybu jednodušší poskytuje testovací případy.
 
 
-1. <a name="note-6" />[*^*](#ref-6) Pokud je _není_ možné problém reprodukovat přidáním malý počet souborů k nové řešení, pak lze zip a připojit složce celého řešení pro úplné aplikace. Odstraňte prosím `bin`, `obj`, `Components`, a `packages` složek, aby byly zip menší soubor. (Rozhraní IDE a procesu sestavení bude obvykle obnovit nebo znovu vytvořte obsah těchto složek podle potřeby.) Můžete také odstranit tolik kódu a zdrojové soubory z projektu jak se vám líbí, tak dlouho, dokud výsledné řešení stále ukazuje původní problém.
+1. <a name="note-6" />[*^*](#ref-6) Pokud je _není_ možné reprodukovat problém tak, že přidáte malý počet souborů k úplně novému řešení, pak můžete zip a připojit složce celé řešení pro vaše aplikace úplné. Odstraňte prosím `bin`, `obj`, `Components`, a `packages` složek, aby byly menší soubor zip. (Integrované vývojové prostředí a proces sestavení bude obvykle obnovit nebo znovu vytvořit obsah těchto složek podle potřeby.) Můžete také odstranit tolik kódu a zdrojové soubory z projektu, jak budete jako výsledný řešení stále ukazuje původní problém.
 

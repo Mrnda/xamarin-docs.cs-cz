@@ -6,13 +6,13 @@ ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 07/23/2018
-ms.openlocfilehash: 762df7322607588344d570830dafc745a89ea165
-ms.sourcegitcommit: 9bb9e8297d3edd9a50585f4ba53c1b4f0bcd1d3e
+ms.date: 07/27/2018
+ms.openlocfilehash: 8e2bb43f885c162eb6dca0cf4a8ed14490ff092b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39212001"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351561"
 ---
 # <a name="platform-features"></a>Funkce platformy
 
@@ -45,6 +45,10 @@ Androidu 3.0 zavedené fragmenty, ukazuje, jak podporovat více flexibilní náv
 
 Tato příručka popisuje způsob, jakým se systémem Android 6.0 podporuje _propojení aplikace_, technika, která umožňuje reagovat na adresy URL ve službě websites mobilní aplikace. Se popisují, jak implementovat aplikaci propojení v aplikaci s Androidem 6.0 a konfigurace webu k udělení oprávnění k mobilní aplikaci pro zpracování propojení aplikace pro doménu.
 
+
+##  <a name="android-p-previewandroidplatformandroid-pmd"></a>[Android P ve verzi Preview](~/android/platform/android-p.md)
+
+Tento článek poskytuje přehled nových funkcí ve verzi Preview s Androidem P, vysvětluje postup přípravy Xamarin.Android pro vývoj pro Android P a poskytuje ukázkový kód, který ukazuje, jak používat klíčové funkce Android P do aplikace Xamarin.Android.
 
 
 ##  <a name="android-8-oreoandroidplatformoreomd"></a>[Android 8 Oreo](~/android/platform/oreo.md)

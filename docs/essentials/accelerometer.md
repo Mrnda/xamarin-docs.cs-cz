@@ -5,12 +5,12 @@ ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: b5a24e214eb129b4d53b94586632791c8827447b
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947306"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353838"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: akcelerometru
 
@@ -33,7 +33,7 @@ Funguje akcelerometru funkce voláním `Start` a `Stop` metody k naslouchání p
 public class AccelerometerTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public AccelerometerTest()
     {
@@ -41,7 +41,7 @@ public class AccelerometerTest
         Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: X: {data.Acceleration.X}, Y: {data.Acceleration.Y}, Z: {data.Acceleration.Z}");
@@ -81,7 +81,7 @@ Příklady:
 
 * Když zařízení je plochý u tabulky, je hodnota akcelerace +1.00 G nebo (+ 9,81 m/s ^ 2), které odpovídají zrychlení zařízení (0 m/s ^ 2) minus platnost závažnosti (-9,81 m/s ^ 2) a normalizované jako např.
 
-* Kdy se zařízení je plochý v tabulce a vloženy směrem k sky s zrychlení m/s ^ 2, hodnota akcelerace je rovna 9.81 A +, které odpovídají zrychlení zařízení (+ m/s ^ 2) minus platnost závažnosti (-9,81 m/s ^ 2) a normalizované v G. 
+* Kdy se zařízení je plochý v tabulce a vloženy směrem k sky s zrychlení m/s ^ 2, hodnota akcelerace je rovna 9.81 A +, které odpovídají zrychlení zařízení (+ m/s ^ 2) minus platnost závažnosti (-9,81 m/s ^ 2) a normalizované v G.
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

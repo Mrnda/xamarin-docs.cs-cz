@@ -1,24 +1,25 @@
 ---
-title: Jak lze znovu možnosti pro vývojáře po aktualizaci iOS?
+title: Jak lze znovu možnosti pro vývojáře po aktualizaci Iosu?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F38BD21E-0C21-43FF-80A6-BB4A88DB88A5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9eb25676cc4a3a0679d6a02fc64fef5632f76e33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 80a705f64a1079ced204b677715f5566c410fd36
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30775481"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350872"
 ---
-# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Jak lze znovu možnosti pro vývojáře po aktualizaci iOS?
+# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Jak lze znovu možnosti pro vývojáře po aktualizaci Iosu?
 
-IOS chyb může způsobit, že možnosti pro vývojáře k zmizet po aktualizaci verze iOS, to byl zaznamenán přepnutím na verzi iOS 8.x. Tyto možnosti můžete opětovně povolena, pomocí následujících kroků:
+Možnosti pro vývojáře po aktualizaci verze iOS zmizení může způsobit chyby aplikace iOS, to pozorovat při přechodu do zařízení iOS 8.x. Tyto možnosti lze opětovně povolena, pomocí následujících kroků:
 
-1. Zařízení iOS připojte k počítači Mac pro vývoj.
-2. Spusťte Xcode.
-3. Otevřete **okno > zařízení** & Vyberte zařízení.
-4. Počkejte na dokončení kopírování symboly Xcode a zkontrolujte Settings.app zařízení pro vývojáře nastavení.
-5. Restartování zařízení.
+1. Připojte zařízení s Iosem k počítači Mac pro vývoj.
+2. Spuštění Xcode.
+3. Otevřít **okna > zařízení** & Vyberte zařízení.
+4. Počkejte na dokončení kopírování symboly Xcode a potom zkontrolujte Settings.app zařízení pro nastavení pro vývojáře.
+5. Restartujte zařízení.

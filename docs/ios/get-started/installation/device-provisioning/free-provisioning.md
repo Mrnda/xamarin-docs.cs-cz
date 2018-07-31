@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111154"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353318"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Bezplatné zřizování pro aplikace Xamarin.iOS
 
@@ -35,7 +35,7 @@ Nasazení vaší aplikace Xamarin.iOS na zařízení s bezplatné zřizování:
 - Aplikace Xamarin.iOS musíte použít explicitní ID aplikace, není zástupný znak ID aplikace.
 - Identifikátor sady prostředků používaných v aplikaci Xamarin.iOS musí být jedinečný a nedá se používají v jiné aplikaci dříve. Libovolný identifikátor sady prostředků používá bezplatné zřizování **nelze** znovu použít.
 - Pokud již distribuované aplikace se nedají nasadit tuto aplikaci bezplatné zřizování.
-- Pokud vaše aplikace používá App Services, budete muset vytvořit zřizovací profil, jak je uvedeno v [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md#appservices) průvodce. 
+- Pokud vaše aplikace používá App Services, budete muset vytvořit zřizovací profil, jak je uvedeno v [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) průvodce. 
 
 Podívejte se na [omezení](#limitations) část tohoto dokumentu pro další informace o omezeních přidružené k bezplatné zřizování a odkazovat [Průvodce distribuce aplikací](~/ios/deploy-test/app-distribution/index.md) Další informace o distribuce aplikací pro iOS.
 
@@ -144,4 +144,4 @@ Tato příručka prozkoumat výhody a omezení pro instalaci aplikace na zaříz
 ## <a name="related-links"></a>Související odkazy
 
 - [Zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md)
-- [Zřizování pro aplikační služby](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Zřizování pro aplikační služby](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

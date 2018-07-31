@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831761"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353747"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: předvolby
 
@@ -83,6 +83,10 @@ Všechna data jsou uložena do [sdílené Předvolby](https://developer.android.
 [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) slouží k uložení hodnoty v zařízení. Pokud ne `sharedName` je zadán `LocalSettings` se používá, jinak název slouží k vytvoření nového kontejneru uvnitř `LocalSettings`.
 
 --------------
+
+## <a name="persistence"></a>Trvalost
+
+Odinstalace aplikace způsobí, že všechny _Předvolby_ odeberou. Existuje jedna výjimka tohoto, které je pro aplikace, které cílí a spustit na Android 6.0 (úroveň rozhraní API 23) nebo novější, který používáte [ __automatické zálohování__](https://developer.android.com/guide/topics/data/autobackup). Tato funkce je ve výchozím a chrání aplikace data včetně __sdílené Předvolby__, to znamená, co **Předvolby** využívá rozhraní API. Tuto funkci můžete vypnout podle následujících Google [dokumentaci](https://developer.android.com/guide/topics/data/autobackup).
 
 ## <a name="limitations"></a>Omezení
 

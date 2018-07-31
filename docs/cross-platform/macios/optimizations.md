@@ -1,27 +1,27 @@
 ---
-title: Optimalizace sestavení
-description: Tento dokument popisuje různé optimalizace, které se použijí v okamžiku sestavení pro aplikace Xamarin.iOS a Xamarin.Mac.
+title: Optimalizace buildu
+description: Tento dokument popisuje různé optimalizace, které se použijí v okamžiku sestavení pro aplikace pro Xamarin.iOS a Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: bradumbaugh
 ms.author: brumbaug
-dateupdated: 04/16/2018
-ms.openlocfilehash: abdd1223c0105156580b8f23fc2c020f2f45caa6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 04/16/2018
+ms.openlocfilehash: 432511a35f9f285d2c0060b5521256f834bb35ea
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918770"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351636"
 ---
-# <a name="build-optimizations"></a>Optimalizace sestavení
+# <a name="build-optimizations"></a>Optimalizace buildu
 
-Tento dokument popisuje různé optimalizace, které se použijí v okamžiku sestavení pro aplikace Xamarin.iOS a Xamarin.Mac.
+Tento dokument popisuje různé optimalizace, které se použijí v okamžiku sestavení pro aplikace pro Xamarin.iOS a Xamarin.Mac.
 
 ## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>Odebrat UIApplication.EnsureUIThread / NSApplication.EnsureUIThread
 
 Odebere volání [UIApplication.EnsureUIThread] [ 1] (pro Xamarin.iOS) nebo `NSApplication.EnsureUIThread` (pro Xamarin.Mac).
 
-Tato optimalizace změní následující typ kódu:
+Tato optimalizace se změní následující typ kódu:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -40,19 +40,19 @@ public virtual void AddChildViewController (UIViewController childController)
 }
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Ve výchozím nastavení je povolený pro verzi sestavení.
+Ve výchozím nastavení je povolená pro verzi sestavení.
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]remove-uithread-checks` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]remove-uithread-checks` k mtouch/mmp.
 
 [1]: https://developer.xamarin.com/api/member/UIKit.UIApplication.EnsureUIThread/
 
 ## <a name="inline-intptrsize"></a>Vložené IntPtr.Size
 
-Inlines konstantní hodnota z `IntPtr.Size` podle cílové platformy.
+Inlines konstantní hodnoty z `IntPtr.Size` podle cílové platformy.
 
-Tato optimalizace změní následující typ kódu:
+Tato optimalizace se změní následující typ kódu:
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-do následujících (při sestavování pro platformu 64bitová verze):
+do následující (při sestavování pro 64bitovou platformu):
 
 ```csharp
 if (8 == 8) {
@@ -72,21 +72,21 @@ if (8 == 8) {
 }
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Ve výchozím nastavení je povoleno, pokud cílení na jednom architektura nebo pro sestavení platformy (**Xamarin.iOS.dll**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** nebo  **Xamarin.Mac.dll**).
+Ve výchozím nastavení je povoleno, pokud je zaměřen na architektura samostatného nebo pro sestavení platformy (**Pokud**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** nebo  **Xamarin.Mac.dll**).
 
-Pokud cílení na více architektury, optimalizace vytvoří různé sestavení pro 32bitová verze a 64bitová verze aplikace a mají být zahrnuty v aplikaci efektivně zvýšení velikosti konečné aplikace neklesne bude mít obě verze ho.
+Pokud cílení na více architekturách, tato optimalizace se vytvoří různá sestavení pro 32bitová verze a 64bitová verze aplikace a bude mít obě verze mají být zahrnuty v aplikaci, efektivně zvýšení velikosti konečná aplikace neklesne ho.
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]inline-intptr-size` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]inline-intptr-size` k mtouch/mmp.
 
 ## <a name="inline-nsobjectisdirectbinding"></a>Vložené NSObject.IsDirectBinding
 
-`NSObject.IsDirectBinding` je vlastnost instance, která určuje, jestli konkrétní instance je typu obálky, nebo ne (typu obálku pro instanci spravovaný; je spravovaný typ, který se mapuje na typ nativní `UIKit.UIView` zadejte mapuje nativního `UIView` typu – jako opak je typ uživatele v takovém případě `class MyUIView : UIKit.UIView` by být typ uživatele).
+`NSObject.IsDirectBinding` je vlastnost instance, která určuje, zda konkrétní instance je typu obálky, nebo ne (typ obálky se spravovaným typem, který se mapuje na nativní typ; pro instanci spravovanou `UIKit.UIView` zadejte mapuje na nativní `UIView` typ - opak je třeba uživatelský typ v tomto případě `class MyUIView : UIKit.UIView` by bylo třeba uživatelský typ).
 
-Je nutné znát hodnotu `IsDirectBinding` při volání do jazyka Objective-C, protože hodnota určuje, která verze `objc_msgSend` používat.
+Je potřeba znát hodnotu `IsDirectBinding` při volání do Objective-C, protože hodnota určuje, která verze `objc_msgSend` používat.
 
-Daný pouze následující kód:
+Uveden pouze následující kód:
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-Můžeme určit, že v `UIView.SomeProperty` hodnota `IsDirectBinding` není konstantní a nemůže být vložená:
+Můžeme určit, že v `UIView.SomeProperty` hodnotu `IsDirectBinding` není konstantní a se nedá vložit:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-Je však možné všechny typy v aplikaci a určit, že neexistují žádné typy, které dědí od `NSUrl`, a proto je bezpečné vložené `IsDirectBinding` hodnotu konstanty `true`:
+Je však možné podívat všechny typy v aplikaci a určit, že neexistují žádné typy, které dědí z `NSUrl`, a proto je bezpečný pro vložení `IsDirectBinding` hodnotu na konstantu `true`:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-Konkrétně tato optimalizace změní následující typ kódu (Toto je kód vazby pro `NSUrl.AbsoluteUrl`):
+Konkrétně tato optimalizace se změní následující typ kódu (to je vazební kód pro `NSUrl.AbsoluteUrl`):
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-do následujících (Pokud lze určit, že neexistují žádné měly podtřídy `NSUrl` v aplikaci):
+do následující (Pokud lze určit, že neexistují žádné podtřídy třídy `NSUrl` v aplikaci):
 
 ```csharp
 if (true) {
@@ -154,15 +154,15 @@ if (true) {
 }
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Je vždy povolena ve výchozím nastavení pro Xamarin.iOS a vždy ve výchozím nastavení zakázaná pro Xamarin.Mac (protože je možné se dynamicky načíst sestavení v Xamarin.Mac, není možné určit, že určité třídy podtřídou nikdy).
+Ve výchozím nastavení vždy povolena pro Xamarin.iOS a vždy ve výchozím nastavení zakázané pro Xamarin.Mac (protože je možné dynamicky načíst sestavení v Xamarin.Mac, není možné určit, že se nikdy rozčlenění určité třídy).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]inline-isdirectbinding` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]inline-isdirectbinding` k mtouch/mmp.
 
 ## <a name="inline-runtimearch"></a>Vložené Runtime.Arch
 
-Tato optimalizace změní následující typ kódu:
+Tato optimalizace se změní následující typ kódu:
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-do následujících (při sestavování zařízení):
+do následující (při sestavování pro zařízení):
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -182,15 +182,15 @@ if (Arch.DEVICE == Arch.DEVICE) {
 }
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Vždy je povolena ve výchozím nastavení pro Xamarin.iOS (není k dispozici pro Xamarin.Mac).
+Ve výchozím nastavení je vždy povoleno pro Xamarin.iOS (není k dispozici pro Xamarin.Mac).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]inline-runtime-arch` k mtouch.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]inline-runtime-arch` k mtouch.
 
-## <a name="dead-code-elimination"></a>Odstranění neaktivní kódu
+## <a name="dead-code-elimination"></a>Odstranění neaktivní kód
 
-Tato optimalizace změní následující typ kódu:
+Tato optimalizace se změní následující typ kódu:
 
 ```csharp
 if (true) {
@@ -206,7 +206,7 @@ do:
 Console.WriteLine ("Doing this");
 ```
 
-Také vyhodnotí konstantní porovnání takto:
+Také se vyhodnotí konstanta porovnání, následujícím způsobem:
 
 ```csharp
 if (8 == 8) {
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-a určit, který výraz `8 == 8` je vždy hodnotu true a snížit na:
+a určí, že výraz `8 == 8` je vždy hodnotu true a snížit tak:
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-Toto je výkonné optimalizace při použití spolu s vložené optimalizace, protože ji můžete převést následující typ kódu (Toto je kód vazby pro `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
+Výkonné optimalizace spolupráci s vkládání optimalizace, důvodem je, že ji můžete převést následující typ kódu (to je vazební kód pro `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-do této (při sestavování 64-bit zařízení a kdy taky moct zajistěte žádné `NFCIso15693ReadMultipleBlocksConfiguration` podtřídy v aplikaci):
+do tohoto (vývoj aplikací pro zařízení s 64bitovým kompilátorem a data také schopni zajistit nejsou žádné `NFCIso15693ReadMultipleBlocksConfiguration` podtřídy v aplikaci):
 
 ```csharp
 NSRange ret;
@@ -262,23 +262,23 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-Kompilátor AOT již moci vyloučit neaktivní kód takto, ale tato optimalizace je provést uvnitř linkeru, což znamená, že linkeru uvidí, že existuje několik metod, které se již nepoužívají a může být odebrán proto (s výjimkou použití jinde) :
+Kompilátor AOT již má eliminovat mrtvý kód tímto způsobem, ale tato optimalizace se provádí v linkeru, což znamená, že má linker uvidíte, že existuje několik metod, které nepoužívají a může proto být odebrán (Pokud nepoužíváte někde jinde) :
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper_stret`
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Ho je vždy povolena ve výchozím nastavení (Pokud je povolená linkeru).
+Je vždy povoleno ve výchozím nastavení (Pokud je povolena linker).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]dead-code-elimination` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]dead-code-elimination` k mtouch/mmp.
 
 ## <a name="optimize-calls-to-blockliteralsetupblock"></a>Optimalizace volání BlockLiteral.SetupBlock
 
-Modul runtime Xamarin.iOS/Mac musí znát bloku podpis při vytváření bloku jazyka Objective-C pro spravované delegovat. To může být poměrně náročná operace. Tato optimalizace vypočítat podpis bloku v čase vytvoření buildu a upravit IL volání `SetupBlock` metody, která přijímá podpis jako argument místo. To zabraňuje potřebu výpočet podpis za běhu.
+Modul runtime Xamarin.iOS/Mac musí znát signatura bloku při vytváření blok Objective-C pro spravované delegovat. To může být velmi náročná operace. Tato optimalizace se vypočítat podpis blok v okamžiku sestavení a upravte IL pro volání `SetupBlock` metodu, která jako argument přijímá podpis. Tím se vyhnete nutnosti výpočtu podpisu v době běhu.
 
-Srovnávacích testů ukazují, že tím se urychlí volání blok faktorem 10 až 15.
+Srovnávací testy zobrazit, že urychluje volání blok faktorem 10 až 15.
 
 Transformuje následující [kód](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
 
@@ -302,51 +302,51 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 }
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Ve výchozím nastavení je povolená při používání statické registrátora (v Xamarin.iOS statické registrátora je povoleno ve výchozím nastavení pro zařízení sestavení a v Xamarin.Mac statické registrátora je povoleno ve výchozím nastavení pro verzi sestavení).
+Ve výchozím nastavení je povoleno při používání statické doménový Registrátor (v Xamarin.iosu statické doménový Registrátor je povolené ve výchozím nastavení u sestavení zařízení a v statické doménový Registrátor je povoleno standardně pro vydání verze Xamarin.Mac sestavení).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]blockliteral-setupblock` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]blockliteral-setupblock` k mtouch/mmp.
 
-## <a name="optimize-support-for-protocols"></a>Optimalizace podporu pro protokoly
+## <a name="optimize-support-for-protocols"></a>Optimalizace podpora protokolů
 
-Modul runtime Xamarin.iOS/Mac musí informace o tom, jak spravované typy implementuje jazyka Objective-C protokolech. Tyto informace jsou uloženy v rozhraní (a atributů v těchto rozhraní), což není velmi efektivní formátu, ani je popisný linkeru.
+Modul runtime Xamarin.iOS/Mac potřebuje informace o protokolech implementuje Objective-C spravovaných typů. Tyto informace jsou uloženy v rozhraní (a atributů v těchto rozhraní), která není velmi efektivní formátu ani není přívětivá linkeru.
 
-Jedním z příkladů je, že tato rozhraní uložení informací o všech členů protokolu `[ProtocolMember]` atribut, který mimo jiné obsahovat odkazy na parametr typy členů. To znamená, že jednoduše implementace takového rozhraní bude linkeru zachovat všechny typy používané v tomto rozhraní, i pro volitelné členy aplikace nikdy volá nebo implementuje.
+Jedním z příkladů je, že tato rozhraní ukládání informací o všechny členy protokolu v `[ProtocolMember]` atribut, který mimo jiné obsahují odkazy na typy parametrů těchto členů. To znamená, že jednoduše implementovat toto rozhraní způsobí, že má linker zachovat všechny typy použité v tomto rozhraní, i pro volitelnými členy aplikace nikdy volání nebo implementuje.
 
-Tato optimalizace budou statické registrátora ukládat všechny požadované informace ve formátu efektivní, který používá málo paměti, která je snadno a rychle najít za běhu.
+Tato optimalizace způsobí, že statická doménový Registrátor uložit všechny požadované informace do efektivní formát, který používá málo paměti, který se snadno a rychle najdete v době běhu.
 
-Také se naučit linkeru, že nemusí nutně zachovat tato rozhraní ani žádný z atributů v relaci.
+Také se dozvíte linkeru, že nemusí nutně zachovat tato rozhraní ani žádný z souvisejících atributů.
 
-Tato optimalizace vyžaduje linkeru a statické registrátora povolit.
+Vyžaduje tato optimalizace linkeru a statické doménový Registrátor povolit.
 
-V Xamarin.iOS tato optimalizace je povoleno ve výchozím nastavení je aktivováno linkeru a statické registrátora.
+V Xamarin.iOS tyto optimalizace povolen ve výchozím nastavení, pokud jsou povolené linkeru a statické doménový Registrátor.
 
-Na Xamarin.Mac optimalizace nikdy ve výchozím nastavení zapnutá, protože Xamarin.Mac podporuje dynamické načítání sestavení a tyto sestavení nemusí byly známé v čase vytvoření buildu (a proto není optimalizovaný).
+Na Xamarin.Mac tato optimalizace je nikdy standardně povolená, protože Xamarin.Mac podporuje dynamické načítání sestavení a tato sestavení nemusí byly známé v okamžiku sestavení (a tedy neoptimalizovaná).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=-register-protocols` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=-register-protocols` k mtouch/mmp.
 
-## <a name="remove-the-dynamic-registrar"></a>Odebrat dynamické registrátora
+## <a name="remove-the-dynamic-registrar"></a>Odebrat dynamické doménový Registrátor
 
-Xamarin.iOS i Xamarin.Mac runtime zahrnují podporu pro [registrace spravovaných typů](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) s modulem runtime jazyka Objective-C. Je možné buď ji provést v okamžiku sestavení nebo za běhu (nebo částečně v čase vytvoření buildu a zbytek za běhu), ale pokud probíhá zcela v čase vytvoření buildu, znamená to, že lze odebrat podpůrné kód pro provádění za běhu. Výsledkem výrazného poklesu velikost aplikace, zejména pro menší aplikace, jako je například rozšíření nebo watchOS.
+Xamarin.iOS a Xamarin.Mac runtime zahrnují podporu pro [registrace spravovaných typů](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) s modulem runtime Objective-C. Buď lze provést, v okamžiku sestavení nebo za běhu (nebo částečně v době sestavení a zbytek za běhu), ale pokud provádí kompletně v okamžiku sestavení, znamená to, že je možné odebrat podpůrný kód pro provádění za běhu. Výsledkem je výrazné snížení velikosti aplikace, zejména pro menší aplikace, jako je například rozšíření nebo aplikace pro watchOS.
 
-Tato optimalizace vyžaduje statické registrátora a linkeru povolit.
+Tyto optimalizace vyžaduje statické doménový Registrátor a propojovací program povolit.
 
-Linkeru se pokusí zjistit, jestli je dynamické registrátora a v případě, se pokusí odebrat ji odebrat.
+Linker se pokusí zjistit, jestli je bezpečná pro odebrání dynamické registrátora a if, pokusí se ho odebrat.
 
-Vzhledem k tomu, že Xamarin.Mac podporuje dynamicky načítání sestavení za běhu (což nebyly označuje v čase vytvoření buildu), je možné určit v čase vytvoření buildu, jestli je to bezpečné optimalizace. To znamená, že tato optimalizace je nikdy povoleno ve výchozím nastavení pro Xamarin.Mac aplikace.
+Protože Xamarin.Mac podporuje dynamicky načítání sestavení za běhu (která nebyla známa v okamžiku sestavení), není možné určit v okamžiku sestavení, zda je to bezpečné optimalizace. To znamená, že tato optimalizace se nikdy povoleno standardně pro aplikace Xamarin.Mac.
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]remove-dynamic-registrar` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]remove-dynamic-registrar` k mtouch/mmp.
 
-Pokud výchozí hodnota je potlačena za účelem odebrání dynamické registrátora, linkeru bude generovat upozornění pokud rozpozná, že to není bezpečné (ale dynamické registrátora stále se odstraní).
+Pokud výchozí hodnota je přepsána odebrat dynamické registrátora, linker se vygenerovat upozornění, pokud zjistí, že není bezpečné (ale dynamické doménový Registrátor stále se odstraní).
 
 ## <a name="inline-runtimedynamicregistrationsupported"></a>Vložené Runtime.DynamicRegistrationSupported
 
-Inlines hodnota z `Runtime.DynamicRegistrationSupported` určené v čase vytvoření buildu.
+Inlines hodnotu z `Runtime.DynamicRegistrationSupported` jak určí v okamžiku sestavení.
 
-Pokud je odebrán dynamické registrátora (najdete v článku [odebrat dynamické registrátora](#remove-the-dynamic-registrar) optimalizace), toto je konstanta `false` hodnotu, jinak je konstanta `true` hodnotu.
+Pokud je odebrán dynamické doménový Registrátor (naleznete v tématu [odebrat dynamické doménový Registrátor](#remove-the-dynamic-registrar) optimalizace), toto je konstanta `false` hodnota, v opačném případě je konstanta `true` hodnotu.
 
-Tato optimalizace změní následující typ kódu:
+Tato optimalizace se změní následující typ kódu:
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -356,31 +356,31 @@ if (Runtime.DynamicRegistrationSupported) {
 }
 ```
 
-do následujících při odebrání dynamické registrátora:
+do následujících při odebrání dynamické doménový Registrátor:
 
 ```csharp
 throw new Exception ("dynamic registration is not supported");
 ```
 
-do následujících při dynamické registrátora neodebere:
+do následující, když se neodebere dynamické doménový Registrátor:
 
 ```csharp
 Console.WriteLine ("do something");
 ```
 
-Tato optimalizace vyžaduje linkeru, aby byl povolen a se použije pouze na metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
+Vyžaduje tato optimalizace linkeru, aby byly povoleny a platí jenom pro metody s `[BindingImpl (BindingImplOptions.Optimizable)]` atribut.
 
-Ho je vždy povolena ve výchozím nastavení (Pokud je povolená linkeru).
+Je vždy povoleno ve výchozím nastavení (Pokud je povolena linker).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]inline-dynamic-registration-supported` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]inline-dynamic-registration-supported` k mtouch/mmp.
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Předpočítání metody vytvoření spravovaného delegáti bloky jazyka Objective-C
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Předpočítání metody pro vytvoření spravované delegáty pro bloky Objective-C
 
-Když jazyka Objective-C volá selektor, přebírá blok jako parametr a potom spravovaného kódu přepsal dané metody Xamarin.iOS / Xamarin.Mac runtime potřebuje k vytvoření delegáta pro tento blok.
+Když Objective-C volá selektor, který přebírá bloku jako parametr a potom spravovaný kód přepsal metodu, Xamarin.iOS / Xamarin.Mac runtime potřebuje k vytvoření delegáta pro daný blok.
 
-Bude obsahovat kód vazby vygenerovaná generátorem vazby `[BlockProxy]` atribut, který určuje typ s `Create` metoda, která tuto operaci provést.
+Vazební kód vygenerovaný generátor vazeb zahrne `[BlockProxy]` atribut, který určuje typ s `Create` metodu, která to lze provést.
 
-Zadaný kód jazyka Objective-C následující:
+Daný následující kód Objective-C:
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -404,7 +404,7 @@ Zadaný kód jazyka Objective-C následující:
 @end
 ```
 
-a následující kód vazby:
+a následující vazební kód:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-Vytvoří generátor:
+Vytvoří generátor kódu:
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-Při volání jazyka Objective-C `[ObjCBlockTester callClassCallback]`, Xamarin.iOS / Xamarin.Mac runtime podívá `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` atribut na parametru. Potom budou prohledány `Create` metoda daný typ a volat tuto metodu pro vytvoření delegát.
+Když volá Objective-C `[ObjCBlockTester callClassCallback]`, Xamarin.iOS / Xamarin.Mac runtime se podíváme na `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` atribut parametru. Pak budou prohledány `Create` metoda v typu a volat tuto metodu pro vytvoření delegáta.
 
-Tato optimalizace najdete `Create` metoda v čase vytvoření buildu a statické registrátora vygeneruje kód, který vyhledá metoda za běhu pomocí tokenů metadat místo toho pomocí atributu a reflexe (to je mnohem rychlejší a také umožňuje linkeru Chcete-li odebrat odpovídajícího kódu runtime zmenšit aplikace).
+Tato optimalizace najdou `Create` metoda v době sestavení a statické doménový Registrátor vygeneruje kód, který vyhledává metoda za běhu pomocí tokeny metadat, namísto použití atributu a reflexe (to je mnohem rychlejší a také umožňuje linkeru Chcete-li odebrat odpovídající kód modulu runtime zmenšit aplikace).
 
-Pokud se nepodařilo najít mmp/mtouch `Create` metoda, pak se zobrazí upozornění MT4174/MM4174 a vyhledávání se provede v době běhu místo.
-Nejvíce pravděpodobné příčiny je zapsán ručně vazby kód bez požadované `[BlockProxy]` atributy.
+Pokud nemůže najít mmp/mtouch `Create` metodu, zobrazí upozornění MT4174/MM4174 a vyhledávání se provede v době běhu místo.
+Nejvíce nejpravděpodobnější příčinou je zapsán ručně vazební kód bez požadované `[BlockProxy]` atributy.
 
-Tato optimalizace vyžaduje statické registrátora povolení.
+Tyto optimalizace vyžaduje statické doménový Registrátor povolit.
 
-Ho je vždy povolena ve výchozím nastavení (Pokud se statický registrátora je povolená).
+Je vždy povoleno ve výchozím nastavení (za předpokladu, statické doménový Registrátor je povoleno).
 
-Výchozí chování lze přepsat pomocí předání `--optimize=[+|-]static-delegate-to-block-lookup` k mtouch/zhr.
+Výchozí chování můžete přepsat tím, že předáte `--optimize=[+|-]static-delegate-to-block-lookup` k mtouch/mmp.

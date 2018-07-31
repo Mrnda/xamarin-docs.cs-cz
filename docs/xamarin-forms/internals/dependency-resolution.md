@@ -1,33 +1,33 @@
 ---
 title: Řešení závislostí v Xamarin.Forms
-description: Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace.
+description: Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad vytváření a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/23/2018
-ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270485"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351577"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Řešení závislostí v Xamarin.Forms
 
-_Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad konstrukce a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace. Příklady kódu pocházejí ze [řešení závislostí](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) vzorku._
+_Tento článek vysvětluje, jak vložit metodu řešení závislostí do Xamarin.Forms tak, aby měla kontrolu nad vytváření a dobu života vlastní renderery, dopady a implementace DependencyService kontejneru pro vkládání závislostí aplikace. Příklady kódu v tomto článku pocházejí ze [řešení závislostí pomocí kontejnerů](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/) vzorku._
 
 V rámci aplikace Xamarin.Forms, která používá vzor Model-View-ViewModel (MVVM) kontejner vkládání závislostí lze pro registraci a jejich řešení zobrazit modely a pro registraci služby a vkládá je do zobrazení modelů. Při vytváření modelu zobrazení kontejneru vkládá všechny závislosti, které jsou požadovány. Pokud tyto závislosti ještě nevytvořili, kontejner vytvoří a nejprve řeší závislosti. Další informace o vkládání závislostí, včetně příkladů injektáž závislostí do zobrazení modelů, naleznete v tématu [injektáž závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-Kontrolu nad vytváření a dobu života typů v projektech platformy se tradičně provádí pomocí Xamarin.Forms, která používá `Activator.CreateInstance` metodu pro vytvoření instance vlastní renderery, důsledky, a [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementace. Bohužel to omezuje vývojáři řídit vytváření a dobu života těchto typů a schopnost injektovat závislostí do nich. Toto chování však lze změnit ve vkládání metoda řešení závislostí do Xamarin.Forms, které řídí, jak se vytvoří typy – buď kontejneru pro vkládání závislostí vaší aplikace, nebo pomocí Xamarin.Forms.
+Kontrolu nad vytváření a dobu života typů v projektech platformy se tradičně provádí pomocí Xamarin.Forms, která používá `Activator.CreateInstance` metodu pro vytvoření instance vlastní renderery, důsledky, a [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) implementace. Bohužel to omezuje vývojáři řídit vytváření a dobu života těchto typů a schopnost injektovat závislostí do nich. Toto chování lze změnit pomocí vkládání metoda řešení závislostí do Xamarin.Forms, které řídí, jak se vytvoří typy – buď kontejneru pro vkládání závislostí vaší aplikace, nebo pomocí Xamarin.Forms. Mějte však na paměti, že neexistuje žádný požadavek vložení metoda řešení závislostí do Xamarin.Forms. Xamarin.Forms nadále vytvořit a spravovat dobu života typů v projektech platformy, pokud není vloží metodu řešení závislostí.
 
 > [!NOTE]
-> Neexistuje žádný požadavek na vložení metoda řešení závislostí do Xamarin.Forms. Xamarin.Forms nadále vytvořit a spravovat dobu života typů v projektech platformy, pokud není vloží metodu řešení závislostí.
+> Přestože tento článek se zaměřuje na vkládání metoda řešení závislostí do Xamarin.Forms, která řeší registrovaných typů pomocí kontejner vkládání závislostí, je také možné vložit metodu řešení závislost, která používá pro metody pro vytváření objektů registrovaných typů. Další informace najdete v tématu [řešení závislostí pomocí metody pro vytváření objektů](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/) vzorku.
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Vkládání metoda řešení závislostí
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Třída poskytuje schopnost injektovat metoda řešení závislostí do Xamarin.Forms, jedním z [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody. Potom když Xamarin.Forms potřebuje instance určitého typu, metoda řešení závislostí je příležitost zadejte instanci. Pokud metoda řešení závislostí vrátí `null` pro požadovaný typ, vrátí Xamarin.Forms k pokusu o vytvoření typ instance sebe pomocí `Activator.CreateInstance` metody.
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Třída poskytuje schopnost injektovat metoda řešení závislostí do Xamarin.Forms, pomocí [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody. Potom když Xamarin.Forms potřebuje instance určitého typu, metoda řešení závislostí je příležitost zadejte instanci. Pokud metoda řešení závislostí vrátí `null` pro požadovaný typ, vrátí Xamarin.Forms k pokusu o vytvoření typ instance sebe pomocí `Activator.CreateInstance` metody.
 
 Následující příklad ukazuje, jak nastavit metodu řešení závislostí s [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) metody:
 
@@ -97,6 +97,18 @@ public partial class App : Application
                 (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
                 (pi, ctx) => ctx.Resolve(param2Type))
         });
+    }
+
+    public static void RegisterTypeWithParameters<TInterface, T>(Type param1Type, object param1Value, Type param2Type, string param2Name) where TInterface : class where T : class, TInterface
+    {
+        builder.RegisterType<T>()
+               .WithParameters(new List<Parameter>()
+        {
+            new TypedParameter(param1Type, param1Value),
+            new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
+                (pi, ctx) => ctx.Resolve(param2Type))
+        }).As<TInterface>();
     }
 
     public static void BuildContainer()
@@ -219,7 +231,7 @@ public interface IPhotoPicker
 
 V každém projektu platformy `PhotoPicker` implementuje třída `IPhotoPicker` rozhraní pomocí rozhraní API platformy. Další informace o těchto službách závislostí, naleznete v tématu [výběr z knihovny obrázků fotografie](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-Na všech třech platformách `PhotoPicker` třída má následující konstruktor, který vyžaduje `ILogger` argument:
+Zařízení s iOS a UPW `PhotoPicker` třídy mají následující konstruktor, který vyžaduje `ILogger` argument:
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -239,7 +251,32 @@ void RegisterTypes()
 }
 ```
 
-V tomto příkladu `Logger` konkrétní typ je registrované přes mapování pro typ rozhraní a `PhotoPicker` typ je také registrovat prostřednictvím mapování rozhraní. Když uživatel přejde na stránce výběru fotografii a vybere fotografii, vyberte `OnSelectPhotoButtonClicked` spuštění obslužné rutiny:
+V tomto příkladu `Logger` konkrétní typ je registrované přes mapování pro typ rozhraní a `PhotoPicker` typ je také registrovat prostřednictvím mapování rozhraní.
+
+`PhotoPicker` Je o něco složitější, protože vyžaduje konstruktor pro platformu Android `Context` argument kromě `ILogger` argument:
+
+```csharp
+public PhotoPicker(Context context, ILogger logger)
+{
+    _context = context ?? throw new ArgumentNullException(nameof(context));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+```
+
+Následující příklad ukazuje `RegisterTypes` metoda na platformě Android:
+
+```csharp
+void RegisterTypes()
+{
+    App.RegisterType<ILogger, Logger>();
+    App.RegisterTypeWithParameters<IPhotoPicker, Services.Droid.PhotoPicker>(typeof(Android.Content.Context), this, typeof(ILogger), "logger");
+    App.BuildContainer();
+}
+```
+
+V tomto příkladu `App.RegisterTypeWithParameters` metoda registrů `PhotoPicker` s kontejneru pro vkládání závislostí. Metoda registrace zajistí, že `MainActivity` instance budou vloženy jako `Context` argument a že `Logger` typu budou vloženy jako `ILogger` argument.
+
+Když uživatel přejde na stránce výběru fotografii a vybere fotografii, vyberte `OnSelectPhotoButtonClicked` spuštění obslužné rutiny:
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -262,7 +299,7 @@ Když [ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Re
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Řešení závislostí (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)
+- [Řešení závislostí pomocí kontejnerů (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [Injektáž závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Implementace přehrávače videa](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Vyvolání události z účinků](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

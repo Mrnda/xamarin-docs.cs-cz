@@ -1,56 +1,56 @@
 ---
-title: Základní NFC v Xamarin.iOS
-description: Tento dokument popisuje, jak číst téměř pole značky komunikace v Xamarin.iOS pomocí rozhraní API byla zavedená v iOS 11.
+title: Základní NFC v Xamarin.iosu
+description: Tento dokument popisuje, jak číst téměř pole značky komunikace v Xamarin.iOS pomocí rozhraní API zavedené v Iosu 11.
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/25/2016
-ms.openlocfilehash: c42048f9c00238fb73e354ea86322c3d19bae601
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/25/2017
+ms.openlocfilehash: 1381a4564f93fd091f181949454df3f06b31ae6b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787374"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350830"
 ---
-# <a name="core-nfc-in-xamarinios"></a>Základní NFC v Xamarin.iOS
+# <a name="core-nfc-in-xamarinios"></a>Základní NFC v Xamarin.iosu
 
-_Značky čtení komunikace NFC (Near Field) pomocí iOS 11_
+_Čtení téměř Field Communication (NFC) značky pomocí iOS 11_
 
-CoreNFC je novou architekturou v iOS 11, která poskytuje přístup k _Bezkontaktní komunikace_ přepínač (NFC) ke čtení značky z v rámci aplikací. Funguje na zařízeních iPhone 7, Plus 7, 8, 8 Plus a X.
+CoreNFC je novou architekturou v Iosu 11, který poskytuje přístup k _Bezkontaktní komunikace_ přepínač (NFC) ke čtení značek z v rámci aplikace. Funguje na zařízeních iPhone 7, Plus 7, 8, 8, Plus a X.
 
-Čtečka značky NFC v zařízení s iOS podporuje všechny typy značek NFC 1 až 5, které obsahují _formát Exchange dat NFC_ informace (NDEF).
+Čtečka značky NFC v zařízení s Iosem podporuje všechny typy značek NFC 1 až 5, které obsahují _formát výměny dat NFC_ informace (NDEF).
 
-Existují některá omezení zajímat:
+Existují některá omezení je potřeba vědět:
 
-- CoreNFC podporuje pouze značky čtení (ne zápis nebo formátování).
-- Prohledávání značky musí být spuštěna uživatelem a časový limit po 60 sekund.
-- Aplikace musí být viditelná v popředí pro skenování.
-- CoreNFC můžete otestovat pouze na skutečné zařízení (ne v simulátoru).
+- CoreNFC podporuje pouze značky čtení (nikoli zápis nebo formátování).
+- Značka kontroly musí být spuštěna uživatelem a časový limit po 60 sekund.
+- Aplikace musí být viditelný v popředí ke skenování.
+- CoreNFC lze pouze testovat na skutečných zařízeních (ne na simulátoru).
 
-Tato stránka popisuje konfigurace požadované pro použití CoreNFC a ukazuje, jak používat rozhraní API pomocí ["TFCTagReader" ukázkový kód](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
+Tato stránka popisuje konfigurace požadované pro použití CoreNFC a ukazuje, jak použít rozhraní API pomocí ["TFCTagReader" ukázkový kód](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/).
 
 ## <a name="configuration"></a>Konfigurace
 
-Pokud chcete povolit CoreNFC, musíte nakonfigurovat tři položky ve vašem projektu:
+Pokud chcete povolit CoreNFC, je nutné nakonfigurovat tři položky ve vašem projektu:
 
 - **Info.plist** klíč osobních údajů.
-- **Entitlements.plist** položku.
-- Profil zřizování s **čtení značky NFC** schopností.
+- **Do souboru Entitlements.plist** položka.
+- Zřizovací profil s **čtení značek NFC** funkce.
 
 ### <a name="infoplist"></a>Info.plist
 
-Přidat **NFCReaderUsageDescription** klíč osobních údajů a text, který se zobrazí uživatelům během prohledávání je. Použít zprávu vhodné pro vaši aplikaci (například vysvětlují účelem kontroly):
+Přidat **NFCReaderUsageDescription** klíč osobních údajů a text, který se zobrazí uživatelům během prohledávání. Použít zprávu o vhodném pro vaši aplikaci (například popisují účel vyhledávání):
 
 ```xml
 <key>NFCReaderUsageDescription</key>
 <string>NFC tag to read NDEF messages into the application</string>
 ```
 
-### <a name="entitlementsplist"></a>Entitlements.plist
+### <a name="entitlementsplist"></a>Do souboru Entitlements.plist
 
-Aplikace musí požádat **téměř pole komunikace značky čtení** spárujte schopností pomocí následující klíč/hodnota v vaše **Entitlements.plist**:
+Musíte požádat o vaši aplikaci **téměř čtení značek komunikace pole** spárovat se schopností pomocí následující klíč/hodnota v vaše **do souboru Entitlements.plist**:
 
 ```xml
 <key>com.apple.developer.nfc.readersession.formats</key>
@@ -59,28 +59,28 @@ Aplikace musí požádat **téměř pole komunikace značky čtení** spárujte 
 </array>
 ```
 
-### <a name="provisioning-profile"></a>Profil pro zřizování
+### <a name="provisioning-profile"></a>Zřizovací profil
 
-Vytvořte novou **ID aplikace** a ujistěte se, že **čtení značky NFC** je zaškrtnuté služby:
+Vytvořte nový **ID aplikace** a ujistěte se, že **čtení značek NFC** služby je zaškrtnuté:
 
-[![Stránka nové ID aplikace portálu vývojáře s čtení značky NFC vybrané](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![Stránka nového ID aplikace portálu pro vývojáře s čtení značek NFC vybrané](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
-Jste měli pak vytvořte nový profil pro zřizování pro toto ID aplikace, pak stáhněte a nainstalujte na váš vývojový Mac.
+Můžete by pak vytvoření nového zřizovacího profilu pro toto ID aplikace, stáhněte a nainstalujte ho na vašem vývojovém počítači Mac.
 
 ## <a name="reading-a-tag"></a>Čtení značku
 
-Po nakonfigurování projektu přidejte `using CoreNFC;` na začátek souboru a postupujte podle značky tyto tři kroky pro implementaci NFC čtení funkce:
+Po nakonfigurování vašeho projektu přidat `using CoreNFC;` do horní části souboru a postupujte podle tyto tři kroky pro implementaci NFC značky čtení funkcí:
 
 ### <a name="1-implement-infcndefreadersessiondelegate"></a>1. Implementace `INFCNdefReaderSessionDelegate`
 
 Rozhraní má dvě metody k implementaci:
 
-- `DidDetect` – Voláno, když se značkou číst.
-- `DidInvalidate` – Voláno, když dojde k chybě nebo je dosaženo 60 druhý časový limit.
+- `DidDetect` – Volána, když je úspěšné načtení značky.
+- `DidInvalidate` – Volána, když dojde k chybě nebo je dosaženo 60 druhý časový limit.
 
 #### <a name="diddetect"></a>DidDetect
 
-V ukázkovém kódu je přidána každý naskenované zpráva zobrazení tabulky:
+Ve vzorovém kódu přidá do zobrazení tabulky, každý naskenované zpráva:
 
 ```csharp
 public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
@@ -96,15 +96,15 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-Tato metoda může volat vícekrát, (a může být předán pole zpráv) Pokud relace umožňuje pro vícenásobné čtení značky. Tento vztah se nastavuje pomocí třetího parametru `Start` – metoda (podrobně [krok 2](#step2)).
+Tato metoda může být volána více než jednou (a pole zpráv, které je možné předat v) Pokud relace umožňuje více čtení značek. To se nastavuje pomocí třetího parametru `Start` – metoda (podrobně [kroku 2](#step2)).
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
-Zneplatnění může dojít z několika příčin:
+Neplatnost může dojít z několika důvodů:
 
-- Došlo k chybě při kontrole.
-- Aplikace, přestanou být v popředí.
-- Uživatel se rozhodl zrušit kontroly.
+- Během hledání došlo k chybě.
+- Aplikace, přestanou být aktivní.
+- Uživatel se rozhodl zrušit vyhledávání.
 - Kontrola byla zrušena aplikací.
 
 Následující kód ukazuje, jak zpracovat chybu:
@@ -121,47 +121,47 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 }
 ```
 
-Jakmile platnost relace byla zrušena, musí být vytvořený objekt novou relaci Prohledat znovu.
+Jakmile platnost relace byla zrušena, musí být vytvořený objekt novou relaci skenovat znovu.
 
 <a name="step2" />
 
 ### <a name="2-start-an-nfcndefreadersession"></a>2. Spuštění `NFCNdefReaderSession`
 
-Kontrola by měla začínat znakem požadavku uživatele, například stisknutí tlačítka.
-Následující kód vytvoří a spustí relaci prohledávání:
+Vyhledávání by měl začínat uživatelského požadavku, jako je například stisknutí tlačítka.
+Následující kód vytvoří a spustí skenování relace:
 
 ```csharp
 Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-Parametry `NFCNdefReaderSession` konstruktor jsou následující:
+Parametry `NFCNdefReaderSession` konstruktoru jsou následující:
 
-- `delegate` – Implementace `INFCNdefReaderSessionDelegate`. V ukázkovém kódu, delegát je implementovaná v kontroleru zobrazení tabulky, proto `this` slouží jako parametr delegáta.
-- `queue` – Fronta, kterou jsou zpracovány zpětných volání. Může být `null`, v takovém případě je nutné používat `DispatchQueue.MainQueue` při aktualizaci ovládacích prvků uživatelského rozhraní (jak je znázorněno v ukázce).
-- `invalidateAfterFirstRead` – Když `true`, kontrola přestane po prvním úspěšném kontroly; při `false` kontrolu bude pokračovat a vrátit více výsledky, dokud nebude kontrola byla zrušena, nebo je dosaženo 60 druhý časový limit.
+- `delegate` – Implementace `INFCNdefReaderSessionDelegate`. Ve vzorovém kódu, delegátu je implementována v kontroleru zobrazení tabulky, proto `this` slouží jako parametr delegátu.
+- `queue` – Fronty, která jsou zpracovány zpětná volání. Může to být `null`, v takovém případě je potřeba použít `DispatchQueue.MainQueue` při aktualizaci ovládacích prvků uživatelského rozhraní (jak je znázorněno v ukázce).
+- `invalidateAfterFirstRead` – Když `true`, zastaví prohledávání po první úspěšná kontrola; při `false` vyhledávání bude pokračovat a vrátil více výsledků dokud kontroly se zrušila, nebo je dosaženo 60 druhý časový limit.
 
 
-### <a name="3-cancel-the-scanning-session"></a>3. Zrušit prohledávání relace
+### <a name="3-cancel-the-scanning-session"></a>3. Zrušit vyhledávání relace
 
-Uživatele můžete zrušit prohledávání relace pomocí tlačítka poskytované systémem v uživatelském rozhraní:
+Uživatele můžete zrušit skenování relace přes poskytnuté systémem tlačítko v uživatelském rozhraní:
 
-![Tlačítko Zrušit při prohledávání](corenfc-images/scan-cancel-sml.png)
+![Tlačítko Storno. při hledání](corenfc-images/scan-cancel-sml.png)
 
-Aplikace můžete programově zrušit kontroly voláním `InvalidateSession` metoda:
+Aplikace může programově zrušit kontroly voláním `InvalidateSession` metody:
 
 ```csharp
 Session.InvalidateSession();
 ```
 
-V obou případech delegáta pro `DidInvalidate` volání metody.
+V obou případech delegáta pro `DidInvalidate` metoda bude volána.
 
 ## <a name="summary"></a>Souhrn
 
-CoreNFC umožňuje aplikaci číst data z značky NFC. Podporuje čtení různých formátech značky (NDEF typy 1 až 5), ale nepodporuje zápis nebo formátování.
+CoreNFC umožňuje aplikaci číst data ze značky NFC. Podporuje čtení širokou škálu formátů značky (typy NDEF 1 až 5), ale nepodporuje zápis nebo formátování.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [NFCTagReader (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
-- [Představení NFC jádra (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/718/)
+- [Úvod do jádra NFC (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/718/)

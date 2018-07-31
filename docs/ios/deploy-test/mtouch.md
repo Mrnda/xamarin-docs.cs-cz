@@ -1,71 +1,72 @@
 ---
-title: Pomocí mtouch sady aplikace Xamarin.iOS
-description: Tento dokument popisuje mtouch, nástroj, spusťte v simulátoru jednotek řada kroků potřebných k vypnutí aplikace pro Xamarin.iOS do jednoho svazku a nasadíte ho do fyzického zařízení.
+title: Pomocí mtouch do sady prostředků aplikace Xamarin.iOS
+description: Tento dokument popisuje mtouch, nástroj, spusťte v simulátoru jednotek celá řada kroků potřebných k zapnutí aplikace pro Xamarin.iOS do sady prostředků, a nasadit ho do fyzického zařízení.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 49507b6500755c617deacfb197ef089e3debd598
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784950"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351353"
 ---
-# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Pomocí mtouch sady aplikace Xamarin.iOS
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Pomocí mtouch do sady prostředků aplikace Xamarin.iOS
 
-iPhone aplikace jsou dodávána jako sady aplikace. Jedná se o adresáře s příponou `.app` obsahující kódu, data, konfiguračních souborů a manifestu, který používá iPhone Další informace o vaší aplikace.
+aplikace pro iPhone se dodávají jako sady aplikace. Toto jsou adresáře s příponou `.app` obsahující váš kód, data, konfigurační soubory a manifestu, který používá iPhone Další informace o vaší aplikaci.
 
-Proces zapnutí spustitelný soubor rozhraní .NET do aplikace většinou vycházejí z `mtouch` příkaz, nástroj, který se integruje se řadu kroky potřebné k vypnutí aplikace do sady. Tento nástroj se používá také ke spuštění aplikace v simulátoru a nasazení softwaru do samotného zařízení iPhone nebo iPod Touch.
+Proces přeměny spustitelný soubor .NET do aplikace většinou doprovází `mtouch` příkaz, nástroj, který integruje mnoho kroků potřebných k zapnutí aplikace do sady. Tento nástroj slouží také ke spuštění aplikace v simulátoru a nasazení softwaru pro skutečné zařízení iPhone nebo iPod Touch.
 
 ## <a name="detailed-instructions"></a>Podrobné pokyny
 
-Zkontrolujte naše [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) ruční stránka s všechny možné používá mtouch nástroje.
+Zkontrolujte naše [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) ruční stránka se všemi možné používá mtouch nástroje.
 
 ## <a name="installation"></a>Instalace
 
-V systému Mac `mtouch` je instalován s Xamarin.iOS. Se nachází v následujícím adresáři:
+Na počítači Mac `mtouch` je instalován s Xamarin.iOS. Najdete v následujícím adresáři:
 
 **/Library/Frameworks/Xamarin.IOS.Framework/versions/Current/Bin**
 
-Chcete-li `mtouch` vhodnější použít, přidejte její adresář nadřazené do vašeho systému `PATH` proměnné prostředí.  
+Chcete-li `mtouch` vhodné použít, přidejte do svého systému svého nadřazeného adresáře `PATH` proměnné prostředí.  
 
-Například k tomu v Bash, přidejte následující řádek na konec vaší **~/.bash_profile** souboru:
+Například, chcete-li to provést v prostředí Bash, přidejte následující řádek na konec vaše **~/.bash_profile** souboru:
 
 ```bash
 export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 ```
 
 > [!WARNING]
-> Chcete-li použít `mtouch`, nespoléhejte na existenci **/Developer/MonoTouch/usr/bin**, symbolický odkaz, který odkazuje na **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Tento symbolický odkaz existuje pouze udržovat kompatibilitu s MonoTouch starší verze, které nebyly nainstalovány v **/Library/Frameworks/...** , a může zmizet v budoucí verzi.
+> Chcete-li použít `mtouch`, nespoléhejte na existenci **/Developer/MonoTouch/usr/bin**, symbolický odkaz, který odkazuje na **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Tento symbolický odkaz existuje pouze udržovat kompatibilitu s MonoTouch starší verze, které nebyly nainstalovány v **/Library/Frameworks/...** , a můžou zmizet v budoucí verzi.
 
 ## <a name="building"></a>Sestavování
 
-`mtouch` Příkaz můžete zkompilovat kód třemi různými způsoby:
+`mtouch` Příkazu můžete zkompilovat kód třemi různými způsoby:
 
 -  Kompilace pro testování simulátoru.
 -  Kompilace pro nasazení zařízení.
--  Nasazení vaší spustitelný soubor do zařízení.
+-  Do zařízení nasadíte spustitelný soubor.
 
 
-### <a name="building-for-the-simulator"></a>Vytváření pro simulátoru
+### <a name="building-for-the-simulator"></a>Vývoj aplikací pro simulátoru
 
-Když začnete, nejběžnější použité scénář budou vám vyzkoušet aplikaci v simulátoru, takže budete používat `mtouch -sim` zkompilovat kód do balíčku simulátoru. Děje se to jako:
+Když začnete, nejběžnější používaný scénář bude si můžete vyzkoušet si aplikaci v simulátoru, takže budete používat `mtouch -sim` zkompilovat kód do simulátoru balíčku. Uděláte to takto:
 
 ```bash
 $ mtouch -sim Hello.app hello.exe
 ```
 
-### <a name="building-for-the-device"></a>Vytváření pro zařízení
+### <a name="building-for-the-device"></a>Vývoj aplikací pro zařízení
 
-K vytvoření software pro zařízení se sestavení aplikace pomocí `mtouch -dev` možnost, kromě toho je třeba zadat název certifikátu používaného k podepsání aplikace. Následující ukazuje, jak je aplikace vytvořené pro zařízení:
+K sestavení software pro toto zařízení vytvoříte aplikaci pomocí `mtouch -dev` možnost, kromě toho je potřeba zadat název certifikátu použitého k podepsání aplikace. Následuje ukázka, jak je aplikace sestavená pro zařízení:
 
 ```bash
 $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
-V tomto případě používáme "iPhone Developer: Miguel de Icaza" certifikát pro podepsání aplikace. Tento krok je velmi důležité, nebo se načíst aplikaci udělit fyzického zařízení.
+V tomto konkrétním případě používáme "iPhone pro vývojáře: Miguela de Icaza" certifikát pro podepsání aplikace. Tento krok je velmi důležité, nebo fyzické zařízení odmítne načtení aplikace.
 
  <a name="Running_your_Application" />
 
@@ -75,17 +76,17 @@ V tomto případě používáme "iPhone Developer: Miguel de Icaza" certifikát 
 
 ### <a name="launching-on-the-simulator"></a>Spouštění v simulátoru
 
-Spouštění v simulátoru je velmi jednoduchý, až budete mít sadě aplikací:
+Spouští na simulátoru je velmi jednoduchý, jakmile budete mít sady prostředků aplikace:
 
 ```bash
 $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app 
 ```
 
-Pokud `--sdkroot` není nastaven příznak se výchozí hodnota je xcode vyberte cestu a způsobí následující upozornění:
+Pokud `--sdkroot` není nastaven příznak se výchozí nastavení pro cestu xcode-select následek následující upozornění:
 
-> např: upozornění MT0061: Ne Xcode.app zadán (pomocí – sdkroot), pomocí systému Xcode vykazované 'xcode – vybrat – tisk path': /Applications/Xcode.app/Contents/Developer 
+> například: upozornění MT0061: No Xcode.app zadán (pomocí--sdkroot proto), pomocí systému Xcode udávaný rutinou "xcode-select--print-path": /Applications/Xcode.app/Contents/Developer 
 
-Výše uvedené příkazového řádku způsobí některé výstup takto:
+Příkazový řádek výše uvedené vytvoří některé výstup podobný tomuto:
 
 ```bash
 Launching application
@@ -96,7 +97,7 @@ Press enter to terminate the application
 
 
 
-Důrazně doporučujeme, abyste protokolu standardní výstupní zařízení a standardní chyba soubory pomoct vaší ladění. Výstup `Console.WriteLine` přejde na `stdout`a také výstup `Console.Error.WriteLine` a jakékoliv další chybové zprávy modulu runtime přejde na `stderr`.
+Důrazně doporučujeme také ponechat protokolu standardní výstup a chyby souborů pomáhat při vaší ladění. Výstup `Console.WriteLine` přejde na `stdout`a také výstup `Console.Error.WriteLine` a jakékoliv další chybové zprávy modulu runtime míří na `stderr`.
 
 Chcete-li to provést, použijte `--stdout` a `--stderr` příznaky:
 
@@ -104,26 +105,26 @@ Chcete-li to provést, použijte `--stdout` a `--stderr` příznaky:
 ../../tools/mtouch/mtouch --launchsim=Hello.app --stdout=output --stderr=error
 ```
 
-Pokud vaše aplikace nezdaří, zobrazí se výstup a chyby a Diagnostikujte problém.
+Pokud se aplikaci nepodaří, zobrazí se výstup a chyby a Diagnostikujte problém.
 
 
 ### <a name="deploying-to-a-device"></a>Nasazení do zařízení
 
-K nasazení na zařízení, budete muset zřídit zařízení, jak je popsáno v společnosti Apple [Správa zařízení](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html) dokumentu. Po správně zřizují zařízení, můžete použít příkaz mtouch kompilované ".app" nasadit do zařízení. Uděláte to pomocí tohoto příkazu:
+Nasazení do zařízení, budete muset zřídit zařízení, jak je popsáno v od Applu [Správa zařízení](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html) dokumentu. Po správně zřízení zařízení můžete do zařízení nasadit kompilované ".app" mtouch příkazu. Uděláte to pomocí tohoto příkazu:
 
 ```bash
 $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 ```
 
-Pokud `--sdkroot` není nastaven příznak se výchozí hodnota je xcode vyberte cestu a způsobí následující upozornění:
+Pokud `--sdkroot` není nastaven příznak se výchozí nastavení pro cestu xcode-select následek následující upozornění:
 
-> např: upozornění MT0061: Ne Xcode.app zadán (pomocí – sdkroot), pomocí systému Xcode vykazované 'xcode – vybrat – tisk path': /Applications/Xcode.app/Contents/Developer 
+> například: upozornění MT0061: No Xcode.app zadán (pomocí--sdkroot proto), pomocí systému Xcode udávaný rutinou "xcode-select--print-path": /Applications/Xcode.app/Contents/Developer 
 
-Tyto kroky jsou obvykle provádí Visual Studio for Mac.
+Tyto kroky jsou obvykle provádí Visual Studio pro Mac.
 
 ## <a name="reference"></a>Odkaz
 
-Najdete v článku [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) ruční stránku Podrobnosti o další možnosti příkazového řádku.
+Zobrazit [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) ruční stránku Podrobnosti o další možnosti příkazového řádku.
 
 
 

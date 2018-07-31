@@ -1,41 +1,41 @@
 ---
-title: Nové funkce v MapKit v systému iOS 11
-description: 'Tento dokument popisuje nové funkce MapKit v iOS 11: seskupování značek, tlačítko kompasu, měřítka zobrazení a tlačítko Sledování uživatele.'
+title: Nové funkce v Mapkitu v Iosu 11
+description: 'Tento dokument popisuje nové funkce Iosu 11 Mapkitu: seskupování značky, kompasu tlačítko, zobrazení škálování a sledování tlačítka pro uživatele.'
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787403"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350583"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>Nové funkce v MapKit v systému iOS 11
+# <a name="new-features-in-mapkit-on-ios-11"></a>Nové funkce v Mapkitu v Iosu 11
 
-iOS 11 MapKit přidává následující nové funkce:
+iOS 11 přidává následující nové funkce Mapkitu:
 
-- [Poznámky Clustering](#clustering)
-- [Kompas tlačítko](#compass)
-- [Škálování zobrazení](#scale)
-- [Tlačítko Sledování uživatele](#user-tracking)
+- [Poznámka Clustering](#clustering)
+- [Compass tlačítko](#compass)
+- [Měřítko zobrazení](#scale)
+- [Tlačítka pro sledování uživatele](#user-tracking)
 
-![Mapování zobrazující Clusterové značek a kompas tlačítko](mapkit-images/cyclemap-heading.png)
+![Mapa zobrazující Clusterované značky a compass tlačítko](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
-## <a name="automatically-grouping-markers-while-zooming"></a>Automaticky seskupení značek při změně měřítka
+## <a name="automatically-grouping-markers-while-zooming"></a>Automaticky grouping značky při zvětšování
 
-Ukázka [MapKit ukázka "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) ukazuje, jak implementovat nový iOS 11 poznámky funkci clusteringu.
+Ukázka [Mapkitu ukázka "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) ukazuje, jak implementovat nová poznámka iOS 11, funkce clustering.
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. Vytvoření `MKPointAnnotation` podtřídy
 
-Třída poznámky bodu reprezentuje každé značky na mapě. Mohou být přidány jednotlivě pomocí `MapView.AddAnnotation()` nebo z pole pomocí `MapView.AddAnnotations()`.
+Třída poznámek bodu představuje každý značky na mapě. Je možné je přidat pomocí jednotlivě `MapView.AddAnnotation()` nebo z pole pomocí `MapView.AddAnnotations()`.
 
-Bod poznámky třídy nemají vizuální znázornění, pouze musí představovat data související s značky (co je nejdůležitější `Coordinate` vlastnost, která je jeho zeměpisnou šířku a zeměpisnou délku na mapě) a jakékoli vlastní vlastnosti:
+Bod anotace třídy nemají vizuální reprezentaci, je vyžadováno pouze ke znázornění dat přidružené k popisovači (co je nejdůležitější, `Coordinate` vlastnost, která je jeho zeměpisné šířky a délky na mapě) a všechny vlastní vlastnosti:
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Vytvoření `MKMarkerAnnotationView` podtřídami pro jeden značek
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Vytvoření `MKMarkerAnnotationView` podtřídu pro jedné značky
 
-Zobrazení poznámky značky je vizuální reprezentace každý poznámky a je navržen tak, jako například pomocí vlastnosti:
+Zobrazit značky poznámek je vizuální znázornění jednotlivé poznámky a je navržen tak, jako například pomocí vlastnosti:
 
-- **MarkerTintColor** – barvu značky.
+- **MarkerTintColor** – barva značky.
 - **GlyphText** – zobrazení textu v značky.
-- **GlyphImage** – nastavuje obrázek, který se zobrazí v značky.
-- **DisplayPriority** – určuje pořadí z-order (skládání chování) Pokud je zobrazeno příliš mnoho značek mapy. Použijte jednu z `Required`, `DefaultHigh`, nebo `DefaultLow`.
+- **GlyphImage** – nastaví obrázek, který se zobrazí v značky.
+- **DisplayPriority** – určuje pořadí z-order (překrývání chování) při mapování zaplněný se značkami. Použijte jednu z `Required`, `DefaultHigh`, nebo `DefaultLow`.
 
-Pro podporu automatického clusteringu, musíte taky nastavit:
+Pro podporu automatického clustering, musíte taky nastavit:
 
-- **ClusteringIdentifier** – tato volba určuje, které značek získat clusterovaný společně. Můžete použít stejný identifikátor pro všechny značky, nebo použít různé identifikátory k řízení způsobu, jakým jsou seskupeny dohromady.
+- **ClusteringIdentifier** – tato volba určuje které značek získat clusterovaného společně. Můžete použít stejný identifikátor pro všechny značky nebo odlišné identifikátory můžete řídit způsob, jakým jsou seskupeny dohromady.
 
 ```csharp
 [Register("BikeView")]
@@ -104,15 +104,15 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Vytvoření `MKAnnotationView` představují clustery značek
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Vytvoření `MKAnnotationView` představující clustery značek
 
-Při zobrazení poznámky, které představuje cluster značek _může_ být jednoduché bitové kopie, uživatelé očekávají, že aplikaci poskytují vizuální upozornění o tom, kolik značek, byly seskupeny dohromady.
+Při zobrazení poznámky, které představuje cluster značek _může_ být jednoduché bitové kopie, uživatelé očekávají aplikaci poskytují vizuální informace o tom, kolik značky, byly seskupeny dohromady.
 
-[Ukázkový kód](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) používá CoreGraphics k vykreslení počet značek v clusteru, jakož i kruh grafu reprezentace podíl každý typ značky.
+[Ukázkový kód](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) CoreGraphics používá k vykreslení počet značek v clusteru, jakož i kruh grafu reprezentace poměr každého typu značky.
 
-Je třeba nastavit také:
+Měli byste také nastavit:
 
-- **DisplayPriority** – určuje pořadí z-order (skládání chování) Pokud je zobrazeno příliš mnoho značek mapy. Použijte jednu z `Required`, `DefaultHigh`, nebo `DefaultLow`.
+- **DisplayPriority** – určuje pořadí z-order (překrývání chování) při mapování zaplněný se značkami. Použijte jednu z `Required`, `DefaultHigh`, nebo `DefaultLow`.
 - **CollisionMode** – `Circle` nebo `Rectangle`.
 
 ```csharp
@@ -181,7 +181,7 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4. Registrace třídy zobrazení
 
-Při zobrazení mapový ovládací prvek se vytváří a přidá do zobrazení, registrace typy zobrazení poznámky tak, aby povolovala automatické clustering chování mapy je možnosti a odhlášení:
+Při zobrazení mapový ovládací prvek se vytváří a přidá do zobrazení, registrace anotace zobrazit typy tak, aby povolovala automatické chování clusteringu mapy zvětšován dovnitř a ven:
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
@@ -190,21 +190,21 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ### <a name="5-render-the-map"></a>5. Vykreslení mapy!
 
-Po vykreslení mapy poznámky značek bude v clusteru nebo vykreslen v závislosti na aktuální úroveň přiblížení. Jak změní úroveň přiblížení, použije animaci značek a deaktivovat clustery.
+Při zobrazení na mapě se bude značky poznámek v clusteru nebo vykreslen v závislosti na úrovni zvětšení. Jak se změní úroveň zvětšení, značky animace do clusterů.
 
-![Simulátor zobrazující Clusterové značek na mapě](mapkit-images/cyclemap-sml.png)
+![Simulátor zobrazující Clusterované značky na mapě](mapkit-images/cyclemap-sml.png)
 
-Odkazovat [mapuje části](~/ios/user-interface/controls/ios-maps/index.md) Další informace o zobrazení dat s MapKit.
+Odkazovat [mapuje části](~/ios/user-interface/controls/ios-maps/index.md) Další informace o zobrazení dat ovládacím prvkem Mapkitu.
 
 <a name="compass" />
 
-## <a name="compass-button"></a>Kompas tlačítko
+## <a name="compass-button"></a>Compass tlačítko
 
-iOS 11 přidává možnost pop kompas mimo mapy a vykreslit ho jinde v zobrazení. Najdete v článku [Tandm ukázkovou aplikaci](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) příklad.
+iOS 11 přidává možnost vyvolat přes pop compass mimo mapy a vykreslit ho jinde v zobrazení. Zobrazit [Tandm ukázkovou aplikaci](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) příklad.
 
-Vytvoření tlačítka, které vypadá jako kompas (při změně orientaci mapy, včetně provozu animace), a vykreslí na další ovládací prvek.
+Vytvoření tlačítka, která vypadá jako compass (včetně živých animace při změně orientace mapy) a vykreslí na jiný ovládací prvek.
 
-![Kompasu tlačítka na navigačním panelu](mapkit-images/compass-sml.png)
+![Kompasu tlačítko v navigačním panelu](mapkit-images/compass-sml.png)
 
 Následující kód vytvoří kompasu tlačítko a vykreslí na navigačním panelu:
 
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` Vlastnost lze použít k řízení viditelnost kompas výchozí uvnitř zobrazení mapy.
+`ShowsCompass` Vlastnost umožňuje řídit viditelnost compass výchozí uvnitř zobrazení mapy.
 
 <a name="scale" />
 
-## <a name="scale-view"></a>Škálování zobrazení
+## <a name="scale-view"></a>Měřítko zobrazení
 
-Přidat měřítka jinde v zobrazení pomocí `MKScaleView.FromMapView()` metody pro získání instance škálování zobrazení přidat jinde v hierarchii zobrazení.
+Přidat škálovací jinde v zobrazení pomocí `MKScaleView.FromMapView()` metodu k získání instance měřítko zobrazení přidat jinde v hierarchii zobrazení.
 
-![Škálování zobrazení jako překryvný obrázek na mapu](mapkit-images/scale-sml.png)
+![Měřítko zobrazení jako překryvný obrázek na mapě](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,15 +233,15 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` Vlastnost lze použít k řízení viditelnost kompas výchozí uvnitř zobrazení mapy.
+`ShowsScale` Vlastnost umožňuje řídit viditelnost compass výchozí uvnitř zobrazení mapy.
 
 <a name="user-tracking" />
 
-## <a name="user-tracking-button"></a>Tlačítko Sledování uživatele
+## <a name="user-tracking-button"></a>Tlačítka pro sledování uživatele
 
-Tlačítko sledování uživatel centra mapy na aktuální umístění uživatele. Použití `MKUserTrackingButton.FromMapView()` metoda získat instanci tlačítko, použít změny formátování a přidat jinde v hierarchii zobrazení.
+Tlačítka pro sledování uživatele centra pro mapování na aktuální umístění uživatele. Použití `MKUserTrackingButton.FromMapView()` metodu k získání instance tlačítka, použít změny formátování a přidání jinde v hierarchii zobrazení.
 
-![Tlačítko umístění uživatele jako překryvný obrázek na mapu](mapkit-images/user-location-sml.png)
+![Tlačítka pro umístění uživatele jako překryvný obrázek na mapě](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);
@@ -256,6 +256,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázka MapKit 'Tandm.](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
+- [Ukázka Mapkitu "Tandm.](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [Co je nového v MapKit (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [Co je nového v Mapkitu (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/237/)

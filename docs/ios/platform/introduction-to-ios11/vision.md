@@ -1,56 +1,56 @@
 ---
-title: Vize Framework v Xamarin.iOS
-description: Tento dokument popisuje, jak používat iOS 11 vize Framework v Xamarin.iOS. Konkrétně popisuje obdélníku detekce a čelí detekce.
+title: Pro zpracování obrazu rozhraní Xamarin.iOS
+description: Tento dokument popisuje, jak používat iOS 11 Vision rozhraní Xamarin.iOS. Konkrétně prodiskutování obdélník detekci a rozpoznávání tváře.
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/31/2016
-ms.openlocfilehash: c44c4b3ab12c1ba448f1befb6f831f5ad9119f18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/31/2017
+ms.openlocfilehash: 4746de2f351e866fd72946b204f97e997c3e88c4
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787416"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350661"
 ---
-# <a name="vision-framework-in-xamarinios"></a>Vize Framework v Xamarin.iOS
+# <a name="vision-framework-in-xamarinios"></a>Pro zpracování obrazu rozhraní Xamarin.iOS
 
-Rozhraní framework vize přidá počet novou bitovou kopii zpracování funkcí do systému iOS 11, včetně:
+Rozhraní pro zpracování obrazu přidává několik nových funkcí do systému iOS 11, včetně pro zpracování obrázků:
 
-- [Detekce obdélníku](#rectangles)
-- [Vzhled detekce](#faces)
-- Počítač Learning Image Analysis (popsané v [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
-- Detekce čárový kód
+- [Detekce obdélník](#rectangles)
+- [Rozpoznávání tváře](#faces)
+- Machine Learning Analýza obrázků (popsáno v [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
+- Detekce čárového kódu
 - Analýza zarovnání obrázku
-- Detekce textu
+- Rozpoznávání textu
 - Detekce horizon
-- Objekt detekce & sledování
+- Detekce a sledování
 
-![Nešlo se tři obdélníků zjistil](vision-images/found-rectangles-tiny.png) ![Nešlo se dvěma řezy zjistil](vision-images/xamarin-home-faces-tiny.png)
+![Fotografie s tři obdélníky zjistil](vision-images/found-rectangles-tiny.png) ![Fotografie se zjistil dvě tváře](vision-images/xamarin-home-faces-tiny.png)
 
-Rámeček zjišťování a zjišťování vzhled jsou podrobněji popsána níže.
+Obdélník detekci a rozpoznávání tváře jsou popsány podrobněji níže.
 
 <a name="rectangles" />
 
-## <a name="rectangle-detection"></a>Detekce obdélníku
+## <a name="rectangle-detection"></a>Detekce obdélník
 
-[VisionRects ukázka](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) ukazuje, jak zpracovat bitovou kopii a kreslení obdélníků zjištěných na něm.
+[VisionRects ukázka](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) ukazuje, jak zpracování obrazu a nakreslit zjištěné obdélníky.
 
-### <a name="1-initialize-the-vision-request"></a>1. Inicializace vize požadavku
+### <a name="1-initialize-the-vision-request"></a>1. Inicializujte žádost o zpracování obrazu
 
-V `ViewDidLoad`, vytvoření `VNDetectRectanglesRequest` odkazující `HandleRectangles` metoda, která bude volána na konci každého požadavku:
+V `ViewDidLoad`, vytvořit `VNDetectRectanglesRequest` odkazující `HandleRectangles` metodu, která bude volána na konci každého požadavku:
 
-`MaximumObservations` By měla být nastavena také vlastnost, jinak bude použita výchozí 1 a bude vrácen pouze jeden výsledek.
+`MaximumObservations` By měla být nastavena také vlastnost, jinak to bude použita výchozí hodnota 1 a vrátí se pouze jeden výsledek.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 RectangleRequest.MaximumObservations = 10;
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování vize
+### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování pro zpracování obrazu
 
-Následující kód spustí zpracování požadavku. V **VisionRects** ukázku, tento kód spustí po uživatel vybral obrázku:
+Následující kód spustí zpracování požadavku. V **VisionRects** ukázku, tento kód se spustí poté, co uživatel vybral obrázku:
 
 ```csharp
 // Run the rectangle detector
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Tato obslužná rutina předá `ciImage` Framework vize `VNDetectRectanglesRequest` který byl vytvořen v kroku 1.
+Tato obslužná rutina předá `ciImage` Framework pro zpracování obrazu `VNDetectRectanglesRequest` , který byl vytvořen v kroku 1.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků vize zpracování
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků zpracování pro zpracování obrazu
 
-Po dokončení detekce obdélníku rozhraní provede `HandleRectangles` metoda, souhrn, které jsou uvedeny níže:
+Po dokončení detekce obdélník rozhraní provede `HandleRectangles` metoda souhrn, které jsou uvedené níže:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -86,40 +86,40 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4. Zobrazit výsledky
+### <a name="4-display-the-results"></a>4. Zobrazení výsledků
 
-`OverlayRectangles` Metoda v **VisionRectangles** ukázka má tři funkce:
+`OverlayRectangles` Metodu **VisionRectangles** ukázka má tři funkce:
 
-- Vykreslování se zdrojovou bitovou kopií,
-- Kreslení obdélníků označíte, kde byla zjištěna každé z nich, a
-- Přidání textový popisek pro každý rámeček pomocí CoreGraphics.
+- Vykreslování zdrojového obrázku
+- Vykreslování rámečku označuje, kde každý z nich byl zjištěn, a
+- Přidání textový popisek pro každý obdélníku pomocí CoreGraphics.
 
 Zobrazení [na ukázkový zdroj](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) pro konkrétní metody CoreGraphics.
 
-![Nešlo se tři obdélníků zjistil](vision-images/found-rectangles-phone-sml.png)
+![Fotografie s tři obdélníky zjistil](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. Další zpracování
 
-Detekce obdélníku je často jenom první krok v řetězu operací, jako třeba s [v tomto příkladu CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), kde se budou předávat obdélníků model CoreML analyzovat psané číslic.
+Detekce obdélníku je často jenom prvním krokem v řetězci operací, jako třeba s [v tomto příkladu CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), kde jsou předány obdélníků modelů CoreML analyzovat rukou psaný číslic.
 
 
 <a name="faces" />
 
-## <a name="face-detection"></a>Vzhled detekce
+## <a name="face-detection"></a>Rozpoznávání tváře
 
-[VisionFaces ukázka](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) funguje podobně jako ochrana **VisionRectangles** ukázkové použití různých třídy žádost o vizi.
+[VisionFaces ukázka](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) funguje podobně jako ochrana čipem **VisionRectangles** vzorkování, pomocí jiné třídy žádost o zpracování obrazu.
 
-### <a name="1-initialize-the-vision-request"></a>1. Inicializace vize požadavku
+### <a name="1-initialize-the-vision-request"></a>1. Inicializujte žádost o zpracování obrazu
 
-V `ViewDidLoad`, vytvoření `VNDetectFaceRectanglesRequest` odkazující `HandleRectangles` metoda, která bude volána na konci každého požadavku.
+V `ViewDidLoad`, vytvořit `VNDetectFaceRectanglesRequest` odkazující `HandleRectangles` metodu, která bude volána na konci každého požadavku.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 ```
 
-### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování vize
+### <a name="2-start-the-vision-processing"></a>2. Spuštění zpracování pro zpracování obrazu
 
-Následující kód spustí zpracování požadavku. V **VisionFaces** ukázkový kód spustí po uživatel vybral obrázku:
+Následující kód spustí zpracování požadavku. V **VisionFaces** tento kód se spustí poté, co uživatel vybral bitovou kopii ukázky:
 
 ```csharp
 // Run the face detector
@@ -129,11 +129,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Tato obslužná rutina předá `ciImage` Framework vize `VNDetectFaceRectanglesRequest` který byl vytvořen v kroku 1.
+Tato obslužná rutina předá `ciImage` Framework pro zpracování obrazu `VNDetectFaceRectanglesRequest` , který byl vytvořen v kroku 1.
 
-### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků vize zpracování
+### <a name="3-handle-the-results-of-vision-processing"></a>3. Zpracování výsledků zpracování pro zpracování obrazu
 
-Po dokončení detekce vzhled obslužná rutina spustí `HandleRectangles` metodu, která provádí zpracování chyb a zobrazí hranice zjištěné řezy a volání `OverlayRectangles` kreslení obdélníků ohraničující na původní obrázek:
+Po dokončení rozpoznávání tváře obslužná rutina provede `HandleRectangles` metodu, která provede zpracování chyb a zobrazí hranice zjištěné tváří a volání `OverlayRectangles` kreslení obdélníků ohraničující na původní obrázek:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -160,25 +160,25 @@ private void HandleRectangles(VNRequest request, NSError error){
 }
 ```
 
-### <a name="4-display-the-results"></a>4. Zobrazit výsledky
+### <a name="4-display-the-results"></a>4. Zobrazení výsledků
 
-`OverlayRectangles` Metoda v **VisionFaces** ukázka má tři funkce:
+`OverlayRectangles` Metodu **VisionFaces** ukázka má tři funkce:
 
-- Vykreslování se zdrojovou bitovou kopií,
-- Kreslení obdélníků pro každý řez detekuje, a
-- Přidání textový popisek pro každý řez pomocí CoreGraphics.
+- Vykreslování zdrojového obrázku
+- Kreslení obdélníku pro každou tvář zjistil, a
+- Přidání textový popisek pro každý obličej pomocí CoreGraphics.
 
 Zobrazení [na ukázkový zdroj](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) pro konkrétní metody CoreGraphics.
 
-![Nešlo se dvěma řezy zjistil](vision-images/found-faces-phone-sml.png)
+![Fotografie se zjistil dvě tváře](vision-images/found-faces-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. Další zpracování
 
-Rozhraní framework vize zahrnuje další funkce pro zjištění funkce rozpoznávání obličeje, jako je například očí a úst. Použití `VNDetectFaceLandmarksRequest` typu, který vrátí `VNFaceObservation` výsledky jako v kroku 3 výše, ale s další `VNFaceLandmark` data.
+Rozhraní pro zpracování obrazu zahrnuje další funkce pro detekci funkce rozpoznávání obličeje, jako je například oči a úst. Použití `VNDetectFaceLandmarksRequest` typ, který vrátí `VNFaceObservation` výsledky jako v kroku 3 výše, ale s požadovanými dodatečnými `VNFaceLandmark` data.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vize obdélníků (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
-- [Vize řezy (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [Pokroky v základní Image - filtry, operačního systému, vize a více (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [Pro zpracování obrazu obdélníky (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
+- [Pro zpracování obrazu tváří (ukázka)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
+- [Zálohy v základní Image - filtry, počítačů, pro zpracování obrazu a další (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/510/)

@@ -5,12 +5,12 @@ ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: cf41948c55c742140896bfb48d9bb4abf25c8d68
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: c3fe98c384a87bdc08ce94e7537d1a6343767561
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37947410"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353880"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
@@ -32,7 +32,7 @@ Funkce Compass funguje tak, že volání `Start` a `Stop` metody pro naslouchán
 public class CompassTest
 {
     // Set speed delay for monitoring changes.
-    SensorSpeed speed = SensorSpeed.Ui;
+    SensorSpeed speed = SensorSpeed.UI;
 
     public CompassTest()
     {
@@ -40,7 +40,7 @@ public class CompassTest
         Compass.ReadingChanged += Compass_ReadingChanged;
     }
 
-    void Compass_ReadingChanged(CompassChangedEventArgs e)
+    void Compass_ReadingChanged(object sender, CompassChangedEventArgs e)
     {
         var data = e.Reading;
         Console.WriteLine($"Reading: {data.HeadingMagneticNorth} degrees");
@@ -62,7 +62,7 @@ public class CompassTest
         }
         catch (Exception ex)
         {
-            // Some other exception has occured
+            // Some other exception has occurred
         }
     }
 }
@@ -74,11 +74,21 @@ public class CompassTest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android neposkytuje o rozhraní API pro načítání daný kompasem. Můžeme využívat akcelerometr a magnetometer k výpočtu záhlaví magnetickém severu, které se doporučuje Google. 
+Android neposkytuje o rozhraní API pro načítání daný kompasem. Můžeme využívat akcelerometr a magnetometer k výpočtu záhlaví magnetickém severu, které se doporučuje Google.
 
 Ve výjimečných případech možná uvidíte nekonzistentní výsledky protože snímačům muset být kalibrován, což zahrnuje přesunutí zařízení přenášená data obrázku 8. Nejlepší způsob, jak to jde k otevření map Google, klepněte na tečku pro vaši polohu a vybrat **kalibrovat compass**.
 
 Mějte na paměti systémem řadu senzorů z vaší aplikace ve stejnou dobu může upravit snímač rychlosti.
+
+## <a name="low-pass-filter"></a>Filtr nízká
+
+Z důvodu jak Android compass hodnoty jsou aktualizovány a počítá, může být potřeba vyhlazení hodnoty. A _předat filtr s nízkou_ lze použít, který zobrazí průměr hodnot sinus a kosinus úhlů a je možné zapnout tak, že nastavíte `ApplyLowPassFilter` vlastnost `Compass` třídy:
+
+```csharp
+Compass.ApplyLowPassFilter = true;
+```
+
+Použije se pouze pro platformu Android. Další informace lze číst [tady](https://github.com/xamarin/Essentials/pull/354#issuecomment-405316860).
 
 --------------
 

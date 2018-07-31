@@ -1,37 +1,38 @@
 ---
-title: Vložené architektury v Xamarin.iOS
-description: Tento dokument popisuje, jak sdílet kód s vložené architektury aplikace pro Xamarin.iOS. To lze provést s mtouch nástroj nebo nativní odkazy.
+title: Vložená rozhraní v Xamarin.iosu
+description: Tento dokument popisuje způsob sdílení kódu pomocí vložené architektury aplikace pro Xamarin.iOS. To můžete udělat s nástroji mtouch nebo nativní odkazy.
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e42f0940fe3fc132c9d381907aad5afbe474c4ad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2018
+ms.openlocfilehash: cce5356fd1d3d9a5cf16370a4843c3541b00a7c0
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787289"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351431"
 ---
-# <a name="embedded-frameworks-in-xamarinios"></a>Vložené architektury v Xamarin.iOS
+# <a name="embedded-frameworks-in-xamarinios"></a>Vložená rozhraní v Xamarin.iosu
 
-_Tento dokument popisuje, jak vývojáři aplikace můžete vložit uživatelské rozhraní ve svých aplikacích._
+_Tento dokument popisuje, jak vývojáři aplikací můžete vložit uživatelské rozhraní ve svých aplikacích._
 
-S iOS 8.0 Apple možné ji vytvořit představuje embedded rozhraní sdílet kód mezi přípony aplikace a hlavní aplikace v Xcode.
+Se systémem iOS 8.0 Apple přinesla možnost vytvořit vložený rámec ke sdílení kódu mezi rozšíření aplikace a hlavní aplikace v Xcode.
 
-Xamarin.iOS 9.0 přidává podporu pro použití těchto vložené architektury (vytvořeny s Xcode) v aplikacích pro Xamarin.iOS. *Zruší **není** možné vytvořit vložený rozhraní z jakéhokoli typu Xamarin.iOS projekty, jenom využívat stávající nativní rozhraní (Objective-C).*
+Xamarin.iOS 9.0 přidává podporu pro používání těchto vložená rozhraní (vytvořenou pomocí Xcode) v aplikacích pro Xamarin.iOS. *Bude **není** možné vytvořit vložená rozhraní z jakéhokoli typu projekty Xamarin.iOS, jen používat stávající nativní rozhraní (Objective-C).*
 
-Existují dva způsoby, jak využívat rozhraní v Xamarin.iOS:
+Existují dva způsoby, jak využívat rozhraní v Xamarin.iosu:
 
-- Rozhraní framework předat nástroj mtouch přidáním následující argumenty další mtouch v projektu **iOS sestavení** možnosti:
+- Předat nástroji mtouch rozhraní přidáním následujícího kódu do další argumenty mtouch v projektu **iOS Build** možnosti:
 
   ```csharp
   --framework:/Path/To/My.Framework
   ```
 
-  Toto musí být nastavena pro každý konfigurací projektu.
+  Toto musí být nastavena pro každou konfiguraci projektu.
 
-- Přidat nativní odkazy z místní nabídky
+- Přidat nativní odkazy v místní nabídce
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -47,30 +48,30 @@ Klikněte pravým tlačítkem na projekt a procházet přidat nativní odkazy
 
 -----
 
-  To bude fungovat pro všechny konfigurace.
+  Bude to fungovat u všech konfigurací.
 
-V budoucích verzích sady Visual Studio pro Mac a nástroje Xamarin pro Visual Studio je možné využívat rozhraní z prostředí IDE (bez úpravy souborů projektu ručně).
+V budoucích verzích sady Visual Studio pro Mac a nástroje Xamarin pro Visual Studio bude možné používat rozhraní z integrovaného vývojového prostředí (bez ruční úpravy souborů projektu).
 
-Několik ukázkových projektů naleznete na [githubu](https://github.com/rolfbjarne/embedded-frameworks)
+Několik ukázkových projektů můžete najít na [githubu](https://github.com/rolfbjarne/embedded-frameworks)
 
 ## <a name="limitations"></a>Omezení
 
-- Vložené architektury jsou podporovány pouze v [Unified](~/cross-platform/macios/unified/index.md) projekty.
-- Vložené architektury jsou podporovány pouze v projektech s cílem nasazení alespoň iOS 8.0.
-- Pokud rozšíření vyžaduje embedded framework, potom kontejner aplikace musí také mít odkaz na rozhraní, jinak nebude rozhraní součástí sady prostředků aplikace.
+- Vložená rozhraní jsou podporovány pouze v [Unified](~/cross-platform/macios/unified/index.md) projekty.
+- Vložená rozhraní jsou podporovány pouze v projektech s cílem nasazení alespoň iOS 8.0.
+- Pokud rozšíření vyžaduje rozšiřovatelnou platformu pro embedded, potom aplikace typu kontejner musí mít také odkaz na framework, jinak rozhraní nebudou zahrnuty do sady prostředků aplikace.
 
-## <a name="the-mono-runtime"></a>Monofonní modulu runtime
+## <a name="the-mono-runtime"></a>Modul Mono runtime
 
-Interně Xamarin.iOS využívá této funkce lze propojit s modulem runtime Mono jako rozhraní, místo propojení Mono runtime staticky do každé rozšíření a kontejneru aplikace.
+Xamarin.iOS interně využívá výhody tato změna povede ke propojit s modulem runtime Mono jako architektura, místo staticky propojení modul Mono runtime do každé rozšíření a aplikace typu kontejner.
 
-Důvodem je automaticky, pokud kontejner je aplikace Unified, obsahuje rozšíření a cílové nasazení je iOS 8.0 nebo vyšší.
+To je automaticky, pokud je aplikace typu kontejner aplikace Unified, obsahuje rozšíření a cílové nasazení je iOS 8.0 nebo vyšší.
 
-Aplikace bez přípon bude stále propojit s modulem runtime Mono staticky, protože je snížení velikosti pro používání rozhraní, pokud existuje jenom jedna aplikace odkazující na ho.
+Aplikace bez přípony se stále propojovat s modulem runtime Mono staticky, protože je snížení velikosti pro používání rozhraní, pokud existuje jenom jedna aplikace odkazuje.
 
-Toto chování je možné přepsat na vývojáři aplikace a přidáním následující jako argument další mtouch v projektu iOS sestavení možnosti:
+Toto chování můžete přepsat vývojář aplikace, přidáním následujícího kódu jako argument další mtouch v projektu iOS možnosti sestavení:
 
-- `--mono:static`: Propojí staticky s Mono runtime.
-- `--mono:framework`: Propojení s Mono runtime jako rozhraní.
+- `--mono:static`: Propojí staticky s modulem runtime Mono.
+- `--mono:framework`: Odkazy s modulem runtime Mono jako rozhraní.
 
-Jeden scénář propojení s modulem runtime Mono jako rozhraní i pro aplikace, aniž by rozšíření se snížení velikosti spustitelný soubor, abyste vyřešili omezením velikosti, která vynucuje Apple na spustitelný soubor. Pro referenci Mono runtime přidá přibližně 1.7MB za architektura (jak z Xamarin.iOS 8.12, ale svůj se liší mezi verzemi a to i mezi aplikacemi). Rozhraní Mono přidá přibližně 2.3MB za architekturu, což znamená, že pro jeden – Architektura aplikace bez libovolná rozšíření, což odkaz na aplikaci s modulem runtime Mono jako rozhraní zmenšit spustitelný soubor ve ~1.7MB, ale přidat ~2.3MB rozhraní, což v ~0.6MB větší aplikace všechny najednou.
+Jeden scénář pro propojení s modulem runtime Mono jako rozhraní i pro aplikace bez přípony je zmenšit velikost spustitelného souboru k překonání omezení velikosti, které Apple vynucuje na spustitelný soubor. Pro odkaz přidá modul Mono runtime přibližně 1.7MB za architekturu (jak z Xamarin.iOS 8.12, ale jeho se liší mezi verzemi a dokonce i mezi aplikacemi). Mono framework přidá přibližně 2.3MB za architekturu, která znamená, že pro jednoho – Architektura aplikace bez všechna rozšíření, aby propojení aplikace s modulem runtime Mono jako architektura zmenšovat podle ~1.7MB spustitelný soubor, ale přidat ~2.3MB rozhraní, což v ~0.6MB větší aplikace všechny najednou.
 

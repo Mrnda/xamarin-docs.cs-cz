@@ -1,33 +1,34 @@
 ---
-title: Jak se downgradovat balíček NuGet?
+title: Jak se downgrade balíčku NuGet?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2375F833-A630-471E-B8E9-5AD2CB81F264
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 50a96340f8dada802303d6de140812801fdc836d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 72fdf7246b148fa95ea312284957072ecda47121
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33947518"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351213"
 ---
-# <a name="how-do-i-downgrade-a-nuget-package"></a>Jak se downgradovat balíček NuGet?
+# <a name="how-do-i-downgrade-a-nuget-package"></a>Jak se downgrade balíčku NuGet?
 
-Visual Studio pro Mac & Visual Studio k dispozici funkce pro výběr starších verzí balíčků a jejich instalace automaticky. Podobně jako u jak aktualizace balíčků. Tyto kroky jsou popsané níže.
+Visual Studio pro Mac a Visual Studio k dispozici funkce pro starší verze balíčků výběru a instalace je automaticky. Podobně jako způsob aktualizace balíčků. Tyto kroky jsou popsané níže.
 
 ## <a name="visual-studio"></a>Visual Studio
 1. Přejděte na **nástroje > Správce balíčků NuGet > Konzola správce balíčků**
-2. Nastavte projekt pod **výchozí projekt**
+2. Nastavení projektu v rámci **výchozí projekt**
 3. Použijte následující syntaxi:
 
-    > Install-Package [název balíčku]-verze [kartě nabídky verze]
+    > [Název balíčku] Install-Package-verze [kartu pro nabídky verze]
 
-Vám může také zkopírujte a vložte přesný příkaz z balíčku NuGet stránky. Příklad pro Xamarin.Forms. [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
+Můžete také zkopírovat a vložit přesný příkaz ze stránky balíčku NuGet. Příklad pro Xamarin.Forms. [https://www.nuget.org/packages/Xamarin.Forms/](https://www.nuget.org/packages/Xamarin.Forms/)
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
-1. V projektu, klikněte pravým tlačítkem na složku balíčky & Vyberte **přidání balíčků**
-2. V searchbar můžete pro vyhledání požadované balíčky následující syntaxi:
+1. Ve vašem projektu, klikněte pravým tlačítkem na složku packages příkazu & select **přidat balíčky**
+2. V searchbar můžete k vyhledání požadované balíčky následující syntaxi:
 
     `[PackageName] version:*`
 
@@ -39,5 +40,5 @@ Vám může také zkopírujte a vložte přesný příkaz z balíčku NuGet str�
 
     `Xamarin.Forms version:1.4`
 
-*Poznámka: Pokud přidáte mezeru mezi `version:` & číslo verze hledání budou chovat, jako kdyby byla zadána žádná verze.*
+*Poznámka: Pokud chcete přidat mezeru mezi `version:` & číslo verze, hledání se chovat, jako by nebyla zadána žádná verze.*
 
