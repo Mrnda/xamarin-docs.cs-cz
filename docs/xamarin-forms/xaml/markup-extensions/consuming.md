@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995979"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393669"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Používání rozšíření značek XAML
 
@@ -24,12 +24,12 @@ Rozšíření značek XAML pomáhají zlepšit výkon a flexibilitu XAML tím, �
 - [`x:Array`](#array) &ndash; Vytvoření pole objektů určitého typu.
 - [`x:Null`](#null) &ndash; Nastavte atribut na `null` hodnotu.
 
-Tři další rozšíření značek XAML v minulosti se nepodporuje v jiných implementacích XAML a jsou také podporovány Xamarin.Forms. Tyto možnosti jsou popsány podrobněji v jiných článcích:
+Další rozšíření značek XAML v minulosti se nepodporuje v jiných implementacích XAML a jsou také podporovány Xamarin.Forms. Tyto možnosti jsou popsány podrobněji v jiných článcích:
 
 - `StaticResource` &ndash; odkaz na objekty ze slovníku prostředků, jak je popsáno v článku [ **zdrojových slovnících**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; reakce na změny v objektech ve slovníku prostředků, jak je popsáno v článku [ **dynamické styly**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; vytvořit odkaz mezi vlastnostmi dva objekty, jak je popsáno v článku [ **datové vazby**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; provádí datové vazby v šabloně ovládacího prvku, jak je popsáno v článku [**vazby ze šablony ovládacího prvku**] / vodítka/xamarin-forms/aplikace – základy/šablony/ovládací prvek – šablony /-vazba šablony /)
+- `TemplateBinding` &ndash; provádí datové vazby v šabloně ovládacího prvku, jak je popsáno v článku [ **vazby ze šablony ovládacího prvku**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Rozložení používá rozšíření vlastních značek [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Toto rozšíření značek je popsaný v článku [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 

@@ -1,55 +1,53 @@
 ---
-title: Místní nabídky
+title: Místní nabídka
+description: Jak přidat místní nabídku, která je ukotven do konkrétního zobrazení.
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763147"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393656"
 ---
-# <a name="popup-menu"></a>Místní nabídky
+# <a name="popup-menu"></a>Místní nabídka
 
-`PopupMenu` Třída přidává podporu pro zobrazení místní nabídky, které jsou připojeny ke konkrétní zobrazení. Následující obrázek znázorňuje místní nabídky pomocí tlačítka předloží druhý zvýrazněná stejně, jako je vybraná položka:
+[PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (také nazývané _nabídku_) je nabídka, která je ukotven na konkrétní zobrazení. V následujícím příkladu obsahuje jednu aktivitu tlačítko. Když uživatel klepne na tlačítko, zobrazí se tři položky místní nabídky:
 
- [![Příklad PopopMenu s třemi tři položky](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 přidat několik nových funkcí, které `PopupMenu` která usnadňují trochu pracovat, konkrétně:
-
--   **Inflate** &ndash; The zvýšilo metoda je nyní k dispozici přímo na třídě PopupMenu.
--   **DismissEvent** &ndash; PopupMenu třída má teď DismissEvent.
-
-Podívejme se na tato vylepšení. V tomto příkladu máme jediné aktivity, která obsahuje tlačítko. Když uživatel klikne na tlačítko, se zobrazí místní nabídky, jak je uvedeno níže:
-
- [![Příklad aplikaci spuštěnou v emulátoru s tlačítko a 3 položky místní nabídky](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![Příklad aplikace s tlačítko a tři položky místní nabídky](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
-## <a name="creating-a-popup-menu"></a>Vytváření místní nabídky
+## <a name="creating-a-popup-menu"></a>Vytváří se místní nabídka
 
-Když vytvoříme instanci `PopupMenu`, musíme předat odkaz na jeho konstruktoru `Context`, a také zobrazení, ke kterému je připojena v nabídce. V tomto případě vytvoříme `PopupMenu` obslužné rutiny události kliknutí pro naše tlačítko, která má název `showPopupMenu`.
-Toto tlačítko je také zobrazit, na kterou jsme budete připojení `PopupMenu`, jak je znázorněno v následujícím kódu:
+Prvním krokem je vytvoření souboru prostředků nabídek pro nabídky a umístit ji **prostředky/nabídka**. Například následující kód XML je kód pro tři položky nabídky zobrazí v předchozím snímku obrazovky **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-V systému Android 3, vyžaduje nejprve získat odkaz na kód, který zvýšilo nabídky v prostředek XML `MenuInflator`a pak zavolají jeho `Inflate` metoda s ID prostředku XML, která obsahovala v nabídce a instance nabídky zvýšilo do. Tento postup pořád funguje v systému Android 4 a vyšší verze jako kód níže znázorňuje:
+Dále vytvořte instanci `PopupMenu` a ukotvit k jeho zobrazení. Při vytváření instance `PopupMenu`, předat konstruktoru odkaz na `Context` a také zobrazení, ke které se v nabídce připojena. Místní nabídka je ukotven v důsledku toho tato zobrazení během jeho vytváření.
+
+V následujícím příkladu `PopupMenu` se vytvoří v obslužnou rutinu události kliknutí pro tlačítko (který se nazývá `showPopupMenu`). Toto tlačítko je také zobrazení, ke kterému `PopupMenu` je ukotven, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-Od verze Android 4 však můžete nyní volat `Inflate` přímo na instanci systému `PopupMenu`. Díky tomu kód přesnější, jak je vidět tady:
+A konečně, musí být místní nabídka *zvýšeným* nabídce prostředku, který jste vytvořili dříve. V následujícím příkladu volání v nabídce [Inflate](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/) metoda je přidána a jeho [zobrazit](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/) metoda je volána k zobrazení:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-Ve výše uvedeném kódu, po nafouknutí nabídce jednoduše říkáme `menu.Show` zobrazíte na obrazovce.
 
+## <a name="handling-menu-events"></a>Zpracování události nabídky
 
-## <a name="handling-menu-events"></a>Zpracování událostí nabídky
-
-Když uživatel vybere položku nabídky `MenuItemClick` , bude vyvolána událost a v nabídce se se zavře. Klepnutím kamkoli mimo nabídce bude jednoduše zprávu zavřete. V obou případech od verze Android 4, když je v nabídce odmítnuta jeho `DismissEvent` , bude vyvolána. Následující kód přidá obslužné rutiny události pro oba `MenuItemClick` a `DismissEvent` události:
+Když uživatel vybere položku nabídky [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/) klikněte na událost se vyvolá a nabídky se zruší. Klepnutím na libovolné místo mimo nabídky bude jednoduše zavřít. V obou případech, když v nabídce se zavře jeho [DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/) , bude vyvolána. Následující kód přidává obslužné rutiny událostí pro obě `MenuItemClick` a `DismissEvent` události:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>Související odkazy
 
 - [PopupMenuDemo (ukázka)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [Představení Sandwichovy Zmrzlinová](http://www.android.com/about/ice-cream-sandwich/)
-- [Platformu Android 4.0](http://developer.android.com/sdk/android-4.0.html)
