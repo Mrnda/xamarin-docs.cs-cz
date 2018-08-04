@@ -1,54 +1,29 @@
 ---
-title: Řešení potíží s iOS 11 aplikace vytvořené s Xamarin.iOS
-description: Tento článek popisuje prostředky, které lze použít pro řešení potíží při vývoji aplikace Xamarin.iOS. Popisuje vytváření sestav chyb, poznámky k verzi, blogu Xamarin verze a možnosti odborné pomoci.
+title: Poradce při potížích pro zařízení s iOS 11 a Xamarin.iOS
+description: Tento článek popisuje prostředky, které lze použít pro řešení problémů při vývoji aplikace Xamarin.iOS. Popisuje hlášení chyb, poznámky k verzi, blogu Xamarinu vydané verze a možnosti odborné pomoci.
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2017
-ms.openlocfilehash: d8672a111faf7c45d9d8eb7f9d7dd5f993c578a1
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 22b705c742d5dedfd9eb22ed2a040506d9cbf0f3
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067011"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514500"
 ---
-# <a name="troubleshooting-ios-11-apps-built-with-xamarinios"></a>Řešení potíží s iOS 11 aplikace vytvořené s Xamarin.iOS
+# <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>Poradce při potížích pro zařízení s iOS 11 a Xamarin.iOS
 
-Následující části uvádějí některé známé problémy, ke kterým dochází při používání iOS 11 s Xamarin.iOS a pokud je k dispozici řešení těchto problémů:
+Použijte v následujících zdrojích informací při řešení problémů při používání Xamarin IOS 11:
 
-- [Zasílání zpráv o chybách](#Reporting-Bugs)
-- [Zpráva k vydání verze](#Release-Notes)
-- [Blog verze Xamarin](#Xamarin-Releases-Blog)
-- [Fóra a StackOverflow](#Forums-and-StackOverflow)
+## <a name="known-issues-and-troubleshooting"></a>Známé problémy a řešení potíží
 
-> [!IMPORTANT]
-> Xamarin Studio nebude fungovat s Xcode 9.
-> [Proveďte upgrade na Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/).
+Pokud se vyskytnou potíže vytvářející aplikace pro iOS 11 s využitím kódu Xamarin, zkontrolujte [poznámky k verzi](http://releases.xamarin.com/), [Xamarin.iOS fóra](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla sledování](https://bugzilla.xamarin.com/query.cgi?product=iOS), a [ GitHub](https://github.com/xamarin/xamarin-macios/issues) pro stávající potíže.
 
-<a name="Reporting-Bugs" />
+Pokud si myslíte, jste nalezli Chyba v Xamarin.iosu, ohlaste ho [na Githubu](https://github.com/xamarin/xamarin-macios/issues).
 
-## <a name="reporting-bugs"></a>Zasílání zpráv o chybách
+## <a name="forums-and-stackoverflow"></a>Lidi na fórech a StackOverflow
 
-Pro problémy se službou podpory pro Xamarin iOS 11, která není uvedena v této zprávě k vydání verze nebo Blog verzích Xamarin, nahlaste jejich [Bugzilla](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS). Bugzilla je nejlepší způsob, jak informovat technického týmu problémy a došlo k potížím. postaráno rychle. Kromě toho přidání užitečné nebo relativní informace k existující sestavy chyb pomáhá technici a reprodukujte sledovat problémy a přidá do těchto problémů, které může vést k jejich váhy opravy stane s vyšší prioritou. Je velmi appreciated vaše Nápověda!
-
-<a name="Release-Notes" />
-
-## <a name="release-notes"></a>Poznámky k vydané verzi
-
-Známé problémy, řešení a opravy chyb s konkrétními verzemi Xamarin.iOS, najdete v tématu [aktuální verze a verze Preview](https://developer.xamarin.com/releases/current/) stránky. Obsahuje nejnovější informace z kanály Alpha, Beta a stabilní verze.
-
-<a name="Xamarin-Releases-Blog" />
-
-## <a name="xamarin-releases-blog"></a>Blog verze Xamarin
-
-[Xamarin verzích Blog](https://releases.xamarin.com/) je jiný zdroj informací o nejnovější Alpha a beta verzi sestavení Xamarin.iOS. Zobrazí se seznam oprav, které jsou součástí dané verze a známé problémy, které neexistuje.
-
-<a name="Forums-and-StackOverflow" />
-
-## <a name="forums-and-stackoverflow"></a>Fóra a StackOverflow
-
-Odpovědi na konkrétní dotazy týkající se použití nebo implementace funkce konkrétní iOS 11 v Xamarin.iOS, Xamarin [iOS fórum](http://forums.xamarin.com/categories/ios) poskytuje velkému množství informací. [StackOverflow](http://stackoverflow.com/search?tab=newest&q=xamarin) je jiný dobrý zdroj informací uživatelů. pomoc uživatelům.
-
-Pokud se domníváte, že jste našli chyby v Xamarin.iOS, nezapomeňte prosím soubor sestavy chyb na Bugzilla kromě zaslat dotaz na fóra nebo StackOverflow.
+Odpovědi na konkrétní otázky týkající se použití nebo implementace funkce konkrétní iOS 11 v Xamarin.iOS, Xamarin [iOS fórum](http://forums.xamarin.com/categories/ios) nabízí celou řadu informací. [StackOverflow](http://stackoverflow.com/search?tab=newest&q=xamarin) je jiný Dobrým zdrojem informací uživateli. pomoc uživatelům.
