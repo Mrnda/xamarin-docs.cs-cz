@@ -329,6 +329,7 @@
 ### [Pravidla analýzy Xamarin.iOS](troubleshooting/xamarin-ios-analysis.md)
 ### [Chybové zprávy (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Nejčastější dotazy](troubleshooting/questions/index.md)
+#### [Ladění přes Xcode](troubleshooting/questions/debugging-with-xcode.md)
 #### [Můžu použít virtuální počítač Mac se Xamarinem?](troubleshooting/questions/mac-vm.md)
 #### [Stažení předchozí verzi Xcode](troubleshooting/questions/previous-xcode.md)
 #### [Kde můžu nastavit umístění sad SDK pro iOS?](troubleshooting/questions/ios-sdk.md)

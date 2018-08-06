@@ -409,8 +409,8 @@ Když stránku obsahující `WrapLayout` se zobrazí, asynchronně přistupuje k
 Následující snímky obrazovky zobrazit `WrapLayout` po je otočený k šířku:
 
 ![](custom-images/landscape-ios.png "Ukázkový snímek obrazovky aplikace na šířku iOS")
-![](custom-images/landscape-android.png "ukázka Android snímek obrazovky na šířku aplikace") 
- ![ ] (custom-images/landscape-uwp.png " Ukázkový snímek obrazovky na šířku aplikace UPW")
+![](custom-images/landscape-android.png "ukázka Android snímek obrazovky na šířku aplikace")
+![](custom-images/landscape-uwp.png " Ukázkový snímek obrazovky na šířku aplikace UPW")
 
 Počet sloupců v jednotlivých řádcích závisí na velikosti fotografií, šířka obrazovky a počet pixelů na jednotku nezávislých na zařízení. [ `Image` ](xref:Xamarin.Forms.Image) Prvky asynchronně načíst fotografie a proto `WrapLayout` třídy obdrží častých volání jeho [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) metody jako každý `Image` Element obdrží novou velikost podle načíst fotografií.
 
