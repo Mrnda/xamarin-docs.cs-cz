@@ -121,7 +121,7 @@ Projekty aplikace specifické pro platformu referenční kód sdílené plus ost
 
 Projekty aplikace každý odkazovat sdílených projektů a obsahovat kód uživatelského rozhraní potřebný k dispozici funkce pro uživatele, jak je znázorněno v tyto snímky obrazovky:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Aplikace projekty každý odkaz na projekt sdílené") ![ ] (setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "aplikace projekty každý odkaz sdílených projektů")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Aplikace projekty každý odkaz na projekt sdílené") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "aplikace projekty každý odkaz sdílených projektů")
 
 
 Konkrétní příklady, jak by měly být navrženy projekty jsou uvedeny v případové studie.

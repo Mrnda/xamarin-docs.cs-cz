@@ -29,7 +29,7 @@ V tomto článku se dozvíte o těchto tématech, která poskytuje sice solidní
 
 Pro ilustraci protokoly a delegáti, využijeme jednoduché mapy aplikace, která přidá poznámky na mapu, jak je vidět tady:
 
- [![](delegates-protocols-and-events-images/01-map.png "Příklad jednoduchého mapy aplikace, které přidá poznámky mapy") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "příklad poznámky přidat na mapu")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "Příklad jednoduchého mapy aplikace, které přidá poznámky mapy")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "příklad poznámky přidat na mapu")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Před boji se této aplikace, můžeme začít pohledem na události UIKit .NET.
 

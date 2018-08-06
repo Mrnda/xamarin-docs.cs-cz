@@ -22,7 +22,7 @@ ms.locfileid: "34788664"
 Nabízená oznámení by měly být udržovány stručný a obsahovat pouze dostatek dat oznámení mobilní aplikace, jestli ho měli kontaktovat serverová aplikace pro aktualizaci. Například při doručení nových e-mailů, je serverová aplikace by upozornit pouze mobilních aplikací, který byl doručen nových e-mailů. Oznámení nebude obsahovat nových e-mailů sám sebe. Mobilní aplikace by pak nové e-maily ze serveru načíst, že je vhodné
 
 V centru nabízených oznámení v iOS se *nabízených oznámení Apple brány Service (APNS)*. To je služba poskytovaných společností Apple, která je odpovědná za směrování oznámení z aplikační server na zařízení s iOS.
-Následující obrázek ilustruje topologii nabízená oznámení iOS: ![ ] (remote-notifications-in-ios-images/image4.png "tento obrázek ilustruje topologii nabízená oznámení iOS")
+Následující obrázek ilustruje topologii nabízená oznámení iOS: ![](remote-notifications-in-ios-images/image4.png "tento obrázek ilustruje topologii nabízená oznámení iOS")
 
 Vzdálená oznámení sami jsou formátu řetězce, které splňovat do formátu JSON a protokoly v [The datová část oznámení](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) části [nabízená oznámení průvodci programováním místních a](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)v [dokumentaci pro vývojáře iOS](https://developer.apple.com/devcenter/ios/index.action).
 

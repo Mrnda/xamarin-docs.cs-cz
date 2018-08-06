@@ -113,7 +113,7 @@ Alespoň jeden vlastnosti RootElement je potřebná ke spuštění procesu MonoT
 
 Pokud je vlastnosti RootElement inicializovat pomocí hodnoty elementu/section tato hodnota se používá k vyhledání podřízený Element, který bude poskytovat přehled o konfiguraci, který je vykreslen na pravé straně obrazovky. Například následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, "Dessert", včetně hodnoty vybrané desert.
 
- [![](images/image4.png "Tento snímek obrazovky znázorňuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané desert") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Následující snímek obrazovky ilustruje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané poušť")](images/image5.png#lightbox)
+ [![](images/image4.png "Tento snímek obrazovky znázorňuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané desert")](images/image4.png#lightbox) [![](images/image5.png "to Následující snímek obrazovky ilustruje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané poušť")](images/image5.png#lightbox)
 
 Kořenových elementů můžete také použít uvnitř oddíly k aktivaci načtení nové stránky vnořené konfigurace, jak je uvedeno výše. Při použití v tomto režimu titulek, zadat se používá při vykreslit v rámci oddílu a slouží také jako název pro podstránku. Příklad:
 

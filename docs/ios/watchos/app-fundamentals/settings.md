@@ -63,7 +63,7 @@ var userName = shared.StringForKey ("name_preference");
 
 Uživatelé budou komunikovat s nastavením přes nové **Apple Watch** aplikace na jejich zařízení iPhone. Tato aplikace umožňuje uživatelům zobrazit či skrýt aplikace sledovat a také upravit nastavení vystavené pomocí **nastavení Watch.bundle**.
 
-![](settings-images/applewatch-1.png "Příklad nastavení aplikace") ![ ] (settings-images/applewatch-2.png "příklad nastavení aplikace")
+![](settings-images/applewatch-1.png "Příklad nastavení aplikace") ![](settings-images/applewatch-2.png "příklad nastavení aplikace")
 
 
 

@@ -49,7 +49,7 @@ Modální obrazovky může být buď jeden scény, nebo použijte na stránce ro
 
 Uvede scény jako zásobníku, která může být navigaci zpátky pomocí, podobně jako `UINavigationController` funguje v systému iOS. Scény můžete vloženy do zásobníku navigační a odebrány (buď prostřednictvím kódu programu, nebo po výběru uživatele).
 
-![](navigation-images/hierarchy-1.png "Scény může být vloženy do zásobníku navigační") ![ ] (navigation-images/hierarchy-2.png "scény může být odebrány z navigační zásobníku")
+![](navigation-images/hierarchy-1.png "Scény může být vloženy do zásobníku navigační") ![](navigation-images/hierarchy-2.png "scény může být odebrány z navigační zásobníku")
 
 Stejně jako u iOS, levé straně edge prstem přejde zpět na rodičovský ovladač v zásobníku hierarchické navigace.
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 Na stránce rozhraní prstem zleva doprava, podobně jako `UIPageViewController` funguje v systému iOS. Ve spodní části obrazovky zobrazit stránku, která je aktuálně zobrazený se zobrazí indikátor tečky.
 
-![](navigation-images/paged-1.png "První stránka ukázka") ![ ] (navigation-images/paged-2.png "ukázka druhé stránce") ![ ] (navigation-images/paged-5.png "ukázka páté stránky")
+![](navigation-images/paged-1.png "První stránka ukázka") ![](navigation-images/paged-2.png "ukázka druhé stránce") ![](navigation-images/paged-5.png "ukázka páté stránky")
 
 
 Chcete-li rozhraní založené na stránku na hlavní uživatelské rozhraní pro sledování aplikace, použijte `ReloadRootControllers` s pole rozhraní řadiče a kontexty:

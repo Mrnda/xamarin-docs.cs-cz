@@ -157,7 +157,7 @@ Je souhrnné informace o přijetí změn – Pokud chcete aktualizaci jako uživ
 
 ![](interactivity-images/refresh-start.png "ListView o přijetí změn v průběhu aktualizace")
 
-O přijetí změn – Pokud chcete aktualizaci jako uživatel vydal operace přijetí změn. Je to, co se uživateli zobrazí, když chcete aktualizovat seznam: ![ ] (interactivity-images/refresh-in-progress.png "ListView o přijetí změn do dokončení aktualizace")
+O přijetí změn – Pokud chcete aktualizaci jako uživatel vydal operace přijetí změn. Je to, co se uživateli zobrazí, když chcete aktualizovat seznam: ![](interactivity-images/refresh-in-progress.png "ListView o přijetí změn do dokončení aktualizace")
 
 ListView poskytuje několik událostí, které umožní reagovat na události o přijetí změn – aktualizace.
 

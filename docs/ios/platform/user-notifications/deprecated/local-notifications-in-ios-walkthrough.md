@@ -116,7 +116,7 @@ Umožní vytvořit jednoduchou aplikaci, která se zobrazí místní oznámení 
 
 1. Nakonec spusťte aplikaci. V systému iOS 8 budete vyzváni k povolit oznámení. Klikněte na tlačítko **OK** a potom klikněte na tlačítko **přidat oznámení** tlačítko. Po krátkém čekání byste měli vidět dialogového okna výstrah, jak je znázorněno na následujících snímcích obrazovky:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Potvrzují se možnost Odeslat oznámení") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "tlačítko pro přidání oznámení") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "dialogového okna oznámení výstrah")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Potvrzují se možnost Odeslat oznámení") ![](local-notifications-in-ios-walkthrough-images/image1.png "tlačítko pro přidání oznámení") ![](local-notifications-in-ios-walkthrough-images/image2.png "dialogového okna oznámení výstrah")
 
 ## <a name="summary"></a>Souhrn
 

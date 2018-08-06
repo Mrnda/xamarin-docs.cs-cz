@@ -21,7 +21,7 @@ PRO MT. D podporuje vytváření uživatelského rozhraní, které jsou deklarov
 
 PRO MT. D podporuje celou škálu funkcí, které jsou k dispozici v rozhraní API pro prvky při použití formátu JSON. Například aplikace na následujícím snímku obrazovky je zcela deklarovat pomocí formátu JSON:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Vraťme se k příklad z [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurz ukazuje, jak přidat obrazovky podrobností úlohy pomocí formátu JSON.
 

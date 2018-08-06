@@ -109,8 +109,8 @@ Klikněte na tlačítko **nákupy v aplikaci** vytváření nebo editace vaši p
 
 Postup přidání nové produkty má dva kroky:
 
-1.   Zvolte typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "zvolte typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   Zadejte atributy produktu, včetně Id produktu, cenová úroveň a lokalizované popisy: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "zadání atributů produktů")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   Zvolte typ produktu: [![](in-app-purchase-basics-and-configuration-images/image8.png "zvolte typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Zadejte atributy produktu, včetně Id produktu, cenová úroveň a lokalizované popisy: [![](in-app-purchase-basics-and-configuration-images/image9.png "zadání atributů produktů")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Pole, vyžaduje se pro každý produkt nákupy v aplikaci jsou následující:
 

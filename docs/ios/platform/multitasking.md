@@ -19,7 +19,7 @@ ms.locfileid: "34787952"
 
 _iOS 9 podporuje dvě aplikace běžící na stejnou dobu, pomocí snímku přes nebo rozděleným zobrazením. Podporuje také obraz v obraze přehrávání videa._
 
-![](multitasking-images/about02-sml.png "Rozdělení Příklad obrazovky") ![ ] (multitasking-images/about03-sml.png "příklad obrázek v obrázku")
+![](multitasking-images/about02-sml.png "Rozdělení Příklad obrazovky") ![](multitasking-images/about03-sml.png "příklad obrázek v obrázku")
 
 iOS 9 přidává podporu multitasking pro spouštění dvě aplikace ve stejnou dobu na konkrétní iPad hardwaru. Multitasking pro iPad je podporována prostřednictvím následujících funkcí:
 

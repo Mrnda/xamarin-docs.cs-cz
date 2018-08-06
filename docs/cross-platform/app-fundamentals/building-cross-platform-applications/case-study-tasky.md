@@ -479,7 +479,7 @@ Výsledná aplikace vypadat například takto na jednotlivých platformách:
 
 Aplikace používá návrh iOS standardní uživatelského rozhraní, jako je tlačítko "Přidat" se umístí na navigačním panelu a pomocí integrovaných **plus (+)** ikonu. Taky používá výchozí `UINavigationController` "zadní" tlačítko chování a podporuje 'prstem odstranit' v tabulce.
 
- [![](case-study-tasky-images/ios-taskylist.png "Také použije výchozí chování UINavigationController tlačítko Zpět a podporuje prstem odstranění v tabulce") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "také používá výchozí UINavigationController chování tlačítka Zpět a podporuje prstem odstranění v tabulce")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Také použije výchozí chování UINavigationController tlačítko Zpět a podporuje prstem odstranění v tabulce")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "také používá výchozí UINavigationController chování tlačítka Zpět a podporuje prstem odstranění v tabulce")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Aplikace pro Android používá integrované ovládací prvky, včetně předdef
 
 Aplikace Windows Phone používá standardní rozložení, vyplní panelu aplikace v dolní části obrazovky místo navigačního panelu v horní části.
 
- [![](case-study-tasky-images/wp-taskylist.png "Aplikace Windows Phone používá standardní rozložení, vyplní panelu aplikace v dolní části obrazovky místo navigačního panelu v horní části") ](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "Windows Phone aplikace používá standardní rozložení, vyplní panelu aplikace v dolní části obrazovky místo navigačního panelu v horní části")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Aplikace Windows Phone používá standardní rozložení, vyplní panelu aplikace v dolní části obrazovky místo navigačního panelu v horní části")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone aplikace používá standardní rozložení, vyplní panelu aplikace v dolní části obrazovky místo navigačního panelu v horní části")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 

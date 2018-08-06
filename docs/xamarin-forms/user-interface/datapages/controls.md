@@ -62,11 +62,11 @@ Následující příklady zahrnují `DynamicResource` odkazy, které by musela e
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Ovládací prvek HeroImage v Androidu") ![ ] (controls-images/heroimage-dark-android.png "HeroImage ovládacího prvku v Androidu")
+![](controls-images/heroimage-light-android.png "Ovládací prvek HeroImage v Androidu") ![](controls-images/heroimage-dark-android.png "HeroImage ovládacího prvku v Androidu")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Ovládací prvek HeroImage v Iosu") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage ovládacího prvku v Iosu")
+![](controls-images/heroimage-light-ios.png "Ovládací prvek HeroImage v Iosu") ![](controls-images/heroimage-dark-ios.png "HeroImage ovládacího prvku v Iosu")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Tyto snímky obrazovky ukazují `ListItem` na platformy iOS a Android pomocí sv
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Ovládacího prvku ListItem v Androidu") ![ ] (controls-images/listitem-dark-android.png "ovládacího prvku ListItem v Androidu")
+![](controls-images/listitem-light-android.png "Ovládacího prvku ListItem v Androidu") ![](controls-images/listitem-dark-android.png "ovládacího prvku ListItem v Androidu")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Ovládacího prvku ListItem v Iosu") ![ ] (controls-images/listitem-dark-ios.png "ovládacího prvku ListItem v Iosu")
+![](controls-images/listitem-light-ios.png "Ovládacího prvku ListItem v Iosu") ![](controls-images/listitem-dark-ios.png "ovládacího prvku ListItem v Iosu")
 
 
 ## <a name="custom-control-example"></a>Příklad vlastního ovládacího prvku
@@ -128,11 +128,11 @@ By měl vypadat jako na snímcích obrazovky níže použití barev odpovídají
 
 **Android**
 
-![](controls-images/cardview-light-android.png "CardView vlastní ovládací prvek na Androidu") ![ ] (controls-images/cardview-dark-android.png "CardView vlastní ovládací prvek v Androidu")
+![](controls-images/cardview-light-android.png "CardView vlastní ovládací prvek na Androidu") ![](controls-images/cardview-dark-android.png "CardView vlastní ovládací prvek v Androidu")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "CardView vlastní ovládací prvek v Iosu") ![ ] (controls-images/cardview-dark-ios.png "CardView vlastní ovládací prvek v Iosu")
+![](controls-images/cardview-light-ios.png "CardView vlastní ovládací prvek v Iosu") ![](controls-images/cardview-dark-ios.png "CardView vlastní ovládací prvek v Iosu")
 
 <a name="custom" />
 
