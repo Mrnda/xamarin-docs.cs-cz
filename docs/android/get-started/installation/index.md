@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241412"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573513"
 ---
 # <a name="setup-and-installation"></a>Nastavení a instalace
 
@@ -39,6 +39,6 @@ Tyto články popisují, jak nastavit emulátoru Androidu pro testování a lad�
 
 Tento článek vysvětluje, jak nastavit fyzické zařízení s Androidem a připojit ho na vývojovém počítači tak, aby zařízení může použít ke spuštění a ladění aplikací Xamarin.Android.
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[OpenJDK Microsoftu Náhled](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Mobilní aplikace Microsoft OpenJDK ve verzi Preview](~/android/get-started/installation/openjdk.md)
 
-Tento průvodce popisuje kroky pro přepnutí na verzi preview od Microsoftu distribuce OpenJDK.
+Tento průvodce popisuje kroky pro přepnutí na verzi preview od Microsoftu distribuce OpenJDK. Toto rozdělení OpenJDK je určená pro vývoj pro mobilní zařízení.

@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270469"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520282"
 ---
 # <a name="sharing-code-overview"></a>Přehled sdílení kódu
 
@@ -19,7 +19,7 @@ _Tento dokument porovnává různé metody sdílení kódu mezi projekty různé
 
 Existují tři metody pro sdílení kódu mezi aplikacemi, napříč platformami:
 
-- [**Knihovny .NET standard** ](#Net_Standard) – projekty .NET Standard teď můžete implementovat kód sdílet napříč různými platformami a přístup velký počet rozhraní API pro .NET (v závislosti na verzi). .NET standard 1.0 1.6 implementace postupně větší sady rozhraní API, zatímco .NET Standard 2.0 poskytuje nejlepší pokrytí.
+- [**Knihovny .NET standard** ](#Net_Standard) – projekty .NET Standard teď můžete implementovat kód sdílet napříč různými platformami a přístup velký počet rozhraní API pro .NET (v závislosti na verzi). .NET standard 1.0 1.6 implementovat postupně větší sady rozhraní API, zatímco .NET Standard 2.0 poskytuje nejlepší pokrytí BCL .NET (včetně rozhraní API .NET, která je k dispozici v aplikacích Xamarin).
 - [**Sdílené projekty** ](#Shared_Projects) – typ sdíleného prostředku projektu můžete organizovat zdrojový kód a použít `#if` direktivy kompilátoru podle potřeby Spravovat požadavky na konkrétní platformu.
 - [**Knihovny přenosných tříd** ](#Portable_Class_Libraries) (zastaralé) – přenosné knihovny tříd (PCLs) můžete vyvíjet pro víc platforem pomocí běžných rovinu rozhraní API a používat rozhraní k zajištění funkce specifické pro platformu. PCLs se považují za zastaralé v nejnovějším verzím sady Visual Studio &ndash; místo toho použít .NET Standard.
 
