@@ -18,7 +18,7 @@ ms.locfileid: "34791248"
 
 poskytuje watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) ovládacího prvku pro zobrazení obrázků a jednoduchý animace. Některé ovládací prvky můžete taky nechat obrázek na pozadí (například tlačítka, skupiny a řadičů rozhraní).
 
-![](image-images/image-walkway.png "Obrázek znázorňující Apple Watch") ![ ] (image-images/image-animation.png "Apple Watch s jednoduché animace")
+![](image-images/image-walkway.png "Obrázek znázorňující Apple Watch") ![](image-images/image-animation.png "Apple Watch s jednoduché animace")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Obrázky katalogu asset použijte k přidání bitové kopie do aplikace sledovat Kit.

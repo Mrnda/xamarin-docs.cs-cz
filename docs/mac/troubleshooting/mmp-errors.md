@@ -266,7 +266,7 @@ Poslední podají řešení může být použití starší verze Xamarin.Mac, te
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Pouze první {0} z {1} "Odkazuje" zobrazí upozornění. ** Tato zpráva související s 2009 **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Pouze první {0} z {1} "Odkazuje" zobrazí upozornění. ** Tato zpráva související s 2009 \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Poslední podají řešení může být použití starší verze Xamarin.Mac, te
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac rozšíření nepodporují propojení. Žádost o propojení budou ignorovány. ** Tato zpráva je zastaralé v XM 3.6 + **
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac rozšíření nepodporují propojení. Žádost o propojení budou ignorovány. ** Tato zpráva je zastaralé v XM 3.6 + \*\*
 
 <!-- 2015 used by mtouch -->
 
