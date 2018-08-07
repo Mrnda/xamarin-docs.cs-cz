@@ -76,7 +76,7 @@ try {
 
 Důvodem je, že unwinder zásobníku jazyka Objective-C neví o spravovaný `catch` klauzule a ani se `finally` klauzule provést.
 
-Při výše uvedený ukázkový kód _je_ efektivní, je protože jazyka Objective-C má metodu o neošetřených výjimek jazyka Objective-C [ `NSSetUncaughtExceptionHandler` ] [ 2], které Xamarin.iOS a použití Xamarin.Mac a v tomto bodě pokusí převést jakékoli výjimky jazyka Objective-C na spravované výjimky.
+Při výše uvedený ukázkový kód _je_ efektivní, je protože jazyka Objective-C má metodu o neošetřených výjimek jazyka Objective-C [ `NSSetUncaughtExceptionHandler`][2], které Xamarin.iOS a použití Xamarin.Mac a v tomto bodě pokusí převést jakékoli výjimky jazyka Objective-C na spravované výjimky.
 
 ## <a name="scenarios"></a>Scénáře
 

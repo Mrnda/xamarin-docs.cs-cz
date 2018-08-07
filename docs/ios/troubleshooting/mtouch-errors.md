@@ -46,13 +46,13 @@ Toto je upozornění, které jsou vydávány Pokud - devname předaný mtouch Po
 
 <a name="MT0002" />
 
-### <a name="mt0002-could-not-parse-the-environment-variable-"></a>MT0002: Nebylo možné rozložit proměnnou prostředí *.
+### <a name="mt0002-could-not-parse-the-environment-variable-"></a>MT0002: Nebylo možné rozložit proměnnou prostředí \*.
 
 Této chybě dochází, pokud se pokusíte nastavit prostředí neplatný klíč = hodnota proměnné pár. Správný formát je: `mtouch --setenv=VARIABLE=VALUE`
 
 <a name="MT0003" />
 
-### <a name="mt0003-application-name-exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MT0003: Název aplikace "* .exe, je v konfliktu s SDK nebo produktu, název sestavení (.dll).
+### <a name="mt0003-application-name-exe-conflicts-with-an-sdk-or-product-assembly-dll-name"></a>MT0003: Název aplikace "\* .exe, je v konfliktu s SDK nebo produktu, název sestavení (.dll).
 
 Název spustitelného souboru sestavení a název aplikace nesmí shodovat s názvem všechny knihovny DLL v aplikaci. Změňte prosím název vaší spustitelný soubor.
 
@@ -66,7 +66,7 @@ Počínaje Xamarin.iOS 7.2.1 Tento požadavek byl zrušen, nové logiku refcount
 
 <a name="MT0005" />
 
-### <a name="mt0005-the-output-directory--does-not-exist"></a>MT0005: Výstupnímu adresáři * neexistuje.
+### <a name="mt0005-the-output-directory--does-not-exist"></a>MT0005: Výstupnímu adresáři \* neexistuje.
 
 Vytvořte adresář.
 
@@ -74,37 +74,37 @@ Tato chyba se už nevygenerovala, mtouch automaticky vytvoří adresář, pokud 
 
 <a name="MT0006" />
 
-### <a name="mt0006-there-is-no-devel-platform-at--use---platformplat-to-specify-the-sdk"></a>MT0006: Neexistuje žádné devel platformy *, použijte – platforma = PLAT k určení sady SDK.
+### <a name="mt0006-there-is-no-devel-platform-at--use---platformplat-to-specify-the-sdk"></a>MT0006: Neexistuje žádné devel platformy \*, použijte – platforma = PLAT k určení sady SDK.
 
 Xamarin.iOS nelze najít adresář sady SDK v umístění uvedený v chybové zprávě. Ověřte, zda je cesta správná.
 
 <a name="MT0007" />
 
-### <a name="mt0007-the-root-assembly--does-not-exist"></a>MT0007: Sestavení kořenové * neexistuje.
+### <a name="mt0007-the-root-assembly--does-not-exist"></a>MT0007: Sestavení kořenové \* neexistuje.
 
 Xamarin.iOS nelze najít sestavení v umístění uvedený v chybové zprávě. Ověřte, zda je cesta správná.
 
 <a name="MT0008" />
 
-### <a name="mt0008-you-should-provide-one-root-assembly-only-found--assemblies-"></a>MT0008: Měli byste jim poskytnout jeden kořenový sestavení pouze, který se nachází # sestavení: *.
+### <a name="mt0008-you-should-provide-one-root-assembly-only-found--assemblies-"></a>MT0008: Měli byste jim poskytnout jeden kořenový sestavení pouze, který se nachází # sestavení: \*.
 
 Více než jednom sestavení kořenové byl předán mtouch, zatímco může existovat pouze jeden kořenový sestavení.
 
 <a name="MT0009" />
 
-### <a name="mt0009-error-while-loading-assemblies-"></a>MT0009: Chyba při načítání sestavení: *.
+### <a name="mt0009-error-while-loading-assemblies-"></a>MT0009: Chyba při načítání sestavení: \*.
 
 Došlo k chybě při načítání sestavení odkazů na kořenový sestavení. Další informace může zajišťovat ve výstupu sestavení.
 
 <a name="MT0010" />
 
-### <a name="mt0010-could-not-parse-the-command-line-arguments-"></a>MT0010: Nebylo možné rozložit argumenty příkazového řádku: *.
+### <a name="mt0010-could-not-parse-the-command-line-arguments-"></a>MT0010: Nebylo možné rozložit argumenty příkazového řádku: \*.
 
 Došlo k chybě při analýze argumenty příkazového řádku. Ověřte, že jsou správně.
 
 <a name="MT0011" />
 
-### <a name="mt0011--was-built-against-a-more-recent-runtime--than-monotouch-supports"></a>MT0011: * byl sestaven s novější runtime (*), než MonoTouch podporuje.
+### <a name="mt0011--was-built-against-a-more-recent-runtime--than-monotouch-supports"></a>MT0011: \* byl sestaven s novější runtime (\*), než MonoTouch podporuje.
 
 Toto upozornění je obvykle uvést, protože projekt odkazuje na knihovny tříd, který nebyl vytvořen pomocí Xamarin.iOS BCL.
 
@@ -114,7 +114,7 @@ Obecné řešení je sestavení knihovny jako knihovny tříd Xamarin.iOS. To m�
 
 <a name="MT0012" />
 
-### <a name="mt0012-incomplete-data-is-provided-to-complete-"></a>MT0012: Neúplná data je k dispozici k dokončení *.
+### <a name="mt0012-incomplete-data-is-provided-to-complete-"></a>MT0012: Neúplná data je k dispozici k dokončení \*.
 
 Tato chyba není hlášena již v aktuální verzi Xamarin.iOS.
 
@@ -126,7 +126,7 @@ SGen – (--sgen) musí být povolena, pokud profilace (– profilace) je povole
 
 <a name="MT0014" />
 
-### <a name="mt0014-the-ios--sdk-does-not-support-building-applications-targeting-"></a>MT0014: IOS * SDK nepodporuje vytváření aplikací cílení *.
+### <a name="mt0014-the-ios--sdk-does-not-support-building-applications-targeting-"></a>MT0014: IOS \* SDK nepodporuje vytváření aplikací cílení \*.
 
 K tomu může dojít v následujících případech:
 
@@ -137,13 +137,13 @@ Ověřte, že nainstalovaná verze systému Xcode podporuje zvolené architektur
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Neplatný ABI: *. Jsou podporované bis : i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 a arm64 + llvm.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Neplatný ABI: \*. Jsou podporované bis : i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 a arm64 + llvm.
 
 Byl předán neplatný ABI mtouch. Zadejte platný ABI.
 
 <a name="MT0016" />
 
-### <a name="mt0016-the-option--has-been-deprecated"></a>MT0016: Možnost * je zastaralá.
+### <a name="mt0016-the-option--has-been-deprecated"></a>MT0016: Možnost \* je zastaralá.
 
 Možnost uvedených mtouch je zastaralá a budou ignorovány.
 
@@ -155,7 +155,7 @@ Je potřeba zadat sestavení kořenové (obvykle hlavní spustitelný soubor) p�
 
 <a name="MT0018" />
 
-### <a name="mt0018-unknown-command-line-argument-"></a>MT0018: Neznámý argument příkazového řádku: *.
+### <a name="mt0018-unknown-command-line-argument-"></a>MT0018: Neznámý argument příkazového řádku: \*.
 
 Mtouch nerozpoznal argument příkazového řádku, který je uvedený v chybové zprávě.
 
@@ -190,13 +190,13 @@ Už se zobrazí tato chyba (argument příkazového řádku `--unsupported--enab
 
 <a name="MT0023" />
 
-### <a name="mt0023-application-name-exe-conflicts-with-another-user-assembly"></a>MT0023: Název aplikace. * .exe, je v konfliktu s jinou sestavení uživatele.
+### <a name="mt0023-application-name-exe-conflicts-with-another-user-assembly"></a>MT0023: Název aplikace. \* .exe, je v konfliktu s jinou sestavení uživatele.
 
 Název spustitelného souboru sestavení a název aplikace nesmí shodovat s názvem všechny knihovny DLL v aplikaci. Změňte prosím název vaší spustitelný soubor.
 
 <a name="MT0024" />
 
-### <a name="mt0024-could-not-find-required-file-"></a>MT0024: Nelze najít požadovaný soubor ' *'.
+### <a name="mt0024-could-not-find-required-file-"></a>MT0024: Nelze najít požadovaný soubor ' \*'.
 
 <a name="MT0025" />
 
@@ -204,7 +204,7 @@ Název spustitelného souboru sestavení a název aplikace nesmí shodovat s ná
 
 <a name="MT0026" />
 
-### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026: Nebylo možné rozložit argument příkazového řádku ' *': *
+### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026: Nebylo možné rozložit argument příkazového řádku ' \*': \*
 
 <a name="MT0027" />
 
@@ -242,13 +242,13 @@ Chcete-li odstranit tento změňte "Název aplikace" v projektu možnosti sestav
 
 <a name="MT0034" />
 
-### <a name="mt0034-cannot-include-both-monotouchdll-and-xamariniosdll-in-the-same-xamarinios-project----is-referenced-explicitly-while--is-referenced-by-"></a>MT0034: Nemůže obsahovat 'monotouch.dll' a "Xamarin.iOS.dll" ve stejném projektu Xamarin.iOS - '\*' je výslovně odkazována při '\*' odkazuje ' *'.
+### <a name="mt0034-cannot-include-both-monotouchdll-and-xamariniosdll-in-the-same-xamarinios-project----is-referenced-explicitly-while--is-referenced-by-"></a>MT0034: Nemůže obsahovat 'monotouch.dll' a "Xamarin.iOS.dll" ve stejném projektu Xamarin.iOS - '\*' je výslovně odkazována při '\*' odkazuje ' \*'.
 
 <!-- MT0035 unused -->
 
 <a name="MT0036" />
 
-### <a name="mt0036-cannot-launch-a--simulator-for-a--app-please-enable-the-correct-architectures-in-your-projects-ios-build-options-advanced-page"></a>MT0036: Nelze spustit * simulátor pro * aplikace. Povolte správné architecture(s) v projektu na iOS možnosti sestavení (Upřesnit).
+### <a name="mt0036-cannot-launch-a--simulator-for-a--app-please-enable-the-correct-architectures-in-your-projects-ios-build-options-advanced-page"></a>MT0036: Nelze spustit \* simulátor pro \* aplikace. Povolte správné architecture(s) v projektu na iOS možnosti sestavení (Upřesnit).
 
 <a name="MT0037" />
 
@@ -294,13 +294,13 @@ Nainstalujte novou verzi Xcode.
 
 <a name="MT0047" />
 
-### <a name="mt0047-the-minimum-deployment-target-for-unified-applications-is-511-the-current-deployment-target-is--please-select-a-newer-deployment-target-in-your-projects-ios-application-options"></a>MT0047: Cíl minimální nasazení pro aplikace Unified je 5.1.1, je aktuální cíl nasazení ' *'. V projektu na iOS aplikaci možnosti vyberte novější nasazení cíl.
+### <a name="mt0047-the-minimum-deployment-target-for-unified-applications-is-511-the-current-deployment-target-is--please-select-a-newer-deployment-target-in-your-projects-ios-application-options"></a>MT0047: Cíl minimální nasazení pro aplikace Unified je 5.1.1, je aktuální cíl nasazení ' \*'. V projektu na iOS aplikaci možnosti vyberte novější nasazení cíl.
 
 <!-- MT0048 is not reported anymore -->
 
 <a name="MT0049" />
 
-### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049: *.framework je podporováno pouze v případě, že cíl nasazení je 8.0 nebo novější. * funkce nemusí pracovat správně.
+### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049: \*.framework je podporováno pouze v případě, že cíl nasazení je 8.0 nebo novější. \* funkce nemusí pracovat správně.
 
 Zadaný framework není podporována ve verzi iOS, které odkazuje cíl nasazení. Buď aktualizujte cíl nasazení na novější verzi iOS, nebo odstraňte využití zadaného rámce z aplikace.
 
@@ -308,7 +308,7 @@ Zadaný framework není podporována ve verzi iOS, které odkazuje cíl nasazen�
 
 <a name="MT0051" />
 
-### <a name="mt0051-xamarinios--requires-xcode-50-or-later-the-current-xcode-version-found-in--is-"></a>MT0051: Xamarin.iOS * vyžaduje Xcode 5.0 nebo novější. Aktuální verze Xcode (v nalezen *) je *.
+### <a name="mt0051-xamarinios--requires-xcode-50-or-later-the-current-xcode-version-found-in--is-"></a>MT0051: Xamarin.iOS \* vyžaduje Xcode 5.0 nebo novější. Aktuální verze Xcode (v nalezen \*) je \*.
 
 Nainstalujte novější Xcode.
 
@@ -322,13 +322,13 @@ Pro mtouch nebyla zadána žádná akce.
 
 <a name="MT0054" />
 
-### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054: Nelze canonicalize cestu ' *': *
+### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054: Nelze canonicalize cestu ' \*': \*
 
 Jedná se o vnitřní chybu. Pokud se zobrazí tato chyba, Oznamte chybu [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT0055" />
 
-### <a name="mt0055-the-xcode-path--does-not-exist"></a>MT0055: Xcode cesta ' *' neexistuje.
+### <a name="mt0055-the-xcode-path--does-not-exist"></a>MT0055: Xcode cesta ' \*' neexistuje.
 
 Cesta Xcode předaným pomocí `--sdkroot` neexistuje. Zadejte platnou cestu.
 
@@ -338,7 +338,7 @@ Cesta Xcode předaným pomocí `--sdkroot` neexistuje. Zadejte platnou cestu.
 
 <a name="MT0057" />
 
-### <a name="mt0057-cannot-determine-the-path-to-xcodeapp-from-the-sdk-root--please-specify-the-full-path-to-the-xcodeapp-bundle"></a>MT0057: Nelze zjistit cestu k Xcode.app z kořene sdk ' *'. Zadejte úplnou cestu k sadě Xcode.app.
+### <a name="mt0057-cannot-determine-the-path-to-xcodeapp-from-the-sdk-root--please-specify-the-full-path-to-the-xcodeapp-bundle"></a>MT0057: Nelze zjistit cestu k Xcode.app z kořene sdk ' \*'. Zadejte úplnou cestu k sadě Xcode.app.
 
 Cesta předaným pomocí `--sdkroot` neurčuje platnou aplikaci Xcode. Zadejte cestu k aplikaci pro Xcode.
 
@@ -350,27 +350,27 @@ Cesta předaným pomocí `--sdkroot` neurčuje platnou aplikaci Xcode. Zadejte c
 
 <a name="MT0059" />
 
-### <a name="mt0059-could-not-find-the-currently-selected-xcode-on-the-system-"></a>MT0059: Nelze nalézt aktuálně vybrané Xcode systému: *
+### <a name="mt0059-could-not-find-the-currently-selected-xcode-on-the-system-"></a>MT0059: Nelze nalézt aktuálně vybrané Xcode systému: \*
 
 <a name="MT0060" />
 
-### <a name="mt0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned--but-that-directory-does-not-exist"></a>MT0060: Nelze nalézt aktuálně vybrané Xcode v systému. 'xcode – vybrat – tisk path' vrátil ' *', ale tento adresář neexistuje.
+### <a name="mt0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned--but-that-directory-does-not-exist"></a>MT0060: Nelze nalézt aktuálně vybrané Xcode v systému. 'xcode – vybrat – tisk path' vrátil ' \*', ale tento adresář neexistuje.
 
 <a name="MT0061" />
 
-### <a name="mt0061-no-xcodeapp-specified-using---sdkroot-using-the-system-xcode-as-reported-by-xcode-select---print-path-"></a>MT0061: Žádné zadán (pomocí – sdkroot), Xcode.app pomocí systému Xcode vykazované 'xcode – vybrat – tisk path': *
+### <a name="mt0061-no-xcodeapp-specified-using---sdkroot-using-the-system-xcode-as-reported-by-xcode-select---print-path-"></a>MT0061: Žádné zadán (pomocí – sdkroot), Xcode.app pomocí systému Xcode vykazované 'xcode – vybrat – tisk path': \*
 
 Toto je informativní upozornění, která vysvětluje, který bude Xcode použít, protože nebyl zadán.
 
 <a name="MT0062" />
 
-### <a name="mt0062-no-xcodeapp-specified-using---sdkroot-or-xcode-select---print-path-using-the-default-xcode-instead-"></a>MT0062: Žádné zadán (pomocí – sdkroot nebo "xcode – vyberte – tisk cestu"), použijte místo něj výchozí Xcode Xcode.app: *
+### <a name="mt0062-no-xcodeapp-specified-using---sdkroot-or-xcode-select---print-path-using-the-default-xcode-instead-"></a>MT0062: Žádné zadán (pomocí – sdkroot nebo "xcode – vyberte – tisk cestu"), použijte místo něj výchozí Xcode Xcode.app: \*
 
 Toto je informativní upozornění, která vysvětluje, který bude Xcode použít, protože nebyl zadán.
 
 <a name="MT0063" />
 
-### <a name="mt0063-cannot-find-the-executable-in-the-extension--no-cfbundleexecutable-entry-in-its-infoplist"></a>MT0063: Nelze najít spustitelný soubor v rozšíření * (žádná je položka CFBundleExecutable v Info.plist)
+### <a name="mt0063-cannot-find-the-executable-in-the-extension--no-cfbundleexecutable-entry-in-its-infoplist"></a>MT0063: Nelze najít spustitelný soubor v rozšíření \* (žádná je položka CFBundleExecutable v Info.plist)
 
 Každý Info.plist musí mít spustitelný soubor (pomocí položka CFBundleExecutable), ale položku by měl být vygenerován automaticky během sestavení.
 
@@ -384,7 +384,7 @@ Xamarin.iOS podporuje vložené architektury pouze v případě použití unifik
 
 <a name="MT0065" />
 
-### <a name="mt0065-xamarinios-only-supports-embedded-frameworks-when-deployment-target-is-at-least-80-current-deployment-target--embedded-frameworks-"></a>MT0065: Xamarin.iOS podporuje pouze vložené architektury při nasazení cíl je alespoň 8.0 (aktuální cíl nasazení: * vložených architektury: *)
+### <a name="mt0065-xamarinios-only-supports-embedded-frameworks-when-deployment-target-is-at-least-80-current-deployment-target--embedded-frameworks-"></a>MT0065: Xamarin.iOS podporuje pouze vložené architektury při nasazení cíl je alespoň 8.0 (aktuální cíl nasazení: \* vložených architektury: \*)
 
 Xamarin.iOS vložené architektury podporuje pouze, pokud jsou cílem nasazení alespoň 8.0 (protože starších verzí systému iOS nepodporuje vložené rozhraní).
 
@@ -392,19 +392,19 @@ Aktualizujte prosím cíl nasazení v projektu Info.plist 8.0 nebo vyšším.
 
 <a name="MT0066" />
 
-### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066: Neplatný sestavení registrátora sestavení: *
+### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066: Neplatný sestavení registrátora sestavení: \*
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s testovacího případu.
 
 <a name="MT0067" />
 
-### <a name="mt0067-invalid-registrar-"></a>MT0067: Neplatný registrátora: *
+### <a name="mt0067-invalid-registrar-"></a>MT0067: Neplatný registrátora: \*
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s testovacího případu.
 
 <a name="MT0068" />
 
-### <a name="mt0068-invalid-value-for-target-framework-"></a>MT0068: Neplatná hodnota pro cílové rozhraní: *.
+### <a name="mt0068-invalid-value-for-target-framework-"></a>MT0068: Neplatná hodnota pro cílové rozhraní: \*.
 
 Představuje rozhraní neplatný cíl byl předán pomocí--argument cílové rozhraní. Zadejte platné cílové rozhraní.
 
@@ -414,25 +414,25 @@ Představuje rozhraní neplatný cíl byl předán pomocí--argument cílové ro
 
 <a name="MT0070" />
 
-### <a name="mt0070-invalid-target-framework--valid-target-frameworks-are-"></a>MT0070: Neplatný cílový framework: *. Jsou platné cílové rozhraní: *.
+### <a name="mt0070-invalid-target-framework--valid-target-frameworks-are-"></a>MT0070: Neplatný cílový framework: \*. Jsou platné cílové rozhraní: \*.
 
 Představuje rozhraní neplatný cíl byl předán pomocí--argument cílové rozhraní. Zadejte platné cílové rozhraní.
 
 <a name="MT0071" />
 
-### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: Neznámý platformy: *. Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v http://bugzilla.xamarin.com s testovacího případu.
+### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: Neznámý platformy: \*. Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v http://bugzilla.xamarin.com s testovacího případu.
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s testovacího případu.
 
 <a name="MT0072" />
 
-### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072: Rozšíření nejsou podporovány pro platformu ' *'.
+### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072: Rozšíření nejsou podporovány pro platformu ' \*'.
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s testovacího případu.
 
 <a name="MT0073" />
 
-### <a name="mt0073-xamarinios--does-not-support-a-deployment-target-of--the-minimum-is--please-select-a-newer-deployment-target-in-your-projects-infoplist"></a>MT0073: Xamarin.iOS * nepodporuje cílem nasazení * (minimum je *). Vyberte novější nasazení cíl v Info.plist vašeho projektu.
+### <a name="mt0073-xamarinios--does-not-support-a-deployment-target-of--the-minimum-is--please-select-a-newer-deployment-target-in-your-projects-infoplist"></a>MT0073: Xamarin.iOS \* nepodporuje cílem nasazení \* (minimum je \*). Vyberte novější nasazení cíl v Info.plist vašeho projektu.
 
 Cíl minimální nasazení je uvedený v chybové zprávě; Vyberte novější nasazení cíl v projektu Info.plist.
 
@@ -440,7 +440,7 @@ Pokud není možné aktualizaci cíl nasazení, použijte starší verze Xamarin
 
 <a name="MT0074" />
 
-### <a name="mt0074-xamarinios--does-not-support-a-minimum-deployment-target-of--the-maximum-is--please-select-an-older-deployment-target-in-your-projects-infoplist-or-upgrade-to-a-newer-version-of-xamarinios"></a>MT0074: Xamarin.iOS * nepodporuje minimální nasazení cílem * (maximální počet je *). Vyberte cíl starší nasazení v projektu na Info.plist nebo upgrade na novější verzi Xamarin.iOS.
+### <a name="mt0074-xamarinios--does-not-support-a-minimum-deployment-target-of--the-maximum-is--please-select-an-older-deployment-target-in-your-projects-infoplist-or-upgrade-to-a-newer-version-of-xamarinios"></a>MT0074: Xamarin.iOS \* nepodporuje minimální nasazení cílem \* (maximální počet je \*). Vyberte cíl starší nasazení v projektu na Info.plist nebo upgrade na novější verzi Xamarin.iOS.
 
 Xamarin.iOS nepodporuje nastavení na vyšší verzi než verze, kterou tato konkrétní verzi Xamarin.iOS byl vytvořen pro cíl minimální nasazení.
 
@@ -448,13 +448,13 @@ Vyberte cíl starší minimální nasazení v projektu Info.plist nebo upgrade n
 
 <a name="MT0075" />
 
-### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075: Architektura neplatný ' *' pro * projekty. Jsou platné architektury: *
+### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075: Architektura neplatný ' \*' pro \* projekty. Jsou platné architektury: \*
 
 Byl zadán neplatný architekturu. Ověřte, že architektura je platný.
 
 <a name="MT0076" />
 
-### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075: Žádné architektura zadán (pomocí argumentu – abi). Je vyžadována pro architekturu * projekty.
+### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075: Žádné architektura zadán (pomocí argumentu – abi). Je vyžadována pro architekturu \* projekty.
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s testovacího případu.
 
@@ -466,7 +466,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http:
 
 <a name="MT0078" />
 
-### <a name="mt0077-incremental-builds-are-enabled-with-a-deployment-target--80-currently--this-is-not-supported-the-resulting-application-will-not-launch-on-ios-9-so-the-deployment-target-will-be-set-to-80"></a>MT0077: Přírůstkové sestavení jsou povoleny v rámci nasazení cíl < 8.0 (aktuálně *). To není podporováno (výsledné aplikace se nespustí v systému iOS 9), takže cíl nasazení bude nastavena pro 8.0.
+### <a name="mt0077-incremental-builds-are-enabled-with-a-deployment-target--80-currently--this-is-not-supported-the-resulting-application-will-not-launch-on-ios-9-so-the-deployment-target-will-be-set-to-80"></a>MT0077: Přírůstkové sestavení jsou povoleny v rámci nasazení cíl < 8.0 (aktuálně \*). To není podporováno (výsledné aplikace se nespustí v systému iOS 9), takže cíl nasazení bude nastavena pro 8.0.
 
 Toto je upozornění oznamující, že cíl nasazení byla nastavena na 8.0 pro toto sestavení tak, aby přírůstková sestavení pracovní správně.
 
@@ -474,7 +474,7 @@ Přírůstková sestavení jsou podporovány pouze, pokud jsou cílem nasazení 
 
 <a name="MT0079" />
 
-### <a name="mt0078-the-recommended-xcode-version-for-xamarinios--is-xcode--or-later-the-current-xcode-version-found-in--is-"></a>MT0078: Doporučené Xcode verze pro Xamarin.iOS * je Xcode * nebo novější. Aktuální verze Xcode (v nalezen *) je *.
+### <a name="mt0078-the-recommended-xcode-version-for-xamarinios--is-xcode--or-later-the-current-xcode-version-found-in--is-"></a>MT0078: Doporučené Xcode verze pro Xamarin.iOS \* je Xcode \* nebo novější. Aktuální verze Xcode (v nalezen \*) je \*.
 
 Toto je upozornění oznamující, že aktuální verzi Xcode není doporučenou verzi Xcode pro tuto verzi Xamarin.iOS.
 
@@ -506,7 +506,7 @@ Nová funkce refcount je teď povinné pro všechny projekty, a proto není mož
 
 <a name="MT0085" />
 
-### <a name="mt0085-no-reference-to--was-found-it-will-be-added-automatically"></a>MT0085: Žádný odkaz na ' *' nebyl nalezen. Přidá se automaticky.
+### <a name="mt0085-no-reference-to--was-found-it-will-be-added-automatically"></a>MT0085: Žádný odkaz na ' \*' nebyl nalezen. Přidá se automaticky.
 
 <a name="MT0086" />
 
@@ -528,7 +528,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http:
 
 <a name="MT0091" />
 
-### <a name="mt0091-this-version-of-xamarinios-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-set-the-managed-linker-behaviour-to-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MT0091: Tato verze aplikace Xamarin.iOS vyžaduje * SDK (dodávané s Xcode *). Buď upgradujte Xcode na získání požadované hlavičky souborů nebo nastavením chování spravované linkeru na odkaz Framework SDK pouze (pokusit se vyhnout nových rozhraní API).
+### <a name="mt0091-this-version-of-xamarinios-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-set-the-managed-linker-behaviour-to-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MT0091: Tato verze aplikace Xamarin.iOS vyžaduje \* SDK (dodávané s Xcode \*). Buď upgradujte Xcode na získání požadované hlavičky souborů nebo nastavením chování spravované linkeru na odkaz Framework SDK pouze (pokusit se vyhnout nových rozhraní API).
 
 Xamarin.iOS vyžaduje soubory hlaviček, z SDK verze zadaná v chybové zprávě, chcete-li sestavit aplikaci. Doporučeným způsobem, jak vyřešit tuto chybu se k upgradu Xcode získat požadované SDK, to bude zahrnovat všechny soubory požadované hlavičky. Pokud máte více verzí Xcode nainstalován, nebo chcete použít Xcode v jiné než výchozí umístění, ujistěte se, zda je nastavení správné umístění Xcode v předvolbách vaší IDE.
 
@@ -557,7 +557,7 @@ Poslední podají řešení může být použití starší verze Xamarin.iOS, te
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099: Vnitřní chyba *. Prosím soubor zprávu o chybě s testovacího případu (http://bugzilla.xamarin.com).
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0099: Vnitřní chyba \*. Prosím soubor zprávu o chybě s testovacího případu (http://bugzilla.xamarin.com).
 
 Tato chybová zpráva se hlásí, když se nezdaří Kontrola interní konzistence v Xamarin.iOS.
 
@@ -565,7 +565,7 @@ To ukazuje na chybu v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzil
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100: Neplatné sestavení sestavení cíl: ' *'. Prosím soubor zprávu o chybě s testovacího případu (http://bugzilla.xamarin.com).
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100: Neplatné sestavení sestavení cíl: ' \*'. Prosím soubor zprávu o chybě s testovacího případu (http://bugzilla.xamarin.com).
 
 Tato chybová zpráva se hlásí, když se nezdaří Kontrola interní konzistence v Xamarin.iOS.
 
@@ -573,13 +573,13 @@ Toto je vždy chyby v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzil
 
 <a name="MT0101" />
 
-### <a name="mt0101-the-assembly--is-specified-multiple-times-in---assembly-build-target-arguments"></a>MT0101: Sestavení ' *' v--argumenty cíl sestavení sestavení je zadán vícekrát.
+### <a name="mt0101-the-assembly--is-specified-multiple-times-in---assembly-build-target-arguments"></a>MT0101: Sestavení ' \*' v--argumenty cíl sestavení sestavení je zadán vícekrát.
 
 Sestavení uvedený v chybové zprávě je zadán vícekrát v--argumenty cíl sestavení sestavení. Zkontrolujte prosím, že každé sestavení je uveden pouze jednou.
 
 <a name="MT0102" />
 
-### <a name="mt0102-the-assemblies--and--have-the-same-target-name--but-different-targets--and-"></a>MT0102: Sestavení se\*'a'\*' mají stejný název cílové ('\*'), ale odlišným cíle ('\*' a ' *').
+### <a name="mt0102-the-assemblies--and--have-the-same-target-name--but-different-targets--and-"></a>MT0102: Sestavení se\*'a'\*' mají stejný název cílové ('\*'), ale odlišným cíle ('\*' a ' \*').
 
 Sestavení uvedený v chybové zprávě mít konfliktní sestavení cílů.
 
@@ -603,7 +603,7 @@ V tomto příkladu se pokusí vytvořit objekt statické (`MyBinary`) skládá z
 
 <a name="MT0105" />
 
-### <a name="mt0105-no-assembly-build-target-was-specified-for-"></a>MT0105: Nebyl zadán žádný cíl sestavení sestavení pro ' *'.
+### <a name="mt0105-no-assembly-build-target-was-specified-for-"></a>MT0105: Nebyl zadán žádný cíl sestavení sestavení pro ' \*'.
 
 Při zadání sestavení sestavení pomocí cíl `--assembly-build-target`, všechna sestavení v aplikaci musí mít přiřazen cíl sestavení.
 
@@ -629,7 +629,7 @@ protože `my/path.o` není platný název souboru z důvodu directory oddělovac
 
 <a name="MT0108" />
 
-### <a name="mt0108-the-assembly-build-target--did-not-match-any-assemblies"></a>MT0108: Sestavení sestavení cíl ' *' neodpovídá žádné sestavení.
+### <a name="mt0108-the-assembly-build-target--did-not-match-any-assemblies"></a>MT0108: Sestavení sestavení cíl ' \*' neodpovídá žádné sestavení.
 
 <a name="MT0109" />
 
@@ -663,25 +663,25 @@ Další informace najdete v části Chyba č[51634](https://bugzilla.xamarin.com
 
 <a name="MT0112" />
 
-### <a name="mt0112-native-code-sharing-has-been-disabled-because-"></a>MT0112: Sdílení nativní kód byl zakázán, protože *
+### <a name="mt0112-native-code-sharing-has-been-disabled-because-"></a>MT0112: Sdílení nativní kód byl zakázán, protože \*
 
 Existuje několik důvodů, které je možné zakázat sdílení kódu:
 
-* vzhledem k tomu cíl nasazení aplikace kontejneru je starší než iOS 8.0 (má *)).
+* vzhledem k tomu cíl nasazení aplikace kontejneru je starší než iOS 8.0 (má \*)).
 
 Nativní kód sdílení vyžaduje iOS 8.0 protože sdílení nativního kódu je implementovaná pomocí uživatelského rozhraní, která byla zavedena v systému iOS 8.0.
 
-* protože aplikace kontejneru zahrnuje I18N sestavení (*).
+* protože aplikace kontejneru zahrnuje I18N sestavení (\*).
 
 Nativní kód sdílení se aktuálně nepodporuje, pokud aplikace kontejneru zahrnuje I18N sestavení.
 
-* protože aplikace kontejneru obsahuje definice vlastní kód xml pro spravované linkeru (*).
+* protože aplikace kontejneru obsahuje definice vlastní kód xml pro spravované linkeru (\*).
 
 Nativní kód sdílení vyžaduje není podporována pro projekty, které používají vlastní kód xml definice pro spravované linkeru.
 
 <a name="MT0113" />
 
-### <a name="mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a>MT0113: Sdílení nativního kódu byla zakázána pro rozšíření ' *' protože *.
+### <a name="mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a>MT0113: Sdílení nativního kódu byla zakázána pro rozšíření ' \*' protože \*.
 
 * protože bitcode lišit mezi aplikace kontejneru (\*) a rozšíření (\*).
 
@@ -719,11 +719,11 @@ Nativní kód sdílení vyžaduje není podporována pro projekty, které použ�
 
   Nativní kód sdílení vyžaduje spravované linkeru nastavení, musí být stejné pro všechny projekty, které sdílejí kódu.
 
-* vzhledem k tomu, že rozšíření má definice vlastní kód xml pro spravované linkeru (*).
+* vzhledem k tomu, že rozšíření má definice vlastní kód xml pro spravované linkeru (\*).
 
   Nativní kód sdílení vyžaduje není podporována pro projekty, které používají vlastní kód xml definice pro spravované linkeru.
 
-* protože nelze sestavit aplikaci kontejneru pro ABI * (při rozšíření je pro tento ABI vytváření).
+* protože nelze sestavit aplikaci kontejneru pro ABI \* (při rozšíření je pro tento ABI vytváření).
 
   Nativní kód pro sdílení vyžaduje, že pro všechny architektury rozšíření všechny aplikace sestavení pro sestavení aplikace kontejneru.
 
@@ -735,7 +735,7 @@ Nativní kód sdílení vyžaduje není podporována pro projekty, které použ�
 
   Například: k tomuto stavu dochází, když sestavení rozšíření pro ARMv7 + llvm + thumb2, ale aplikace kontejner vytvoří pouze pro ARMv7 + llvm.
 
-* protože aplikace kontejneru odkazuje na sestavení '\*'z'\*', zatímco rozšíření odkazuje na jiné verzi z ' *'.
+* protože aplikace kontejneru odkazuje na sestavení '\*'z'\*', zatímco rozšíření odkazuje na jiné verzi z ' \*'.
 
   Nativní kód sdílení vyžaduje, aby všechny projekty, které sdílejí kód používal shodovat s verzemi pro všechna sestavení.
 
@@ -777,7 +777,7 @@ Buď změnit cílový architektura v možnostech sestavení projektu iOS arm64, 
 
 <a name="MT0123" />
 
-### <a name="mt0123-the-executable-assembly--does-not-reference-"></a>MT0123: Spustitelný soubor sestavení * neodkazuje *.
+### <a name="mt0123-the-executable-assembly--does-not-reference-"></a>MT0123: Spustitelný soubor sestavení \* neodkazuje \*.
 
 Nenašla se žádný odkaz na sestavení platformy (Xamarin.iOS.dll / Xamarin.TVOS.dll / Xamarin.WatchOS.dll) v spustitelný soubor sestavení.
 
@@ -834,7 +834,7 @@ Další informace najdete v části Chyba č[52727](https://bugzilla.xamarin.com
 
 <a name="MT0128" />
 
-### <a name="mt0128-could-not-touch-the-file--"></a>MT0128: Nelze touch souboru ' *': *
+### <a name="mt0128-could-not-touch-the-file--"></a>MT0128: Nelze touch souboru ' \*': \*
 
 Při klepnou na soubor (který slouží k zajištění, že jsou správně provedené částečné sestavení) došlo k selhání.
 
@@ -859,7 +859,7 @@ Toto upozornění můžete ignorovat s největší pravděpodobností; v přípa
 
 <a name="MT1003" />
 
-### <a name="mt1003-could-not-kill-the-application--you-may-have-to-kill-the-application-manually"></a>MT1003: Nelze ukončit aplikaci ' *'. Možná budete muset ručně ukončit aplikaci.
+### <a name="mt1003-could-not-kill-the-application--you-may-have-to-kill-the-application-manually"></a>MT1003: Nelze ukončit aplikaci ' \*'. Možná budete muset ručně ukončit aplikaci.
 
 <a name="MT1004" />
 
@@ -867,15 +867,15 @@ Toto upozornění můžete ignorovat s největší pravděpodobností; v přípa
 
 <a name="MT1005" />
 
-### <a name="mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a>MT1005: Nelze ukončit aplikaci se\*'na zařízení,\*': *-možná budete muset ručně ukončit aplikaci.
+### <a name="mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a>MT1005: Nelze ukončit aplikaci se\*'na zařízení,\*': \*-možná budete muset ručně ukončit aplikaci.
 
 <a name="MT1006" />
 
-### <a name="mt1006-could-not-install-the-application--on-the-device--"></a>MT1006: Nelze nainstalovat aplikaci,\*'na zařízení,\*': *.
+### <a name="mt1006-could-not-install-the-application--on-the-device--"></a>MT1006: Nelze nainstalovat aplikaci,\*'na zařízení,\*': \*.
 
 <a name="MT1007" />
 
-### <a name="mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a>MT1007: Nepodařilo se spustit aplikaci se\*'na zařízení,\*': *. Aplikace můžete pořád spustit ručně klepnutím na něm.
+### <a name="mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a>MT1007: Nepodařilo se spustit aplikaci se\*'na zařízení,\*': \*. Aplikace můžete pořád spustit ručně klepnutím na něm.
 
 <a name="MT1008" />
 
@@ -891,7 +891,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 
 <a name="MT1009" />
 
-### <a name="mt1009-could-not-copy-the-assembly--to--"></a>MT1009: Nemohl zkopírovat sestavení '\*'do'\*': *
+### <a name="mt1009-could-not-copy-the-assembly--to--"></a>MT1009: Nemohl zkopírovat sestavení '\*'do'\*': \*
 
 Jedná se o známý problém v určitých verzí aplikace Xamarin.iOS.
 
@@ -905,15 +905,15 @@ Ale vzhledem k tomu, že tento problém byl vyřešen v nejnovější verzi Xama
 
 <a name="MT1010" />
 
-### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010: Nepodařilo se načíst sestavení ' *': *
+### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010: Nepodařilo se načíst sestavení ' \*': \*
 
 <a name="MT1011" />
 
-### <a name="mt1011-could-not-add-missing-resource-file-"></a>MT1011: Nelze přidat chybí soubor prostředků: ' *'
+### <a name="mt1011-could-not-add-missing-resource-file-"></a>MT1011: Nelze přidat chybí soubor prostředků: ' \*'
 
 <a name="MT1012" />
 
-### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012: Nepodařilo se zobrazí seznam aplikací na zařízení ' *': *
+### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012: Nepodařilo se zobrazí seznam aplikací na zařízení ' \*': \*
 
 <a name="MT1013" />
 
@@ -923,15 +923,15 @@ To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com
 
 <a name="MT1014" />
 
-### <a name="mt1014-failed-to-re-use-cached-version-of--"></a>MT1014: Nepodařilo se znovu použít uložené v mezipaměti verzi ' *': *.
+### <a name="mt1014-failed-to-re-use-cached-version-of--"></a>MT1014: Nepodařilo se znovu použít uložené v mezipaměti verzi ' \*': \*.
 
 <a name="MT1015" />
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Nepodařilo se vytvořit spustitelný soubor ' *': *
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Nepodařilo se vytvořit spustitelný soubor ' \*': \*
 
 <a name="MT1015" />
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Nepodařilo se vytvořit spustitelný soubor ' *': *
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Nepodařilo se vytvořit spustitelný soubor ' \*': \*
 
 <a name="MT1016" />
 
@@ -941,15 +941,15 @@ Odebrat adresář `NOTICE` z projektu.
 
 <a name="MT1017" />
 
-### <a name="mt1017-failed-to-create-the-notice-file-"></a>MT1017: Nepodařilo se vytvořit soubor oznámení: *.
+### <a name="mt1017-failed-to-create-the-notice-file-"></a>MT1017: Nepodařilo se vytvořit soubor oznámení: \*.
 
 <a name="MT1018" />
 
-### <a name="mt1018-your-application-failed-code-signing-checks-and-could-not-be-installed-on-the-device--check-your-certificates-provisioning-profiles-and-bundle-ids-probably-your-device-is-not-part-of-the-selected-provisioning-profile-error-0xe8008015"></a>MT1018: Aplikace se nezdařilo kontroly podepisování kódu a nebylo možné nainstalovat na zařízení ' *'. Zkontrolujte vaše certifikáty, profily, zřizování a ID sady. Pravděpodobně zařízení není součástí vybrané profilu pro zřizování (Chyba: 0xe8008015).
+### <a name="mt1018-your-application-failed-code-signing-checks-and-could-not-be-installed-on-the-device--check-your-certificates-provisioning-profiles-and-bundle-ids-probably-your-device-is-not-part-of-the-selected-provisioning-profile-error-0xe8008015"></a>MT1018: Aplikace se nezdařilo kontroly podepisování kódu a nebylo možné nainstalovat na zařízení ' \*'. Zkontrolujte vaše certifikáty, profily, zřizování a ID sady. Pravděpodobně zařízení není součástí vybrané profilu pro zřizování (Chyba: 0xe8008015).
 
 <a name="MT1019" />
 
-### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: Vaše aplikace má oprávnění nepodporuje váš aktuální profil zřizování a nebylo možné nainstalovat na zařízení ' *'. Podrobnější informace, zkontrolujte protokol zařízení iOS (Chyba: 0xe8008016).
+### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: Vaše aplikace má oprávnění nepodporuje váš aktuální profil zřizování a nebylo možné nainstalovat na zařízení ' \*'. Podrobnější informace, zkontrolujte protokol zařízení iOS (Chyba: 0xe8008016).
 
 K tomu může dojít, pokud:
 
@@ -966,7 +966,7 @@ Ve většině případů, které další informace o selhání budou vytištěny
 
 <a name="MT1020" />
 
-### <a name="mt1020-failed-to-launch-the-application--on-the-device--"></a>MT1020: Nepodařilo se spustit aplikaci se\*'na zařízení,\*': *
+### <a name="mt1020-failed-to-launch-the-application--on-the-device--"></a>MT1020: Nepodařilo se spustit aplikaci se\*'na zařízení,\*': \*
 
 <a name="MT1021" />
 
@@ -982,7 +982,7 @@ Nelze zkopírovat do adresáře. Chybová zpráva z operace kopírování obsahu
 
 <a name="MT1023" />
 
-### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023: Nešlo komunikovat s zařízení k vyhledání aplikace ' *': *
+### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023: Nešlo komunikovat s zařízení k vyhledání aplikace ' \*': \*
 
 Došlo k chybě při pokusu o vyhledání aplikace na zařízení.
 
@@ -995,7 +995,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1024" />
 
-### <a name="mt1024-the-application-signature-could-not-be-verified-on-device--please-make-sure-that-the-provisioning-profile-is-installed-and-not-expired-error-0xe8008017"></a>MT1024: Nebylo možné ověřit podpis aplikace na zařízení ' *'. Ujistěte se, že je nainstalována a nevypršela profilu pro zřizování (Chyba: 0xe8008017).
+### <a name="mt1024-the-application-signature-could-not-be-verified-on-device--please-make-sure-that-the-provisioning-profile-is-installed-and-not-expired-error-0xe8008017"></a>MT1024: Nebylo možné ověřit podpis aplikace na zařízení ' \*'. Ujistěte se, že je nainstalována a nevypršela profilu pro zřizování (Chyba: 0xe8008017).
 
 Zařízení odmítl instalace aplikace, protože podpis nelze ověřit.
 
@@ -1003,7 +1003,7 @@ Zkontrolujte prosím, že je nainstalována a nevypršela profilu pro zřizován
 
 <a name="MT1025" />
 
-### <a name="mt1025-could-not-list-the-crash-reports-on-the-device-"></a>MT1025: Nelze seznam sestav havárií na zařízení *.
+### <a name="mt1025-could-not-list-the-crash-reports-on-the-device-"></a>MT1025: Nelze seznam sestav havárií na zařízení \*.
 
 Došlo k chybě při pokusu o seznam sestav havárií na zařízení.
 
@@ -1017,7 +1017,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1026" />
 
-### <a name="mt1026-could-not-download-the-crash-report--from-the-device-"></a>MT1026: Nepovedlo se stáhnout sestavu havárií * ze zařízení *.
+### <a name="mt1026-could-not-download-the-crash-report--from-the-device-"></a>MT1026: Nepovedlo se stáhnout sestavu havárií \* ze zařízení \*.
 
 Došlo k chybě při pokusu o stažení sestavy havárií ze zařízení.
 
@@ -1031,7 +1031,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1027" />
 
-### <a name="mt1027-cant-use-xcode-7-to-launch-applications-on-devices-with-ios--xcode-7-only-supports-ios-6"></a>MT1027: Nelze pro spuštění aplikace na zařízeních s iOS použijte Xcode 7 + * (Xcode 7 podporuje pouze systém iOS 6 +).
+### <a name="mt1027-cant-use-xcode-7-to-launch-applications-on-devices-with-ios--xcode-7-only-supports-ios-6"></a>MT1027: Nelze pro spuštění aplikace na zařízeních s iOS použijte Xcode 7 + \* (Xcode 7 podporuje pouze systém iOS 6 +).
 
 Není možné použít ke spuštění aplikací v zařízeních s iOS verzi nižší než 6.0 Xcode 7 +.
 
@@ -1039,13 +1039,13 @@ Použít starší verzi Xcode, nebo klepněte na aplikaci ručně spustíte.
 
 <a name="MT1028" />
 
-### <a name="mt1028-invalid-device-specification--expected-ios-watchos-or-all"></a>MT1028: Specifikace neplatný zařízení: "*". Očekávaný 'ios', 'watchos' nebo 'všechny
+### <a name="mt1028-invalid-device-specification--expected-ios-watchos-or-all"></a>MT1028: Specifikace neplatný zařízení: "\*". Očekávaný 'ios', 'watchos' nebo 'všechny
 
 Specifikace zařízení předaným pomocí – zařízení je neplatná. Platné hodnoty jsou: 'ios', 'watchos' nebo 'všechny.
 
 <a name="MT1029" />
 
-### <a name="mt1029-could-not-find-an-application-at-the-specified-directory-"></a>MT1029: Nelze nalézt aplikaci na zadaný adresář: *
+### <a name="mt1029-could-not-find-an-application-at-the-specified-directory-"></a>MT1029: Nelze nalézt aplikaci na zadaný adresář: \*
 
 Cesta k aplikaci předán – launchdev neexistuje. Zadejte platnou aplikaci sady.
 
@@ -1063,11 +1063,11 @@ Odemknutí zařízení a zkuste to znovu.
 
 <a name="MT1032" />
 
-### <a name="mt1032-this-application-executable-might-be-too-large--mb-to-execute-on-device-if-bitcode-was-enabled-you-might-want-to-disable-it-for-development-it-is-only-required-to-submit-applications-to-apple"></a>MT1032: Tento spustitelný soubor aplikace může být příliš velký (* MB) ke spouštění na zařízení. Pokud bylo povolené bitcode můžete chtít zakázat pro vývoj, je potřeba jenom k odeslání aplikací do společnosti Apple.
+### <a name="mt1032-this-application-executable-might-be-too-large--mb-to-execute-on-device-if-bitcode-was-enabled-you-might-want-to-disable-it-for-development-it-is-only-required-to-submit-applications-to-apple"></a>MT1032: Tento spustitelný soubor aplikace může být příliš velký (\* MB) ke spouštění na zařízení. Pokud bylo povolené bitcode můžete chtít zakázat pro vývoj, je potřeba jenom k odeslání aplikací do společnosti Apple.
 
 <a name="MT1033" />
 
-### <a name="mt1033-could-not-uninstall-the-application--from-the-device--"></a>MT1033: Nelze odinstalovat aplikaci,\*'ze zařízení,\*': *
+### <a name="mt1033-could-not-uninstall-the-application--from-the-device--"></a>MT1033: Nelze odinstalovat aplikaci,\*'ze zařízení,\*': \*
 
 <!-- 1034 used by mmp -->
 
@@ -1099,7 +1099,7 @@ Tato chyba se nahlásí pouze společně s [MT1036](#MT1036). Najdete v tématu 
 
 <a name="MT1102" />
 
-### <a name="mt1102-could-not-attach-to-the-app-to-kill-it-"></a>MT1102: Se nepodařilo připojit k aplikaci (pro příkaz kill ji): *
+### <a name="mt1102-could-not-attach-to-the-app-to-kill-it-"></a>MT1102: Se nepodařilo připojit k aplikaci (pro příkaz kill ji): \*
 
 <a name="MT1103" />
 
@@ -1107,7 +1107,7 @@ Tato chyba se nahlásí pouze společně s [MT1036](#MT1036). Najdete v tématu 
 
 <a name="MT1104" />
 
-### <a name="mt1104-failed-to-send-packet-"></a>MT1104: Nepodařilo se odeslat paket: *
+### <a name="mt1104-failed-to-send-packet-"></a>MT1104: Nepodařilo se odeslat paket: \*
 
 <a name="MT1105" />
 
@@ -1119,7 +1119,7 @@ Tato chyba se nahlásí pouze společně s [MT1036](#MT1036). Najdete v tématu 
 
 <a name="MT1107" />
 
-### <a name="mt1107-application-failed-to-launch-"></a>MT1107: Aplikace se nepodařilo spustit: *
+### <a name="mt1107-application-failed-to-launch-"></a>MT1107: Aplikace se nepodařilo spustit: \*
 
 Zkontrolujte, jestli zařízení je uzamčen.
 
@@ -1157,39 +1157,39 @@ Pokud nasazujete aplikaci enterprise nebo pomocí volné profil pro zřizování
 
 <a name="MT1201" />
 
-### <a name="mt1201-could-not-load-the-simulator-"></a>MT1201: Nepodařilo se načíst simulátoru: *
+### <a name="mt1201-could-not-load-the-simulator-"></a>MT1201: Nepodařilo se načíst simulátoru: \*
 
 <a name="MT1202" />
 
-### <a name="mt1202-invalid-simulator-configuration-"></a>MT1202: Konfigurace neplatný simulátoru: *
+### <a name="mt1202-invalid-simulator-configuration-"></a>MT1202: Konfigurace neplatný simulátoru: \*
 
 <a name="MT1203" />
 
-### <a name="mt1203-invalid-simulator-specification-"></a>MT1203: Specifikace neplatný simulátoru: *
+### <a name="mt1203-invalid-simulator-specification-"></a>MT1203: Specifikace neplatný simulátoru: \*
 
 <a name="MT1204" />
 
-### <a name="mt1204-invalid-simulator-specification--runtime-not-specified"></a>MT1204: Specifikace neplatný simulátoru ' *': runtime není zadaný.
+### <a name="mt1204-invalid-simulator-specification--runtime-not-specified"></a>MT1204: Specifikace neplatný simulátoru ' \*': runtime není zadaný.
 
 <a name="MT1205" />
 
-### <a name="mt1205-invalid-simulator-specification--device-type-not-specified"></a>MT1205: Specifikace neplatný simulátoru ' *': není zadán typ zařízení.
+### <a name="mt1205-invalid-simulator-specification--device-type-not-specified"></a>MT1205: Specifikace neplatný simulátoru ' \*': není zadán typ zařízení.
 
 <a name="MT1206" />
 
-### <a name="mt1206-could-not-find-the-simulator-runtime-"></a>MT1206: Nelze nalézt modul runtime simulátoru ' *'.
+### <a name="mt1206-could-not-find-the-simulator-runtime-"></a>MT1206: Nelze nalézt modul runtime simulátoru ' \*'.
 
 <a name="MT1207" />
 
-### <a name="mt1207-could-not-find-the-simulator-device-type-"></a>MT1207: Nepodařilo se najít typ zařízení simulátoru ' *'.
+### <a name="mt1207-could-not-find-the-simulator-device-type-"></a>MT1207: Nepodařilo se najít typ zařízení simulátoru ' \*'.
 
 <a name="MT1208" />
 
-### <a name="mt1208-could-not-find-the-simulator-runtime-"></a>MT1208: Nelze nalézt modul runtime simulátoru ' *'.
+### <a name="mt1208-could-not-find-the-simulator-runtime-"></a>MT1208: Nelze nalézt modul runtime simulátoru ' \*'.
 
 <a name="MT1209" />
 
-### <a name="mt1209-could-not-find-the-simulator-device-type-"></a>MT1209: Nepodařilo se najít typ zařízení simulátoru ' *'.
+### <a name="mt1209-could-not-find-the-simulator-device-type-"></a>MT1209: Nepodařilo se najít typ zařízení simulátoru ' \*'.
 
 <a name="MT1210" />
 
@@ -1201,39 +1201,39 @@ Pokud nasazujete aplikaci enterprise nebo pomocí volné profil pro zřizování
 
 <a name="MT1212" />
 
-### <a name="mt1212-failed-to-create-a-simulator-version-where-type---and-runtime--"></a>MT1212: Nepodařilo se vytvořit verze simulátoru kde zadejte = * a prostředí runtime = *.
+### <a name="mt1212-failed-to-create-a-simulator-version-where-type---and-runtime--"></a>MT1212: Nepodařilo se vytvořit verze simulátoru kde zadejte = \* a prostředí runtime = \*.
 
 <a name="MT1213" />
 
-### <a name="mt1213-invalid-simulator-specification-for-xcode-4-"></a>MT1213: Specifikace neplatný simulátoru Xcode 4: *
+### <a name="mt1213-invalid-simulator-specification-for-xcode-4-"></a>MT1213: Specifikace neplatný simulátoru Xcode 4: \*
 
 <a name="MT1214" />
 
-### <a name="mt1214-invalid-simulator-specification-for-xcode-5-"></a>MT1214: Specifikace neplatný simulátor pro prostředí Xcode 5: *
+### <a name="mt1214-invalid-simulator-specification-for-xcode-5-"></a>MT1214: Specifikace neplatný simulátor pro prostředí Xcode 5: \*
 
 <a name="MT1215" />
 
-### <a name="mt1215-invalid-sdk-specified-"></a>MT1215: Zadán neplatný SDK: *
+### <a name="mt1215-invalid-sdk-specified-"></a>MT1215: Zadán neplatný SDK: \*
 
 <a name="MT1216" />
 
-### <a name="mt1216-could-not-find-the-simulator-udid-"></a>MT1216: Nelze nalézt simulátoru UDID ' *'.
+### <a name="mt1216-could-not-find-the-simulator-udid-"></a>MT1216: Nelze nalézt simulátoru UDID ' \*'.
 
 <a name="MT1217" />
 
-### <a name="mt1217-could-not-load-the-app-bundle-at-"></a>MT1217: Nepodařilo se načíst sady prostředků aplikace v ' *'.
+### <a name="mt1217-could-not-load-the-app-bundle-at-"></a>MT1217: Nepodařilo se načíst sady prostředků aplikace v ' \*'.
 
 <a name="MT1218" />
 
-### <a name="mt1218-no-bundle-identifier-found-in-the-app-at-"></a>MT1218: Nalezen žádný identifikátor svazku v aplikaci na ' *'.
+### <a name="mt1218-no-bundle-identifier-found-in-the-app-at-"></a>MT1218: Nalezen žádný identifikátor svazku v aplikaci na ' \*'.
 
 <a name="MT1219" />
 
-### <a name="mt1219-could-not-find-the-simulator-for-"></a>MT1219: Nelze nalézt simulátor pro ' *'.
+### <a name="mt1219-could-not-find-the-simulator-for-"></a>MT1219: Nelze nalézt simulátor pro ' \*'.
 
 <a name="MT1220" />
 
-### <a name="mt1220-could-not-find-the-latest-simulator-runtime-for-device-"></a>MT1220: Nenašla se nejnovější modul runtime simulátor pro zařízení ' *'.
+### <a name="mt1220-could-not-find-the-latest-simulator-runtime-for-device-"></a>MT1220: Nenašla se nejnovější modul runtime simulátor pro zařízení ' \*'.
 
 To se obvykle označuje potíže s Xcode.
 
@@ -1245,7 +1245,7 @@ Co je potřeba tento problém vyřešit:
 
 <a name="MT1221" />
 
-### <a name="mt1221-could-not-find-the-paired-iphone-simulator-for-the-watchos-simulator-"></a>MT1221: Nelze nalézt simulátoru spárované iPhone pro simulátoru WatchOS ' *'.
+### <a name="mt1221-could-not-find-the-paired-iphone-simulator-for-the-watchos-simulator-"></a>MT1221: Nelze nalézt simulátoru spárované iPhone pro simulátoru WatchOS ' \*'.
 
 Při spouštění WatchOS aplikaci v simulátoru WatchOS, musí být spárované simulátoru iOS i.
 
@@ -1263,7 +1263,7 @@ Podívejte se na simulátorů může být spárována s iOS pomocí uživatelsk�
 
 <a name="MT1302" />
 
-### <a name="mt1302-could-not-extract-the-native-library--from--please-ensure-the-native-library-was-properly-embedded-in-the-managed-assembly-if-the-assembly-was-built-using-a-binding-project-the-native-library-must-be-included-in-the-project-and-its-build-action-must-be-objcbindingnativelibrary"></a>MT1302: Nepodařilo se vyextrahovat nativní knihovny ' *' z '+'. Zkontrolujte, zda že nativní knihovny správně vložená ve spravované sestavení (Pokud sestavení bylo vytvořeno pomocí vazby projektu, nativní knihovny musí být zahrnutý v projektu a jeho akce sestavení musí být 'ObjcBindingNativeLibrary').
+### <a name="mt1302-could-not-extract-the-native-library--from--please-ensure-the-native-library-was-properly-embedded-in-the-managed-assembly-if-the-assembly-was-built-using-a-binding-project-the-native-library-must-be-included-in-the-project-and-its-build-action-must-be-objcbindingnativelibrary"></a>MT1302: Nepodařilo se vyextrahovat nativní knihovny ' \*' z '+'. Zkontrolujte, zda že nativní knihovny správně vložená ve spravované sestavení (Pokud sestavení bylo vytvořeno pomocí vazby projektu, nativní knihovny musí být zahrnutý v projektu a jeho akce sestavení musí být 'ObjcBindingNativeLibrary').
 
 <a name="MT1303" />
 
@@ -1275,7 +1275,7 @@ Zkontrolujte protokol bulid Další informace o této chybě z příkazu nativn�
 
 <a name="MT1304" />
 
-### <a name="mt1304-the-embedded-framework--in--is-invalid-it-does-not-contain-an-infoplist"></a>MT1304: Embedded framework ' *' v * je neplatný: neobsahuje Info.plist.
+### <a name="mt1304-the-embedded-framework--in--is-invalid-it-does-not-contain-an-infoplist"></a>MT1304: Embedded framework ' \*' v \* je neplatný: neobsahuje Info.plist.
 
 Rozhraní zadaný embedded neobsahuje Info.plist a není proto platný framework.
 
@@ -1283,7 +1283,7 @@ Zkontrolujte prosím, že rozhraní je platný.
 
 <a name="MT1305" />
 
-### <a name="mt1305-the-binding-library--contains-a-user-framework--but-embedded-user-frameworks-require-ios-80-the-current-deployment-target-is--please-set-the-deployment-target-in-the-infoplist-file-to-at-least-80"></a>MT1305: Vazba knihovny '\*' obsahuje uživatelské rozhraní (\*), ale vyžadují iOS 8.0 embedded uživatelské rozhraní (aktuální cíl nasazení je *). Nastavte prosím cíl nasazení v souboru Info.plist na alespoň 8.0.
+### <a name="mt1305-the-binding-library--contains-a-user-framework--but-embedded-user-frameworks-require-ios-80-the-current-deployment-target-is--please-set-the-deployment-target-in-the-infoplist-file-to-at-least-80"></a>MT1305: Vazba knihovny '\*' obsahuje uživatelské rozhraní (\*), ale vyžadují iOS 8.0 embedded uživatelské rozhraní (aktuální cíl nasazení je \*). Nastavte prosím cíl nasazení v souboru Info.plist na alespoň 8.0.
 
 Zadaná vazba knihovna obsahuje vložené framework, ale Xamarin.iOS podporuje pouze vložené architektury na iOS 8.0 nebo novější.
 
@@ -1297,7 +1297,7 @@ Nastavte cíl nasazení v souboru Info.plist na alespoň 8.0 při řešení tét
 
 <a name="MT1400" />
 
-### <a name="mt1400-could-not-open-crash-report-service-afcconnectionopen-returned-"></a>MT1400: Nelze otevřít služba sestav havárií: AFCConnectionOpen vrátil *
+### <a name="mt1400-could-not-open-crash-report-service-afcconnectionopen-returned-"></a>MT1400: Nelze otevřít služba sestav havárií: AFCConnectionOpen vrátil \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1311,7 +1311,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1401" />
 
-### <a name="mt1401-could-not-close-crash-report-service-afcconnectionclose-returned-"></a>MT1401: Nepodařilo se zavřít služba sestav havárií: AFCConnectionClose vrátil *
+### <a name="mt1401-could-not-close-crash-report-service-afcconnectionclose-returned-"></a>MT1401: Nepodařilo se zavřít služba sestav havárií: AFCConnectionClose vrátil \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1325,7 +1325,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1402" />
 
-### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402: Nelze číst informace o souboru pro *: AFCFileInfoOpen vrátil *
+### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402: Nelze číst informace o souboru pro \*: AFCFileInfoOpen vrátil \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1339,7 +1339,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1403" />
 
-### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403: Nelze číst hlášení o selhání: AFCDirectoryOpen (*) vrátí: *
+### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403: Nelze číst hlášení o selhání: AFCDirectoryOpen (\*) vrátí: \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1353,7 +1353,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1404" />
 
-### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404: Nelze číst hlášení o selhání: AFCFileRefOpen (*) vrátí: *
+### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404: Nelze číst hlášení o selhání: AFCFileRefOpen (\*) vrátí: \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1367,7 +1367,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1405" />
 
-### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405: Nelze číst hlášení o selhání: AFCFileRefRead (*) vrátí: *
+### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405: Nelze číst hlášení o selhání: AFCFileRefRead (\*) vrátí: \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1381,7 +1381,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1406" />
 
-### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406: Nelze zobrazit seznam sestav havárií: AFCDirectoryOpen (*) vrátí: *
+### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406: Nelze zobrazit seznam sestav havárií: AFCDirectoryOpen (\*) vrátí: \*
 
 Došlo k chybě při pokusu o přístup k hlášení selhání ze zařízení.
 
@@ -1403,7 +1403,7 @@ Postupů k vyzkoušení. Chcete-li tento problém vyřešit:
 
 <a name="MT1600" />
 
-### <a name="mt1600-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1600: Není prac-O dynamické knihovny (Neznámý záhlaví "0 x *"): *.
+### <a name="mt1600-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1600: Není prac-O dynamické knihovny (Neznámý záhlaví "0 x \*"): \*.
 
 Došlo k chybě při zpracování dynamickou knihovnu nejistá.
 
@@ -1415,7 +1415,7 @@ Formát knihovnu lze ověřit pomocí `file` příkazu z terminálu:
 
 <a name="MT1601" />
 
-### <a name="mt1601-not-a-static-library-unknown-header--"></a>MT1601: Nejsou statické knihovny (Neznámý záhlaví ' *'): *.
+### <a name="mt1601-not-a-static-library-unknown-header--"></a>MT1601: Nejsou statické knihovny (Neznámý záhlaví ' \*'): \*.
 
 Došlo k chybě při zpracování se statickou knihovnou nejistá.
 
@@ -1427,7 +1427,7 @@ Formát knihovnu lze ověřit pomocí `file` příkazu z terminálu:
 
 <a name="MT1602" />
 
-### <a name="mt1602-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1602: Není prac-O dynamické knihovny (Neznámý záhlaví "0 x *"): *.
+### <a name="mt1602-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1602: Není prac-O dynamické knihovny (Neznámý záhlaví "0 x \*"): \*.
 
 Došlo k chybě při zpracování dynamickou knihovnu nejistá.
 
@@ -1439,7 +1439,7 @@ Formát knihovnu lze ověřit pomocí `file` příkazu z terminálu:
 
 <a name="MT1603" />
 
-### <a name="mt1603-unknown-format-for-fat-entry-at-position--in-"></a>MT1603: Neznámý formát pro fat položku na pozici * v *.
+### <a name="mt1603-unknown-format-for-fat-entry-at-position--in-"></a>MT1603: Neznámý formát pro fat položku na pozici \* v \*.
 
 Došlo k chybě při zpracování dotyčném fat archivu.
 
@@ -1451,7 +1451,7 @@ Formát fat archivu lze ověřit pomocí `file` příkazu z terminálu:
 
 <a name="MT1604" />
 
-### <a name="mt1604-file-of-type--is-not-a-macho-file-"></a>MT1604: Soubor typu * není souborem MachO (*).
+### <a name="mt1604-file-of-type--is-not-a-macho-file-"></a>MT1604: Soubor typu \* není souborem MachO (\*).
 
 Došlo k chybě při zpracování souboru MachO nejistá.
 
@@ -1486,23 +1486,23 @@ Je důležité k hlášení o chybě pro tyto problémy. Ve většině případ�
 
 <a name="MT2002" />
 
-### <a name="mt2002-can-not-resolve-reference-"></a>MT2002: Nelze přeložit odkaz: *
+### <a name="mt2002-can-not-resolve-reference-"></a>MT2002: Nelze přeložit odkaz: \*
 
 <a name="MT2003" />
 
-### <a name="mt2003-option--will-be-ignored-since-linking-is-disabled"></a>MT2003: Možnost ' *' bude ignorován, protože propojení je zakázán.
+### <a name="mt2003-option--will-be-ignored-since-linking-is-disabled"></a>MT2003: Možnost ' \*' bude ignorován, protože propojení je zakázán.
 
 <a name="MT2004" />
 
-### <a name="mt2004-extra-linker-definitions-file--could-not-be-located"></a>MT2004: Soubor definice linkeru navíc ' *' nebyl nalezen.
+### <a name="mt2004-extra-linker-definitions-file--could-not-be-located"></a>MT2004: Soubor definice linkeru navíc ' \*' nebyl nalezen.
 
 <a name="MT2005" />
 
-### <a name="mt2005-definitions-from--could-not-be-parsed"></a>MT2005: Definice z ' *' nebylo možné analyzovat.
+### <a name="mt2005-definitions-from--could-not-be-parsed"></a>MT2005: Definice z ' \*' nebylo možné analyzovat.
 
 <a name="MT2006" />
 
-### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: Nelze načíst mscorlib.dll z: *. Přeinstalujte Xamarin.iOS.
+### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: Nelze načíst mscorlib.dll z: \*. Přeinstalujte Xamarin.iOS.
 
 To obvykle znamená, že dojde k problému s instalací aplikace Xamarin.iOS. Zkuste to prosím znovu nainstalovat Xamarin.iOS.
 
@@ -1551,13 +1551,13 @@ To znamená, že dojde k chybě na [vlastní konfigurační soubor XML linkeru](
 
 <a name="MT2018" />
 
-### <a name="mt2018-the-assembly--is-referenced-from-two-different-locations--and-"></a>MT2018: Sestavení '\*se odkazuje z různých míst: '\*' a ' *'.
+### <a name="mt2018-the-assembly--is-referenced-from-two-different-locations--and-"></a>MT2018: Sestavení '\*se odkazuje z různých míst: '\*' a ' \*'.
 
 Z několika míst je načteno sestavení uvedený v chybové zprávě. Zajistěte, aby vždy nutné použít stejnou verzi sestavení.
 
 <a name="MT2019" />
 
-### <a name="mt2019-can-not-load-the-root-assembly-"></a>MT2019: Nelze načíst sestavení kořenové ' *'
+### <a name="mt2019-can-not-load-the-root-assembly-"></a>MT2019: Nelze načíst sestavení kořenové ' \*'
 
 Sestavení kořenové nelze načíst. Ověřte, že složka v chybové zprávě odkazuje na existující soubor, a že je platné hodnoty .NET assembly.
 
@@ -1631,7 +1631,7 @@ Něco neočekávaného došlo k chybě při pokusu označit metody převod pro i
 
 <a name="MT2101" />
 
-### <a name="mt2101-cant-resolve-the-reference--referenced-from-the-method--in-"></a>MT2101: Nelze přeložit odkaz '\*', odkazované z metody'\*' v ' *'.
+### <a name="mt2101-cant-resolve-the-reference--referenced-from-the-method--in-"></a>MT2101: Nelze přeložit odkaz '\*', odkazované z metody'\*' v ' \*'.
 
 Odkaz na neplatný sestavení došlo při zpracování metody uvedené v chybové zprávě.
 
@@ -1639,7 +1639,7 @@ Sestavení, která způsobila problém jmenuje v chybové zprávě. Chcete tento
 
 <a name="MT2102" />
 
-### <a name="mt2102-error-processing-the-method--in-the-assembly--"></a>MT2102: Chyba při zpracování metodu '\*"v sestavení"\*': *
+### <a name="mt2102-error-processing-the-method--in-the-assembly--"></a>MT2102: Chyba při zpracování metodu '\*"v sestavení"\*': \*
 
 Něco neočekávaného došlo k chybě při pokusu označit metody uvedené v chybové zprávě.
 
@@ -1647,7 +1647,7 @@ Sestavení, která způsobila problém jmenuje v chybové zprávě. Chcete tento
 
 <a name="MT2103" />
 
-### <a name="mt2103-error-processing-assembly--"></a>MT2103: Chyba zpracování sestavení '\*': *
+### <a name="mt2103-error-processing-assembly--"></a>MT2103: Chyba zpracování sestavení '\*': \*
 
 Došlo k neočekávané chybě při zpracování sestavení.
 
@@ -1670,7 +1670,7 @@ V tématu https://msdn.microsoft.com/library/x0w2664k.aspx Další informace o s
 
 <a name="MT3001" />
 
-### <a name="mt3001-could-not-aot-the-assembly-"></a>MT3001: Může AOT sestavení ' *'
+### <a name="mt3001-could-not-aot-the-assembly-"></a>MT3001: Může AOT sestavení ' \*'
 
 Obvykle to ukazuje na chybu v kompilátoru AOT. Oznamte chybu [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) s projekt, který slouží k tomu chybu reprodukovat.
 
@@ -1678,7 +1678,7 @@ V některých případech je možné tento problém obejít tím, že zakážete
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-httpsdeveloperxamarincomguidesiosadvancedtopicslimitationsreversecallbackshttpsdeveloperxamarincomguidesiosadvancedtopicslimitationsreversecallbacks"></a>MT3002: Omezení AOT: Metoda ' *' musí být statické, protože je upravena pomocí [MonoPInvokeCallback]. V tématu [https://developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](https://developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-httpsdeveloperxamarincomguidesiosadvancedtopicslimitationsreversecallbackshttpsdeveloperxamarincomguidesiosadvancedtopicslimitationsreversecallbacks"></a>MT3002: Omezení AOT: Metoda ' \*' musí být statické, protože je upravena pomocí [MonoPInvokeCallback]. V tématu [https://developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](https://developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks)
 
 Tato chybová zpráva pochází z kompilátoru AOT.
 
@@ -1690,7 +1690,7 @@ Pokud je povoleno LLVM není podporováno ladění. Pokud potřebujete k laděn�
 
 <a name="MT3004" />
 
-### <a name="mt3004-could-not-aot-the-assembly--because-it-doesnt-exist"></a>MT3004: AOT sestavení může, *, protože neexistuje.
+### <a name="mt3004-could-not-aot-the-assembly--because-it-doesnt-exist"></a>MT3004: AOT sestavení může, \*, protože neexistuje.
 
 <a name="MT3005" />
 
@@ -1708,7 +1708,7 @@ To není podporováno a nemusí sestavení nebo spusťte správně (sestavení m
 
 <a name="MT3007" />
 
-### <a name="mt3007-debug-info-files-mdb-will-not-be-loaded-when-llvm-is-enabled"></a>MT3007: Ladění údaje, které soubory (*.mdb), nebudou načteny, pokud je povoleno llvm.
+### <a name="mt3007-debug-info-files-mdb-will-not-be-loaded-when-llvm-is-enabled"></a>MT3007: Ladění údaje, které soubory (\*.mdb), nebudou načteny, pokud je povoleno llvm.
 
 <a name="MT3008" />
 
@@ -1836,23 +1836,23 @@ Toto je vždy chyby v Xamarin.iOS; prosím soubor sestavy chyb v [ http://bugzil
 
 <a name="MT4116" />
 
-### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116: Nepodařilo se zaregistrovat sestavení ' *': *
+### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116: Nepodařilo se zaregistrovat sestavení ' \*': \*
 
 <a name="MT4117" />
 
-### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117: Najít registrátora neshoda signatury v metodě '*.*'-modulu pro výběr označuje metodu trvá * parametry, zatímco spravované metoda má * parametry.
+### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117: Najít registrátora neshoda signatury v metodě '*.*'-modulu pro výběr označuje metodu trvá \* parametry, zatímco spravované metoda má \* parametry.
 
 <a name="MT4118" />
 
-### <a name="mt4118-cannot-register-two-managed-types--and--with-the-same-native-name-"></a>MT4118: Nelze zaregistrovat dva spravované typy ('\*'a'\*') se stejným názvem nativní ('* ').
+### <a name="mt4118-cannot-register-two-managed-types--and--with-the-same-native-name-"></a>MT4118: Nelze zaregistrovat dva spravované typy ('\*'a'\*') se stejným názvem nativní ('\* ').
 
 <a name="MT4119" />
 
-### <a name="mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a>MT4119: Nebylo možné zaregistrovat modulu pro výběr '\*'člena'\*. *, protože modulu pro výběr je již zaregistrován na jiný člen.
+### <a name="mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a>MT4119: Nebylo možné zaregistrovat modulu pro výběr '\*'člena'\*. \*, protože modulu pro výběr je již zaregistrován na jiný člen.
 
 <a name="MT4120" />
 
-### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120: Registrátora nalezen typ neznámé pole "\*, v poli"\*. * ". Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120: Registrátora nalezen typ neznámé pole "\*, v poli"\*. \* ". Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -1862,15 +1862,15 @@ Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http:/
 
 <a name="MT4122" />
 
-### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122: Nelze použít kompilátoru Clang součástí *.* SDK kompilace generovaného kódu statických registrátorem, když jiné sady než ASCII zadejte názvy ('* ') jsou k dispozici v aplikaci. Buď použijte RSZ / G ++ (--kompilátoru: RSZ | g ++), dynamické registrátora (--registrátora: dynamické) nebo novější SDK.
+### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122: Nelze použít kompilátoru Clang součástí *.* SDK kompilace generovaného kódu statických registrátorem, když jiné sady než ASCII zadejte názvy ('\* ') jsou k dispozici v aplikaci. Buď použijte RSZ / G ++ (--kompilátoru: RSZ | g ++), dynamické registrátora (--registrátora: dynamické) nebo novější SDK.
 
 <a name="MT4123" />
 
-### <a name="mt4123-the-type-of-the-variadic-parameter-in-the-variadic-function--must-be-systemintptr"></a>MT4123: Typ variadická parametru ve funkci variadická ' *' musí být System.IntPtr.
+### <a name="mt4123-the-type-of-the-variadic-parameter-in-the-variadic-function--must-be-systemintptr"></a>MT4123: Typ variadická parametru ve funkci variadická ' \*' musí být System.IntPtr.
 
 <a name="MT4124" />
 
-### <a name="mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4124: Neplatný * v nalezen ' *'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4124: Neplatný \* v nalezen ' \*'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -1880,7 +1880,7 @@ Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http:/
 
 <a name="MT4126" />
 
-### <a name="mt4126-cannot-register-two-managed-protocols--and--with-the-same-native-name-"></a>MT4126: Nelze zaregistrovat dva spravované protokoly ('\*'a'\*') se stejným názvem nativní ('* ').
+### <a name="mt4126-cannot-register-two-managed-protocols--and--with-the-same-native-name-"></a>MT4126: Nelze zaregistrovat dva spravované protokoly ('\*'a'\*') se stejným názvem nativní ('\* ').
 
 <a name="MT4127" />
 
@@ -1896,7 +1896,7 @@ Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http:/
 
 <a name="MT4130" />
 
-### <a name="mt4130-the-registrar-cannot-export-static-methods-in-generic-classes-"></a>MT4130: Registrátora nelze exportovat statických metod v obecné třídy ('* ').
+### <a name="mt4130-the-registrar-cannot-export-static-methods-in-generic-classes-"></a>MT4130: Registrátora nelze exportovat statických metod v obecné třídy ('\* ').
 
 <a name="MT4131" />
 
@@ -1908,11 +1908,11 @@ Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http:/
 
 <a name="MT4133" />
 
-### <a name="mt4133-cannot-construct-an-instance-of-the-type--from-objective-c-because-the-type-is-generic-runtime-exception"></a>MT4133: Nelze vytvořit instanci typu ' *' z jazyka Objective-C protože typ je obecná. [Výjimku modulu Runtime]
+### <a name="mt4133-cannot-construct-an-instance-of-the-type--from-objective-c-because-the-type-is-generic-runtime-exception"></a>MT4133: Nelze vytvořit instanci typu ' \*' z jazyka Objective-C protože typ je obecná. [Výjimku modulu Runtime]
 
 <a name="MT4134" />
 
-### <a name="mt4134-your-application-is-using-the--framework-which-isnt-included-in-the-ios-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-ios--while-youre-building-with-the-ios--sdk-please-select-a-newer-sdk-in-your-apps-ios-build-options"></a>MT4134: Vaše aplikace používá ' *' framework, který není součástí sada SDK, který používáte k sestavení aplikace iOS (toto rozhraní byla zavedena v systému iOS *, zatímco již vytváříte s iOS * SDK.) Vyberte novější SDK v vaší aplikace iOS možnosti sestavení.
+### <a name="mt4134-your-application-is-using-the--framework-which-isnt-included-in-the-ios-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-ios--while-youre-building-with-the-ios--sdk-please-select-a-newer-sdk-in-your-apps-ios-build-options"></a>MT4134: Vaše aplikace používá ' \*' framework, který není součástí sada SDK, který používáte k sestavení aplikace iOS (toto rozhraní byla zavedena v systému iOS \*, zatímco již vytváříte s iOS \* SDK.) Vyberte novější SDK v vaší aplikace iOS možnosti sestavení.
 
 <a name="MT4135" />
 
@@ -1920,21 +1920,21 @@ Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http:/
 
 <a name="MT4136" />
 
-### <a name="mt4136-the-registrar-cannot-marshal-the-parameter-type--of-the-parameter--in-the-method-"></a>MT4136: Registrátora nelze zařazování typ parametru se\*'parametru'\*'v metodě'\*. *.
+### <a name="mt4136-the-registrar-cannot-marshal-the-parameter-type--of-the-parameter--in-the-method-"></a>MT4136: Registrátora nelze zařazování typ parametru se\*'parametru'\*'v metodě'\*. \*.
 
 <!-- MT4137 is unused -->
 
 <a name="MT4138" />
 
-### <a name="mt4138-the-registrar-cannot-marshal-the-property-type--of-the-property-"></a>MT4138: Registrátora nelze zařazování typ vlastnosti '\*'vlastnosti'\*. * ".
+### <a name="mt4138-the-registrar-cannot-marshal-the-property-type--of-the-property-"></a>MT4138: Registrátora nelze zařazování typ vlastnosti '\*'vlastnosti'\*. \* ".
 
 <a name="MT4139" />
 
-### <a name="mt4139-the-registrar-cannot-marshal-the-property-type--of-the-property--properties-with-the-connect-attribute-must-have-a-property-type-of-nsobject-or-a-subclass-of-nsobject"></a>MT4139: Registrátora nelze zařazování typ vlastnosti '\*'vlastnosti'\*. * ". Vlastnosti s atributem [Connect] musí mít typ vlastnosti NSObject (nebo podtřídou třídy NSObject).
+### <a name="mt4139-the-registrar-cannot-marshal-the-property-type--of-the-property--properties-with-the-connect-attribute-must-have-a-property-type-of-nsobject-or-a-subclass-of-nsobject"></a>MT4139: Registrátora nelze zařazování typ vlastnosti '\*'vlastnosti'\*. \* ". Vlastnosti s atributem [Connect] musí mít typ vlastnosti NSObject (nebo podtřídou třídy NSObject).
 
 <a name="MT4140" />
 
-### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140: Najít registrátora neshoda signatury v metodě '*.*'-modulu pro výběr označuje variadická metoda přebírá * parametry, zatímco spravované metoda má * parametry.
+### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140: Najít registrátora neshoda signatury v metodě '*.*'-modulu pro výběr označuje variadická metoda přebírá \* parametry, zatímco spravované metoda má \* parametry.
 
 <a name="MT4141" />
 
@@ -1980,21 +1980,21 @@ V takovém případě se přepíše Xamarin.iOS `retain`, `release` a `dealloc` 
 
 <a name="MT4142" />
 
-### <a name="mt4142-failed-to-register-the-type-"></a>MT4142: Nepodařilo se zaregistrovat typ ' *'.
+### <a name="mt4142-failed-to-register-the-type-"></a>MT4142: Nepodařilo se zaregistrovat typ ' \*'.
 
 <a name="MT4143" />
 
-### <a name="mt4143-the-objectivec-class--could-not-be-registered-it-does-not-seem-to-derive-from-any-known-objectivec-class-including-nsobject"></a>MT4143: ObjectiveC třídy ' *' nebylo možné zaregistrovat, je zřejmě není odvozena od všechny známé ObjectiveC třídy (včetně NSObject).
+### <a name="mt4143-the-objectivec-class--could-not-be-registered-it-does-not-seem-to-derive-from-any-known-objectivec-class-including-nsobject"></a>MT4143: ObjectiveC třídy ' \*' nebylo možné zaregistrovat, je zřejmě není odvozena od všechny známé ObjectiveC třídy (včetně NSObject).
 
 <a name="MT4144" />
 
-### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144: Nelze zaregistrovat metodu, *, protože nemá přidružené trampoline. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
+### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144: Nelze zaregistrovat metodu, \*, protože nemá přidružené trampoline. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT4145" />
 
-### <a name="mt4145-invalid-enum--enums-with-the-native-attribute-must-have-a-underlying-enum-type-of-either-long-or-ulong"></a>MT4145: Neplatný výčtu ' *': výčty s atributem [nativní] musí mít základní typ výčtu 'dlouhý' nebo 'ulong'.
+### <a name="mt4145-invalid-enum--enums-with-the-native-attribute-must-have-a-underlying-enum-type-of-either-long-or-ulong"></a>MT4145: Neplatný výčtu ' \*': výčty s atributem [nativní] musí mít základní typ výčtu 'dlouhý' nebo 'ulong'.
 
 <a name="MT4146" />
 
@@ -2010,7 +2010,7 @@ Ověřte, že `Register` atribut na spravované třídy uvedený v chybové zpr�
 
 <a name="MT4148" />
 
-### <a name="mt4148-the-registrar-found-a-generic-protocol--exporting-generic-protocols-is-not-supported"></a>MT4148: Registrátora nalezen obecný protokol: ' *'. Obecné protokoly export není podporován.
+### <a name="mt4148-the-registrar-found-a-generic-protocol--exporting-generic-protocols-is-not-supported"></a>MT4148: Registrátora nalezen obecný protokol: ' \*'. Obecné protokoly export není podporován.
 
 <a name="MT4149" />
 
@@ -2022,11 +2022,11 @@ Ověřte, že `Register` atribut na spravované třídy uvedený v chybové zpr�
 
 <a name="MT4151" />
 
-### <a name="mt4151-cannot-register-the-type--because-the-type-property-in-its-category-attribute-isnt-set"></a>MT4151: Nelze zaregistrovat typ ' *, protože není nastavena vlastnost Type v jeho atribut kategorie.
+### <a name="mt4151-cannot-register-the-type--because-the-type-property-in-its-category-attribute-isnt-set"></a>MT4151: Nelze zaregistrovat typ ' \*, protože není nastavena vlastnost Type v jeho atribut kategorie.
 
 <a name="MT4152" />
 
-### <a name="mt4152-cannot-register-the-type--as-a-category-because-it-implements-inativeobject-or-subclasses-nsobject"></a>MT4152: Nelze zaregistrovat typ ' *' jako kategorii protože implementuje INativeObject nebo podtřídy NSObject.
+### <a name="mt4152-cannot-register-the-type--as-a-category-because-it-implements-inativeobject-or-subclasses-nsobject"></a>MT4152: Nelze zaregistrovat typ ' \*' jako kategorii protože implementuje INativeObject nebo podtřídy NSObject.
 
 <a name="MT4153" />
 
@@ -2038,11 +2038,11 @@ Ověřte, že `Register` atribut na spravované třídy uvedený v chybové zpr�
 
 <a name="MT4155" />
 
-### <a name="mt4155-cannot-register-the-method--with-the-selector--as-a-category-method-on--because-the-objective-c-already-has-an-implementation-for-this-selector"></a>MT4155: Nelze zaregistrovat metodu '\*'se selektorem'\*se jako metoda kategorie na ' *' protože jazyka Objective-C již implementace pro tento selektor.
+### <a name="mt4155-cannot-register-the-method--with-the-selector--as-a-category-method-on--because-the-objective-c-already-has-an-implementation-for-this-selector"></a>MT4155: Nelze zaregistrovat metodu '\*'se selektorem'\*se jako metoda kategorie na ' \*' protože jazyka Objective-C již implementace pro tento selektor.
 
 <a name="MT4156" />
 
-### <a name="mt4156-cannot-register-two-categories--and--with-the-same-native-name-"></a>MT4156: Nelze zaregistrovat dvě kategorie ('\*'a'\*') se stejným názvem nativní ('* ').
+### <a name="mt4156-cannot-register-two-categories--and--with-the-same-native-name-"></a>MT4156: Nelze zaregistrovat dvě kategorie ('\*'a'\*') se stejným názvem nativní ('\* ').
 
 <a name="MT4157" />
 
@@ -2050,11 +2050,11 @@ Ověřte, že `Register` atribut na spravované třídy uvedený v chybové zpr�
 
 <a name="MT4158" />
 
-### <a name="mt4158-cannot-register-the-constructor--in-the-category--because-constructors-in-categories-are-not-supported"></a>MT4158: Nelze zaregistrovat konstruktoru * v kategorii * protože konstruktory v kategoriích nejsou podporovány.
+### <a name="mt4158-cannot-register-the-constructor--in-the-category--because-constructors-in-categories-are-not-supported"></a>MT4158: Nelze zaregistrovat konstruktoru \* v kategorii \* protože konstruktory v kategoriích nejsou podporovány.
 
 <a name="MT4159" />
 
-### <a name="mt4159-cannot-register-the-method--as-a-category-method-because-category-methods-must-be-static"></a>MT4159: Nelze zaregistrovat metodu ' *' jako metodu kategorie protože kategorie metody musí být statické.
+### <a name="mt4159-cannot-register-the-method--as-a-category-method-because-category-methods-must-be-static"></a>MT4159: Nelze zaregistrovat metodu ' \*' jako metodu kategorie protože kategorie metody musí být statické.
 
 <a name="MT4160" />
 
@@ -2070,7 +2070,7 @@ Všechna pole ve struktuře, která je vystaven jazyka Objective-C musí být ta
 
 <a name="MT4162" />
 
-### <a name="mt4162-the-type--used-as--2-is-not-available-in---it-was-introduced-in---please-build-with-a-newer--sdk-usually-done-by-using-the-most-recent-version-of-xcode"></a>MT4162: Typ '\*"(použít jako * {2}) není k dispozici v ** (byla zavedena v * *)\* prosím sestavení s novější * SDK (obvykle provádí pomocí nejnovější verzi Xcode.
+### <a name="mt4162-the-type--used-as--2-is-not-available-in---it-was-introduced-in---please-build-with-a-newer--sdk-usually-done-by-using-the-most-recent-version-of-xcode"></a>MT4162: Typ '\*"(použít jako \* {2}) není k dispozici v \*\* (byla zavedena v \* \*)\* prosím sestavení s novější \* SDK (obvykle provádí pomocí nejnovější verzi Xcode.
 
 Registrátora najít typ, který není zahrnutý v aktuální sadě SDK.
 
@@ -2078,7 +2078,7 @@ Upgradujte Xcode.
 
 <a name="MT4163" />
 
-### <a name="mt4163-internal-error-in-the-registrar--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4163: Interní chyba v registrátora (*). Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt4163-internal-error-in-the-registrar--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4163: Interní chyba v registrátora (\*). Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 Tato chyba označuje chyby v Xamarin.iOS. Prosím soubor sestavy chyb v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -2104,7 +2104,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT4167" />
 
-### <a name="mt4167-cannot-register-the-method--because-the-signature-contains-a-generic-type--with-a-generic-argument-type-that-isnt-an-nsobject-subclass-"></a>MT4167: Nelze zaregistrovat metodu '\*, protože podpis obsahuje obecného typu (\*) s typem obecné argument, který není podtřídy NSObject (*).
+### <a name="mt4167-cannot-register-the-method--because-the-signature-contains-a-generic-type--with-a-generic-argument-type-that-isnt-an-nsobject-subclass-"></a>MT4167: Nelze zaregistrovat metodu '\*, protože podpis obsahuje obecného typu (\*) s typem obecné argument, který není podtřídy NSObject (\*).
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -2159,15 +2159,15 @@ Pokud spustíte do této při vývoji vazby projektu nativní knihovny, nám ote
 
 <a name="MT5101" />
 
-### <a name="mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a>MT5101: Chybí ' *' kompilátoru. Nainstalujte Xcode součásti, nástroje příkazového řádku.
+### <a name="mt5101-missing--compiler-please-install-xcode-command-line-tools-component"></a>MT5101: Chybí ' \*' kompilátoru. Nainstalujte Xcode součásti, nástroje příkazového řádku.
 
 <a name="MT5102" />
 
-### <a name="mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5102: Ke kompilaci souboru se nezdařilo ' *'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt5102-failed-to-assemble-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5102: Ke kompilaci souboru se nezdařilo ' \*'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 <a name="MT5103" />
 
-### <a name="mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5103: Se nezdařilo zkompilovat soubor ' *'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt5103-failed-to-compile-the-file--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5103: Se nezdařilo zkompilovat soubor ' \*'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 <a name="MT5104" />
 
@@ -2177,7 +2177,7 @@ Pokud spustíte do této při vývoji vazby projektu nativní knihovny, nám ote
 
 <a name="MT5106" />
 
-### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106: Nelze zkompilovat soubory ' *'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106: Nelze zkompilovat soubory ' \*'. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -2189,7 +2189,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT5201" />
 
-### <a name="mt5201-native-linking-failed-please-review-the-build-log-and-the-user-flags-provided-to-gcc-"></a>MT5201: Nativní propojení se nezdařilo. Zkontrolujte v protokolu sestavení a příznaky uživatele poskytované RSZ: *
+### <a name="mt5201-native-linking-failed-please-review-the-build-log-and-the-user-flags-provided-to-gcc-"></a>MT5201: Nativní propojení se nezdařilo. Zkontrolujte v protokolu sestavení a příznaky uživatele poskytované RSZ: \*
 
 <a name="MT5202" />
 
@@ -2197,17 +2197,17 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT5203" />
 
-### <a name="mt5203-native-linking-warning-"></a>MT5203: Nativní propojování upozornění: *
+### <a name="mt5203-native-linking-warning-"></a>MT5203: Nativní propojování upozornění: \*
 
 <!--- 5204-5208 are not used -->
 
 <a name="MT5209" />
 
-### <a name="mt5209-native-linking-error-"></a>MT5209: Nativní chyba propojení: *
+### <a name="mt5209-native-linking-error-"></a>MT5209: Nativní chyba propojení: \*
 
 <a name="MT5210" />
 
-### <a name="mt5210-native-linking-failed-undefined-symbol--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-are-properly-linked-in"></a>MT5210: Nativní propojení se nezdařilo, nedefinované symbol: *. Prosím ověřte, zda odkazujete všechny nezbytné architektury a nativní knihovny jsou správně propojené v.
+### <a name="mt5210-native-linking-failed-undefined-symbol--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-are-properly-linked-in"></a>MT5210: Nativní propojení se nezdařilo, nedefinované symbol: \*. Prosím ověřte, zda odkazujete všechny nezbytné architektury a nativní knihovny jsou správně propojené v.
 
 To se stane, když nativní linkeru nelze najít symbol, který se odkazuje někde. Tady je několik důvodů, že to se může stát:
 
@@ -2245,7 +2245,7 @@ To se stane, když nativní linkeru nelze najít třídu jazyka Objective-C, kte
 
 <a name="MT5212" />
 
-### <a name="mt5212-native-linking-failed-duplicate-symbol-"></a>MT5212: Nativní propojení se nezdařilo, duplicitní symbol: *.
+### <a name="mt5212-native-linking-failed-duplicate-symbol-"></a>MT5212: Nativní propojení se nezdařilo, duplicitní symbol: \*.
 
 To se stane, když nativní linkeru zaznamená duplicitní symboly mezi všechny nativní knihovny. Po této chybě došlo pravděpodobně jeden nebo více [MT5213](#MT5213) chyby s umístění pro každý výskyt symbolu. Možné důvody této chyby:
 
@@ -2302,13 +2302,13 @@ To se stane, když nativní linkeru zaznamená duplicitní symboly mezi všechny
 
 <a name="MT5213" />
 
-### <a name="mt5213-duplicate-symbol-in--location-related-to-previous-error"></a>MT5213: Duplicitní symbol v: * (umístění souvisejících s předchozí chyby)
+### <a name="mt5213-duplicate-symbol-in--location-related-to-previous-error"></a>MT5213: Duplicitní symbol v: \* (umístění souvisejících s předchozí chyby)
 
 Tato chyba se nahlásí pouze společně s [MT5212](#MT5212). Najdete v tématu [MT5212](#MT5212) Další informace.
 
 <a name="MT5214" />
 
-### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Nativní propojení se nezdařilo, nedefinované symbol: *. Bylo odkazováno tento symbol spravované člen *. Ověřte, že všechny potřebné architektury byla odkazované a nativní knihovny propojený.
+### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Nativní propojení se nezdařilo, nedefinované symbol: \*. Bylo odkazováno tento symbol spravované člen \*. Ověřte, že všechny potřebné architektury byla odkazované a nativní knihovny propojený.
 
 Tato chyba se nahlásí, když spravovaného kódu obsahuje P/Invoke na nativní metodu, která neexistuje. Příklad:
 
@@ -2328,13 +2328,13 @@ Existuje několik možných řešení:
 
 <a name="MT5215" />
 
-### <a name="mt5215-references-to--might-require-additional--frameworkxxx-or--lxxx-instructions-to-the-native-linker"></a>MT5215: Odkazuje na ' *' může vyžadovat další - framework = XXX nebo - lXXX pokyny nativní linkeru
+### <a name="mt5215-references-to--might-require-additional--frameworkxxx-or--lxxx-instructions-to-the-native-linker"></a>MT5215: Odkazuje na ' \*' může vyžadovat další - framework = XXX nebo - lXXX pokyny nativní linkeru
 
 Toto je upozornění, která určuje, že P/Invoke zjistilo odkazovat v knihovně, ale aplikace není propojení s ním.
 
 <a name="MT5216" />
 
-### <a name="mt5216-native-linking-failed-for--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5216: Nativní propojení se nezdařilo pro *. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
+### <a name="mt5216-native-linking-failed-for--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5216: Nativní propojení se nezdařilo pro \*. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com
 
 Tato chyba se nahlásí při propojování výstup kompilátoru AOT.
 
@@ -2342,7 +2342,7 @@ Tuto chybu pravděpodobně ukazuje na chybu v Xamarin.iOS. Prosím soubor sestav
 
 <a name="MT5217" />
 
-### <a name="mt5217-native-linking-possibly-failed-because-the-linker-command-line-was-too-long--characters"></a>MT5217: Nativní propojení se pravděpodobně nezdařila, protože příkazový řádek linkeru byla příliš dlouhá (* znaků).
+### <a name="mt5217-native-linking-possibly-failed-because-the-linker-command-line-was-too-long--characters"></a>MT5217: Nativní propojení se pravděpodobně nezdařila, protože příkazový řádek linkeru byla příliš dlouhá (\* znaků).
 
 Nativní propojení se nezdařilo a je možné že k situaci došlo proto linkeru příkaz byla příliš dlouhá.
 
@@ -2477,25 +2477,25 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7003" />
 
-### <a name="mt7003-the-app-extension--does-not-contain-an-infoplist"></a>MT7003: Rozšíření aplikace ' *' neobsahuje Info.plist.
+### <a name="mt7003-the-app-extension--does-not-contain-an-infoplist"></a>MT7003: Rozšíření aplikace ' \*' neobsahuje Info.plist.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7004" />
 
-### <a name="mt7004-the-app-extension--does-not-specify-a-cfbundleidentifier"></a>MT7004: Rozšíření aplikace ' *' neurčuje CFBundleIdentifier.
+### <a name="mt7004-the-app-extension--does-not-specify-a-cfbundleidentifier"></a>MT7004: Rozšíření aplikace ' \*' neurčuje CFBundleIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7005" />
 
-### <a name="mt7005-the-app-extension--does-not-specify-a-cfbundleexecutable"></a>MT7005: Rozšíření aplikace ' *' neurčuje CFBundleExecutable.
+### <a name="mt7005-the-app-extension--does-not-specify-a-cfbundleexecutable"></a>MT7005: Rozšíření aplikace ' \*' neurčuje CFBundleExecutable.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7006" />
 
-### <a name="mt7006-the-app-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7006: Rozšíření aplikace se\*"má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (*).
+### <a name="mt7006-the-app-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7006: Rozšíření aplikace se\*"má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (\*).
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
@@ -2507,115 +2507,115 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7008" />
 
-### <a name="mt7008-the-app-extension--does-not-specify-a-cfbundleshortversionstring"></a>MT7008: Rozšíření aplikace ' *' neurčuje CFBundleShortVersionString.
+### <a name="mt7008-the-app-extension--does-not-specify-a-cfbundleshortversionstring"></a>MT7008: Rozšíření aplikace ' \*' neurčuje CFBundleShortVersionString.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7009" />
 
-### <a name="mt7009-the-app-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7009: Rozšíření aplikace ' *' má neplatný Info.plist: neobsahuje slovníku NSExtension.
+### <a name="mt7009-the-app-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7009: Rozšíření aplikace ' \*' má neplatný Info.plist: neobsahuje slovníku NSExtension.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7010" />
 
-### <a name="mt7010-the-app-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionpointidentifier-value"></a>MT7010: Rozšíření aplikace ' *' má neplatný Info.plist: NSExtension slovník neobsahuje hodnotu NSExtensionPointIdentifier.
+### <a name="mt7010-the-app-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionpointidentifier-value"></a>MT7010: Rozšíření aplikace ' \*' má neplatný Info.plist: NSExtension slovník neobsahuje hodnotu NSExtensionPointIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7011" />
 
-### <a name="mt7011-the-watchkit-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionattributes-dictionary"></a>MT7011: WatchKit rozšíření ' *' má neplatný Info.plist: slovníku NSExtension neobsahuje slovníku NSExtensionAttributes.
+### <a name="mt7011-the-watchkit-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionattributes-dictionary"></a>MT7011: WatchKit rozšíření ' \*' má neplatný Info.plist: slovníku NSExtension neobsahuje slovníku NSExtensionAttributes.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7012" />
 
-### <a name="mt7012-the-watchkit-extension--does-not-have-exactly-one-watch-app"></a>MT7012: WatchKit rozšíření ' *' nemá přesně jednu aplikaci sledovat.
+### <a name="mt7012-the-watchkit-extension--does-not-have-exactly-one-watch-app"></a>MT7012: WatchKit rozšíření ' \*' nemá přesně jednu aplikaci sledovat.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7013" />
 
-### <a name="mt7013-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-must-contain-the-watch-companion-capability"></a>MT7013: WatchKit rozšíření ' *' má neplatný Info.plist: UIRequiredDeviceCapabilities musí obsahovat možnosti průvodce sledováním vyhledáváním.
+### <a name="mt7013-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-must-contain-the-watch-companion-capability"></a>MT7013: WatchKit rozšíření ' \*' má neplatný Info.plist: UIRequiredDeviceCapabilities musí obsahovat možnosti průvodce sledováním vyhledáváním.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7014" />
 
-### <a name="mt7014-the-watch-app--does-not-contain-an-infoplist"></a>MT7014: Aplikace sledovat ' *' neobsahuje Info.plist.
+### <a name="mt7014-the-watch-app--does-not-contain-an-infoplist"></a>MT7014: Aplikace sledovat ' \*' neobsahuje Info.plist.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7015" />
 
-### <a name="mt7015-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7015: Sledování aplikace "*" neurčuje CFBundleIdentifier.
+### <a name="mt7015-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7015: Sledování aplikace "\*" neurčuje CFBundleIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7016" />
 
-### <a name="mt7016-the-watch-app--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7016: Sledování aplikace "\*" má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (*).
+### <a name="mt7016-the-watch-app--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7016: Sledování aplikace "\*" má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (\*).
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7017" />
 
-### <a name="mt7017-the-watch-app--does-not-have-a-valid-uidevicefamily-value-expected-watch-4-but-found--"></a>MT7017: Sledování aplikace "\*" nemá platnou hodnotu UIDeviceFamily. Očekávané, podívejte se na (4), ale nalezen '\* (*)'.
+### <a name="mt7017-the-watch-app--does-not-have-a-valid-uidevicefamily-value-expected-watch-4-but-found--"></a>MT7017: Sledování aplikace "\*" nemá platnou hodnotu UIDeviceFamily. Očekávané, podívejte se na (4), ale nalezen '\* (\*)'.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7018" />
 
-### <a name="mt7018-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7018: Sledování aplikace "*" neurčuje CFBundleExecutable
+### <a name="mt7018-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7018: Sledování aplikace "\*" neurčuje CFBundleExecutable
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7019" />
 
-### <a name="mt7019-the-watch-app--has-an-invalid-wkcompanionappbundleidentifier-value--it-does-not-match-the-main-app-bundles-cfbundleidentifier-"></a>MT7019: Sledování aplikace "\*' má neplatnou hodnotu WKCompanionAppBundleIdentifier ('\*'), neodpovídá CFBundleIdentifier hlavní aplikace sady ('* ').
+### <a name="mt7019-the-watch-app--has-an-invalid-wkcompanionappbundleidentifier-value--it-does-not-match-the-main-app-bundles-cfbundleidentifier-"></a>MT7019: Sledování aplikace "\*' má neplatnou hodnotu WKCompanionAppBundleIdentifier ('\*'), neodpovídá CFBundleIdentifier hlavní aplikace sady ('\* ').
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7020" />
 
-### <a name="mt7020-the-watch-app--has-an-invalid-infoplist-the-wkwatchkitapp-key-must-be-present-and-have-a-value-of-true"></a>MT7020: Sledování aplikace "*" má neplatný Info.plist: WKWatchKitApp klíč musí existovat a mít hodnotu "true".
+### <a name="mt7020-the-watch-app--has-an-invalid-infoplist-the-wkwatchkitapp-key-must-be-present-and-have-a-value-of-true"></a>MT7020: Sledování aplikace "\*" má neplatný Info.plist: WKWatchKitApp klíč musí existovat a mít hodnotu "true".
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7021" />
 
-### <a name="mt7021-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7021: Sledování aplikace "*" má neplatný Info.plist: klíč LSRequiresIPhoneOS se nesmějí vyskytovat.
+### <a name="mt7021-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7021: Sledování aplikace "\*" má neplatný Info.plist: klíč LSRequiresIPhoneOS se nesmějí vyskytovat.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7022" />
 
-### <a name="mt7022-the-watch-app--does-not-contain-a-watch-extension"></a>MT7022: Aplikace sledovat ' *' neobsahuje příponu sledovat.
+### <a name="mt7022-the-watch-app--does-not-contain-a-watch-extension"></a>MT7022: Aplikace sledovat ' \*' neobsahuje příponu sledovat.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7023" />
 
-### <a name="mt7023-the-watch-extension--does-not-contain-an-infoplist"></a>MT7023: Sledování rozšíření ' *' neobsahuje Info.plist.
+### <a name="mt7023-the-watch-extension--does-not-contain-an-infoplist"></a>MT7023: Sledování rozšíření ' \*' neobsahuje Info.plist.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7024" />
 
-### <a name="mt7024-the-watch-extension--does-not-specify-a-cfbundleidentifier"></a>MT7024: Sledování rozšíření ' *' neurčuje CFBundleIdentifier.
+### <a name="mt7024-the-watch-extension--does-not-specify-a-cfbundleidentifier"></a>MT7024: Sledování rozšíření ' \*' neurčuje CFBundleIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7025" />
 
-### <a name="mt7025-the-watch-extension--does-not-specify-a-cfbundleexecutable"></a>MT7025: Sledování rozšíření ' *' neurčuje CFBundleExecutable.
+### <a name="mt7025-the-watch-extension--does-not-specify-a-cfbundleexecutable"></a>MT7025: Sledování rozšíření ' \*' neurčuje CFBundleExecutable.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7026" />
 
-### <a name="mt7026-the-watch-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7026: Sledování rozšíření '\*"má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (*).
+### <a name="mt7026-the-watch-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7026: Sledování rozšíření '\*"má neplatný CFBundleIdentifier (\*), nezačíná CFBundleIdentifier hlavní aplikace sady (\*).
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
@@ -2627,43 +2627,43 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7028" />
 
-### <a name="mt7028-the-watch-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7028: Sledování rozšíření ' *' má neplatný Info.plist: neobsahuje slovníku NSExtension.
+### <a name="mt7028-the-watch-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7028: Sledování rozšíření ' \*' má neplatný Info.plist: neobsahuje slovníku NSExtension.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7029" />
 
-### <a name="mt7029-the-watch-extension--has-an-invalid-infoplist-the-nsextensionpointidentifier-must-be-comapplewatchkit"></a>MT7029: Sledování rozšíření ' *' má neplatný Info.plist: NSExtensionPointIdentifier musí být "com.apple.watchkit".
+### <a name="mt7029-the-watch-extension--has-an-invalid-infoplist-the-nsextensionpointidentifier-must-be-comapplewatchkit"></a>MT7029: Sledování rozšíření ' \*' má neplatný Info.plist: NSExtensionPointIdentifier musí být "com.apple.watchkit".
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7030" />
 
-### <a name="mt7030-the-watch-extension--has-an-invalid-infoplist-the-nsextension-dictionary-must-contain-nsextensionattributes"></a>MT7030: Sledování rozšíření ' *' má neplatný Info.plist: slovníku NSExtension musí obsahovat NSExtensionAttributes.
+### <a name="mt7030-the-watch-extension--has-an-invalid-infoplist-the-nsextension-dictionary-must-contain-nsextensionattributes"></a>MT7030: Sledování rozšíření ' \*' má neplatný Info.plist: slovníku NSExtension musí obsahovat NSExtensionAttributes.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7031" />
 
-### <a name="mt7031-the-watch-extension--has-an-invalid-infoplist-the-nsextensionattributes-dictionary-must-contain-a-wkappbundleidentifier"></a>MT7031: Sledování rozšíření ' *' má neplatný Info.plist: slovníku NSExtensionAttributes musí obsahovat WKAppBundleIdentifier.
+### <a name="mt7031-the-watch-extension--has-an-invalid-infoplist-the-nsextensionattributes-dictionary-must-contain-a-wkappbundleidentifier"></a>MT7031: Sledování rozšíření ' \*' má neplatný Info.plist: slovníku NSExtensionAttributes musí obsahovat WKAppBundleIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7032" />
 
-### <a name="mt7032-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-should-not-contain-the-watch-companion-capability"></a>MT7032: WatchKit rozšíření ' *' má neplatný Info.plist: UIRequiredDeviceCapabilities nesmí obsahovat možnosti průvodce sledováním vyhledáváním.
+### <a name="mt7032-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-should-not-contain-the-watch-companion-capability"></a>MT7032: WatchKit rozšíření ' \*' má neplatný Info.plist: UIRequiredDeviceCapabilities nesmí obsahovat možnosti průvodce sledováním vyhledáváním.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7033" />
 
-### <a name="mt7033-the-watch-app--does-not-contain-an-infoplist"></a>MT7033: Aplikace sledovat ' *' neobsahuje Info.plist.
+### <a name="mt7033-the-watch-app--does-not-contain-an-infoplist"></a>MT7033: Aplikace sledovat ' \*' neobsahuje Info.plist.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7034" />
 
-### <a name="mt7034-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7034: Sledování aplikace "*" neurčuje CFBundleIdentifier.
+### <a name="mt7034-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7034: Sledování aplikace "\*" neurčuje CFBundleIdentifier.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
@@ -2675,7 +2675,7 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7036" />
 
-### <a name="mt7036-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7036: Sledování aplikace "*" neurčuje CFBundleExecutable.
+### <a name="mt7036-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7036: Sledování aplikace "\*" neurčuje CFBundleExecutable.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
@@ -2687,13 +2687,13 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7038" />
 
-### <a name="mt7038-the-watch-app--has-an-invalid-infoplist-the-wkcompanionappbundleidentifier-must-exist-and-must-match-the-main-app-bundles-cfbundleidentifier"></a>MT7038: Sledování aplikace "*" má neplatný Info.plist: WKCompanionAppBundleIdentifier musí existovat a CFBundleIdentifier sadu hlavní aplikace se musí shodovat.
+### <a name="mt7038-the-watch-app--has-an-invalid-infoplist-the-wkcompanionappbundleidentifier-must-exist-and-must-match-the-main-app-bundles-cfbundleidentifier"></a>MT7038: Sledování aplikace "\*" má neplatný Info.plist: WKCompanionAppBundleIdentifier musí existovat a CFBundleIdentifier sadu hlavní aplikace se musí shodovat.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
 <a name="MT7039" />
 
-### <a name="mt7039-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7039: Sledování aplikace "*" má neplatný Info.plist: klíč LSRequiresIPhoneOS se nesmějí vyskytovat.
+### <a name="mt7039-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7039: Sledování aplikace "\*" má neplatný Info.plist: klíč LSRequiresIPhoneOS se nesmějí vyskytovat.
 
 *Úlohy nástroje MSBuild: ValidateAppBundleTaskBase*
 
@@ -2729,11 +2729,11 @@ V některých případech je problém "místní sítě" a je možné ho řešit 
 
 <a name="MT7045" />
 
-### <a name="mt7045-unrecognized-format-"></a>MT7045: Nerozpoznaný formát: *.
+### <a name="mt7045-unrecognized-format-"></a>MT7045: Nerozpoznaný formát: \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
-Kde * může být:
+Kde \* může být:
 
 - odkazy řetězců
 - pole
@@ -2746,67 +2746,67 @@ Kde * může být:
 
 <a name="MT7046" />
 
-### <a name="mt7046-add-entry--incorrectly-specified"></a>MT7046: Přidat: položka, *, nesprávně zadán.
+### <a name="mt7046-add-entry--incorrectly-specified"></a>MT7046: Přidat: položka, \*, nesprávně zadán.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7047" />
 
-### <a name="mt7047-add-entry--contains-invalid-array-index"></a>MT7047: Přidat: položka, *, obsahuje neplatný Index pole.
+### <a name="mt7047-add-entry--contains-invalid-array-index"></a>MT7047: Přidat: položka, \*, obsahuje neplatný Index pole.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7048" />
 
-### <a name="mt7048-add--entry-already-exists"></a>MT7048: Přidat: * položka již existuje.
+### <a name="mt7048-add--entry-already-exists"></a>MT7048: Přidat: \* položka již existuje.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7049" />
 
-### <a name="mt7049-add-cant-add-entry--to-parent"></a>MT7049: Přidat: nelze přidat položku, *, aby nadřazený.
+### <a name="mt7049-add-cant-add-entry--to-parent"></a>MT7049: Přidat: nelze přidat položku, \*, aby nadřazený.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7050" />
 
-### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050: Odstranit: nelze odstranit položku, *, z nadřazeného objektu.
+### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050: Odstranit: nelze odstranit položku, \*, z nadřazeného objektu.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7051" />
 
-### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051: Odstranit: položka, *, obsahuje neplatný Index pole.
+### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051: Odstranit: položka, \*, obsahuje neplatný Index pole.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7052" />
 
-### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052: Odstranit: položka, *, neexistuje.
+### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052: Odstranit: položka, \*, neexistuje.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7053" />
 
-### <a name="mt7053-import-entry--incorrectly-specified"></a>MT7053: Import: položka, *, nesprávně zadán.
+### <a name="mt7053-import-entry--incorrectly-specified"></a>MT7053: Import: položka, \*, nesprávně zadán.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7054" />
 
-### <a name="mt7054-import-entry--contains-invalid-array-index"></a>MT7054: Import: položka, *, obsahuje neplatný Index pole.
+### <a name="mt7054-import-entry--contains-invalid-array-index"></a>MT7054: Import: položka, \*, obsahuje neplatný Index pole.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7055" />
 
-### <a name="mt7055-import-error-reading-file-"></a>MT7055: Import: Chyba při čtení souboru: *.
+### <a name="mt7055-import-error-reading-file-"></a>MT7055: Import: Chyba při čtení souboru: \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7056" />
 
-### <a name="mt7056-import-cant-add-entry--to-parent"></a>MT7056: Import: nelze přidat položku, *, aby nadřazený.
+### <a name="mt7056-import-cant-add-entry--to-parent"></a>MT7056: Import: nelze přidat položku, \*, aby nadřazený.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
@@ -2824,55 +2824,55 @@ Kde * může být:
 
 <a name="MT7059" />
 
-### <a name="mt7059-merge-entry--contains-invalid-array-index"></a>MT7059: Sloučení: položka, *, obsahuje neplatný Index pole.
+### <a name="mt7059-merge-entry--contains-invalid-array-index"></a>MT7059: Sloučení: položka, \*, obsahuje neplatný Index pole.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7060" />
 
-### <a name="mt7060-merge-entry--does-not-exist"></a>MT7060: Sloučení: položka, *, neexistuje.
+### <a name="mt7060-merge-entry--does-not-exist"></a>MT7060: Sloučení: položka, \*, neexistuje.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7061" />
 
-### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Sloučení: Chyba při čtení souboru: *.
+### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Sloučení: Chyba při čtení souboru: \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7062" />
 
-### <a name="mt7062-set-entry--incorrectly-specified"></a>MT7062: Nastavit: položka, *, nesprávně zadán.
+### <a name="mt7062-set-entry--incorrectly-specified"></a>MT7062: Nastavit: položka, \*, nesprávně zadán.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7063" />
 
-### <a name="mt7063-set-entry--contains-invalid-array-index"></a>MT7063: Nastavit: položka, *, obsahuje neplatný Index pole.
+### <a name="mt7063-set-entry--contains-invalid-array-index"></a>MT7063: Nastavit: položka, \*, obsahuje neplatný Index pole.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7064" />
 
-### <a name="mt7064-set-entry--does-not-exist"></a>MT7064: Nastavit: položka, *, neexistuje.
+### <a name="mt7064-set-entry--does-not-exist"></a>MT7064: Nastavit: položka, \*, neexistuje.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7065" />
 
-### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: Neznámý Seznam_vlastností editor akce: *.
+### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: Neznámý Seznam_vlastností editor akce: \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7066" />
 
-### <a name="mt7066-error-loading--"></a>MT7066: Chyba při načítání ' *': *.
+### <a name="mt7066-error-loading--"></a>MT7066: Chyba při načítání ' \*': \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
 <a name="MT7067" />
 
-### <a name="mt7067-error-saving--"></a>MT7067: Chyba při ukládání ' *': *.
+### <a name="mt7067-error-saving--"></a>MT7067: Chyba při ukládání ' \*': \*.
 
 *Úlohy nástroje MSBuild: PropertyListEditorTaskBase*
 
@@ -2897,7 +2897,7 @@ Kde * může být:
 
 <a name="MT8004" />
 
-### <a name="mt8004-cannot-create-an-instance-of--for-the-native-object-0x-of-type--because-another-instance-already-exists-for-this-native-object-of-type-"></a>MT8004: Nelze vytvořit instanci * pro nativní objekt 0 x * (typu ' *'), protože jiná instance již existuje pro tento objekt nativní (typu *).
+### <a name="mt8004-cannot-create-an-instance-of--for-the-native-object-0x-of-type--because-another-instance-already-exists-for-this-native-object-of-type-"></a>MT8004: Nelze vytvořit instanci \* pro nativní objekt 0 x \* (typu ' \*'), protože jiná instance již existuje pro tento objekt nativní (typu \*).
 
 <a name="MT8005" />
 
@@ -2913,19 +2913,19 @@ Kde * může být:
 
 <a name="MT8008" />
 
-### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: Načíst verzi Xamarin.iOS.dll byl kompilován pro * bits, když je proces * bits. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: Načíst verzi Xamarin.iOS.dll byl kompilován pro \* bits, když je proces \* bits. Oznamte chybu v http://bugzilla.xamarin.com.
 
 To znamená, že je něco špatně v procesu sestavení. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: Nepodařilo se najít bloku delegovat převod metody *.*. s parametr #*. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: Nepodařilo se najít bloku delegovat převod metody *.* s parametr #\*. Oznamte chybu v http://bugzilla.xamarin.com.
 
 To znamená, že rozhraní API nebyl vázán správně. Pokud je to rozhraní API vystavené Xamarin, Oznamte chybu v našem bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)), pokud je vazba třetích stran, obraťte se na dodavatele.
 
 <a name="MT8010" />
 
-### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010: Nativní typ velikost Neshoda mezi Xamarin. [iOS | Mac] .dll a provádění architektura. Xamarin. [iOS | .Dll Mac] byl vytvořen pro *-bit, zatímco je aktuální proces *-bit.
+### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010: Nativní typ velikost Neshoda mezi Xamarin. [iOS | Mac] .dll a provádění architektura. Xamarin. [iOS | .Dll Mac] byl vytvořen pro \*-bit, zatímco je aktuální proces \*-bit.
 
 To znamená, že je něco špatně v procesu sestavení. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
@@ -2963,7 +2963,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType ({2}), obslužné rutiny, pole není delegáta, je *. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType ({2}), obslužné rutiny, pole není delegáta, je \*. Oznamte chybu v http://bugzilla.xamarin.com.
 
 Atribut DelegateProxy pro danou metodu je neplatný.
 
@@ -2971,7 +2971,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: Nebylo možné převést delegáta blokování pro návratovou hodnotu metody *.*, protože vstup není s delegátem, je *. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: Nebylo možné převést delegáta blokování pro návratovou hodnotu metody *.*, protože vstup není s delegátem, je \*. Oznamte chybu v http://bugzilla.xamarin.com.
 
 Atribut DelegateProxy pro danou metodu je neplatný.
 
@@ -2987,31 +2987,31 @@ To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com
 
 <a name="MT8019" />
 
-### <a name="mt8019-could-not-find-the-assembly--in-the-loaded-assemblies"></a>MT8019: Nelze nalézt sestavení * v načíst sestavení.
+### <a name="mt8019-could-not-find-the-assembly--in-the-loaded-assemblies"></a>MT8019: Nelze nalézt sestavení \* v načíst sestavení.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT8020" />
 
-### <a name="mt8020-could-not-find-the-module-with-metadatatoken--in-the-assembly-"></a>MT8020: Nebyl nalezen modul s MetadataToken * v sestavení *.
+### <a name="mt8020-could-not-find-the-module-with-metadatatoken--in-the-assembly-"></a>MT8020: Nebyl nalezen modul s MetadataToken \* v sestavení \*.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT8021" />
 
-### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021: Neznámý implicitní typ tokenu: *.
+### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021: Neznámý implicitní typ tokenu: \*.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT8022" />
 
-### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: Očekává odkaz tokenu * být *, ale je *. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
+### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: Očekává odkaz tokenu \* být \*, ale je \*. Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
 <a name="MT8023" />
 
-### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: Instance objektu je potřeba vytvořit uzavřená obecná metoda pro otevřete obecná metoda: * (referenční dokumentace token: *). Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
+### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: Instance objektu je potřeba vytvořit uzavřená obecná metoda pro otevřete obecná metoda: \* (referenční dokumentace token: \*). Prosím soubor sestavy chyb v http://bugzilla.xamarin.com.
 
 To ukazuje na chybu v Xamarin.iOS. Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 

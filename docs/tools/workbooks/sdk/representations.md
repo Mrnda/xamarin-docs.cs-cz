@@ -71,7 +71,7 @@ public sealed class Person : ISerializableObject
 
 Nástroji pro vykreslování jsou implementované v jazyce JavaScript a bude mít přístup k verze jazyka JavaScript objektu představovaného prostřednictvím `ISerializableObject`. Bude mít i kopie JavaScript `$type` vlastnosti, která určuje název typu .NET řetězci.
 
-Doporučujeme používat TypeScript pro klienta integrace kód, který se samozřejmě kompiluje vanilla JavaScript. V obou případech sada SDK poskytuje [typings] [ typings] který odkazuje TypeScript nebo jednoduše uvedené ručně Pokud zápis vanilla JavaScript je upřednostňovaný.
+Doporučujeme používat TypeScript pro klienta integrace kód, který se samozřejmě kompiluje vanilla JavaScript. V obou případech sada SDK poskytuje [typings][typings] který odkazuje TypeScript nebo jednoduše uvedené ručně Pokud zápis vanilla JavaScript je upřednostňovaný.
 
 Hlavní integrační bod pro vykreslování je `xamarin.interactive.RendererRegistry`:
 
