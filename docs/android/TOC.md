@@ -9,7 +9,7 @@
 ##### [Vlastnosti zařízení](get-started/installation/android-emulator/device-properties.md)
 ##### [Odstraňování potíží](get-started/installation/android-emulator/troubleshooting.md)
 #### [Instalace zařízení s Androidem](get-started/installation/set-up-device-for-development.md)
-#### [OpenJDK Microsoftu Náhled](get-started/installation/openjdk.md)
+#### [Microsoft Mobile OpenJDK Preview](get-started/installation/openjdk.md)
 ### [Hello, Android](get-started/hello-android/index.md)
 #### [Část 1: Rychlý start](get-started/hello-android/hello-android-quickstart.md)
 #### [Část 2: Podrobné informace](get-started/hello-android/hello-android-deepdive.md)
