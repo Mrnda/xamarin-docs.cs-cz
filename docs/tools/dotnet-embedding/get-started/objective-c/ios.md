@@ -1,33 +1,33 @@
 ---
-title: Začínáme s iOS
-description: Tento dokument popisuje, jak začít pracovat s iOS pomocí rozhraní .NET vložení. Popisuje požadavky a představuje ukázkovou aplikaci k ukazují, jak vytvořit vazbu spravované sestavení a použít výstup v projektu Xcode.
+title: Začínáme s Iosem
+description: Tento dokument popisuje, jak začít pracovat s Iosem pomocí vkládání technologie .NET. Tento článek popisuje požadavky a představuje ukázkovou aplikaci do ukazují, jak vytvořit vazbu spravovaného sestavení a použít výstup v projektu Xcode.
 ms.prod: xamarin
 ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 683f448c3e0cdba1bbe3ba68f0db3225675f5830
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: d61eb8f1ad1def764c8552b2f047aa46cd712018
+ms.sourcegitcommit: ef04a4ae1b19c1854a8e4e8315516d4030f4bbd6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066894"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39654825"
 ---
-# <a name="getting-started-with-ios"></a>Začínáme s iOS
+# <a name="getting-started-with-ios"></a>Začínáme s Iosem
 
 ## <a name="requirements"></a>Požadavky
 
-Kromě požadavků z našich [Začínáme s jazyka Objective-C](~/tools/dotnet-embedding/get-started/objective-c/index.md) průvodce, budete také potřebovat:
+Kromě požadavků z našich [Začínáme se službou Objective-C](~/tools/dotnet-embedding/get-started/objective-c/index.md) průvodce, budete také potřebovat:
 
 * [Xamarin.iOS 10.11](https://visualstudio.microsoft.com/xamarin/) nebo novější
 
 ## <a name="hello-world"></a>Ahoj světe
 
-Nejprve vytvořte jednoduchý hello world – ukázka v jazyce C#.
+Nejdříve vytvořte jednoduché hello world – ukázka v jazyce C#.
 
-### <a name="create-c-sample"></a>Vytvoření ukázkové C#
+### <a name="create-c-sample"></a>Vytvoření ukázky jazyka C#
 
-Otevřete Visual Studio pro Mac, vytvořte nový projekt iOS knihovny tříd, pojmenujte ji **hello z csharp**a uložte ho do **~/Projects/hello-from-csharp**.
+Otevřít Visual Studio pro Mac, vytvořte nový projekt knihovny tříd s Iosem, pojmenujte ho **hello z csharp**a uložit ho. tím **~/Projects/hello-from-csharp**.
 
 Nahraďte kód v **MyClass.cs** souboru následujícím fragmentem kódu:
 
@@ -44,36 +44,36 @@ public class MyUIView : UITextView
 
 Sestavte projekt a výsledné sestavení se uloží jako **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**.
 
-### <a name="bind-the-managed-assembly"></a>Vytvoření vazby spravované sestavení.
+### <a name="bind-the-managed-assembly"></a>Vytvořit vazbu spravovaného sestavení
 
-Jakmile máte spravované sestavení, vazbu vyvoláním vložení .NET.
+Jakmile budete mít spravovaným sestavením, navazují vyvolání vkládání technologie .NET.
 
-Jak je popsáno v [instalace](~/tools/dotnet-embedding/get-started/install/install.md) průvodce, to lze provést jako krok po sestavení ve vašem projektu s cílem vlastní MSBuild nebo ručně:
+Jak je popsáno v [instalace](~/tools/dotnet-embedding/get-started/install/install.md) průvodce, to lze provést jako krok po sestavení v projektu, s vlastní cíl nástroje MSBuild, nebo ručně:
 
 ```shell
 cd ~/Projects/hello-from-csharp
 objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll --target=framework --platform=iOS --outdir=output -c --debug
 ```
 
-Rozhraní bude uložena v umístění **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**.
+Rozhraní budou umístěny do **~/Projects/hello-from-csharp/output/hello-from-csharp.framework**.
 
-### <a name="use-the-generated-output-in-an-xcode-project"></a>Použití generovaný výstup v projektu Xcode
+### <a name="use-the-generated-output-in-an-xcode-project"></a>Generovaný výstup použít v projektu Xcode
 
-Otevřete Xcode, vytvořte nový iOS jediné zobrazení aplikace, název **hello z csharp**a vyberte **jazyka Objective-C** jazyk.
+Otevřete Xcode, vytvořit nový iOS jediné zobrazení aplikace, pojmenujte ho **hello z csharp**a vyberte **Objective-C** jazyka.
 
-Otevřete **~/Projects/hello-from-csharp/output** adresář v hledání, vyberte **hello z csharp.framework**, přetáhněte jej do projektu Xcode a umístěte jej právě vyšší **hello z csharp**  složky v projektu.
+Otevřít **~/Projects/hello-from-csharp/output** adresáře ve Finderu, vyberte **hello z csharp.framework**, přetáhněte ho do projektu Xcode a umístěte ho přímo nad **hello z csharp**  složky v projektu.
 
-! [Přetažení framework] Images/Hello-from-CSharp-IOS-Drag-Drop-Framework.PNG)
+![Přetáhnout myší framework](ios-images/hello-from-csharp-ios-drag-drop-framework.png)
 
-Zajistěte, aby **kopírovat položky v případě potřeby** je zaškrtnuta možnost v dialogovém okně, která se objeví a klikněte na tlačítko **Dokončit**.
+Ujistěte se, že **kopírovat položky v případě potřeby** se změnami, která se otevře dialogové okno a klikněte na tlačítko **Dokončit**.
 
 ![Kopírovat položky v případě potřeby](ios-images/hello-from-csharp-ios-copy-items-if-needed.png)
 
-Vyberte **hello z csharp** projektu a přejděte do **hello z csharp** cíle **karta Obecné**. V **Embedded binární** přidejte **hello z csharp.framework**.
+Vyberte **hello z csharp** projektu a přejděte **hello z csharp** cíle **kartu Obecné**. V **vložený binární** části, přidejte **hello z csharp.framework**.
 
-![Vložené binárních souborů](ios-images/hello-from-csharp-ios-embedded-binaries.png)
+![Vložených binárních souborů](ios-images/hello-from-csharp-ios-embedded-binaries.png)
 
-Otevřete **ViewController.m**a nahraďte jeho obsah se:
+Otevřít **ViewController.m**a nahraďte jeho obsah se:
 
 ```objective-c
 #import "ViewController.h"
@@ -93,12 +93,12 @@ Otevřete **ViewController.m**a nahraďte jeho obsah se:
 @end
 ```
 
-Vložení .NET aktuálně nepodporuje bitcode na iOS, která je povolena pro některé šablony projektu Xcode. 
+Vkládání technologie .NET aktuálně nepodporují bitcode na iOS, která je povolena pro některé šablony projektu Xcode. 
 
-V nastavení projektu, zakažte ho:
+Zakažte ho v nastavení projektu:
 
 ![Možnost Bitcode](../../images/ios-bitcode-option.png)
 
-Nakonec spusťte projekt Xcode a přibližně toto se zobrazí:
+Nakonec spusťte projekt Xcode a vypadat přibližně takto se zobrazí:
 
-![Hello z ukázky C# v simulátoru](ios-images/hello-from-csharp-ios.png)
+![Dobrý den ze ukázka C# v simulátoru](ios-images/hello-from-csharp-ios.png)
