@@ -1,59 +1,59 @@
 ---
-title: Transformace škálování
-description: Thhis článek jsou zde popsány transformace škálování SkiaSharp pro škálování objekty, které se různé velikosti a to ukazuje s ukázkový kód.
+title: Transformace měřítka
+description: Thhis článek zkoumá transformace měřítka ve Skiasharpu škálování objektů různých velikostí a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 9008e95a7cd6caf7ab2346ff4e2364a4efef0d65
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244672"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615600"
 ---
-# <a name="the-scale-transform"></a>Transformace škálování
+# <a name="the-scale-transform"></a>Transformace měřítka
 
-_Zjistit transformace škálování SkiaSharp pro škálování objekty, které se různé velikosti_
+_Zjistit transformace měřítka ve Skiasharpu škálování pro různě velké objekty_
 
-Protože jste viděli v [převede transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) článku transformace přeložit můžete přesunout objekt grafické z jednoho umístění do druhého. Naproti tomu transformace škálování změní velikost grafického objektu:
+Jak už víte, v [transformace The přeložit](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) článku transformace translace můžete přesunout grafický objekt z jednoho umístění do jiného. Transformace měřítka naproti tomu změní velikost grafický objekt:
 
-![](scale-images/scaleexample.png "Vysoký slovo škálovat velikost")
+![](scale-images/scaleexample.png "Vysoký Wordu horizontálně velikost")
 
-Transformace škálování také často způsobí, že grafiky souřadnice přesunout, protože byly provedeny větší.
+Transformace měřítka také často způsobuje grafiky souřadnice přesunout, protože byly provedeny větší.
 
-Dříve jste viděli dva vzorce transformace, které popisují důsledky překlad faktory `dx` a `dy`:
+Dříve jste viděli dvou vzorců transformace, které popisují efekty převodu faktory `dx` a `dy`:
 
-x: = x + DirectX
+x! = x + dx
 
 y' = y + dy
 
-Škálování faktory `sx` a `sy` jsou multiplikativní místo doplňkové:
+Škálování úrovně `sx` a `sy` místo additive násobení jsou:
 
-x: sx · = x
+x! = sx. x
 
-y' = sy · y
+y' = sy. y
 
-Výchozí hodnoty přeložit faktory jsou 0; výchozí hodnoty měřítka faktory jsou 1.
+Výchozí hodnoty přeložit faktory mají hodnotu 0; výchozí hodnoty škálování faktory jsou od 1.
 
-`SKCanvas` Třída definuje čtyři `Scale` metody. První [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) metoda je pro případy, pokud chcete stejné vodorovného a svislého škálování zohlednit:
+`SKCanvas` Třída definuje čtyři `Scale` metody. První [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) pro případech, kdy chcete, aby stejné vodorovné a svislé škálování faktor je metoda:
 
 ```csharp
 public void Scale (Single s)
 ```
 
-To se označuje jako *isotropic* škálování &mdash; škálování tedy stejné v obou směrech. Isotropic škálování zachová poměr stran objektu.
+To se označuje jako *isotropic* škálování &mdash; škálování, který je stejné v obou směrech. Škálování isotropic zachová poměr stran objektu.
 
-Druhý [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metoda umožňuje určit různé hodnoty vodorovného a svislého škálování:
+Druhá [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metoda vám umožňuje zadat různé hodnoty pro horizontální a vertikální škálování:
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
-Výsledkem je *volba* škálování.
-Třetí [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) metoda kombinuje dvě škálování faktory v jediném `SKPoint` hodnotu:
+V důsledku *anisotropního* škálování.
+Třetí [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) metoda kombinuje dva faktory měřítka v jediném `SKPoint` hodnotu:
 
 ```csharp
 public void Scale (SKPoint size)
@@ -61,7 +61,7 @@ public void Scale (SKPoint size)
 
 Čtvrtý `Scale` metoda najdete za chvíli.
 
-**Základní škálování** stránky ukazuje `Scale` metoda. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML soubor obsahuje dva `Slider` prvky, které vám umožní vybrat vodorovného a svislého škálování faktory mezi 0 a 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) souboru kódu na pozadí používá tyto hodnoty pro volání `Scale` před zobrazení zaoblený obdélník pouze tah přerušovanou čárou a přizpůsobí nějaký text v levé horní horním rohu na plátno:
+**Základní Škálovací** stránce ukazuje `Scale` metody. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) soubor XAML obsahuje dva `Slider` prvky, které vám umožní vybrat horizontální a vertikální škálování faktory mezi 0 a 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) soubor kódu na pozadí používá tyto hodnoty, aby volala `Scale` před zobrazením zakulacený obdélník pouze tah přerušovanou čárou a přizpůsobí nějaký text v levém horním rohu horním rohu plátna:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,28 +100,28 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Může vás zajímat: jak škálování faktory ovlivňují hodnota vrácená z `MeasureText` metodu `SKPaint`? Odpověď na otázku: vůbec. `Scale` je metoda `SKCanvas`. Nic dělat s neovlivňuje `SKPaint` objektu, dokud tento objekt pro vykreslení něco na plátně.
+Může vás zajímat: škálování faktorů vliv hodnota vrácená z `MeasureText` metoda `SKPaint`? Odpověď: vůbec ne. `Scale` je metoda `SKCanvas`. To nemá vliv na cokoli, co dělat s `SKPaint` objektu, dokud tento objekt použijete k vykreslení něco na plátně.
 
-Jak vidíte, vše, co vykreslovat po `Scale` volání zvyšuje úměrně:
+Jak vidíte, vše, co vykreslit po `Scale` volání zvyšuje proporcionálně:
 
-[![](scale-images/basicscale-small.png "Trojitá snímek obrazovky stránky základní škálování")](scale-images/basicscale-large.png#lightbox "Trojitá snímek obrazovky stránky základní měřítka")
+[![](scale-images/basicscale-small.png "Trojitá snímek obrazovky stránky základní Škálovací")](scale-images/basicscale-large.png#lightbox "Trojitá snímek obrazovky stránky základní Škálovací")
 
-Text, šířka přerušovanou čáru, délka pomlčky v daného řádku zaokrouhlení rozích a 10 pixelů okraje mezi horní a levé hrany na plátno a Zaoblený obdélník platí všechny stejné škálování faktorů.
+Text, šířka přerušovanou čáru, délku pomlčky v tomto řádku zaokrouhlení rohů a 10 pixel rozpětí mezi levém a horním okraji na plátno a zakulacený obdélník musí dodržovat všechny stejné faktory měřítka.
 
 > [!IMPORTANT]
-> Univerzální platformu Windows nevykresluje správně anisotropicly škálovat text.
+> Univerzální platforma Windows správně nevykresluje anisotropicly škálován text.
 
-Volba škálování příčiny šířku tahu se liší řádky zarovnán vodorovné nebo svislé osy. (To je také zřejmé z první bitové kopie na této stránce.) Pokud nechcete, aby šířku tahu, která má mít vliv faktory škálování, nastavte na hodnotu 0 a bude vždy jeden pixel široká bez ohledu na to `Scale` nastavení.
+Anisotropního škálování způsobí, že šířka tahu se liší pro řádky souladu s vodorovné a svislé osy. (Toto se taky zřejmé z první image na této stránce.) Pokud nechcete, aby šířka tahu neplatila škálování faktory, nastavte na hodnotu 0 a bude vždy jeden pixel široké bez ohledu na to `Scale` nastavení.
 
-Škálování je relativní vzhledem ke levého horního rohu plátna. Může to být přesně co chcete použít, ale nemusí být. Předpokládejme, že chcete umístění textu a obdélníku někde jinde na plátně a vy chcete škálovat relativně k jeho center. V takovém případě můžete použít čtvrtou verzi [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) metoda, která zahrnuje dva další parametry k určení středu škálování:
+Škálování je relativní vůči levém horním rohu plátna. Může to být přesně co chcete, ale nemusí být. Předpokládejme, že chcete umístit textové a obdélník někde jinde na plátně a vy chcete škálovat vzhledem k jeho střed. V takovém případě můžete použít čtvrtou verzi [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) metodu, která obsahuje dvě další parametry k určení center škálování:
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
 ```
 
-`px` a `py` parametry definovat bod, který se někdy označuje jako *škálování center* , ale v SkiaSharp dokumentace se označuje jako *bodu otáčení*. Toto je bod relativně k levém horním rohu na plátno, který nemá vliv škálování. Všechny škálování nastane relativně k této center.
+`px` a `py` parametry definovat bod, který se někdy označuje jako *škálování center* , ale v SkiaSharp dokumentace se označuje jako *bodu otáčení*. Toto je bod vzhledem k levém horním rohu plátna, která nemá vliv škálování. Všechny škálování nastane vzhledem k tohoto centra.
 
-[ **Zarovnaný na střed škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) stránka zobrazuje, jak to funguje. `PaintSurface` Obslužná rutina je podobná **základní škálování** programu vyjma toho, že `margin` hodnota je vypočítána na střed text ve vodorovném směru, což naznačuje, že program funguje nejlépe v režimu na výšku:
+[ **Zarovnaný na střed škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) stránce ukazuje, jak to funguje. `PaintSurface` Obslužná rutina je podobná **základní Škálovací** programu s výjimkou, že `margin` hodnota se počítá na střed text ve vodorovném směru, což znamená, že program nejlépe funguje v režimu na výšku:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,34 +164,34 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Je umístěný levém horním rohu obdélníku zaokrouhlené `margin` pixelů z nalevo od plátna a `margin` pixelů shora. Poslední dva argumenty, které mají `Scale` metoda jsou nastavena na tyto hodnoty a šířka a Výška textu, což je také šířka a výška zaokrouhlené rámečku. To znamená, že všechny škálování je relativní vzhledem ke středu obdélníku:
+Je umístěn levého horního rohu zakulacený obdélník `margin` pixelů od levého okraje na plátno a `margin` pixelů od horního. Poslední dva argumenty, které mají `Scale` metody jsou nastaveny na tyto hodnoty a šířka a Výška textu, což je také šířka a výška zakulacený obdélník. To znamená, že všechny škálování je relativní vzhledem k centru obdélníku:
 
-[![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed škálování")](scale-images/centeredscale-large.png#lightbox "Trojitá snímek obrazovky stránky škálování zarovnaný na střed")
+[![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky na střed škálování")](scale-images/centeredscale-large.png#lightbox "Trojitá snímek obrazovky stránky škálování na střed")
 
-`Slider` Elementy v tento program mít řadu &ndash;10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce UWP na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
+`Slider` Prvky v rámci tohoto programu mají celou řadu &ndash;10 až 10. Jak je vidět, záporné hodnoty vertikální škálování (třeba na Android obrazovky v centru) způsobit, že objekty kolem vodorovnou osu, která se předá prostřednictvím centra pro škálování. Záporné hodnoty vodorovné škálování (jako je například na pravé straně obrazovky UPW) způsobit, že objekty kolem svislá osa, který se předá prostřednictvím centra pro škálování.
 
-Tato verze čtvrtý `Scale` metoda je ve skutečnosti zástupce. Můžete chtít zjistit, jak to funguje tak, že nahradíte `Scale` metoda v tento kód následujícím kódem:
+Tato verze čtvrtý `Scale` metoda je ve skutečnosti místní. Můžete chtít podívat, jak to funguje tak, že nahradíte `Scale` metoda v tento kód následujícím kódem:
 
 ```csharp
 canvas.Translate(-px, -py);
 ```
 
-Jedná se o negativy souřadnic bodu pivot.
+Jedná se o negativy souřadnice bodu otáčení.
 
-Nyní spusťte program znovu. Uvidíte zapuštěno obdélníku a text tak, aby centru v levém horním rohu na plátno. Sotva najdete ho. Posuvníků nefungují samozřejmě, protože teď nemá vůbec škálování program.
+Nyní spusťte program znovu. Zobrazí se vám posunuty obdélník a text tak, aby centru v levém horním rohu plátna. Stěží uvidíte ho. Posuvníky, protože nyní program neškáluje se vůbec samozřejmě nefungují.
 
-Nyní přidat základní `Scale` volání (bez škálování center) *před* , `Translate` volání:
+Nyní přidejte základní `Scale` volání (bez měřítka center) *před* , který `Translate` volání:
 
 ```csharp
 canvas.Scale(sx, sy);
 canvas.Translate(–px, –py);
 ```
 
-Pokud jste obeznámeni s toto cvičení v jiné že systémy programováním grafiky, domníváte se, že je nesprávný, ale není. Skia zpracovává volání následných transformace trochu jinak z co je znají.
+Pokud jste obeznámeni s v tomto cvičení v jiné že grafické programování systémů, si možná myslíte, že je nesprávný, ale není. Skia zahrnuje volání po sobě jdoucích transformace trochu odlišně od co asi znáte.
 
-S následných `Scale` a `Translate` volání, středu zaokrouhlené rámeček je stále v levém horním rohu, ale je možné nyní škálovat relativně k levého horního rohu na plátno, což je také středu zaoblený obdélník.
+S po sobě jdoucích `Scale` a `Translate` volání, center zakulacený obdélník je stále v levém horním rohu, ale teď můžete škálovat je relativní vzhledem k levém horním rohu plátna, což je také center zakulacený obdélník.
 
-Teď, než který `Scale` volání přidat další `Translate` volání centrování hodnotami:
+Nyní, před který `Scale` volání přidejte další `Translate` volání centrování hodnotami:
 
 ```csharp
 canvas.Translate(px, py);
@@ -199,25 +199,25 @@ canvas.Scale(sx, sy);
 canvas.Translate(–px, –py);
 ```
 
-Tento krok přesune škálovat výsledek zpět na původní pozici. Tyto tři volání odpovídají:
+Škálovaná výsledek to přejde zpět do původní polohy. Tyto tři volání jsou ekvivalentní:
 
 ```csharp
 canvas.Scale(sx, sy, px, py);
 ```
 
-Jednotlivé transformace jsou kombinovaných tak, aby celkový transformace vzorec:
+Jednotlivé transformace jsou compounded tak, aby celková transformace vzorec:
 
- x: sx · = (x – px) + px
+ x! = sx. (x – px) + px
 
- y' = sy · (y – py) + py
+ y' = sy. (y-py) + py
 
-Mějte na paměti, výchozí hodnoty `sx` a `sy` 1. Je snadné přimět sami, že tyto vzorce není transformovat bodem pivot (px, py). Zůstane ve stejném umístění relativně k na plátno.
+Mějte na paměti, že výchozí hodnoty `sx` a `sy` jsou od 1. Je snadné sami přesvědčit, že tyto vzorce není transformovat bodu otáčení (px, py). Zůstane ve stejném umístění vzhledem k na plátno.
 
-Když zkombinujete `Translate` a `Scale` volání, záleží na pořadí. Pokud `Translate` dodává po `Scale`, překlad faktory jsou efektivně škálovat škálování faktory. Pokud `Translate` zaslána před `Scale`, nejsou škálovat faktory překlad. Tento proces bude poněkud jasnější (i když více matematickém) Pokud je zavedená předmět transformační matice.
+Když zkombinujete `Translate` a `Scale` volání, záleží na pořadí. Pokud `Translate` , přichází po `Scale`, překlad faktory jsou efektivně škálovat faktory měřítka. Pokud `Translate` byla zaslána před `Scale`, faktory překladu nejsou škálovat. Tento proces se stane něco srozumitelnější (i když spolu více matematické) při předmětem transformační matice se zavedl až.
 
-`SKPath` Třída definuje jen pro čtení [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) vlastnost, která vrací `SKRect` definování rozsah souřadnice v cestě. Například, když `Bounds` vlastnost se získávají z cesty hendecagram vytvořili dříve, `Left` a `Top` vlastnosti obdélníku, jsou přibližně – 100, `Right` a `Bottom` vlastnosti přibližně 100 a `Width` a `Height` vlastnosti jsou přibližně 200. (Většina skutečnými hodnotami jsou malé méně, protože body hvězdiček jsou definovány kruh se serverem radius 100, ale pouze nejvyšší bod je paralelní s vodorovné nebo svislé osy.)
+`SKPath` Třída definuje jen pro čtení [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) vlastnost, která se vrátí `SKRect` definování rozsahu souřadnice v cestě. Například, když `Bounds` vlastnost se získávají z cesty hendecagram vytvořili dříve, `Left` a `Top` přibližně – 100, jsou vlastnosti obdélníku `Right` a `Bottom` vlastnosti jsou přibližně 100 a `Width` a `Height` vlastnosti jsou přibližně 200. (Většina skutečnými hodnotami jsou malé méně protože body hvězdiček, které jsou definovány pomocí kruhu s poloměrem 100, ale pouze vrchního bodu souběžně s vodorovné nebo svislé osy.)
 
-Dostupnost tyto informace předpokládají, že by měl být možné odvozena škálování a převede faktory, které jsou vhodné pro škálování cestu k velikost na plátno. [ **Volba škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) stránky to ukazuje hvězdičkou odkazoval 11. *Volba* škálování znamená, že nerovné v vodorovného a svislého pokynů, což znamená, že hvězdičkou nezachovají jeho původní poměr stran. Zde je odpovídající kód v `PaintSurface` obslužné rutiny:
+Dostupnost tyto informace znamená, že by měl být možné odvodit škálování a překládat faktory, které jsou vhodné pro škálování cestu k velikosti na plátně. [ **Anisotropního škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) stránce ukazuje to ukazuje 11 hvězdičkou. *Anisotropního* škálování znamená, že nerovnost vodorovného a svislého směry, což znamená, že na hvězdičku původní poměr stran nezachovají. Zde je příslušný kód v `PaintSurface` obslužné rutiny:
 
 ```csharp
 SKPath path = HendecagramPage.HendecagramPath;
@@ -245,24 +245,24 @@ using (SKPaint strokePaint = new SKPaint
 }
 ```
 
-`pathBounds` Obdélníku získat v horní části tento kód a později se používá s šířka a výška na plátno v `Scale` volání. Volání samostatně škálovaly souřadnice cesty je vykreslen pomocí `DrawPath` volání ale hvězdičkou bude zarovnaný na střed v pravém horním rohu na plátno. Je třeba přesunout dolů a doleva. Toto je úkolem `Translate` volání. Tyto dvě vlastnosti `pathBounds` jsou přibližně – 100, takže překlad faktory jsou přibližně 100. Protože `Translate` po volání `Scale` volat, tyto hodnoty jsou efektivně škálovat škálování faktory, takže se přesouvají středu hvězdy na střed plátna:
+`pathBounds` Obdélník získali v horní části tohoto kódu a pak použít později s šířku a výšku na plátně v `Scale` volání. Volání samostatně škálovaly souřadnice cesty je vykreslen pomocí `DrawPath` volání, ale na hvězdičku bude umístěný v pravém horním rohu plátna. Je potřeba přesunout dolů a doleva. To je práce `Translate` volání. Tyto dvě vlastnosti `pathBounds` jsou přibližně – 100, takže překlad faktory jsou přibližně 100. Protože `Translate` po volání `Scale` volání, tyto hodnoty jsou efektivně škálovat škálování faktorů, tak při přechodu středu hvězdy střed plátna:
 
-[![](scale-images/anisotropicscaling-small.png "Trojitá snímek obrazovky stránky volba škálování")](scale-images/anisotropicscaling-large.png#lightbox "Trojitá snímek obrazovky stránky volba škálování")
+[![](scale-images/anisotropicscaling-small.png "Trojitá snímek obrazovky stránky Anisotropního škálování")](scale-images/anisotropicscaling-large.png#lightbox "Trojitá snímek obrazovky stránky Anisotropního škálování")
 
-Jiný způsob, jak se dá chápat `Scale` a `Translate` volání je pro ověření účinnosti zásad v opačném pořadí: `Translate` volání posune cestu, takže se zcela zobrazí ale orientované v levém horním rohu na plátno. `Scale` Metoda pak díky této hvězdičky větší relativně k levého horního rohu.
+Jiný způsob, jak se dá chápat `Scale` a `Translate` volání je určit efekt, v opačném pořadí: `Translate` volání posune cestu, aby se stal plně viditelný, ale orientovaný v levém horním rohu plátna. `Scale` Metoda pak zvětší této star vzhledem k levého horního rohu.
 
-Ve skutečnosti že se jeví hvězdičkou o něco větší než na plátno. Problém je šířku tahu. `Bounds` Vlastnost `SKPath` označuje dimenze souřadnice kódovaný v cestě, a který je program používá ji škálovat. Po vykreslení cestu s šířku tahu konkrétní vykreslené cesta je větší než na plátno.
+Ve skutečnosti zobrazí se, že tento registr je o něco větší než na plátno. Problém je šířka tahu. `Bounds` Vlastnost `SKPath` označuje dimenze souřadnice kódovaný v cestě, a to je program používá pro její škálování. Po vykreslení cestu s šířku tahu konkrétní vykreslené cesta je větší než na plátno.
 
-O řešení tohoto problému budete muset kompenzovat který. Jeden snadný přístup v tento program je přidat následující příkaz těsně před `Scale` volání:
+Chcete-li vyřešit tento problém, které potřebujete ke kompenzaci za to. Jedním z přístupů snadno v rámci tohoto programu, je přidejte následující příkaz těsně před `Scale` volání:
 
 ```csharp
 pathBounds.Inflate(strokePaint.StrokeWidth / 2,
                    strokePaint.StrokeWidth / 2);
 ```
 
-Tím se zvyšuje `pathBounds` obdélníku 1,5 jednotkami na všechny čtyři strany. Jedná se o rozumné řešení jenom v případě, že se zaokrouhlí tahu spojení. Pokosové spojení, může být déle a je obtížné vypočítat.
+Tím se zvyšuje `pathBounds` obdélník ve verzi 1.5 jednotek na všechny čtyři strany. Jedná se o rozumné řešení pouze v případě, že spojení stroke zaokrouhleno. Pokosové spojení mohou být delší a je těžké k výpočtu.
 
-Podobným způsobem s textem, můžete použít také jako **volba Text** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužnou rutinu na základě [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) třídy:
+Podobné techniky s textem, můžete použít také jako **Anisotropního Text** demonstruje stránky. Tady je odpovídající část `PaintSurface` obslužnou rutinu z [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) třídy:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -288,17 +288,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Je podobné logiku a text zasahuje do velikosti stránky založené na vrácená z hranice obdélník text `MeasureText` (což je o něco větší než skutečná text):
+Je podobná logika a text rozšíří na velikost stránky založené na obdélníku rozsah textu, který vrací z `MeasureText` (což je o něco větší než vlastní text):
 
-[![](scale-images/anisotropictext-small.png "Trojitá snímek obrazovky stránky volba Test")](scale-images/anisotropictext-large.png#lightbox "Trojitá snímek obrazovky stránky volba testu")
+[![](scale-images/anisotropictext-small.png "Trojitá snímek obrazovky stránky Anisotropního testovací")](scale-images/anisotropictext-large.png#lightbox "Trojitá snímek obrazovky stránky Anisotropního testu")
 
-Pokud potřebujete zachová poměr stran grafické objekty, budete chtít použít isotropic škálování. **Isotropic škálování** stránky to ukazuje pro hvězdičky odkazoval 11. Kroky pro zobrazení grafického objektu v centru stránku s isotropic škálování koncepčně, jsou:
+Pokud potřebujete zachovat poměr stran grafických objektů, je vhodné použití isotropic škálování. **Isotropic škálování** stránce ukazuje to pro star ukazuje 11. Koncepčně tady jsou kroky pro zobrazení grafického objektu v Centru pro stránky se isotropic škálování:
 
-- Převede center grafického objektu levém horním rohu.
-- Škálování objekt v závislosti na minimum vodorovného a svislého stránky rozměry dělený grafického objektu dimenze.
-- Převede center škálovat objektu k centru stránky.
+- Převede uzel center grafický objekt do levého horního rohu.
+- Změnit velikost objektu podle minimální rozměry vodorovného a svislého stránky dělený grafický objekt dimenze.
+- Převede uzel center škálován objektu do centra pro stránky.
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Před zobrazení hvězdičkou v obráceném pořadí provede tyto kroky:
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Před zobrazení hvězdičky v obráceném pořadí provede tyto kroky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Kód zobrazí také hvězdičkou deset vícekrát, pokaždé, když snížení škálování zohlednit 10 % a progresivně Změna barvy z červené na modrou:
+Kód také zobrazí hvězdičku deset vícekrát, pokaždé, když snížení škálování faktor 10 % a postupně změnou barvy z red blue:
 
 [![](scale-images/isotropicscaling-small.png "Trojitá snímek obrazovky stránky Isotropic škálování")](scale-images/isotropicscaling-large.png#lightbox "Trojitá snímek obrazovky stránky Isotropic škálování")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

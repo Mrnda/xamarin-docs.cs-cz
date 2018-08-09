@@ -1,34 +1,34 @@
 ---
 title: Tři způsoby, jak nakreslit oblouk
-description: Tento článek vysvětluje, jak použít SkiaSharp k definování oblouky třemi různými způsoby a to ukazuje s ukázkový kód.
+description: Tento článek vysvětluje, jak ve Skiasharpu slouží k definování oblouky třemi různými způsoby a to demonstruje se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 9e0ed04543436ec7a83d13fa6a56637fc7916338
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244149"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615402"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Tři způsoby, jak nakreslit oblouk
 
-_Naučte se používat k definování oblouky třemi různými způsoby SkiaSharp_
+_Další informace o definování oblouky třemi různými způsoby použití ve Skiasharpu_
 
-Oblouk je křivku na obvodu elipsy, jako je například zaokrouhlené části infinity registrace:
+Oblouku je křivka na obvod elipsa, jako je například zakulacený částí tohoto symbolu nekonečna:
 
-![](arcs-images/arcsample.png "Infinity přihlášení")
+![](arcs-images/arcsample.png "Nekonečno přihlašování")
 
-Bez ohledu jednoduchost definice, neexistuje žádný způsob, jak definovat vykreslování oblouk funkce, která splňuje všechny potřeby a proto shoda mezi grafické systémy nejlepší způsob, jak nakreslit oblouk. Z tohoto důvodu `SKPath` třída neomezuje sám sebe na právě jeden z přístupů.
+Bez ohledu na zjednodušení definice neexistuje žádný způsob, jak definovat oblouk vykreslování funkci, která splňuje každou potřebu, a proto žádná shoda mezi grafické systémy nejlepší způsob, jak nakreslit oblouk. Z tohoto důvodu `SKPath` třídy neomezuje samotné do právě jeden z přístupů.
 
-`SKPath` definuje `AddArc` metoda, pět různých `ArcTo` metody a dvě relativní `RArcTo` metody. Tyto metody spadají do tří kategorií, reprezentující tři velmi různý přístup k určení oblouk. Který, kterou použijete, závisí na informacích k dispozici pro definování oblouk a jak tato oblouk zapadá do dalších grafiky, který kreslení.
+`SKPath` definuje `AddArc` metody, pět různých `ArcTo` metody a dvě relativní `RArcTo` metody. Tyto metody spadají do tří kategorií, reprezentující tři velmi různé přístupy k určení oblouk. Ten, který jste použít závisí na informace k definování oblouk a jak tato oblouk zapadá grafiky, který kreslení k dispozici.
 
 ## <a name="the-angle-arc"></a>Úhel oblouku
 
-Úhel oblouku přístupu k vykreslování oblouky je potřeba zadat obdélníku bounds elipsy. Oblouk na obvodu tento elipsy je indikován úhly z centra se třemi tečkami provedení začátek oblouk a jeho délka. Dvě různé metody kreslení oblouky úhlu. Jedná se o [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) metoda a [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) metoda:
+Úhel oblouku přístup k vykreslení elipsy vyžaduje zadání obdélníku, který za rozsahem elipsu. Jedná o úhly v centru se třemi tečkami provádění začátek oblouk a jeho délka je označen oblouk na obvod tato tři tečky. Dva různé způsoby kreslení elipsy úhel. Jedná se o [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) metoda a [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) metody:
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -36,45 +36,45 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Tyto metody jsou stejné jako pro Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) a [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) metody. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metoda je podobný, ale je omezen na oblouky na obvodu kruhu místo zobecněny, aby elipsy.
+Tyto metody jsou stejné jako pro Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) a [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) metody. IOS [ `AddArc` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArc/p/System.Boolean/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) – metoda je podobné, ale je omezen na oblouky na obvod kruhu spíše než obecné, aby elipsu.
 
-Obě metody začínat `SKRect` hodnotu, která určuje umístění a velikost elipsy:
+Obě metody začínat `SKRect` hodnotu, která definuje umístění a velikosti elipsy:
 
-![](arcs-images/anglearcoval.png "Oval, která začíná úhel oblouku")
+![](arcs-images/anglearcoval.png "Který začíná úhel oblouku elipsy")
 
-Oblouk je součástí obvodu tento třemi tečkami.
+Oblouku je součástí obvod tato tři tečky.
 
-`startAngle` Argument je po směru hodinových ručiček úhel ve stupních relativně k na vodorovném řádku vykreslovány z centra se třemi tečkami vpravo. `sweepAngle` Argument je vzhledem k `startAngle`. Tady jsou `startAngle` a `sweepAngle` hodnoty 60 a 100 stupňů, v uvedeném pořadí:
+`startAngle` Argument je po směru hodinových ručiček úhel ve stupních vzhledem k vodorovnou horizontální čáru vykreslen v centru se třemi tečkami na pravé straně. `sweepAngle` Argument je vzhledem k `startAngle`. Tady jsou `startAngle` a `sweepAngle` hodnoty 60 a 100 stupňů, v uvedeném pořadí:
 
-![](arcs-images/anglearcangles.png "Úhly, které definují úhel oblouku")
+![](arcs-images/anglearcangles.png "Jedná o úhly, které definují úhel oblouku")
 
-Oblouk začíná na počáteční úhel. Úhel oblouku se řídí jeho délka:
+Oblouku začíná počáteční úhel. Úhel oblouku řídí jeho délka:
 
-![](arcs-images/anglearchighlight.png "Zvýrazněná úhel oblouku")
+![](arcs-images/anglearchighlight.png "Zvýrazněný úhel oblouku")
 
-Křivky přidán do cesty s `AddArc` nebo `ArcTo` metoda je jednoduše ta část obvodu se třemi tečkami, tady zobrazené červeně:
+Křivky přidány do cesty `AddArc` nebo `ArcTo` metoda je jednoduše, že část obvod se třemi tečkami, zobrazené červeně:
 
-![](arcs-images/anglearc.png "Úhel oblouku samostatně")
+![](arcs-images/anglearc.png "Úhel oblouku sám o sobě")
 
-`startAngle` Nebo `sweepAngle` argumenty může být záporné: oblouk je po směru hodinových ručiček pro kladné hodnoty `sweepAngle` a proti směru hodinových ručiček pro záporné hodnoty.
+`startAngle` Nebo `sweepAngle` argumenty mohou být záporná: oblouk je po směru hodinových ručiček pro kladné hodnoty `sweepAngle` a proti směru hodinových ručiček pro záporné hodnoty.
 
-Ale `AddArc` nemá *není* definovat uzavřené obrysem. Při volání `LineTo` po `AddArc`, řádek do bodu v vykreslením od konce oblouk `LineTo` metoda a stejné platí pro `ArcTo`.
+Ale `AddArc` nemá *není* definovat uzavřené obrysem. Při volání `LineTo` po `AddArc`, linie vychází z konce oblouku do bodu v `LineTo` metoda a stejné platí pro `ArcTo`.
 
-`AddArc` automaticky spustí novou obrysem a je funkčně srovnatelný volání `ArcTo` s posledním argumentem `true`:
+`AddArc` automaticky spustí nová rozvrh a je funkčně ekvivalentní volání `ArcTo` s konečný argument `true`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
 ```
 
-Aby se nazývá poslední argument `forceMoveTo`, a efektivně způsobuje, že `MoveTo` volání na začátku oblouk. Nové obrysem, která začíná. To nemá s argumentem poslední ve `false`:
+Se nazývá posledním argumentem `forceMoveTo`, a efektivně způsobí, že `MoveTo` volání na začátku oblouk. Který začíná nové obrysem. To znamená ne v případě poslední argument metody `false`:
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, false);
 ```
 
-Tato verze `ArcTo` nevykresluje řádek na začátek oblouk z aktuální pozici. To znamená, že oblouk mohou být někde uprostřed větší obrysem.
+Tato verze `ArcTo` nakreslí čáru od aktuální pozice na začátku oblouk. To znamená, že oblouku může být někde uprostřed větší obrysem.
 
-**Úhel oblouku** stránky umožňuje používat dvě posuvníky a určuje počáteční úhel oblouku. Vytvoří dvě souboru XAML instance `Slider` elementy a `SKCanvasView`. `PaintCanvas` Obslužné rutiny v [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) souboru nevykresluje elipsy a oblouk pomocí dvou `SKPaint` objekty definované jako pole:
+**Úhel oblouku** stránky umožňuje používat dvě posuvníky a určuje počáteční úhel oblouku. Soubor XAML vytvoří dvě `Slider` elementy a `SKCanvasView`. `PaintCanvas` Obslužné rutiny v [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) souboru kreslení plné elipsy a oblouk pomocí dvou `SKPaint` objekty definované jako pole:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -99,11 +99,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jak vidíte, může trvat počáteční úhel a úhel oblouku na záporné hodnoty:
+Jak je vidět, můžete provést počáteční úhel a úhel oblouku na záporné hodnoty:
 
 [![](arcs-images/anglearc-small.png "Trojitá snímek obrazovky stránky úhel oblouku")](arcs-images/anglearc-large.png#lightbox "Trojitá snímek obrazovky stránky úhel oblouku")
 
-Tento přístup k generování oblouku je algorithmically nejjednodušší a je snadné odvození čištění vzorce, které popisují oblouk. Znalost, velikost a umístění se třemi tečkami a úhly počáteční a oblouku, počáteční a koncové body oblouku, lze vypočítat pomocí jednoduchého trigonometrické:
+Tento přístup k generování oblouku je algorithmically nejjednodušší a usnadňují odvození parametrické rovnice, které popisují oblouk. Znalost, velikost a umístění na tři tečky a úhlů počáteční a vyčištění, počáteční a koncový bod oblouku můžete vypočítat pomocí jednoduchého trigonometrické:
 
 x = oval. MidX + (oval. Šířka / 2) * cos(angle)
 
@@ -111,7 +111,7 @@ y = oval. MidY + (oval. Výška / 2) * sin(angle)
 
 `angle` Hodnota je buď `startAngle` nebo `startAngle + sweepAngle`.
 
-Použití dvou úhlů k definování oblouku je nejvhodnější pro případy, pokud víte, úhlová délka oblouk, který chcete k vykreslení, třeba, aby výsečového grafu. **v kolekci rozložen výsečového grafu** stránky ukazuje to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Třída používá interní třída pro definování některé kovodělných dat a barev:
+Použití dvou úhlů k definování oblouku je nejvhodnější pro případy, kdy víte angular délka arc, který chcete nakreslit, třeba, aby výsečový graf. **Rozložený výsečový graf** stránce ukazuje to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Třída používá interní třída pro definování některé kovodělných dat a barvy:
 
 ```csharp
 class ChartData
@@ -140,7 +140,7 @@ ChartData[] chartData =
 
 ```
 
-`PaintSurface` Obslužná rutina nejprve prochází položky k výpočtu `totalValues` číslo. Od ho můžete určit velikost jednotlivých položek, jako podíl celkového počtu a převést, úhel:
+`PaintSurface` Obslužná rutina nejprve prochází položky, které chcete vypočítat `totalValues` číslo. Z té může určit velikost každé položky jako část celku a převést, kterým je úhel:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -204,19 +204,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Nový `SKPath` objekt se vytvoří pro každou řezu výseče. Cesta se skládá z řádku z centra, pak `ArcTo` k vykreslení oblouk a další čáru zpět do center výsledků `Close` volání. Tento program zobrazí "rozložený" výsečový řezy podle jejich přesunutí ven z centra × 50 pixelů. Tento úkol vyžaduje vektoru ve směru středový úhel oblouku pro každý řez:
+Nový `SKPath` objekt je vytvořen pro jednotlivé výseče. Cesta se skládá z řádku z centra, pak `ArcTo` Chcete-li nakreslit oblouk a další řádek zpět do center výsledků `Close` volání. Tento program zobrazí "rozložený" výsečí jejich přesunutím ven z centra o 50 pixelů. Tato úloha vyžaduje vektor ve směru středního úhel oblouku pro každý řez:
 
-[![](arcs-images/explodedpiechart-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")](arcs-images/explodedpiechart-large.png#lightbox "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")
+[![](arcs-images/explodedpiechart-small.png "Trojitá snímek obrazovky stránky rozložený výsečový graf")](arcs-images/explodedpiechart-large.png#lightbox "Trojitá snímek obrazovky stránky rozložený výsečový graf")
 
-Pokud chcete zobrazit, jak vypadá bez "nárůst", jednoduše komentář `Translate` volání:
+Chcete-li zjistit, jak to funguje bez "výbuchu", jednoduše komentář `Translate` volání:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")
+[![](arcs-images/explodedpiechartunexploded-small.png "Trojitá snímek obrazovky stránky rozložený výsečový graf bez prudkého")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Trojitá snímek obrazovky stránky rozložený výsečový graf bez rozbalení")
 
-## <a name="the-tangent-arc"></a>Tečný oblouk
+## <a name="the-tangent-arc"></a>Arkus tangens
 
-Druhý typ oblouk nepodporuje `SKPath` je *tečný oblouk*, proto volat, protože oblouk je obvodu kruh, který je tangens dva připojené řádcích.
+Druhý typ oblouk nepodporuje `SKPath` je *Arkus tangens*, takže volat, protože je obvod kruhu, která je tangens na dva spojené čáry oblouk.
 
-Tečný oblouk se přidá do cesty s volání [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metoda se dvěma `SKPoint` parametry, nebo [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení s samostatné `Single` parametry pro body:
+Tečný oblouk se přidá do cesty s volání [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metodu se dvěma `SKPoint` parametry, nebo [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení samostatné `Single` parametry body:
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,43 +224,43 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-To `ArcTo` metoda je podobná PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) – funkce (stránka 532 v dokumentu PDF) a iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metoda.
+To `ArcTo` metoda je podobná PostScript [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) – funkce (stránka 532 v dokumentu PDF) a iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) metody.
 
 `ArcTo` Metoda zahrnuje tři body:
 
-- Aktuální příkaz Kontury nebo bodu (0, 0), pokud `MoveTo` nebyla zavolána
-- První argument bodu `ArcTo` metodu, s názvem *rohu bodu*
-- Druhý argument bodu `ArcTo`, zavolat *cílového bodu*:
+- Aktuální příkaz obrysu nebo bod (0, 0) Pokud `MoveTo` nevolala
+- První argument bodu `ArcTo` metodu s názvem *rohu bodu*
+- Druhý argument bodu `ArcTo`, označované jako *cílový bod*:
 
-![](arcs-images/tangentarcthreepoints.png "Tři body, které začínají tečný oblouk")
+![](arcs-images/tangentarcthreepoints.png "Tři body, které začínají na tečný oblouk")
 
-Tyto tři body definovat připojené dva řádky:
+Tyto tři body definují dva spojené čáry:
 
-![](arcs-images/tangentarcconnectinglines.png "Řádky připojení tři body tečný oblouk")
+![](arcs-images/tangentarcconnectinglines.png "Čáry spojující tří bodů tangenty oblouk")
 
-Pokud jsou tři body colinear &mdash; to znamená, pokud jsou na stejné přímce v &mdash; žádné oblouk budou vykreslovat.
+Pokud jsou tři body colinear &mdash; to znamená, pokud jsou na stejné přímce &mdash; bude vykreslen žádný oblouk.
 
-`ArcTo` Metoda také zahrnuje `radius` parametr. Definuje vlastnosti radius kruh:
+`ArcTo` Metoda zahrnuje také `radius` parametru. Definuje poloměr kruhu:
 
-![](arcs-images/tangentarccircle.png "Na kruh tečný oblouk")
+![](arcs-images/tangentarccircle.png "Kruh tečný oblouk")
 
-Tečný oblouk není zobecněný pro elipsy.
+Arkus tangens se nezobecňuje pro elipsu.
 
-Pokud dva řádky splňují v jakékoli úhlu, můžete tento kruh vložen mezi tyto řádky tak, aby se tangens i řádcích:
+Pokud splňují dva řádky na každý úhel, můžete tento kruh vložen mezi tyto řádky tak, aby se tangens pro obě čáry:
 
-![](arcs-images/tangentarctangentcircle.png "Mezi dvěma čárami kruhu tečný oblouk")
+![](arcs-images/tangentarctangentcircle.png "Arkus tangens kruh mezi dvěma řádky")
 
-Křivky, který je přidán do Kontury nemění buď bodů zadaných ve `ArcTo` metoda. Skládá se z přímky z aktuální bod prvního tečný bodu a oblouk, který končí v druhém tečný bodu:
+Křivku, která se přidá do obrysu buď bodů určených v nemění `ArcTo` metody. Skládá se z první tečný bodu a oblouk končí druhý bod tečný rovnou linii od aktuálního místa:
 
-![](arcs-images/tangentarchighlight.png "Zvýrazněná tečný oblouk mezi dvěma čárami")
+![](arcs-images/tangentarchighlight.png "Zvýrazněný tečný oblouk mezi dvěma řádky")
 
-Tady je poslední lineární a oblouk, který je přidán do Kontury:
+Zde je poslední rovné čáry a arc, který je přidán do obrysu:
 
-![](arcs-images/tangentarc.png "Zvýrazněná tečný oblouk mezi dvěma čárami")
+![](arcs-images/tangentarc.png "Zvýrazněný tečný oblouk mezi dvěma řádky")
 
-Kontury lze pokračovat z druhé tečný bodu.
+Obrysu můžete pokračovat z druhého tečný bodu.
 
-**Tangens oblouk** stránce můžete experimentovat s tečný oblouk. Toto je první několik stránek, které jsou odvozeny od [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), která definuje několik užitečný `SKPaint` objekty a provádí `TouchPoint` zpracování:
+**Arkus tangens** stránce můžete experimentovat s Arkus tangens. Toto je první několik stránek, které jsou odvozeny z [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), která definuje několik po ruce `SKPaint` objekty a provádí `TouchPoint` zpracování:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -310,7 +310,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` Třída odvozená z `InteractivePage`. Konstruktor v [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) souboru je odpovědná za vytváření instancí a inicializace `touchPoints` pole a nastavení `baseCanvasView` (v `InteractivePage`) do `SKCanvasView` vytvořena instance v objektu [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) souboru:
+`TangentArcPage` Třída odvozena z `InteractivePage`. Konstruktor v [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) souboru je zodpovědný za vytváření instancí a inicializace `touchPoints` pole a nastavení `baseCanvasView` (v `InteractivePage`) k `SKCanvasView` v vytvořena instance objektu [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) souboru:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -346,7 +346,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-`PaintSurface` Obslužná rutina používá `ArcTo` na základě metod k vykreslení oblouk na body touch a `Slider`, ale také algorithmically vypočítá kruhu úhel podle:
+`PaintSurface` Obslužná rutina používá `ArcTo` metody, chcete-li nakreslit oblouk podle dotykovými body a `Slider`, ale také algorithmically vypočítá kruh, který je na základě úhel:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -412,13 +412,13 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-Tady je **tangens oblouk** stránky běžící na všechny tři platformách:
+Tady je **Arkus tangens** stránky, které běží na všech třech platformách:
 
-[![](arcs-images/tangentarc-small.png "Trojitá snímek obrazovky stránky tangens oblouk")](arcs-images/tangentarc-large.png#lightbox "Trojitá snímek obrazovky stránky tangens oblouk")
+[![](arcs-images/tangentarc-small.png "Trojitá snímek obrazovky stránky Arkus tangens")](arcs-images/tangentarc-large.png#lightbox "Trojitá snímek obrazovky stránky Arkus tangens")
 
-Tečný oblouk je ideální pro vytváření zaoblenými hranami, jako je například zaoblený obdélník. Protože `SKPath` již obsahuje `AddRoundedRect` metoda, **zaokrouhlené pro sedmiúhelník** stránky demonstruje použití `ArcTo` pro zaokrouhlení rozích zachytávání sedm mnohoúhelníku. (Kód je zobecněn pro všechny regulární mnohoúhelníku.)
+Arkus tangens je ideální pro vytvoření oblých rohů, jako je například zakulacený obdélník. Protože `SKPath` již obsahuje `AddRoundedRect` metody, **zaokrouhlí pro sedmiúhelník** stránce ukazuje, jak používat `ArcTo` pro zaoblení rohů mnohoúhelníku oboustranný sedm. (Kód je zobecněný pro jakékoli pravidelné mnohoúhelník.)
 
-`PaintSurface` Obslužnou rutinu [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) třída obsahuje jednu `for` smyčky k výpočtu souřadnice sedm vrcholy pro sedmiúhelník a druhý k výpočtu střední sedm postranní z nich vrcholy. Tyto středních bodů jsou pak používány k vytváření cesta:
+`PaintSurface` Obslužná rutina [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) třída obsahuje jeden `for` smyčky k výpočtu souřadnice sedm vrcholy pro sedmiúhelník a druhý k výpočtu středových bodů sedm stran z těchto vrcholy. Tyto středových bodů se následně použijí k vytvoření cesta:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -489,11 +489,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Tady je program běžící na třech platformách:
 
-[![](arcs-images/roundedheptagon-small.png "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")](arcs-images/roundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")
+[![](arcs-images/roundedheptagon-small.png "Trojitá snímek obrazovky stránky pro zaokrouhlí sedmiúhelník")](arcs-images/roundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro sedmiúhelník zaokrouhleno")
 
-## <a name="the-elliptical-arc"></a>Eliptické oblouk
+## <a name="the-elliptical-arc"></a>Oblouku elipsy
 
-Eliptické oblouk se přidá do cesty s volání [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) metoda, která má dva `SKPoint` parametry, nebo [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) přetížení se samostatnou X a Y souřadnice:
+Oblouku elipsy se přidá do cesty s volání [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) metodu, která má dvě `SKPoint` parametry, nebo [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) přetížení s samostatné X a Y souřadnice:
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -501,48 +501,48 @@ public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPath
 public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, Single x, Single y)
 ```
 
-Je v souladu s eliptické oblouk [eliptické oblouk](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) součástí škálovatelné grafiky SVG (Vector) a univerzální platformu Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) – třída.
+Je v souladu s oblouku elipsy [oblouku elipsy](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) zahrnout grafiky SVG (Scalable Vector) a univerzální platformu Windows [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) třídy.
 
-Tyto `ArcTo` metody nakreslit oblouk mezi dvěma body, které je aktuální bod Kontury, a parametr poslední `ArcTo` – metoda ( `xy` parametr nebo samostatné `x` a `y` parametry):
+Tyto `ArcTo` metody nakreslit oblouk mezi dvěma body, které je do aktuálního místa obrysu, a poslední parametr `ArcTo` – metoda ( `xy` parametr nebo jako samostatná `x` a `y` parametry):
 
-![](arcs-images/ellipticalarcpoints.png "Dva body, které definované eliptické oblouk")
+![](arcs-images/ellipticalarcpoints.png "Dva body, definované oblouku elipsy")
 
-První parametr bodu `ArcTo` – metoda (`r`, nebo `rx` a `ry`) není bod vůbec, ale místo toho Určuje poloměr vodorovného a svislého elipsy;
+První parametr bodu `ArcTo` – metoda (`r`, nebo `rx` a `ry`) není bod vůbec, ale místo toho Určuje vodorovný a svislý poloměr elipsy;
 
-![](arcs-images/ellipticalarcellipse.png "Elipsy, který definován eliptické oblouk")
+![](arcs-images/ellipticalarcellipse.png "Elipsy, který definován oblouku elipsy")
 
-`xAxisRotate` Parametr je po směru hodinových ručiček stupních otočení tento elipsy:
+`xAxisRotate` Parametr je počet stupňů po směru hodinových ručiček otočit tento elipsa:
 
-![](arcs-images/ellipticalarctiltedellipse.png "Nakloněné elipsy, který definován eliptické oblouk")
+![](arcs-images/ellipticalarctiltedellipse.png "Nakloněné elipsy, který definován oblouku elipsy")
 
-Pokud tato nakloněné elipsy je pak umístěna tak, aby dotýká se dva body, ve dvou různých oblouky připojeni body:
+Pokud tento nakloněné elipsa je pak umístěný tak, aby se dotkne dva body, body propojené pomocí dvou různých oblouky:
 
-![](arcs-images/ellipticalarcellipse1.png "První sadu eliptické oblouky")
+![](arcs-images/ellipticalarcellipse1.png "První sada eliptické oblouky")
 
-Tyto dvě oblouky dají rozlišovat dvěma způsoby: nejvyšší oblouk je větší než oblouk dolní a jako oblouk vykreslením zleva doprava, nejvyšší oblouk se vykresluje v směru hodinových ručiček, zatímco dolní oblouk se vykresluje v proti směru hodinových ručiček.
+Tyto dvě oblouky dají rozlišovat dvěma způsoby: nejvyšší oblouku je větší než dolní oblouk a jako oblouku vykreslením zleva doprava, horní oblouk vykreslením ve směru hodinových ručiček, zatímco dolní oblouku je vykreslen v proti směru hodinových ručiček.
 
-Je také možné použít se třemi tečkami mezi dvěma body jiným způsobem:
+Je také možné přizpůsobit se třemi tečkami mezi dvěma body jiným způsobem:
 
 ![](arcs-images/ellipticalarcellipse2.png "Druhá sada eliptické oblouky")
 
-Nyní je menší oblouk na horní, který je vykreslen po směru hodinových ručiček a větší oblouk na dolní, který je vykreslen proti směru hodinových ručiček.
+Nyní je menší oblouk v horní části, která je po směru hodinových ručiček a větší oblouk v dolní části, který je vykreslen proti směru hodinových ručiček.
 
-Tyto dva body můžete proto musí být připojená pomocí oblouk definovaný nakloněné elipsy v celkem čtyři způsoby:
+Tyto dva body proto dá připojit pomocí oblouk definovaný nakloněné elipsa celkem čtyři způsoby:
 
 ![](arcs-images/ellipticalarccolors.png "Všechny čtyři eliptické oblouky")
 
-Tyto čtyři oblouky jsou rozlišené čtyři kombinace [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) a [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) argumentů typu výčtu `ArcTo` metoda:
+Tyto čtyři oblouky se rozlišují výhradně podle čtyři kombinací [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) a [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) argumentů typu výčtu `ArcTo` metody:
 
-- Red: SKPathArcSize.Large a SKPathDirection.Clockwise
+- červené: SKPathArcSize.Large a SKPathDirection.Clockwise
 - zelená: SKPathArcSize.Small a SKPathDirection.Clockwise
 - modré: SKPathArcSize.Small a SKPathDirection.CounterClockwise
 - Purpurová: SKPathArcSize.Large a SKPathDirection.CounterClockwise
 
-Pokud se třemi tečkami nakloněné není dostatečně velké na to, aby vyhovovaly mezi dvěma body je jednotná škálovat, dokud není dostatečně velké na to. Pouze dva jedinečné oblouky v takovém případě připojit dva body. Ty lze rozlišit pomocí `SKPathDirection` parametr.
+Pokud se třemi tečkami nakloněné není dostatečně velký, aby mezi dvěma body je jednotně škálovat, dokud není dostatečně velký. Jenom dva jedinečné oblouky v takovém případě připojit dva body. Ty lze rozlišit pomocí `SKPathDirection` parametru.
 
-I když tento přístup k definování oblouk vyznívá komplexní na první dojde, je jediným přístup, který umožňuje definovat oblouk s otočený elipsy a je často Nejsnadnějším když potřebujete integrovat s dalšími částmi Kontury oblouky.
+Přestože tento přístup k definování oblouk zvuky komplexní na první dojde, je ale jediný možný přístup, který umožňuje definovat oblouk s otočený tři tečky a často je nejjednodušším přístupem při potřebný k integraci s jinými částmi obrysu elipsy.
 
-**Eliptické oblouk** stránky umožňuje interaktivně nastavit dva body a velikosti a oběh se třemi tečkami. `EllipticalArcPage` Třída odvozená z `InteractivePage`a `PaintSurface` obslužné rutiny v [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) souboru kódu na pozadí nevykresluje čtyři oblouky:
+**Oblouku elipsy** stránky umožňuje interaktivně nastavit dva body a velikosti a oběh elipsy. `EllipticalArcPage` Třída odvozena z `InteractivePage`a `PaintSurface` obslužné rutiny v [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) čtyři oblouky nakreslí soubor kódu na pozadí:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -582,37 +582,37 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-Zde je spuštěn na tři platformy:
+Tady je spuštěn na třech platformách:
 
-[![](arcs-images/ellipticalarc-small.png "Trojitá snímek obrazovky stránky eliptické oblouk")](arcs-images/ellipticalarc-large.png#lightbox "Trojitá snímek obrazovky stránky eliptické oblouk")
+[![](arcs-images/ellipticalarc-small.png "Trojitá snímek obrazovky stránky oblouku elipsy")](arcs-images/ellipticalarc-large.png#lightbox "Trojitá snímek obrazovky stránky oblouku elipsy")
 
-**Oblouk Infinity** stránka používá eliptické oblouk k vykreslení symbolem nekonečna. Infinity přihlášení je založena na dva kruhy s poloměr 100 jednotky oddělených 100 jednotky:
+**Oblouk nekonečno** stránka používá oblouku elipsy, chcete-li nakreslit znaménko nekonečno. Znaménko nekonečno je založena na dva kruhy s poloměry 100 jednotek oddělené 100 jednotek:
 
 ![](arcs-images/infinitycircles.png "Dva kruhy")
 
-Dva řádky při překročení navzájem jsou tangens na obou kruhy:
+Přecházení mezi sebou mezi dvěma řádky se tangens na obou kruhy:
 
-![](arcs-images/infinitycircleslines.png "Dva kruhy tečný řádků")
+![](arcs-images/infinitycircleslines.png "Dva kruhy s tečny")
 
-Infinity přihlášení je kombinací těchto kružnice a dva řádky. Pokud chcete použít k vykreslení přihlašovací infinity eliptické oblouk, je třeba stanovit souřadnice, kde jsou dva řádky tangens k kroužky.
+Podpis nekonečno je kombinace součástí těchto kruzích a dva řádky. Na kreslení nekonečno přihlašování pomocí oblouku elipsy, musí být určena souřadnice, kde dva řádky jsou arkustangens kruzích.
 
-Vytvořte správné obdélníku v jednom z kroužky:
+Sestavit správný obdélník v jednom z kruhů:
 
-![](arcs-images/infinitytriangle.png "Dva kruhy s tečný čar a embedded kruhu.")
+![](arcs-images/infinitytriangle.png "Dva kruhy s tečny a vložené kruh")
 
-Radius kruhu je 100 jednotek a přepony trojúhelníku je 150 jednotek, úhel α je Arkus sinus (inverzní sinus) 100 rozdělit podle 150 nebo 41.8 stupňů. Délka druhé straně trojúhelníku je 150 časy kosinus 41.8 stupních nebo 112, které můžete také vypočítají jako Pythagorovy věty.
+Poloměr kruhu je 100 jednotek a přepony část trojúhelníku je 150 jednotky, a proto úhel α Arkus sinus (inverzní sinus) 100 rozdělit podle 150 nebo 41.8 stupňů. Délka druhé straně část trojúhelníku je 150 časy kosinus 41.8 stupňů nebo 112, který se dá vypočítat pomocí Pythagorovy věty.
 
-Souřadnice bodu tečný lze vypočítat potom pomocí těchto informací:
+Souřadnice bodů tangenty lze vypočítat pak pomocí těchto informací:
 
 x = 112·cos(41.8) = 83
 
 y = 112·sin(41.8) = 75
 
-Čtyři tečný body jsou všechny, které jsou nezbytné k vykreslení symbolem infinity zarovnaný na střed v bodu (0, 0) se Kruh poloměr 100:
+Čtyř bodů tangenty jsou vše, co je potřeba kreslení pomocí poloměr kruhu 100 symbol nekonečna na střed v bodě (0, 0):
 
-![](arcs-images/infinitycoordinates.png "Dva kruhy s tečný čar a souřadnice")
+![](arcs-images/infinitycoordinates.png "Dva kruhy s tečný čáry a souřadnice")
 
-`PaintSurface` Obslužné rutiny v [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) třída umisťuje přihlašovací infinity tak, aby (0, 0) bod je umístěný v Centru pro stránky a škáluje cestu na velikost obrazovky:
+`PaintSurface` Obslužné rutiny v [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) třídy umístí nekonečno přihlašování tak, aby (0, 0) bod je umístěn ve středu stránky a škáluje ji na velikost obrazovky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -650,22 +650,22 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Kód používá `Bounds` vlastnost `SKPath` k určení dimenze sinus infinity škálování na velikost od plátna:
+Tento kód použije `Bounds` vlastnost `SKPath` určit dimenze sinus nekonečno škálovat na velikost plátna:
 
-[![](arcs-images/arcinfinity-small.png "Trojitá snímek obrazovky stránky oblouk Infinity")](arcs-images/arcinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky Infinity oblouk")
+[![](arcs-images/arcinfinity-small.png "Trojitá snímek obrazovky stránky oblouk nekonečno")](arcs-images/arcinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky nekonečno oblouk")
 
-Výsledek vypadá trochu malé, což naznačuje, že `Bounds` vlastnost `SKPath` je generování sestav na velikost větší než cestu.
+Výsledek vypadá trochu malé, což naznačuje, že `Bounds` vlastnost `SKPath` je větší než cestu pro generování sestav.
 
-Interně Skia blíží oblouk pomocí více kvadratických Bézierových křivek. Tyto křivky (Jak uvidíte v další části) obsahovat kontrolní body, které řídí, jak se nevykreslí křivku, ale nejsou součástí vykreslené křivku. `Bounds` Vlastnost zahrnuje tyto kontrolní body.
+Interně Skia blíží oblouk pomocí více kvadratické Bézierovy křivky. Tyto křivky (Jak uvidíte v další části) obsahuje kontrolní body, které určují, jak je vykreslen křivku, ale nejsou součástí vykreslené křivky. `Bounds` Vlastnost zahrnuje tyto kontrolní body.
 
-Náročnější přizpůsobit, použijte `TightBounds` vlastnosti, které vylučují kontrolní body. Tady je program spuštěn v režimu na šířku a pomocí `TightBounds` vlastnost, která má získat cestu hranice:
+Pokud chcete získat přesnější vhodný, použijte `TightBounds` vlastnost, která nezahrnuje kontrolní body. Tady je program spuštěn v režimu na šířku a použití `TightBounds` vlastnost k získání cesty hranice:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")
+[![](arcs-images/arcinfinitytightbounds-small.png "Trojitá snímek obrazovky stránky nekonečno oblouk s úzkou hranice")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Trojitá snímek obrazovky stránky nekonečno oblouk s absolutní hranice")
 
-I když jsou připojení mezi oblouky a přímky matematicky smooth, tato změna z oblouk přímku zdát trochu náhlému. Lepší infinity přihlášení se zobrazí na další stránce.
+I když jsou připojení mezi oblouky a rovné čáry matematicky smooth, změna oblouk rovné čáry zdát trochu náhlé. Na další stránce se zobrazí znaménko lepší nekonečno.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,36 +1,36 @@
 ---
 title: Tři typy Bézierových křivek
-description: Tento článek vysvětluje, jak chcete použít k vykreslení krychlový, kvadratické a conic Bézierových křivek v aplikacích Xamarin.Forms SkiaSharp a to ukazuje s ukázkový kód.
+description: Tento článek vysvětluje, jak ve Skiasharpu použít k vykreslení conic, kvadratické a kubické Bézierovy křivky v aplikacích Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 4a1b86035f9ce31b6e9fafac06cd0090a516b542
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0ad722f22cf5ed8dc06fdf0d1e063d285e2ddb2f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244003"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615337"
 ---
 # <a name="three-types-of-bzier-curves"></a>Tři typy Bézierových křivek
 
-_Použití SkiaSharp k vykreslení krychlový, kvadratické a conic Bézierových křivek_
+_Podívejte se, jak ve Skiasharpu použitých k vykreslování conic, kvadratické a kubické Bézierovy křivky_
 
-Bézierovy křivky jmenuje po Pierre Bézierovy (1910 – 1999), francouzštině pracovníkem v automobilu společnosti Renault, kdo používá křivku návrh s asistencí počítače car subjektů.
+Bézierovy Pierre (1910 – 1999), francouzština inženýr ve společnosti automobilový průmysl Renault, který používá křivky pro návrh s asistencí počítače subjektů car má stejný název Bézierovy křivky.
 
-Bézierovy křivky se ví, že pro se dobře hodí pro interaktivní návrhu: jsou dobře behaved &mdash; jinými slovy, nejsou k dispozici singularities, které způsobí křivku k nekonečné nebo nepraktické &mdash; a jsou obecně vkusnou . Obsahuje přehled znak na počítači, jaká písma jsou obvykle definovány s Bézierových křivek:
+Jsou známy se dobře hodí pro interaktivní návrhu Bézierových křivek: jsou dobře behaved &mdash; jinými slovy, nejsou k dispozici singularities, které způsobují křivka se nekonečné nebo nepraktické &mdash; a jsou obecně vkusnou . Jsou podrobněji popsány dále znak z písma založené na počítačích se obvykle definují s Bézierových křivek:
 
-![](beziers-images/beziersample.png "Ukázka Bézierovy křivky")
+![](beziers-images/beziersample.png "Ukázka Bézierovu křivku")
 
-Článek Wikipedia na [Bézierovy křivky](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) obsahuje některé užitečné informace. Termín *Bézierovy křivky* ve skutečnosti odkazuje na řadu podobné křivek. SkiaSharp podporuje tři typy Bézierových křivek, volá se *krychlový*, *kvadratické*a *conic*. Conic je také označován jako *rozumné Kvadratická*.
+Článku na wikipedii o [Bézierovy křivky](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) obsahuje pár užitečných informací. Termín *Bézierovy křivky* ve skutečnosti odkazuje na řadu podobné křivky. Ve Skiasharpu podporuje tři typy Bézierových křivek, volá se, *kubické*, *kvadratické*a *conic*. Conic se také označuje jako *racionální kvadratické*.
 
-## <a name="the-cubic-bzier-curve"></a>Krychlový Bézierovy křivky
+## <a name="the-cubic-bzier-curve"></a>Kubické Bézierovy křivky
 
-Krychlový je typ Bézierovy křivky, který Většina vývojářů zamyslet nad po předmět Bézierových křivek.
+Volání cubic je typ Bézierovy křivky, Většina vývojářů představit po předmětem Bézierovy křivky.
 
-Můžete přidat krychlový Bézierovy křivky do `SKPath` pomocí [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metoda s třemi `SKPoint` parametry, nebo [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení s samostatné `x` a `y` parametry:
+Můžete přidat kubické Bézierovy křivky do `SKPath` pomocí [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metoda se třemi `SKPoint` parametry, nebo [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení samostatné `x` a `y` parametry:
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -38,16 +38,16 @@ public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
 public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Single y3)
 ```
 
-Křivku začne k aktuálnímu bodu Kontury. Dokončení krychlový Bézierovy křivky je definováno čtyři body:
+Křivka začne do aktuálního místa obrysu. Kompletní kubické Bézierovy křivky se definuje čtyři body:
 
-- počátečního bodu: aktuální příkaz v průběhu, nebo (0, 0), pokud `MoveTo` nebyla zavolána
+- počáteční bod: aktuální příkaz ve obrysu, nebo (0, 0) Pokud `MoveTo` nevolala
 - nejprve řídicí bod: `point1` v `CubicTo` volání
-- druhý řídicí bod: `point2` v `CubicTo` volání
+- za druhé řídicí bod: `point2` v `CubicTo` volání
 - koncový bod: `point3` v `CubicTo` volání
 
-Výsledná křivky začíná na počáteční bod a končí na koncový bod. Křivku obecně nepředává prostřednictvím dvou kontrolních bodů; Místo toho fungují mnohem like magnets vyžádání křivky směrem je.
+Výsledná křivky začíná u počáteční bod a končí na koncovém bodu. Křivka obecně neprochází přes dvě kontrolních bodů; Místo toho fungují mnohem like magnets přetahování křivku na ně.
 
-Nejlepší způsob, jak podívat krychlový Bézierovy křivky je experimenty. Toto je účelem **Bézierovu křivku** stránky, která je odvozena z `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) soubor vytvoří `SKCanvasView` a `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) souboru kódu vytvoří čtyři `TouchPoint` objekty v jeho konstruktoru. `PaintSurface` Vytvoří obslužnou rutinu události `SKPath` k vykreslení Bézierovy křivky založené na čtyři `TouchPoint` objektů a také nevykresluje desítkovém tečný řádky z kontrolních bodů do koncových bodů:
+Experimentování ve službě, je nejlepší způsob, jak získat představu kubické Bézierovy křivky. Toto je účelem **Bézierovu křivku** stránky, která je odvozena z `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) vytvoří soubor `SKCanvasView` a `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) soubor kódu na pozadí vytvoří čtyři `TouchPoint` objekty 've svém konstruktoru. `PaintSurface` Vytvoří obslužnou rutinu události `SKPath` k vykreslení Bézierovy křivky založené na čtyři `TouchPoint` objekty a také nakreslí tečkovaná tečny z kontrolních bodů do koncových bodů:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -87,49 +87,49 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Zde je spuštěn na všechny tři platformy:
+Tady je spuštěn na všech třech platformách:
 
 [![](beziers-images/beziercurve-small.png "Trojitá snímek obrazovky stránky Bézierovu křivku")](beziers-images/beziercurve-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovu křivku")
 
-Matematický křivka je krychlový polynomu. Křivku maximálně protíná přímku na tři body. U počáteční bod křivka je vždy tečný chcete a ve stejném směru jako přímka od začátku, přejděte na první kontrolního bodu. Na koncový bod křivka je vždy tečný chcete a ve stejném směru jako přímka z ovládacího prvku druhý přejděte na koncový bod.
+Matematický křivka je kubické polynomial. Rovné čáry na třech místech protíná křivka nejvíce. V okamžiku spuštění křivka je vždy tečný do a také ve stejném směru jako rovnou linii od začátku, přejděte na první řídicí bod. Na koncovém bodu křivka je vždy tečný do a také ve stejném směru jako rovnou linii od druhý ovládací prvek, přejděte na koncový bod.
 
-Krychlový Bézierovy křivky je vždy ohraničené konvexní čtyřúhelník připojení čtyři body. Tento postup se nazývá *konvexní trupu*. Pokud kontrolní body leží na přímku mezi počátečním a koncovým bodem, Bézierovy křivky vykreslí jako přímka. Ale křivku můžete také mezi samostatně, protože třetí snímek obrazovky ukazuje.
+Kubické Bézierovy křivky je vždy ohraničené konvexní čtyřúhelník připojení čtyři body. Tento postup se nazývá *konvexní trupu*. Pokud kontrolní body leží na rovné čáry mezi počáteční a koncový bod, Bézierovy křivky vykreslí jako rovné čáry. Ale křivka můžete také různé samostatně, jak třetí snímek obrazovky ukazuje.
 
-Obrysem cesta může obsahovat více Bézierových křivek krychlový připojené, ale bude připojení mezi dvěma krychlový Bézierových křivek smooth pouze v případě, že následující tři body jsou colinear (tedy leží na přímku):
+Cesta rozvrh může obsahovat více připojených kubické Bézierovy křivky, ale bude připojení mezi dvěma kubické Bézierovy křivky smooth pouze v případě, že jsou následující tři body colinear (to znamená, leží na rovné čáry):
 
-- druhý řídicí bod první křivky
-- koncový bod první křivky, což je také počáteční bod druhý křivky
-- První řídicí bod druhý křivky
+- druhý řídicí bod křivky první
+- koncový bod křivky první, což je také počáteční bod druhý křivky
+- První řídicí bod křivky druhý
 
-V následující článek na [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) dozvíte budovy k usnadnění definici hladké připojené Bézierovy křivky.
+V následujícím článku na [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) zjistíte zařízení k usnadnění definice technologie smooth připojených Bézierovy křivky.
 
-Někdy je užitečné znát základní čištění vzorce, které vykreslení krychlový Bézierovy křivky. Pro *t* rozsahu od 0 do 1, čištění vzorce jsou následující:
+Někdy je užitečné vědět základní parametrické rovnice, které vykreslují kubické Bézierovy křivky. Pro *t* od 0 do 1, parametrické rovnice jsou následující:
 
 x(t) = (1 – t) ³x₀ + 3t (1 – t) ²x₁ + 3t² (1 – t) x₂ + t³x₃
 
 y(t) = (1 – t) ³y₀ + 3t (1 – t) ²y₁ + 3t² (1 – t) y₂ + t³y₃
 
-Nejvyšší exponent 3 potvrdí, že jsou krychlový polynomials. Je snadné ověřte, že když `t` rovná 0, je bod je (x₀, y₀), což je počáteční bod a kdy `t` hodnotu 1, bod je (x₃, y₃), což je koncový bod. V blízkosti počáteční bod (pro nízké hodnoty `t`), první řídicí bod (x₁, y₁) má silné ovlivňuje a v blízkosti koncového bodu (vysoké hodnoty, které se ") druhý řídicí bod (x₂, y₂) má silné vliv.
+Nejvyšší exponent 3 potvrdí, že jde o kubické polynomials. Je snadné k ověření, že `t` rovná 0, je bod je (x₀ y₀), což je počáteční bod a kdy `t` rovná 1, je bod je (x₃ y₃), což je koncový bod. U počáteční bod (pro nízké hodnoty `t`), první řídicí bod (x₁, y₁) má silné projeví a téměř koncový bod (vysoké hodnoty, které nejde ") druhý řídicí bod (x₂, y₂) má silný účinek.
 
-## <a name="bzier-curve-approximation-to-circular-arcs"></a>Kruhové oblouky aproximace Bézierovy křivky
+## <a name="bzier-curve-approximation-to-circular-arcs"></a>Aproximace Bézierovy křivky do Kruhové oblouky
 
-Někdy je vhodnější použít k vykreslení kruhového oblouku Bézierovy křivky. Krychlový Bézierovy křivky můžete Přibližná kruhového oblouku velmi dobře až kruh čtvrtletí, čtyři připojené Bézierových křivek můžete definovat celou kruh. Tato aproximace část dva články publikované před více než 25 let:
+Někdy je vhodné použít k vykreslení na kruhový oblouk Bézierovy křivky. Kubické Bézierovy křivky můžete ji odhadnout kruhového oblouku velmi dobře až čtvrtletí kruh, aby čtyři připojených Bézierových křivek můžete definovat celý kruh. Této aproximace je podrobněji popsána dvě články publikované před více než 25 let:
 
-> Tor Dokken, a další "Dobré aproximace kroužky podle zakřivení průběžné Bézierových křivek," *počítače podporovaná geometrickou návrh 7* (1990), 33 41.
+> Tor Dokken, et al. "Dobrá aproximace kruhy tak zaoblení průběžné Bézierových křivek" *počítače spouštějte geometrické návrh 7* (1990), 33 41.
 
-> Michael Goldapp, "Aproximace Kruhové oblouky podle krychlový Polynomials" *počítače podporovaná geometrickou návrh 8* (1991), 227 238.
+> Michael Goldapp, "Aproximace Kruhové oblouky podle Kubické Polynomials" *počítače projektování geometrické 8* (1991), 227 238.
 
-Následující diagram znázorňuje čtyři body s názvem bez přípony `pto`, `pt1`, `pt2`, a `pt3` definování Bézierovy křivky (zobrazené červeně), který se blíží kruhového oblouku:
+Následující diagram znázorňuje čtyři body s popiskem `pto`, `pt1`, `pt2`, a `pt3` definování Bézierovy křivky (zobrazené červeně), který aproximuje kruhového oblouku:
 
 ![](beziers-images/bezierarc45.png "Aproximace kruhového oblouku s Bézierovy křivky")
 
-Řádky od počáteční a koncové body, které se kontrolní body jsou tangens na kruh a Bézierovy křivky a mají délku *L*. První článek citovalo výše označuje, že nejlepší Bézierovy křivky blíží kruhového oblouku při dlouhou *L* se počítá takto:
+Řádky z počátečního a koncového bodu kontrolním bodům jsou arkustangens kruhu a Bézierovy křivky a mít délku *L*. První článku uvedeném výše označuje, že blíží nejlepší Bézierovy křivky na kruhový oblouk při takto dlouhou *L* se vypočítává takto:
 
 L = 4 × tan(α / 4) / 3
 
-Na obrázku úhlu 45 stupňů, takže L rovná 0.265. V kódu by tato hodnota vynásobí požadované radius kruhu.
+Na obrázku ukazuje úhel 45 stupňů, takže L rovná 0.265. Tato hodnota by v kódu, vynásobený požadované poloměr kruhu.
 
-**Kruhový oblouk na Bézierovu** stránce můžete experimentovat s definování Bézierovy křivky sblížit kruhového oblouku pro úhly rozsahu až o 180 stupňů. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) soubor vytvoří `SKCanvasView` a `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny událostí v [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) souboru kódu použije transformace pro nastavení bodu (0, 0) na střed plátna. Nakreslí zarovnaný na střed v tomto bodě pro porovnání a pak vypočítá dvě kontrolních bodů pro Bézierovy křivky:
+**Kruhový oblouk na Bézierovu** stránce můžete experimentovat s definováním Bézierovy křivky aproximace kruhového oblouku úhlů rozsahu až o 180 stupňů. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) vytvoří soubor `SKCanvasView` a `Slider` pro výběr úhlu. `PaintSurface` Obslužné rutině událostí ve [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) soubor kódu na pozadí používá transformace nastavit bod (0, 0) na střed plátna. Nakreslí na střed v tomto bodě pro porovnání a vypočítá jeho dvou kontrolních bodů pro Bézierovy křivky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,21 +203,21 @@ float Magnitude(SKPoint v)
 
 ```
 
-Počáteční a koncový bod (`point0` a `point3`) se vypočítává podle normálního čištění vzorce pro kruhu. Protože je umístěn na střed kruhu v (0, 0), tyto body lze také zacházet jako paprskového vektory z střed kruhu k obvodu. Kontrolní body jsou na řádky, které jsou tangens na kruh, tak, aby byly v pravém úhlu tyto paprskového Vektorům. Vektor v pravém úhlu je jednoduše původní vektoru s souřadnice X a Y, které jsou vzájemně zaměněny a jeden z nich provedené záporné.
+Počáteční a koncový bod (`point0` a `point3`) se počítají na normální parametrické rovnice kruhu. Protože je na střed kruhu (0, 0), tyto body lze také považovat za paprskového vektory od středu kruhu k obvodu. Kontrolní body jsou na řádky, které jsou arkustangens kruh, tak, aby byly v pravém úhlu do těchto paprskového vektorů. Vektor v pravém úhlu je jednoduše původního vektoru se Prohodit souřadnice X a Y a jeden z nich provedli záporné.
 
-Tady je programy spuštěné na tři platforem pomocí tří různých úhlů:
+Tady je program běžící na třech platformách pomocí tří různých úhlů:
 
-[![](beziers-images/beziercirculararc-small.png "Trojitá snímek obrazovky stránky kruhový oblouk na Bézierovu")](beziers-images/beziercirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovy kruhový oblouk")
+[![](beziers-images/beziercirculararc-small.png "Trojitá snímek obrazovky stránky kruhový oblouk na Bézierovu")](beziers-images/beziercirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky kruhového oblouku Bézierovy křivky")
 
-Prohlédněte si blíže třetí snímek obrazovky a uvidíte, že Bézierovy křivky zejména odchylují od polokruhu když úhel je 180 stupňů, ale na obrazovce iOS ukazuje, že nejspíš vyhovoval čtvrtletí kruh stejně dobře, když úhel je 90 stupňů.
+Prohlédněte si blíže třetí snímek obrazovky a uvidíte, že Bézierovy křivky zejména odchylují od polokruhu při 180stupňový rozsah s orientací je úhel, ale iOS obrazovka ukazuje, že to vypadá podle čtvrtkruh zcela v pořádku, pokud je úhel 90 stupňů.
 
-Výpočet souřadnice dvě kontrolních bodů je poměrně snadné, když čtvrtletí kroužek je orientované takto:
+Výpočet souřadnice dvě kontrolních bodů je poměrně jednoduché, když čtvrtkruh je orientovaný takto:
 
-![](beziers-images/bezierarc90.png "Aproximace čtvrtletí kroužkem Bézierovy křivky")
+![](beziers-images/bezierarc90.png "Aproximace čtvrtletí kroužek s Bézierovy křivky")
 
-Pokud radius kruhu je 100, *L* 55, a představuje počet snadno pamatovat.
+Pokud poloměr kruhu je 100, *L* je 55, tedy číslo snadno pamatovat.
 
-**Umocněním kruhu** stránky animuje obrázek až čtverce kruh. Kruhu je sblížit podle jehož souřadnice jsou uvedeny v první sloupec tuto definici pole v čtyři Bézierových křivek [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) třídy:
+**Umocňování kruhu** stránky animuje obrázek až kruh, čtverec. Kruhu je aproximována jehož souřadnice jsou uvedeny v prvním sloupci tuto definici pole v čtyři Bézierových křivek [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) třídy:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -242,9 +242,9 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-Druhý sloupec obsahuje souřadnice čtyři Bézierových křivek, které definují čtverce, jehož je přibližně stejné jako oblasti kruhu. (Kreslení čtverce s *přesný* oblast jako dané kroužek je classic nevyřešené geometrickou problém [umocněním kruhu](https://en.wikipedia.org/wiki/Squaring_the_circle).) Pro vykreslování čtverce s Bézierových křivek, dva kontrolní body pro každý křivky jsou stejné a jsou colinear s počáteční a koncový bod, takže Bézierovy křivky je vykreslen jako přímka.
+Druhý sloupec obsahuje souřadnice čtyři Bézierových křivek, které definují čtverec, jejichž oblasti je přibližně stejné jako obsah kruhu. (Kreslení čtverec se *přesné* oblast jako daný kruhu je classic neřešitelné geometrické problém [umocňování kruhu](https://en.wikipedia.org/wiki/Squaring_the_circle).) Pro vykreslení čtverec s Bézierových křivek dvě kontrolních bodů pro každé křivky jsou stejné a jsou colinear s počáteční a koncový bod, takže Bézierovy křivky se vykreslí jako rovné čáry.
 
-Třetí sloupec pole je interpolované hodnoty pro animace. Stránka nastaví časovač pro 16 milisekund a `PaintSurface` obslužná rutina je volána v tomto kurzu:
+Třetí sloupec pole je pro hodnoty interpolovaná pro animaci. Stránka nastaví časovače 16 milisekund a `PaintSurface` obslužná rutina je volána v tomto kurzu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -287,13 +287,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Body interpolace podle sinusoidally provozních hodnotu `t`. Interpolované body se pak používají k vytvoření řadu čtyři připojené Bézierových křivek. Tady je animace spuštěna na tři platformách zobrazující průběh z kruhu na čtverce:
+Body jsou interpolovány na základě sinusoidally provozních hodnoty `t`. Interpolované body se pak používají k vytvořit sérii čtyři připojených Bézierovy křivky. Tady je animace spuštěna na třech platformách zobrazující průběh kruh čtverec:
 
-[![](beziers-images/squaringthecircle-small.png "Trojitá snímek obrazovky Squaring stránce kruh")](beziers-images/squaringthecircle-large.png#lightbox "Trojitá snímek obrazovky Squaring stránce kruhu.")
+[![](beziers-images/squaringthecircle-small.png "Trojitá snímek obrazovky Squaring stránce kruh")](beziers-images/squaringthecircle-large.png#lightbox "Trojitá snímek obrazovky Squaring stránce kruh")
 
-Takové animace bude možné bez křivek, které jsou algorithmically dostatečně flexibilní, aby se vykresluje jako Kruhové oblouky a rovné čáry.
+Tyto animace by jinak nebylo možné bez algorithmically dostatečně flexibilní, aby se vykresluje jako Kruhové oblouky a rovné čáry, křivky.
 
-**Bézierovy Infinity** stránky také využívá výhod možnost Bézierovy křivky Přibližná kruhového oblouku. Tady je `PaintSurface` obslužnou rutinu na základě [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) třídy:
+**Bézierovy křivky nekonečno** stránka také využívá výhod schopnost Bézierovy křivky přibližný kruhového oblouku. Tady je `PaintSurface` obslužnou rutinu z [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -334,23 +334,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Může to být dobrým cvičení k vykreslení tyto souřadnice na graf dokumentu chcete zobrazit, jak spolu souvisí. Infinity přihlášení je zaměřená na bod (0, 0) a dvě smyčky mít středy (–150, 0) a (150, 0) a poloměr 100. V řadě `CubicTo` příkazy, uvidíte X souřadnice kontrolních bodů s ohledem na hodnoty –95 a –205 (tyto hodnoty jsou –150 plus a minus 55), 205 a 95 (150 plus a minus 55), a také 250 a –250 pro pravé a levé strany. Jedinou výjimkou je, když přihlašovací infinity protíná sám sebe v centru. V takovém případě kontrolní body mají souřadnice s kombinací 50 a -50, vyrovnejte křivku téměř centru.
+Může být vhodné výkonu k vykreslení tyto souřadnice na papír grafu chcete zobrazit, jak spolu souvisí. Znaménko nekonečno je zaměřená na bod (0, 0), a dvě smyčky mají centra (–150, 0) a (150, 0) a poloměr 100. V řadě `CubicTo` příkazy, zobrazí se kontrolních bodů s ohledem na hodnoty –95 a –205 souřadnice X (tyto hodnoty jsou –150 plus a minus 55), 205 a 95 (150 plus a minus 55), stejně jako 250 a –250 pro levé a pravé strany. Jedinou výjimkou je při přihlašování nekonečno protíná sám v centru. V takovém případě kontrolní body mají souřadnice s kombinací 50 a -50, vyrovnejte křivky uprostřed.
 
-Tady je přihlašovací infinity na všech tří platformách:
+Tady je znak nekonečno na všech třech platformách:
 
-[![](beziers-images/bezierinfinity-small.png "Trojitá snímek obrazovky stránky Bézierovy Infinity")](beziers-images/bezierinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovy Infinity")
+[![](beziers-images/bezierinfinity-small.png "Trojitá snímek obrazovky stránky Bézierovy nekonečno")](beziers-images/bezierinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky nekonečno Bézierovy")
 
-Je poněkud hladší směrem k centru než infinity přihlašovací poskytnutý **oblouk Infinity** stránku z [ **tři způsoby nakreslit oblouk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) článku.
+Je trochu hladší směrem do středu znaménko nekonečno vykreslený **oblouk nekonečno** stránku ze [ **tři způsoby, jak nakreslit oblouk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) článku.
 
 ## <a name="the-quadratic-bzier-curve"></a>Kvadratické Bézierovy křivky
 
-Kvadratické Bézierovy křivky má pouze jeden prvek bod a křivka je definovaný jenom tři body: počáteční bod, bod řízení a koncový bod. Kromě toho, že nejvyšší exponent je 2, takže křivka je kvadratické polynomu jsou velmi podobné krychlový Bézierovy křivky čištění vzorce:
+Kvadratické Bézierovy křivky má pouze jeden ovládací prvek bod a křivka je určené jenom tři body: počáteční bod, bod ovládacího prvku a koncový bod. Parametrické rovnice jsou velmi podobné kubické Bézierovy křivky, s tím rozdílem, že nejvyšší exponent je 2, tak křivka je kvadratické mnohočlenu:
 
 x(t) = (1 – t) ²x₀ + 2t (1 – t) x₁ + t²x₂
 
 y(t) = (1 – t) ²y₀ + 2t (1 – t) y₁ + t²y₂
 
-Chcete-li přidat kvadratické Bézierovy křivky na cestu, použijte [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metoda nebo [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) přetížení s samostatné `x` a `y` souřadnice:
+Chcete-li přidat kvadratické Bézierovy křivky na cestu, použijte [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) metoda nebo [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) přetížení samostatné `x` a `y` souřadnice:
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -358,9 +358,9 @@ public void QuadTo (SKPoint point1, SKPoint point2)
 public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 ```
 
-Metody přidat křivku z aktuální pozici k `point2` s `point1` jako řídicí bod.
+Metody přidat křivku z aktuální pozici, aby `point2` s `point1` jako řídicí bod.
 
-Můžete experimentovat s kvadratických Bézierových křivek **kvadratické křivky** stránky, což je velmi podobné **Bézierovu křivku** stránky s výjimkou má jenom tři body dotykového ovládání. Tady je `PaintSurface` obslužné rutiny v [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) souboru kódu na pozadí:
+Můžete experimentovat s kvadratické Bézierovy křivky **Kvadratická křivka** stránku, což je velmi podobný **Bézierovu křivku** stránky s tím rozdílem, obsahuje pouze tři dotykovými body. Tady je `PaintSurface` obslužné rutiny v [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) soubor kódu na pozadí:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -399,35 +399,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-A zde je spuštěn na všechny tři platformy:
+A tady je spuštěn na všech třech platformách:
 
-[![](beziers-images/quadraticcurve-small.png "Trojitá snímek obrazovky stránky kvadratické křivky")](beziers-images/quadraticcurve-large.png#lightbox "Trojitá snímek obrazovky stránky kvadratické křivky")
+[![](beziers-images/quadraticcurve-small.png "Trojitá snímek obrazovky stránky Kvadratická křivka")](beziers-images/quadraticcurve-large.png#lightbox "Trojitá snímek obrazovky stránky Kvadratická křivka")
 
-Čáry s koncovými body jsou tangens na křivku na počáteční a koncový bod a splňují okamžiku ovládacího prvku.
+Tečkované čáry jsou arkustangens na křivku na počáteční a koncový bod a splňovat okamžiku ovládacího prvku.
 
-Kvadratické Bézierovy je vhodný, pokud potřebujete křivky obecné tvaru, ale přednost pohodlí jenom jeden řídicí bod, místo dvou. Kvadratické Bézierovy vykreslí efektivnější než jakékoli jiné křivku, proto ji se používá interně v Skia k vykreslení eliptické oblouky.
+Kvadratické Bézierovy je výhodné, pokud potřebujete obecné tvaru křivky, ale dáváte přednost pohodlí bodu pouze jeden ovládací prvek, místo dvou. Kvadratické Bézierovy vykreslí efektivnější než všechny ostatní křivky, což je důvod, proč používá se interně v Skia k vykreslení eliptické oblouky.
 
-Ale obrazec kvadratické Bézierovy křivky není eliptické, proto více kvadratické Béziers jsou nutné k Přibližná eliptické oblouk. Kvadratické Bézierovy se místo toho segment parabolicky.
+Ale tvar kvadratické Bézierovy křivky není elipsy, což je důvod, proč je potřeba více kvadratické Béziers přibližný oblouku elipsy. Kvadratické Bézierovy je místo toho segment parabolicky.
 
 ## <a name="the-conic-bzier-curve"></a>Conic Bézierovy křivky
 
-Conic Bézierovy křivky &mdash; také označované jako rozumné kvadratické Bézierovy křivky &mdash; je poměrně poslední přidání do rodiny Bézierových křivek. Jako kvadratické Bézierovy křivky rozumné kvadratické Bézierovy křivky zahrnuje počáteční bod, koncový bod a bod jeden prvek. Ale je potřeba rozumné kvadratické Bézierovy křivky *váhy* hodnotu. Je volána *rozumné* kvadratické totiž čištění vzorce poměry.
+Conic Bézierovy křivky &mdash; označované také jako rozumné kvadratické Bézierovy křivky &mdash; je poměrně nedávný dodatek řady Bézierovy křivky. Stejně jako kvadratické Bézierovy křivky racionální kvadratické Bézierovy křivky zahrnuje počáteční bod, koncový bod a bod jeden ovládací prvek. Ale také vyžaduje racionální kvadratické Bézierovy křivky *váha* hodnotu. Je volána *racionální* kvadratické, protože ukazatelů vzorce zahrnují poměry.
 
-Čištění vzorce pro X a Y jsou poměr, které sdílejí stejnou jmenovatel. Tady je vztah pro jmenovatel pro *t* rozsahu od 0 do 1 a hodnota váhy *w*:
+Parametrické rovnice X a Y jsou poměry, které sdílejí stejnou jmenovatel. Tady je rovnice faktorem pro *t* rozsahu od 0 do 1 a hodnota váhy *w*:
 
 d(t) = (1 – t) ² + 2wt(1 – t) + t²
 
-Teoreticky rozumné Kvadratická zahrnuje tři samostatné váhy hodnoty, jeden pro každou tři podmínky, ale tyto můžete zjednodušit pouze jednu hodnotu váhy výraz střední.
+Teoreticky vzato racionální kvadratické může zahrnovat tří hodnot váhu samostatné, jeden pro každou tří podmínek, ale ty se dá zjednodušit na pouze jednu hodnotu váhy výraz střední.
 
-Čištění vzorce pro souřadnice X a Y jsou podobné čištění vzorce pro kvadratické Bézierovy s tím rozdílem, že výraz střední také zahrnuje hodnota váhy a výraz se vydělí jmenovatel:
+Parametrické rovnice pro souřadnice X a Y jsou podobné parametrické rovnice pro kvadratické Bézierovy s tím rozdílem, že výraz střední také zahrnuje hodnota váhy a výrazu, je vyděleno hodnotou jmenovatele:
 
 x(t) = ((1 – t) ²x₀ + 2wt (1 – t) x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1 – t) y₁ + t²y₂)) ÷ d(t)
 
-Rozumné kvadratických Bézierových křivek se také označují jako *conics* protože mohou přesně reprezentovat segmenty každé části conic &mdash; hyperboly, paraboly, tři tečky a kroužky.
+Racionální kvadratické Bézierovy křivky se také označují jako *conics* které přesně představují segmenty každé části conic &mdash; hyperboly, paraboly, symbol tří teček a kruzích.
 
-Chcete-li přidat rozumné kvadratické Bézierovy křivky na cestu, použijte [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metoda nebo [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení s samostatné `x` a `y` souřadnice:
+Chcete-li přidat racionální kvadratické Bézierovy křivky na cestu, použijte [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metoda nebo [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení samostatné `x` a `y` souřadnice:
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -435,9 +435,9 @@ public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
 public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 ```
 
-Všimněte si, že posledních `weight` parametr.
+Všimněte si, že poslední `weight` parametru.
 
-**Conic křivky** stránce můžete experimentovat s tyto křivky. `ConicCurvePage` Třída odvozená z `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) vytvoří soubor `Slider` vyberte hodnotu váhy mezi – 2 a 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objekty a `PaintSurface` obslužná rutina jednoduše vykreslí výsledné křivky tečný řádků pro ovládací prvek body:
+**Conic křivky** stránce můžete experimentovat s těmito křivky. `ConicCurvePage` Třída odvozena z `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) vytvoří soubor `Slider` vyberte hodnotu váhy – 2 až 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) soubor kódu na pozadí vytvoří tři `TouchPoint` objekty a `PaintSurface` obslužná rutina jednoduše vykreslí výsledná křivka s tečny do ovládacího prvku body:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -477,21 +477,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Zde je spuštěn na všechny tři platformy:
+Tady je spuštěn na všech třech platformách:
 
 [![](beziers-images/coniccurve-small.png "Trojitá snímek obrazovky stránky Conic křivky")](beziers-images/coniccurve-large.png#lightbox "Trojitá snímek obrazovky stránky Conic křivky")
 
-Jak vidíte, řídicí bod zdá se, že když vyšší váhou pro vyžádání obsahu křivky směrem ho Další. Když váhu nulová, stane se křivku přímky z počáteční bod pro koncový bod.
+Jak je vidět řídicí bod zdá se, že o přijetí změn křivky směrem k jeho další, když je váha vyšší. Když váha je nula, stane se křivku rovnou linii od počátečního bodu na koncový bod.
 
-Teoreticky záporné váhu jsou povolené a způsobit křivku na ohybem *rychle* z kontrolního bodu. Ale provede – 1 nebo pod příčina jmenovatel v čištění vzorce se záporné pro konkrétní hodnoty *t*. Z tohoto důvodu pravděpodobně záporné vah se ignorují v `ConicTo` metody. **Conic křivky** program umožňuje nastavit záporné váhy, ale jak můžete vidět pomocí experimentování, záporné váhu nemají stejného efektu jako váhu nula a způsobit přímku k vykreslení.
+Teoreticky vzato negativní váhy jsou povolené a způsobit, že křivky ohybem *okamžitě* z bodu ovládacího prvku. Ale oceňuje – 1 nebo pod příčina jmenovatel v parametrické rovnice na záporný pro konkrétní hodnoty *t*. Z tohoto důvodu se pravděpodobně negativní vah se ignorují v `ConicTo` metody. **Conic křivky** program umožňuje nastavit váhu záporná, ale jak je vidět Experimentováním negativní váhy má stejný účinek jako váhu nula a způsobit, že mají být vykresleny rovné čáry.
 
-Je velmi snadné odvození kontrolního bodu a váhy používat `ConicTo` metoda Kreslení kruhových oblouků až (s výjimkou) polokruhu. V následujícím diagramu tečný řádky z počátečního a koncového bodu schází kontrolního bodu.
+Velice snadno se odvodit řídicí bod a váha používaná `ConicTo` metodu pro až nakreslit kruhového oblouku (ale bez zahrnutí) polokruhu. V následujícím diagramu schází tečného řádky z počátečního a koncového bodu řídicí bod.
 
 ![](beziers-images/conicarc.png "Vykreslení conic oblouk na kruhový oblouk")
 
-Trigonometrické můžete použít k určení vzdálenost kontrolního bodu z centra na kruh: je radius dělený kosinus poloviční úhlu α kruhu. Kreslení kruhových oblouků mezi počáteční a koncový bod, nastavte váhu na tento stejný kosinus poloviční úhlu. Všimněte si, že pokud úhel 180 stupňů, pak tečný řádky nikdy nesplní a váhu je nulová. Ale pro úhly menší než 180 stupňů, výpočty funguje bez problémů.
+Trigonometrické můžete použít k určení vzdálenost řídicí bod od středu kruhu: je poloměr kruhu dělený kosinus úhlu poloviční α. Chcete-li nakreslit na kruhový oblouk mezi počáteční a koncový bod, nastavte váhu na tento stejný kosinus poloviční úhlu. Všimněte si, pokud 180stupňový rozsah s orientací je úhel, pak nikdy nesplní tečný řádky a váhu je nula. Ale pro úhly menší než 180 stupňů, výpočty funguje správně.
 
-**Conic kruhového oblouku** stránky ukazuje to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) vytvoří soubor `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny v [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) souboru kódu vypočítá kontrolního bodu a váhu:
+**Conic kruhového oblouku** stránce ukazuje to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) vytvoří soubor `Slider` pro výběr úhlu. `PaintSurface` Obslužné rutiny v [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) soubor kódu na pozadí vypočítá řídicí bod a váhu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -541,16 +541,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jak můžete vidět, není žádný visual rozdíl mezi `ConicTo` cestu zobrazené červeně a základní kruhu zobrazí pro referenci:
+Jak je vidět, není žádný vizuální rozdíl mezi `ConicTo` cestu zobrazené červeně a základní kruh zobrazí pro referenci:
 
 [![](beziers-images/coniccirculararc-small.png "Trojitá snímek obrazovky stránky Conic kruhového oblouku")](beziers-images/coniccirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky Conic kruhový oblouk")
 
-Ale nastavit úhel 180 stupňů a matematika selhání.
+Ale nastavit úhel 180stupňový rozsah s orientací a matematiky selhání.
 
-Je v tomto případě velice nepříjemná který `ConicTo` nepodporuje záporné váhu, protože teoreticky (podle čištění vzorce), můžete dokončit kruhu s jiným voláním `ConicTo` s stejné body ale zápornou hodnotu váhy. To by umožnilo vytváření celý kruh se právě dvěma `ConicTo` křivek založené na libovolný úhel mezi (s výjimkou) nula stupňů a o 180 stupňů.
+Je v tomto případě unfortunate, který `ConicTo` nepodporuje záporné váhy, protože teoreticky (založená na parametrické rovnice) můžete kruhu dokončeno s jiným voláním metody `ConicTo` stejné body, ale zápornou hodnotu váhy. To by umožnilo vytváření celý kruh právě dva `ConicTo` křivky založené na každý úhel mezi (ale nikoli včetně) nula stupňů a o 180 stupňů.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

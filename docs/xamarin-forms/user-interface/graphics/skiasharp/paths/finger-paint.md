@@ -1,34 +1,34 @@
 ---
-title: Malování prstem v SkiaSharp
-description: Tento článek vysvětluje, jak pomocí prstů k vyplnění na plátně SkiaSharp v aplikaci Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Malování prstem v ve Skiasharpu
+description: Tento článek vysvětluje, jak pomocí prstů k vykreslení na plátně ve Skiasharpu v Xamarin.Forms aplikací a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: f4c3d2ef2f6d1253f58b95559ef83af291f87b03
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0f28cd3e8a928a6da3169dee96ec089178a64e2
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243776"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615818"
 ---
-# <a name="finger-painting-in-skiasharp"></a>Malování prstem v SkiaSharp
+# <a name="finger-painting-in-skiasharp"></a>Malování prstem v ve Skiasharpu
 
-_Pomocí prstů k vyplnění na plátně._
+_Pomocí prstů malovat na plátně._
 
-`SKPath` Objekt můžete průběžně aktualizovat a zobrazit. Tato funkce umožňuje cestu k používá pro interaktivní kreslení, například v finger-painting programu.
+`SKPath` Objektu můžete průběžně aktualizovat a zobrazit. Tato funkce umožňuje cestu k používá pro interaktivní vykreslování, jako například kreslení prsty, která aplikaci.
 
 ![](finger-paint-images/fingerpaintsample.png "Cvičení v Malování prstem")
 
-Podpora touch v Xamarin.Forms neumožňuje sledování jednotlivé prsty, které na obrazovce, tak mít nežádoucí vliv touch sledování Xamarin.Forms byla vyvinuta poskytovat podporu dalších touch. Tento efekt je popsána v článku [ **vyvolání události z důsledky**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Ukázka programu [ **Touch sledování účinku ukázky** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) obsahuje dvě stránky, které používají SkiaSharp, včetně finger-painting program.
+Podpora dotykového ovládání v Xamarin.Forms neumožňuje sledování jednotlivých prsty na obrazovce, takže efekt touch sledování Xamarin.Forms byla vyvinuta zajistit podporu dalších dotykového ovládání. Tento efekt je popsaný v článku [ **vyvolání události z účinků**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Ukázkový program [ **ukázky dotykové ovládání sledování efekt** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) obsahuje dvě stránky, které používají SkiaSharp, včetně kreslení prsty, která program.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) řešení zahrnuje tato událost sledování dotykového ovládání. Zahrnuje .NET Standard projektu knihovny `TouchEffect` třídy, `TouchActionType` výčtu `TouchActionEventHandler` delegovat a `TouchActionEventArgs` – třída. Všechny projekty platformy zahrnout `TouchEffect` třídy pro platformu; také obsahuje projekt pro iOS `TouchRecognizer` třídy.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) řešení zahrnuje této události sledování dotykové ovládání. Projekt knihovny .NET Standard zahrnuje `TouchEffect` třídy, `TouchActionType` výčet, `TouchActionEventHandler` delegovat a `TouchActionEventArgs` třídy. Všechny projekty platformy zahrnout `TouchEffect` třídy pro danou platformu; obsahuje také projekt pro iOS `TouchRecognizer` třídy.
 
-**Malování prstem** stránky v **SkiaSharpFormsDemos** je zjednodušená implementace Malování prstem. Nebudou povolit výběr barvy a obtažení šířka, nemá žádný způsob, jak vymazat na plátno a samozřejmě nelze uložit kresby.
+**Malování prstem** stránku **SkiaSharpFormsDemos** je zjednodušenou implementaci Malování prstem. Nepodporuje umožníte výběr barvy ani obtažení šířku, nemá žádný způsob, jak vymazat na plátno a samozřejmě nelze uložit kresby.
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) souboru PUT `SKCanvasView` v jedné buňce `Grid` a připojí `TouchEffect` na který `Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml) souboru vloží `SKCanvasView` v jedné buňce `Grid` a připojí `TouchEffect` , který `Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -49,9 +49,9 @@ Podpora touch v Xamarin.Forms neumožňuje sledování jednotlivé prsty, které
 </ContentPage>
 ```
 
-Připojení `TouchEffect` přímo na `SKCanvasView` nefunguje v rámci všech platformách.
+Připojení `TouchEffect` přímo `SKCanvasView` nefunguje v rámci všech platformách.
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) definuje dvě kolekce pro ukládání souboru kódu `SKPath` objekty, a také `SKPaint` objektu pro vykreslení tyto cesty:
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs) použití modelu code-behind soubor definuje dvě kolekce pro ukládání `SKPath` objekty, ale i `SKPaint` objektu pro vykreslení tyto cesty:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -76,9 +76,9 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-Jako název navrhovanou `inProgressPaths` ukládá cesty, které aktuálně přitahuje prsty, které minimálně jeden slovník. Slovník klíč je touch ID, který doprovází události dotykového ovládání. `completedPaths` Pole je kolekce cest, které byly při dokončení prstu, kreslení cesta zrušeno na obrazovce.
+Jako název navrhnout `inProgressPaths` slovníku ukládá cesty, které jsou právě vykreslené prsty na jeden nebo více. Klíč slovníku je touch ID, který doprovází události dotykové ovládání. `completedPaths` Pole je kolekce cest, které byly při dokončení prstem kreslení cesty zrušeno z obrazovky.
 
-`TouchAction` Obslužná rutina spravuje tyto dvě kolekce. Když prstem nejprve dotykem na obrazovce novou `SKPath` se přidá do `inProgressPaths`. Při tomto prstem přesunu, další body přidány k cestě. Po vydání prstu, cesta se přenese do `completedPaths` kolekce. Můžete se více prsty malovat současně. Po každé změně na jednu z cesty nebo kolekce `SKCanvasView` zneplatněna:
+`TouchAction` Obslužná rutina spravuje tyto dvě kolekce. Když prstem nejprve dotýká obrazovky, nový `SKPath` se přidá do `inProgressPaths`. Při přesunu této prstem další body jsou přidány do cesty. Když se uvolní prstu, cesta bude převeden na `completedPaths` kolekce. Můžete s více prstů malovat současně. Po každé změně na jeden z cesty nebo kolekce `SKCanvasView` zneplatněna:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -134,9 +134,9 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-Body doplňujícími touch sledování události jsou Xamarin.Forms souřadnice; Tyto nutné převést na SkiaSharp souřadnice, které jsou v pixelech. Je účelem `ConvertToPixel` metoda.
+Bodů doprovodném dotykové ovládání – sledování událostí, které jsou souřadnice Xamarin.Forms; Toto musí být převeden na souřadnicích SkiaSharp, které jsou v pixelech. To je účel `ConvertToPixel` metody.
 
-`PaintSurface` Obslužná rutina pak jednoduše vykreslí obě kolekce cest. Dříve dokončené cesty se zobrazí pod cesty v průběhu:
+`PaintSurface` Obslužná rutina pak jednoduše vykreslí obě kolekce cest. Dříve dokončených cesty se zobrazí pod částí cesty v průběhu:
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -161,14 +161,14 @@ public partial class FingerPaintPage : ContentPage
 }
 ```
 
-Vaše prstem malby jsou omezena pouze vašemu talentu:
+Vaše prstem malby jsou omezené jenom vašeho talentu:
 
-[![](finger-paint-images/fingerpaint-small.png "Trojitá snímek obrazovky stránky Malování prstem")](finger-paint-images/fingerpaint-large.png#lightbox "Trojitá snímek obrazovky stránky prstem Malování")
+[![](finger-paint-images/fingerpaint-small.png "Trojitá snímek obrazovky stránky Malování prstem")](finger-paint-images/fingerpaint-large.png#lightbox "Trojitá snímek obrazovky stránky Malování prstem")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Ukázky vliv touch sledování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
-- [Vyvolání událostí z efekty](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [Ukázky dotykové ovládání sledování efekt (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
+- [Vyvolání události z účinků](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

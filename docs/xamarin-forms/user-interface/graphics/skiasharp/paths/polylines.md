@@ -1,40 +1,40 @@
 ---
-title: Čáru lomených a čištění vzorce
-description: Tento článek vysvětluje, jak chcete SkiaSharp použít k vykreslení kterýkoli řádek můžete definovat s čištění vzorce a to ukazuje s ukázkový kód.
+title: Lomené čáry a parametrické rovnice
+description: Tento článek vysvětluje, jak k použití ve Skiasharpu k vykreslení všech řádků můžete definovat pomocí parametrické rovnice a to demonstruje se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245306"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615792"
 ---
-# <a name="polylines-and-parametric-equations"></a>Čáru lomených a čištění vzorce
+# <a name="polylines-and-parametric-equations"></a>Lomené čáry a parametrické rovnice
 
-_Použití SkiaSharp k vykreslení kterýkoli řádek, který můžete definovat s čištění vzorce_
+_Použít k vykreslení libovolný řádek, který definujete pomocí parametrické rovnice ve Skiasharpu_
 
-V pozdější části této příručky, zobrazí se různé metody, `SKPath` definuje k vykreslení určité typy křivek. Je však někdy potřebné k vykreslení typu křivky, který nepodporuje přímo `SKPath`. V takovém případě můžete k vykreslení žádné křivky, který matematicky můžete definovat čáru (kolekce připojené řádky). Pokud provedete řádky dostatečně malé, a množství dostatek výsledek bude vypadat křivka. Tato Spirála je ve skutečnosti 3 600 málo řádky:
+V pozdější části tohoto průvodce, zobrazí se vám různé metody, která `SKPath` definuje k vykreslení určité typy křivky. Je však někdy nezbytné k vykreslení typu křivku, která není přímo podporován `SKPath`. V takovém případě můžete použít lomené čáry (kolekce spojené čáry) Chcete-li nakreslit jakékoli křivku, která matematicky můžete definovat. Pokud řádky dostatečně zmenšíte a mnoha dostatek, výsledek bude vypadat křivky. Tato něco jako Spirála je ve skutečnosti 3600 málo řádků:
 
-![](polylines-images/spiralexample.png "Spirály")
+![](polylines-images/spiralexample.png "Něco jako Spirála")
 
-Obvykle je nejvhodnější definovat křivky z hlediska pár čištění vzorce. Toto jsou vzorce, pro který souřadnice X a Y závisí na třetí proměnné, někdy označuje jako `t` dobu. Můžete například definovat následující čištění vzorce kruh se serverem radius 1 zarovnaný na střed v bodě (0, 0) pro *t* od 0 do 1:
+Obecně je vhodné definovat křivku z hlediska pár parametrické rovnice. Toto jsou rovnice, pro který souřadnice X a Y závisí na třetí proměnné, říká se jim `t` dobu. Například následující parametrické rovnice definovat kruhu s poloměrem 1 zarovnaný na střed v okamžiku (0, 0) pro *t* od 0 do 1:
 
  x = cos(2πt) y = sin(2πt)
 
- Pokud chcete radius větší než 1, můžete jednoduše vynásobit hodnoty sinus a kosinus tohoto protokolu radius a pokud potřebujete přesunout centru do jiného umístění, přidejte tyto hodnoty:
+ Pokud chcete, poloměr větší než 1, můžete jednoduše vynásobit hodnoty sinus a kosinus tohoto protokolu radius a pokud potřebujete přesunout střed do jiného umístění, přidejte tyto hodnoty:
 
  x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
 
-Pro elipsy s paralelní osy ve vodorovném a svislého se jedná o dvě poloměr:
+Pro elipsu s paralelními osy vodorovné a svislé se podílejí dvě poloměry:
 
 x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
 
-Pak můžete umístit kód ekvivalentní SkiaSharp ve smyčce, která vypočítá různé body a přidá do cestu. Následující kód SkiaSharp vytvoří `SKPath` objekt pro elipsy, který vyplní povrch zobrazení. Smyčky cyklů přímo do 360 stupňů. Centru je poloviční šířky a výšky zobrazení plochy, a proto jsou dvě poloměr:
+Můžete pak umístit ekvivalentní kód ve Skiasharpu v smyčku, která vypočítá různých fázích a přidá ji do cesty. Následující kód ve Skiasharpu vytvoří `SKPath` objekt pro elipsy, která naplní zobrazovacím povrchu. Smyčka projde 360 stupňů přímo. Centru poloviční šířku a výšku zobrazovacím povrchu a proto jsou dvě poloměry:
 
 ```csharp
 SKPath path = new SKPath();
@@ -57,11 +57,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Výsledkem elipsy definované 360 málo řádky. Je vykreslen, zobrazí se smooth.
+Výsledkem elipsa určené 360 málo řádků. Když je vykresleno, zobrazí se technologie smooth.
 
-Samozřejmě, nemusíte vytvářet elipsy pomocí lomenou čáru, protože `SKPath` zahrnuje `AddOval` metoda, která provede za vás. Ale můžete chtít kreslení visual objekt, který není poskytované `SKPath`.
+Samozřejmě, nemusíte vytvářet elipsa pomocí lomené čáry, protože `SKPath` zahrnuje `AddOval` metodu, která to udělá za vás. Ale můžete chtít nakreslete objekt visual, který není zahrnutý ve `SKPath`.
 
-**Archimedean Spirála** stránka obsahuje kód, který podobné kód elipsy, ale s velmi důležitý rozdíl. Dojde k opakování kolem 360 stupňů kruhu 10krát, nepřetržitě úpravě poloměr:
+**Něco jako Spirála Archimedean** stránka obsahuje kód, který podobně jako na tři tečky kód, ale s zásadní rozdíl. Dojde k opakování kolem 360 stupňů kruhu 10krát, nepřetržitě nastavení protokolu radius:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,14 +107,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Výsledek se také nazývá *aritmetické Spirála* protože posun mezi každou smyčku je konstantní:
+Výsledek se také nazývá *aritmetických něco jako Spirála* vzhledem k tomu, že je konstantní posun mezi každou smyčku:
 
-[![](polylines-images/archimedeanspiral-small.png "Trojitá snímek obrazovky stránky Spirála Archimedean")](polylines-images/archimedeanspiral-large.png#lightbox "Trojitá snímek obrazovky stránky Archimedean Spirála")
+[![](polylines-images/archimedeanspiral-small.png "Trojitá snímek obrazovky stránky něco jako Spirála Archimedean")](polylines-images/archimedeanspiral-large.png#lightbox "Trojitá snímek obrazovky stránky něco jako Spirála Archimedean")
 
-Všimněte si, že `SKPath` je vytvořen v `using` bloku. To `SKPath` spotřebovává více paměti, než `SKPath` objekty v předchozí programy, které naznačuje, které `using` bloku je vhodnější, aby uvolnila veškeré nespravované prostředky.
+Všimněte si, že `SKPath` se vytvoří v `using` bloku. To `SKPath` využívá více paměti než `SKPath` objektů v předchozí programy, které navrhuje, které `using` blok je vhodnější uvolnit jakékoli nespravované prostředky.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

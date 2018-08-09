@@ -1,38 +1,38 @@
 ---
-title: Informace o cestě a – výčet
-description: Tento článek vysvětluje, jak získat informace o způsobech SkiaSharp a výčet obsahu a to ukazuje s ukázkový kód.
+title: Informace o cestě a výčet
+description: Tento článek vysvětluje, jak získat informace o cesty ve Skiasharpu a spočítat obsahy a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 53d1fce20a0e3bc75ba34ab84b2549211567e222
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 65c614e9a6eb26bc0d027a4a67bec19b036d0a70
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243789"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615272"
 ---
-# <a name="path-information-and-enumeration"></a>Informace o cestě a – výčet
+# <a name="path-information-and-enumeration"></a>Informace o cestě a výčet
 
-_Získat informace o cestách a výčet obsahu_
+_Získejte informace o cestách a spočítat obsahy_
 
-[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) Třída definuje několik vlastnosti a metody, které vám umožní získat informace o cestě. [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) a [ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/) vlastnosti (a související metody) získat metrical dimenze cesty. [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/) Metody můžete zjistit, jestli do konkrétního bodu v rámci cestu.
+[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) Třída definuje několik vlastností a metod, které umožňují získat informace o cestě. [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) a [ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/) vlastnosti (a související metody) získat metrical dimenze cesty. [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/) Metoda vám umožňuje zjistit, jestli konkrétní bod v rámci cesty.
 
-Někdy je užitečné k určení celková délka čar a křivek, které tvoří cestu. Toto není algorithmically jednoduchou úlohou, takže celou třídu s názvem [ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) je věnována.
+Někdy je užitečné k určení celková délka čar a křivek, které tvoří cestu. Toto není algorithmically jednoduchého úkolu, takže celou třídu s názvem [ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) je věnována.
 
-Je také někdy užitečné k získání kreslení operace a body, které tvoří cestu. Na první, pokud tuto funkci zdát, nepotřebné: Pokud váš program vytvoří cestu, program již zná obsah. Ale už víte, že cesty lze vytvořit také pomocí [cesta důsledky](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) a převedením [textové řetězce do cesty](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Můžete také získat kreslení operace a body, které tvoří tyto cesty. Jednou z možností je použít algoritmické transformace pro všechny body. To umožňuje obtékání textu kolem jedna polokoule, jako jsou:
+Je také někdy užitečné získat kreslicí operace a body, které tvoří cestu. Tato zařízení můžou zdát, zbytečné: Pokud váš program vytvořil cestu, program již zná obsah. Ale už víte, že cesty mohou také vytvořit [efekty cest](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) a převodem [textové řetězce do cesty](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Můžete také získat kreslicí operace a body, které tvoří tyto cesty. Jednou z možností je použít na všechny body vylepšením transformace. To umožňuje techniky, jako je například zalamování textu kolem polokoule:
 
-![](information-images/pathenumerationsample.png "Text zabalené na polokoule")
+![](information-images/pathenumerationsample.png "Text zalomený na polokoule")
 
 ## <a name="getting-the-path-length"></a>Získávání délky cesty
 
-V článku [ **cesty a Text** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) jste viděli, jak používat [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metoda kreslení textový řetězec, jehož základní následuje během cesty. Ale co když budete chtít velikost text tak, aby odpovídal cesta přesněji? Pro kreslení textu kolem kruh, totiž snadno obvodu kruhu je jednoduchá k výpočtu. Ale obvodu elipsy nebo délka Bézierovy křivky není tak jednoduché.
+V následujícím článku [ **cesty a Text** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) jste viděli, jak používat [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metoda nakreslete textový řetězec, jehož základní následuje kurzu cestu. Ale co když budete chtít velikost textu, tak, aby přesně odpovídal cestu? Pro kreslení textu kruh, totiž snadno obvod kruhu je jednoduché pro výpočet. Ale není tak snadné obvod elipsa nebo délka Bézierovy křivky.
 
-[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Může pomoci třídy. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) přijímá `SKPath` argument a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) vlastnost zjistí jeho délka.
+[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Třída může pomoci. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) přijímá `SKPath` argument a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) vlastnost odhalí jeho délky.
 
-Tento postup je znázorněn v **délka cesty** ukázka, která je založena na **Bézierovu křivku** stránky. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) souboru je odvozena z `InteractivePage` a zahrnuje touch rozhraní:
+To je patrné **délka cesty** ukázka, která je založena na **Bézierovu křivku** stránky. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) souboru je odvozen od `InteractivePage` a zahrnuje dotykové rozhraní:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,7 +53,7 @@ Tento postup je znázorněn v **délka cesty** ukázka, která je založena na *
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) souboru kódu umožňuje přesunout čtyři body touch definovat koncové body a body Bézierovy křivky krychlový ovládání. Tři pole definovat textového řetězce, `SKPaint` objekt a počítané šířka textu:
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) soubor kódu na pozadí vám umožní přesunout čtyři dotykovými body k definování koncový bod a řízení body kubické Bézierovy křivky. Tři pole definovat textový řetězec `SKPaint` objektu a počítané šířku textu:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -72,9 +72,9 @@ public partial class PathLengthPage : InteractivePage
 }
 ```
 
-`baseTextWidth` Pole je textu na základě `TextSize` nastavení 10.
+`baseTextWidth` Pole je šířku textu na základě `TextSize` nastavení 10.
 
-`PaintSurface` Obslužná rutina nevykresluje Bézierovy křivky a pak velikostí umisťování podél jeho úplnou délka:
+`PaintSurface` Obslužná rutina kreslení Bézierovy křivky a potom velikosti přizpůsobení podél jeho úplnou délka textu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -108,15 +108,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`Length` Vlastnost nově vytvořený `SKPathMeasure` objekt získá délka cesty. To je rozdělena `baseTextWidth` hodnotu (což je textu na základě velikosti text 10) a potom vynásobena základního textu velikost 10. Výsledkem je nová velikost textu pro zobrazení textu podél této cesty:
+`Length` Vlastnosti nově vytvořeného `SKPathMeasure` objektu získá délku cesty. To je rozdělena `baseTextWidth` hodnotu (což je šířku textu na základě velikosti textu 10) a potom vynásobí velikostí základního textu 10. Výsledkem je nové velikosti textu pro zobrazování textu na této cestě:
 
 [![](information-images/pathlength-small.png "Trojitá snímek obrazovky stránky délka cesty")](information-images/pathlength-large.png#lightbox "Trojitá snímek obrazovky stránky délka cesty")
 
-Jako Bézierovy křivky získá delší nebo kratší, zobrazí se změnit velikost textu.
+Protože Bézierovy křivky získá delší nebo kratší, zobrazí se změnit velikost textu.
 
-## <a name="traversing-the-path"></a>Procházení cesta
+## <a name="traversing-the-path"></a>Prochází cestou
 
-`SKPathMeasure` můžete provést více než jen měr délka cesty. Pro žádnou hodnotu mezi 0 a délka cesty `SKPathMeasure` objekt můžete získat od tohoto okamžiku pozici na cestu a tangens na křivku cestu. Tangens je k dispozici jako vektoru ve formě `SKPoint` objektu, nebo jako rotaci kolem zapouzdřené v `SKMatrix` objektu. Tady jsou metody `SKPathMeasure` , způsoby rozmanitých a flexibilní získat tyto informace:
+`SKPathMeasure` můžete provést více než jen míry délka cesty. Pro libovolnou hodnotu mezi 0 a délka cesty `SKPathMeasure` objektu můžete získat od tohoto okamžiku pozice na cestě a tangens na křivku cestu. Tangens je k dispozici jako vektor ve formě `SKPoint` objektu, nebo jako otočení zapouzdřena v `SKMatrix` objektu. Tady jsou metody `SKPathMeasure` , který v různých a flexibilní způsob získání těchto informací:
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -134,11 +134,11 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 - [`GetTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 - [`GetPositionAndTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
 
-**Kanálu polovině své blízké** stránky animuje Flash disk obrázek na své blízké, který se zdá se, že vozidlo a zpět podél krychlový Bézierovy křivky pro:
+**Polovině kanály kola** animuje obrázek na své blízké, co podél kubické Bézierovy křivky svézt vpřed a zpět na stránku:
 
-[![](information-images/unicyclehalfpipe-small.png "Trojitá snímek obrazovky stránky kanálu polovině své blízké")](information-images/unicyclehalfpipe-large.png#lightbox "Trojitá snímek obrazovky stránky své blízké půl kanálu")
+[![](information-images/unicyclehalfpipe-small.png "Trojitá snímek obrazovky stránky polovině kanály kola")](information-images/unicyclehalfpipe-large.png#lightbox "Trojitá snímek obrazovky stránky kola polovině-kanálu")
 
-`SKPaint` Objekt použitý pro vytažení půl kanálu a své blízké je definován jako pole v [ `UnicycleHalfPipePage` ]() třídy. Je také definován `SKPath` objekt pro své blízké:
+`SKPaint` Objektu se používá pro vytažení polovině kanálu a kola je definován jako pole [ `UnicycleHalfPipePage` ]() třídy. Je také definováno `SKPath` objektu kola:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -163,7 +163,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-Třída obsahuje standardní přepsáními `OnAppearing` a `OnDisappearing` metody pro animace. `PaintSurface` Obslužná rutina vytvoří cesta pro půl kanálu a pak ho nevykresluje. `SKPathMeasure` Objektu je poté jste vytvořili podle tuto cestu:
+Třída obsahuje standardní přepsání `OnAppearing` a `OnDisappearing` metody pro animaci. `PaintSurface` Obslužná rutina vytvoří cesta pro polovině kanálu a pak vykreslí. `SKPathMeasure` Objekt se pak vytvoří podle tuto cestu:
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -209,15 +209,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina vypočítá hodnotu `t` , přejde od 0 do 1 každých pět sekund. Poté použije `Math.Cos` funkce, převést na hodnotu `t` , rozsahy od 0 do 1 a zpět na hodnotu 0, kde 0 odpovídá své blízké na začátku nahoře vlevo, zatímco 1 odpovídá své blízké vpravo nahoře. Funkce kosinus způsobí, že rychlost nejpomalejší v horní části kanálu a nejrychlejší dole.
+`PaintSurface` Obslužná rutina vypočítá hodnotu `t` , které dostane od 0 do 1 každých pět sekund. Poté použije `Math.Cos` funkce pro převod, který na hodnotu `t` , který rozsah od 0 do 1 a zpět na 0, kde 0 odpovídá kola na začátku vlevo nahoře, během 1 odpovídá kola vpravo nahoře. Funkce kosinus způsobí, že rychlost nejpomalejší v horní části kanálu a nejrychlejší v dolní části.
 
-Všimněte si, že hodnota `t` musí být násobí hodnotou délka cesty pro první argument `GetMatrix`. Matice se potom použije k `SKCanvas` objekt pro vykreslení své blízké cestu.
+Všimněte si, že tato hodnota `t` musí být vynásobena délkou cestu pro první argument `GetMatrix`. Matice se následně použije na `SKCanvas` objektů pro kreslení kola cesty.
 
-## <a name="enumerating-the-path"></a>Vytváření výčtu cesta
+## <a name="enumerating-the-path"></a>Vytváření výčtu cestu
 
-Dva vložených třídy `SKPath` umožňují výčet obsahu cesty. Tyto třídy jsou [ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/) a [ `SKPath.RawIterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/). Dvě třídy jsou velmi podobné, ale `SKPath.Iterator` můžete eliminovat elementy v cestě s nulovou délkou nebo blízko nulové délky. `RawIterator` Se používá v následujícím příkladu.
+Dvě vložené třídy `SKPath` bylo možné provést výčet obsahu cestu. Tyto třídy jsou [ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/) a [ `SKPath.RawIterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/). Dvě třídy jsou velmi podobné, ale `SKPath.Iterator` mohou odstranit prvky v cestě s nulovou délkou nebo blízko nulovou délku. `RawIterator` Se používá v následujícím příkladu.
 
-Můžete získat objekt typu `SKPath.RawIterator` voláním [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/) metodu `SKPath`. Výčet prostřednictvím cestu lze provést opakovaně voláním [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/) metoda. Předat pole čtyři `SKPoint` hodnoty:
+Můžete získat objekt typu `SKPath.RawIterator` voláním [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/) metoda `SKPath`. Vytváření výčtů cesta se provádí pomocí opakovaného volání [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/) metody. Předat pole ze čtyř `SKPoint` hodnoty:
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -225,25 +225,25 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-`Next` Metoda vrátí členem [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/) výčtu. Tyto hodnoty označují příkaz konkrétní kreslení v cestě. Počet platné body vložen do pole závisí na tento příkaz:
+`Next` Metoda vrátí členem [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/) výčtu. Tyto hodnoty označují konkrétní příkaz vykreslování v cestě. Počet vložena do pole platné body, závisí na tento příkaz:
 
-- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) s jediný bod
-- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) s dva body.
-- [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) s čtyři body
-- [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) s tři body
-- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) s tři body (a také zavolat [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/) metodu pro váhu)
-- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) s jeden bod
+- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) s jediným bodem
+- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) dva body
+- [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) čtyři body.
+- [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) tři body
+- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) tři body (a také volat [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/) metodu váha)
+- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) s jedním bodem
 - [`Done`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Done/)
 
-`Done` Příkaz označuje, že výčtu je kompletní.
+`Done` Příkaz označuje dokončení výčtu.
 
-Všimněte si, že neexistují žádné `Arc` příkazy. To znamená, že všechny oblouky se převedou na Bézierových křivek při přidání k cestě.
+Všimněte si, že neexistují žádné `Arc` příkazů. To znamená, že všechny oblouky převedou na Bézierových křivek, když se přidá do cesty.
 
-Některé z informací v `SKPoint` pole je redundantní. Například pokud `Move` příkaz následuje `Line` příkaz a potom první dva body, které doprovází `Line` je stejný jako `Move` bodu. V praxi je velmi užitečné tento redundance. Když dojde `Cubic` operace, je přiložena všechny čtyři body, které definují krychlový Bézierovy křivky. Není nutné zachovat aktuální pozici vymezenému předchozí příkaz.
+Některé z informací v `SKPoint` pole je redundantní. Například pokud `Move` příkaz následuje `Line` sloveso, pak první dva body, které nejsou poskytnuty `Line` je stejný jako `Move` bodu. V praxi je velmi užitečné tuto redundanci. Když se zobrazí `Cubic` příkaz, je přiložena všechny čtyři body, které definují kubické Bézierovy křivky. Není nutné zachovat aktuální pozici stanovené předchozí příkaz.
 
-Problematické operace, je však `Close`. Tento příkaz vloží přímou čáru od aktuální pozice na začátek obrysem dříve nástrojem navázat `Move` příkaz. V ideálním případě `Close` operace by měl poskytovat tyto dva body spíše než jenom jeden bod. Co je zhoršení je, že bod doplňujícími `Close` je vždy (0, 0). To znamená, že při vytvoření výčtu prostřednictvím cestu, budete pravděpodobně muset zachovat `Move` bod a aktuální pozici.
+Problematické operace, ale `Close`. Tento příkaz Kreslení rovné čáry od aktuální pozice na začátek obrysu dříve podle navázat `Move` příkazu. V ideálním případě by `Close` operace by měla poskytnout tyto dva body spíše než jenom jeden bod. Co je horší je, že bod souvisejícím `Close` sloveso je vždycky (0, 0). To znamená, že při vytvoření výčtu prostřednictvím cestu, bude pravděpodobně nutné zachovat `Move` bod a aktuální pozici.
 
-Statické [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) třída obsahuje několik metod, které převést tři typy Bézierových křivek na řadu jen nepatrnou přímých řádky, které Přibližná křivku. (Čištění vzorce byly uvedené v článku [ **tři typy Bézierových křivek**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metoda rozpis přímku do mnoha krátké řádky, které jsou pouze jednu jednotku délka:
+Statické [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) třída obsahuje několik metod, které převést tři typy Bézierových křivek na řadu malý rovné čáry, které přibližný křivky. (Ukazatelů vzorce byly uvedené v článku [ **tři typy Bézierových křivek**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metoda rozdělí do mnoha krátké řádky, které jsou pouze jednu jednotku v délce rovné čáry:
 
 ```csharp
 static class PathExtensions
@@ -328,9 +328,9 @@ static class PathExtensions
 }
 ```
 
-Všechny tyto metody se odkazuje z metody rozšíření `CloneWithTransform` vidíte níže. Tato metoda provede klonování cestu k vytváření výčtu příkazy cesty a vytváření na základě dat novou cestu. Ale nová cesta se skládá jenom z `MoveTo` a `LineTo` volání. Všechny křivek a úseček jsou omezeny na řadu jen nepatrnou řádky.
+Všechny tyto metody jsou odkazovány z metody rozšíření `CloneWithTransform` vidíte níže. Tato metoda duplicity cestu tak, že výčet příkazů pro cesty a novou cestu na základě dat o sestavení. Ale nová cesta se skládá pouze z `MoveTo` a `LineTo` volání. Křivky a přímé čáry jsou zmenšeny na řadu malý řádky.
 
-Při volání metody `CloneWithTransform`, předáte metodě `Func<SKPoint, SKPoint>`, což je funkce s `SKPaint` parametr, který vrátí `SKPoint` hodnotu. Tato funkce je volána pro každý bod použít vlastní algoritmické transformace:
+Při volání metody `CloneWithTransform`, předat metodě `Func<SKPoint, SKPoint>`, což je funkce s `SKPaint` parametr, který vrátí `SKPoint` hodnotu. Tato funkce je volána pro každý bod na použití vlastní vylepšením transformace:
 
 ```csharp
 static class PathExtensions
@@ -419,15 +419,15 @@ static class PathExtensions
 }
 ```
 
-Vzhledem k tomu, že klonovaný cesta byla snížena jen nepatrnou rovné čáry, transformační funkce má možnost převodu rovné čáry na křivky.
+Vzhledem k tomu, že klonovaný cesta je omezená na malý rovné čáry, transformační funkce má funkce převodu rovné čáry na křivky.
 
-Všimněte si, že metoda zachová první bod každý obrysem v proměnné názvem `firstPoint` a aktuální pozice po každém z nich kreslení příkaz v proměnné `lastPoint`. Toto jsou potřebné k vytvoření konečné ukončovací řádek, kdy `Close` zjistil se příkaz.
+Všimněte si, že metoda zachová první bod každé obrysu v proměnné názvem `firstPoint` a aktuální pozice po každém z nich kreslení příkaz v proměnné `lastPoint`. To je nezbytné k sestavení kompletních poslední ukončovací řádku `Close` příkaz dochází.
 
-**GlobularText** ukázce se používá tato metoda rozšíření zdánlivě zalomení textu kolem polokoule v 3D vliv:
+**GlobularText** Ukázka používá tuto metodu rozšíření k zdánlivě Zalamovat text kolem polokoule 3D platná:
 
 [![](information-images/globulartext-small.png "Trojitá snímek obrazovky stránky Globular Text")](information-images/globulartext-large.png#lightbox "Trojitá snímek obrazovky stránky Globular Text")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce:
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provádí Tato transformace. Vytvoří `SKPaint` objekt textu a potom získá `SKPath` objektu z `GetTextPath` metody. Toto je cesta předán `CloneWithTransform` – metoda rozšíření spolu s funkce transformace:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -474,9 +474,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Funkce transformace nejprve vypočítá dvě hodnoty s názvem `longitude` a `latitude` rozsahu od-pí/2 v horní a levé straně textu, až pí/2 v pravé a dolní části textu. Rozsah těchto hodnot není vizuálně vyhovující, proto jsou omezeny vynásobením 0,75. (Zkuste kód bez tyto úpravy. Text se změní na příliš skrytého v Severní a Jižní hole a příliš dynamické po stranách.) Tyto trojrozměrné kulovým souřadnice se převedou na dvourozměrná `x` a `y` souřadnice ve standardní vzorce.
+Funkce transformace vypočítá první dvě hodnoty s názvem `longitude` a `latitude` tohoto rozsahu od-pí/2 nahoře a vlevo od textu, do pí/2 na vpravo a dole textu. Rozsah těchto hodnot není vizuálně uspokojivé kvality, a proto jsou sníženy vynásobením 0,75. (Zkuste kódu bez tyto úpravy. Text se změní v Severní a Jižní hole příliš skrytého a po stranách příliš dynamického zajišťování.) Tyto trojrozměrného kulovité souřadnice jsou převedeny na dvourozměrné `x` a `y` souřadnice ve standardní vzorce.
 
-Nová cesta je uložena jako pole. `PaintSurface` Obslužná rutina je jenom nutné, aby na střed a škálování cesta k zobrazení na obrazovce:
+Nová cesta je uložena jako pole. `PaintSurface` Obslužná rutina se pak pouze musí Centrování a škálovat cesty se zobrazí na obrazovce:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -506,9 +506,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-To je velice flexibilní technika. Pokud pole cesty důsledky podrobněji [ **cesta důsledky** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku nebude zahrnovat poměrně něco popisovač by měl být zahrnutý, to je způsob k vyplnění mezer.
+To je velmi flexibilní technika. Pokud pole efekty cest popsané v [ **efekty cest** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku nebude zahrnovat poměrně něco popisovač by měl být zahrnutý, toto je způsob, jak vyplnit mezery ve znalostech.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

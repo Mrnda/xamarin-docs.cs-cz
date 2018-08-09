@@ -1,57 +1,57 @@
 ---
-title: Cesta efekty při SkiaSharp
-description: Tento článek vysvětluje různé důsledky cesta SkiaSharp, které umožňují cesty, které se použije pro vytažení a naplnění a to s ukázkový kód ukazuje.
+title: Efekty cest v ve Skiasharpu
+description: Tento článek vysvětluje různé účinky cesty ve Skiasharpu, které umožňují cesty pro vytažení a následně a to demonstruje se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 28f628fb4e8ab77e9c36e6e1972d7269ad0dad4d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244107"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615675"
 ---
-# <a name="path-effects-in-skiasharp"></a>Cesta efekty při SkiaSharp
+# <a name="path-effects-in-skiasharp"></a>Efekty cest v ve Skiasharpu
 
-_Zjištění různých cesta účinky, které umožňují cesty, které se použije pro vytažení a naplnění_
+_Zjišťování různých efekty cest, umožňujících cesty pro vytažení a vyplnění_
 
-A *efektu cesta* je instance [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) třídu, která je vytvořena s jedním osm statických `Create` metody. `SKPathEffect` Je pak nastavena [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) vlastnost `SKPaint` objekt pro škálu zajímavé důsledky, například vytažení čáry s malé replikované cesta:
+A *vliv cestu* je instance [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) třídu, která se vytvoří s jednu z osmi statické `Create` metody. `SKPathEffect` Objektu je nastaven na [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) vlastnost `SKPaint` objekt pro celou řadu zajímavých efektů, například vytažení čáry s malé replikované cesta:
 
-![](effects-images/patheffectsample.png "Ukázka propojený řetězec")
+![](effects-images/patheffectsample.png "Ukázka propojené řetězce")
 
-Cesta důsledky umožňují:
+Efekty cest vám umožní:
 
-- Obtažení čáru tečky a pomlčky
-- Tahu čáry s jakoukoli vyplněný cestu
-- Zadejte oblast šrafování řádků
-- Zadejte oblast s cestou vedle sebe
-- Ujistěte se, ostré rozích zaokrouhlené
-- Přidejte náhodný "zmenší" čar a křivek
+- Protože byl zdvih čáry s tečky a spojovníky
+- Řádek s žádným plného tahu
+- Vyplnění oblasti šrafování řádky
+- Vyplnění oblasti s cestou vedle sebe
+- Ujistěte se, ostrých zaoblené
+- Přidání náhodného "kolísání" čar a křivek
 
-Kromě toho můžete kombinovat dvou nebo více cesta účinky.
+Kromě toho můžete kombinovat dva nebo více efekty cest.
 
-Tento článek také ukazuje, jak používat `GetFillPath` metodu `SKPaint` převést jednu cestu do jiné cesty použitím vlastnosti `SKPaint`, včetně `StrokeWidth` a `PathEffect`. Výsledkem některé zajímavé techniky, jako je například získat cestu, která je přehledu z jiné cesty. `GetFillPath` je také užitečné souvislosti s cesta účinky.
+Tento článek také ukazuje, jak používat `GetFillPath` metoda `SKPaint` převést jednu cestu na jinou cestu s použitím vlastnosti `SKPaint`, včetně `StrokeWidth` a `PathEffect`. Výsledkem je některé zajímavé techniky, jako je například získání cestu, která je přehled jinou cestu. `GetFillPath` je také užitečné souvislosti efekty cest.
 
-## <a name="dots-and-dashes"></a>Tečky a pomlčky
+## <a name="dots-and-dashes"></a>Tečky a spojovníky
 
-Použití [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) metoda popsanou v článku [ **tečky a pomlčky**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). První argument metody je pole obsahující sudý počet dvě nebo více hodnot, střídavě délek pomlčky a délek mezery mezi pomlček:
+Použití [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) metodu popsanou v článku [ **tečky a pomlčky**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). První argument metody je pole obsahující sudý počet dva nebo více hodnot, střídavě délky pomlčky a mezery mezi pomlček délky:
 
 ```csharp
 public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 ```
 
-Tyto hodnoty jsou *není* vzhledem k šířce tahu. Například pokud šířku tahu je 10 a chcete řádek složený z odmocnina čárek a mezer odmocnina, nastavte `intervals` pole na {10, 10}. `phase` Argument určuje, kde v čárkovém vzoru začíná na řádku. V tomto příkladu, pokud chcete řádek pro začínat odmocnina mezery, nastavte `phase` do 10.
+Tyto hodnoty jsou *není* vzhledem k šířce stroke. Například pokud je šířka tahu 10 a chcete řádku složené Čtvereček pomlček a mezer čtvereček, nastavte `intervals` pole do {10, 10}. `phase` Argument určuje, kde mezi vzorem pomlček začíná na řádku. V tomto příkladu, pokud má čára začínat Čtvereček mezery, nastavte `phase` až 10.
 
-Konců pomlček se vztahuje `StrokeCap` vlastnost `SKPaint`. Pro celou tahu šířky, je velmi běžné tuto vlastnost nastavit na `SKStrokeCap.Round` má být zaokrouhleno konců pomlček. V tomto případě hodnoty `intervals` pole proveďte *není* zahrnout další délka výsledkem zaokrouhlení, což znamená, že cyklické tečku vyžaduje zadání šířku nula. Pro šířku tahu 10, k vytvoření řádek s cyklické tečky a mezery mezi body stejný průměr, použijte `intervals` pole {0, 20}.
+Konce pomlček se vztahuje `StrokeCap` vlastnost `SKPaint`. Pro celou stroke šířky, je velmi běžné pro tuto vlastnost nastavte na `SKStrokeCap.Round` zaokrouhlit konce pomlček. V tomto případě hodnoty `intervals` pole *není* zahrnují navíc délka vyplývající z zaokrouhlení, což znamená, že kruhové tečkou vyžaduje zadání šířku nula. Pro šířku tahu 10, k vytvoření čáry pomocí tečky a mezery mezi body stejný průměr, použijte `intervals` pole {0, 20}.
 
-**Animovaný s tečkami Text** je podobná stránce **uvedených Text** stránky, které jsou popsané v článku [ **integrace textu a obrázků** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) v že zobrazuje uvedených textových znaků nastavením `Style` vlastnost `SKPaint` do objektu `SKPaintStyle.Stroke`. Kromě toho **animovaný s tečkami Text** používá `SKPathEffect.CreateDash` umožnit to popisují desítkovém vzhled a také animuje program `phase` argument `SKPathEffect.CreateDash` metoda aby tečky se zdá, že cestují kolem textu znaky. Zde je stránka v režimu na šířku:
+**Animovat tečkované Text** je podobná stránka **uvedených Text** stránky je popsáno v článku [ **integrace textu a grafiky** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) v tím, že nastavíte, zobrazuje uvedených textové znaky `Style` vlastnost `SKPaint` objektu `SKPaintStyle.Stroke`. Kromě toho **animovat tečkované Text** používá `SKPathEffect.CreateDash` poskytnout to osnovy vychází tečkovaná vzhled a také animuje program `phase` argument `SKPathEffect.CreateDash` metoda aby tečky zdá se, že místo kolem textu znaky. Tady je v režimu na šířku stránka:
 
-[![](effects-images/animateddottedtext-small.png "Trojitá snímek obrazovky stránky animovaný s tečkami Text")](effects-images/animateddottedtext-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný s tečkami textu")
+[![](effects-images/animateddottedtext-small.png "Trojitá snímek obrazovky stránky animovat tečkované Text")](effects-images/animateddottedtext-large.png#lightbox "Trojitá snímek obrazovky stránky animovat tečkované Text")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy začne definováním některé konstanty a také přepsání `OnAppearing` a `OnDisappearing` metody pro animace:
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy zahájení definovat některé konstanty a také přepsání `OnAppearing` a `OnDisappearing` metody pro animaci:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -93,7 +93,7 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina začíná vytvořením `SKPaint` objekt, který chcete zobrazit text. `TextSize` Vlastnosti objektů je upravena podle šířku obrazovky:
+`PaintSurface` Obslužná rutina začíná tím, že vytvoříte `SKPaint` objektu pro zobrazení potřebného textu. `TextSize` Vlastnost je upravena podle šířka obrazovky:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -147,19 +147,19 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-Na konci metody `SKPathEffect.CreateDash` metoda je volána, pomocí `dashArray` který je definován jako pole a animovaného `phase` hodnotu. `SKPathEffect` Instance je nastaven na `PathEffect` vlastnost `SKPaint` objekt, který chcete zobrazit text.
+Na konci metody `SKPathEffect.CreateDash` metoda je volána pomocí `dashArray` , který je definován jako pole a animovaného `phase` hodnotu. `SKPathEffect` Instance je nastavena na `PathEffect` vlastnost `SKPaint` objektu pro zobrazení potřebného textu.
 
-Alternativně můžete nastavit `SKPathEffect` do objektu `SKPaint` objekt před měření text a zarovnání na stránce. V takovém případě však animovaný tečky a pomlčky způsobit některé variace velikost vykresleného textu a text se obvykle zavibrovat trochu. (Zkuste to!)
+Alternativně můžete nastavit `SKPathEffect` objektu `SKPaint` objektu před měření text a zarovnání na stránce. V takovém případě však animovaný tečky a pomlčky způsobit, že některé změny velikosti vykresleného textu, a obvykle uvede do trochu vibrace text. (Vyzkoušejte ji!)
 
-Můžete si všimnout, jako kruh animovaný tečky kolem textových znaků, se určité míry v každé uzavřené křivky kde pravděpodobně bodů pop a deaktivovat existence. Toto je, kde Cesta, která definuje obrys znak zahájení a ukončení. Pokud délka cesty není násobkem délka v čárkovém vzoru (v tomto případě 20 pixelů) může obsahovat pouze část tohoto vzorce na konci cesty.
+Uvidíte také jako kruh animovaný tečky kolem textové znaky, má určitého bodu v každé uzavřené křivky kde body zdá se, že do a z existence vyvolat přes pop. To je, kde cestu, která definuje znak osnovy začíná a končí. Pokud délka cesty není násobkem délce mezi vzorem pomlček (v tomto případě 20 pixelů) může obsahovat pouze část tohoto vzorce na konci cesty.
 
-Je možné upravit délku v čárkovém vzoru podle délka cesty, ale který vyžaduje určení délka cesty, technik, které bude popsaná v budoucnu článku.
+Je možné nastavit délku v čárkovém vzoru má přizpůsobit délka cesty, ale který vyžaduje určení délka cesty technika, která se v některém z budoucích článků.
 
-**Dot a pomlčka způsobů** program animuje v čárkovém vzoru sám sebe, tak, aby pomlčky zdá se, že k rozdělení na tečky, které se kombinují a pomlčky formulář znovu:
+**Tečka a pomlčka způsobů** program animuje mezi vzorem pomlček sama tak, aby pomlčky zdá se, že dělení do bodů, které se kombinují na krátké pomlčky formulář znovu:
 
-[![](effects-images/dotdashmorph-small.png "Trojitá snímek obrazovky stránky tečkou Dash způsobů")](effects-images/dotdashmorph-large.png#lightbox "Trojitá snímek obrazovky stránky způsobů Dash tečku")
+[![](effects-images/dotdashmorph-small.png "Trojitá snímek obrazovky stránky způsobů čárka – tečka")](effects-images/dotdashmorph-large.png#lightbox "Trojitá snímek obrazovky stránky způsobů čárka – tečka")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy přepsání `OnAppearing` a `OnDisappearing` metody stejně jako předchozí aplikace nebyla, ale definuje třídu `SKPaint` objektu jako pole:
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy přepsání `OnAppearing` a `OnDisappearing` metody, stejně jako předchozí aplikace nebyla, ale definuje třídu `SKPaint` objektu jako pole:
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -241,11 +241,11 @@ public class DotDashMorphPage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina vytvoří eliptické cestu na základě velikosti stránky a provede dlouhé části kódu, který nastaví `dashArray` a `phase` proměnné. Jako proměnnou animovaný `t` rozsahu od 0 do 1, `if` bloky rozdělit této doby do čtyř čtvrtletí a v každé z těchto čtvrtletí `tsub` také rozsah od 0 do 1. Na konci velmi, program vytvoří `SKPathEffect` a nastaví na `SKPaint` objekt pro kreslení.
+`PaintSurface` Obslužná rutina vytvoří elipsy cestu na základě velikosti stránky a provede dlouhé část kódu, který nastaví `dashArray` a `phase` proměnné. Jako proměnnou animovaný `t` rozsahu 0 až 1, `if` bloky rozdělte této doby do čtyř čtvrtletí a v každé z těchto čtvrtletí `tsub` také od 0 do 1. Na konci velmi program vytvoří `SKPathEffect` a nastaví ji `SKPaint` objektů pro kreslení.
 
-## <a name="from-path-to-path"></a>Z cesty k cestě
+## <a name="from-path-to-path"></a>Z cesty na cestu
 
-[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) Metodu `SKPaint` změní jednu cestu do jiné na základě nastavení v `SKPaint` objektu. Pokud chcete zobrazit, jak to funguje, nahraďte `canvas.DrawPath` volání v předchozí program následujícím kódem:
+[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) Metoda `SKPaint` převede jednu cestu na jiný v závislosti na nastavení v `SKPaint` objektu. Chcete-li zjistit, jak to funguje, nahraďte `canvas.DrawPath` volání v předchozí program následujícím kódem:
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -258,15 +258,15 @@ canvas.DrawPath(newPath, newPaint);
 
 ```
 
-V tento nový kód `GetFillPath` volání převede `ellipsePath` (což je právě oval) do `newPath`, který se následně zobrazí s `newPaint`. `newPaint` Vytvoření objektu se všemi možnými nastavení výchozí vlastnost s tím rozdílem, že `Style` vlastnost nastavena na základě na logická hodnota vrácená hodnota z `GetFillPath`.
+V tomto nového kódu `GetFillPath` volání převede `ellipsePath` (která je právě elipsu) do `newPath`, který se následně zobrazí s `newPaint`. `newPaint` Je vytvořen objekt se všemi možnými nastavení výchozí vlastnost s tím rozdílem, že `Style` je vlastnost nastavena na základě na logickou hodnotu návratová hodnota z `GetFillPath`.
 
-Vizuálech jsou identické s výjimkou barvu, jež je nastavena v `ellipsePaint` ale ne `newPaint`. Místo jednoduché elipsy definované v `ellipsePath`, `newPath` obsahuje mnoho rozvrhy cesty definující řadu tečky a pomlčky. Toto je výsledek použití různé vlastnosti `ellipsePaint` – `StrokeWidth`, `StrokeCap`, a `PathEffect` – k `ellipsePath` a uvedení výsledné cestu v `newPath`. `GetFillPath` Metoda vrátí logickou hodnotu, která určuje zda je v cílové cestě se v; v tomto příkladu je návratovou hodnotu `true` pro naplnění cestu.
+Vizuály jsou stejné s výjimkou barvu, která je nastavena v `ellipsePaint` , ale ne `newPaint`. Místo jednoduchá elipsa definované v `ellipsePath`, `newPath` obsahuje mnoho rozvrhy cesty, které definují řady tečky a pomlčky. To je výsledkem použití různých vlastností `ellipsePaint` – `StrokeWidth`, `StrokeCap`, a `PathEffect` – k `ellipsePath` a uvedením Výsledná cesta `newPath`. `GetFillPath` Metoda vrátí logickou hodnotu označující, zda cílová cesta je pro vyplnění nebo Ne, v tomto příkladu je návratová hodnota `true` pro vyplnění cestu.
 
-Zkuste změnit `Style` nastavení v `newPaint` k `SKPaintStyle.Stroke` a uvidíte jednotlivé cesty obrysy uvedených šířka v pixelech jeden řádek.
+Zkuste změnit `Style` nastavení `newPaint` k `SKPaintStyle.Stroke` a zobrazí se jednotlivé cesty obrysy uvedených šířka v pixelech jeden řádek.
 
 ## <a name="stroking-with-a-path"></a>Vytažení s cestou
 
-[ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/) Metoda se koncepčně podobá `SKPathEffect.CreateDash` s tím rozdílem, že zadáte cestu, nikoli vzor čárek a mezer. Tato cesta se replikují vícekrát tah řádek nebo křivky.
+[ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/) Metoda se koncepčně podobá `SKPathEffect.CreateDash` s tím rozdílem, že zadáte cestu, spíše než vzor pomlček a mezer. Tato cesta se replikují více než jednou tah řádku nebo křivky.
 
 Syntaxe je následující:
 
@@ -276,9 +276,9 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 ```
 
 > [!IMPORTANT]
-> Sledujte: je přetížení `Create1DPath` který je definován s parametrem – výčet typu `SkPath1DPathEffect` s jedno malé písmeno, k." Tento název se o chybu a v důsledku toho je nesprávný, výčet a metoda jsou zastaralé, ale je velmi snadné nepoužívané metodu stane součástí kódu a je obtížné zjistit, jaká přesně.
+> Dávejte pozor: neexistuje přetížení `Create1DPath` , která je definována s argumentem typu výčtu `SkPath1DPathEffect` s malým "k". Tento název se o chybu, a proto, že výčet a metoda jsou zastaralé, ale je to velmi jednoduché nepoužívané metody, která se stanou součástí vašeho kódu a je obtížné zjistit, co přesně je chybná.
 
-Obecně platí, cesta, která je předat do `Create1DPath` bude malé a zarovnaný kolem bodu (0, 0). `advance` Určuje vzdálenost od centra cesty jako cesty se replikují na řádku. Tento argument se obvykle nastavili na přibližnou šířku cesty. `phase` Argument plní na stejný atribut role v tomto poli jak nemá v `CreateDash` metoda.
+Obecně platí, cesta, kterou předat `Create1DPath` bude malé a na střed kolem bodu (0, 0). `advance` Parametr určuje vzdálenost od centra cestu jako cesta se replikuje na řádku. Tento argument se obvykle nastavena přibližné šířku cesty. `phase` Argument jde skvěle dohromady jako stejný atribut role tady to dělá v `CreateDash` metody.
 
 [ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/) Má tři členy:
 
@@ -286,9 +286,9 @@ Obecně platí, cesta, která je předat do `Create1DPath` bude malé a zarovnan
 - [`Rotate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Rotate/)
 - [`Morph`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Morph/)
 
-`Translate` Člen způsobí, že cesta k zůstat v orientaci stejné, jako je replikované podle řádku nebo křivky. Pro `Rotate`, cesta otočen podle tangens na křivku. Cesta obsahuje jeho normální orientaci pro vodorovné čáry. `Morph` je podobná `Rotate` s tím rozdílem, že samotná cesta je také zakřivené tak, aby odpovídaly zakřivení řádku probíhá vytažený.
+`Translate` Člen způsobí, že cesta tak si zachováte orientaci stejné jako se replikují podle řádku nebo křivky. Pro `Rotate`, cesta otočen podle tangens křivky. Cesta obsahuje její normální orientací vodorovné čáry. `Morph` je podobný `Rotate` s tím rozdílem, že samotné cestě je také zakřivené tak, aby odpovídaly zaoblení řádku se vytažený.
 
-**Efektu cesta 1 D** stránky ukazuje tyto tři možnosti. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) soubor definuje ovládací prvek obsahující tři položky odpovídající tři členy výčtu výběr:
+**Vliv cestu 1 D** stránce ukazuje těchto tří možností. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) soubor definuje ovládacího prvku pro výběr obsahující tři položky odpovídající tři členy výčtu:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -324,7 +324,7 @@ Obecně platí, cesta, která je předat do `Create1DPath` bude malé a zarovnan
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPathEffect` objekty jako pole. Tyto soubory jsou všechny vytvořeny pomocí `SKPathEffect.Create1DPath` s `SKPath` objekty vytvořené pomocí `SKPath.ParseSvgPathData`. První je jednoduché pole, obrazce Kosočtverec je druhý a třetí je obdélníku. Ty se používají k předvedení styly tři vliv:
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) použití modelu code-behind soubor definuje tří `SKPathEffect` objekty jako pole. Tyto jsou vytvořeny pomocí `SKPathEffect.Create1DPath` s `SKPath` objekty vytvořené pomocí `SKPath.ParseSvgPathData`. První je jednoduché pole, druhá je tvaru kosočtverce a třetí obdélníku. Ty se používají k předvedení tři efekt styly:
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -395,35 +395,35 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina vytvoří Bézierovy křivky, který kolem sám v cyklu a přistupuje k výběru zjistíte, které `PathEffect` by měl být použité k obtažení ho. Tři možnosti – `Translate`, `Rotate`, a `Morph` – jsou uvedeny zleva doprava:
+`PaintSurface` Bézierovy křivky smyčky kolem samotné, který přistupuje k výběru k určení, které vytvoří obslužnou rutinu `PathEffect` by měl být použité k obtažení ho. Tyto tři možnosti – `Translate`, `Rotate`, a `Morph` – zobrazují zleva doprava:
 
-[![](effects-images/1dpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta 1D")](effects-images/1dpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky efektu cesta 1 D")
+[![](effects-images/1dpatheffect-small.png "Trojitá snímek obrazovky stránky vliv cestu 1D")](effects-images/1dpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky vliv cestu 1 D")
 
-Cesta zadaná v `SKPathEffect.Create1DPath` metoda je vždy vyplněna. Cesta zadaná v `DrawPath` metoda je vždy vytažený, pokud `SKPaint` objekt má jeho `PathEffect` vlastnost nastavena na hodnotu efekt cesta 1 D. Všimněte si, že `pathPaint` objekt nemá žádné `Style` normálně výchozí nastavení pro `Fill`, ale cesta je vytažený bez ohledu na to.
+Cesta zadaná v `SKPathEffect.Create1DPath` metoda je vždy vyplněné. Cesta zadaná v `DrawPath` metoda je vždy vytažený, pokud `SKPaint` objekt má jeho `PathEffect` nastavenou na vliv cestu 1 D. Všimněte si, že `pathPaint` objekt nemá žádné `Style` nastavení, kde je obvykle použit výchozí `Fill`, ale cesta je vytažený bez ohledu na to.
 
-Pole použité v `Translate` příklad je 20 pixelů odmocnina a `advance` argument je nastaven na hodnotu 24. Tento rozdíl způsobí, že mezera mezi polí při řádek je přibližně vodorovné nebo svislé, ale do polí překrývat trochu při řádek je diagonálních, protože diagonálních pole je 28.3 pixelů.
+Pole použité v `Translate` příklad je 20 pixelů čtverec a `advance` argument je nastaven na 24. Tento rozdíl způsobí, že mezery mezi poli při řádku je přibližně vodorovně nebo svisle, ale pole při dojít k překrytí trochu řádku totiž Úhlopříčný úhlopříčně pole je 28.3 pixelů.
 
-Kosočtverec tvaru v `Rotate` příklad je také 20 pixelů. `advance` Nastavena na 20, aby body nadále touch jako kosočtverec otáčí společně s zakřivení čáry.
+Kosočtverec v `Rotate` příklad je také 20 pixelů na šířku. `advance` Je nastavená na 20, aby body nadále touch podle kosočtverce je otáčí spolu zaoblení řádku.
 
-Tvar rámečku v `Morph` příklad je 50 pixelů s `advance` nastavení 55, aby malá mezera mezi obdélníky, jako jsou ohnuty kolem Bézierovy křivky.
+Tvar obdélníku v `Morph` příkladem je 50 pixelů na šířku se `advance` nastavení 55 tak malá mezera mezi obdélníky, jak jsou ohnuty kolem Bézierovy křivky.
 
-Pokud `advance` argument je menší než velikost cesty, pak může dojít k překrytí replikované cesty. Výsledkem může být zajímavých efektů. **Propojené řetězu** stránka se zobrazuje řada překrývajících se oblastí kroužky, které pravděpodobně tak, aby připomínaly propojené řetězec, který je přestane reagovat v rozlišovací tvar trolejového vedení:
+Pokud `advance` argumentu je menší než velikost cesty a pak může dojít k překrytí replikované cesty. Výsledkem může být některé zajímavé efekty. **Propojené řetězu** stránce se zobrazuje řada překrývajícími se kruhy, které vypadá to, že se podobají propojený řetězec, který přestane reagovat ve tvaru výrazný, ale trolejového vedení:
 
-[![](effects-images/linkedchain-small.png "Trojitá snímek obrazovky stránky propojené řetězu")](effects-images/linkedchain-large.png#lightbox "Trojitá snímek obrazovky stránky propojený řetězec")
+[![](effects-images/linkedchain-small.png "Trojitá snímek obrazovky stránky propojené řetězu")](effects-images/linkedchain-large.png#lightbox "Trojitá snímek obrazovky stránky propojené řetězce")
 
-Podívejte se velmi zavřít a uvidíte, že těch, které nejsou ve skutečnosti kroužky. Každé propojení v řetězci je dva oblouky, velikosti a umístěný, takže se pro připojení s sousedících odkazy.
+Podívejte se velmi zavřít a uvidíte, že ty nejsou ve skutečnosti kruzích. Každé propojení v řetězci je dvě elipsy, velikost a umístěn, takže se zdá se, že pro připojení s sousední odkazy.
 
-Řetězec nebo kabel distribuce váhy uniform přestane reagovat ve formě trolejového vedení. Architektura vytvořené ve formě obráceným trolejového vedení výhody z stejným rozložením přetížení z váhu architektura. Trolejového vedení má zdánlivě jednoduchý matematickém Popis:
+Řetězec nebo kabel jednotné distribuce přestane reagovat ve formuláři trolejového vedení. Vytvořené ve formě obrácenou trolejového vedení arch rovnoměrná distribuce tlaku váha arch využívá výhod. Trolejového vedení má zdánlivě jednoduché matematické Popis:
 
-y = · COSH(x / a)
+y =. COSH(x / a)
 
-*Cosh* hyperbolický kosinus funkcí. Pro *x* rovná 0, *cosh* rovná nule a *y* rovná *a*. To je center trolejového. Podobně jako *kosinus* funkce, *cosh* se říká, že *i*, to znamená, že *cosh(–x)* rovná *cosh(x)*, a hodnoty zvyšují pro zvýšení kladné a záporné argumenty. Tyto hodnoty popisují křivek, které vytvářejí postranní trolejového.
+*Cosh* hyperbolický kosinus funkcí. Pro *x* rovná 0, *cosh* rovná nule a *y* rovná *a*. To je center trolejového. Podobně jako *kosinus* funkce, *cosh* je označen jako *i*, to znamená, že *cosh(–x)* rovná *cosh(x)*, a zvýšení hodnoty pro zvýšení kladné nebo záporné argumenty. Tyto hodnoty popsat, aby tvořily strany trolejového křivky.
 
 Hledání správné hodnoty *a* podle trolejového vedení dimenzím, na stránce telefonu není přímé výpočtu. Pokud *w* a *h* jsou šířky a výšky obdélníku, optimální hodnotu *a* splňuje následující rovnice:
 
-COSH (w/2/a) = 1 + h / a
+COSH (w/2 /) = 1 + h / a
 
-Následující metodu v [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) třída zahrnuje tento rovnosti tím, že odkazuje na dvou výrazů vlevo a vpravo od rovná jako `left` a `right`. Pro malé hodnoty *a*, `left` je větší než `right`; pro velké hodnoty *a*, `left` je menší než `right`. `while` Smyčky zúží v na optimální hodnoty *a*:
+V následující metodu [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) třída zahrnuje tento rovnosti rekapitulací dvou výrazů vlevo a vpravo od znaménka rovnosti jako `left` a `right`. Pro malé hodnoty *a*, `left` je větší než `right`; pro velké hodnoty *a*, `left` je menší než `right`. `while` Smyčky zúží v na optimální hodnoty *a*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -452,7 +452,7 @@ float FindOptimumA(float width, float height)
 }
 ```
 
-`SKPath` Objektu pro odkazy. je vytvořený v konstruktoru třídy a výsledné `SKPathEffect` je pak nastavena `PathEffect` vlastnost `SKPaint` objekt, který je uložený jako pole:
+`SKPath` Objektu pro propojení se vytvoří v konstruktoru třídy a výsledné `SKPathEffect` objektu je nastaven na `PathEffect` vlastnost `SKPaint` objekt, který je uložen jako pole:
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -500,7 +500,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-Hlavní úloha `PaintSurface` obslužná rutina je vytvořit cestu pro trolejového vedení sám sebe. Po určení optimálním *a* a uložením do `optA` proměnné, je také nutné vypočítat posun z horní části okna. Potom ji hromadit kolekce `SKPoint` hodnoty pro trolejovém vedení, který zapnout na cestu a kreslení cestu s dříve vytvořenou `SKPaint` objektu:
+Hlavní práce `PaintSurface` obslužná rutina je vytvořit cestu pro samotné trolejového vedení. Po určení optimálním *a* a uložením do `optA` proměnné, je také nutné vypočítat posun z horní části okna. Poté jej lze nashromáždit kolekce `SKPoint` hodnoty trolejovém vedení, který do cestu a nakreslení cesty s dříve vytvořenou `SKPaint` objektu:
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -544,15 +544,15 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-Tento program definuje cestu použitou v `Create1DPath` tak, aby měl jeho (0, 0) přejděte v centru. Vypadá to přiměřené protože (0, 0) bodu cesty je zarovnáno s řádek nebo křivky, který je adorning. Ale můžete použít jiných-zarovnaný na střed (0, 0) bodu pro zvláštní efekty.
+Tento program definuje cestu používanou v `Create1DPath` mít jeho (0, 0) přejděte v centru. Vypadá to, že přiměřené vzhledem k tomu, (0, 0) bodu cesty je v souladu s křivku, která je adorning nebo řádku. Ale můžete použít jiných střed (0, 0) bod pro některé speciální efekty.
 
-**Běžícím pásu** stránky vytvoří cestu podlouhlá běžícím pásu s zakřivené horní a dolní to je velikost okna rozměrům tvaru. Tato cesta je vytažené jednoduchou `SKPaint` objektu 20 pixelů a barevnou šedé a pak vytažený znovu s jinou `SKPaint` objektu s `SKPathEffect` objekt odkazující na cestu tvaru malé sady:
+**Dopravní pás** stránka vytvoří cesta podobné běžícím podlouhlá pásu s zakřivené horní a dolní to přizpůsoben pro velikosti okna. Tato cesta je vytažené jednoduchý `SKPaint` 20 pixelů na šířku a barevné šedá objektů a potom vytažený znovu s jinou `SKPaint` objektu `SKPathEffect` objekt odkazující na cestu podobný malý kontejneru:
 
-[![](effects-images/conveyorbelt-small.png "Trojitá snímek obrazovky stránky běžícím pásu")](effects-images/conveyorbelt-large.png#lightbox "Trojitá snímek obrazovky stránky běžícím pásu")
+[![](effects-images/conveyorbelt-small.png "Trojitá snímek obrazovky stránky dopravní pás")](effects-images/conveyorbelt-large.png#lightbox "Trojitá snímek obrazovky stránky dopravní pás")
 
-(0, 0) bod sady cesty je popisovač, takže pokud `phase` je animovaný argument, kbelíků se zdá, že základem běžícím pásu, případně vybírání rozsahu adres až horních dole a vypsání ho v horní části.
+(0, 0) bodu cesty kontejneru je popisovač, takže když `phase` argument je animovaný, sektorů zdá se, že točí kolem dopravní pás, možná vybírání rozsahu adres do vody v dolní části a vypsání uvedený v horní části.
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Třída implementuje animace s přepsáními `OnAppearing` a `OnDisappearing` metody. Cesta v bloku je definováno v konstruktoru stránky:
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Třída implementuje animace s přepsáními `OnAppearing` a `OnDisappearing` metody. Cesta k oblasti je definován v konstruktoru na stránce:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -620,9 +620,9 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-Kód pro vytvoření sady dokončení s dvěma transformace, které se ujistěte se o něco větší sady a zapnout ho ze strany. Používání těchto transformací byla jednodušší než úpravě všechny souřadnice v předchozí kód.
+Kód pro vytvoření kontejneru se dokončí s dvěma transformace, které se ujistěte se o něco větší kontejneru a jeho otočíte. Používání těchto transformací byla jednodušší než nastavení všechny souřadnice v předchozím kódu.
 
-`PaintSurface` Obslužná rutina začne definováním cestu pro běžícím pásu sám sebe. Toto je jednoduše pár řádků a pár zadáte kroužky, které jsou vykreslovány s 20 pixelů širokou světlý šedá řádek:
+`PaintSurface` Obslužná rutina začne definováním cestu pro dopravní pás samotný. Toto je jednoduše pár řádků a dvojice středníkem kruhy, které jsou zpracovány s 20 pixelů celý řádek tmavě šedé:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -679,15 +679,15 @@ public class ConveyorBeltPage : ContentPage
 }
 ```
 
-Logika pro kreslení běžícím pásu nepracuje v režimu na šířku.
+Logika pro kreslení dopravní pás nebude fungovat v režimu na šířku.
 
-Kbelíků by měl rozmístěny o 200 pixelů na běžícím pásu od sebe. Dopravní pás je však pravděpodobně není násobkem dlouhý a 200 pixelů, což znamená, jako `phase` argument `SKPathEffect.Create1DPath` je animovaný, kbelíků bude pop, do a z existence.
+By měl být rozloženy sektorů o 200 pixelů od sebe na běžícím pásu. Dopravní pás je však pravděpodobně není násobkem dlouhý, 200 pixelů, což znamená, jako `phase` argument `SKPathEffect.Create1DPath` je animovaný, intervalů se vyvolat přes pop do proměnné a z existence.
 
-Z tohoto důvodu program nejprve vypočítá hodnotu s názvem `length` tedy délka běžícím pásu. Protože běžícím pásu se skládá z přímky a zadáte kroužky, jedná se o jednoduchý výpočet. Dále je počet intervalů, vypočítá jako podíl `length` podle 200. To se zaokrouhlí na nejbližší celé číslo, a pak je číslo rozdělené do `length`. Výsledkem je mezery pro integrální počet intervalů. `phase` Argument je jednoduše zlomek této.
+Z tohoto důvodu program nejprve vypočítá hodnotu s názvem `length` , který je délka běžícím pásu. Protože dopravní pás se skládá z přímé čáry a středníkem kruhy, jedná se o jednoduchý výpočet. V dalším kroku se počet kbelíků vypočítá jako podíl `length` podle 200. To se zaokrouhlí na nejbližší celé číslo, a pak je číslo rozdělen do `length`. Výsledkem je mezery pro celočíselný počet kbelíků. `phase` Jednoduše část, která je argumentem.
 
-## <a name="from-path-to-path-again"></a>Z cesty k cestě znovu
+## <a name="from-path-to-path-again"></a>Z cesty na cestu znovu
 
-V dolní části `DrawSurface` obslužné rutiny v **běžícím pásu**, komentář `canvas.DrawPath` volání a nahraďte ji následujícím kódem:
+V dolní části `DrawSurface` obslužné rutiny v **dopravní pás**, okomentujte `canvas.DrawPath` volání a nahraďte ho následujícím kódem:
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -699,21 +699,21 @@ SKPaint newPaint = new SKPaint
 canvas.DrawPath(newPath, newPaint);
 ```
 
-Stejně jako u předchozí příklad `GetFillPath`, uvidíte, že výsledky jsou stejné s výjimkou barvu. Po provedení `GetFillPath`, `newPath` objekt obsahuje více kopií cesta sady, každý umístěn ve stejné přímé, že animaci je umístěný v čase volání.
+Stejně jako v předchozím příkladu `GetFillPath`, uvidíte, že výsledky jsou stejné s výjimkou barvu. Po provedení `GetFillPath`, `newPath` objekt obsahuje více kopií cesta kontejneru, každý umístěn ve stejném přímé, že animaci je umístěn v okamžiku volání.
 
 ## <a name="hatching-an-area"></a>Šrafování oblast
 
-[ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/) Metoda vyplní celé oblasti s paralelní řádky, které se často nazývá *šrafovaných řádky*. Metoda má následující syntaxi:
+[ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/) Metoda vyplní oblast paralelní řádků a často se mu říká *šrafovaných řádky*. Tato metoda má následující syntaxi:
 
 ```csharp
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width` Argument určuje šířku tahu čar šrafování. `matrix` Parametr je kombinací otočení škálování a volitelné. Měřítko určuje přírůstek pixelů, který Skia používá k mezery mezi řádky šrafování. Oddělení mezi řádky je měřítko minus `width` argument. Pokud na škálování faktor je menší než nebo rovno `width` hodnotu, bude bez mezery mezi řádky šrafování a aby byla vyplněna se zobrazí v oblasti. Zadejte stejnou hodnotu pro vodorovného a svislého škálování.
+`width` Argument určuje šířku tahu řádky šrafování. `matrix` Parametr je kombinace škálování a volitelné otáčení. Koeficient změny měřítka Určuje přírůstek pixel využívající Skia na mezery mezi řádky šrafování. Oddělení mezi řádky je měřítko minus `width` argument. Pokud škálovací faktor je menší než nebo rovna hodnotě `width` hodnotu, nevytvoří se žádný prostor mezi řádky šrafování, a bude oblasti se zobrazí pro vyplnění. Zadejte stejnou hodnotu pro horizontální a vertikální škálování.
 
-Šrafování řádky jsou ve výchozím nastavení, vodorovné. Pokud `matrix` parametr obsahuje otočení, řádky šrafování otáčejí po směru hodinových ručiček.
+Ve výchozím nastavení jsou vodorovné šrafování řádky. Pokud `matrix` parametr obsahuje otočení, šrafování řádky jsou otočit po směru hodinových ručiček.
 
-**Šrafování výplně** stránky ukazuje platnost této cesty. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři důsledky cestu jako pole, první pro vodorovné šrafování řádky s šířka 3 pixelů se škálování označujícím Multi-Factor, které jsou rozmístěny 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Druhý efektu cesta je pro vertikální šrafování řádky s šířku 6 pixelů rozmístěny 24 pixelů od sebe (takže oddělení je 18 pixelů), a třetí je diagonálních šrafování řádků 12 pixelů celý rozmístěné 36 pixelů od sebe.
+**Šrafování výplně** stránce ukazuje tento vliv cestu. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři efekty cest jako pole, první pro vodorovné šrafování řádky s šířka v pixelech 3 s škálovací faktor určující, ke které jsou rozmístěné 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Pro svislý šrafování řádky s šířka v pixelech 6 rozmístěné 24 pixelů od sebe (takže oddělení je 18 pixelů), je druhý vliv cestu a třetí je pro Šikmé šrafování řádky 12 pixelů široký rozložených 36 pixelů od sebe.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -744,9 +744,9 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Všimněte si matice `Multiply` metoda. Protože vodorovného a svislého škálování faktory jsou stejné, není důležité pořadí, ve kterém se násobí změny velikosti a oběh matice.
+Všimněte si, že matice `Multiply` metody. Horizontální a vertikální škálování faktory jsou stejné, není důležité pořadí, ve které se vynásobené matice měřítka a otočení.
 
-`PaintSurface` Obslužná rutina používá tyto tři cesta efekty pomocí tří různých barev v kombinaci s `fillPaint` k vyplnění zaoblený obdélník velikost, aby se vešel na stránku. `Style` Vlastnost nastavte u `fillPaint` je ignorován; Pokud `SKPaint` objekt zahrnuje efekt cesta vytvořené z `SKPathEffect.Create2DLine`, oblast se vyplní bez ohledu na to:
+`PaintSurface` Obslužná rutina používá efekty těchto tří cest mají tři různé barvy v kombinaci s `fillPaint` tak, aby vyplnil zakulacený obdélník velikost, aby se vešel na stránku. `Style` Nastavenou na `fillPaint` se ignoruje; při `SKPaint` objekt zahrnuje vliv cestu, vytvořené z `SKPathEffect.Create2DLine`, bez ohledu na to naplní oblasti:
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -793,27 +793,27 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Pokud jste pečlivě si prohlédněte výsledky, uvidíte, že řádky červená a modrá šrafování nejsou omezen přesněji na Zaoblený obdélník. (To je zjevně vlastnosti Skia kódu.) Pokud nevyhovující, zobrazí se alternativní způsob řádků diagonálních šrafování zeleně: zaoblený obdélník slouží jako cestu výstřižek a šrafování řádky jsou vykreslovány na celou stránku.
+Pokud jste pečlivě si prohlédněte výsledky, uvidíte, že červené a modré šrafování řádků nejsou omezeny přesně na zakulacený obdélník. (Toto je zjevně charakteristiku základního kódu Skia.) Pokud je to nevyhovující, alternativním přístupem je zobrazena pro řádky Šikmé šrafování zeleně: zakulacený obdélník se používá jako ořezové cesty a šrafování řádky jsou vykreslovány na celou stránku.
 
-`PaintSurface` Obslužná rutina se ukončí pomocí volání jednoduše obtažení zaokrouhlené obdélníku, abyste viděli nesoulad mezi databází červená a modrá šrafování řádků:
+`PaintSurface` Obslužná rutina končí volání jednoduše vytáhnout zakulacený obdélník, abyste si mohli zobrazit nesoulad s šrafování červené a modré čáry:
 
 [![](effects-images/hatchfill-small.png "Trojitá snímek obrazovky stránky šrafování výplně")](effects-images/hatchfill-large.png#lightbox "Trojitá snímek obrazovky stránky šrafování výplně")
 
-Android obrazovky nevypadá skutečně jako je například: škálování na snímku obrazovky způsobila dynamické red čar a dynamické konsolidovat do zdánlivě širší červené čáry a širší mezer.
+Na obrazovce s Androidem nevypadá skutečně tímto způsobem: škálování na snímku obrazovky způsobila dynamického zajišťování červené čáry a dynamicky konsolidovat do zdánlivě širší červené čáry a širší mezer.
 
 ## <a name="filling-with-a-path"></a>Vyplnění pomocí cesty
 
-[ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/) Umožňuje vyplníte oblast na cestu, která se replikují vodorovně a svisle, výsledkem bude dlaždice oblasti:
+[ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/) Umožňuje vyplnění oblasti za cestu, která se replikuje vodorovně a svisle, výsledkem bude bloků v oblasti:
 
 ```csharp
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix` Škálování faktory znamenat vodorovného a svislého mezery replikované cesty. Ale nemůže otočení cesty pomocí této `matrix` argument; Pokud chcete, aby cesta otáčet, otočit samotná cesta pomocí `Transform` metoda definované `SKPath`.
+`SKMatrix` Měřítka označení vodorovné a svislé mezery replikované cestu. Nelze otočit cesta použití této funkce, ale `matrix` argument; Chcete-li cesta střídán, otočit samotné cestě pomocí `Transform` metody definované `SKPath`.
 
-Replikovaná složka je obvykle zarovnán levého a horního okraje obrazovky, nikoli oblasti má číslo. Toto chování můžete přepsat zadáním faktory překlad mezi 0 a škálování faktorů k určení vodorovného a svislého posunutí z stran levého a horního.
+Replikované cesta je obvykle v souladu s levém a horním okraji obrazovky, místo oblasti se vyplněné. Toto chování můžete přepsat zadáním faktory překlad mezi 0 a škálování faktorů zadejte vodorovný a svislý posun od horní a levé strany.
 
-**Vyplnění dlaždice cesta** stránky ukazuje platnost této cesty. Cesty používanou pro dlaždice oblasti je definován jako pole v [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Souřadnice vodorovného a svislého rozsahu od –40 na 40, což znamená, že tato cesta je 80 pixelů odmocnina:
+**Cesta dlaždice vyplnit** stránce ukazuje tento vliv cestu. Cesta používaná pro dělení na bloky oblasti je definován jako pole [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Vodorovné a svislé souřadnice rozmezí –40 až 40, to znamená, že tato cesta je 80 pixelů Čtvereček:
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -849,25 +849,25 @@ public class PathTileFillPage : ContentPage
 }
 ```
 
-V `PaintSurface` obslužnou rutinu, `SKPathEffect.Create2DPath` volání nastaví mezery vodorovného a svislého 64 způsobí odmocnina dlaždice 80 pixelů překrytí. Naštěstí cesta se podobá stavebnice část, výborně meshing s přiléhající dlaždice:
+V `PaintSurface` obslužné rutiny, `SKPathEffect.Create2DPath` volání nastavuje vodorovné a svislé mezery na 64 způsobí 80 pixel Čtvereček dlaždice můžete překrývat. Naštěstí cestu vypadá podobně jako část ještě nám zbývá, meshing krásně s přiléhající dlaždice:
 
 [![](effects-images/pathtilefill-small.png "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")](effects-images/pathtilefill-large.png#lightbox "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")
 
-Škálování z původní snímek způsobí, že některé narušení, zvláště na obrazovce Android.
+Probíhá škálování z původní snímek obrazovky způsobí, že některé narušení, zejména na obrazovce pro Android.
 
-Všimněte si, že tato dlaždice vždy zobrazovat celou a nikdy se zkrátí. Na první dva snímky obrazovky není i zřejmé, že oblast má číslo je zaoblený obdélník. Pokud chcete, aby došlo ke zkrácení tyto dlaždice do konkrétní oblasti, použijte cestu výstřižek.
+Všimněte si, že tyto dlaždice vždy zobrazovat celou a nikdy se zkrátí. Na prvních dvou snímky obrazovky to není i zřejmé, že je oblast je vyplněný zakulacený obdélník. Pokud budete chtít zkrátit tyto dlaždice na konkrétní oblasti, použijte cesty oříznutí.
 
-Zkuste nastavení `Style` vlastnost `SKPaint` do objektu `Stroke`, a uvidíte jednotlivé dlaždice uvedených než vyplněna.
+Zkuste `Style` vlastnost `SKPaint` objektu `Stroke`, a zobrazí se vám jednotlivým dlaždicím uvedených spíše než vyplněné.
 
-## <a name="rounding-sharp-corners"></a>Zaokrouhlení Sharp rozích
+## <a name="rounding-sharp-corners"></a>Zaoblení rohů Sharp
 
-**Zaokrouhlené pro sedmiúhelník** program uvedené v [ **tři způsoby nakreslit oblouk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) článku použít tečný oblouk na křivku body Obrázek dialogového okna sedm. **Pro jiné zaokrouhlené sedmiúhelník** na stránce se zobrazí mnohem snazší přístup, který používá efekt cesta vytvořené z [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/) metoda:
+**Zaokrouhlí pro sedmiúhelník** program zobrazí v [ **tři způsoby, jak nakreslit oblouk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) článku používá tečný oblouk na křivku body elementu figure sedm přenosů. **Pro jiné zaokrouhlí sedmiúhelník** stránce ukazuje mnohem jednodušší postup, který používá vliv cestu, vytvořené z [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/) metoda:
 
 ```csharp
 public static SKPathEffect CreateCorner (Single radius)
 ```
 
-I když je s názvem jeden argument `radius` ho musíte nastavit poloviční požadované rohu protokolu RADIUS. (Toto je typické pro Skia kódu).
+I když jediný argument jmenuje `radius` je nutné nastavit na polovinu požadované poloměr. (Toto je typické pro základní kód Skia.)
 
 Tady je `PaintSurface` obslužné rutiny v [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) třídy:
 
@@ -922,30 +922,30 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Můžete použít tento efekt vytažení nebo naplnění na základě `Style` vlastnost `SKPaint` objektu. Tady je na všech tří platformách:
+Můžete použít tento efekt vytažení nebo na základě naplnění `Style` vlastnost `SKPaint` objektu. Tady je na všech třech platformách:
 
-[![](effects-images/anotherroundedheptagon-small.png "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")](effects-images/anotherroundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")
+[![](effects-images/anotherroundedheptagon-small.png "Trojitá snímek obrazovky stránky pro jiné zaokrouhlí sedmiúhelník")](effects-images/anotherroundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro jiné zaokrouhlí sedmiúhelník")
 
-Uvidíte, že tento zaokrouhlené pro sedmiúhelník je stejný jako starší programu. Pokud potřebujete další přesvědčit poloměr je skutečně 100 spíše než 50 zadaný v `SKPathEffect.CreateCorner` volání, která vám může zrušte komentář u poslední příkaz v programu a najdete kruh 100 radius přes rohu.
+Uvidíte, že pro tento zakulacený sedmiúhelník je stejný jako předchozí program. Pokud potřebujete další přesvědčit poloměr je skutečně 100 spíše než 50 podle `SKPathEffect.CreateCorner` volání, které můžete Odkomentujte poslední příkaz v programu a viz 100 poloměr kruhu bude zobrazen v horním.
 
 ## <a name="random-jitter"></a>Náhodné zpoždění
 
-Někdy bezchybné přímky grafiky počítače nejsou poměrně co chcete použít, a trochu náhodnost se požaduje. V takovém případě budete chtít zkuste [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) metoda:
+Někdy bezchybného rovné čáry počítačové grafice nejsou poměrně co chtějí, a trochu náhodnost je žádoucí. V takovém případě budete chtít zkuste [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) metody:
 
 ```csharp
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-Platnost této cesty můžete použít pro vytažení nebo naplnění. Řádky jsou rozdělené do připojené segmenty – přibližnou délka je zadána `segLength` – a rozšířit v různých směrech. Je zadána v rozsahu odchylky z původního řádku `deviation`.
+Můžete použít tento vliv cestu pro vytažení nebo naplnění. Řádky jsou rozdělené do připojených segmenty – přibližné délka je určená `segLength` – a rozšířit v jiné pokyny. Rozsah odchylky od původní řádek je určená `deviation`.
 
-Konečný argument je základní hodnota používá ke generování pseudonáhodného pořadí používá pro účinek. Účinek kolísání bude vypadat pro různé semena mírně liší. Argument má výchozí hodnotu nula, což znamená, že stejný účinek se při každém spuštění programu. Pokud chcete jiné kolísání vždy, když je překreslen na obrazovce, můžete nastavit počáteční hodnotu na `Millisecond` vlastnost `DataTime.Now` hodnoty (například).
+Konečný argument je základní hodnota používá ke generování pseudonáhodné posloupnosti používané pro efekt. Vliv kolísání bude vypadat trochu jinak pro různé rychlosti. Argument má výchozí hodnotu 0, což znamená, že stejný efekt je vždy, když spustíte program. Pokud chcete jiné kolísání pokaždé, když je překreslit obrazovky, můžete nastavit počáteční hodnotu na `Millisecond` vlastnost `DataTime.Now` hodnoty (například).
 
 
-**Zmenší se Experiment** stránce můžete experimentovat s různými hodnotami v vytažení obdélníku:
+**Kolísání experimentovat** stránce můžete experimentovat s různými hodnotami v vytažení obdélník:
 
-[![](effects-images/jitterexperiment-small.png "Trojitá snímek obrazovky stránky zmenší experimentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "Trojitá snímek obrazovky stránky kolísání experimentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) soubor vytvoří dvě instance `Slider` elementy a `SKCanvasView`:
+Program je straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) soubor vytvoří dvě `Slider` elementy a `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1001,7 +1001,7 @@ Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://githu
 </ContentPage>
 ```
 
-`PaintSurface` Obslužné rutiny v [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) souboru kódu na pozadí se nazývá vždy, když `Slider` hodnotu změny. Zavolá `SKPathEffect.CreateDiscrete` použití dvou `Slider` hodnoty a použije ho k obtažení obdélníku:
+`PaintSurface` Obslužné rutiny v [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) soubor kódu na pozadí se nazývá pokaždé, když se `Slider` hodnota se mění. Volá `SKPathEffect.CreateDiscrete` použitím obou `Slider` hodnoty a použije ho k obtažení obdélník:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1032,7 +1032,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Tomu můžete použít pro naplnění také, v takovém případě obrys oblasti vyplněný podléhá tyto odchylky náhodné. **Zmenší Text** stránky ukazuje, jak pomocí efektu tato cesta k zobrazení textu. Většina kód `PaintSurface` obslužnou rutinu [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) třída připadá na velikost a zarovnání textu:
+Tomu můžete použít pro vyplnění, v takovém případě obrys oblasti plného podléhá tyto náhodné odchylky. **Kolísání Text** stránce ukazuje, jak pomocí tohoto vliv cestu k zobrazení textu. Většina kódu v `PaintSurface` obslužná rutina [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) třídy připadá na velikost a zarovnání textu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1067,13 +1067,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Zde je spuštěna v režimu na šířku na všech tří platformách:
+Tady je spuštěna v režimu na šířku na všech třech platformách:
 
-[![](effects-images/jittertext-small.png "Trojitá snímek obrazovky stránky zmenší Text")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "Trojitá snímek obrazovky stránky kolísání Text")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
-## <a name="path-outlining"></a>Osnova cesta
+## <a name="path-outlining"></a>Cesta osnovy
 
-Už jste viděli dva málo příklady [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) metodu `SKPaint`, který existuje také v [přetížení](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
+Seznámili jste se už dva trochu příklady [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) metoda `SKPaint`, která existuje také v [přetížení](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
 
 ```csharp
 public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
@@ -1081,13 +1081,13 @@ public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
 public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale)
 ```
 
-Pouze první dva argumenty jsou povinné. Metoda přistupuje k cesta odkazuje `src` argument, upraví data cesty na základě vlastností tahu v `SKPaint` objektu (včetně `PathEffect` vlastnost) a pak zapíše výsledky do `dst` cesta. `resScale` Parametr umožňuje upravit přesnost vytvořit menší cílovou cestu a `cullRect` argument může eliminovat rozvrhy mimo obdélníku.
+Pouze první dva argumenty jsou povinné. Metoda má přístup k cestě odkazuje `src` argument, změní data cestu na základě vlastností stroke v `SKPaint` objektu (včetně `PathEffect` vlastnost) a pak zapíše výsledky do `dst` cestu. `resScale` Parametr umožňuje upravit přesnost vytvořte menší cílovou cestu a `cullRect` argument může eliminovat rozvrhy mimo obdélníku.
 
-Jeden základní použití této metody nezahrnuje cesta důsledky vůbec. Pokud `SKPaint` objekt má jeho `Style` vlastnost nastavena na hodnotu `SKPaintStyle.Stroke`a nemá *není* mít jeho `PathEffect` nastavit, pak `GetFillPath` vytváří cestu, která představuje *outline*zdrojové cesty jako kdyby měl byla vytažený vlastnostmi Malování.
+Jeden základní použití této metody nezahrnuje efekty cest vůbec. Pokud `SKPaint` objekt má jeho `Style` vlastnost nastavena na `SKPaintStyle.Stroke`a provede *není* mít jeho `PathEffect` nastavena, pak `GetFillPath` vytvoří, který představuje cestu *osnovy*z cesty zdrojových jako by se měl byla vytažený podle vlastností Malování.
 
-Například pokud `src` cesta je jednoduchý kruh poloměru 500 a `SKPaint` objektu určuje šířku tahu 100, pak se `dst` dvou soustředných kroužky, jeden s radius 450 a dalších se serverem radius 550 stane se cesta. Volání metody `GetFillPath` protože naplňování to `dst` cesta je stejný jako vytažení `src` cesta. Ale můžete také obtažení `dst` cesta zobrazíte obrysy cesty.
+Například pokud `src` cesta je jednoduchý kruh poloměru 500 a `SKPaint` objekt Určuje šířku tahu 100, pak bude `dst` dvou soustředných kruhy, jednu s protokolem radius 450 a druhý s protokolem radius 550 stane se cesta. Je volána metoda `GetFillPath` protože naplňování to `dst` cesta je stejný jako vytažení `src` cestu. Ale můžete také tah `dst` cesta zobrazíte obrysy cesty.
 
-**Klepněte sem a Outline cesta** ukazuje to. `SKCanvasView` a `TapGestureRecognizer` instance v [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) souboru. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPaint` objekty jako polí a dva jsou pro vytažení s obtažení šířky 100 a 20 a třetí pro naplnění:
+**Klepnutím osnovy cestu** ukazuje to. `SKCanvasView` a `TapGestureRecognizer` instance se vytvářejí v [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) souboru. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) použití modelu code-behind soubor definuje tří `SKPaint` obtažení šířku 100 a 20 a třetí pro naplnění objekty jako pole, dvě vytažení pomocí:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1128,7 +1128,7 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-Pokud nebyl byla stisknuté na obrazovce, `PaintSurface` obslužná rutina používá `blueFill` a `redThickStroke` malovat pro vykreslení cyklická cesta:
+Pokud nebyl byla klepnutí na obrazovce, `PaintSurface` obslužná rutina používá `blueFill` a `redThickStroke` vykreslení objektů k vykreslení kruhové cestě:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1168,28 +1168,28 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-Kruhu je vyplněno a vytažený podle předpokladů:
+Kruh vyplněný a vytažený dle očekávání:
 
-[![](effects-images/taptooutlinethepathnormal-small.png "Trojitá snímek obrazovky stránky normální klepněte na obrys Path")](effects-images/taptooutlinethepathnormal-large.png#lightbox "Trojitá snímek obrazovky normální klepněte na obrys Path stránky")
+[![](effects-images/taptooutlinethepathnormal-small.png "Trojitá snímek obrazovky s normální stránce klepněte na osnovy Path")](effects-images/taptooutlinethepathnormal-large.png#lightbox "Trojitá snímek obrazovky s normální stránce klepněte na osnovy Path")
 
-Když klepnete na obrazovce `outlineThePath` je nastaven na `true`a `PaintSurface` obslužná rutina vytvoří čerstvou `SKPath` objektu a použije tento jako cílová cesta ve volání `GetFillPath` na `redThickStroke` Malování objektu. Že cílová cesta se pak vyplněno a vytažené `redThinStroke`, což je následující:
+Když klepnete na obrazovce `outlineThePath` je nastavena na `true`a `PaintSurface` obslužná rutina vytvoří čerstvé `SKPath` objektu a, který používá jako cílovou cestu ve volání `GetFillPath` na `redThickStroke` Malování objektu. Této cílové cesty se pak naplní a vytažené `redThinStroke`výsledkem následující:
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "Trojitá snímek obrazovky stránky popsané klepněte na obrys Path")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "Trojitá snímek obrazovky popsané klepněte na obrys Path stránky")
+[![](effects-images/taptooutlinethepathoutlined-small.png "Trojitá snímek obrazovky s obrysy stránce klepněte na osnovy Path")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "Trojitá snímek obrazovky stránky klepněte na osnovy Path osnovy")
 
-Na dva červeném kroužku jasně označuje, že původní cyklická cesta byl převeden do dvou cyklické rozvrhů.
+Dva červené kroužky jasně označují, že původní cyklická cesta byla převedena na dvou cyklické rozvrhů.
 
-Tato metoda může být velmi užitečná při vývoji cesty pro `SKPathEffect.Create1DPath` metoda. Cesty, které zadáte v těchto metod jsou vyplněny vždy při replikaci cesty. Pokud nechcete, aby byla vyplněna celou cestu, je nutné zadat pečlivě obrysy.
+Tato metoda může být velmi užitečná při vývoji cesty pro `SKPathEffect.Create1DPath` metody. Cesty, které zadáte v těchto metodách jsou vyplněny vždy při replikaci cesty. Pokud nechcete, aby celou cestu pro vyplnění, je nutné pečlivě definovat obrysy.
 
-Například v **propojené řetězu** ukázku, odkazy, které byly definovány s řadou čtyři oblouky, každý pár jsou založené na dva poloměr se vymezí oblasti cesty, aby byla vyplněna. Je možné nahraďte kód v `LinkedChainPage` třída uděláte se může lišit.
+Například v **propojené řetězu** ukázky, odkazy byly definovány pomocí řady čtyři oblouky každý pár jsou založené na dvou poloměry pro vytváření obrysových oblasti cesty pro vyplnění. Je možné, nahraďte kód v `LinkedChainPage` třídě, aby provedl trochu jinak.
 
-Nejprve budete chtít znovu definovat `linkRadius` konstantní:
+Nejprve bude potřeba znovu definovat `linkRadius` konstantní:
 
 ```csharp
 const float linkRadius = 27.5f;
 const float linkThickness = 5;
 ```
 
-`linkPath` Je teď právě dva oblouky založené na jednom okruhu, s požadovanou spuštění úhly a oblouku úhly:
+`linkPath` Je teď jenom dva oblouky podle jednoho okruhu, s požadovanou start úhly a úhlu oblouku:
 
 ```csharp
 using (SKPath linkPath = new SKPath())
@@ -1218,13 +1218,13 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath` Objekt je pak příjemce obrys `linkPath` při, jsou-li vytažené zadány ve vlastnosti `strokePaint`.
+`outlinePath` Objekt je pak příjemce obrys `linkPath` při je vytažené vlastnostmi zadanými v `strokePaint`.
 
-Další příklad touto technikou na blížící se další pro cestu použitou v `SKPathEffect.Create2DPath` metody.
+Dalším příkladem použití této techniky se chystá další pro cestu používané `SKPathEffect.Create2DPath` metody.
 
-## <a name="combining-path-effects"></a>Kombinování cesta efekty
+## <a name="combining-path-effects"></a>Kombinování efekty cest
 
-Tyto dvě metody konečné statické vytvoření z `SKPathEffect` jsou [ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/) a [ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
+Dvě poslední vytvoření statické metody `SKPathEffect` jsou [ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/) a [ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
 
 ```csharp
 public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
@@ -1232,15 +1232,15 @@ public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
 public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner)
 ```
 
-Obě tyto metody kombinovat dvě cesty důsledky vytvořit efekt složené cesty. `CreateSum` Metoda vytvoří efekt cesta, který je podobný vliv dvě cesty použít samostatně, při `CreateCompose` použije jednu efekt cesta ( `inner`) a poté použije `outer` na který.
+Obě tyto metody kombinovat dva efekty cest k vytvoření efektu složenou cestu. `CreateSum` Metoda vytvoří, který je podobné účinkům dvě cesty použít samostatně, mohou mít vliv cestu při `CreateCompose` použije jednu vliv cestu ( `inner`) a poté použije `outer` jménu.
 
-Už jste viděli jak `GetFillPath` metodu `SKPaint` můžete převést jednu cestu do jiné cesty na základě `SKPaint` vlastnosti (včetně `PathEffect`), neměl by být *příliš* Záhadné, jak `SKPaint`objekt tuto operaci mohou provádět dvakrát se dvě cesty účinky podle `CreateSum` nebo `CreateCompose` metody.
+Seznámili jste se už jak `GetFillPath` metoda `SKPaint` můžete převést jednu cestu na jinou cestu na základě `SKPaint` vlastnosti (včetně `PathEffect`) proto to nesmí být *příliš* záhadnými a často způsob, jakým `SKPaint`objekt dvakrát se účinky dvě cesty zadané v provádět tuto operaci `CreateSum` nebo `CreateCompose` metody.
 
-Jedno zřejmé použití `CreateSum` je definovat `SKPaint` objekt, který vyplní cestu s jednu cestu účinek a tahy cestu s jinou cestu vliv. Tento postup je znázorněn v **kočky rámce** vzorku, který zobrazí pole kočky v rámci s vlnkovatý okraje:
+Jedno ze zřejmých použití `CreateSum` je definování `SKPaint` objekt, který vyplní jednu cestu vliv cestu a tahy cestu s jinou vliv cestu. To je patrné **kočky v rámci** vzorku, který zobrazuje vlnkovatý hrany pole kočky v rámci:
 
 [![](effects-images/catsinframe-small.png "Trojitá snímek obrazovky stránky kočky v rámečku")](effects-images/catsinframe-large.png#lightbox "Trojitá snímek obrazovky stránky kočky v rámečku")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Třída začne definováním několik polí. Může rozpoznat první pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy z [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) článku. Druhý cesta je založená na řádku a oblouk pro vzor svatojakubská rámečku:
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Třídy začíná tak, že definujete několik polí. Možná poznáte na první pole [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy z [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) článku. Druhý cesta je založená na řádku a oblouk vzoru svatojakubská rámce:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1282,9 +1282,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-`catPath` Může v `SKPathEffect.Create2DPath` metoda Pokud `SKPaint` objekt `Style` je nastavena na `Stroke`. Ale pokud `catPath` slouží přímo v tomto programu pak celý vedoucí kočky bude, a i vousů nebudou viditelné. (Zkuste to!) Je nutné získat obrys této cestě a používat tento obrysu v `SKPathEffect.Create2DPath` metoda.
+`catPath` Se daly použít v `SKPathEffect.Create2DPath` metoda Pokud `SKPaint` objekt `Style` je nastavena na `Stroke`. Nicméně pokud `catPath` slouží přímo v rámci tohoto programu, pak celé hlavní kočky bude vyplněno, a dokonce i whiskers nebudou viditelné. (Vyzkoušejte ji!) Je potřeba získat přehled této cestě a použít tuto obrysu v `SKPathEffect.Create2DPath` metody.
 
-Konstruktor nepodporuje tuto úlohu. Nejprve se vztahují dvě transformace na `catPath` přesunout (0, 0) přejděte do centra a snižovat velikost. `GetFillPath` Získá všechny osnovy obrysu ve `outlinedCatPath`, a tento objekt se používá v `SKPathEffect.Create2DPath` volání. Měřítko faktory pro `SKMatrix` hodnotu jsou o něco větší než ve vodorovném a svislém velikost cat zajistit málo vyrovnávací paměti mezi dlaždice, době, kdy byly faktory překlad odvozené poněkud empirically tak, aby se zobrazí na úplné cat levého horního rohu rámečku:
+Konstruktor dělá tuto práci. Použije dvě transformace na `catPath` přesunout (0, 0) přejděte k centru a snížit velikost. `GetFillPath` Získá všechny osnovy profily v `outlinedCatPath`, a tento objekt se používá v `SKPathEffect.Create2DPath` volání. Škálování bere v úvahu nejen `SKMatrix` hodnota jsou o něco větší než vodorovné a svislé velikost cat poskytnout malou vyrovnávací paměť mezi dlaždice, kdy byly faktory překlad odvozené trochu empirických tak, aby byla viditelná v úplné cat levý horní roh rámce:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1327,9 +1327,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-Pak zavolá konstruktoru `SKPathEffect.Create1DPath` pro vlnkovatý rámečku. Všimněte si, že šířku cesty je 100 pixelů, ale zálohy je 75 pixelů, aby replikované cesta je překryté kolem rámečku. Poslední příkaz volání konstruktoru `SKPathEffect.CreateSum` kombinovat důsledky dvě cesty a nastavit výsledek na `SKPaint` objektu.
+Potom volá konstruktor `SKPathEffect.Create1DPath` vlnkovatý rámce. Všimněte si, že šířka cesty je 100 pixelů, ale zálohy je 75 pixelů tak, aby se replikovaná cesta je překrývajících se kolem rámečku. Poslední příkaz volá konstruktor `SKPathEffect.CreateSum` kombinovat účinky dvě cesty a nastavit na výsledek `SKPaint` objektu.
 
-Tento pracovní umožňuje `PaintSurface` obslužná rutina se úplně jednoduché. Pouze musí se definovat obdélníku a kreslení pomocí `framePaint`:
+Umožňuje tuto práci `PaintSurface` obslužná rutina se má být úplně jednoduché. Je pouze potřeba definovat obdélník a vykreslete jej pomocí `framePaint`:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1350,11 +1350,11 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-Algoritmy za důsledky cestu vždy způsobit celé cesty používanou pro vytažení nebo naplnění, který se má zobrazit, což může způsobit, že některé vizuální prvky se objeví mimo rámeček. `ClipRect` Volání před verzí `DrawRect` volání umožňuje vizuály být podstatně čisticí. (Vyzkoušet bez výstřižek!)
+Algoritmy za efekty cest vždy způsobit celé cesty používá pro vytažení nebo naplnění, který se má zobrazit, což může způsobit, že některé vizuály zobrazit mimo obdélníku. `ClipRect` Volat před verzí `DrawRect` volání umožňuje tyto vizuály se značně čisticího modulu. (Vyzkoušet bez oříznutí!)
 
-Je běžné použití `SKPathEffect.CreateCompose` přidat některé kolísání do jiného efektu cestu. Určitě můžete vyzkoušet sami, ale tady je poněkud jiný příklad:
+Je běžné použití `SKPathEffect.CreateCompose` přidání některých zpoždění do jiného vliv cestu. Určitě můžete experimentovat sami, ale tady je příklad poněkud liší:
 
-**Přerušované čáry šrafování** doplní elipsy šrafování řádků, které jsou přerušovaná čára. Nejvíce práce v [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) třída provádí přímo do definice pole. Tato pole definovat efekt dash a šrafování vliv. Jsou definovány jako `static` vzhledem k tomu, že se pak odkazuje v `SKPathEffect.CreateCompose` volání v `SKPaint` definice:
+**Přerušované čáry šrafování** vyplní šrafování řádky, které jsou přerušovaná elipsu. Většina práce v [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) třídy se provádí přímo v definici pole. Tato pole definují efekt dash a mohou mít vliv šrafování. Jsou definovány jako `static` vzhledem k tomu, že se pak odkazuje v `SKPathEffect.CreateCompose` volání `SKPaint` definice:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1382,7 +1382,7 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-`PaintSurface` Potřeba obslužná rutina obsahovat pouze standardní režijní náklady a jednoho volání `DrawOval`:
+`PaintSurface` Obslužná rutina třeba tak, aby obsahovala pouze standardní režijní náklady a volání `DrawOval`:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1404,15 +1404,15 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-Jak jsme už zjištěný, řádky šrafování nejsou přesněji omezen na uvnitř oblasti a v tomto příkladu, bylo vždycky počítač v levém celou pomlčkou:
+Jak jsme už zjištěný, řádky šrafování nejsou přesně omezené na vnitřní oblasti a v tomto příkladu, jsou vždy začínají na levé straně celý pomlčkou:
 
-[![](effects-images/dashedhatchlines-small.png "Trojitá snímek obrazovky stránky přerušovanou řádky šrafování")](effects-images/dashedhatchlines-large.png#lightbox "Trojitá snímek obrazovky stránky přerušovanou šrafování řádky")
+[![](effects-images/dashedhatchlines-small.png "Trojitá snímek obrazovky stránky přerušované čáry šrafování")](effects-images/dashedhatchlines-large.png#lightbox "Trojitá snímek obrazovky stránky přerušované čáry šrafování")
 
-Teď, když jste viděli účinky cesty, které v rozsahu od jednoduchého tečky a pomlčky na neobvyklé kombinace, použijte vaši představivost a najdete, co můžete vytvořit.
+Teď, když už víte, efekty cest, které v rozsahu od jednoduché tečky a čárky na neobvyklé kombinace použít vaši představivost a podívejte se, co můžete vytvořit.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

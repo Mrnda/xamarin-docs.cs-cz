@@ -2,16 +2,17 @@
 title: 2D kreslení ve Skiasharpu
 description: Tento dokument obsahuje přehled multiplatformní 2D kreslení ve Skiasharpu. Odkazuje na různé pokyny, které popisují ve Skiasharpu a jeho různá rozhraní API.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 7207f33e56f566a5528d93f9957e2ff780a22a65
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130917"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615519"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>2D kreslení ve Skiasharpu
 
@@ -62,12 +63,12 @@ Zjistěte, jak pracovat s pro různé platformy grafiky, která vykreslit v Xama
   * [Informace o cestě a výčet](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 - [Rastrové obrázky](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
   * [Zobrazení rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
-  * [Vytváření a na základě rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [Vytváření rastrových obrázků a kreslení na ně](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
   * [Oříznutí rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
   * [Segmentované zobrazení rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
-  * [Ukládání bitmap k souborům](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
-  * [Přístup k rastrové bity pixelů](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
-  * [Animace rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
+  * [Ukládání rastrových obrázků do souborů](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
+  * [Přístup k pixelovým bitům rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
+  * [Animování rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Poznámky pro konkrétní platformu](~/graphics-games/skiasharp/platform.md)
 

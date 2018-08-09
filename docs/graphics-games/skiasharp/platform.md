@@ -1,23 +1,24 @@
 ---
-title: Poznámky k SkiaSharp specifické platformy
-description: Tento dokument popisuje specifické pro platformu podrobnosti, které jsou relevantní pro SkiaSharp. Poskytuje ukázkový kód pro iOS, Android, systému macOS, Windows a Xamarin.Forms.
+title: Poznámky pro konkrétní platformy ve Skiasharpu
+description: Tento dokument popisuje relevantní ve Skiasharpu podrobnosti specifické pro platformu. Poskytuje ukázkový kód pro iOS, Android, macOS, Windows a Xamarin.Forms.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c6ae6553a2e869b9eb7e038abd7b1c34350551
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783526"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615805"
 ---
-# <a name="skiasharp-platform-specific-notes"></a>Poznámky k SkiaSharp specifické platformy
+# <a name="skiasharp-platform-specific-notes"></a>Poznámky pro konkrétní platformy ve Skiasharpu
 
-Následující příklady přidělení vyrovnávací paměti bitové kopie ručně, to se provádí pro ilustraci běžné platformy vzor, který je k vykreslení na existující vyrovnávací paměť RBGA poskytované platformou.
+Následující příklady přidělení vyrovnávací paměti bitové kopie ručně, to se provádí pro ilustraci běžný vzor platformy, která je k vykreslení na stávající vyrovnávací paměti RBGA poskytovaný platformou.
 
-Není nutné používat tento stylu, pokud nechcete na.  Je přetížení, které budou vytvářet a spravovat úložiště zálohování pro bitové kopie pro vás.
+Pokud nechcete k použití tohoto idiomu nepotřebujete.  Existuje přetížení, která bude vytvářet a spravovat úložiště zálohování pro vaši image za vás.
 
 ## <a name="ios"></a>iOS
 
@@ -99,7 +100,7 @@ try {
 }
 ```
 
-## <a name="windows-desktop--mac-desktop"></a>Windows Desktop nebo Mac plochy
+## <a name="windows-desktop--mac-desktop"></a>Windows Desktop / Mac Desktop
 
 ```csharp
 var width = Width;
@@ -118,8 +119,8 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Pokud chcete zahrnout do vaší Xamarin.Forms SkiaSharp aplikací naleznete v příručce [pomocí SkiaSharp v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+Zahrnout ve Skiasharpu v Xamarin.Forms vaší aplikací naleznete v příručce [pomocí ve Skiasharpu v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 ## <a name="related-links"></a>Související odkazy
 
-- [IOS SkiaSharp sešitu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [IOS ve Skiasharpu sešitu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)

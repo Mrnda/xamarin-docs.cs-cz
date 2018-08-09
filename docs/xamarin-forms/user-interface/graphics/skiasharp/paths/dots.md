@@ -1,36 +1,36 @@
 ---
-title: Tečky a pomlčky v SkiaSharp
-description: V tomto článku jsou zde popsány postup hlavní rozbor všech nástroje kreslení čar desítkovém a přerušovanou v SkiaSharp a to ukazuje s ukázkový kód.
+title: Tečky a pomlčky ve Skiasharpu
+description: Tento článek popisuje, jak hlavní složitými rozhraními z kreslení ve Skiasharpu tečkovaná a přerušované čáry a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7c336e6b5224f61ff84eb39652788b23f52b806e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243870"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615415"
 ---
-# <a name="dots-and-dashes-in-skiasharp"></a>Tečky a pomlčky v SkiaSharp
+# <a name="dots-and-dashes-in-skiasharp"></a>Tečky a pomlčky ve Skiasharpu
 
-_Hlavní rozbor všech nástroje kreslení čar desítkovém a přerušovanou v SkiaSharp_
+_Hlavní složitými rozhraními z kreslení ve Skiasharpu tečkovaná a přerušované čáry_
 
-SkiaSharp umožňuje kreslení čar, které nejsou plnou, ale místo toho se skládají ze tečky a pomlčky:
+Ve Skiasharpu umožňuje kreslení čar, které nejsou pevné, ale místo toho se skládá z tečky a čárky:
 
 ![](dots-images/dottedlinesample.png "Tečkovaná čára")
 
-Můžete to provést pomocí *efektu cesta*, což je instance [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) třídu, která můžete nastavit na hodnotu [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) vlastnost `SKPaint`. Můžete vytvořit cestu efekt (nebo zkombinujte cesta efekty) pomocí statické `Create` metody definované `SKPathEffect`.
+Použijete k tomu *vliv cestu*, což je instance [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) třídu, která nastavíte, a [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) vlastnost `SKPaint`. Můžete vytvořit cestu efekt (nebo kombinace efekty cest) pomocí statické `Create` metody definované `SKPathEffect`.
 
-Kreslení čar desítkovém nebo přerušované, můžete použít [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) statickou metodu. Existují dva argumenty: Toto pole je nejdřív `float` hodnoty, které označují délek tečky a pomlčky a délka mezery mezi nimi. Toto pole musí obsahovat sudý počet elementů a měla by existovat aspoň dva elementy. (Může být nulový počet elementů v poli, ale jehož výsledkem je plná čára.) Pokud existují dva elementy, první je délka tečkou nebo pomlčkou a druhý je délka mezera před další tečkou nebo pomlčkou. Pokud existuje více než dva elementy, pak jsou v tomto pořadí: čárka délka, délka mezeru, dash délka, délka mezery a tak dále.
+Chcete-li nakreslit tečkovaná nebo přerušované čáry, použijte [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) statické metody. Existují dva argumenty: Toto pole je nejprve `float` hodnoty, které označují délek tečky a pomlčky a délku mezery mezi nimi. Toto pole musí obsahovat sudý počet prvků a měla by existovat aspoň dva elementy. (Může existovat nulovým počtem elementů jako pole, ale jehož výsledkem je plná čára.) Pokud existují dva prvky, první je délka tečky nebo pomlčky a druhý je délka mezeru před další tečky nebo pomlčky. Pokud existuje více než dva prvky, pak jsou v tomto pořadí: pomlčka délku, délku mezery, pomlčky délka, délku mezery a tak dále.
 
-Obecně platí budete chtít provést délky dash a mezery mezi násobkem šířku tahu. Pokud šířku tahu je 10 pixelů, například pak pole {10, 10} bude zakreslit tečkovaná čára kde tečky a mezer mají stejnou délku jako sílu tahu.
+Obecně platí budete chtít provést pomlčky a mezery délky násobkem šířka tahu. Pokud je šířka tahu 10 pixelů, například pole {10, 10} bude nakreslete tečkovaná čára kde tečky a mezery mají stejnou délku jako tloušťka tahu.
 
-Ale `StrokeCap` nastavit `SKPaint` objekt ovlivní také tyto tečky a pomlčky. Jak se krátce zobrazí, který má vliv na prvky tohoto pole.
+Ale `StrokeCap` nastavení `SKPaint` objekt ovlivní také tyto tečky a spojovníky. Jak zobrazí krátce, který má vliv na elementy tohoto pole.
 
-S tečkami a přerušované čáry je ukázán na **tečky a pomlčky** stránky. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) soubor vytvoří dvě instance `Picker` zobrazení, jeden pro umožňují vyberte zakončení tahu a druhou pro vyberte dash pole:
+Tečkované a přerušované čáry je ukázán v **tečky a pomlčky** stránky. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) soubor vytvoří dvě `Picker` zobrazení, jeden pro umožňující vybrat zakončení tahů a druhý k výběru dash pole:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,9 +91,9 @@ S tečkami a přerušované čáry je ukázán na **tečky a pomlčky** stránky
 </ContentPage>
 ```
 
-První tři položky v `dashArrayPicker` předpokládá, že šířku tahu je 10 pixelů. {10, 10} pole je pro tečkovaná čára {30, 10} je pro na přerušovanou čáru a {10, 10, 30, 10} je pro řádek tečky a pomlčky. (Další tři bude za chvíli popsané.)
+První tři položky v `dashArrayPicker` předpokládá, že šířka tahu je 10 pixelů. {10, 10} pole je pro tečkovaná čára {30, 10} je pro na přerušovanou čáru a {10, 10, 30, 10} je pro řádek tečky a pomlčky. (Další tři probereme za chvíli.)
 
-[ `DotsAndDashesPage` Souboru kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) obsahuje `PaintSurface` obslužné rutiny události a několika pomocné rutiny pro přístup k `Picker` zobrazení:
+[ `DotsAndDashesPage` Soubor kódu na pozadí](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) obsahuje `PaintSurface` obslužná rutina události a pomocné rutiny pro přístup k několika `Picker` zobrazení:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -153,23 +153,23 @@ float[] GetPickerArray(Picker picker)
 }
 ```
 
-Na následujících snímcích obrazovky obrazovce iOS zcela vlevo znázorňuje tečkovaná čára:
+Na následujících snímcích obrazovky ukazuje na obrazovce iOS úplně vlevo tečkovaná čára:
 
-[![](dots-images/dotsanddashes-small.png "Trojitá snímek obrazovky stránky tečky a pomlčky")](dots-images/dotsanddashes-large.png#lightbox "Trojitá snímek obrazovky stránky tečky a pomlčky")
+[![](dots-images/dotsanddashes-small.png "Trojitá snímek obrazovky stránky tečky a čárky")](dots-images/dotsanddashes-large.png#lightbox "Trojitá snímek obrazovky stránky tečky a spojovníky")
 
-Však obrazovce Android také má zobrazit tečkovaná čára pomocí pole {10, 10}, ale místo toho řádek je plná. Co se stalo? Problém je, že obrazovce Android také má nastavení tahu CAP k vzdálené ploše `Square`. Tato zásada rozšiřuje všechny pomlčky podle poloviční šířku tahu způsobuje zaplnit mezer.
+Však Android obrazovka by měla také zobrazit tečkovaná čára použití pole {10, 10}, ale místo toho je plná. Co se stalo? Problém se také, že Android obrazovky je nastavení zakončení tahu `Square`. Tato zásada rozšiřuje všechny pomlčky podle poloviční šířku tahu způsobuje vyplnit mezery.
 
-Chcete-li získat tento problém vyřešit, při použití zakončení tahu z `Square` nebo `Round`, musíte snížit dash délky v poli tahu délkou (někdy výsledkem dash délku 0) a zvýšit délky mezera délkou tahu. Jedná se jak čárka poslední tři pole v `Picker` se počítá v souboru XAML:
+Chcete tento problém vyřešit, při použití zakončení tahu z `Square` nebo `Round`, musíte zmenšit dash délky pole podle tahu (někdy výsledkem dash délku 0) a zvýšení délky gap podle úhozů. To je jak pomlčka poslední tři pole ve `Picker` se vypočítaly v souboru XAML:
 
-- {10, 10} se změní na {0, 20} pro tečkovaná čára
-- {30, 10} stane {20, 20} pro na přerušovanou čáru
-- {10, 10, 30, 10} stane {0, 20, 20, 20} pro desítkovém a přerušované čáry
+- {10, 10} stane {0, 20} pro tečkovaná čára
+- {30, 10} stane {20, 20} pro přerušované čáry
+- {10, 10, 30, 10} {0, 20, 20, 20} se stane tečkovaná a přerušované čáry
 
-Zobrazuje UWP obrazovky, které s tečkami a přerušovanou řádek tah cap z `Round`. `Round` Zakončení tahu často poskytuje nejlepší vzhled tečky a pomlčky v silné čáry.
+Ukazuje obrazovku UPW, tečkami, jež Čárkovaná čára pro tah cap z `Round`. `Round` Zakončení tahu poskytuje silné čáry často vypadalo nejlépe, tečky a pomlčky.
 
-Pokud byl proveden žádné zmínky o druhý parametr `SKPathEffect.CreateDash` metoda. Tento parametr je s názvem `phase` odkazuje posun, tečky a pomlčky vzor pro začátek řádku. Například, pokud je pole dash {10, 10} a `phase` je 10 a pak na začátku řádku mezera spíše než tečku.
+Zatím žádná zmínka se neprovedl druhého parametru `SKPathEffect.CreateDash` metody. Tento parametr je pojmenován `phase` a odkazuje na posun mezi vzorem pomlček a tečku na začátku řádku. Například, pokud je pole dash {10, 10} a `phase` je 10 a pak řádek začíná mezerou spíše než tečku.
 
-Jeden zajímavé aplikaci `phase` parametr je v animace. **Animovaný Spirála** je podobná stránce **Archimedean Spirála** stránky, vyjma toho, že [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje – třída `phase` parametr. Stránky také ukazuje další způsob, jak animace. Z předchozího příkladu [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) použít `Task.Delay` metoda řídit animace. Tento příklad používá místo toho platformě Xamarin.Forms `Device.Timer` metoda:
+Jedním zajímavým `phase` parametr je animace. **Animovat něco jako Spirála** je podobná stránka **něco jako Spirála Archimedean** stránce, s výjimkou, že [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje třídy `phase` parametr. Na stránce také ukazuje další způsob, jak animace. Předchozí příklad [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) použít `Task.Delay` metodu pro ovládací prvek animace. Tento příklad používá místo toho Xamarin.Forms `Device.Timer` metody:
 
 
 ```csharp
@@ -211,14 +211,14 @@ protected override void OnAppearing()
 }
 ```
 
-Samozřejmě budete muset skutečně program animace:
+Samozřejmě budete mít ve skutečnosti program zobrazíte animaci spustit:
 
-[![](dots-images/animatedspiral-small.png "Trojitá snímek obrazovky stránky animovaný Spirála")](dots-images/animatedspiral-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný Spirála")
+[![](dots-images/animatedspiral-small.png "Trojitá snímek obrazovky stránky animovat něco jako Spirála")](dots-images/animatedspiral-large.png#lightbox "Trojitá snímek obrazovky stránky animovat něco jako Spirála")
 
-Nyní jste viděli kreslení čar a křivek pomocí čištění vzorce definovat. Část později publikování se bude zabývat různými typy křivek který `SKPath` podporuje.
+Už teď víte, jak kreslení čar a definovat křivky pomocí parametrické rovnice. Část aby byly publikované a později se bude zabývat různými druhy křivky, který `SKPath` podporuje.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

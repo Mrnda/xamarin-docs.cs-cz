@@ -1,55 +1,55 @@
 ---
-title: SkiaSharp čar a cesty
-description: Tento článek vysvětluje, jak používat SkiaSharp kreslení čar a cesty grafiky v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Ve Skiasharpu čáry a cesty
+description: Tento článek vysvětluje, jak používat ve Skiasharpu kreslení čar a grafické cesty v aplikacích Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a922f7ec91624e20a9afedb8063328bdb7a4d42d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9febfabb7b44b1ec09abda4b352691b37565cb48
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243750"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615132"
 ---
-# <a name="skiasharp-lines-and-paths"></a>SkiaSharp čar a cesty
+# <a name="skiasharp-lines-and-paths"></a>Ve Skiasharpu čáry a cesty
 
-_Kreslení čar a grafiky cesty pomocí SkiaSharp_
+_Použít k vykreslení čar a grafické cesty ve Skiasharpu_
 
-[Předchozí části](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) ukázán, který SkiaSharp `SKCanvas` třída obsahuje několik metod pro kreslení obdélníků, tři tečky a zaokrouhlené obdélníky. Tento oddíl a pozdějších částech zahrnují různé třídy připojen k vytváření a vykreslování *grafické cesty*.
+[Předchozí části](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md) ukázala, že ve Skiasharpu `SKCanvas` třída obsahuje několik metod pro kreslení obdélníků, symbol tří teček a zaoblené obdélníky. Tato část a v dalších částech zahrnují různé třídy související s vytvořením a vykreslování *grafické cesty*.
 
-Cesty grafiky je nejobecnější přístup pro kreslení čar a křivek v SkiaSharp. Tato část popisuje používání `SKPath` objekt Kreslení úseček a použít kolekci jen nepatrnou přímky (nazývá *lomenou čáru*) kreslení křivek, které můžete definovat matematicky. Další části se věnuje různým druhům křivek nepodporuje `SKPath`.
+Cesty grafiky je nejobecnější přístup k vykreslení čar a křivek v SkiaSharp. Tato část se věnuje `SKPath` objektů pro kreslení rovné čáry a použít kolekci malý rovné čáry (volá *lomenou čáru*) pro kreslení křivek, které můžete definovat matematicky. Další části se popisuje různé druhy křivky podporuje `SKPath`.
 
-Všechny programy ukázka v této části se zobrazí v části **čar a cesty** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Cesty** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) složce řešení.
+Všechny ukázky programů v této části se zobrazí pod nadpisem **čáry a cesty** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program a [ **Cesty** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) složky řešení.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Čáry a zakončení tahů](lines.md)
 
-Další informace o použití SkiaSharp kreslení čar pomocí různých tahu CAP k vzdálené ploše.
+Další informace o použití ve Skiasharpu kreslení čar pomocí různých zakončení tahů.
 
 ## <a name="path-basicspathsmd"></a>[Cesta – základy](paths.md)
 
-Prozkoumejte objekt SkiaSharp SKPath pro spojení čar a křivek.
+Prozkoumejte objektu ve Skiasharpu SKPath kombinování čar a křivek.
 
 ## <a name="the-path-fill-typesfill-typesmd"></a>[Typy výplně cesty](fill-types.md)
 
-Zjistit možné s typy výplně SkiaSharp cesty jiný důsledky.
+Seznamte se s typy výplně cesty ve Skiasharpu různé účinky.
 
 ## <a name="polylines-and-parametric-equationspolylinesmd"></a>[Lomené čáry a parametrické rovnice](polylines.md)
 
-SkiaSharp použijte k vykreslení kterýkoli řádek, který můžete definovat s čištění vzorce.
+Ve Skiasharpu použijte k vykreslení libovolný řádek, který definujete pomocí parametrické rovnice.
 
 ## <a name="dots-and-dashesdotsmd"></a>[Tečky a čárky](dots.md)
 
-Hlavní rozbor všech nástroje kreslení čar desítkovém a přerušovanou v SkiaSharp.
+Hlavní složitými rozhraními z kreslení ve Skiasharpu tečkovaná a přerušované čáry.
 
 ## <a name="finger-paintingfinger-paintmd"></a>[Malování prstem](finger-paint.md)
 
-Pomocí prstů k vyplnění na plátně.
+Pomocí prstů malovat na plátně.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

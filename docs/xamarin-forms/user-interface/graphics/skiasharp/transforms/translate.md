@@ -1,42 +1,42 @@
 ---
-title: Transformace přeložit
-description: Článek examiens použití transformace přeložit k posunutí SkiaSharp grafiky v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Transformace Translace
+description: Tento článek examiens shift grafiky ve Skiasharpu v aplikacích Xamarin.Forms pomocí transformace translace a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02361b5b2d00015ce168c075dc19522b6c04e446
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244819"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615441"
 ---
-# <a name="the-translate-transform"></a>Transformace přeložit
+# <a name="the-translate-transform"></a>Transformace Translace
 
-_Další informace o použití transformace přeložit se posunou SkiaSharp grafiky_
+_Další informace o použití transformace translace posun grafiky ve Skiasharpu_
 
-Nejjednodušší typ transformace v SkiaSharp je *převede* nebo *překlad* transformace. Tato transformace posune grafické objekty v vodorovného a svislého směru. V tom smyslu překlad je nejvíce nepotřebné transformace, protože obvykle dosáhnete stejného efektu jednoduše změna souřadnice, které používáte ve funkci kreslení. Při vykreslování cestu, ale všechny souřadnice jsou zapouzdřený v cestě, proto je mnohem snazší přeložit transformace se posunou celou cestu.
+Se o nejjednodušší typ transformace SkiaSharp *přeložit* nebo *překlad* transformace. Tato transformace posune grafické objekty ve směru vodorovný a svislý. V tom smyslu překlad je nejvíce zbytečné transformace, protože lze obvykle dosažení stejného účinku jednoduchou změnou souřadnice, které používáte ve funkci výkresu. Při vykreslování cesty, ale všechny souřadnice jsou zapouzdřeny v cestě, proto je mnohem snadnější použití transformace translace posunout celou cestu.
 
-Překlad je také užitečné pro animace a jednoduchý text důsledky:
+Překlad je také užitečné pro animace a efekty jednoduchý text:
 
-![](translate-images/translateexample.png "Stín textu zobrazovat, Ryté písmo a reliéfu s překlad")
+![](translate-images/translateexample.png "Stín textu, Ryté písmo a reliéf nezaregistrované")
 
-[ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) Metoda v `SKCanvas` má dva parametry, které způsobí následně vykresleného grafických objektů posunutí vodorovně a svisle:
+[ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) Metoda `SKCanvas` má dva parametry, které způsobují následně vykresleného grafických objektů posunutí vodorovně a svisle:
 
 ```csharp
 public void Translate (Single dx, Single dy)
 ```
 
-Tyto argumenty může mít zápornou hodnotu. Druhý [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/SkiaSharp.SKPoint/) metoda kombinuje dvě překlad hodnot do jedné `SKPoint` hodnotu:
+Tyto argumenty mohou být záporná. Sekundy [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/SkiaSharp.SKPoint/) metoda kombinuje dvě překladu hodnoty v jednom `SKPoint` hodnotu:
 
 ```csharp
 public void Translate (SKPoint point)
 ```
 
-**Nahromadění převede** stránky [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) ukázka programu ukazuje, že více volá z `Translate` metoda jsou kumulativní. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Třída zobrazí 20 verze stejné obdélníku, každé z nich posun z předchozí rámeček právě dostatek tak jejich funkce stretch společně diagonálních. Tady je `PaintSurface` obslužné rutiny události:
+**Sbírají přeložit** stránku [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) ukázkový program ukazuje, že více volání z `Translate` metody jsou kumulativní. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Třídy zobrazí 20 verze stejné obdélníku, každý z nich posun od předchozí obdélník tak akorát tak jejich roztáhnout po diagonální. Tady je `PaintSurface` obslužné rutiny události:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -67,19 +67,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Následných obdélníků skapat dolní části stránky:
+Po sobě jdoucích obdélníky skapat části stránky:
 
-[![](translate-images/accumulatedtranslate-small.png "Trojitá snímek obrazovky stránky nahromadění převede")](translate-images/accumulatedtranslate-large.png#lightbox "Trojitá snímek obrazovky stránky nahromadění převede")
+[![](translate-images/accumulatedtranslate-small.png "Trojitá snímek obrazovky stránky sbírají přeložit")](translate-images/accumulatedtranslate-large.png#lightbox "Trojitá snímek obrazovky stránky sbírají překlad")
 
-Pokud jsou faktory Akumulovaná překlad `dx` a `dy`, a zadáte v kreslení funkce bod je (`x`, `y`), pak vykreslením grafického objektu v bodě (`x'`, `y'`), kde:
+Pokud součet posunutí faktory jsou `dx` a `dy`, a je bod zadáte výkresu – funkce (`x`, `y`), pak grafický objekt je vykreslen v místě (`x'`, `y'`), kde:
 
-x: = x + DirectX
+x! = x + dx
 
 y' = y + dy
 
-Toto jsou známé jako *transformace vzorce* pro překlad. Výchozí hodnoty `dx` a `dy` pro novou `SKCanvas` mají hodnotu 0.
+Toto jsou známé jako *transformace vzorce* pro překlad. Výchozí hodnoty `dx` a `dy` nový `SKCanvas` mají hodnotu 0.
 
-Je běžné pro použití transformace přeložit pro stínové efekty a podobné techniky, jako **převede Text důsledky** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužné rutiny v [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) třídy:
+Je běžné použití transformace translace pro efekty stínování a podobné techniky, jako **přeložit textových efektů** demonstruje stránky. Tady je odpovídající část `PaintSurface` obslužné rutiny v [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) třídy:
 
 ```csharp
 float textSize = 150;
@@ -124,21 +124,21 @@ using (SKPaint textPaint = new SKPaint())
 }
 ```
 
-V každé tři příklady `Translate` je volána pro zobrazení textu k posunutí z umístění, které poskytují `x` a `y` proměnné. Text se potom zobrazí znovu v jiné barvy s neplatí překlad:
+V každé tři příklady `Translate` se volá pro zobrazování textu na posun od daného podle umístění `x` a `y` proměnné. Text se pak zobrazí znovu v jiné barvy se žádný překlad vliv:
 
-[![](translate-images/translatetexteffects-small.png "Trojitá snímek obrazovky stránky převede Text důsledky")](translate-images/translatetexteffects-large.png#lightbox "Trojitá snímek obrazovky stránky převede Text efekty")
+[![](translate-images/translatetexteffects-small.png "Trojitá snímek obrazovky stránky přeložit textových efektů")](translate-images/translatetexteffects-large.png#lightbox "Trojitá snímek obrazovky stránky přeložit textových efektů")
 
-Každý tři příklad ukazuje jiný způsob negace `Translate` volání:
+Všechny tři příklady ukazuje jiný způsob negace `Translate` volání:
 
-V prvním příkladu jednoduše volá `Translate` znovu, ale s záporné hodnoty. Protože `Translate` volání jsou kumulativní, celkový počet překlad toto pořadí volání jednoduše obnoví na výchozí hodnoty nula.
+První příklad jednoduše volá `Translate` znovu, ale s záporné hodnoty. Vzhledem k tomu, `Translate` volání jsou kumulativní, celkový počet překlad toto pořadí volání jednoduše obnoví na výchozí hodnoty nula.
 
-Druhé volání příklad [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix()/). To způsobí, že všechny transformace se vraťte do výchozího stavu.
+Druhý příklad volá [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix()/). To způsobí, že všechny transformace se vraťte do výchozího stavu.
 
-Třetí příklad uloží stav v z `SKCanvas` objekt s volání [ `Save` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Save()/) a následnému obnovení stavu se volání [ `Restore` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Restore/). To je nejvíce univerzální způsob k manipulaci s transformací pro řadu kreslení operace. Tyto `Save` a `Restore` volá funkci jako zásobníky: můžete volat `Save` více času a pak volání `Restore` v obrátíte pořadí se vrátíte do předchozího stavu. `Save` Metoda vrátí celé číslo, a může předat tuto celého [ `RestoreToCount` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RestoreToCount/) efektivně volat `Restore` vícekrát. [ `SaveCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.SaveCount/) Vlastnost vrací počet stavů, které jsou aktuálně uloženy v zásobníku.
+Třetí příklad uloží stav aplikace `SKCanvas` objektu voláním [ `Save` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Save()/) a potom obnoví stav voláním [ `Restore` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Restore/). Toto je nejčastěji univerzální způsob, jak pracovat s transformací pro řadu kreslicí operace. Tyto `Save` a `Restore` volá funkci jako zásobník: můžete volat `Save` více času a poté zavolejte `Restore` ve změnit pořadí se vraťte do předchozích stavů. `Save` Metoda vrátí celé číslo, a můžete předat tento celé číslo k [ `RestoreToCount` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RestoreToCount/) efektivně volat `Restore` více než jednou. [ `SaveCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.SaveCount/) Vlastnost vrací počet stavů, které jsou aktuálně uloženy do zásobníku.
 
-Však nemusíte si dělat starosti o transformací přenesou z jednoho volání `PaintSurface` obslužné rutiny na další. Každé nové volání na `PaintSurface` přináší čerstvou `SKCanvas` objekt s výchozí transformace.
+Však není nutné se starat o transformacích přenesou z jednoho volání `PaintSurface` obslužné rutiny na další. Každé nové volání na `PaintSurface` přináší čerstvého `SKCanvas` objekt s výchozí transformace.
 
-Další běžné použití `Translate` transformace je pro vykreslování vizuální objekt, který byl původně vytvořen pomocí souřadnic, které jsou vhodné pro kreslení. Můžete například chtít zadat souřadnice analogovým hodiny center v bodě (0, 0). Potom můžete transformace můžete ho zobrazit požadované místo. Tento postup je znázorněn v [**Hendecagram pole**] stránky. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Třída začíná vytvořením `SKPath` objekt pro odkazoval 11 hvězdičky. `HendecagramPath` Objektu je definována jako veřejné statické a jen pro čtení tak, aby byla přístupná z jiných aplikací ukázka. Je vytvořen ve statického konstruktoru:
+Další běžné použití `Translate` transformace je pro vykreslování vizuální objekt, který byl původně vytvořen pomocí souřadnic, které jsou vhodné pro kreslení. Můžete například chtít určuje souřadnice pro analogové hodiny se System center v okamžiku (0, 0). Potom můžete transformací zobrazíte ho do požadovaného. To je patrné [**Hendecagram pole**] stránky. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Třídy začíná tím, že vytvoříte `SKPath` objekt pro odkazovala 11 hvězdičku. `HendecagramPath` Objekt je definovaný jako veřejné, statické a jen pro čtení tak, aby byla přístupná z jiných aplikací ukázku. Vytvoří se ve statickém konstruktoru:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -169,9 +169,9 @@ public class HendecagramArrayPage : ContentPage
 }
 ```
 
-Pokud středu hvězdy je bod (0, 0), jsou všechny body hvězdy na kruh kolem tohoto bodu. Každý bod je kombinace hodnot sinus a kosinus úhlu, který zvyšuje úroveň 5/11ths 360 stupňů. (Je také možné vytvořit hvězdičkou odkazoval 11 zvýšením úhel ve 2/11, 3 nebo 11ths nebo 4/11 kruhu.) Hodnota úhlu tohoto kroužku nastavená na 100.
+Pokud středu hvězdy je bod (0, 0), jsou všechny body na hvězdičku na kolečko okolo tohoto bodu. Každý bod je kombinace hodnot sinus a kosinus úhlu, který zvýší o 5/11ths 360 stupňů. (Je také možné vytvořit hvězdičku ukazuje 11 zvýšením úhel 2/11, 3/11ths nebo 4/11 kruhu.) Poloměr této kruhu je nastaven jako 100.
 
-Pokud tato cesta je vykreslen bez jakékoli transformací, centru bude umístěna v levém horním rohu `SKCanvas`a pouze čtvrtletí ho budou viditelné. `PaintSurface` Obslužná rutina `HendecagramPage` místo toho používá `Translate` na dlaždici na plátno s více kopií hvězdy každé z nich náhodně barevné:
+Pokud tato cesta je vykreslen bez jakékoli transformací, centru budou umístěné v levém horním rohu `SKCanvas`a pouze čtvrtletí jeho se nebude zobrazovat. `PaintSurface` Obslužná rutina `HendecagramPage` místo toho používá `Translate` na dlaždici na plátno s využitím více kopií hvězdičky, každý z nich náhodně vybarvenými:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -210,9 +210,9 @@ public class HendecagramArrayPage : ContentPage
 
 Tady je výsledek:
 
-[![](translate-images/hendecagramarray-small.png "Trojitá snímek obrazovky stránky pole Hendecagram")](translate-images/hendecagramarray-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram pole")
+[![](translate-images/hendecagramarray-small.png "Trojitá snímek obrazovky stránky Hendecagram pole")](translate-images/hendecagramarray-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram pole")
 
-Animace často zahrnuje transformací. **Hendecagram animace** stránky přesune hvězdičky odkazoval 11 v kruh. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Třídy začíná některá pole a přepsání `OnAppearing` a `OnDisappearing` metody pro spuštění a zastavení Xamarin.Forms časovače:
+Animace často zahrnuje transformací. **Hendecagram animace** stránky stojí star ukazuje 11 v kruhu. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Třídy začíná některá pole a přepsání `OnAppearing` a `OnDisappearing` metod ke spuštění a zastavení časovače Xamarin.Forms:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -263,7 +263,7 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-`angle` Pole je animovaný od 0 do 360 stupňů každých 5 sekund. `PaintSurface` Obslužná rutina používá `angle` vlastnost dvěma způsoby: k určení odstín barvy v `SKColor.FromHsl` metoda a jako argumenty `Math.Sin` a `Math.Cos` metody, které řídí hvězdy umístění:
+`angle` Pole je animovaný od 0 do 360 stupňů každých 5 sekund. `PaintSurface` Obslužná rutina používá `angle` vlastnost dvěma způsoby: k určení odstín barvy v `SKColor.FromHsl` metoda a jako argument `Math.Sin` a `Math.Cos` metody k řízení umístění na hvězdičku:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -293,14 +293,14 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-`PaintSurface` Volání obslužné rutiny `Translate` metodu dvakrát, nejprve převede na střed plátna a potom nepřeloží na obvodu kruhu soustředí na (0, 0). Radius kruhu je nastaven jako co největší přitom hvězdičkou v hranicích stránky:
+`PaintSurface` Volání obslužné rutiny `Translate` metoda dvakrát, nejprve pro převod na střed plátna a pak pro převod obvod kruhu soustředí na (0, 0). Poloměr kruhu je nastaven tak, aby byl co nejblíže přitom zachovat hvězdičky v rámci stránky:
 
-[![](translate-images/hendecagramanimation-small.png "Trojitá snímek obrazovky stránky animace Hendecagram")](translate-images/hendecagramanimation-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram animace")
+[![](translate-images/hendecagramanimation-small.png "Trojitá snímek obrazovky stránky Hendecagram animace")](translate-images/hendecagramanimation-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram animace")
 
-Všimněte si, že hvězdičkou udržuje stejné orientaci, jako je zásadní kolem center stránky. Není otočit vůbec. To je úlohu pro rotační transformace.
+Všimněte si, že na hvězdičku udržuje stejné orientace jako především zajišťuje kolem středu stránky. Objekt se nedá vůbec otočit. To je úloha pro transformace otočení.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

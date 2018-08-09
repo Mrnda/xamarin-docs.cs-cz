@@ -1,39 +1,39 @@
 ---
-title: Typy výplně cesta
-description: Tento článek prozkoumá různé možné důsledky s SkiaSharp cesta výplně typy a předvádí to s ukázkový kód.
+title: Typy výplně cesty
+description: Tento článek zkoumá různé účinky možné s typy výplně cesty ve Skiasharpu a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d54ebd157fcc76b0fcc15bf89c72edbcd88b42f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243704"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615467"
 ---
-# <a name="the-path-fill-types"></a>Typy výplně cesta
+# <a name="the-path-fill-types"></a>Typy výplně cesty
 
-_Zjištění různých důsledky možné s SkiaSharp cesta výplně typy_
+_Objevte možnosti s typy výplně cesty ve Skiasharpu odlišnými efekty_
 
-Dva profily okrajů v cestě může dojít k překrytí a řádky, které tvoří jeden obrysem může dojít k překrytí. Všechny uzavřené oblasti potenciálně některá, ale možná nebudete chtít vyplnit závorkách oblasti. Tady je příklad:
+Dva rozvrhy v cestě může dojít k překrytí a řádky, které společně tvoří jednu rozvrh může dojít k překrytí. Žádné uzavřené oblast může potenciálně vyplní, nemusí ale být vhodné tak, aby vyplnil všechny uzavřené oblasti. Tady je příklad:
 
-![](fill-types-images/filltypeexample.png "Odkazoval pěti hvězdičkami částečně filles")
+![](fill-types-images/filltypeexample.png "Ukazuje pěti hvězdičkami částečně filles")
 
-Máte ještě kontrolu nad to. Se řídí algoritmus naplnění [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) vlastnost `SKPath`, který je členem skupiny nastavení [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) – výčet:
+Máte málo kontrolu nad tím. Řídí algoritmus naplnění [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) vlastnost `SKPath`, které jste nastavili na člen [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) výčtu:
 
-- [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/), výchozí
+- [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/), výchozí hodnota
 - [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
 - [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
 - [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
 
-Algoritmy vinutí a lichý určete, jestli všechny uzavřené oblasti je vyplněna nebo není doplní podle hypotetický linií z této oblasti do nekonečna. Daného řádku protne jeden nebo více řádky hranic, které tvoří cestu. Vinutí režim Pokud počet řádků hranic vykresluje v jednom směru vyrovnávání snížit počet řádků, které jsou vykreslovány v opačným směrem a potom v oblasti, které není vyplněna. V opačném případě se naplní oblasti. Algoritmus lichý doplní oblast, pokud je počet řádků hranic liché.
+Algoritmy obtáčení a lichý určují, jestli všechny uzavřené oblasti je vyplněný nebo není doplní podle hypotetické linií z této oblasti do nekonečna. Tento řádek překročí jeden nebo více hranic řádků, které tvoří cestu. Vinutí režim Pokud počet hranic čáry dekorace v jednom směru zůstatek na počet řádků v opačným směrem a pak v oblasti není vyplněné. V opačném případě se vyplní oblast. Algoritmus lichý vyplní oblast, pokud počet hranic řádků je liché.
 
-S mnoha běžných cest algoritmus vinutí často doplní všechny závorkách oblasti cesty. Algoritmus lichý obecně poskytuje zajímavějšího výsledky.
+S mnoha běžných cest často vinutí algoritmus vyplní všechny uzavřené oblasti cesty. Lichý algoritmus vytvoří obecně zajímavější výsledky.
 
-Classic příkladem je hvězdu pět ukazuje, jak je předvedeno v **Five-Pointed hvězdičkami** stránky. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) soubor vytvoří dvě instance `Picker` zobrazení vyberte cestu, zadejte typ a zda je cesta vytažený nebo vyplněna nebo obojí a v jakém pořadí:
+Klasickým příkladem je hvězdička pět ukazuje, jak je ukázáno v **Five-Pointed hvězdičky** stránky. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) soubor vytvoří dvě `Picker` zobrazení vyberte cestu, zadejte typ a určuje, zda je cesta vytažený nebo vyplněné nebo obojí a v jakém pořadí:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ Classic příkladem je hvězdu pět ukazuje, jak je předvedeno v **Five-Pointed
 </ContentPage>
 ```
 
-Soubor modelu code-behind využívá jak `Picker` hodnoty k vykreslení hvězdu na kterou pět:
+Soubor kódu na pozadí používá obě `Picker` hodnoty nakreslete hvězdička pět ukazuje:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -162,20 +162,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Za normálních okolností typ výplně cesty by měl mít vliv pouze výplněmi a není tahy, ale dva `Inverse` režimy ovlivnit výplně a tahy. Pro výplně, dva `Inverse` typy vyplnit oblasti oppositely tak, aby se naplní oblasti mimo hvězdičkou. Pro tahy, dva `Inverse` typy barvu všechno kromě tahu. Pomocí těchto typů inverzní výplně může vytvořit některé liché důsledky, jako ukazuje na snímku obrazovky iOS:
+Za normálních okolností by měl typ výplně cesty ovlivňují jenom výplně a ne tahy, ale dvě `Inverse` režimy ovlivnit výplně a tahů. Pro výplně, dvě `Inverse` typy výplně oblasti oppositely tak, aby oblasti mimo hvězdičky zaplněný. Pro tahy dva `Inverse` typy barva vše kromě stroke. Pomocí těchto typů inverzní výplně může vytvořit některé efekty liché, jak ukazuje snímek obrazovky s Iosem:
 
-[![](fill-types-images/fivepointedstar-small.png "Trojitá snímek obrazovky stránky hvězdičky Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Trojitá snímek obrazovky stránky Five-Pointed hvězdičkou")
+[![](fill-types-images/fivepointedstar-small.png "Trojitá snímek obrazovky stránky Five-Pointed Star")](fill-types-images/fivepointedstar-large.png#lightbox "Trojitá snímek obrazovky stránky Five-Pointed hvězda")
 
-Snímky obrazovky Android a UWP zobrazit typické lichý a vinutí důsledky, ale pořadí tahu a výplně ovlivní také výsledky.
+Android a UPW snímky obrazovky ukazují typické lichý a vinutí efekty, ale pořadí stroke a výplň také ovlivní výsledky.
 
-Algoritmus vinutí je závislá na směru, že jsou vykreslovány řádky. Obvykle při vytváření cestu, můžete určit, že směr jako určíte, že řádky jsou vykreslovány z jednoho bodu do jiného. Ale `SKPath` třída také definuje metody, třeba `AddRect` a `AddCircle` , kreslení celý rozvrhů. Chcete-li řídit, jak jsou vykreslovány tyto objekty, metody obsahovat parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), který má dva členy:
+Vinutí algoritmus je závislá na směru, jsou vykreslovány vedle řádky. Obvykle při vytváření cestu, můžete řídit tomto směru zadat, že řádky jsou vykreslovány z jednoho místa do jiného. Ale `SKPath` třída rovněž definuje metody, jako je `AddRect` a `AddCircle` , který vykreslení celého rozvrhů. Pokud chcete řídit, jak tyto objekty jsou vykreslovány, metody zahrnovat parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), který má dva členy:
 
 - [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
 - [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
 
-Metody v `SKPath` , zahrnout `SKPathDirection` parametr zadejte pro něj výchozí hodnota je `Clockwise`.
+Metody v `SKPath` , které zahrnují `SKPathDirection` parametr zadejte výchozí hodnotu `Clockwise`.
 
-**Kruhy překrývajících se** stránky vytvoří cestu s čtyři kruhy překrývajících se s typ výplně lichý cesta:
+**Překrývajícími se kruhy** stránka vytvoří cestu s čtyři překrývající se kruhy s typem výplně lichý cesta:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -215,12 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Jedná se o zajímavých obrázek vytvořen s minimální kódu:
+Je zajímavé bitovou kopii vytvořenou s minimální kód:
 
-[![](fill-types-images/overlappingcircles-small.png "Trojitá snímek obrazovky stránky kruhy překrývajících se")](fill-types-images/overlappingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky kruhy překrývajících se")
+[![](fill-types-images/overlappingcircles-small.png "Trojitá snímek obrazovky stránky s překrývajícími se kruhy")](fill-types-images/overlappingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky s překrývajícími se kruhy")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

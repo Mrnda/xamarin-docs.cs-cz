@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030701"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615145"
 ---
 # <a name="introduction-to-ios-12"></a>Úvod do Iosu 12
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030701"
 > [!WARNING]
 > 12 podporu Xamarinu pro iOS je momentálně ve verzi preview, což znamená, že může obsahovat chyb, které není plně funkční, a může změnit. Použijte pouze experimentování.
 
-> [!NOTE]
-> - Zkontrolujte [Začínáme](get-started.md) příručka pokyny o tom, abyste mohli začít vytvářet aplikace s využitím kódu Xamarin pro iOS 12.
-> - Další informace najdete v článku Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Tento dokument obsahuje podrobný popis některá rozhraní API iOS 12, pro které Xamarin ve verzi preview verze poskytuje vazby C#.
+
+Abyste mohli začít vytvářet aplikace pro iOS 12 s využitím kódu Xamarin, podívejte se na:
+
+- [– Příručka Začínáme](get-started.md)
+- Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ iOS 11.3 zavedené [zdravotním záznamům](https://www.apple.com/healthcare/hea
 
 V Iosu 12 iMessage aplikace podporují kontextů prezentace, které umožňují spouštění jako normální iMessage aplikace nebo v rámci fotky nebo videa efekt aplikací.
 
+## <a name="vision-framework"></a>Rozhraní pro zpracování obrazu
+
+Rozhraní pro zpracování obrazu zahrnuje vylepšené face detectoru, mohou v různých orientace rozpoznávání tváří. Žádosti o revize také, je nyní možné vybrat konkrétní revizi algoritmus framework pro zpracování obrazu.
+
 ## <a name="related-links"></a>Související odkazy
 
 - [Get připravené pro iOS 12 (Apple)](https://developer.apple.com/ios/)
 - [iOS 12 ve verzi Preview (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

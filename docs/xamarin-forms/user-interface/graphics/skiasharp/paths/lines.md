@@ -1,42 +1,42 @@
 ---
-title: Řádky a tahu CAP k vzdálené ploše
-description: Tento článek vysvětluje, jak pomocí SkiaSharp kreslení čar pomocí různých tahu CAP k vzdálené ploše v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Čáry a zakončení tahů
+description: Tento článek vysvětluje, jak můžete ve Skiasharpu kreslení čar pomocí různých zakončení tahů v aplikacích Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f63d14ae0dff5f94580c86d1c5bfdfc66bbee7f9
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244091"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615259"
 ---
-# <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
+# <a name="lines-and-stroke-caps"></a>Čáry a zakončení tahů
 
-_Další informace o použití SkiaSharp kreslení čar pomocí různých tahu CAP k vzdálené ploše_
+_Další informace o použití ve Skiasharpu kreslení čar pomocí různých zakončení tahů_
 
-V SkiaSharp je příliš neliší od vykreslování řadu připojené přímky vykreslování jeden řádek. I při vykreslování jedné čáry, ale často je nutné dát řádky šířku tahu konkrétní a tím širší řádku, důležitější stane vzhled konce řádků, volá se *tahu cap*:
+V SkiaSharp vykreslování jedné čáry je značně odlišná od vykreslení řadu připojené přímé čáry. I při vykreslování jedné čáry, ale často je potřeba poskytnout řádcích šířka tahu konkrétní a čím širší řádku, nejdůležitější změní vzhled konce řádků, volá se, *zakončení tahu*:
 
-![](lines-images/strokecapsexample.png "Možnosti tři tahu CAP k vzdálené ploše")
+![](lines-images/strokecapsexample.png "Tři možnosti zakončení tahu")
 
-Pro kreslení jedné čar `SKCanvas` definuje jednoduchou [ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) metoda, jejíž argumenty označuje počáteční a koncovou souřadnice řádek s `SKPaint` objektu:
+Pro vykreslování jedné čáry `SKCanvas` definuje jednoduchý [ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) metoda, jejíž argumenty označuje počáteční a koncovou souřadnice řádek s `SKPaint` objektu:
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Ve výchozím nastavení `StrokeWidth` vlastnost nově vytvořenou instanci `SKPaint` objekt je 0, který má stejný účinek jako hodnota 1 v vykreslování řádek jednoho pixelu ve tloušťka. To se zobrazí velmi tenké na zařízení s vysokým rozlišením, jako jsou telefony, takže budete pravděpodobně chtít nastavit `StrokeWidth` na větší hodnotu. Jakmile začnete kreslení čar značné množství tloušťka, který vyvolá jinému problému, ale: jak se mají spuštění a ukončení čar tyto silných Generovat?
+Ve výchozím nastavení `StrokeWidth` vlastnictví nově vytvořenou instanci `SKPaint` objekt je 0, který má stejný účinek jako hodnota 1 při vykreslování řádku o jeden pixel v tloušťku. Tento popis se zobrazuje velmi dynamického zajišťování na zařízeních s vysokým rozlišením jako jsou telefony, takže budete pravděpodobně chtít nastavit `StrokeWidth` větší hodnotu. Po spuštění kreslení čar proměnlivou velikostí tloušťku ohraničení, která vyvolá jiný problém, ale: jak zahájení a ukončení tyto řádky tlustých vykreslení?
 
-Je volána vzhled spuštění a ukončení čar *zakončení čáry* nebo v Skia, *tahu cap*. Slovo "cap" v tomto kontextu odkazuje na druh hat &mdash; něco, která se nachází na konci řádku. Nastavíte [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) vlastnost `SKPaint` objektu na jednu z následujících členů [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) výčtu:
+Je volána vzhled zahájení a ukončení řádků *zakončení řádku* nebo v Skia, *zakončení tahu*. Slovo "limit" v tomto kontextu označuje druh hat &mdash; něco, který je umístěný na konci řádku. Můžete nastavit [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) vlastnost `SKPaint` objektu do jedné z následujících členů [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) výčtu:
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (výchozí)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Tyto jsou zobrazené nejlépe s ukázka programu. Druhá část domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program začíná na stránce s názvem **tahu CAP k vzdálené ploše** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužné rutiny události, který prochází tři členy `SKStrokeCap` výčtu, zobrazovat název člena výčtu a kreslení pomocí cap tahu řádek:
+Ty se nejlépe popisují ukázkový program. Druhá část na domovskou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program začíná na stránku s názvem **zakončení tahů** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužná rutina události, která prochází tří členů `SKStrokeCap` výčet, název člena výčtu zobrazení a kreslení čáry použitím stroke cap:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,25 +90,25 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Pro každého člena `SKStrokeCap` výčtu obslužná rutina nevykresluje dva řádky, jeden s sílu tahu 50 pixelů a další čáru umístěný v horní části s sílu tahu 2 pixelů. Tento druhý řádek je určen k objasnění geometrickou začátku a konci řádku nezávisle na tloušťku čáry a zakončení tahu:
+Pro každého člena `SKStrokeCap` výčet, obslužná rutina nakreslí dva řádky jeden tloušťka tahu 50 pixelů a další řádek umístěný v horní části tloušťka tahu 2 pixelů. Tento druhý řádek je určený k objasnění geometrické začátku a konci řádku nezávisle na tloušťku čáry a zakončení tahů:
 
-[![](lines-images/strokecaps-small.png "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")](lines-images/strokecaps-large.png#lightbox "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")
+[![](lines-images/strokecaps-small.png "Trojitá snímek obrazovky stránky zakončení tahů")](lines-images/strokecaps-large.png#lightbox "Trojitá snímek obrazovky stránky zakončení tahů")
 
-Jak je vidět `Square` a `Round` tahu CAP k vzdálené ploše efektivně rozšířit délka řádku poloviční šířku tahu na začátek řádku a znovu na konci. Toto rozšíření změní důležité, pokud je třeba určit dimenze vykreslené grafického objektu.
+Jak je vidět, `Square` a `Round` zakončení tahů efektivně rozšířit délka řádku poloviční šířku tahu na začátek řádku a znovu na konci. Toto rozšíření je důležitá, pokud je potřeba určit dimenze vykreslené grafického objektu.
 
-`SKCanvas` Třída také obsahuje další metody pro kreslení více řádků, které se poněkud specifických:
+`SKCanvas` Třída také obsahuje jinou metodu pro vytvoření více řádků, který je o něco společné:
 
 ```csharp
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points` Parametr je pole `SKPoint` hodnoty a `mode` je členem skupiny [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/) výčtu, který má tři členy:
+`points` Parametr je pole `SKPoint` hodnoty a `mode` je členem skupiny [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/) výčet, který má tři členy:
 
-- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) k vykreslení jednotlivé body
+- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) k vykreslení jednotlivých bodů
 - [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) pro každý pár body připojení
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) pro připojení všech po sobě jdoucích bodů
+- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) pro všechny po sobě následujícími body připojení
 
-**Více řádků** stránky ukazuje tuto metodu. [ `MultipleLinesPage` Souboru XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) vytvoří dvě instance `Picker` zobrazení, které vám umožní vybrat členem `SKPointMode` výčet a členem `SKStrokeCap` výčtu:
+**Více řádků** stránce ukazuje tuto metodu. [ `MultipleLinesPage` Soubor XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) vytvoří dvě `Picker` zobrazení, která vám umožní vybrat člena `SKPointMode` výčet a členem skupiny `SKStrokeCap` výčtu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -166,7 +166,7 @@ DrawPoints (SKPointMode mode, points, paint)
 </ContentPage>
 ```
 
-`SelectedIndexChanged` Obslužné rutiny pro obě `Picker` jednoduše by způsobila neplatnost zobrazení `SKCanvasView` objektu:
+`SelectedIndexChanged` Obslužné rutiny pro obě `Picker` zobrazení jednoduše zruší platnost `SKCanvasView` objektu:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -178,9 +178,9 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 }
 ```
 
-Tuto obslužnou rutinu musí zkontrolovat existenci `SKCanvasView` objekt vzhledem k tomu, že je první obslužná rutina události voláno, když `SelectedIndex` vlastnost `Picker` nastavena na 0 v souboru XAML a k tomu dojde před `SKCanvasView` po vytvoření instance.
+Tato obslužná rutina musí zkontrolovat existenci `SKCanvasView` objekt protože obslužná rutina události je první voláno, když `SelectedIndex` vlastnost `Picker` nastavena na 0 v souboru XAML a, který předchází `SKCanvasView` po vytvoření instance.
 
-`PaintSurface` Obslužná rutina přistupuje k obecné metody pro získání dva vybrané položky z `Picker` zobrazení a jejich převedení na výčet hodnot:
+`PaintSurface` Obslužná rutina přistupuje k obecné metody pro získání dvou vybrané položky z `Picker` zobrazení a převod na hodnoty výčtu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -228,20 +228,20 @@ T GetPickerItem<T>(Picker picker)
 }
 ```
 
-Na snímku obrazovky vidíte celou řadu `Picker` výběr na tři platformy:
+Snímek obrazovky ukazuje různé `Picker` výběr na třech platformách:
 
 [![](lines-images/multiplelines-small.png "Trojitá snímek obrazovky stránky více řádků")](lines-images/multiplelines-large.png#lightbox "Trojitá snímek obrazovky stránky více řádků")
 
-Pro iPhone na levém ukazuje jak `SKPointMode.Points` – člen výčtu způsobí, že `DrawPoints` k vykreslení každý z bodů `SKPoint` pole jako čtverce, pokud je zakončení čáry `Butt` nebo `Square`. Kroužky jsou vykreslovány, pokud je zakončení čáry `Round`.
+IPhone na levém ukazuje jak `SKPointMode.Points` způsobí, že člen výčtu `DrawPoints` k vykreslení všech bodů v `SKPoint` pole jako čtverec, pokud je zakončení řádku `Butt` nebo `Square`. Kruhy jsou generovány, pokud je zakončení řádku `Round`.
 
-Pokud místo toho použít `SKPointMode.Lines`, jak je znázorněno na obrazovce Android v centru `DrawPoints` metoda nakreslí mezi každý pár `SKPoint` hodnoty, v takovém případě pomocí krytky zadaný řádek `Round`.
+Pokud místo toho použijete `SKPointMode.Lines`, jak je znázorněno na obrazovce s Androidem v centru `DrawPoints` metoda nakreslí čáru mezi dvěma `SKPoint` pomocí limit zadaný řádek v tomto případě `Round`.
 
-Snímek obrazovky UWP ukazuje výsledek `SKPointMode.Polygon` hodnotu. Řádek vykreslením mezi následných body v poli, ale když se podíváte velmi úzce, uvidíte, že tyto řádky nejsou připojené. Každý z těchto samostatné řádky spustí a končí krytky zadaný řádek. Pokud jste vybrali `Round` CAP k vzdálené ploše, řádky se může zdát připojit, ale ve skutečnosti nejsou připojené.
+UPW – snímek obrazovky ukazuje výsledek `SKPointMode.Polygon` hodnotu. Řádek je vykreslen mezi po sobě následujících bodů v poli, ale podíváte úzce uvidíte, že nejste připojeni tyto řádky. Každá z těchto samostatné řádky začíná a končí limit zadaný řádek. Pokud vyberete `Round` velká, může být čar k připojení, ale ve skutečnosti nejsou připojené.
 
-Zda jsou řádky připojen nebo nebude připojený je velmi důležitý aspekt pracovat s grafické cesty.
+Zda řádky jsou připojené nebo Nepřipojeno je zásadní aspekt práce s grafické cesty.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

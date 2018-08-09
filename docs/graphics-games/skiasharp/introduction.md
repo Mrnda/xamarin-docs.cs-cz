@@ -1,27 +1,28 @@
 ---
-title: Úvod do SkiaSharp
-description: Tento dokument obsahuje stručný úvod do základní koncepty SkiaSharp. Konkrétně popisuje získání a kreslení na SKCanvas.
+title: Úvod do ve Skiasharpu
+description: Tento dokument obsahuje stručný úvod do základních konceptů ve Skiasharpu. Především se zabývá získání a na základě SKCanvas.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783058"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615486"
 ---
-# <a name="an-introduction-to-skiasharp"></a>Úvod do SkiaSharp
+# <a name="an-introduction-to-skiasharp"></a>Úvod do ve Skiasharpu
 
-_To poskytuje stručný úvod do Principy SkiaSharp_
+_To poskytuje stručný úvod do Principy ve Skiasharpu_
 
-SkiaSharp poskytuje bohatý a výkonné 2D grafického rozhraní API, které můžete použít k vykreslení do 2D vyrovnávací paměti.  Ty můžete použít k implementaci vlastních prvků uživatelského rozhraní a 2D obrázky, které lze začlenit do vaší aplikace.  SkiaSharp je rozhraní .NET vazbu ke [Skia](https://skia.org) knihovny a dědí funkcí a výkonu v této knihovně.
+Ve Skiasharpu poskytuje bohaté a výkonné 2D grafického rozhraní API, které můžete použít k vykreslení do 2D vyrovnávací paměti.  Ty můžete použít k implementaci vlastních prvků uživatelského rozhraní a 2D grafika, který lze začlenit do vaší aplikace.  Ve Skiasharpu je .NET vazbu na [Skia](https://skia.org) knihovny a dědí funkcí a výkonu této knihovny.
 
-Knihovny je aktuálně k dispozici jako napříč platformami [balíček NuGet](https://www.nuget.org/packages/SkiaSharp), můžete ho přidat do projektu přidáním odkazu NuGet.
+Je aktuálně k dispozici jako multiplatformní knihovna [balíček NuGet](https://www.nuget.org/packages/SkiaSharp), můžete ho přidat do projektu tak, že přidáte odkaz na NuGet.
 
-Kreslení, vytvoří kód `SkCanvas` který popisuje prostor, kde bude probíhat kreslení operace.
+Chcete-li nakreslit, vytvoří kód `SkCanvas` vystihuje na plochu, ve kterém bude probíhat operace kreslení.
 
 ## <a name="obtaining-an-skcanvas"></a>Získání SKCanvas
 
@@ -33,15 +34,15 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 }
 ```
 
-## <a name="drawing-on-skcanvas"></a>Kreslení na SKCanvas
+## <a name="drawing-on-skcanvas"></a>Na základě SKCanvas
 
-`SKCanvas` Používá model kreslení podobně jako v smyslu jiných kreslení modelů, je možné, že znáte, používá barvy s kanálem volitelné průhlednost a můžete kreslení čar, oblouky, textu a obrázků.
+`SKCanvas` , Že jste se mohli seznámit s modely výkresu modelu podobně jako v duchu jiných vykreslování používá, používá barvy s kanálem transparentnosti volitelné a můžete kreslit čáry, elipsy, textu a obrázků.
 
-Níže jsou uvedeny jen některé z mnoha různých věcí, které lze provést pomocí SkiaSharp.  V příkladech níže proměnnou `canvas` je typu SKCanvas.
+Níže jsou uvedeny jenom některé z mnoha různé věci, které lze provést s ve Skiasharpu.  V příkladech níže proměnnou `canvas` je typu SKCanvas.
 
 ### <a name="drawing-xamagon"></a>Kreslení Xamagon
 
-Tento příklad nevykresluje logo společnosti Xamarin Xamagon:
+V tomto příkladu nakreslí logo společnosti Xamarin Xamagon:
 
 ```csharp
 // clear the canvas / fill with white
@@ -94,7 +95,7 @@ using (var paint = new SKPaint ()) {
 }
 ```
 
-### <a name="drawing-bitmaps"></a>Kreslení rastrové obrázky
+### <a name="drawing-bitmaps"></a>Kreslení rastrových obrázků
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png");
@@ -110,7 +111,7 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-### <a name="drawing-with-image-filters"></a>Kreslení pomocí filtrů bitové kopie
+### <a name="drawing-with-image-filters"></a>Kreslení pomocí obrázků filtry
 
 ```csharp
 Stream fileStream = File.OpenRead ("MyImage.png"); // open a stream to an image file
@@ -134,9 +135,9 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>Další informace
 
-Další informace o používání SkiaSharp naleznete na [online dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+Další informace o používání Skiasharpu můžete najít na [online dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [IOS SkiaSharp sešitu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+- [IOS ve Skiasharpu sešitu](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)

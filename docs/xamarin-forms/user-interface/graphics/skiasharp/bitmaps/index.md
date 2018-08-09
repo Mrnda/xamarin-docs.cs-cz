@@ -2,17 +2,17 @@
 title: Rastrové obrázky ve Skiasharpu
 description: Zjistěte, jak načíst, uložit, zobrazit, vytvořit, nakreslit, animace a přístup k bitů ve Skiasharpu rastrové obrázky.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 70C19370-157A-4B1B-9532-F77E32AC21BC
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 1bca13574bf5d58eb0751538243e71ae7ab7d25b
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 1e3a364e90cf2c0e60058793a6ef51c8442423f3
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130988"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615482"
 ---
 # <a name="skiasharp-bitmaps"></a>Rastrové obrázky ve Skiasharpu
 
