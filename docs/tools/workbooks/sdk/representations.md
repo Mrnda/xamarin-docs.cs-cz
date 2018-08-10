@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-Zde `PersonRenderer` implementuje `Renderer` rozhraní. Najdete v článku [typings] [ typings] další podrobnosti.
+Zde `PersonRenderer` implementuje `Renderer` rozhraní. Najdete v článku [typings][typings] další podrobnosti.
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
