@@ -198,7 +198,7 @@ V iOS 6 Apple nabízí varianta doručit serveru produkty: jejich bude hostitele
 
 Použití obchodu s aplikacemi pro poskytnutí nákupu v aplikaci *s hostitelem obsahu* vyžaduje následující nastavení a konfiguraci:
 
--   **iTunes připojit** – můžete *musí* poskytovaly vaše informace bankovnictví a daň společnosti Apple, takže se můžete uhradit fondů shromážděných vaším jménem. Následně můžete konfigurovat produkty prodeje, a nastavte izolovaný prostor uživatelské účty k testování nákupu.  *Musíte také nakonfigurovat hostované obsahu**pro tyto produkty nespotřebitelné, které chcete do hostitele s Apple* *.* 
+-   **iTunes připojit** – můžete *musí* poskytovaly vaše informace bankovnictví a daň společnosti Apple, takže se můžete uhradit fondů shromážděných vaším jménem. Následně můžete konfigurovat produkty prodeje, a nastavte izolovaný prostor uživatelské účty k testování nákupu.  *Musíte také nakonfigurovat hostované obsahu* *pro tyto produkty nespotřebitelné, které chcete do hostitele s Apple* *.* 
 -   **iOS Provisioning Portal** – vytvoření identifikátor svazku a povolení přístup k obchodu s aplikacemi pro vaši aplikaci, jako byste pro každou aplikaci, která podporuje nákupu v aplikaci. 
 -   **Uložení Kit** – přidání kódu do vaší aplikace pro zobrazení produktů, nákup produktů a obnovení transakce.  *V iOS 6 Kit úložiště bude také spravovat, stahování obsahu produktu, na pozadí probíhá aktualizace.* 
 -   **Vlastní kód** – ke sledování nákupy provedené zákazníci a poskytnout produkty nebo služby zakoupili. Využívat nové třídy úložiště Kit iOS 6 jako `SKDownload` k získání obsahu hostovaná společností Apple. 

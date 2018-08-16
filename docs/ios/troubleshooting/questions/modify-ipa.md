@@ -46,7 +46,7 @@ V tomto příkladu se předpokládá, že je název projektu Xamarin.iOS `iPhone
 
 9.  Odstranit z požadované soubory `.ipa`. Můžete je přesunout do koše pomocí hledání, nebo je odstranit na příkazovém řádku pomocí `Terminal.app`. Chcete-li zobrazit obsah `Payload/iPhone` souboru ve Finderu kliknutí s klávesou Control soubor a vyberte **zobrazit obsah balíčku**.
 
-10.  Pomocí stejný obecný postup jako v kroku 3, najděte soubor protokolu v části `~/Library/Logs/Xamarin/MonoTouchVS/` , který má název projektu a `generated session id` v názvu: ![ ] (modify-ipa-images/build-log.png "vyhledejte v protokolu sestavení projektu ve Finderu.")
+10.  Pomocí stejný obecný postup jako v kroku 3, najděte soubor protokolu v části `~/Library/Logs/Xamarin/MonoTouchVS/` , který má název projektu a `generated session id` v názvu: ![](modify-ipa-images/build-log.png "vyhledejte v protokolu sestavení projektu ve Finderu.")
 
 11.  Otevřete protokol sestavení z kroku 10, například poklepáním.
 
